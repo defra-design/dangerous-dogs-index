@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Dog record" %}
+{% set pageName="Dog ED10874" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -17,25 +17,32 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
         {{ pageName }}
       </h1>
 
+      {{ govukTag({
+        text: "Exempt"
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-7">Exemption details</h2>
+
       {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-4",
         rows: [
           {
             key: {
-              text: "Question 1"
+              text: "Certificate issued"
             },
             value: {
-              text: "Answer 1"
+              text: " 30 July 2019"
             },
             actions: {
               items: [
                 {
                   href: "#",
                   text: "Change",
-                  visuallyHiddenText: "Question 1"
+                  visuallyHiddenText: "Certificate issued"
                 }
               ]
             }
@@ -43,17 +50,17 @@
           ,
           {
             key: {
-              text: "Question 2"
+              text: "Notified"
             },
             value: {
-              text: "Answer 2"
+              text: " 2 February 2019"
             },
             actions: {
               items: [
                 {
                   href: "#",
                   text: "Change",
-                  visuallyHiddenText: "Question 2"
+                  visuallyHiddenText: "Notified date"
                 }
               ]
             }
@@ -61,17 +68,71 @@
           ,
           {
             key: {
-              text: "Question 3"
+              text: "Insurance company"
             },
             value: {
-              text: "Answer 3"
+              text: "Dogs Trust"
             },
             actions: {
               items: [
                 {
                   href: "#",
                   text: "Change",
-                  visuallyHiddenText: "Question 3"
+                  visuallyHiddenText: "Insurance company"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Insurance renewal"
+            },
+            value: {
+              text: "23 June 2024"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Insurance renewal date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Insurance policy"
+            },
+            value: {
+              text: "38345128"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Insurance policy"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Neutered and microchipped"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Neutered and microchipped"
                 }
               ]
             }
@@ -79,21 +140,319 @@
         ]
       }) }}
 
-      <h2 class="govuk-heading-m">
-        Now send your application
-      </h2>
-
-      <p>
-        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      <p class="govuk-body-s">
+        <a class="govuk-link" href="#">Exemption details history</a>
       </p>
 
-      <form action="/confirmation" method="post" novalidate>
+      <h2 class="govuk-heading-m govuk-!-margin-top-7">Dog details</h2>
 
-        {{ govukButton({
-          text: "Accept and send"
-        }) }}
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-4",
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Simba"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Dog name"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Breed type"
+            },
+            value: {
+              text: "Pit Bull Terrier"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Breed type"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: "12 April 2018"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Date of birth"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Microchip number"
+            },
+            value: {
+              text: "977206034033729"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Microchip number"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Sex"
+            },
+            value: {
+              text: "Male"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Sex"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Colour"
+            },
+            value: {
+              text: "Fawn and white"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Colour"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Tattoo"
+            },
+            value: {
+              text: "ED 14415"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Tattoo"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
 
-      </form>
+      <p class="govuk-body-s">
+        <a class="govuk-link" href="#">Dog details history</a>
+      </p>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-7">Owner details</h2>
+
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-4",
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Mrs Leah Johnstone"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Owner name"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              text: "12 Primrose Road, Southampton SO15 7NN"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Address"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Email"
+            },
+            value: {
+              text: "leah86@yahoo.co.uk"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Email"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Telephone number 1"
+            },
+            value: {
+              text: "023 8055 8402"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Telephone number 1"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Telephone number 2"
+            },
+            value: {
+              text: "07844 639956"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Telephone number 2"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "County"
+            },
+            value: {
+              text: "Hampshire"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "County"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Country"
+            },
+            value: {
+              text: "England"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "County"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Police force"
+            },
+            value: {
+              text: "Hampshire Constabulary"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Police force"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Comments"
+            },
+            value: {
+              text: "Previous address: 3 Ethelburt Avenue, Southampton SO16 3DD"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Add",
+                  visuallyHiddenText: "Comments"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <p class="govuk-body-s">
+        <a class="govuk-link" href="#">Owner details history</a>
+      </p>
 
     </div>
   </div>
