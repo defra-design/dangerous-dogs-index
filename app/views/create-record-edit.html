@@ -29,12 +29,23 @@
           Name of owner
         </legend>
 
+        {% if 'First name' == data['firstName'] %}
         <div class="govuk-form-group govuk-!-margin-bottom-5">
           <label class="govuk-label" for="first-name">
             First name
           </label>
-          <input class="govuk-input govuk-!-width-one-half" id="first-name" name="firstName" type="text" autocomplete="first-name">
+          <input class="govuk-input govuk-!-width-one-half" value="{{ firstName }}" id="first-name" name="firstName" type="text" autocomplete="first-name">
         </div>
+        {% endif %}
+
+        {% if 'First name' == data['firstName'] %}
+        <div class="govuk-form-group govuk-!-margin-bottom-5">
+          <label class="govuk-label" for="first-name">
+            First name
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" value="{{ firstName }}" id="first-name" name="firstName" type="text" autocomplete="first-name">
+        </div>
+        {% endif %}
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="last-name">

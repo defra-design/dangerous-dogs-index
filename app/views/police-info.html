@@ -16,7 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/check-details" method="post">
+      <form class="form" action="/confirm-details" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
@@ -31,7 +31,7 @@
 
           {{ govukInput({
             label: {
-              text: "Police Force"
+              text: "Police force"
             },
             classes: "govuk-!-width-three-quarters",
             id: "police-force",
@@ -41,7 +41,7 @@
 
           {{ govukInput({
             label: {
-              text: "Dog Liason Officer (optional)"
+              text: "Dog liason officer (optional)"
             },
             classes: "govuk-!-width-three-quarters",
             id: "dog-liason-officer",

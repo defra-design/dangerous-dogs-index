@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Select address" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "create-record"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/police-info" method="post">
+
+        {{ govukRadios({
+          name: "whereDoYouLive",
+          fieldset: {
+            legend: {
+              text: "Select address",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "2 Primrose Road, Southampton SO16 3GP",
+              text: "2 Primrose Road, Southampton SO16 3GP"
+            },
+            {
+              value: "4 Primrose Road, Southampton SO16 3GP",
+              text: "4 Primrose Road, Southampton SO16 3GP"
+            },
+            {
+              value: "6 Primrose Road, Southampton SO16 3GP",
+              text: "6 Primrose Road, Southampton SO16 3GP"
+            },
+            {
+              value: "8 Primrose Road, Southampton SO16 3GP",
+              text: "8 Primrose Road, Southampton SO16 3GP"
+            },
+            {
+              value: "10 Primrose Road, Southampton SO16 3GP",
+              text: "10 Primrose Road, Southampton SO16 3GP"
+            },
+            {
+              value: "12 Primrose Road, Southampton SO16 3GP",
+              text: "12 Primrose Road, Southampton SO16 3GP"
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Select address"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
