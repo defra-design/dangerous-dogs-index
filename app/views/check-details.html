@@ -1,0 +1,107 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Check record details" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "police-info"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-4",
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: data['firstName']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  classes: "govuk-link--no-visited-state",
+                  visuallyHiddenText: "Owner name"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              text: "12 Primrose Road, Southampton SO15 7NN"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  classes: "govuk-link--no-visited-state",
+                  visuallyHiddenText: "Address"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Police force"
+            },
+            value: {
+              text: data['police-force']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  classes: "govuk-link--no-visited-state",
+                  visuallyHiddenText: "Police force"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Dog liason officer"
+            },
+            value: {
+              text: data['dog-liason-officer']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  classes: "govuk-link--no-visited-state",
+                  visuallyHiddenText: "Dog liason officer"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

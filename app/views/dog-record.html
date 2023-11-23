@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: "index"
   }) }}
 {% endblock %}
 
@@ -42,6 +42,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Certificate issued"
                 }
               ]
@@ -60,6 +61,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Notified date"
                 }
               ]
@@ -78,6 +80,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Insurance company"
                 }
               ]
@@ -96,6 +99,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Insurance renewal date"
                 }
               ]
@@ -114,6 +118,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Insurance policy"
                 }
               ]
@@ -132,6 +137,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Neutered and microchipped"
                 }
               ]
@@ -141,7 +147,7 @@
       }) }}
 
       <p class="govuk-body-s">
-        <a class="govuk-link" href="#">Exemption details history</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="#">Exemption details history</a>
       </p>
 
       <h2 class="govuk-heading-m govuk-!-margin-top-7">Dog details</h2>
@@ -161,6 +167,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Dog name"
                 }
               ]
@@ -179,6 +186,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Breed type"
                 }
               ]
@@ -197,6 +205,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Date of birth"
                 }
               ]
@@ -215,6 +224,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Microchip number"
                 }
               ]
@@ -233,6 +243,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Sex"
                 }
               ]
@@ -251,6 +262,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Colour"
                 }
               ]
@@ -269,6 +281,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Tattoo"
                 }
               ]
@@ -278,7 +291,7 @@
       }) }}
 
       <p class="govuk-body-s">
-        <a class="govuk-link" href="#">Dog details history</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="#">Dog details history</a>
       </p>
 
       <h2 class="govuk-heading-m govuk-!-margin-top-7">Owner details</h2>
@@ -291,14 +304,34 @@
               text: "Name"
             },
             value: {
-              text: "Mrs Leah Johnstone"
+              text: "Leah Johnstone"
             },
             actions: {
               items: [
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Owner name"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: "24 October 1986"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  classes: "govuk-link--no-visited-state",
+                  visuallyHiddenText: "Address"
                 }
               ]
             }
@@ -316,6 +349,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Address"
                 }
               ]
@@ -334,6 +368,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Email"
                 }
               ]
@@ -352,6 +387,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Telephone number 1"
                 }
               ]
@@ -370,6 +406,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Telephone number 2"
                 }
               ]
@@ -388,6 +425,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "County"
                 }
               ]
@@ -406,6 +444,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "County"
                 }
               ]
@@ -424,6 +463,7 @@
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Police force"
                 }
               ]
@@ -442,6 +482,7 @@
                 {
                   href: "#",
                   text: "Add",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "Comments"
                 }
               ]
@@ -451,7 +492,7 @@
       }) }}
 
       <p class="govuk-body-s">
-        <a class="govuk-link" href="#">Owner details history</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="#">Owner details history</a>
       </p>
 
     </div>

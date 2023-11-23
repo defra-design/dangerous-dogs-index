@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Create a new record" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "dangerous-dog-index"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      <form class="form" action="/police-info" method="post">
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          Dog owner’s name
+        </legend>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-4">
+          <label class="govuk-label" for="first-name">
+            First name
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="first-name" name="firstName" type="text" autocomplete="first-name">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="last-name">
+            Last name
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="last-name" name="lastName" type="text" autocomplete="last-name">
+        </div>
+      </fieldset>
+
+      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-3">
+        <label class="govuk-label govuk-label--m" for="address-postcode">
+          Dog owner’s postcode
+        </label>
+        <input class="govuk-input govuk-input--width-10 govuk-!-padding-bottom-0" id="address-postcode" name="eventName" type="text" autocomplete="postal-code">
+      </div>
+
+      <p class="govuk-body govuk-!-margin-bottom-6">
+        <a class="govuk-link govuk-link--no-visited-state" href="create-record">Enter address details manually</a>
+      </p>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Find address
+      </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
