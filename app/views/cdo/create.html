@@ -33,14 +33,14 @@
           <label class="govuk-label" for="first-name">
             First name
           </label>
-          <input class="govuk-input govuk-!-width-one-half" id="first-name" name="firstName" type="text" autocomplete="first-name">
+          <input class="govuk-input govuk-!-width-one-half" id="first-name" name="firstName" type="text">
         </div>
 
         <div class="govuk-form-group govuk-!-margin-bottom-5">
           <label class="govuk-label" for="last-name">
             Last name
           </label>
-          <input class="govuk-input govuk-!-width-one-half" id="last-name" name="lastName" type="text" autocomplete="last-name">
+          <input class="govuk-input govuk-!-width-one-half" id="last-name" name="lastName" type="text">
         </div>
 
       {{ govukDateInput({
@@ -60,17 +60,17 @@
           <label class="govuk-label" for="address-postcode">
             Postcode
           </label>
-          <input class="govuk-input govuk-input--width-10 govuk-!-padding-bottom-0" id="address-postcode" name="eventName" type="text" autocomplete="postal-code">
+          <input class="govuk-input govuk-input--width-10 govuk-!-padding-bottom-0" id="address-postcode" name="addressPostcode" type="text">
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="last-name">
+          <label class="govuk-label" for="property-number">
             Property name or number (optional)
           </label>
           <div id="event-name-hint" class="govuk-hint">
             For example, ‘The Mill’, ‘116’ or ‘Flat 36a’
           </div>
-          <input class="govuk-input govuk-input--width-5" id="address-name" name="addressName" type="text" autocomplete="address-name">
+          <input class="govuk-input govuk-input--width-5" id="property-number" name="propertyNumber" type="text">
         </div>
       </fieldset>
 

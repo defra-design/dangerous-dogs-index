@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Create new record" %}
+{% set pageName="Change owner details" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "index"
+  href: "confirm-details"
 }) }}
 {% endblock %}
 
@@ -18,41 +18,78 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        {{ pageName }}
-      </h1>
-
       <form class="form" action="/cdo/create/confirm-address" method="post">
 
       <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          Owner details
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          {{ pageName }}
         </legend>
 
         <div class="govuk-form-group govuk-!-margin-bottom-5">
           <label class="govuk-label" for="first-name">
             First name
           </label>
-          <input class="govuk-input govuk-!-width-one-half" id="first-name" name="firstName" type="text" autocomplete="first-name">
+          <input class="govuk-input govuk-!-width-one-half" value="{{ firstName }} Leah" id="first-name" name="firstName" type="text" autocomplete="first-name">
         </div>
 
         <div class="govuk-form-group govuk-!-margin-bottom-5">
           <label class="govuk-label" for="last-name">
             Last name
           </label>
-          <input class="govuk-input govuk-!-width-one-half" id="last-name" name="lastName" type="text" autocomplete="last-name">
+          <input class="govuk-input govuk-!-width-one-half" value="Johnstone" id="last-name" name="lastName" type="text">
         </div>
 
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="owner-date-of-birth-hint">
+          <legend class="govuk-fieldset__legend">
+            Date of birth (optional)
+          </legend>
+
+          <div id="owner-date-of-birth-hint" class="govuk-hint">
+            For example, 27 3 1987
+          </div>
+
+          <div class="govuk-date-input" id="owner-date-of-birth">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="owner-date-of-birth-day">
+                  Day
+                </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="owner-date-of-birth-day" name="owner-date-of-birth-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="owner-date-of-birth-month">
+                  Month
+                </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="owner-date-of-birth-month" name="owner-date-of-birth-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="owner-date-of-birth-year">
+                  Year
+                </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="1986" id="owner-date-of-birth-year" name="owner-date-of-birth-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+
       {{ govukDateInput({
-        id: "cdo-expiry",
-        namePrefix: "cdo-expiry",
+        id: "owner-date-of-birth",
+        namePrefix: "owner-date-of-birth",
         fieldset: {
           legend: {
             text: "Date of birth (optional)"
-        }
-              },
+          }
+        },
         hint: {
-        text: "For example, 27 3 1987"
+          text: "For example, 27 3 1987"
         }
       }) }}
 
@@ -60,7 +97,7 @@
           <label class="govuk-label" for="address-postcode">
             Postcode
           </label>
-          <input class="govuk-input govuk-input--width-10 govuk-!-padding-bottom-0" id="address-postcode" name="eventName" type="text" autocomplete="postal-code">
+          <input class="govuk-input govuk-input--width-10 govuk-!-padding-bottom-0" value="{{ addressPostcode }} SO16 3GP" id="address-postcode" name="eventName" type="text">
         </div>
 
         <div class="govuk-form-group">
@@ -70,7 +107,7 @@
           <div id="event-name-hint" class="govuk-hint">
             For example, ‘The Mill’, ‘116’ or ‘Flat 36a’
           </div>
-          <input class="govuk-input govuk-input--width-5" id="address-name" name="addressName" type="text" autocomplete="address-name">
+          <input class="govuk-input govuk-input--width-5" value="{{ propertyNumber }} 12" id="address-name" name="addressName" type="text">
         </div>
       </fieldset>
 
