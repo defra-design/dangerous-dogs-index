@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Add dog details" %}
+{% set pageName="Change dog details" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -21,7 +21,7 @@
       <form class="form" action="/cdo/create/confirm-dog-details" method="post">
 
         <h1 class="govuk-heading-l">
-          Add dog details
+          Change dog details
           </h1>
 
           {{ govukRadios({
@@ -31,6 +31,7 @@
                 text: "Breed type"
               }
             },
+            value: "XL Bully",
             items: [
               {
                 value: "XL Bully",
@@ -61,7 +62,8 @@
             },
             classes: "govuk-!-width-one-half",
             id: "dog-name-1",
-            name: "dogName1"
+            name: "dogName1",
+            value: data['dogName1'] or "Bruce"
           }) }}
 
           {{ govukInput({
@@ -70,7 +72,8 @@
             },
             classes: "govuk-!-width-one-half",
             id: "microchip-1",
-            name: "microChip1"
+            name: "microChip1",
+            value: data['microChip1'] or "8348FH2977"
           }) }}
 
           {{ govukDateInput({
@@ -95,10 +98,13 @@
             }
           }) }}
 
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Make changes"
+            }) }}
 
-      <button class="govuk-button" data-module="govuk-button">
-        Add dog details
-      </button>
+            <a class="govuk-link govuk-link--no-visited-state" href="confirm-dog-details">Cancel</a>
+          </div>
 
       </form>
 
