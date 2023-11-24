@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Enter police details – {{ serviceName }} – GOV.UK Prototype Kit
+  Enter court and police details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,7 +23,7 @@
 
         {% call govukFieldset({
           legend: {
-            text: "Enter police details",
+            text: "Enter court and police details",
             classes: "govuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -31,12 +31,20 @@
 
           {{ govukInput({
             label: {
+              text: "Court"
+            },
+            classes: "govuk-!-width-three-quarters",
+            id: "court",
+            name: "court"
+          }) }}
+
+          {{ govukInput({
+            label: {
               text: "Police force"
             },
             classes: "govuk-!-width-three-quarters",
             id: "police-force",
-            name: "police-force",
-            autocomplete: "police-force"
+            name: "police-force"
           }) }}
 
           {{ govukInput({
@@ -45,8 +53,7 @@
             },
             classes: "govuk-!-width-three-quarters",
             id: "dog-liason-officer",
-            name: "dog-liason-officer",
-            autocomplete: "dog-liason-officer"
+            name: "dog-liason-officer"
           }) }}
 
 

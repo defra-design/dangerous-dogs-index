@@ -24,9 +24,9 @@
 
       <form class="form" action="/confirm-address" method="post">
 
-      <fieldset class="govuk-fieldset govuk-!-margin-bottom-2">
+      <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          Name of owner
+          Owner details
         </legend>
 
         <div class="govuk-form-group govuk-!-margin-bottom-5">
@@ -36,18 +36,25 @@
           <input class="govuk-input govuk-!-width-one-half" id="first-name" name="firstName" type="text" autocomplete="first-name">
         </div>
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-!-margin-bottom-5">
           <label class="govuk-label" for="last-name">
             Last name
           </label>
           <input class="govuk-input govuk-!-width-one-half" id="last-name" name="lastName" type="text" autocomplete="last-name">
         </div>
-      </fieldset>
 
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          Address of owner
-        </legend>
+      {{ govukDateInput({
+        id: "cdo-expiry",
+        namePrefix: "cdo-expiry",
+        fieldset: {
+          legend: {
+            text: "Date of birth (optional)"
+        }
+              },
+        hint: {
+        text: "For example, 27 3 1987"
+        }
+      }) }}
 
         <div class="govuk-form-group govuk-!-margin-bottom-5">
           <label class="govuk-label" for="address-postcode">

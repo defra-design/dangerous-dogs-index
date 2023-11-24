@@ -1,0 +1,27 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Record created – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Record created",
+        html: "ED10874"
+      }) }}
+
+      <br>
+      <p class="govuk-body">
+        <a class="govuk-link" href="#">
+          View record ED10874
+        </a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
