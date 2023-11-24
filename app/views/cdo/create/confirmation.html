@@ -4,6 +4,19 @@
   Record created – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+  <div class="govuk-!-margin-top-2" style="display: flex;justify-content: space-between;align-items: center;">
+      {{ govukBreadcrumbs({
+        items: [
+          {
+            text: "Home",
+            href: "../index"
+          }
+        ]
+      }) }}
+  </div>
+{% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -16,7 +29,7 @@
 
       <br>
       <p class="govuk-body">
-        <a class="govuk-link" href="#">
+        <a class="govuk-link govuk-link--no-visited-state" href="#">
           View record ED10874
         </a>
       </p>

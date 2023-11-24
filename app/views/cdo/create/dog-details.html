@@ -1,0 +1,108 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Add dog details" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "confirm-details"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/cdo/create/confirm-dog-details" method="post">
+
+        <h1 class="govuk-heading-l">
+          Add dog details
+          </h1>
+
+          {{ govukRadios({
+            name: "breedType1",
+            fieldset: {
+              legend: {
+                text: "Breed type"
+              }
+            },
+            items: [
+              {
+                value: "XL Bully",
+                text: "XL Bully"
+              },
+              {
+                value: "Pit Bull Terrier",
+                text: "Pit Bull Terrier"
+              },
+              {
+                value: "Japanese Tosa",
+                text: "Japanese Tosa"
+              },
+              {
+                value: "Dogo Argentino",
+                text: "Dogo Argentino"
+              },
+              {
+                value: "Fila Brasileiro",
+                text: "Fila Brasileiro"
+              }
+            ]
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Dog name (optional)"
+            },
+            classes: "govuk-!-width-one-half",
+            id: "dog-name-1",
+            name: "dogName1"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Microchip number (optional)"
+            },
+            classes: "govuk-!-width-one-half",
+            id: "microchip-1",
+            name: "microChip1"
+          }) }}
+
+          {{ govukDateInput({
+            id: "cdo-issued",
+            namePrefix: "cdo-issued",
+            fieldset: {
+              legend: {
+                classes: "govuk-!-font-weight-bold",
+                text: "CDO Issue Date"
+            }
+            }
+          }) }}
+
+          {{ govukDateInput({
+            id: "cdo-expiry",
+            namePrefix: "cdo-expiry",
+            fieldset: {
+              legend: {
+                classes: "govuk-!-font-weight-bold",
+                text: "CDO Expiry Date"
+            }
+            }
+          }) }}
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Add dog details
+      </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

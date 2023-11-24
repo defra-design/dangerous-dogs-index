@@ -1,13 +1,13 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Enter court and police details – {{ serviceName }} – GOV.UK Prototype Kit
+  Enter police and court details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "create-record"
+  href: "confirm-address"
 }) }}
 {% endblock %}
 
@@ -16,27 +16,18 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/confirm-details" method="post">
+      <form class="form" action="/cdo/create/confirm-details" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
 
         {% call govukFieldset({
           legend: {
-            text: "Enter court and police details",
+            text: "Enter police and court details",
             classes: "govuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
-
-          {{ govukInput({
-            label: {
-              text: "Court"
-            },
-            classes: "govuk-!-width-three-quarters",
-            id: "court",
-            name: "court"
-          }) }}
 
           {{ govukInput({
             label: {
@@ -54,6 +45,15 @@
             classes: "govuk-!-width-three-quarters",
             id: "dog-liason-officer",
             name: "dog-liason-officer"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Court (optional)"
+            },
+            classes: "govuk-!-width-three-quarters",
+            id: "court",
+            name: "court"
           }) }}
 
 

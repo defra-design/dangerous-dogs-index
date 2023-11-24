@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "dangerous-dog-index"
+  href: "index"
 }) }}
 {% endblock %}
 
@@ -22,7 +22,7 @@
         {{ pageName }}
       </h1>
 
-      <form class="form" action="/confirm-address" method="post">
+      <form class="form" action="/cdo/create/confirm-address" method="post">
 
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -75,7 +75,7 @@
       </fieldset>
 
       <p class="govuk-body govuk-!-margin-bottom-6">
-        <a class="govuk-link govuk-link--no-visited-state" href="enter-address">Enter address manually</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="create/enter-address">Enter address manually</a>
       </p>
 
       <button class="govuk-button" data-module="govuk-button">

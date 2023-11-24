@@ -17,7 +17,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/record-created" method="post">
+      <form class="form" action="/cdo/create/confirmation" method="post">
 
       <h1 class="govuk-heading-l">
         {{ pageName }}
@@ -39,7 +39,15 @@
               text: "Dog name"
             },
             value: {
-              text: data['dogName1'] or "Fang"
+              text: data['dogName1'] or "Bruce"
+            }
+          },
+          {
+            key: {
+              text: "Microchip number"
+            },
+            value: {
+              text: data['microChip1'] or "8348FH2977"
             }
           },
           {
@@ -67,13 +75,13 @@
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Create record"
+          text: "Save record"
         }) }}
 
         {{ govukButton({
           text: "Add another dog",
           classes: "govuk-button--secondary",
-          href: "dog-details"
+          href: "dog-details-2"
         }) }}
       </div>
 
