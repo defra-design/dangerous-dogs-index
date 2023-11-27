@@ -1,13 +1,13 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Enter court and police details – {{ serviceName }} – GOV.UK Prototype Kit
+  Change court and police details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "confirm-address"
+  href: "confirm-details"
 }) }}
 {% endblock %}
 
@@ -35,8 +35,7 @@
             items: [
               {
                 value: "Choose court",
-                text: "Choose court",
-                selected: true
+                text: "Choose court"
               },
               {
                 value: "Aberystwyth Justice Centre",
@@ -108,7 +107,8 @@
               },
               {
                 value: "Southampton (West Hampshire) Magistrates’ Court",
-                text: "Southampton (West Hampshire) Magistrates’ Court"
+                text: "Southampton (West Hampshire) Magistrates’ Court",
+                selected: true
               },
               {
                 value: "St Albans Magistrates’ Court",
@@ -228,16 +228,21 @@
             label: {
               text: "Dog legislation officer (optional)"
             },
-            classes: "govuk-!-width-two-thirds",
+            classes: "govuk-!-width-three-quarters",
             id: "dog-legislation-officer",
-            name: "dog-legislation-officer"
+            name: "dog-legislation-officer",
+            value: data['dog-legislation-officer'] or "Nigel Hillier"
           }) }}
 
         {% endcall %}
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Make changes"
+          }) }}
+
+          <a class="govuk-link govuk-link--no-visited-state" href="confirm-details">Cancel</a>
+        </div>
 
       </form>
 

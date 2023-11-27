@@ -62,6 +62,14 @@
         rows: [
           {
             key: {
+              text: "Court"
+            },
+            value: {
+              text: data['court'] or "Southampton (West Hampshire) Magistrates’ Court"
+            }
+          },
+          {
+            key: {
               text: "Police force"
             },
             value: {
@@ -75,20 +83,12 @@
             value: {
               text: data['dog-legislation-officer'] or "Nigel Hillier"
             }
-          },
-          {
-            key: {
-              text: "Court"
-            },
-            value: {
-              text: data['court'] or "Southampton (West Hampshire) Magistrates’ Court"
-            }
           }
         ]
       }) }}
 
       <p class="govuk-body govuk-!-margin-bottom-7">
-        <a class="govuk-link govuk-link--no-visited-state" href="police-details-edit">Change police details</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="enforcement-details-edit">Change court and police details</a>
       </p>
 
       {{ govukButton({
