@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "police-details"
+    href: "enforcement-details"
   }) }}
 {% endblock %}
 
@@ -54,7 +54,7 @@
       }) }}
 
       <p class="govuk-body govuk-!-margin-bottom-7">
-        <a class="govuk-link govuk-link--no-visited-state" href="">Change owner details</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="owner-details-edit">Change owner details</a>
       </p>
 
       {{ govukSummaryList({
@@ -70,10 +70,10 @@
           },
           {
             key: {
-              text: "Dog liason officer"
+              text: "Dog legislation officer"
             },
             value: {
-              text: data['dog-liason-officer'] or "Nigel Hillier"
+              text: data['dog-legislation-officer'] or "Nigel Hillier"
             }
           },
           {

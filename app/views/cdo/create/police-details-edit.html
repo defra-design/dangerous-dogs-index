@@ -31,6 +31,16 @@
 
           {{ govukInput({
             label: {
+              text: "Court"
+            },
+            classes: "govuk-!-width-three-quarters",
+            id: "court",
+            name: "court",
+            value: data['court'] or "Southampton (West Hampshire) Magistrates’ Court"
+          }) }}
+
+          {{ govukInput({
+            label: {
               text: "Police force"
             },
             classes: "govuk-!-width-three-quarters",
@@ -41,29 +51,19 @@
 
           {{ govukInput({
             label: {
-              text: "Dog liason officer (optional)"
+              text: "Dog legislation officer (optional)"
             },
             classes: "govuk-!-width-three-quarters",
-            id: "dog-liason-officer",
-            name: "dog-liason-officer",
-            value: data['dog-liason-officer'] or "Nigel Hillier"
-          }) }}
-
-          {{ govukInput({
-            label: {
-              text: "Court (optional)"
-            },
-            classes: "govuk-!-width-three-quarters",
-            id: "court",
-            name: "court",
-            value: data['court'] or "Southampton (West Hampshire) Magistrates’ Court"
+            id: "dog-legislation-officer",
+            name: "dog-legislation-officer",
+            value: data['dog-legislation-officer'] or "Nigel Hillier"
           }) }}
 
         {% endcall %}
 
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Makes changes"
+            text: "Make changes"
           }) }}
 
           <a class="govuk-link govuk-link--no-visited-state" href="confirm-details">Cancel</a>
