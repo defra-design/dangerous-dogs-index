@@ -44,8 +44,9 @@
         </div>
 
       {{ govukDateInput({
-        id: "cdo-expiry",
-        namePrefix: "cdo-expiry",
+        id: "date-of-birth",
+        name: "dateBirth",
+        namePrefix: "dateBirth",
         fieldset: {
           legend: {
             text: "Date of birth (optional)"
@@ -76,13 +77,13 @@
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Save and continue"
+          text: "Find address"
         }) }}
 
         {{ govukButton({
-          text: "Save as draft",
+          text: "Enter address manually",
           classes: "govuk-button--secondary",
-          href: "/cdo/create/select-address"
+          href: "/cdo/create/enter-address"
         }) }}
       </div>
 

@@ -6,9 +6,9 @@
 
 {% block beforeContent %}
   {{ govukBackLink({
-  text: "Back",
-  href: "confirm-address"
-}) }}
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
