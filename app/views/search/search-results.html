@@ -1,0 +1,83 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Search results" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "index"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+    </div>
+
+
+
+    <div class="govuk-grid-column-one-quarter">
+
+
+
+      <form class="form" action="/cdo/create/confirm-address" method="post">
+
+      {% call govukFieldset({
+        legend: {
+          text: "Search",
+          classes: "govuk-visually-hidden",
+          isPageHeading: false
+        }
+      }) %}
+
+        {{ govukInput({
+          label: {
+            classes: "govuk-!-font-size-16",
+            text: "Keyword"
+          },
+          id: "address-line-1",
+          name: "addressLine1"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            classes: "govuk-!-font-size-16",
+            text: "Dog name"
+          },
+          id: "dog-name",
+          value: "Diego",
+          name: "dogName"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            classes: "govuk-!-font-size-16",
+            text: "Owner surname"
+          },
+          id: "owner-surname",
+          value: "Johnstone",
+          name: "ownerSurname"
+        }) }}
+
+      {% endcall %}
+
+      {{ govukButton({
+        text: "Search"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
