@@ -1,0 +1,244 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Change owner details" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "index"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      <form class="form" action="/dog-record" method="post">
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          Owner details
+        </legend>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-5">
+          <label class="govuk-label" for="first-name">
+            First name
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="first-name" name="firstName" type="text">
+        </div>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-5">
+          <label class="govuk-label" for="last-name">
+            Last name
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="last-name" name="lastName" type="text">
+        </div>
+
+      {{ govukDateInput({
+        id: "date-of-birth",
+        name: "dateBirth",
+        namePrefix: "dateBirth",
+        fieldset: {
+          legend: {
+            text: "Date of birth (optional)"
+        }
+              },
+        hint: {
+        text: "For example, 27 3 1987"
+        }
+      }) }}
+
+        <div class="govuk-form-group govuk-!-margin-bottom-5">
+          <label class="govuk-label" for="address-postcode">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-input--width-10 govuk-!-padding-bottom-0" id="address-postcode" name="addressPostcode" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="property-number">
+            Property name or number (optional)
+          </label>
+          <div id="event-name-hint" class="govuk-hint">
+            For example, ‘The Mill’, ‘116’ or ‘Flat 36a’
+          </div>
+          <input class="govuk-input govuk-input--width-5" id="property-number" name="propertyNumber" type="text">
+        </div>
+
+        {{ govukInput({
+          label: {
+            text: "Telephone number 1"
+          },
+          id: "telephone-number",
+          name: "telephoneNumber",
+          value: "023 8055 8402",
+          type: "tel",
+          classes: "govuk-input--width-10"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Telephone number 2"
+          },
+          id: "telephone-number",
+          name: "telephoneNumber",
+          value: "07844 639956",
+          type: "tel",
+          classes: "govuk-input--width-10"
+        }) }}
+
+        {{ govukSelect({
+          id: "county",
+          name: "county",
+          label: {
+            text: "County"
+          },
+          items: [
+            {
+              value: "Bedfordshire",
+              text: "Bedfordshire"
+            },
+            {
+              value: "Berkshire",
+              text: "Berkshire"
+            },
+            {
+              value: "Cambridgeshire",
+              text: "Cambridgeshire"
+            },
+            {
+              value: "Cheshire",
+              text: "Cheshire"
+            },
+            {
+              value: "Cornwall",
+              text: "Cornwall"
+            },
+            {
+              value: "Cumberland",
+              text: "Cumberland"
+            },
+            {
+              value: "Derbyshire",
+              text: "Derbyshire"
+            },
+            {
+              value: "Devon",
+              text: "Devon"
+            },
+            {
+              value: "Dorset",
+              text: "Dorset"
+            },
+            {
+              value: "Durham",
+              text: "Durham"
+            },
+            {
+              value: "East Suffolk",
+              text: "East Suffolk"
+            },
+            {
+              value: "Essex",
+              text: "Essex"
+            },
+            {
+              value: "Gloucestershire",
+              text: "Gloucestershire"
+            },
+            {
+              value: "Greater Manchester",
+              text: "Greater Manchester"
+            },
+            {
+              value: "Hampshire",
+              text: "Hampshire",
+              selected: true
+            },
+            {
+              value: "Hertfordshire",
+              text: "Hertfordshire"
+            },
+            {
+              value: "Kent",
+              text: "Kent"
+            },
+            {
+              value: "Lancashire",
+              text: "Lancashire"
+            },
+            {
+              value: "Leicestershire",
+              text: "Leicestershire"
+            },
+            {
+              value: "Middlesex",
+              text: "Middlesex"
+            },
+            {
+              value: "Nottinghamshire",
+              text: "Nottinghamshire"
+            },
+            {
+              value: "Oxfordshire",
+              text: "Oxfordshire"
+            },
+            {
+              value: "Shropshire",
+              text: "Shropshire"
+            },
+            {
+              value: "South Yorkshire",
+              text: "South Yorkshire"
+            },
+            {
+              value: "West Yorkshire",
+              text: "West Yorkshire"
+            }
+          ]
+        }) }}
+
+        {{ govukSelect({
+          id: "country",
+          name: "country",
+          label: {
+            text: "Country"
+          },
+          items: [
+            {
+              value: "England",
+              text: "England",
+              selected: true
+            },
+            {
+              value: "Wales",
+              text: "Wales"
+            },
+            {
+              value: "Scotland",
+              text: "Scotland"
+            }
+          ]
+        }) }}
+
+      </fieldset>
+
+        {{ govukButton({
+          text: "Save details"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
