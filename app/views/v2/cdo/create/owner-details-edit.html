@@ -1,6 +1,9 @@
 {% extends "layouts/defra.html" %}
 
 {% set pageName="Change owner details" %}
+{% set dateBirthday="24" %}
+{% set dateBirthmonth="10" %}
+{% set dateBirthyear="1996" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -18,7 +21,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/cdo/create/confirm-details" method="post">
+      <form class="form" action="/v2/v2/cdo/create/confirm-details" method="post">
 
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -55,7 +58,7 @@
                 <label class="govuk-label govuk-date-input__label" for="owner-date-of-birth-day">
                   Day
                 </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="2" id="owner-date-of-birth-day" name="owner-date-of-birth-day" type="text" inputmode="numeric">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="{{ dateBirthday }}" id="owner-date-of-birth-day" name="owner-date-of-birth-day" type="text" inputmode="numeric">
               </div>
             </div>
 
@@ -64,7 +67,7 @@
                 <label class="govuk-label govuk-date-input__label" for="owner-date-of-birth-month">
                   Month
                 </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="12" id="owner-date-of-birth-month" name="owner-date-of-birth-month" type="text" inputmode="numeric">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="{{ dateBirthmonth }}" id="owner-date-of-birth-month" name="owner-date-of-birth-month" type="text" inputmode="numeric">
               </div>
             </div>
 
@@ -73,7 +76,7 @@
                 <label class="govuk-label govuk-date-input__label" for="owner-date-of-birth-year">
                   Year
                 </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="1986" id="owner-date-of-birth-year" name="owner-date-of-birth-year" type="text" inputmode="numeric">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="{{ dateBirthyear }}" id="owner-date-of-birth-year" name="owner-date-of-birth-year" type="text" inputmode="numeric">
               </div>
             </div>
           </div>
@@ -83,8 +86,7 @@
       {% call govukFieldset({
         legend: {
           text: "Address",
-          classes: "govuk-fieldset__legend--m",
-          isPageHeading: true
+          classes: "govuk-fieldset__legend--m"
         }
       }) %}
 
@@ -94,7 +96,6 @@
           },
           id: "address-line-1",
           name: "addressLine1",
-          autocomplete: "address-line1",
           value: "12 Primrose Road"
         }) }}
 
@@ -103,8 +104,7 @@
             text: "Address line 2 (optional)"
           },
           id: "address-line-2",
-          name: "addressLine2",
-          autocomplete: "address-line2"
+          name: "addressLine2"
         }) }}
 
         {{ govukInput({
@@ -114,7 +114,6 @@
           classes: "govuk-!-width-two-thirds",
           id: "address-town",
           name: "addressTown",
-          autocomplete: "address-level2",
           value: "Southampton"
         }) }}
 
@@ -125,7 +124,6 @@
           classes: "govuk-input--width-10",
           id: "address-postcode",
           name: "addressPostcode",
-          autocomplete: "postal-code",
           value: "SO16 3GP"
         }) }}
 

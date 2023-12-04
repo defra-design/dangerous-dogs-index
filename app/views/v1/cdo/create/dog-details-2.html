@@ -1,0 +1,87 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Add dog details" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "confirm-details"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v1/cdo/create/confirm-dog-details-2" method="post">
+
+        <h1 class="govuk-heading-l">
+          Add dog details
+          </h1>
+
+          {{ govukRadios({
+            name: "breedType2",
+            fieldset: {
+              legend: {
+                text: "Breed type"
+              }
+            },
+            items: [
+              {
+                value: "XL Bully",
+                text: "XL Bully"
+              },
+              {
+                value: "Pit Bull Terrier",
+                text: "Pit Bull Terrier"
+              },
+              {
+                value: "Japanese Tosa",
+                text: "Japanese Tosa"
+              },
+              {
+                value: "Dogo Argentino",
+                text: "Dogo Argentino"
+              },
+              {
+                value: "Fila Brasileiro",
+                text: "Fila Brasileiro"
+              }
+            ]
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Dog name (optional)"
+            },
+            classes: "govuk-!-width-one-half",
+            id: "dog-name-2",
+            name: "dogName2"
+          }) }}
+
+          {{ govukDateInput({
+            id: "cdo-issued",
+            namePrefix: "cdo-issued",
+            fieldset: {
+              legend: {
+                classes: "govuk-!-font-weight-bold",
+                text: "CDO issue date"
+            }
+            }
+          }) }}
+
+      <button class="govuk-button" data-module="govuk-button">
+        Add dog details
+      </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

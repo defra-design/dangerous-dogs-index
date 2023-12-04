@@ -25,7 +25,7 @@
       <form class="form" action="/dog-record" method="post">
 
       <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <legend class="govuk-visually-hidden">
           Owner details
         </legend>
 
@@ -33,53 +33,120 @@
           <label class="govuk-label" for="first-name">
             First name
           </label>
-          <input class="govuk-input govuk-!-width-one-half" id="first-name" name="firstName" type="text">
+          <input class="govuk-input govuk-!-width-one-half" value="Leah" id="first-name" name="firstName" type="text">
         </div>
 
         <div class="govuk-form-group govuk-!-margin-bottom-5">
           <label class="govuk-label" for="last-name">
             Last name
           </label>
-          <input class="govuk-input govuk-!-width-one-half" id="last-name" name="lastName" type="text">
-        </div>
-
-      {{ govukDateInput({
-        id: "date-of-birth",
-        name: "dateBirth",
-        namePrefix: "dateBirth",
-        fieldset: {
-          legend: {
-            text: "Date of birth (optional)"
-        }
-              },
-        hint: {
-        text: "For example, 27 3 1987"
-        }
-      }) }}
-
-        <div class="govuk-form-group govuk-!-margin-bottom-5">
-          <label class="govuk-label" for="address-postcode">
-            Postcode
-          </label>
-          <input class="govuk-input govuk-input--width-10 govuk-!-padding-bottom-0" id="address-postcode" name="addressPostcode" type="text">
+          <input class="govuk-input govuk-!-width-one-half" value="Johnstone" id="last-name" name="lastName" type="text">
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="property-number">
-            Property name or number (optional)
-          </label>
-          <div id="event-name-hint" class="govuk-hint">
-            For example, ‘The Mill’, ‘116’ or ‘Flat 36a’
-          </div>
-          <input class="govuk-input govuk-input--width-5" id="property-number" name="propertyNumber" type="text">
+          <fieldset class="govuk-fieldset" role="group">
+            <legend class="govuk-fieldset__legend">
+              Date of birth
+            </legend>
+
+            <div class="govuk-date-input" id="date-of-birth">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="date-of-birth-day">
+                    Day
+                  </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="24" id="date-of-birth-day" name="dateBirthday" type="text" inputmode="numeric">
+                </div>
+              </div>
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="date-of-birth-month">
+                    Month
+                  </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="10" id="date-of-birth-month" name="dateBirthmonth" type="text" inputmode="numeric">
+                </div>
+              </div>
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="date-of-birth-year">
+                    Year
+                  </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="1986" id="date-of-birth-year" name="dateBirthyear" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
         </div>
+
+        {% call govukFieldset({
+          legend: {
+            text: "Address",
+            classes: "govuk-visually-hidden"
+          }
+        }) %}
+
+          {{ govukInput({
+            label: {
+              text: "Address line 1"
+            },
+            id: "address-line-1",
+            name: "addressLine1",
+            value: "12 Primrose Road"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Address line 2"
+            },
+            id: "address-line-2",
+            name: "addressLine2"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Town or city"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-town",
+            name: "addressTown",
+            value: "Southampton"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Postcode"
+            },
+            classes: "govuk-input--width-10",
+            id: "address-postcode",
+            name: "addressPostcode",
+            value: "SO16 3GP"
+          }) }}
+
+        {% endcall %}
+
+        <p class="govuk-body govuk-!-margin-bottom-6">
+          <a class="govuk-link govuk-link--no-visited-state" href="">Change address using a postcode</a>
+        </p>
+
+        {{ govukInput({
+          label: {
+            text: "Email address"
+          },
+          id: "email",
+          name: "email",
+          value: "leah86@yahoo.co.uk",
+          type: "email",
+          spellcheck: false
+        }) }}
 
         {{ govukInput({
           label: {
             text: "Telephone number 1"
           },
-          id: "telephone-number",
-          name: "telephoneNumber",
+          id: "telephone-number-1",
+          name: "telephoneNumber1",
           value: "023 8055 8402",
           type: "tel",
           classes: "govuk-input--width-10"
@@ -89,8 +156,8 @@
           label: {
             text: "Telephone number 2"
           },
-          id: "telephone-number",
-          name: "telephoneNumber",
+          id: "telephone-number-2",
+          name: "telephoneNumber2",
           value: "07844 639956",
           type: "tel",
           classes: "govuk-input--width-10"

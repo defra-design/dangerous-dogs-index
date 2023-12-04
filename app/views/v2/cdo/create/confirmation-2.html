@@ -1,32 +1,34 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Confirm dog details" %}
-
 {% block pageTitle %}
-  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+  Record created – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "dog-details-2"
-  }) }}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../index"
+    }
+  ]
+}) }}
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/cdo/create/confirmation-2" method="post">
+      {{ govukPanel({
+        classes: "govuk-!-margin-bottom-7",
+        titleText: "Record created"
+      }) }}
 
-      <h1 class="govuk-heading-l">
-        {{ pageName }}
-      </h1>
-
-      <h2 class="govuk-heading-m">Dog 1</h2>
+      <h2 class="govuk-heading-m">
+        Dog ED30874
+      </h2>
 
       {{ govukSummaryList({
-        classes: "govuk-!-margin-bottom-4",
         rows: [
           {
             key: {
@@ -63,14 +65,11 @@
         ]
       }) }}
 
-      <p class="govuk-body govuk-!-margin-bottom-7">
-        <a class="govuk-link govuk-link--no-visited-state" href="dog-details-edit-1">Change dog details</a>
-      </p>
-
-      <h2 class="govuk-heading-m">Dog 2</h2>
+      <h2 class="govuk-heading-m">
+        Dog ED30875
+      </h2>
 
       {{ govukSummaryList({
-        classes: "govuk-!-margin-bottom-4",
         rows: [
           {
             key: {
@@ -107,21 +106,66 @@
         ]
       }) }}
 
-      <p class="govuk-body govuk-!-margin-bottom-7">
-        <a class="govuk-link govuk-link--no-visited-state" href="dog-details-edit-2">Change dog details</a>
+      <h2 class="govuk-heading-m">
+        Owner and enforcement details
+      </h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Leah Johnstone"
+            }
+          },
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: "2 December 1986"
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: "12 Primrose Road<br>Southampton<br>SO16 3GP"
+            }
+          },
+          {
+            key: {
+              text: "Court"
+            },
+            value: {
+              text: data['court'] or "Southampton (West Hampshire) Magistrates’ Court"
+            }
+          },
+          {
+            key: {
+              text: "Police force"
+            },
+            value: {
+              text: data['police-force'] or "Hampshire Constabulary"
+            }
+          },
+          {
+            key: {
+              text: "Dog legislation officer"
+            },
+            value: {
+              text: data['dog-legislation-officer'] or "Nigel Hillier"
+            }
+          }
+        ]
+      }) }}
+
+      <p class="govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="../index">Dangerous Dogs Index home</a>
       </p>
-
-      <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Save record"
-        }) }}
-
-        {{ govukButton({
-          text: "Add another dog for this owner",
-          classes: "govuk-button--secondary",
-          href: "dog-details-2"
-        }) }}
-      </div>
 
     </div>
   </div>

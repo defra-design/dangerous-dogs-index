@@ -1,0 +1,24 @@
+{% extends "layouts/defra.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<br>
+<p class="govuk-body">
+  The content featured on the Index page is to be agreed.
+</p>
+
+<br>
+<br>
+<br>
+
+{{ govukButton({
+  text: "Create record",
+  href: "create",
+  isStartButton: true
+}) }}
+
+{% endblock %}

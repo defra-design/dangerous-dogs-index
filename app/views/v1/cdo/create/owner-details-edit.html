@@ -1,0 +1,149 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Change owner details" %}
+{% set dateBirthday="24" %}
+{% set dateBirthmonth="10" %}
+{% set dateBirthyear="1996" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "confirm-details"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v1/cdo/create/confirm-details" method="post">
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          {{ pageName }}
+        </legend>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-5">
+          <label class="govuk-label" for="first-name">
+            First name
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" value="{{ firstName }} Leah" id="first-name" name="firstName" type="text" autocomplete="first-name">
+        </div>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-5">
+          <label class="govuk-label" for="last-name">
+            Last name
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" value="Johnstone" id="last-name" name="lastName" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="owner-date-of-birth-hint">
+          <legend class="govuk-fieldset__legend">
+            Date of birth (optional)
+          </legend>
+
+          <div id="owner-date-of-birth-hint" class="govuk-hint">
+            For example, 27 3 1987
+          </div>
+
+          <div class="govuk-date-input" id="owner-date-of-birth">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="owner-date-of-birth-day">
+                  Day
+                </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="{{ dateBirthday }}" id="owner-date-of-birth-day" name="owner-date-of-birth-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="owner-date-of-birth-month">
+                  Month
+                </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="{{ dateBirthmonth }}" id="owner-date-of-birth-month" name="owner-date-of-birth-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="owner-date-of-birth-year">
+                  Year
+                </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="{{ dateBirthyear }}" id="owner-date-of-birth-year" name="owner-date-of-birth-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {% call govukFieldset({
+        legend: {
+          text: "Address",
+          classes: "govuk-fieldset__legend--m"
+        }
+      }) %}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          id: "address-line-1",
+          name: "addressLine1",
+          value: "12 Primrose Road"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          id: "address-line-2",
+          name: "addressLine2"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Town or city"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "address-town",
+          name: "addressTown",
+          value: "Southampton"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Postcode"
+          },
+          classes: "govuk-input--width-10",
+          id: "address-postcode",
+          name: "addressPostcode",
+          value: "SO16 3GP"
+        }) }}
+
+      {% endcall %}
+
+      <p class="govuk-body govuk-!-margin-bottom-6">
+        <a class="govuk-link govuk-link--no-visited-state" href="">Find address by postcode</a>
+      </p>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Make changes"
+        }) }}
+
+        <a class="govuk-link govuk-link--no-visited-state" href="confirm-details">Cancel</a>
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

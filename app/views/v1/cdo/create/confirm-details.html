@@ -1,0 +1,100 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Confirm details" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "enforcement-details"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v1/cdo/create/dog-details" method="post">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-4",
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Leah Johnstone"
+            }
+          },
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: data['dateBirth'] or "24 October 1986"
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: "12 Primrose Road<br>Southampton<br>SO16 3GP"
+            }
+          }
+        ]
+      }) }}
+
+      <p class="govuk-body govuk-!-margin-bottom-7">
+        <a class="govuk-link govuk-link--no-visited-state" href="owner-details-edit">Change owner details</a>
+      </p>
+
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-4",
+        rows: [
+          {
+            key: {
+              text: "Court"
+            },
+            value: {
+              text: data['court'] or "Southampton (West Hampshire) Magistrates’ Court"
+            }
+          },
+          {
+            key: {
+              text: "Police force"
+            },
+            value: {
+              text: data['police-force'] or "Hampshire Constabulary"
+            }
+          },
+          {
+            key: {
+              text: "Dog legislation officer"
+            },
+            value: {
+              text: data['dog-legislation-officer'] or "Nigel Hillier"
+            }
+          }
+        ]
+      }) }}
+
+      <p class="govuk-body govuk-!-margin-bottom-7">
+        <a class="govuk-link govuk-link--no-visited-state" href="enforcement-details-edit">Change court and police details</a>
+      </p>
+
+      {{ govukButton({
+        text: "Confirm details"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

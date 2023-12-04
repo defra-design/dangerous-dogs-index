@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "confirm-address"
+  href: "../create"
 }) }}
 {% endblock %}
 
@@ -18,7 +18,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/cdo/create/enforcement-details" method="post">
+      <form class="form" action="/v2/cdo/create/enforcement-details" method="post">
 
         {% call govukFieldset({
           legend: {
@@ -34,7 +34,7 @@
             },
             id: "address-line-1",
             name: "addressLine1",
-            value: "12 Primrose Road"
+            autocomplete: "address-line1"
           }) }}
 
           {{ govukInput({
@@ -42,7 +42,8 @@
               text: "Address line 2 (optional)"
             },
             id: "address-line-2",
-            name: "addressLine2"
+            name: "addressLine2",
+            autocomplete: "address-line2"
           }) }}
 
           {{ govukInput({
@@ -52,7 +53,7 @@
             classes: "govuk-!-width-two-thirds",
             id: "address-town",
             name: "addressTown",
-            value: "Southampton"
+            autocomplete: "address-level2"
           }) }}
 
           {{ govukInput({
@@ -62,7 +63,7 @@
             classes: "govuk-input--width-10",
             id: "address-postcode",
             name: "addressPostcode",
-            value: "SO16 3GP"
+            autocomplete: "postal-code"
           }) }}
 
         {% endcall %}

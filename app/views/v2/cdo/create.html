@@ -1,0 +1,95 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Create new record" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "index"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      <form class="form" action="/v2/cdo/create/confirm-address" method="post">
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          Owner details
+        </legend>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-5">
+          <label class="govuk-label" for="first-name">
+            First name
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="first-name" name="firstName" type="text">
+        </div>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-5">
+          <label class="govuk-label" for="last-name">
+            Last name
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="last-name" name="lastName" type="text">
+        </div>
+
+      {{ govukDateInput({
+        id: "date-of-birth",
+        name: "dateBirth",
+        namePrefix: "dateBirth",
+        fieldset: {
+          legend: {
+            text: "Date of birth (optional)"
+        }
+              },
+        hint: {
+        text: "For example, 27 3 1987"
+        }
+      }) }}
+
+        <div class="govuk-form-group govuk-!-margin-bottom-5">
+          <label class="govuk-label" for="address-postcode">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-input--width-10 govuk-!-padding-bottom-0" id="address-postcode" name="addressPostcode" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="property-number">
+            Property name or number (optional)
+          </label>
+          <div id="event-name-hint" class="govuk-hint">
+            For example, ‘The Mill’, ‘116’ or ‘Flat 36a’
+          </div>
+          <input class="govuk-input govuk-input--width-5" id="property-number" name="propertyNumber" type="text">
+        </div>
+      </fieldset>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Find address"
+        }) }}
+
+        {{ govukButton({
+          text: "Enter address manually",
+          classes: "govuk-button--secondary",
+          href: "/v2/cdo/create/enter-address"
+        }) }}
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

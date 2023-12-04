@@ -195,7 +195,7 @@
               text: "Telephone number 1"
             },
             value: {
-              text: "023 8055 8402"
+              text: data['telephoneNumber1'] or "023 8055 8402"
             }
           },
           {
@@ -203,7 +203,7 @@
               text: "Telephone number 2"
             },
             value: {
-              text: "07844 639956"
+              text: data['telephoneNumber2'] or "07844 639956"
             }
           },
           {
@@ -211,7 +211,7 @@
               text: "County"
             },
             value: {
-              text: "Hampshire"
+              text: data['county'] or "Hampshire"
             }
           },
           {
@@ -219,7 +219,7 @@
               text: "Country"
             },
             value: {
-              text: "England"
+              text: data['country'] or "England"
             }
           },
           {
@@ -227,7 +227,7 @@
               text: "Police force"
             },
             value: {
-              text: "Hampshire Constabulary"
+              text: data['police-force'] or "Hampshire Constabulary"
             }
           },
           {
