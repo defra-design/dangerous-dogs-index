@@ -25,6 +25,47 @@
       }) }}
 
       <h2 class="govuk-heading-m">
+        Dog ED30874
+      </h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Breed type"
+            },
+            value: {
+              text: data['breedType1'] or "XL Bully"
+            }
+          },
+          {
+            key: {
+              text: "Dog name"
+            },
+            value: {
+              text: data['dogName1'] or "Bruce"
+            }
+          },
+          {
+            key: {
+              text: "CDO issue date"
+            },
+            value: {
+              text: data['cdo-issued'] or "29 November 2023"
+            }
+          },
+          {
+            key: {
+              text: "CDO expiry date"
+            },
+            value: {
+              text: data['cdo-expiry'] or "29 January 2024"
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">
         Dog ED30875
       </h2>
 

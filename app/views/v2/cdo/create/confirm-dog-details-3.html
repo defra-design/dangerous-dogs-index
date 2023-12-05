@@ -31,74 +31,16 @@
           actions: {
             items: [
               {
-                href: "dog-details-edit-1",
-                text: "Change details",
-                classes: "govuk-!-font-weight-regular govuk-link--no-visited-state",
-                visuallyHiddenText: data['breedType1'] or "XL Bully"
-              },
-              {
-                href: "delete-dog-record-1",
-                text: "Delete",
-                classes: "govuk-!-font-weight-regular govuk-link--no-visited-state",
-                visuallyHiddenText: data['breedType1'] or "XL Bully"
-              }
-            ]
-          }
-        },
-        rows: [
-          {
-            key: {
-              text: "Dog breed"
-            },
-            value: {
-              text: data['breedType1'] or "XL Bully"
-            }
-          },
-          {
-            key: {
-              text: "Dog name"
-            },
-            value: {
-              text: data['dogName1'] or "Bruce"
-            }
-          },
-          {
-            key: {
-              text: "CDO issue date"
-            },
-            value: {
-              text: data['cdo-issued'] or "29 November 2023"
-            }
-          },
-          {
-            key: {
-              text: "CDO expiry date"
-            },
-            value: {
-              text: data['cdo-expiry'] or "29 January 2024"
-            }
-          }
-        ]
-      }) }}
-
-      {{ govukSummaryList({
-        card: {
-          title: {
-            text: "Dog 2"
-          },
-          actions: {
-            items: [
-              {
                 href: "dog-details-edit-2",
                 text: "Change details",
                 classes: "govuk-!-font-weight-regular govuk-link--no-visited-state",
-                visuallyHiddenText: data['breedType1'] or "XL Bully"
+                visuallyHiddenText: data['breedType2'] or "XL Bully"
               },
               {
-                href: "delete-dog-record-2",
+                href: "confirm-delete",
                 text: "Delete",
                 classes: "govuk-!-font-weight-regular govuk-link--no-visited-state",
-                visuallyHiddenText: data['breedType1'] or "XL Bully"
+                visuallyHiddenText: data['breedType2'] or "XL Bully"
               }
             ]
           }
