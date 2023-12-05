@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "dog-details"
+    href: "confirm-dog-details-2"
   }) }}
 {% endblock %}
 
@@ -17,7 +17,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v2/cdo/create/dog-details" method="post">
+      <form class="form" action="/v2/cdo/create/confirm-dog-details" method="post">
 
       <h1 class="govuk-heading-l">
         {{ pageName }}
@@ -34,7 +34,7 @@
               text: "Breed type"
             },
             value: {
-              text: data['breedType1'] or "XL Bully"
+              text: data['breedType2'] or "XL Bully"
             }
           },
           {
@@ -42,7 +42,7 @@
               text: "Dog name"
             },
             value: {
-              text: data['dogName1'] or "Bruce"
+              text: data['dogName2'] or "Bruce"
             }
           },
           {
@@ -66,10 +66,10 @@
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Delete dog"
+          text: "Delete dog details"
         }) }}
 
-        <a class="govuk-link govuk-link--no-visited-state" href="confirm-dog-details">Cancel</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="confirm-dog-details-2">Cancel</a>
       </div>
 
     </div>
