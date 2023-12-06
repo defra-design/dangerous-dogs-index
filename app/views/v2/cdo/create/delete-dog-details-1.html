@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Delete dog record" %}
+{% set pageName="Delete dog details" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -24,7 +24,7 @@
       </h1>
 
       <p class="govuk-body">
-        Confirm you want to delete this dog record.
+        Confirm you want to delete these dog details.
       </p>
 
       {{ govukSummaryList({
@@ -66,7 +66,7 @@
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Delete dog"
+          text: "Delete dog details"
         }) }}
 
         <a class="govuk-link govuk-link--no-visited-state" href="confirm-dog-details-2">Cancel</a>
