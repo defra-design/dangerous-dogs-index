@@ -1,7 +1,7 @@
 //
 // For guidance on how to add CSS and SCSS see:
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-// 
+//
 
 // Add extra styles here
 @import "defra-settings";
@@ -20,12 +20,12 @@
       min-height: 35px;
     }
   }
-  
+
   .defra-internal-header .defra-logo {
     min-width: 275px;
     margin-bottom: 15px;
   }
-  
+
   @media (min-width: 48.0625em) {
     .defra-internal-header .defra-logo {
       display: table-cell;
@@ -33,7 +33,7 @@
       margin-bottom: 0;
     }
   }
-  
+
   @media (min-width: 48.0625em) {
     .defra-internal-service-name {
       display: table-cell;
@@ -41,24 +41,24 @@
       padding-left: 2em;
     }
   }
-  
+
   .defra-internal-service-name__link {
     text-decoration: none;
     font-size: 21px;
     font-weight: 400;
   }
-  
-  .defra-internal-service-name__link:link, 
+
+  .defra-internal-service-name__link:link,
   .defra-internal-service-name__link:visited {
     color: $govuk-text-colour
   }
-  
+
   @media (min-width: 48.0625em) {
     .defra-internal-service-name__link {
       font-size: 24px;
     }
   }
-  
+
   .defra-logo {
     border-left: 2px solid $defra-brand-colour;
     padding-left: 8px;
@@ -67,7 +67,7 @@
   .defra-logo__link {
     display: table;
   }
-  
+
   .defra-logo__link::before {
     content: '';
     display: table-cell;
@@ -76,18 +76,22 @@
     width: 138px;
     height: 75px;
   }
-  
-  .defra-logo__link:link, 
+
+  .defra-logo__link:link,
   .defra-logo__link:visited {
     text-decoration: none;
     font-size: 20px;
     color: $govuk-text-colour;
   }
-  
+
   .defra-logo__img {
     visibility: hidden;
     height: 0;
     width: 0;
   }
-  
 
+  //search results
+  .defra-search-header {
+    display: flex;
+    align-items: flex-end;
+  }

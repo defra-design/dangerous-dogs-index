@@ -13,12 +13,21 @@
 
 <br>
 <br>
-<br>
 
+<div>
 {{ govukButton({
   text: "Create record",
-  href: "create",
+  href: "/v2/cdo/create",
   isStartButton: true
 }) }}
+</div>
+
+<div>
+{{ govukButton({
+  text: "Search",
+  href: "/v2/search/search-results",
+  isStartButton: true
+}) }}
+</div>
 
 {% endblock %}
