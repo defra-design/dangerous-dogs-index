@@ -40,6 +40,7 @@
             {
               href: "#",
               text: "Change details",
+              classes: "govuk-link--no-visited-state",
               visuallyHiddenText: "for exemption"
             }
           ]
@@ -97,15 +98,127 @@
       ]
     }) }}
 
-      <h2 class="govuk-heading-m govuk-!-margin-top-7">Dog details</h2>
+    {{ govukSummaryList({
+      card: {
+      title: {
+      text: "Owner details"
+      },
+      id: "owner-details",
+      actions: {
+        items: [
+          {
+            href: "change-owner-details",
+            text: "Change details",
+            classes: "govuk-link--no-visited-state",
+            visuallyHiddenText: "for owner"
+            }
+          ]
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: "Leah Johnstone"
+          }
+        },
+        {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            text: "24 October 1986"
+          }
+        },
+        {
+          key: {
+            text: "Address"
+          },
+          value: {
+            text: "12 Primrose Road, Southampton SO15 7NN"
+          }
+        },
+        {
+          key: {
+            text: "Email"
+          },
+          value: {
+            text: "leah86@yahoo.co.uk"
+          }
+        },
+        {
+          key: {
+            text: "Telephone number 1"
+          },
+          value: {
+            text: data['telephoneNumber1'] or "023 8055 8402"
+          }
+        },
+        {
+          key: {
+            text: "Telephone number 2"
+          },
+          value: {
+            text: data['telephoneNumber2'] or "07844 639956"
+          }
+        },
+        {
+          key: {
+            text: "County"
+          },
+          value: {
+            text: data['county'] or "Hampshire"
+          }
+        },
+        {
+          key: {
+            text: "Country"
+          },
+          value: {
+            text: data['country'] or "England"
+          }
+        },
+        {
+          key: {
+            text: "Police force"
+          },
+          value: {
+            text: data['police-force'] or "Hampshire Constabulary"
+          }
+        },
+        {
+          key: {
+            text: "Comments"
+          },
+          value: {
+            text: "Previous address: 3 Ethelburt Avenue, Southampton SO16 3DD"
+          }
+        }
+      ]
+    }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-one-half">
 
       {{ govukSummaryList({
         card: {
         title: {
-        text: "Exemption details"
+        text: "Dog details"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "Change details",
+              classes: "govuk-link--no-visited-state",
+              visuallyHiddenText: "for dog"
+              }
+            ]
           }
         },
-        classes: "govuk-!-margin-bottom-4",
         rows: [
           {
             key: {
@@ -165,102 +278,6 @@
           }
         ]
       }) }}
-
-      <p class="govuk-body">
-        <a class="govuk-link govuk-link--no-visited-state" href="#">Change dog details</a>
-      </p>
-
-      <h2 class="govuk-heading-m govuk-!-margin-top-7">Owner details</h2>
-
-      {{ govukSummaryList({
-        classes: "govuk-!-margin-bottom-4",
-        rows: [
-          {
-            key: {
-              text: "Name"
-            },
-            value: {
-              text: "Leah Johnstone"
-            }
-          },
-          {
-            key: {
-              text: "Date of birth"
-            },
-            value: {
-              text: "24 October 1986"
-            }
-          },
-          {
-            key: {
-              text: "Address"
-            },
-            value: {
-              text: "12 Primrose Road, Southampton SO15 7NN"
-            }
-          },
-          {
-            key: {
-              text: "Email"
-            },
-            value: {
-              text: "leah86@yahoo.co.uk"
-            }
-          },
-          {
-            key: {
-              text: "Telephone number 1"
-            },
-            value: {
-              text: data['telephoneNumber1'] or "023 8055 8402"
-            }
-          },
-          {
-            key: {
-              text: "Telephone number 2"
-            },
-            value: {
-              text: data['telephoneNumber2'] or "07844 639956"
-            }
-          },
-          {
-            key: {
-              text: "County"
-            },
-            value: {
-              text: data['county'] or "Hampshire"
-            }
-          },
-          {
-            key: {
-              text: "Country"
-            },
-            value: {
-              text: data['country'] or "England"
-            }
-          },
-          {
-            key: {
-              text: "Police force"
-            },
-            value: {
-              text: data['police-force'] or "Hampshire Constabulary"
-            }
-          },
-          {
-            key: {
-              text: "Comments"
-            },
-            value: {
-              text: "Previous address: 3 Ethelburt Avenue, Southampton SO16 3DD"
-            }
-          }
-        ]
-      }) }}
-
-      <p class="govuk-body">
-        <a class="govuk-link govuk-link--no-visited-state" href="change-owner-details">Change owner details</a>
-      </p>
 
     </div>
   </div>
