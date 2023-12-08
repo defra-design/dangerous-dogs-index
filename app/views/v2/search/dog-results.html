@@ -1,0 +1,129 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Search" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "search"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v2/search/search-results" method="post">
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+          {{ pageName }}
+        </legend>
+
+      <div class="govuk-form-group govuk-!-margin-bottom-2">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="search">
+          Search
+          </label>
+        </h1>
+        <div id="event-name-hint" class="govuk-hint">
+          Enter one or more search terms separated by spaces
+        </div>
+        <input class="govuk-input" value="ED10874" id="search" name="keyword" type="text">
+      </div>
+
+      <div class="govuk-form-group govuk-!-margin-bottom-2">
+        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+          Record type
+          </legend>
+          <div class="govuk-radios govuk-radios--inline govuk-radios--small"
+            data-module="govuk-radios">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="recordType" name="recordType" type="radio" value="Dog record" checked>
+                <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="recordType">
+                  Dog record
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="recordType-2" name="recordType" type="radio" value="Owner record">
+                <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="recordType-2">
+                  Owner record
+                </label>
+              </div>
+            </div>
+        </fieldset>
+
+      {{ govukButton({
+        text: "Search"
+      }) }}
+
+      </form>
+
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+        1 result
+        </p>
+
+      <hr class="govuk-section-break govuk-section-break--s govuk-!-margin-bottom-6 govuk-section-break--visible">
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-2 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title defra-search-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="/v2/dog-record">
+            ED10874
+          </a></h2>
+          <!--
+          <ul class="govuk-summary-card__actions govuk-!-font-weight-regular">
+            <li class="defra-search-header govuk-!-font-size-16">
+                10 Fitzgerald Street, Preston PR1 5EN
+            </li>
+          </ul>
+          -->
+        </div>
+
+        <div class="govuk-summary-card__content govuk-!-padding-top-1 govuk-!-padding-bottom-0">
+          <table class="govuk-table govuk-!-margin-bottom-3">
+            <caption class="govuk-table__caption govuk-!-font-weight-regular govuk-!-font-size-16">
+                </caption>
+              <thead class="govuk-table__head govuk-!-font-size-16">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                    Dog name
+                  </th>
+                  <th scope="col" class="govuk-table__header">
+                    Owner name
+                  </th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">
+                    Microchip number
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                     Rocky
+                    </td>
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                      Jill Scott
+                    </td>
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                      901234512345678
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      <hr class="govuk-section-break govuk-section-break--s">
+
+    </div>
+  </div>
+
+{% endblock %}
