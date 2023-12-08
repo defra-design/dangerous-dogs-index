@@ -22,72 +22,89 @@
       </h1>
 
       {{ govukTag({
+        classes: "govuk-!-margin-bottom-6",
         text: "Exempt"
       }) }}
 
-      <h2 class="govuk-heading-m govuk-!-margin-top-7">Exemption details</h2>
+    </div>
 
-      {{ govukSummaryList({
-        classes: "govuk-!-margin-bottom-4",
-        rows: [
-          {
-            key: {
-              text: "Certificate issued"
-            },
-            value: {
-              text: "30 July 2019"
+    <div class="govuk-grid-column-one-half">
+
+    {{ govukSummaryList({
+      card: {
+        title: {
+          text: "Exemption details"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "Change details",
+              visuallyHiddenText: "for exemption"
             }
+          ]
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "Certificate issued"
           },
-          {
-            key: {
-              text: "CDO issue date"
-            },
-            value: {
-              text: "2 February 2019"
-            }
-          },
-          {
-            key: {
-              text: "Insurance company"
-            },
-            value: {
-              html: "	Dogs Trust"
-            }
-          },
-          {
-            key: {
-              text: "Insurance renewal"
-            },
-            value: {
-              text: "23 June 2024"
-            }
-          },
-          {
-            key: {
-              text: "Insurance policy"
-            },
-            value: {
-              html: "38345128"
-            }
-          },
-          {
-            key: {
-              text: "Neutered and microchipped"
-            },
-            value: {
-              html: "Yes"
-            }
+          value: {
+            text: "30 July 2019"
           }
-        ]
-      }) }}
-
-      <p class="govuk-body">
-        <a class="govuk-link govuk-link--no-visited-state" href="#">Change exemption details</a>
-      </p>
+        },
+        {
+          key: {
+            text: "CDO issue date"
+          },
+          value: {
+            text: "2 February 2019"
+          }
+        },
+        {
+          key: {
+            text: "Insurance company"
+          },
+          value: {
+            html: "	Dogs Trust"
+          }
+        },
+        {
+          key: {
+            text: "Insurance renewal"
+          },
+          value: {
+            text: "23 June 2024"
+          }
+        },
+        {
+          key: {
+            text: "Insurance policy"
+          },
+          value: {
+            html: "38345128"
+          }
+        },
+        {
+          key: {
+            text: "Neutered and microchipped"
+          },
+          value: {
+            html: "Yes"
+          }
+        }
+      ]
+    }) }}
 
       <h2 class="govuk-heading-m govuk-!-margin-top-7">Dog details</h2>
 
       {{ govukSummaryList({
+        card: {
+        title: {
+        text: "Exemption details"
+          }
+        },
         classes: "govuk-!-margin-bottom-4",
         rows: [
           {

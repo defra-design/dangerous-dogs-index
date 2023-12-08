@@ -10,9 +10,9 @@ const router = govukPrototypeKit.requests.setupRouter()
 router.post('/v2/search/search-results', function (req, res) {
   var recordType = req.session.data['recordType']
   if (recordType == "Dog record"){
-    res.redirect('/v2/search/dog-results')
+    res.redirect('/v2/search/dog-results-4')
   } else {
-    res.redirect('/v2/search/owner-results')
+    res.redirect('/v2/search/owner-results-3')
   }
 
 })

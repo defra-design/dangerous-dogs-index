@@ -67,7 +67,7 @@
       </form>
 
       <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-        1 dog record
+        2 dog records
         </p>
 
       <hr class="govuk-section-break govuk-section-break--s govuk-!-margin-bottom-6 govuk-section-break--visible">
@@ -77,13 +77,6 @@
           <h2 class="govuk-summary-card__title defra-search-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="/v2/dog-record">
             ED10874
           </a></h2>
-          <!--
-          <ul class="govuk-summary-card__actions govuk-!-font-weight-regular">
-            <li class="defra-search-header govuk-!-font-size-16">
-                10 Fitzgerald Street, Preston PR1 5EN
-            </li>
-          </ul>
-          -->
         </div>
 
         <div class="govuk-summary-card__content govuk-!-padding-top-1 govuk-!-padding-bottom-0">
@@ -99,7 +92,7 @@
                     Owner name
                   </th>
                   <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">
-                    Microchip number
+                    Status
                   </th>
                 </tr>
               </thead>
@@ -113,7 +106,9 @@
                       Jill Scott
                     </td>
                     <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
-                      901234512345678
+                      {{ govukTag({
+                        text: "Exempt"
+                      }) }}
                     </td>
                   </tr>
               </tbody>
@@ -122,6 +117,50 @@
         </div>
 
       <hr class="govuk-section-break govuk-section-break--s">
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-2 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title defra-search-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="/v2/dog-record">
+            ED30227
+          </a></h2>
+        </div>
+
+        <div class="govuk-summary-card__content govuk-!-padding-top-1 govuk-!-padding-bottom-0">
+          <table class="govuk-table govuk-!-margin-bottom-3">
+            <caption class="govuk-table__caption govuk-!-font-weight-regular govuk-!-font-size-16">
+                </caption>
+              <thead class="govuk-table__head govuk-!-font-size-16">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                    Dog name
+                  </th>
+                  <th scope="col" class="govuk-table__header">
+                    Owner name
+                  </th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">
+                    Status
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                     Brutus
+                    </td>
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                      Gareth Staines
+                    </td>
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                      {{ govukTag({
+                        text: "Exempt"
+                      }) }}
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
     </div>
   </div>
