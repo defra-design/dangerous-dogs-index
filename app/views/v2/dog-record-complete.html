@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Dog ED10874" %}
+{% set pageName="Dog ED14415" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -21,26 +21,28 @@
         {{ pageName }}
       </h1>
 
-      {{ govukTag({
-        classes: "govuk-!-margin-bottom-6",
-        text: "Exempt"
-      }) }}
+      {{govukTag({
+        text: "Inactive",
+        classes: "govuk-tag--grey govuk-!-margin-bottom-6"
+      })}}
 
     </div>
 
     <div class="govuk-grid-column-one-half">
 
     {{ govukSummaryList({
+      classes: "govuk-!-font-size-16",
       card: {
         title: {
-          text: "Exemption details"
+          text: "Exemption details",
+          classes: "defra-summary-header"
         },
         actions: {
           items: [
             {
               href: "#",
-              text: "Change details",
-              classes: "govuk-link--no-visited-state",
+              text: "Edit details",
+              classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
               visuallyHiddenText: "for exemption"
             }
           ]
@@ -49,6 +51,7 @@
       rows: [
         {
           key: {
+            classes: "govuk-!-width-one-third",
             text: "Certificate issued"
           },
           value: {
@@ -57,6 +60,7 @@
         },
         {
           key: {
+            classes: "govuk-!-width-one-third",
             text: "CDO issue date"
           },
           value: {
@@ -65,6 +69,7 @@
         },
         {
           key: {
+            classes: "govuk-!-width-one-third",
             text: "Insurance company"
           },
           value: {
@@ -73,6 +78,7 @@
         },
         {
           key: {
+            classes: "govuk-!-width-one-third",
             text: "Insurance renewal"
           },
           value: {
@@ -81,6 +87,7 @@
         },
         {
           key: {
+            classes: "govuk-!-width-one-third",
             text: "Insurance policy"
           },
           value: {
@@ -89,6 +96,7 @@
         },
         {
           key: {
+            classes: "govuk-!-width-one-third",
             text: "Neutered and microchipped"
           },
           value: {
@@ -99,17 +107,19 @@
     }) }}
 
     {{ govukSummaryList({
+      classes: "govuk-!-font-size-16",
       card: {
       title: {
-      text: "Owner details"
+      text: "Owner details",
+      classes: "defra-summary-header"
       },
       id: "owner-details",
       actions: {
         items: [
           {
-            href: "change-owner-details",
-            text: "Change details",
-            classes: "govuk-link--no-visited-state",
+            href: "edit-owner-details",
+            text: "Edit details",
+            classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
             visuallyHiddenText: "for owner"
             }
           ]
@@ -118,6 +128,7 @@
       rows: [
         {
           key: {
+            classes: "govuk-!-width-one-third",
             text: "Name"
           },
           value: {
@@ -126,6 +137,7 @@
         },
         {
           key: {
+            classes: "govuk-!-width-one-third",
             text: "Date of birth"
           },
           value: {
@@ -134,14 +146,16 @@
         },
         {
           key: {
+            classes: "govuk-!-width-one-third",
             text: "Address"
           },
           value: {
-            text: "12 Primrose Road, Southampton SO15 7NN"
+            html: "12 Primrose Road<br>Southampton<br>SO15 7NN"
           }
         },
         {
           key: {
+            classes: "govuk-!-width-one-third",
             text: "Email"
           },
           value: {
@@ -150,6 +164,7 @@
         },
         {
           key: {
+            classes: "govuk-!-width-one-third",
             text: "Telephone number 1"
           },
           value: {
@@ -158,6 +173,7 @@
         },
         {
           key: {
+            classes: "govuk-!-width-one-third",
             text: "Telephone number 2"
           },
           value: {
@@ -166,6 +182,7 @@
         },
         {
           key: {
+            classes: "govuk-!-width-one-third",
             text: "County"
           },
           value: {
@@ -174,6 +191,7 @@
         },
         {
           key: {
+            classes: "govuk-!-width-one-third",
             text: "Country"
           },
           value: {
@@ -182,6 +200,7 @@
         },
         {
           key: {
+            classes: "govuk-!-width-one-third",
             text: "Police force"
           },
           value: {
@@ -190,6 +209,7 @@
         },
         {
           key: {
+            classes: "govuk-!-width-one-third",
             text: "Comments"
           },
           value: {
@@ -204,16 +224,18 @@
     <div class="govuk-grid-column-one-half">
 
       {{ govukSummaryList({
+        classes: "govuk-!-font-size-16",
         card: {
         title: {
-        text: "Dog details"
+        text: "Dog details",
+        classes: "defra-summary-header"
         },
         actions: {
           items: [
             {
               href: "#",
-              text: "Change details",
-              classes: "govuk-link--no-visited-state",
+              text: "Edit details",
+              classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
               visuallyHiddenText: "for dog"
               }
             ]
@@ -222,46 +244,25 @@
         rows: [
           {
             key: {
+              classes: "govuk-!-width-one-third",
               text: "Name"
             },
             value: {
-              text: "Simba"
+              text: "Biff"
             }
           },
           {
             key: {
+              classes: "govuk-!-width-one-third",
               text: "Breed type"
             },
             value: {
-              text: "Pit Bull Terrier"
+              text: "XL Bully"
             }
           },
           {
             key: {
-              text: "Date of birth"
-            },
-            value: {
-              html: "12 April 2018"
-            }
-          },
-          {
-            key: {
-              text: "Microchip number"
-            },
-            value: {
-              text: "977206034033729"
-            }
-          },
-          {
-            key: {
-              text: "Sex"
-            },
-            value: {
-              html: "Male"
-            }
-          },
-          {
-            key: {
+              classes: "govuk-!-width-one-third",
               text: "Colour"
             },
             value: {
@@ -270,10 +271,74 @@
           },
           {
             key: {
+              classes: "govuk-!-width-one-third",
+              text: "Sex"
+            },
+            value: {
+              html: "Male"
+            }
+          },
+          {
+            key: {
+              classes: "govuk-!-width-one-third",
+              text: "Date of birth"
+            },
+            value: {
+              html: "12 April 2010"
+            }
+          },
+          {
+            key: {
+              classes: "govuk-!-width-one-third",
+              text: "Date of death"
+            },
+            value: {
+              html: "3 September 2022"
+            }
+          },
+          {
+            key: {
+              classes: "govuk-!-width-one-third",
               text: "Tattoo"
             },
             value: {
-              html: "ED 14415"
+              html: "ED14415"
+            }
+          },
+          {
+            key: {
+              classes: "govuk-!-width-one-third",
+              text: "Microchip number"
+            },
+            value: {
+              text: "863206034034482"
+            }
+          },
+          {
+            key: {
+              classes: "govuk-!-width-one-third",
+              text: "Microchip number 2"
+            },
+            value: {
+              text: "334670000033267"
+            }
+          },
+          {
+            key: {
+              classes: "govuk-!-width-one-third",
+              text: "Date exported"
+            },
+            value: {
+              html: "14 May 2020"
+            }
+          },
+          {
+            key: {
+              classes: "govuk-!-width-one-third",
+              text: "Date stolen"
+            },
+            value: {
+              html: "11 October 2019"
             }
           }
         ]
