@@ -12,7 +12,7 @@ router.post('/v2/search/search-results', function (req, res) {
   if (recordType == "Dog record"){
     res.redirect('/v2/search/dog-results-4')
   } else {
-    res.redirect('/v2/search/owner-results-2')
+    res.redirect('/v2/search/owner-results-3')
   }
 
 })
