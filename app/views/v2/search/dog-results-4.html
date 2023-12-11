@@ -3,7 +3,7 @@
 {% set pageName="Search" %}
 
 {% block pageTitle %}
-  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ pageName }} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -34,7 +34,7 @@
         <div id="event-name-hint" class="govuk-hint">
           Enter one or more search terms separated by spaces
         </div>
-        <input class="govuk-input" value="10874" id="search" name="keyword" type="text">
+        <input class="govuk-input" value="10433" id="search" name="keyword" type="text">
       </div>
 
       <div class="govuk-form-group govuk-!-margin-bottom-2">
@@ -74,8 +74,8 @@
 
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-2 govuk-!-padding-bottom-1">
-          <h2 class="govuk-summary-card__title defra-summary-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="/v2/dog-record">
-            ED10874
+          <h2 class="govuk-summary-card__title defra-summary-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="/v2/dog-records/dog-record-ED10433">
+            ED10433
           </a></h2>
           <ul class="govuk-summary-card__actions govuk-!-font-weight-regular">
             {{ govukTag({
@@ -123,12 +123,13 @@
 
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-2 govuk-!-padding-bottom-1">
-          <h2 class="govuk-summary-card__title defra-summary-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="/v2/dog-record">
+          <h2 class="govuk-summary-card__title defra-summary-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="/v2/dog-records/dog-record-ED30227">
             ED30227
           </a></h2>
           <ul class="govuk-summary-card__actions govuk-!-font-weight-regular">
             {{ govukTag({
-              text: "Exempt"
+              text: "Dead",
+              classes: "defra-tag--grey"
             }) }}
           </ul>
         </div>

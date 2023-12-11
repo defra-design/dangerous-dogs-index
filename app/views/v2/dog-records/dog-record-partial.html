@@ -3,7 +3,7 @@
 {% set pageName="Dog ED10874" %}
 
 {% block pageTitle %}
-  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ pageName }} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -52,15 +52,6 @@
         {
           key: {
             classes: "govuk-!-width-one-third",
-            text: "Certificate issued"
-          },
-          value: {
-            text: "30 July 2019"
-          }
-        },
-        {
-          key: {
-            classes: "govuk-!-width-one-third",
             text: "CDO issue date"
           },
           value: {
@@ -69,11 +60,35 @@
         },
         {
           key: {
-            classes: "govuk-!-width-one-third",
-            text: "Insurance company"
+            text: "CDO expiry date"
           },
           value: {
-            html: "	Dogs Trust"
+            text: "2 April 2019"
+          }
+        },
+        {
+          key: {
+            text: "Court"
+          },
+          value: {
+            text: data['court'] or "Southampton (West Hampshire) Magistrates’ Court"
+          }
+        },
+        {
+          key: {
+            classes: "govuk-!-width-one-third",
+            text: "Police force"
+          },
+          value: {
+            text: data['police-force'] or "Hampshire Constabulary"
+          }
+        },
+        {
+          key: {
+            text: "Dog legislation officer"
+          },
+          value: {
+            text: data['dog-legislation-officer'] or "Nigel Hillier"
           }
         },
         {
@@ -150,7 +165,7 @@
             text: "Address"
           },
           value: {
-            text: "12 Primrose Road, Southampton SO15 7NN"
+            html: "12 Primrose Road<br>Southampton SO15 7NN"
           }
         },
         {

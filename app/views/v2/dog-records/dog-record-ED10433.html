@@ -1,0 +1,384 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Dog ED10433" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+        {{ pageName }}
+      </h1>
+
+      {{govukTag({
+        text: "Exempt",
+        classes: "govuk-!-margin-bottom-6"
+      })}}
+
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+
+    {{ govukSummaryList({
+      classes: "govuk-!-font-size-16",
+      card: {
+        title: {
+          text: "Exemption details",
+          classes: "defra-summary-header"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "Edit details",
+              classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
+              visuallyHiddenText: "for exemption"
+            }
+          ]
+        }
+      },
+      rows: [
+        {
+          classes: "govuk-!-width-one-third",
+          key: {
+            text: "Certificate issued"
+          },
+          value: {
+            text: "30 July 2019"
+          }
+        },
+        {
+          key: {
+            text: "CDO issue date"
+          },
+          value: {
+            text: "2 February 2019"
+          }
+        },
+        {
+          key: {
+            text: "CDO expiry date"
+          },
+          value: {
+            text: "2 April 2019"
+          }
+        },
+        {
+          key: {
+            text: "Court"
+          },
+          value: {
+            text: "Preston Magistrates’ Court"
+          }
+        },
+        {
+          key: {
+            classes: "govuk-!-width-one-third",
+            text: "Police force"
+          },
+          value: {
+            text: data['police-force'] or "Lancashire Constabulary"
+          }
+        },
+        {
+          key: {
+            text: "Dog legislation officer"
+          },
+          value: {
+            text: data['dog-legislation-officer'] or "Abigail Scrivens"
+          }
+        },
+        {
+          key: {
+            text: "Application fee paid"
+          },
+          value: {
+            text: "18 March 2019"
+          }
+        },
+        {
+          key: {
+            text: "Insurance company"
+          },
+          value: {
+            text: "	Dogs Trust"
+          }
+        },
+        {
+          key: {
+            text: "Insurance renewal date"
+          },
+          value: {
+            text: "14 March 2024"
+          }
+        },
+        {
+          key: {
+            text: "Neutering confirmed"
+          },
+          value: {
+            text: "11 March 2019"
+          }
+        },
+        {
+          key: {
+            text: "Microchip number verified"
+          },
+          value: {
+            text: "Yes"
+          }
+        },
+        {
+          key: {
+            text: "Joined interim exemption scheme"
+          },
+          value: {
+            text: "3 March 2019"
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukSummaryList({
+      classes: "govuk-!-font-size-16",
+      card: {
+      title: {
+      text: "Owner details",
+      classes: "defra-summary-header"
+      },
+      id: "owner-details",
+      actions: {
+        items: [
+          {
+            href: "edit-owner-details",
+            text: "Edit details",
+            classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
+            visuallyHiddenText: "for owner"
+            }
+          ]
+        }
+      },
+      rows: [
+        {
+          key: {
+            classes: "govuk-!-width-one-third",
+            text: "Name"
+          },
+          value: {
+            text: "Jill Scott"
+          }
+        },
+        {
+          key: {
+            classes: "govuk-!-width-one-third",
+            text: "Date of birth"
+          },
+          value: {
+            text: "5 May 1972"
+          }
+        },
+        {
+          key: {
+            classes: "govuk-!-width-one-third",
+            text: "Address"
+          },
+          value: {
+            html: "10 Fitzgerald Street<br>Preston<br>PR1 5EN"
+          }
+        },
+        {
+          key: {
+            classes: "govuk-!-width-one-third",
+            text: "Email"
+          },
+          value: {
+            text: "jilljscott72@gmail.com"
+          }
+        },
+        {
+          key: {
+            classes: "govuk-!-width-one-third",
+            text: "Telephone number 1"
+          },
+          value: {
+            text: data['telephoneNumber1'] or "01772 664023"
+          }
+        },
+        {
+          key: {
+            classes: "govuk-!-width-one-third",
+            text: "Telephone number 2"
+          },
+          value: {
+            text: data['telephoneNumber2'] or "07755 821465"
+          }
+        },
+        {
+          key: {
+            classes: "govuk-!-width-one-third",
+            text: "County"
+          },
+          value: {
+            text: data['county'] or "Lancashire"
+          }
+        },
+        {
+          key: {
+            classes: "govuk-!-width-one-third",
+            text: "Country"
+          },
+          value: {
+            text: data['country'] or "England"
+          }
+        },
+        {
+          key: {
+            classes: "govuk-!-width-one-third",
+            text: "Comments"
+          },
+          value: {
+            text: "Reminder where do past comments go"
+          }
+        }
+      ]
+    }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+
+      {{ govukSummaryList({
+        classes: "govuk-!-font-size-16",
+        card: {
+        title: {
+        text: "Dog details",
+        classes: "defra-summary-header"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "Edit details",
+              classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
+              visuallyHiddenText: "for dog"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              classes: "govuk-!-width-one-third",
+              text: "Name"
+            },
+            value: {
+              text: "Rocky"
+            }
+          },
+          {
+            key: {
+              classes: "govuk-!-width-one-third",
+              text: "Breed type"
+            },
+            value: {
+              text: "XL Bully"
+            }
+          },
+          {
+            key: {
+              classes: "govuk-!-width-one-third",
+              text: "Colour"
+            },
+            value: {
+              html: "Grey"
+            }
+          },
+          {
+            key: {
+              classes: "govuk-!-width-one-third",
+              text: "Sex"
+            },
+            value: {
+              html: "Male"
+            }
+          },
+          {
+            key: {
+              classes: "govuk-!-width-one-third",
+              text: "Date of birth"
+            },
+            value: {
+              html: "12 April 2010"
+            }
+          },
+          {
+            key: {
+              classes: "govuk-!-width-one-third",
+              text: "Date of death"
+            },
+            value: {
+              html: "3 September 2022"
+            }
+          },
+          {
+            key: {
+              classes: "govuk-!-width-one-third",
+              text: "Tattoo"
+            },
+            value: {
+              html: "ED10433"
+            }
+          },
+          {
+            key: {
+              classes: "govuk-!-width-one-third",
+              text: "Microchip number"
+            },
+            value: {
+              text: "901229512395772"
+            }
+          },
+          {
+            key: {
+              classes: "govuk-!-width-one-third",
+              text: "Microchip number 2"
+            },
+            value: {
+              text: "334670000033267"
+            }
+          },
+          {
+            key: {
+              classes: "govuk-!-width-one-third",
+              text: "Date exported"
+            },
+            value: {
+              html: "14 May 2020"
+            }
+          },
+          {
+            key: {
+              classes: "govuk-!-width-one-third",
+              text: "Date stolen"
+            },
+            value: {
+              html: "11 October 2019"
+            }
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

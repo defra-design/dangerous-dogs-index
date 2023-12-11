@@ -1,7 +1,7 @@
 {% extends "layouts/defra.html" %}
 
 {% block pageTitle %}
-  Change court and police details – {{ serviceName }} – GOV.UK Prototype Kit
+  Change court and police details – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -96,6 +96,10 @@
               {
                 value: "Peterborough Magistrates’ Court",
                 text: "Peterborough Magistrates’ Court"
+              },
+              {
+                value: "Preston Magistrates’ Court",
+                text: "Preston Magistrates’ Court"
               },
               {
                 value: "Salisbury Law Courts",
@@ -238,7 +242,7 @@
 
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Make changes"
+            text: "Change details"
           }) }}
 
           <a class="govuk-link govuk-link--no-visited-state" href="confirm-details">Cancel</a>

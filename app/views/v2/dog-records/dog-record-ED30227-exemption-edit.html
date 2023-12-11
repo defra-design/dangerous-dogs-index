@@ -1,13 +1,13 @@
 {% extends "layouts/defra.html" %}
 
 {% block pageTitle %}
-  Enter court and police details – {{ serviceName }}
+  Change court and police details – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: "dog-record-ED30227"
   }) }}
 {% endblock %}
 
@@ -27,6 +27,80 @@
         }) %}
 
           {{ govukSelect({
+            classes: "govuk-!-width-one-third",
+            name: "dog-status",
+            label: {
+              text: "Status"
+            },
+            items: [
+              {
+                value: "Dead",
+                text: "Dead",
+                selected: true
+              },
+              {
+                value: "Exempt",
+                text: "Exempt"
+              },
+              {
+                value: "Expired",
+                text: "Expired"
+              },
+              {
+                value: "Exported",
+                text: "Exported"
+              },
+              {
+                value: "In breach",
+                text: "In breach"
+              },
+              {
+                value: "Interim exemption",
+                text: "Interim exemption"
+              },
+              {
+                value: "Pre-exempt",
+                text: "Pre-exempt"
+              },
+              {
+                value: "Stolen",
+                text: "Stolen"
+              },
+              {
+                value: "Withdrawn",
+                text: "Withdrawn"
+              }
+            ]
+          }) }}
+
+          {{ govukDateInput({
+            namePrefix: "certificate-issued",
+            fieldset: {
+              legend: {
+                text: "Certificate issued"
+              }
+            }
+          }) }}
+
+          {{ govukDateInput({
+            namePrefix: "cdo-issued",
+            fieldset: {
+              legend: {
+                text: "CDO issued"
+              }
+            }
+          }) }}
+
+          {{ govukDateInput({
+            namePrefix: "cdo-expiry",
+            fieldset: {
+              legend: {
+                text: "CDO expiry"
+              }
+            }
+          }) }}
+
+          {{ govukSelect({
             id: "court",
             name: "court",
             label: {
@@ -35,12 +109,16 @@
             items: [
               {
                 value: "Choose court",
-                text: "Choose court",
-                selected: true
+                text: "Choose court"
               },
               {
                 value: "Aberystwyth Justice Centre",
                 text: "Aberystwyth Justice Centre"
+              },
+              {
+                value: "Barking and Dagenham Magistrates Court",
+                text: "Barking and Dagenham Magistrates Court",
+                selected: true
               },
               {
                 value: "Barrow-in-Furness Magistrates Court",
@@ -152,9 +230,6 @@
             label: {
               text: "Police force"
             },
-            hint: {
-             text: "Chosen using the dog owner’s postcode"
-            },
             items: [
               {
                 value: "Avon and Somerset Constabulary",
@@ -186,8 +261,7 @@
               },
               {
                 value: "Hampshire Constabulary",
-                text: "Hampshire Constabulary",
-                selected: true
+                text: "Hampshire Constabulary"
               },
               {
                 value: "Hertfordshire Constabulary",
@@ -203,7 +277,8 @@
               },
               {
                 value: "Metropolitan Police Service",
-                text: "Metropolitan Police Service"
+                text: "Metropolitan Police Service",
+                selected: true
               },
               {
                 value: "Staffordshire Police",
@@ -232,16 +307,99 @@
             label: {
               text: "Dog legislation officer (optional)"
             },
-            classes: "govuk-!-width-two-thirds",
+            classes: "govuk-!-width-three-quarters",
             id: "dog-legislation-officer",
-            name: "dog-legislation-officer"
+            name: "dog-legislation-officer",
+            value: data['dog-legislation-officer'] or "Solomon Beatty"
+          }) }}
+
+          {{ govukDateInput({
+            namePrefix: "application-fee-paid",
+            fieldset: {
+              legend: {
+                text: "Application fee paid"
+              }
+            }
+          }) }}
+
+          {{ govukSelect({
+            classes: "govuk-!-width-two-thirds",
+            name: "insurance-company",
+            label: {
+              text: "Insurance company"
+            },
+            items: [
+              {
+                value: "Another insurer",
+                text: "Another insurer"
+              },
+              {
+                value: "Dogs Trust",
+                text: "Dogs Trust",
+                selected: true
+              },
+              {
+                value: "Another insurer",
+                text: "Another insurer"
+              },
+              {
+                value: "Another insurer",
+                text: "Another insurer"
+              }
+            ]
+          }) }}
+
+          {{ govukDateInput({
+            namePrefix: "insurance-renewal",
+            fieldset: {
+              legend: {
+                text: "Insurance renewal date"
+              }
+            }
+          }) }}
+
+          {{ govukDateInput({
+            namePrefix: "neutering-confirmed",
+            fieldset: {
+              legend: {
+                text: "Neutering confirmed"
+              }
+            }
+          }) }}
+
+          {{ govukCheckboxes({
+            name: "microchip-number-verified",
+            fieldset: {
+              legend: {
+                text: "Microchip number verified"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              }
+            ]
+          }) }}
+
+          {{ govukDateInput({
+            namePrefix: "exemption-scheme",
+            fieldset: {
+              legend: {
+                text: "Joined interim exemption scheme"
+              }
+            }
           }) }}
 
         {% endcall %}
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Make changes"
+          }) }}
+
+          <a class="govuk-link govuk-link--no-visited-state" href="confirm-details">Cancel</a>
+        </div>
 
       </form>
 

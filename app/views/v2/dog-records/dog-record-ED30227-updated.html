@@ -1,15 +1,15 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Dog ED14415" %}
+{% set pageName="Dog ED30227" %}
 
 {% block pageTitle %}
-  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ pageName }} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "index"
+    href: "javascript:window.history.back()"
   }) }}
 {% endblock %}
 
@@ -22,8 +22,8 @@
       </h1>
 
       {{govukTag({
-        text: "Inactive",
-        classes: "govuk-tag--grey govuk-!-margin-bottom-6"
+        text: "Dead",
+        classes: "defra-tag--grey govuk-!-margin-bottom-6"
       })}}
 
     </div>
@@ -50,57 +50,100 @@
       },
       rows: [
         {
+          classes: "govuk-!-width-one-third",
           key: {
-            classes: "govuk-!-width-one-third",
             text: "Certificate issued"
           },
           value: {
-            text: "30 July 2019"
+            text: "9 May 2014"
           }
         },
         {
           key: {
-            classes: "govuk-!-width-one-third",
             text: "CDO issue date"
           },
           value: {
-            text: "2 February 2019"
+            text: "13 September 2013"
           }
         },
         {
           key: {
-            classes: "govuk-!-width-one-third",
+            text: "CDO expiry date"
+          },
+          value: {
+            text: "13 November 2013"
+          }
+        },
+        {
+          key: {
+            text: "Court"
+          },
+          value: {
+            text: "Barking and Dagenham Magistrates Court"
+          }
+        },
+        {
+          key: {
+            text: "Police force"
+          },
+          value: {
+            text: "Metropolitan Police"
+          }
+        },
+        {
+          key: {
+            text: "Dog legislation officer"
+          },
+          value: {
+            text: "Solomon Beatty"
+          }
+        },
+        {
+          key: {
+            text: "Application fee paid"
+          },
+          value: {
+            text: "3 May 2014"
+          }
+        },
+        {
+          key: {
             text: "Insurance company"
           },
           value: {
-            html: "	Dogs Trust"
+            text: "Dogs Trust"
           }
         },
         {
           key: {
-            classes: "govuk-!-width-one-third",
-            text: "Insurance renewal"
+            text: "Insurance renewal date"
           },
           value: {
-            text: "23 June 2024"
+            text: "29 April 2024"
           }
         },
         {
           key: {
-            classes: "govuk-!-width-one-third",
-            text: "Insurance policy"
+            text: "Neutering confirmed"
           },
           value: {
-            html: "38345128"
+            text: "10 April 2014"
           }
         },
         {
           key: {
-            classes: "govuk-!-width-one-third",
-            text: "Neutered and microchipped"
+            text: "Microchip number verified"
           },
           value: {
-            html: "Yes"
+            text: "Yes"
+          }
+        },
+        {
+          key: {
+            text: "Joined interim exemption scheme"
+          },
+          value: {
+            text: "8 November 2013"
           }
         }
       ]
@@ -127,71 +170,64 @@
       },
       rows: [
         {
+          classes: "govuk-!-width-one-third",
           key: {
-            classes: "govuk-!-width-one-third",
             text: "Name"
           },
           value: {
-            text: "Leah Johnstone"
+            text: "Gareth Staines"
           }
         },
         {
           key: {
-            classes: "govuk-!-width-one-third",
             text: "Date of birth"
           },
           value: {
-            text: "24 October 1986"
+            text: "16 February 1983"
           }
         },
         {
           key: {
-            classes: "govuk-!-width-one-third",
             text: "Address"
           },
           value: {
-            html: "12 Primrose Road<br>Southampton<br>SO15 7NN"
+            html: "44 Groveway<br>Barking<br>RM8 3XL"
           }
         },
         {
           key: {
-            classes: "govuk-!-width-one-third",
             text: "Email"
           },
           value: {
-            text: "leah86@yahoo.co.uk"
+            text: "gazandshaz@hotmail.com"
           }
         },
         {
           key: {
-            classes: "govuk-!-width-one-third",
             text: "Telephone number 1"
           },
           value: {
-            text: data['telephoneNumber1'] or "023 8055 8402"
+            text: data['telephoneNumber1'] or "07879 929344"
           }
         },
         {
           key: {
-            classes: "govuk-!-width-one-third",
             text: "Telephone number 2"
           },
           value: {
-            text: data['telephoneNumber2'] or "07844 639956"
+            text: data['telephoneNumber2'] or "07723 239002"
           }
         },
         {
           key: {
-            classes: "govuk-!-width-one-third",
             text: "County"
           },
           value: {
-            text: data['county'] or "Hampshire"
+            text: data['county'] or "Greater London"
           }
         },
         {
           key: {
-            classes: "govuk-!-width-one-third",
             text: "Country"
           },
           value: {
@@ -200,20 +236,10 @@
         },
         {
           key: {
-            classes: "govuk-!-width-one-third",
-            text: "Police force"
-          },
-          value: {
-            text: data['police-force'] or "Hampshire Constabulary"
-          }
-        },
-        {
-          key: {
-            classes: "govuk-!-width-one-third",
             text: "Comments"
           },
           value: {
-            text: "Previous address: 3 Ethelburt Avenue, Southampton SO16 3DD"
+            text: "Reminder where do past comments go?"
           }
         }
       ]
@@ -243,17 +269,16 @@
         },
         rows: [
           {
+            classes: "govuk-!-width-one-third",
             key: {
-              classes: "govuk-!-width-one-third",
               text: "Name"
             },
             value: {
-              text: "Biff"
+              text: "Brutus"
             }
           },
           {
             key: {
-              classes: "govuk-!-width-one-third",
               text: "Breed type"
             },
             value: {
@@ -262,16 +287,14 @@
           },
           {
             key: {
-              classes: "govuk-!-width-one-third",
               text: "Colour"
             },
             value: {
-              html: "Fawn and white"
+              html: "Dark grey"
             }
           },
           {
             key: {
-              classes: "govuk-!-width-one-third",
               text: "Sex"
             },
             value: {
@@ -280,43 +303,38 @@
           },
           {
             key: {
-              classes: "govuk-!-width-one-third",
               text: "Date of birth"
             },
             value: {
-              html: "12 April 2010"
+              html: "20 July 2007"
             }
           },
           {
             key: {
-              classes: "govuk-!-width-one-third",
               text: "Date of death"
             },
             value: {
-              html: "3 September 2022"
+              html: "12 August 2020"
             }
           },
           {
             key: {
-              classes: "govuk-!-width-one-third",
               text: "Tattoo"
             },
             value: {
-              html: "ED14415"
+              html: "ED30227"
             }
           },
           {
             key: {
-              classes: "govuk-!-width-one-third",
               text: "Microchip number"
             },
             value: {
-              text: "863206034034482"
+              text: "221087472833641"
             }
           },
           {
             key: {
-              classes: "govuk-!-width-one-third",
               text: "Microchip number 2"
             },
             value: {
@@ -325,20 +343,18 @@
           },
           {
             key: {
-              classes: "govuk-!-width-one-third",
               text: "Date exported"
             },
             value: {
-              html: "14 May 2020"
+              html: "28 June 2019"
             }
           },
           {
             key: {
-              classes: "govuk-!-width-one-third",
               text: "Date stolen"
             },
             value: {
-              html: "11 October 2019"
+              html: "4 January 2016"
             }
           }
         ]
