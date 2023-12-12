@@ -22,8 +22,8 @@
       </h1>
 
       {{govukTag({
-        text: "Dead",
-        classes: "defra-tag--grey govuk-!-margin-bottom-6"
+        text: "In breach",
+        classes: "govuk-tag--red govuk-!-margin-bottom-6"
       })}}
 
     </div>
@@ -79,7 +79,7 @@
             text: "Court"
           },
           value: {
-            text: "Barking and Dagenham Magistrates Court"
+            text: data['court'] or "Barking and Dagenham Magistrates Court"
           }
         },
         {
@@ -87,7 +87,7 @@
             text: "Police force"
           },
           value: {
-            text: "Metropolitan Police"
+            text: data['police-force'] or "Metropolitan Police Service"
           }
         },
         {
@@ -95,7 +95,7 @@
             text: "Dog legislation officer"
           },
           value: {
-            text: "Solomon Beatty"
+            text: data['dog-legislation-officer'] or "Solomon Beatty"
           }
         },
         {
@@ -137,14 +137,6 @@
           value: {
             text: "Yes"
           }
-        },
-        {
-          key: {
-            text: "Joined interim exemption scheme"
-          },
-          value: {
-            text: "8 November 2013"
-          }
         }
       ]
     }) }}
@@ -160,7 +152,7 @@
       actions: {
         items: [
           {
-            href: "edit-owner-details",
+            href: "",
             text: "Edit details",
             classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
             visuallyHiddenText: "for owner"
@@ -199,7 +191,7 @@
             text: "Email"
           },
           value: {
-            text: "gazandshaz@hotmail.com"
+            text: data['email'] or "gazandshaz@hotmail.com"
           }
         },
         {
@@ -220,26 +212,10 @@
         },
         {
           key: {
-            text: "County"
-          },
-          value: {
-            text: data['county'] or "Greater London"
-          }
-        },
-        {
-          key: {
             text: "Country"
           },
           value: {
             text: data['country'] or "England"
-          }
-        },
-        {
-          key: {
-            text: "Comments"
-          },
-          value: {
-            text: "Reminder where do past comments go?"
           }
         }
       ]

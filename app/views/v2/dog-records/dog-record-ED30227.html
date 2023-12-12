@@ -22,8 +22,8 @@
       </h1>
 
       {{govukTag({
-        text: "Dead",
-        classes: "defra-tag--grey govuk-!-margin-bottom-6"
+        text: "Exempt",
+        classes: "govuk-!-margin-bottom-6"
       })}}
 
     </div>
@@ -60,7 +60,7 @@
         },
         {
           key: {
-            text: "CDO issue date"
+            text: "CDO issued"
           },
           value: {
             text: "13 September 2013"
@@ -68,7 +68,7 @@
         },
         {
           key: {
-            text: "CDO expiry date"
+            text: "CDO expiry"
           },
           value: {
             text: "13 November 2013"
@@ -135,7 +135,7 @@
             text: "Microchip number verified"
           },
           value: {
-            text: "Yes"
+            text: "10 April 2014"
           }
         },
         {
@@ -160,7 +160,7 @@
       actions: {
         items: [
           {
-            href: "edit-owner-details",
+            href: "dog-record-ED30227-owner-edit",
             text: "Edit details",
             classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
             visuallyHiddenText: "for owner"
@@ -220,26 +220,10 @@
         },
         {
           key: {
-            text: "County"
-          },
-          value: {
-            text: data['county'] or "Greater London"
-          }
-        },
-        {
-          key: {
             text: "Country"
           },
           value: {
             text: data['country'] or "England"
-          }
-        },
-        {
-          key: {
-            text: "Comments"
-          },
-          value: {
-            text: "Reminder where do past comments go?"
           }
         }
       ]

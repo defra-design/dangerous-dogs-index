@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Change owner details" %}
+{% set pageName="Edit owner details" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "index"
+  href: "dog-record-ED30227"
 }) }}
 {% endblock %}
 
@@ -18,11 +18,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <span class="govuk-caption-l">Dog ED30227</span>
       <h1 class="govuk-heading-l">
         {{ pageName }}
       </h1>
 
-      <form class="form" action="/v2/dog-record" method="post">
+      <form class="form" action="/v2/dog-records/dog-record-ED30227-updated" method="post">
 
       <fieldset class="govuk-fieldset">
         <legend class="govuk-visually-hidden">
@@ -33,14 +34,14 @@
           <label class="govuk-label" for="first-name">
             First name
           </label>
-          <input class="govuk-input govuk-!-width-one-half" value="Leah" id="first-name" name="firstName" type="text">
+          <input class="govuk-input govuk-!-width-one-half" value="Gareth" id="first-name" name="firstName" type="text">
         </div>
 
         <div class="govuk-form-group govuk-!-margin-bottom-5">
           <label class="govuk-label" for="last-name">
             Last name
           </label>
-          <input class="govuk-input govuk-!-width-one-half" value="Johnstone" id="last-name" name="lastName" type="text">
+          <input class="govuk-input govuk-!-width-one-half" value="Staines" id="last-name" name="lastName" type="text">
         </div>
 
         <div class="govuk-form-group">
@@ -55,7 +56,7 @@
                   <label class="govuk-label govuk-date-input__label" for="date-of-birth-day">
                     Day
                   </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="24" id="date-of-birth-day" name="dateBirthday" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="16" id="date-of-birth-day" name="dateBirthday" type="text" inputmode="numeric">
                 </div>
               </div>
 
@@ -64,7 +65,7 @@
                   <label class="govuk-label govuk-date-input__label" for="date-of-birth-month">
                     Month
                   </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="10" id="date-of-birth-month" name="dateBirthmonth" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="2" id="date-of-birth-month" name="dateBirthmonth" type="text" inputmode="numeric">
                 </div>
               </div>
 
@@ -73,7 +74,7 @@
                   <label class="govuk-label govuk-date-input__label" for="date-of-birth-year">
                     Year
                   </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="1986" id="date-of-birth-year" name="dateBirthyear" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="1983" id="date-of-birth-year" name="dateBirthyear" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -93,7 +94,7 @@
             },
             id: "address-line-1",
             name: "addressLine1",
-            value: "12 Primrose Road"
+            value: "44 Groveway"
           }) }}
 
           {{ govukInput({
@@ -111,7 +112,7 @@
             classes: "govuk-!-width-two-thirds",
             id: "address-town",
             name: "addressTown",
-            value: "Southampton"
+            value: "Barking"
           }) }}
 
           {{ govukInput({
@@ -121,14 +122,16 @@
             classes: "govuk-input--width-10",
             id: "address-postcode",
             name: "addressPostcode",
-            value: "SO16 3GP"
+            value: "RM8 3XL"
           }) }}
 
         {% endcall %}
 
+        <!-- Remove link to postcode look up
         <p class="govuk-body govuk-!-margin-bottom-6">
           <a class="govuk-link govuk-link--no-visited-state" href="">Change address using a postcode</a>
         </p>
+        -->
 
         {{ govukInput({
           label: {
@@ -136,7 +139,7 @@
           },
           id: "email",
           name: "email",
-          value: "leah86@yahoo.co.uk",
+          value: "gazandshaz@hotmail.com",
           type: "email",
           spellcheck: false
         }) }}
@@ -147,7 +150,7 @@
           },
           id: "telephone-number-1",
           name: "telephoneNumber1",
-          value: "023 8055 8402",
+          value: "07879 929344",
           type: "tel",
           classes: "govuk-input--width-10"
         }) }}
@@ -158,10 +161,12 @@
           },
           id: "telephone-number-2",
           name: "telephoneNumber2",
-          value: "07844 639956",
+          value: "07723 239002",
           type: "tel",
           classes: "govuk-input--width-10"
         }) }}
+
+        <!-- Remove county
 
         {{ govukSelect({
           id: "county",
@@ -223,13 +228,17 @@
               text: "Gloucestershire"
             },
             {
+              value: "Greater London",
+              text: "Greater London",
+              selected: true
+            },
+            {
               value: "Greater Manchester",
               text: "Greater Manchester"
             },
             {
               value: "Hampshire",
-              text: "Hampshire",
-              selected: true
+              text: "Hampshire"
             },
             {
               value: "Hertfordshire",
@@ -274,6 +283,8 @@
           ]
         }) }}
 
+        -->
+
         {{ govukSelect({
           id: "country",
           name: "country",
@@ -299,9 +310,13 @@
 
       </fieldset>
 
+      <div class="govuk-button-group">
         {{ govukButton({
           text: "Save details"
         }) }}
+
+        <a class="govuk-link govuk-link--no-visited-state" href="/v2/dog-records/dog-record-ED30227">Cancel</a>
+      </div>
 
       </form>
 
