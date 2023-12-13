@@ -31,50 +31,50 @@
         </legend>
 
         <div class="govuk-form-group govuk-!-margin-bottom-5">
-          <label class="govuk-label" for="first-name">
+          <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="first-name">
             First name
           </label>
-          <input class="govuk-input govuk-!-width-one-half" value="Gareth" id="first-name" name="firstName" type="text">
+          <input class="govuk-input govuk-!-width-one-half govuk-!-font-size-16" value="Gareth" id="first-name" name="firstName" type="text">
         </div>
 
         <div class="govuk-form-group govuk-!-margin-bottom-5">
-          <label class="govuk-label" for="last-name">
+          <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="last-name">
             Last name
           </label>
-          <input class="govuk-input govuk-!-width-one-half" value="Staines" id="last-name" name="lastName" type="text">
+          <input class="govuk-input govuk-!-width-one-half govuk-!-font-size-16" value="Staines" id="last-name" name="lastName" type="text">
         </div>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" role="group">
-            <legend class="govuk-fieldset__legend">
+            <legend class="govuk-fieldset__legend govuk-!-font-weight-bold govuk-!-font-size-16">
               Date of birth
             </legend>
 
             <div class="govuk-date-input" id="date-of-birth">
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="date-of-birth-day">
+                  <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="date-of-birth-day">
                     Day
                   </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="16" id="date-of-birth-day" name="dateBirthday" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="16" id="date-of-birth-day" name="dateBirthday" type="text" inputmode="numeric">
                 </div>
               </div>
 
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="date-of-birth-month">
+                  <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="date-of-birth-month">
                     Month
                   </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="2" id="date-of-birth-month" name="dateBirthmonth" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="2" id="date-of-birth-month" name="dateBirthmonth" type="text" inputmode="numeric">
                 </div>
               </div>
 
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="date-of-birth-year">
+                  <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="date-of-birth-year">
                     Year
                   </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="1983" id="date-of-birth-year" name="dateBirthyear" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-4" value="1983" id="date-of-birth-year" name="dateBirthyear" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -90,8 +90,10 @@
 
           {{ govukInput({
             label: {
+              classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
               text: "Address line 1"
             },
+            classes: "govuk-!-font-size-16",
             id: "address-line-1",
             name: "addressLine1",
             value: "44 Groveway"
@@ -99,17 +101,20 @@
 
           {{ govukInput({
             label: {
+              classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
               text: "Address line 2"
             },
+            classes: "govuk-!-font-size-16",
             id: "address-line-2",
             name: "addressLine2"
           }) }}
 
           {{ govukInput({
             label: {
+              classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
               text: "Town or city"
             },
-            classes: "govuk-!-width-two-thirds",
+            classes: "govuk-!-width-two-thirds govuk-!-font-size-16",
             id: "address-town",
             name: "addressTown",
             value: "Barking"
@@ -117,9 +122,10 @@
 
           {{ govukInput({
             label: {
+              classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
               text: "Postcode"
             },
-            classes: "govuk-input--width-10",
+            classes: "govuk-input--width-10 govuk-!-font-size-16",
             id: "address-postcode",
             name: "addressPostcode",
             value: "RM8 3XL"
@@ -135,35 +141,37 @@
 
         {{ govukInput({
           label: {
+            classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
             text: "Email address"
           },
-          id: "email",
           name: "email",
           value: "gazandshaz@hotmail.com",
           type: "email",
-          spellcheck: false
+          spellcheck: false,
+          classes: "govuk-!-font-size-16"
         }) }}
 
         {{ govukInput({
           label: {
+            classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
             text: "Telephone number 1"
           },
           id: "telephone-number-1",
           name: "telephoneNumber1",
           value: "07879 929344",
           type: "tel",
-          classes: "govuk-input--width-10"
+          classes: "govuk-input--width-10 govuk-!-font-size-16"
         }) }}
 
         {{ govukInput({
           label: {
+            classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
             text: "Telephone number 2"
           },
-          id: "telephone-number-2",
           name: "telephoneNumber2",
           value: "07723 239002",
           type: "tel",
-          classes: "govuk-input--width-10"
+          classes: "govuk-input--width-10 govuk-!-font-size-16"
         }) }}
 
         <!-- Remove county
@@ -286,9 +294,10 @@
         -->
 
         {{ govukSelect({
-          id: "country",
+          classes: "govuk-!-font-size-16",
           name: "country",
           label: {
+            classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
             text: "Country"
           },
           items: [
