@@ -1,0 +1,97 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Manage CDOs" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+<div class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../../index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-column-full-width">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      {{ govukTaskList({
+        idPrefix: "company-details",
+        items: [
+          {
+            title: {
+              text: "Company Directors"
+            },
+            href: "#",
+            status: {
+              text: "Completed"
+            }
+          },
+          {
+            title: {
+              text: "Registered company details"
+            },
+            href: "#",
+            status: {
+              tag: {
+                text: "Incomplete",
+                classes: "govuk-tag--blue"
+              }
+            }
+          },
+          {
+            title: {
+              text: "Financial history"
+            },
+            hint: {
+              text: "Include 5 years of the company’s relevant financial information."
+            },
+            href: "#",
+            status: {
+              tag: {
+                text: "Incomplete",
+                classes: "govuk-tag--blue"
+              }
+            }
+          },
+          {
+            title: {
+              text: "Business plan"
+            },
+            href: "#",
+            status: {
+              tag: {
+                text: "Incomplete",
+                classes: "govuk-tag--blue"
+              }
+            }
+          },
+          {
+            title: {
+              text: "References"
+            },
+            href: "#",
+            status: {
+              tag: {
+                text: "Incomplete",
+                classes: "govuk-tag--blue"
+              }
+            }
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

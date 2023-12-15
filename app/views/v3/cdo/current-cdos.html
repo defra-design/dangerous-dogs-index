@@ -1,0 +1,291 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Manage CDOs" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+<div class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../../index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-column-full-width">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      {{ govukTable({
+        classes: "govuk-!-font-size-16",
+        caption: "Currently active CDOs",
+        captionClasses: "govuk-visually-hidden",
+        head: [
+          {
+            text: "Dog number"
+          },
+          {
+            text: "Owner"
+          },
+          {
+            text: "Breed type",
+            classes: "govuk-!-width-one-quarter"
+          },
+          {
+            text: "Status"
+          },
+          {
+            text: "Next task"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "ED17343",
+              classes: "govuk-link"
+            },
+            {
+              text: "Dennis Campbell"
+            },
+            {
+              text: "XL Bully"
+            },
+            {
+              text: "Pre-exempt"
+            },
+            {
+              text: "CDO entered"
+            }
+          ],
+          [
+            {
+              text: "ED17819",
+              classes: "govuk-link"
+            },
+            {
+              text: "Ioana Bortan"
+            },
+            {
+              text: "XL Bully"
+            },
+            {
+              text: "Pre-exempt"
+            },
+            {
+              text: "Confirm neutering"
+            }
+          ],
+          [
+            {
+              text: "ED30012",
+              classes: "govuk-link"
+            },
+            {
+              text: "Gary Jones"
+            },
+            {
+              text: "XL Bully"
+            },
+            {
+              text: "Pre-exempt"
+            },
+            {
+              text: "Form2"
+            }
+          ],
+          [
+            {
+              text: "ED15391",
+              classes: "govuk-link"
+            },
+            {
+              text: "Wojciech Krychowiak"
+            },
+            {
+              text: "XL Bully"
+            },
+            {
+              text: "Interim exemption"
+            },
+            {
+              text: "Verify microchip"
+            }
+            ],
+            [
+              {
+                text: "ED19858",
+                classes: "govuk-link"
+              },
+              {
+                text: "Heidi Sturgeon"
+              },
+              {
+                text: "XL Bully"
+              },
+              {
+                text: "Pre-exempt"
+              },
+              {
+                text: "Insurance"
+              }
+            ],
+            [
+              {
+                text: "ED30012",
+                classes: "govuk-link"
+              },
+              {
+                text: "Adhavan Razeek"
+              },
+              {
+                text: "XL Bully"
+              },
+              {
+                text: "Pre-exempt"
+              },
+              {
+                text: "Microchip verified"
+              }
+            ],
+            [
+              {
+                text: "ED12545",
+                classes: "govuk-link"
+              },
+              {
+                text: "Tyler McGrath"
+              },
+              {
+                text: "XL Bully"
+              },
+              {
+                text: "Pre-exempt"
+              },
+              {
+                text: "Verify microchip"
+              }
+            ],
+            [
+              {
+                text: "ED17202",
+                classes: "govuk-link"
+              },
+              {
+                text: "Helen Renard"
+              },
+              {
+                text: "XL Bully"
+              },
+              {
+                text: "Pre-exempt"
+              },
+              {
+                text: "Application pack"
+              }
+            ],
+            [
+              {
+                text: "ED39346",
+                classes: "govuk-link"
+              },
+              {
+                text: "Raheem Powell"
+              },
+              {
+                text: "XL Bully"
+              },
+              {
+                text: "Pre-exempt"
+              },
+              {
+                text: "Form2"
+              }
+            ],
+            [
+              {
+                text: "ED17882",
+                classes: "govuk-link"
+              },
+              {
+                text: "Luke Kettleborough"
+              },
+              {
+                text: "XL Bully"
+              },
+              {
+                text: "Interim exemption"
+              },
+              {
+                text: "Interim exemption entered"
+              }
+              ],
+              [
+                {
+                  text: "ED20553",
+                  classes: "govuk-link"
+                },
+                {
+                  text: "Donlan Moloney"
+                },
+                {
+                  text: "Pit Bull Terrier"
+                },
+                {
+                  text: "Pre-exempt"
+                },
+                {
+                  text: "Insurance"
+                }
+              ],
+              [
+                {
+                  text: "ED17399",
+                  classes: "govuk-link"
+                },
+                {
+                  text: "Catherine Hyde"
+                },
+                {
+                  text: "XL Bully"
+                },
+                {
+                  text: "Pre-exempt"
+                },
+                {
+                  text: "Insurance certificate received"
+                }
+              ],
+              [
+                {
+                  text: "ED17435",
+                  classes: "govuk-link"
+                },
+                {
+                  text: "Brian Gaston"
+                },
+                {
+                  text: "XL Bully"
+                },
+                {
+                  text: "Pre-exempt"
+                },
+                {
+                  text: "Verify microchip"
+                }
+              ]
+          ]
+        }) }}
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
