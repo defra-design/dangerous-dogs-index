@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Dog ED10453" %}
+{% set pageName="Dog ED17343" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -20,69 +20,89 @@
 
     <div class="govuk-grid-column-full-width">
 
-      <h1 class="govuk-heading-l">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
         {{ pageName }}
       </h1>
+
+      {{govukTag({
+        text: "CDO entered",
+        classes: "govuk-tag--green govuk-!-margin-bottom-6"
+      })}}
 
       {{ govukTaskList({
         idPrefix: "company-details",
         items: [
           {
             title: {
-              text: "Company Directors"
-            },
-            href: "#",
-            status: {
-              text: "Completed"
-            }
-          },
-          {
-            title: {
-              text: "Registered company details"
+              text: "Send application pack"
             },
             href: "#",
             status: {
               tag: {
-                text: "Incomplete",
+                text: "In progress",
+                classes: "govuk-tag--light-blue"
+              }
+            }
+          },
+          {
+            title: {
+              text: "Record insurance details"
+            },
+            href: "#",
+            status: {
+              tag: {
+                text: "Not yet started",
                 classes: "govuk-tag--blue"
               }
             }
           },
           {
             title: {
-              text: "Financial history"
+              text: "Send Form 2"
+            },
+            href: "#",
+            status: {
+              tag: {
+                text: "Not yet started",
+                classes: "govuk-tag--blue"
+              }
+            }
+          },
+          {
+            title: {
+              text: "Verify microchip and confirm neutering"
             },
             hint: {
-              text: "Include 5 years of the company’s relevant financial information."
+              text: "We can group more than one task together."
             },
             href: "#",
             status: {
               tag: {
-                text: "Incomplete",
+                text: "Not yet started",
                 classes: "govuk-tag--blue"
               }
             }
           },
           {
             title: {
-              text: "Business plan"
+              text: "Receive payment"
             },
             href: "#",
             status: {
               tag: {
-                text: "Incomplete",
+                text: "Not yet started",
                 classes: "govuk-tag--blue"
               }
             }
           },
           {
             title: {
-              text: "References"
+              text: "Issue certificate"
             },
             href: "#",
             status: {
               tag: {
-                text: "Incomplete",
+                text: "Not yet started",
                 classes: "govuk-tag--blue"
               }
             }
