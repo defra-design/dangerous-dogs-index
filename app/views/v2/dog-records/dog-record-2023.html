@@ -22,57 +22,13 @@
       </h1>
 
       {{govukTag({
-        text: "Exempt",
-        classes: "govuk-!-margin-bottom-6"
+        text: "In breach",
+        classes: "govuk-tag--yellow govuk-!-margin-bottom-6"
       })}}
 
     </div>
 
     <div class="govuk-grid-column-one-half">
-
-      {{ govukSummaryList({
-        classes: "govuk-!-font-size-16",
-        card: {
-          title: {
-            text: "2023 order details"
-          }
-        },
-        rows: [
-          {
-            classes: "govuk-!-width-one-third",
-            key: {
-              text: "Microchip deadline"
-            },
-            value: {
-              text: "31 March 2024"
-            }
-          },
-          {
-            key: {
-              text: "Neutering deadline"
-            },
-            value: {
-              text: "30 June 2024"
-            }
-          },
-          {
-            key: {
-              text: "2015 or 2023 typed by DLO"
-            },
-            value: {
-              html: "12 March 2024"
-            }
-          },
-          {
-            key: {
-              text: "Withdrawn from index"
-            },
-            value: {
-              html: "12 March 2024"
-            }
-          }
-        ]
-      }) }}
 
     {{ govukSummaryList({
       classes: "govuk-!-font-size-16",
@@ -259,6 +215,31 @@
           },
           {
             key: {
+              text: "Order"
+            },
+            value: {
+              text: "2023"
+            }
+          },
+          {
+            classes: "govuk-!-width-one-third",
+            key: {
+              text: "Microchip deadline"
+            },
+            value: {
+              text: "31 March 2024"
+            }
+          },
+          {
+            key: {
+              text: "Neutering deadline"
+            },
+            value: {
+              text: "30 June 2024"
+            }
+          },
+          {
+            key: {
               text: "Police force"
             },
             value: {
@@ -287,6 +268,22 @@
             },
             value: {
               text: "29 November 2024"
+            }
+          },
+          {
+            key: {
+              text: "Typed by DLO"
+            },
+            value: {
+              html: "12 March 2024"
+            }
+          },
+          {
+            key: {
+              text: "Withdrawn from index"
+            },
+            value: {
+              html: "18 May 2024"
             }
           }
         ]
