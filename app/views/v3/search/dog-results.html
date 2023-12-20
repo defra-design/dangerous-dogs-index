@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Search" %}
+{% set pageName="Dog records - Search" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -77,9 +77,10 @@
           <h2 class="govuk-summary-card__title defra-summary-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="/v2/dog-records/dog-record-ED10433">
             ED10433
           </a></h2>
-          <ul class="govuk-summary-card__actions govuk-!-font-size-16 govuk-!-font-weight-regular">
+          <ul class="govuk-summary-card__actions govuk-!-padding-bottom-1 govuk-!-font-weight-regular">
             {{ govukTag({
-              text: "Exempt"
+              text: "Exempt",
+              classes: "govuk-!-font-size-16"
             }) }}
           </ul>
         </div>
@@ -108,7 +109,9 @@
                      Rocky
                     </td>
                     <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
-                      Jill Scott
+                      <a class="govuk-link govuk-link--no-visited-state" href="">
+                        Jill Scott
+                      </a>
                     </td>
                     <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0">
                       901229512395772
@@ -126,9 +129,10 @@
           <h2 class="govuk-summary-card__title defra-summary-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="/v2/dog-records/dog-record-ED30227">
             ED30227
           </a></h2>
-          <ul class="govuk-summary-card__actions govuk-!-font-weight-regular">
+          <ul class="govuk-summary-card__actions govuk-!-padding-bottom-1 govuk-!-font-weight-regular">
             {{ govukTag({
-              text: "Exempt"
+              text: "Exempt",
+              classes: "govuk-!-font-size-16"
             }) }}
           </ul>
         </div>
@@ -157,7 +161,9 @@
                      Brutus
                     </td>
                     <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
-                      Gareth Staines
+                      <a class="govuk-link govuk-link--no-visited-state" href="">
+                        Gareth Staines
+                      </a>
                     </td>
                     <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0">
                       221087472833641
