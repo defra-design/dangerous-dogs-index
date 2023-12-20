@@ -16,3 +16,14 @@ router.post('/v2/search/search-results', function (req, res) {
   }
 
 })
+
+// v3 Search
+router.post('/v3/search/search-results', function (req, res) {
+  var recordType = req.session.data['recordType']
+  if (recordType == "Dog record"){
+    res.redirect('/v3/search/dog-results')
+  } else {
+    res.redirect('/v3/search/owner-results')
+  }
+
+})

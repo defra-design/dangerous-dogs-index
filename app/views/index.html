@@ -18,17 +18,32 @@
     {{ govukAccordion({
       id: "accordion-default",
       items: [
+      {
+        heading: {
+          text: "Version 3 (latest)"
+        },
+        content: {
+          html: '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Search dog and owner records
+          </h3>
+
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v3/search/dog-results">Dog record results</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v3/search/owner-results-3">Owner record results</a>
+            </li>
+          </ul>'
+        }
+        },
         {
           heading: {
             text: "Version 2 (latest)"
           },
           content: {
             html:
-            '<p class="govuk-body">
-              <a class="govuk-link govuk-link--no-visited-state" href="/v2/index">Dangerous Dog Index homepage</a>
-            </p>
-
-            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
               2023 order
             </h3>
             <ul class="govuk-list">
