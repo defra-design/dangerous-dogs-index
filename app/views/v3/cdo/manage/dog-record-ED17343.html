@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Dog ED30227" %}
+{% set pageName="Dog ED17343" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -40,7 +40,7 @@
       actions: {
         items: [
           {
-            href: "dog-record-ED30227-dog-edit",
+            href: "",
             text: "Edit details",
             classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
             visuallyHiddenText: "for dog"
@@ -55,7 +55,7 @@
             text: "Name"
           },
           value: {
-            text: data['dogName1'] or "Brutus"
+            text: data['dogName1'] or "Goliath"
           }
         },
         {
@@ -80,7 +80,7 @@
       actions: {
         items: [
           {
-            href: "dog-record-ED30227-owner-edit",
+            href: "owner-record-ED17343",
             text: "Owner record",
             classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
             visuallyHiddenText: "for owner"
@@ -95,7 +95,7 @@
             text: "Name"
           },
           value: {
-            text: "Gareth Staines"
+            text: "Dennis Campbell"
           }
         },
         {
@@ -103,7 +103,7 @@
             text: "Date of birth"
           },
           value: {
-            text: "16 February 1983"
+            text: "29 May 1967"
           }
         },
         {
@@ -111,7 +111,7 @@
             text: "Address"
           },
           value: {
-            html: "44 Groveway<br>Barking<br>RM8 3XL"
+            html: "2 Hounds Gate<br>Nottingham<br>NG1 7AQ"
           }
         },
         {
@@ -139,7 +139,7 @@
           actions: {
             items: [
               {
-                href: "dog-record-ED30227-exemption-edit",
+                href: "owner-record-ED17343",
                 text: "Edit details",
                 classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
                 visuallyHiddenText: "for exemption"
@@ -154,7 +154,7 @@
               text: "Status"
             },
             value: {
-              text: "Exempt"
+              text: "Pre-exempt"
             }
           },
           {
@@ -162,7 +162,7 @@
               text: "CDO issued"
             },
             value: {
-              text: "13 September 2013"
+              text: "5 January 2024"
             }
           },
           {
@@ -170,7 +170,7 @@
               text: "CDO expiry"
             },
             value: {
-              text: "13 November 2013"
+              text: "5 March 2024"
             }
           },
           {
@@ -178,7 +178,7 @@
               text: "Court"
             },
             value: {
-              text: "Barking and Dagenham Magistrates Court"
+              text: "Nottingham Magistrates’ Court"
             }
           },
           {
@@ -186,7 +186,7 @@
               text: "Police force"
             },
             value: {
-              text: "Metropolitan Police Service"
+              text: "Nottinghamshire Police"
             }
           },
           {
@@ -194,7 +194,7 @@
               text: "Dog legislation officer"
             },
             value: {
-              text: "Solomon Beatty"
+              text: "Sam Cosmo"
             }
           }
         ]

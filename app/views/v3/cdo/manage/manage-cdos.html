@@ -7,7 +7,6 @@
 {% endblock %}
 
 <div class="govuk-main-wrapper">
-  <div class="govuk-grid-row">
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -17,10 +16,10 @@
 {% endblock %}
 
 {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
 
-    <div class="govuk-grid-column-full-width">
-
-      <h1 class="govuk-heading-l">
+      <h1 class="govuk-heading-xl">
         {{ pageName }}
       </h1>
 
@@ -47,7 +46,7 @@
 
   <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="cdo-tasks">
+          <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="cdo-tasks-ED17343">
             ED17343</a></td>
 
           <td class="govuk-table__cell">
@@ -62,7 +61,7 @@
           <td class="govuk-table__cell">
             {{govukTag({
               text: "CDO entered",
-              classes: "govuk-tag--green govuk-!-font-size-16"
+              classes: "govuk-tag--green govuk-!-font-weight-bold govuk-!-font-size-16"
             })}}
           </td>
         </tr>
@@ -83,7 +82,7 @@
           <td class="govuk-table__cell">
             {{govukTag({
               text: "Confirm neutering",
-              classes: "govuk-tag--pink govuk-!-font-size-16"
+              classes: "govuk-tag--pink govuk-!-font-weight-bold govuk-!-font-size-16"
             })}}
           </td>
         </tr>
@@ -104,7 +103,7 @@
           <td class="govuk-table__cell">
             {{govukTag({
               text: "Form 2",
-              classes: "govuk-tag--light-blue govuk-!-font-size-16"
+              classes: "govuk-tag--light-blue govuk-!-font-weight-bold govuk-!-font-size-16"
             })}}
           </td>
         </tr>
@@ -125,7 +124,7 @@
           <td class="govuk-table__cell">
             {{govukTag({
               text: "Verify microchip",
-              classes: "govuk-tag--purple govuk-!-font-size-16"
+              classes: "govuk-tag--purple govuk-!-font-weight-bold govuk-!-font-size-16"
             })}}
           </td>
         </tr>
@@ -146,7 +145,7 @@
           <td class="govuk-table__cell">
             {{govukTag({
               text: "Insurance",
-              classes: "govuk-tag--blue govuk-!-font-size-16"
+              classes: "govuk-tag--blue govuk-!-font-weight-bold govuk-!-font-size-16"
             })}}
           </td>
         </tr>
@@ -167,7 +166,7 @@
           <td class="govuk-table__cell">
             {{govukTag({
               text: "Verify microchip",
-              classes: "govuk-tag--purple govuk-!-font-size-16"
+              classes: "govuk-tag--purple govuk-!-font-weight-bold govuk-!-font-size-16"
             })}}
           </td>
         </tr>
@@ -188,7 +187,7 @@
           <td class="govuk-table__cell">
             {{govukTag({
               text: "Verify microchip",
-              classes: "govuk-tag--purple govuk-!-font-size-16"
+              classes: "govuk-tag--purple govuk-!-font-weight-bold govuk-!-font-size-16"
             })}}
           </td>
         </tr>
@@ -209,7 +208,7 @@
           <td class="govuk-table__cell">
             {{govukTag({
               text: "Application pack",
-              classes: "govuk-tag--turquoise govuk-!-font-size-16"
+              classes: "govuk-tag--turquoise govuk-!-font-weight-bold govuk-!-font-size-16"
             })}}
           </td>
         </tr>
@@ -229,7 +228,7 @@
           <td class="govuk-table__cell">
             {{govukTag({
               text: "Withdrew before exempt",
-              classes: "govuk-tag--red govuk-!-font-size-16"
+              classes: "govuk-tag--red govuk-!-font-weight-bold govuk-!-font-size-16"
             })}}
           </td>
         </tr>
@@ -250,7 +249,7 @@
           <td class="govuk-table__cell">
             {{govukTag({
               text: "Interim exemption entered",
-              classes: "govuk-tag--grey govuk-!-font-size-16"
+              classes: "govuk-tag--grey govuk-!-font-weight-bold govuk-!-font-size-16"
             })}}
            </td>
         </tr>
@@ -271,7 +270,7 @@
           <td class="govuk-table__cell">
             {{govukTag({
               text: "Insurance",
-              classes: "govuk-tag--blue govuk-!-font-size-16"
+              classes: "govuk-tag--blue govuk-!-font-weight-bold govuk-!-font-size-16"
             })}}
            </td>
         </tr>
@@ -292,7 +291,7 @@
           <td class="govuk-table__cell">
             {{govukTag({
               text: "Insurance",
-              classes: "govuk-tag--blue govuk-!-font-size-16"
+              classes: "govuk-tag--blue govuk-!-font-weight-bold govuk-!-font-size-16"
             })}}
           </td>
         </tr>
@@ -313,7 +312,7 @@
           <td class="govuk-table__cell">
             {{govukTag({
               text: "Verify microchip",
-              classes: "govuk-tag--purple govuk-!-font-size-16"
+              classes: "govuk-tag--purple govuk-!-font-weight-bold govuk-!-font-size-16"
             })}}
           </td>
         </tr>

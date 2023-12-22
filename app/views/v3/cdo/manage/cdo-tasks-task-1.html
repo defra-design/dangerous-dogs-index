@@ -7,7 +7,6 @@
 {% endblock %}
 
 <div class="govuk-main-wrapper">
-  <div class="govuk-grid-row">
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -18,7 +17,8 @@
 
 {% block content %}
 
-    <div class="govuk-grid-column-full-width">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
         {{ pageName }}
@@ -34,21 +34,20 @@
         items: [
           {
             title: {
+              classes: "govuk-link--no-visited-state",
               text: "Send application pack"
             },
-            href: "#",
+            href: "application-pack",
             status: {
-              tag: {
-                text: "In progress",
-                classes: "govuk-tag--light-blue"
-              }
+              text: "Completed"
             }
           },
           {
             title: {
+              classes: "govuk-link--no-visited-state",
               text: "Record insurance details"
             },
-            href: "#",
+            href: "insurance-details",
             status: {
               tag: {
                 text: "Not yet started",
@@ -58,6 +57,7 @@
           },
           {
             title: {
+              classes: "govuk-link--no-visited-state",
               text: "Send Form 2"
             },
             href: "#",
@@ -70,6 +70,7 @@
           },
           {
             title: {
+              classes: "govuk-link--no-visited-state",
               text: "Verify microchip and confirm neutering"
             },
             hint: {
@@ -85,6 +86,7 @@
           },
           {
             title: {
+              classes: "govuk-link--no-visited-state",
               text: "Receive payment"
             },
             href: "#",
@@ -97,6 +99,7 @@
           },
           {
             title: {
+              classes: "govuk-link--no-visited-state",
               text: "Issue certificate"
             },
             href: "#",
