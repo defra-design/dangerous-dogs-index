@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Dog ED17343" %}
+{% set pageName="Dog ED30227" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "cdo-tasks-ED17343"
+    href: "javascript:window.history.back()"
   }) }}
 {% endblock %}
 
@@ -22,8 +22,8 @@
       </h1>
 
       {{govukTag({
-        text: "CDO entered",
-        classes: "govuk-tag--turquoise govuk-!-font-weight-bold govuk-!-font-size-16 govuk-!-margin-bottom-6"
+        text: "Exempt",
+        classes: "govuk-tag--yellow govuk-!-margin-bottom-6"
       })}}
 
     </div>
@@ -40,7 +40,7 @@
       actions: {
         items: [
           {
-            href: "",
+            href: "dog-record-ED30227-dog-edit",
             text: "Edit details",
             classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
             visuallyHiddenText: "for dog"
@@ -55,7 +55,7 @@
             text: "Name"
           },
           value: {
-            text: data['dogName1'] or "Goliath"
+            text: data['dogName1'] or "Brutus"
           }
         },
         {
@@ -64,6 +64,38 @@
           },
           value: {
             text: data['dog-breed'] or "XL Bully"
+          }
+        },
+        {
+          key: {
+            text: "Colour"
+          },
+          value: {
+            text: data['dogColour'] or "Dark grey"
+          }
+        },
+        {
+          key: {
+            text: "Sex"
+          },
+          value: {
+            text: data['sex'] or "Male"
+          }
+        },
+        {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            html: "20 July 2007"
+          }
+        },
+        {
+          key: {
+            text: "Microchip number"
+          },
+          value: {
+            text: "221087472833641"
           }
         }
       ]
@@ -80,7 +112,7 @@
       actions: {
         items: [
           {
-            href: "owner-record-ED17343",
+            href: "/v2/owner-records/owner-record-ED30227",
             text: "Owner record",
             classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
             visuallyHiddenText: "for owner"
@@ -95,7 +127,7 @@
             text: "Name"
           },
           value: {
-            text: "Dennis Campbell"
+            text: "Gareth Staines"
           }
         },
         {
@@ -103,7 +135,7 @@
             text: "Date of birth"
           },
           value: {
-            text: "29 May 1967"
+            text: "16 February 1983"
           }
         },
         {
@@ -111,7 +143,23 @@
             text: "Address"
           },
           value: {
-            html: "2 Hounds Gate<br>Nottingham<br>NG1 7AQ"
+            html: "44 Groveway<br>Barking<br>RM8 3XL"
+          }
+        },
+        {
+          key: {
+            text: "Email"
+          },
+          value: {
+            text: "gazandshaz@hotmail.com"
+          }
+        },
+        {
+          key: {
+            text: "Telephone number 1"
+          },
+          value: {
+            text: data['telephoneNumber1'] or "07879 929344"
           }
         },
         {
@@ -139,7 +187,7 @@
           actions: {
             items: [
               {
-                href: "owner-record-ED17343",
+                href: "dog-record-ED30227-exemption-edit",
                 text: "Edit details",
                 classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
                 visuallyHiddenText: "for exemption"
@@ -154,31 +202,40 @@
               text: "Status"
             },
             value: {
-              text: "Pre-exempt"
+              text: "Exempt"
             }
           },
           {
             key: {
-              text: "CDO issued"
+              text: "Certificate issued"
             },
             value: {
-              text: "5 January 2024"
+              text: "5 December 2023"
             }
           },
           {
             key: {
-              text: "CDO expiry"
+              text: "Order"
             },
             value: {
-              text: "5 March 2024"
+              text: "2023"
+            }
+          },
+          {
+            classes: "govuk-!-width-one-third",
+            key: {
+              text: "Microchip deadline"
+            },
+            value: {
+              text: "31 March 2024"
             }
           },
           {
             key: {
-              text: "Court"
+              text: "Neutering deadline"
             },
             value: {
-              text: "Nottingham Magistrates’ Court"
+              text: "30 June 2024"
             }
           },
           {
@@ -186,15 +243,47 @@
               text: "Police force"
             },
             value: {
-              text: "Nottinghamshire Police"
+              text: "Metropolitan Police Service"
             }
           },
           {
             key: {
-              text: "Dog legislation officer"
+              text: "Application fee paid"
             },
             value: {
-              text: "Sam Cosmo"
+              text: "30 November 2023"
+            }
+          },
+          {
+            key: {
+              text: "Insurance company"
+            },
+            value: {
+              text: "Dogs Trust"
+            }
+          },
+          {
+            key: {
+              text: "Insurance renewal date"
+            },
+            value: {
+              text: "29 November 2024"
+            }
+          },
+          {
+            key: {
+              text: "Typed by DLO"
+            },
+            value: {
+              html: "12 March 2024"
+            }
+          },
+          {
+            key: {
+              text: "Withdrawn from index"
+            },
+            value: {
+              html: "18 May 2024"
             }
           }
         ]
