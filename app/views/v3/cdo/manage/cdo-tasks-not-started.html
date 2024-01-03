@@ -16,9 +16,8 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-full">
 
       <span class="govuk-caption-l">Pre-exempt</span>
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
@@ -30,7 +29,7 @@
         <li class="govuk-summary-list__actions-list-item"><a class="govuk-link govuk-link--no-visited-state" href="owner-record-ED17343">Owner record</a></li>
       </ul>
 
-      <h2 class="govuk-heading-l govuk-!-margin-bottom-4">
+      <h2 class="govuk-heading-l govuk-!-margin-top-2 govuk-!-margin-bottom-4">
         CDO tasks
       </h2>
 
@@ -44,7 +43,10 @@
             },
             href: "application-pack",
             status: {
-              text: "Completed"
+              tag: {
+                text: "Not yet started",
+                classes: "govuk-tag--blue"
+              }
             }
           },
           {
@@ -118,8 +120,8 @@
         ]
       }) }}
 
+      </div>
     </div>
   </div>
-</div>
 
 {% endblock %}

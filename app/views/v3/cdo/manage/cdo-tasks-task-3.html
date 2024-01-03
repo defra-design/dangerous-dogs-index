@@ -16,28 +16,21 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <span class="govuk-caption-l">Pre-exempt</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
         {{ pageName }}
       </h1>
-
-      {{govukTag({
-        text: "CDO entered",
-        classes: "govuk-tag--green govuk-!-font-weight-bold govuk-!-font-size-16 govuk-!-margin-bottom-4"
-      })}}
 
       <ul class="govuk-summary-list__actions-list govuk-!-margin-bottom-6">
         <li class="govuk-summary-list__actions-list-item"><a class="govuk-link govuk-link--no-visited-state" href="dog-record-ED17343">Dog record</a></li>
         <li class="govuk-summary-list__actions-list-item"><a class="govuk-link govuk-link--no-visited-state" href="owner-record-ED17343">Owner record</a></li>
       </ul>
 
-      </div>
-
-    <div class="govuk-grid-column-full">
-
-      <h2 class="govuk-heading-l govuk-!-margin-top-2 govuk-!-margin-bottom-4">
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-4">
         CDO tasks
       </h2>
 
@@ -49,12 +42,9 @@
               classes: "govuk-link--no-visited-state",
               text: "Send application pack"
             },
-            href: "application-pack",
+            href: "#",
             status: {
-              tag: {
-                text: "Not yet started",
-                classes: "govuk-tag--blue"
-              }
+              text: "Completed"
             }
           },
           {
@@ -62,12 +52,9 @@
               classes: "govuk-link--no-visited-state",
               text: "Record insurance details"
             },
-            href: "insurance-details",
+            href: "#",
             status: {
-              tag: {
-                text: "Not yet started",
-                classes: "govuk-tag--blue"
-              }
+              text: "Completed"
             }
           },
           {
@@ -77,10 +64,7 @@
             },
             href: "#",
             status: {
-              tag: {
-                text: "Not yet started",
-                classes: "govuk-tag--blue"
-              }
+              text: "Completed"
             }
           },
           {
@@ -91,7 +75,7 @@
             hint: {
               text: "We can group more than one task together."
             },
-            href: "#",
+            href: "microchip-neutering",
             status: {
               tag: {
                 text: "Not yet started",
@@ -128,8 +112,8 @@
         ]
       }) }}
 
-      </div>
     </div>
   </div>
+</div>
 
 {% endblock %}
