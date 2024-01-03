@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Add insurance details" %}
+{% set pageName="Add insurance number" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "cdo-tasks"
+  href: "cdo-tasks-ED17343"
 }) }}
 {% endblock %}
 
@@ -18,34 +18,23 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v3/cdo/manage/cdo-tasks" method="post">
+      <form class="form" action="/v3/cdo/manage/cdo-tasks-task-2" method="post">
 
-        <h1 class="govuk-heading-l">
-          {{ pageName }}
-          </h1>
-
-          {{ govukInput({
-            label: {
-              text: "Dog name (optional)"
-            },
-            classes: "govuk-!-width-one-half",
-            id: "dog-name-1",
-            name: "dogName1"
-          }) }}
-
-          {{ govukDateInput({
-            id: "cdo-issued",
-            namePrefix: "cdo-issued",
-            fieldset: {
-              legend: {
-                classes: "govuk-!-font-weight-bold",
-                text: "CDO issue date"
-            }
-            }
-          }) }}
+      {{ govukInput({
+        label: {
+          text: "Add insurance number",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        hint: {
+          text: "We might need a hint to add the policy number."
+        },
+        classes: "govuk-input--width-10",
+        name: "eventName"
+      }) }}
 
       <button class="govuk-button" data-module="govuk-button">
-        Add insurance details
+        Add insurance number
       </button>
 
       </form>

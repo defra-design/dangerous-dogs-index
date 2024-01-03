@@ -16,7 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v2/dog-records/dog-record-ED30227-updated" method="post">
+      <form class="form" action="/v3/dog-records/dog-record-2023" method="post">
 
         <span class="govuk-caption-l">Dog ED30227</span>
 
@@ -197,7 +197,8 @@
             items: [
               {
                 value: "Choose court",
-                text: "Choose court"
+                text: "Choose court",
+                selected: true
               },
               {
                 value: "Aberystwyth Justice Centre",
@@ -205,8 +206,7 @@
               },
               {
                 value: "Barking and Dagenham Magistrates Court",
-                text: "Barking and Dagenham Magistrates Court",
-                selected: true
+                text: "Barking and Dagenham Magistrates Court"
               },
               {
                 value: "Barrow-in-Furness Magistrates Court",
@@ -320,6 +320,11 @@
             },
             items: [
               {
+              value: "Choose police force",
+              text: "Choose police force",
+              selected: true
+              },
+              {
                 value: "Avon and Somerset Constabulary",
                 text: "Avon and Somerset Constabulary"
               },
@@ -365,8 +370,7 @@
               },
               {
                 value: "Metropolitan Police Service",
-                text: "Metropolitan Police Service",
-                selected: true
+                text: "Metropolitan Police Service"
               },
               {
                 value: "Staffordshire Police",
@@ -394,7 +398,7 @@
           {{ govukInput({
             label: {
               classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
-              text: "Dog legislation officer"
+              text: "Dog legislation officer name"
             },
             classes: "govuk-!-width-two-thirds govuk-!-font-size-16",
             id: "dog-legislation-officer",
@@ -590,7 +594,7 @@
                     <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="exemption-scheme-day">
                       Day
                     </label>
-                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="8" name="exemption-scheme-day" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" name="exemption-scheme-day" type="text" inputmode="numeric">
                   </div>
                 </div>
 
@@ -599,7 +603,7 @@
                     <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="exemption-scheme-month">
                       Month
                     </label>
-                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="11"  name="exemption-scheme-month" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" name="exemption-scheme-month" type="text" inputmode="numeric">
                   </div>
                 </div>
 
@@ -608,17 +612,19 @@
                     <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="exemption-scheme-year">
                       Year
                     </label>
-                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-4" value="2013"  name="exemption-scheme-year" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-4" name="exemption-scheme-year" type="text" inputmode="numeric">
                   </div>
                 </div>
               </div>
             </fieldset>
           </div>
 
-          <h2 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-1">2023 XL bully order details
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible govuk-!-margin-bottom-7">
+
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Dangerous dogs exemption 2023 order
             </h2>
 
-          <p class="govuk-hint govuk-!-font-size-16 govuk-!-margin-bottom-4">A description of the details below
+          <p class="govuk-hint govuk-!-font-size-16">The information in this section is specific to dogs registered under the 2023 order.
             </p>
 
           {{ govukSelect({
@@ -645,6 +651,9 @@
               <legend class="govuk-fieldset__legend govuk-!-font-weight-bold govuk-!-font-size-16">
                 Microchip deadline
               </legend>
+              <div id="passport-issued-hint" class="govuk-hint govuk-!-font-size-16">
+                The dog must be microchipped by this date.
+              </div>
 
               <div class="govuk-date-input">
                 <div class="govuk-date-input__item">
@@ -680,7 +689,7 @@
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" role="group">
               <legend class="govuk-fieldset__legend govuk-!-font-weight-bold govuk-!-font-size-16">
-                Typed by DLO
+                Examined by dog legislation officer
               </legend>
 
               <div class="govuk-date-input">
