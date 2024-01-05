@@ -16,9 +16,21 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-full">
+
+    <form class="form" action="/v3/cdo/manage/cdo-tasks-error" method="post">
+
+      {{ govukErrorSummary({
+        id: "task-error",
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Complete all tasks before marking the CDO as complete",
+            href: "#"
+          }
+        ]
+      }) }}
 
       <span class="govuk-caption-l">Pre-exempt</span>
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
@@ -30,21 +42,27 @@
         <li class="govuk-summary-list__actions-list-item"><a class="govuk-link govuk-link--no-visited-state" href="owner-record-ED17343">Owner record</a></li>
       </ul>
 
-      <h2 class="govuk-heading-l govuk-!-margin-bottom-4">
+      <h2 class="govuk-heading-l govuk-!-margin-top-2 govuk-!-margin-bottom-4">
         CDO tasks
       </h2>
 
       {{ govukTaskList({
-        idPrefix: "company-details",
+        errorMessage: {
+          text: "The date your passport was issued must be in the past"
+        },
+        idPrefix: "cdo-tasks",
         items: [
           {
             title: {
               classes: "govuk-link--no-visited-state",
               text: "Send application pack"
             },
-            href: "#",
+            href: "application-pack",
             status: {
-              text: "Completed"
+              tag: {
+                text: "Not yet started",
+                classes: "govuk-tag--blue"
+              }
             }
           },
           {
@@ -52,9 +70,12 @@
               classes: "govuk-link--no-visited-state",
               text: "Record insurance details"
             },
-            href: "#",
+            href: "insurance-details",
             status: {
-              text: "Completed"
+              tag: {
+                text: "Not yet started",
+                classes: "govuk-tag--blue"
+              }
             }
           },
           {
@@ -64,7 +85,10 @@
             },
             href: "#",
             status: {
-              text: "Completed"
+              tag: {
+                text: "Not yet started",
+                classes: "govuk-tag--blue"
+              }
             }
           },
           {
@@ -77,7 +101,10 @@
             },
             href: "#",
             status: {
-              text: "Completed"
+              tag: {
+                text: "Not yet started",
+                classes: "govuk-tag--blue"
+              }
             }
           },
           {
@@ -85,7 +112,7 @@
               classes: "govuk-link--no-visited-state",
               text: "Record payment"
             },
-            href: "record-payment",
+            href: "#",
             status: {
               tag: {
                 text: "Not yet started",
@@ -114,9 +141,9 @@
       </button>
 
       </form>
-      
+
+      </div>
     </div>
   </div>
-</div>
 
 {% endblock %}

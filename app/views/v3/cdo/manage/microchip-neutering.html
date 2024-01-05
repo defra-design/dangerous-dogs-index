@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "cdo-tasks-ED17343"
+  href: "cdo-tasks-task-3"
 }) }}
 {% endblock %}
 
@@ -27,14 +27,27 @@
       {{ govukInput({
         label: {
           text: "Microchip number",
-          classes: "govuk-label--s",
-          isPageHeading: true
+          classes: "govuk-!-font-weight-bold"
         },
         hint: {
           text: "Add the microchip number."
         },
         classes: "govuk-input--width-10",
         name: "eventName"
+      }) }}
+
+      {{ govukDateInput({
+        id: "neutered-date",
+        namePrefix: "neutered-date",
+        fieldset: {
+          legend: {
+            text: "When was the dog neutered?",
+            classes: "govuk-!-font-weight-bold"
+          }
+        },
+        hint: {
+          text: "For example, 27 3 2023"
+        }
       }) }}
 
       <button class="govuk-button" data-module="govuk-button">

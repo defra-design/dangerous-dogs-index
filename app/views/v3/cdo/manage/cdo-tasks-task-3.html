@@ -20,6 +20,8 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
+      <form class="form" action="/v3/cdo/manage/cdo-tasks-error" method="post">
+
       <span class="govuk-caption-l">Pre-exempt</span>
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
         {{ pageName }}
@@ -86,7 +88,7 @@
           {
             title: {
               classes: "govuk-link--no-visited-state",
-              text: "Receive payment"
+              text: "Record payment"
             },
             href: "#",
             status: {
@@ -111,6 +113,12 @@
           }
         ]
       }) }}
+
+      <button class="govuk-button" data-module="govuk-button">
+        Mark as complete
+      </button>
+
+      </form>
 
     </div>
   </div>

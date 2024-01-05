@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Send form 2" %}
+{% set pageName="When was the payment made?" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "cdo-tasks-task-2"
+  href: "cdo-tasks-task-4"
 }) }}
 {% endblock %}
 
@@ -18,28 +18,23 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v3/cdo/manage/cdo-tasks-task-3" method="post">
+      <form class="form" action="/v3/cdo/manage/cdo-tasks-task-5" method="post">
 
         <span class="govuk-caption-m">Dog ED17343</span>
 
-        {{ govukCheckboxes({
-          name: "waste",
+        {{ govukDateInput({
+          id: "record-payment-date",
+          namePrefix: "record-payment-date",
           fieldset: {
             legend: {
-              text: "Send form 2",
+              text: "When was the payment made?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-5"
+              classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
-            text: "Record that you have sent form 2."
-          },
-          items: [
-            {
-              value: "Form 2 sent",
-              text: "Form 2 sent"
-            }
-          ]
+            text: "For example, 27 3 2007"
+          }
         }) }}
 
       <button class="govuk-button" data-module="govuk-button">
