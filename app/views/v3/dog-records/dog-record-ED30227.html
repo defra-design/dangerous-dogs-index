@@ -1,0 +1,366 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Dog ED30227" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+        {{ pageName }}
+      </h1>
+
+      {{govukTag({
+        text: "Exempt",
+        classes: "govuk-!-margin-bottom-6"
+      })}}
+
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+
+    {{ govukSummaryList({
+      classes: "govuk-!-font-size-16",
+      card: {
+      title: {
+      text: "Dog details",
+      classes: "defra-summary-header"
+      },
+      actions: {
+        items: [
+          {
+            href: "dog-record-ED30227-dog-edit",
+            text: "Edit details",
+            classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
+            visuallyHiddenText: "for dog"
+            }
+          ]
+        }
+      },
+      rows: [
+        {
+          classes: "govuk-!-width-one-third",
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: data['dogName1'] or "Brutus"
+          }
+        },
+        {
+          key: {
+            text: "Breed type"
+          },
+          value: {
+            text: data['dog-breed'] or "XL Bully"
+          }
+        },
+        {
+          key: {
+            text: "Colour"
+          },
+          value: {
+            text: data['dogColour'] or "Dark grey"
+          }
+        },
+        {
+          key: {
+            text: "Sex"
+          },
+          value: {
+            text: data['sex'] or "Male"
+          }
+        },
+        {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            html: "20 July 2007"
+          }
+        },
+        {
+          key: {
+            text: "Date of death"
+          },
+          value: {
+            html: "12 August 2020"
+          }
+        },
+        {
+          key: {
+            text: "Tattoo"
+          },
+          value: {
+            html: "ED30227"
+          }
+        },
+        {
+          key: {
+            text: "Microchip number"
+          },
+          value: {
+            text: "221087472833641"
+          }
+        },
+        {
+          key: {
+            text: "Microchip number 2"
+          },
+          value: {
+            text: "334670000033267"
+          }
+        },
+        {
+          key: {
+            text: "Date exported"
+          },
+          value: {
+            html: "28 June 2019"
+          }
+        },
+        {
+          key: {
+            text: "Date stolen"
+          },
+          value: {
+            html: "4 January 2016"
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukSummaryList({
+      classes: "govuk-!-font-size-16",
+      card: {
+      title: {
+      text: "Owner details",
+      classes: "defra-summary-header"
+      },
+      id: "owner-details",
+      actions: {
+        items: [
+          {
+            href: "/v2/owner-records/owner-record-ED30227",
+            text: "Owner record",
+            classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
+            visuallyHiddenText: "for owner"
+            }
+          ]
+        }
+      },
+      rows: [
+        {
+          classes: "govuk-!-width-one-third",
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: "Gareth Staines"
+          }
+        },
+        {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            text: "16 February 1983"
+          }
+        },
+        {
+          key: {
+            text: "Address"
+          },
+          value: {
+            html: "44 Groveway<br>Barking<br>RM8 3XL"
+          }
+        },
+        {
+          key: {
+            text: "Email"
+          },
+          value: {
+            text: "gazandshaz@hotmail.com"
+          }
+        },
+        {
+          key: {
+            text: "Telephone number 1"
+          },
+          value: {
+            text: data['telephoneNumber1'] or "07879 929344"
+          }
+        },
+        {
+          key: {
+            text: "Telephone number 2"
+          },
+          value: {
+            text: data['telephoneNumber2'] or "07723 239002"
+          }
+        },
+        {
+          key: {
+            text: "Country"
+          },
+          value: {
+            text: data['country'] or "England"
+          }
+        }
+      ]
+    }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+
+      {{ govukSummaryList({
+        classes: "govuk-!-font-size-16",
+        card: {
+          title: {
+            text: "Exemption details",
+            classes: "defra-summary-header"
+          },
+          actions: {
+            items: [
+              {
+                href: "dog-record-ED30227-exemption-edit",
+                text: "Edit details",
+                classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
+                visuallyHiddenText: "for exemption"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            classes: "govuk-!-width-one-third",
+            key: {
+              text: "Status"
+            },
+            value: {
+              text: "Exempt"
+            }
+          },
+          {
+            key: {
+              text: "Certificate issued"
+            },
+            value: {
+              text: "9 May 2014"
+            },
+            actions: {
+             items: [
+               {
+                 href: "certificate",
+                 classes: "govuk-link--no-visited-state",
+                 text: "Generate certificate"
+               }
+             ]
+           }
+          },
+          {
+            key: {
+              text: "CDO issued"
+            },
+            value: {
+              text: "13 September 2013"
+            }
+          },
+          {
+            key: {
+              text: "CDO expiry"
+            },
+            value: {
+              text: "13 November 2013"
+            }
+          },
+          {
+            key: {
+              text: "Court"
+            },
+            value: {
+              text: "Barking and Dagenham Magistrates Court"
+            }
+          },
+          {
+            key: {
+              text: "Police force"
+            },
+            value: {
+              text: "Metropolitan Police Service"
+            }
+          },
+          {
+            key: {
+              text: "Dog legislation officer"
+            },
+            value: {
+              text: "Solomon Beatty"
+            }
+          },
+          {
+            key: {
+              text: "Application fee paid"
+            },
+            value: {
+              text: "3 May 2014"
+            }
+          },
+          {
+            key: {
+              text: "Insurance company"
+            },
+            value: {
+              text: "Dogs Trust"
+            }
+          },
+          {
+            key: {
+              text: "Insurance renewal date"
+            },
+            value: {
+              text: "29 April 2024"
+            }
+          },
+          {
+            key: {
+              text: "Neutering confirmed"
+            },
+            value: {
+              text: "10 April 2014"
+            }
+          },
+          {
+            key: {
+              text: "Microchip number verified"
+            },
+            value: {
+              text: "10 April 2014"
+            }
+          },
+          {
+            key: {
+              text: "Joined interim exemption scheme"
+            },
+            value: {
+              text: "8 November 2013"
+            }
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
