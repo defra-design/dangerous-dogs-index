@@ -18,14 +18,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v3/dog-records/certificate-generated" method="post">
+      <form class="form" action="/v3/dog-records/certificate" method="post">
 
       <h1 class="govuk-heading-l">
         {{ pageName }}
       </h1>
 
-      <p class="govuk-body">The new certificate will be saved to this sharepoint folder(?)
-        </p>
+      <ol class="govuk-list govuk-list--number">
+        <li>Select the button below to download the new certificate to Sharepoint.</li>
+        <li>Save a copy of the certificate to your device.</li>
+        <li>Email the certificate to the dog owner.</li>
+        <li>Delete the copy of the certficate you saved to your device.</li>
+        <li>Close this browser tab.</li>
+      </ol>
 
         <div class="govuk-button-group">
         {{ govukButton({
