@@ -187,7 +187,7 @@
           actions: {
             items: [
               {
-                href: "dog-record-ED30227-exemption-edit",
+                href: "dog-record-ED30227-2023-edit",
                 text: "Edit details",
                 classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
                 visuallyHiddenText: "for exemption"
@@ -210,8 +210,17 @@
               text: "Certificate issued"
             },
             value: {
-              text: "5 December 2023"
-            }
+              text: "9 December 2023"
+            },
+            actions: {
+             items: [
+               {
+                 href: "certificate",
+                 classes: "govuk-link--no-visited-state",
+                 text: "Generate certificate"
+               }
+             ]
+           }
           },
           {
             key: {
@@ -219,7 +228,16 @@
             },
             value: {
               text: "2023"
-            }
+            },
+            actions: {
+             items: [
+               {
+                 href: "change-order",
+                 classes: "govuk-link--no-visited-state",
+                 text: "Change order"
+               }
+             ]
+           }
           },
           {
             classes: "govuk-!-width-one-third",

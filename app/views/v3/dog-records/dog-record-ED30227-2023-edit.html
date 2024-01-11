@@ -1,0 +1,655 @@
+{% extends "layouts/defra.html" %}
+
+{% block pageTitle %}
+  Dog ED30227 – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "dog-record-ED30227-2023"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v3/dog-records/dog-record-ED30227-2023" method="post">
+
+        <span class="govuk-caption-l">Dog ED30227</span>
+
+        {% call govukFieldset({
+          legend: {
+            text: "Edit exemption details",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+          {{ govukSelect({
+            classes: "govuk-!-width-one-third govuk-!-font-size-16",
+            name: "dog-status",
+            label: {
+              classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
+              text: "Status"
+            },
+            items: [
+              {
+                value: "Dead",
+                text: "Dead"
+              },
+              {
+                value: "Exempt",
+                text: "Exempt",
+                selected: true
+              },
+              {
+                value: "Expired",
+                text: "Expired"
+              },
+              {
+                value: "Exported",
+                text: "Exported"
+              },
+              {
+                value: "In breach",
+                text: "In breach"
+              },
+              {
+                value: "Interim exemption",
+                text: "Interim exemption"
+              },
+              {
+                value: "Pre-exempt",
+                text: "Pre-exempt"
+              },
+              {
+                value: "Stolen",
+                text: "Stolen"
+              },
+              {
+                value: "Withdrawn",
+                text: "Withdrawn"
+              }
+            ]
+          }) }}
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group">
+              <legend class="govuk-fieldset__legend govuk-!-font-weight-bold govuk-!-font-size-16">
+                Certificate issued
+              </legend>
+
+              <div class="govuk-date-input">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="certificate-day">
+                      Day
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="5" name="certificate-issued-day" type="text" inputmode="numeric">
+                  </div>
+                </div>
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="certificate-month">
+                      Month
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="12"  name="certificate-issued-month" type="text" inputmode="numeric">
+                  </div>
+                </div>
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="certificate-year">
+                      Year
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-4" value="2023"  name="certificate-issued-year" type="text" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          {{ govukSelect({
+            classes: "govuk-!-font-size-16",
+            name: "court",
+            label: {
+              classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
+              text: "Court"
+            },
+            items: [
+              {
+                value: "Choose court",
+                text: "Choose court",
+                selected: true
+              },
+              {
+                value: "Aberystwyth Justice Centre",
+                text: "Aberystwyth Justice Centre"
+              },
+              {
+                value: "Barking and Dagenham Magistrates Court",
+                text: "Barking and Dagenham Magistrates Court"
+              },
+              {
+                value: "Barrow-in-Furness Magistrates Court",
+                text: "Barrow-in-Furness Magistrates Court"
+              },
+              {
+                value: "Bradford and Keighley Magistrates’ Court",
+                text: "Bradford and Keighley Magistrates’ Court"
+              },
+              {
+                value: "Chester Magistrates’ Court",
+                text: "Chester Magistrates’ Court"
+              },
+              {
+                value: "Doncaster Justice Centre North (Doncaster Magistrates’ Court)",
+                text: "Doncaster Justice Centre North (Doncaster Magistrates’ Court)"
+              },
+              {
+                value: "East Berkshire (Slough) Magistrates’ Court",
+                text: "East Berkshire (Slough) Magistrates’ Court"
+              },
+              {
+                value: "Horsham Law Courts",
+                text: "Horsham Law Courts"
+              },
+              {
+                value: "Ipswich Magistrates’ Court",
+                text: "Ipswich Magistrates’ Court"
+              },
+              {
+                value: "Kirklees (Huddersfield) Magistrates’ Court",
+                text: "Kirklees (Huddersfield) Magistrates’ Court"
+              },
+              {
+                value: "Llandudno Magistrates’ Court",
+                text: "Llandudno Magistrates’ Court"
+              },
+              {
+                value: "Maidstone Magistrates’ Court",
+                text: "Maidstone Magistrates’ Court"
+              },
+              {
+                value: "Mid and South East Northumberland Law Courts (Bedlington)",
+                text: "Mid and South East Northumberland Law Courts (Bedlington)"
+              },
+              {
+                value: "North Somerset Courthouse",
+                text: "North Somerset Courthouse"
+              },
+              {
+                value: "Oxford and Southern Oxfordshire Magistrates’ Court",
+                text: "Oxford and Southern Oxfordshire Magistrates’ Court"
+              },
+              {
+                value: "Peterborough Magistrates’ Court",
+                text: "Peterborough Magistrates’ Court"
+              },
+              {
+                value: "Preston Magistrates’ Court",
+                text: "Preston Magistrates’ Court"
+              },
+              {
+                value: "Salisbury Law Courts",
+                text: "Salisbury Law Courts"
+              },
+              {
+                value: "Sheffield Magistrates’ Court",
+                text: "Sheffield Magistrates’ Court"
+              },
+              {
+                value: "Southampton (West Hampshire) Magistrates’ Court",
+                text: "Southampton (West Hampshire) Magistrates’ Court"
+              },
+              {
+                value: "St Albans Magistrates’ Court",
+                text: "St Albans Magistrates’ Court"
+              },
+              {
+                value: "Taunton Magistrates’ Court",
+                text: "Taunton Magistrates’ Court"
+              },
+              {
+                value: "Wellingborough Magistrates’ Court",
+                text: "Wellingborough Magistrates’ Court"
+              },
+              {
+                value: "Wirral Magistrates’ Court",
+                text: "Wirral Magistrates’ Court"
+              },
+              {
+                value: "Worcester Justice Centre",
+                text: "Worcester Justice Centre"
+              },
+              {
+                value: "Wrexham Law Courts",
+                text: "Wrexham Law Courts"
+              },
+              {
+                value: "York Magistrates’ Court",
+                text: "York Magistrates’ Court"
+              }
+            ]
+          }) }}
+
+          {{ govukSelect({
+            classes: "govuk-!-width-two-thirds govuk-!-font-size-16",
+            name: "police-force",
+            label: {
+              classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
+              text: "Police force"
+            },
+            items: [
+              {
+              value: "Choose police force",
+              text: "Choose police force",
+              selected: true
+              },
+              {
+                value: "Avon and Somerset Constabulary",
+                text: "Avon and Somerset Constabulary"
+              },
+              {
+                value: "Bedfordshire Police",
+                text: "Bedfordshire Police"
+              },
+              {
+                value: "Cumbria Constabulary",
+                text: "Cumbria Constabulary"
+              },
+              {
+                value: "Devon and Cornwall Police",
+                text: "Devon and Cornwall Police"
+              },
+              {
+                value: "Essex Police",
+                text: "Essex Police"
+              },
+              {
+                value: "Gloucestershire Constabulary",
+                text: "Gloucestershire Constabulary"
+              },
+              {
+                value: "Greater Manchester Police",
+                text: "Greater Manchester Police"
+              },
+              {
+                value: "Hampshire Constabulary",
+                text: "Hampshire Constabulary"
+              },
+              {
+                value: "Hertfordshire Constabulary",
+                text: "Hertfordshire Constabulary"
+              },
+              {
+                value: "Humberside Police",
+                text: "Humberside Police"
+              },
+              {
+                value: "Kent Police",
+                text: "Kent Police"
+              },
+              {
+                value: "Metropolitan Police Service",
+                text: "Metropolitan Police Service"
+              },
+              {
+                value: "Staffordshire Police",
+                text: "Staffordshire Police"
+              },
+              {
+                value: "Surrey Police",
+                text: "Surrey Police"
+              },
+              {
+                value: "Sussex Police",
+                text: "Sussex Police"
+              },
+              {
+                value: "Thames Valley Police",
+                text: "Thames Valley Police"
+              },
+              {
+                value: "Wiltshire Police",
+                text: "Wiltshire Police"
+              }
+            ]
+          }) }}
+
+          {{ govukInput({
+            label: {
+              classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
+              text: "Dog legislation officer (DLO) name"
+            },
+            classes: "govuk-!-width-two-thirds govuk-!-font-size-16",
+            id: "dog-legislation-officer",
+            name: "dog-legislation-officer",
+            value: data['dog-legislation-officer'] or "Solomon Beatty"
+          }) }}
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group">
+              <legend class="govuk-fieldset__legend govuk-!-font-weight-bold govuk-!-font-size-16">
+                Application fee paid
+              </legend>
+
+              <div class="govuk-date-input">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="application-fee-day">
+                      Day
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="30" name="application-fee-day" type="text" inputmode="numeric">
+                  </div>
+                </div>
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="application-fee-month">
+                      Month
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="11"  name="application-fee-month" type="text" inputmode="numeric">
+                  </div>
+                </div>
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="application-fee-year">
+                      Year
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-4" value="2023"  name="application-fee-year" type="text" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          {{ govukSelect({
+            classes: "govuk-!-width-two-thirds govuk-!-font-size-16",
+            name: "insurance-company",
+            label: {
+              classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
+              text: "Insurance company"
+            },
+            items: [
+              {
+                value: "Another insurer",
+                text: "Another insurer"
+              },
+              {
+                value: "Dogs Trust",
+                text: "Dogs Trust",
+                selected: true
+              },
+              {
+                value: "Another insurer",
+                text: "Another insurer"
+              },
+              {
+                value: "Another insurer",
+                text: "Another insurer"
+              }
+            ]
+          }) }}
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group">
+              <legend class="govuk-fieldset__legend govuk-!-font-weight-bold govuk-!-font-size-16">
+                Insurance renewal date
+              </legend>
+
+              <div class="govuk-date-input">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="insurance-renewal-day">
+                      Day
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="29" name="insurance-renewal-day" type="text" inputmode="numeric">
+                  </div>
+                </div>
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="insurance-renewal-month">
+                      Month
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="11"  name="insurance-renewal-month" type="text" inputmode="numeric">
+                  </div>
+                </div>
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="insurance-renewal-year">
+                      Year
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-4" value="2024"  name="insurance-renewal-year" type="text" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group">
+              <legend class="govuk-fieldset__legend govuk-!-font-weight-bold govuk-!-font-size-16">
+                Neutering confirmed
+              </legend>
+
+              <div class="govuk-date-input">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="neutering-confirmed-day">
+                      Day
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="10" name="neutering-confirmed-day" type="text" inputmode="numeric">
+                  </div>
+                </div>
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="neutering-confirmed-month">
+                      Month
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="4"  name="neutering-confirmed-month" type="text" inputmode="numeric">
+                  </div>
+                </div>
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="neutering-confirmed-year">
+                      Year
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-4" value="2014"  name="neutering-confirmed-year" type="text" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group">
+              <legend class="govuk-fieldset__legend govuk-!-font-weight-bold govuk-!-font-size-16">
+                Microchip number verified
+              </legend>
+
+              <div class="govuk-date-input">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="microchip-number-verified-day">
+                      Day
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="10" name="microchip-number-verified-day" type="text" inputmode="numeric">
+                  </div>
+                </div>
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="microchip-number-verified-month">
+                      Month
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="4"  name="microchip-number-verified-month" type="text" inputmode="numeric">
+                  </div>
+                </div>
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="microchip-number-verified-year">
+                      Year
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-4" value="2014"  name="microchip-number-verified-year" type="text" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible govuk-!-margin-bottom-7">
+
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Dangerous dogs exemption 2023 order
+            </h2>
+
+          <p class="govuk-hint govuk-!-font-size-16">The information in this section is specific to dogs registered under the 2023 order.
+            </p>
+
+          <p class="govuk-body govuk-!-font-size-16 govuk-!-margin-bottom-5">
+            <a class="govuk-link govuk-link--no-visited-state" href="change-order">Change exemption order to 2015</a>
+            </p>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group">
+              <legend class="govuk-fieldset__legend govuk-!-font-weight-bold govuk-!-font-size-16">
+                Microchip deadline
+              </legend>
+              <div id="microchip-deadline-hint" class="govuk-hint govuk-!-font-size-16">
+                The dog must be microchipped by this date.
+              </div>
+
+              <div class="govuk-date-input">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="microchip-deadline-day">
+                      Day
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="31" name="exemption-scheme-day" type="text" inputmode="numeric">
+                  </div>
+                </div>
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="microchip-deadline-month">
+                      Month
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="3"  name="microchip-deadline-month" type="text" inputmode="numeric">
+                  </div>
+                </div>
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="microchip-deadline-year">
+                      Year
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-4" value="2024"  name="microchip-deadline-year" type="text" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group">
+              <legend class="govuk-fieldset__legend govuk-!-font-weight-bold govuk-!-font-size-16">
+                Examined by DLO
+              </legend>
+
+              <div class="govuk-date-input">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="typed-by-dlo-day">
+                      Day
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="12" name="typed-by-dlo-day" type="text" inputmode="numeric">
+                  </div>
+                </div>
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="typed-by-dlo-month">
+                      Month
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="3"  name="typed-by-dlo-month" type="text" inputmode="numeric">
+                  </div>
+                </div>
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="typed-by-dlo-year">
+                      Year
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-4" value="2024"  name="typed-by-dlo-year" type="text" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group">
+              <legend class="govuk-fieldset__legend govuk-!-font-weight-bold govuk-!-font-size-16">
+                Withdrawn from index
+              </legend>
+              <div id="withdraw-index-hint" class="govuk-hint govuk-!-font-size-16 govuk-!-padding-right-8">
+                An owner can ask for their dog be withdrawn from the index. DLOs can ask for a dog to be withdrawn if they do not consider it to be an XL Bully.
+              </div>
+
+              <div class="govuk-date-input">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="withdrawn-from-index-day">
+                      Day
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" name="exemption-scheme-day" type="text" inputmode="numeric">
+                  </div>
+                </div>
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="withdrawn-from-index-month">
+                      Month
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" name="exemption-scheme-month" type="text" inputmode="numeric">
+                  </div>
+                </div>
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="withdrawn-from-index-year">
+                      Year
+                    </label>
+                  <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-4" name="withdrawn-from-index-year" type="text" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+        {% endcall %}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Save details"
+          }) }}
+
+          <a class="govuk-link govuk-link--no-visited-state" href="dog-record-ED30227-2023">Cancel</a>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
