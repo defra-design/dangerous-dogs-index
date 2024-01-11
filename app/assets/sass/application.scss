@@ -96,6 +96,10 @@
     align-items: flex-end;
   }
 
+  .defra-results {
+  vertical-align: top;
+  }
+
   //tags
   .defra-tag--grey {
     color: govuk-colour("white");
@@ -106,5 +110,8 @@
   .defra-align-right {
     position: absolute;
     float: right;
+  }
 
+  .defra-secondary-text {
+    color: $govuk-secondary-text-colour;
   }
