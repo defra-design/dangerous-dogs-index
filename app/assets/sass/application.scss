@@ -106,10 +106,13 @@
     background: $govuk-secondary-text-colour;
   }
 
-  //tags
   .defra-align-right {
     position: absolute;
     float: right;
+  }
+
+  .defra-text-align-left {
+    text-align: left;
   }
 
   .defra-secondary-text {
