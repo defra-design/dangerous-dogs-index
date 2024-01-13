@@ -1,0 +1,25 @@
+{% extends "layouts/defra.html" %}
+
+{% block pageTitle %}
+  Exemption order changed to 2015 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        classes: "govuk-!-margin-bottom-7",
+        titleText: "Status changed to ‘this status’",
+        html: "Dog ED30227"
+      }) }}
+
+      <p class="govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="dog-record-ED30227-2023-status">Go to the dog record for Dog ED30227</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

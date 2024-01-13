@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Change the exemption order from 2023 to 2015 for Dog ED30227" %}
+{% set pageName="Override the status for Dog ED30227" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -18,23 +18,22 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v3/dog-records/order-changed" method="post">
+      <form class="form" action="/v3/dog-records/status-changed" method="post">
 
       <h1 class="govuk-heading-l">
         {{ pageName }}
       </h1>
 
       <p class="govuk-body">
-        If you change the exemption order from 2023 to 2015, the 2023 order information will be archived. You cannot undo this change.
+        Override the status to this new status.
       </p>
-
 
         <div class="govuk-button-group">
         {{ govukButton({
-          text: "Change order"
+          text: "Override status"
         }) }}
 
-        <a class="govuk-link govuk-link--no-visited-state" href="dog-record-ED30227-2023">Cancel</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="dog-record-ED30227">Cancel</a>
       </div>
 
       </form>

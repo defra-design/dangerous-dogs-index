@@ -54,7 +54,6 @@
       },
       rows: [
         {
-          classes: "govuk-!-width-one-third",
           key: {
             text: "Name"
           },
@@ -201,13 +200,22 @@
         },
         rows: [
           {
-            classes: "govuk-!-width-one-third",
             key: {
               text: "Status"
             },
             value: {
               text: "Exempt"
-            }
+            },
+            actions: {
+            classes: "defra-text-align-left",
+             items: [
+               {
+                 href: "#",
+                 classes: "govuk-link--no-visited-state",
+                 text: "Override status"
+               }
+             ]
+           }
           },
           {
             key: {
@@ -217,10 +225,11 @@
               text: "9 December 2023"
             },
             actions: {
+            classes: "defra-text-align-left",
              items: [
                {
                  href: "#",
-                 classes: "govuk-summary-list__value defra-text-align-left govuk-link--no-visited-state",
+                 classes: "govuk-link--no-visited-state",
                  text: "Generate certificate"
                }
              ]
