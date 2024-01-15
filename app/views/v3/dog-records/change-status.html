@@ -21,7 +21,7 @@
       <form class="form" action="/v3/dog-records/status-changed" method="post">
 
       {{ govukRadios({
-        name: "whereDoYouLive",
+        name: "dogStatus",
         fieldset: {
           legend: {
             text: "Change the status for Dog ED30227",
@@ -30,28 +30,43 @@
           }
         },
         items: [
+        {
+          value: "Interim exempt",
+          text: "Interim exempt"
+        },
           {
-            value: "england",
+            value: "Pre-exempt",
+            text: "Pre-exempt"
+          },
+          {
+            value: "Failed",
             text: "Failed"
           },
           {
-            value: "scotland",
+            value: "Exempt",
+            text: "Exempt"
+          },
+          {
+            value: "In breach",
             text: "In breach"
+          },
+          {
+            value: "Withdrawn",
+            text: "Withdrawn"
+          },
+          {
+            value: "Inactive",
+            text: "Inactive"
           }
         ]
       }) }}
-<!--
-      <p class="govuk-body">
-        Change the status to this new status.
-      </p>
 
--->
         <div class="govuk-button-group">
         {{ govukButton({
           text: "Change status"
         }) }}
 
-        <a class="govuk-link govuk-link--no-visited-state" href="dog-record-ED30227">Cancel</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="dog-record-ED30227-2023">Cancel</a>
       </div>
 
       </form>

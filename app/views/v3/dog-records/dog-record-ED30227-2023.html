@@ -199,13 +199,13 @@
               text: "Status"
             },
             value: {
-              text: "Exempt"
+              text: data['dogStatus'] or "Exempt"
             },
             actions: {
             classes: "defra-text-align-left",
              items: [
                {
-                 href: "status",
+                 href: "change-status",
                  classes: "govuk-link--no-visited-state",
                  text: "Change status"
                }

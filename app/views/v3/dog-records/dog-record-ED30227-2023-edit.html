@@ -28,53 +28,17 @@
           }
         }) %}
 
-          {{ govukSelect({
-            classes: "govuk-!-width-one-third govuk-!-font-size-16",
-            name: "dog-status",
-            label: {
-              classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
-              text: "Status"
-            },
-            items: [
-              {
-                value: "Dead",
-                text: "Dead"
-              },
-              {
-                value: "Exempt",
-                text: "Exempt",
-                selected: true
-              },
-              {
-                value: "Expired",
-                text: "Expired"
-              },
-              {
-                value: "Exported",
-                text: "Exported"
-              },
-              {
-                value: "In breach",
-                text: "In breach"
-              },
-              {
-                value: "Interim exemption",
-                text: "Interim exemption"
-              },
-              {
-                value: "Pre-exempt",
-                text: "Pre-exempt"
-              },
-              {
-                value: "Stolen",
-                text: "Stolen"
-              },
-              {
-                value: "Withdrawn",
-                text: "Withdrawn"
-              }
-            ]
-          }) }}
+        <p class="govuk-body govuk-!-font-size-16 govuk-!-font-weight-bold govuk-!-margin-top-4 govuk-!-margin-bottom-1">
+          Status
+          </p>
+        <p class="govuk-body govuk-!-font-size-16 govuk-!-margin-bottom-1">
+          Exempt
+          </p>
+        <p class="govuk-body govuk-!-font-size-16">
+          <a class="govuk-link govuk-link--no-visited-state" href="change-status">
+          Change status
+            </a>
+          </p>
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" role="group">

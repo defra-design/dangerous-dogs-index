@@ -11,12 +11,14 @@
 
       {{ govukPanel({
         classes: "govuk-!-margin-bottom-7",
-        titleText: "Status changed to ‘Failed’",
-        html: "Dog ED30227"
+        titleText: "Status for Dog ED30227 changed to",
+        text: data['dogStatus'] or "Failed"
+
+
       }) }}
 
       <p class="govuk-body">
-        <a class="govuk-link govuk-link--no-visited-state" href="dog-record-ED30227-2023-status">Go to the dog record for Dog ED30227</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="dog-record-ED30227-2023">Go to the dog record for Dog ED30227</a>
       </p>
 
     </div>
