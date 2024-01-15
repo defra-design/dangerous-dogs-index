@@ -22,7 +22,7 @@
       </h1>
 
       {{govukTag({
-        text: "Exempt",
+        text: data['dogStatus'] or "Exempt",
         classes: "govuk-tag--yellow govuk-!-margin-bottom-6"
       })}}
 
