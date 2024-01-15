@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Override the status for Dog ED30227" %}
+{% set pageName="Change the status for Dog ED30227" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -20,17 +20,35 @@
 
       <form class="form" action="/v3/dog-records/status-changed" method="post">
 
-      <h1 class="govuk-heading-l">
-        {{ pageName }}
-      </h1>
-
+      {{ govukRadios({
+        name: "whereDoYouLive",
+        fieldset: {
+          legend: {
+            text: "Change the status for Dog ED30227",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "england",
+            text: "Failed"
+          },
+          {
+            value: "scotland",
+            text: "In breach"
+          }
+        ]
+      }) }}
+<!--
       <p class="govuk-body">
-        Override the status to this new status.
+        Change the status to this new status.
       </p>
 
+-->
         <div class="govuk-button-group">
         {{ govukButton({
-          text: "Override status"
+          text: "Change status"
         }) }}
 
         <a class="govuk-link govuk-link--no-visited-state" href="dog-record-ED30227">Cancel</a>
