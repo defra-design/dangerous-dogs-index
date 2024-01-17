@@ -1,0 +1,77 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Change the status for Dog ED30227" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "dog-record-ED30227-2023"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v3/dog-records/status-changed" method="post">
+
+      {{ govukRadios({
+        name: "dogStatus",
+        fieldset: {
+          legend: {
+            text: "Change the status for Dog ED30227",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+           classes: "defra-text govuk-!-margin-top-1 govuk-!-margin-bottom-5",
+           text: "Dog ED30227 is currently Exempt."
+        },
+        items: [
+        {
+          value: "Interim exempt",
+          text: "Interim exempt"
+        },
+          {
+            value: "Pre-exempt",
+            text: "Pre-exempt"
+          },
+          {
+            value: "Failed",
+            text: "Failed"
+          },
+          {
+            value: "In breach",
+            text: "In breach"
+          },
+          {
+            value: "Withdrawn",
+            text: "Withdrawn"
+          },
+          {
+            value: "Inactive",
+            text: "Inactive"
+          }
+        ]
+      }) }}
+
+        <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Change status"
+        }) }}
+
+        <a class="govuk-link govuk-link--no-visited-state" href="dog-record-ED30227-2023">Cancel</a>
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

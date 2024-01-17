@@ -82,6 +82,130 @@
           </div>
 
           {{ govukSelect({
+            classes: "govuk-!-font-size-16",
+            name: "court",
+            label: {
+              classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
+              text: "Court"
+            },
+            items: [
+              {
+                value: "Choose court",
+                text: "Choose court",
+                selected: true
+              },
+              {
+                value: "Aberystwyth Justice Centre",
+                text: "Aberystwyth Justice Centre"
+              },
+              {
+                value: "Barking and Dagenham Magistrates Court",
+                text: "Barking and Dagenham Magistrates Court"
+              },
+              {
+                value: "Barrow-in-Furness Magistrates Court",
+                text: "Barrow-in-Furness Magistrates Court"
+              },
+              {
+                value: "Bradford and Keighley Magistrates’ Court",
+                text: "Bradford and Keighley Magistrates’ Court"
+              },
+              {
+                value: "Chester Magistrates’ Court",
+                text: "Chester Magistrates’ Court"
+              },
+              {
+                value: "Doncaster Justice Centre North (Doncaster Magistrates’ Court)",
+                text: "Doncaster Justice Centre North (Doncaster Magistrates’ Court)"
+              },
+              {
+                value: "East Berkshire (Slough) Magistrates’ Court",
+                text: "East Berkshire (Slough) Magistrates’ Court"
+              },
+              {
+                value: "Horsham Law Courts",
+                text: "Horsham Law Courts"
+              },
+              {
+                value: "Ipswich Magistrates’ Court",
+                text: "Ipswich Magistrates’ Court"
+              },
+              {
+                value: "Kirklees (Huddersfield) Magistrates’ Court",
+                text: "Kirklees (Huddersfield) Magistrates’ Court"
+              },
+              {
+                value: "Llandudno Magistrates’ Court",
+                text: "Llandudno Magistrates’ Court"
+              },
+              {
+                value: "Maidstone Magistrates’ Court",
+                text: "Maidstone Magistrates’ Court"
+              },
+              {
+                value: "Mid and South East Northumberland Law Courts (Bedlington)",
+                text: "Mid and South East Northumberland Law Courts (Bedlington)"
+              },
+              {
+                value: "North Somerset Courthouse",
+                text: "North Somerset Courthouse"
+              },
+              {
+                value: "Oxford and Southern Oxfordshire Magistrates’ Court",
+                text: "Oxford and Southern Oxfordshire Magistrates’ Court"
+              },
+              {
+                value: "Peterborough Magistrates’ Court",
+                text: "Peterborough Magistrates’ Court"
+              },
+              {
+                value: "Preston Magistrates’ Court",
+                text: "Preston Magistrates’ Court"
+              },
+              {
+                value: "Salisbury Law Courts",
+                text: "Salisbury Law Courts"
+              },
+              {
+                value: "Sheffield Magistrates’ Court",
+                text: "Sheffield Magistrates’ Court"
+              },
+              {
+                value: "Southampton (West Hampshire) Magistrates’ Court",
+                text: "Southampton (West Hampshire) Magistrates’ Court"
+              },
+              {
+                value: "St Albans Magistrates’ Court",
+                text: "St Albans Magistrates’ Court"
+              },
+              {
+                value: "Taunton Magistrates’ Court",
+                text: "Taunton Magistrates’ Court"
+              },
+              {
+                value: "Wellingborough Magistrates’ Court",
+                text: "Wellingborough Magistrates’ Court"
+              },
+              {
+                value: "Wirral Magistrates’ Court",
+                text: "Wirral Magistrates’ Court"
+              },
+              {
+                value: "Worcester Justice Centre",
+                text: "Worcester Justice Centre"
+              },
+              {
+                value: "Wrexham Law Courts",
+                text: "Wrexham Law Courts"
+              },
+              {
+                value: "York Magistrates’ Court",
+                text: "York Magistrates’ Court"
+              }
+            ]
+          }) }}
+
+          {{ govukSelect({
             classes: "govuk-!-width-two-thirds govuk-!-font-size-16",
             name: "police-force",
             label: {

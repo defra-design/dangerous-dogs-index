@@ -1,0 +1,438 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Dog records - Search" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "search"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v3/search/search-results" method="post">
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+          {{ pageName }}
+        </legend>
+
+      <div class="govuk-form-group govuk-!-margin-bottom-2">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="search">
+          Search
+          </label>
+        </h1>
+        <div id="event-name-hint" class="govuk-hint">
+          Enter one or more search terms separated by spaces
+        </div>
+        <input class="govuk-input" value="10433" id="search" name="keyword" type="text">
+      </div>
+
+      <div class="govuk-form-group govuk-!-margin-bottom-2">
+        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+          Record type
+          </legend>
+          <div class="govuk-radios govuk-radios--inline govuk-radios--small"
+            data-module="govuk-radios">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="recordType" name="recordType" type="radio" value="Dog record" checked>
+                <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="recordType">
+                  Dog record
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="recordType-2" name="recordType" type="radio" value="Owner record">
+                <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="recordType-2">
+                  Owner record
+                </label>
+              </div>
+            </div>
+        </fieldset>
+
+      {{ govukButton({
+        text: "Search"
+      }) }}
+
+      </form>
+
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+        3 dog records
+        </p>
+
+      <hr class="govuk-section-break govuk-section-break--s govuk-!-margin-bottom-6 govuk-section-break--visible">
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-2 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title defra-summary-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="">
+            ED10433
+          </a></h2>
+          <ul class="govuk-summary-card__actions govuk-!-padding-bottom-1 govuk-!-font-weight-regular">
+            {{ govukTag({
+              text: "Interim exempt",
+              classes: "govuk-tag--green govuk-!-font-size-16"
+            }) }}
+          </ul>
+        </div>
+
+        <div class="govuk-summary-card__content govuk-!-padding-top-1 govuk-!-padding-bottom-0">
+          <table class="govuk-table govuk-!-margin-bottom-3">
+            <caption class="govuk-table__caption govuk-!-font-weight-regular govuk-!-font-size-16">
+                </caption>
+              <thead class="govuk-table__head govuk-!-font-size-16">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                    Dog name
+                  </th>
+                  <th scope="col" class="govuk-table__header">
+                    Owner name
+                  </th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-!-width-one-quarter">
+                    Microchip number
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                     Rocky
+                    </td>
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                      <a class="govuk-link govuk-link--no-visited-state" href="">
+                        Jill Scott
+                      </a>
+                    </td>
+                    <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                      901229512395772<br>820000064923093
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      <hr class="govuk-section-break govuk-section-break--s">
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-2 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title defra-summary-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="">
+            ED30227
+          </a></h2>
+          <ul class="govuk-summary-card__actions govuk-!-padding-bottom-1 govuk-!-font-weight-regular">
+            {{ govukTag({
+              text: "Pre-exempt",
+              classes: "govuk-tag--blue govuk-!-font-size-16"
+            }) }}
+          </ul>
+        </div>
+
+        <div class="govuk-summary-card__content govuk-!-padding-top-1 govuk-!-padding-bottom-0">
+          <table class="govuk-table govuk-!-margin-bottom-3">
+            <caption class="govuk-table__caption govuk-!-font-weight-regular govuk-!-font-size-16">
+                </caption>
+              <thead class="govuk-table__head govuk-!-font-size-16">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                    Dog name
+                  </th>
+                  <th scope="col" class="govuk-table__header">
+                    Owner name
+                  </th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-!-width-one-quarter">
+                    Microchip number
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0 defra-results">
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                     Brutus
+                    </td>
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                      <a class="govuk-link govuk-link--no-visited-state" href="">
+                        Gareth Staines
+                      </a>
+                    </td>
+                    <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                      221081043333641
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--s">
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-2 govuk-!-padding-bottom-1">
+            <h2 class="govuk-summary-card__title defra-summary-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="">
+              ED30872
+            </a></h2>
+            <ul class="govuk-summary-card__actions govuk-!-padding-bottom-1 govuk-!-font-weight-regular">
+              {{ govukTag({
+                text: "Failed",
+                classes: "govuk-tag--purple govuk-!-font-size-16"
+              }) }}
+            </ul>
+          </div>
+
+          <div class="govuk-summary-card__content govuk-!-padding-top-1 govuk-!-padding-bottom-0">
+            <table class="govuk-table govuk-!-margin-bottom-3">
+              <caption class="govuk-table__caption govuk-!-font-weight-regular govuk-!-font-size-16">
+                  </caption>
+                <thead class="govuk-table__head govuk-!-font-size-16">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                      Dog name
+                    </th>
+                    <th scope="col" class="govuk-table__header">
+                      Owner name
+                    </th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-!-width-one-quarter">
+                      Microchip number
+                    </th>
+                  </tr>
+                </thead>
+
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                      <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                       Damien
+                      </td>
+                      <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                        <a class="govuk-link govuk-link--no-visited-state" href="">
+                          Wojciech Krychowiak
+                        </a>
+                      </td>
+                      <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                        267500065927320<br>448000964910433
+                      </td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <hr class="govuk-section-break govuk-section-break--s">
+
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-2 govuk-!-padding-bottom-1">
+              <h2 class="govuk-summary-card__title defra-summary-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="">
+                ED10433
+              </a></h2>
+              <ul class="govuk-summary-card__actions govuk-!-padding-bottom-1 govuk-!-font-weight-regular">
+                {{ govukTag({
+                  text: "Exempt",
+                  classes: "govuk-tag--turquoise govuk-!-font-size-16"
+                }) }}
+              </ul>
+            </div>
+
+            <div class="govuk-summary-card__content govuk-!-padding-top-1 govuk-!-padding-bottom-0">
+              <table class="govuk-table govuk-!-margin-bottom-3">
+                <caption class="govuk-table__caption govuk-!-font-weight-regular govuk-!-font-size-16">
+                    </caption>
+                  <thead class="govuk-table__head govuk-!-font-size-16">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                        Dog name
+                      </th>
+                      <th scope="col" class="govuk-table__header">
+                        Owner name
+                      </th>
+                      <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-!-width-one-quarter">
+                        Microchip number
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                        <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                         Buffy
+                        </td>
+                        <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                          <a class="govuk-link govuk-link--no-visited-state" href="">
+                            Tyler McDermott
+                          </a>
+                        </td>
+                        <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                          901229512395772
+                        </td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--s">
+
+            <div class="govuk-summary-card">
+              <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-2 govuk-!-padding-bottom-1">
+                <h2 class="govuk-summary-card__title defra-summary-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="">
+                  ED14249
+                </a></h2>
+                <ul class="govuk-summary-card__actions govuk-!-padding-bottom-1 govuk-!-font-weight-regular">
+                  {{ govukTag({
+                    text: "In breach",
+                    classes: "govuk-tag--red govuk-!-font-size-16"
+                  }) }}
+                </ul>
+              </div>
+
+              <div class="govuk-summary-card__content govuk-!-padding-top-1 govuk-!-padding-bottom-0">
+                <table class="govuk-table govuk-!-margin-bottom-3">
+                  <caption class="govuk-table__caption govuk-!-font-weight-regular govuk-!-font-size-16">
+                      </caption>
+                    <thead class="govuk-table__head govuk-!-font-size-16">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                          Dog name
+                        </th>
+                        <th scope="col" class="govuk-table__header">
+                          Owner name
+                        </th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-!-width-one-quarter">
+                          Microchip number
+                        </th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0 defra-results">
+                          <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                           Diablo
+                          </td>
+                          <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                            <a class="govuk-link govuk-link--no-visited-state" href="">
+                              Aamir Kapoor
+                            </a>
+                          </td>
+                          <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                            221081043333641
+                          </td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <hr class="govuk-section-break govuk-section-break--s">
+
+              <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-2 govuk-!-padding-bottom-1">
+                  <h2 class="govuk-summary-card__title defra-summary-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="">
+                    ED32448
+                  </a></h2>
+                  <ul class="govuk-summary-card__actions govuk-!-padding-bottom-1 govuk-!-font-weight-regular">
+                    {{ govukTag({
+                      text: "Withdrawn",
+                      classes: "govuk-tag--pink govuk-!-font-size-16"
+                    }) }}
+                  </ul>
+                </div>
+
+                <div class="govuk-summary-card__content govuk-!-padding-top-1 govuk-!-padding-bottom-0">
+                  <table class="govuk-table govuk-!-margin-bottom-3">
+                    <caption class="govuk-table__caption govuk-!-font-weight-regular govuk-!-font-size-16">
+                        </caption>
+                      <thead class="govuk-table__head govuk-!-font-size-16">
+                        <tr class="govuk-table__row">
+                          <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                            Dog name
+                          </th>
+                          <th scope="col" class="govuk-table__header">
+                            Owner name
+                          </th>
+                          <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-!-width-one-quarter">
+                            Microchip number
+                          </th>
+                        </tr>
+                      </thead>
+
+                      <tbody class="govuk-table__body">
+                          <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                            <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                             Buffy
+                            </td>
+                            <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                              <a class="govuk-link govuk-link--no-visited-state" href="">
+                                Sharon Bailey
+                              </a>
+                            </td>
+                            <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                              881009512395750
+                            </td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-2 govuk-!-padding-bottom-1">
+                  <h2 class="govuk-summary-card__title defra-summary-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="">
+                    ED10448
+                  </a></h2>
+                  <ul class="govuk-summary-card__actions govuk-!-padding-bottom-1 govuk-!-font-weight-regular">
+                    {{ govukTag({
+                      text: "Inactive",
+                      classes: "govuk-tag--yellow govuk-!-font-size-16"
+                    }) }}
+                  </ul>
+                </div>
+
+                <div class="govuk-summary-card__content govuk-!-padding-top-1 govuk-!-padding-bottom-0">
+                  <table class="govuk-table govuk-!-margin-bottom-3">
+                    <caption class="govuk-table__caption govuk-!-font-weight-regular govuk-!-font-size-16">
+                        </caption>
+                      <thead class="govuk-table__head govuk-!-font-size-16">
+                        <tr class="govuk-table__row">
+                          <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                            Dog name
+                          </th>
+                          <th scope="col" class="govuk-table__header">
+                            Owner name
+                          </th>
+                          <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-!-width-one-quarter">
+                            Microchip number
+                          </th>
+                        </tr>
+                      </thead>
+
+                      <tbody class="govuk-table__body">
+                          <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0 defra-results">
+                            <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                             Brutus
+                            </td>
+                            <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                              <a class="govuk-link govuk-link--no-visited-state" href="">
+                                Dennis Bustamante
+                              </a>
+                            </td>
+                            <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                              221081043333641
+                            </td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+    </div>
+  </div>
+
+{% endblock %}
