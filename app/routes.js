@@ -27,3 +27,18 @@ router.post('/v3/search/search-results', function (req, res) {
   }
 
 })
+
+// v4 Activity
+router.post('/v4/dog-records/activity/activity', function (req, res) {
+  var activity = req.session.data['activity']
+  if (activity == "All"){
+    res.redirect('/v4/dog-records/activity/activity-all')
+  } if (activity == "Exemption details"){
+    res.redirect('/v4/dog-records/activity/activity-exemption')
+  } if (activity == "Dog details"){
+    res.redirect('/v4/dog-records/activity/activity-dog')
+  } else {
+    res.redirect('/v4/dog-records/activity/activity-owner')
+  }
+
+})
