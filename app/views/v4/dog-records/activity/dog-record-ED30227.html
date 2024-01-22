@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: "#"
   }) }}
 {% endblock %}
 
@@ -35,7 +35,7 @@
         </h2>
 
       <ul class="govuk-summary-list__actions-list govuk-!-margin-bottom-2">
-        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link govuk-link--no-visited-state" href="">Add an activity</a></li>
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link govuk-link--no-visited-state" href="add-activity">Add an activity</a></li>
         <li class="govuk-summary-list__actions-list-item"><a class="govuk-link govuk-link--no-visited-state" href="activity-all">View all activity</a></li>
       </ul>
 

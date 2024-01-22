@@ -1,0 +1,61 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="What have you sent?" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "add-activity"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v4/dog-records/activity/sent-confirmation" method="post">
+
+        {{ govukRadios({
+          name: "formSent",
+          fieldset: {
+            legend: {
+              text: "What have you sent?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Insurance reminder sent",
+              text: "Insurance reminder"
+            },
+            {
+              value: "Change of address form sent",
+              text: "Change of address form"
+            },
+            {
+              value: "Change of owner form sent",
+              text: "Change of owner form"
+            },
+            {
+              value: "Witness statement sent",
+              text: "Witness statement"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -11,12 +11,12 @@
 
       {{ govukPanel({
         classes: "govuk-!-margin-bottom-7",
-        titleText: "Exemption order changed to 2015",
+        titleText: data['addReceived'] or "Form received",
         html: "Dog ED30227"
       }) }}
 
       <p class="govuk-body">
-        <a class="govuk-link govuk-link--no-visited-state" href="dog-record-ED30227-2015">Go to the dog record for Dog ED30227</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="activity-all-new-received">Go to the record activity for Dog ED30227</a>
       </p>
 
     </div>

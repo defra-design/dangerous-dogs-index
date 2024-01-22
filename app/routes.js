@@ -28,7 +28,7 @@ router.post('/v3/search/search-results', function (req, res) {
 
 })
 
-// v4 Activity
+// v4 View activities
 router.post('/v4/dog-records/activity/activity', function (req, res) {
   var activity = req.session.data['activity']
   if (activity == "All"){
@@ -39,6 +39,17 @@ router.post('/v4/dog-records/activity/activity', function (req, res) {
     res.redirect('/v4/dog-records/activity/activity-dog')
   } else {
     res.redirect('/v4/dog-records/activity/activity-owner')
+  }
+
+})
+
+// v4 Add an activity
+router.post('/v4/dog-records/activity/add-activity-question', function (req, res) {
+  var addActivity = req.session.data['addActivity']
+  if (addActivity == "sent"){
+    res.redirect('/v4/dog-records/activity/send-activity')
+  } else {
+    res.redirect('/v4/dog-records/activity/receive-activity')
   }
 
 })
