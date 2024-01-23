@@ -1,0 +1,77 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Delete dog details" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "dog-details"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v2/cdo/create/dog-details" method="post">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      <p class="govuk-body">
+        Confirm you want to delete these dog details.
+      </p>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Breed type"
+            },
+            value: {
+              text: data['breedType1'] or "XL Bully"
+            }
+          },
+          {
+            key: {
+              text: "Dog name"
+            },
+            value: {
+              text: data['dogName1'] or "Bruce"
+            }
+          },
+          {
+            key: {
+              text: "CDO issue date"
+            },
+            value: {
+              text: data['cdo-issued'] or "29 November 2023"
+            }
+          },
+          {
+            key: {
+              text: "CDO expiry date"
+            },
+            value: {
+              text: data['cdo-expiry'] or "29 January 2024"
+            }
+          }
+        ]
+      }) }}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Delete dog details"
+        }) }}
+
+        <a class="govuk-link govuk-link--no-visited-state" href="confirm-dog-details">Cancel</a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

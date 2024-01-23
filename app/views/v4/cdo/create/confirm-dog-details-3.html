@@ -1,0 +1,92 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Confirm dog details" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "dog-details-2"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v2/cdo/create/confirmation-2" method="post">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Dog 1"
+          },
+          actions: {
+            items: [
+              {
+                href: "dog-details-edit-2",
+                text: "Change details",
+                classes: "govuk-!-font-weight-regular govuk-link--no-visited-state",
+                visuallyHiddenText: data['breedType2'] or "XL Bully"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Dog breed"
+            },
+            value: {
+              text: data['breedType2'] or "XL Bully"
+            }
+          },
+          {
+            key: {
+              text: "Dog name"
+            },
+            value: {
+              text: data['dogName2'] or "Diego"
+            }
+          },
+          {
+            key: {
+              text: "CDO issue date"
+            },
+            value: {
+              text: data['cdo-issued'] or "29 November 2023"
+            }
+          },
+          {
+            key: {
+              text: "CDO expiry date"
+            },
+            value: {
+              text: data['cdo-expiry'] or "29 January 2024"
+            }
+          }
+        ]
+      }) }}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Confirm details"
+        }) }}
+
+        {{ govukButton({
+          text: "Add another dog for this owner",
+          classes: "govuk-button--secondary",
+          href: "dog-details-2"
+        }) }}
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
