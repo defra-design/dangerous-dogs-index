@@ -34,3 +34,18 @@
   </p>
 
 {% endblock %}
+
+{% block footer %}
+
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "#",
+          text: "Accessibility statement"
+        }
+      ]
+    }
+  }) }}
+
+{% endblock %}

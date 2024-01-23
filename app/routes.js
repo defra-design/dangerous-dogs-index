@@ -56,6 +56,17 @@ router.post('/v4/dog-records/activity/add-activity-question', function (req, res
 
 
 // v4 Select owner
+router.post('/v4/cdo/create/create-record-question', function (req, res) {
+  var lastName = req.session.data['lastName']
+  if (lastName == "Smith"){
+    res.redirect('/v4/cdo/create/select-owner')
+  } else {
+    res.redirect('/v4/cdo/create/postcode')
+  }
+
+})
+
+// v4 Select existing owner address
 router.post('/v4/cdo/create/select-owner-question', function (req, res) {
   var lastName = req.session.data['lastName']
   if (lastName == "Smith"){
