@@ -68,11 +68,32 @@ router.post('/v4/cdo/create/create-record-question', function (req, res) {
 
 // v4 Select existing owner address
 router.post('/v4/cdo/create/select-owner-question', function (req, res) {
-  var lastName = req.session.data['lastName']
-  if (lastName == "Smith"){
-    res.redirect('/v4/cdo/create/select-owner')
+  var existingOwner = req.session.data['existingOwner']
+  if (existingOwner == "address1"){
+    res.redirect('/v4/cdo/create/microchip-number')
   } else {
     res.redirect('/v4/cdo/create/postcode')
+  }
+
+})
+
+// v4 Owner's postcode
+router.post('/v4/cdo/create/postcode-question', function (req, res) {
+  var propertyNumber = req.session.data['propertyNumber']
+  if (propertyNumber == "12"){
+    res.redirect('/v4/cdo/create/confirm-address')
+  } else {
+    res.redirect('/v4/cdo/create/select-address')
+  }
+
+})
+// v4 Microchip number
+router.post('/v4/cdo/create/microchip-question', function (req, res) {
+  var microchipNumber = req.session.data['microchipNumber']
+  if (microchipNumber == "123456789012345"){
+    res.redirect('/v4/cdo/create/duplicate-dog')
+  } else {
+    res.redirect('/v4/cdo/create/dog-details')
   }
 
 })
