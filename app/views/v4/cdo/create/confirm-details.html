@@ -24,7 +24,11 @@
       </h1>
 
       {{ govukSummaryList({
-        classes: "govuk-!-margin-bottom-4",
+        card: {
+          title: {
+            text: "Owner details"
+          }
+        },
         rows: [
           {
             key: {
@@ -32,6 +36,16 @@
             },
             value: {
               text: "Leah Johnstone"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../create",
+                  classes: "govuk-link--no-visited-state",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
             }
           },
           {
@@ -40,6 +54,16 @@
             },
             value: {
               text: data['dateBirth'] or "2 December 1986"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../create#date-of-birth",
+                  classes: "govuk-link--no-visited-state",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
             }
           },
           {
@@ -48,48 +72,116 @@
             },
             value: {
               html: "12 Primrose Road<br>Southampton<br>SO16 3GP"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  classes: "govuk-link--no-visited-state",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
             }
           }
         ]
       }) }}
 
-      <p class="govuk-body govuk-!-margin-bottom-7">
-        <a class="govuk-link govuk-link--no-visited-state" href="owner-details-edit">Change owner details</a>
-      </p>
-
       {{ govukSummaryList({
-        classes: "govuk-!-margin-bottom-4",
+        card: {
+          title: {
+            text: "Dog 1"
+          },
+          actions: {
+            items: [
+              {
+                href: "dog-details-edit",
+                text: "Change",
+                classes: "govuk-!-font-weight-regular govuk-link--no-visited-state",
+                visuallyHiddenText: data['breedType1'] or "XL Bully"
+              }
+            ]
+          }
+        },
         rows: [
           {
             key: {
-              text: "Court"
+              text: "Dog breed"
             },
             value: {
-              text: data['court'] or "Southampton (West Hampshire) Magistrates’ Court"
+              text: data['breedType1'] or "XL Bully"
             }
           },
           {
             key: {
-              text: "Police force"
+              text: "Dog name"
             },
             value: {
-              text: data['police-force'] or "Hampshire Constabulary"
+              text: data['dogName1'] or "Bruce"
             }
           },
           {
             key: {
-              text: "Dog legislation officer"
+              text: "CDO issue date"
             },
             value: {
-              text: data['dog-legislation-officer'] or "Nigel Hillier"
+              text: data['cdo-issued'] or "29 November 2023"
+            }
+          },
+          {
+            key: {
+              text: "CDO expiry date"
+            },
+            value: {
+              text: data['cdo-expiry'] or "29 January 2024"
             }
           }
         ]
       }) }}
 
-      <p class="govuk-body govuk-!-margin-bottom-7">
-        <a class="govuk-link govuk-link--no-visited-state" href="enforcement-details-edit">Change court and police details</a>
-      </p>
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Police and court details"
+          },
+          actions: {
+            items: [
+              {
+                href: "./enforcement-details",
+                classes: "govuk-!-font-weight-regular govuk-link--no-visited-state",
+                text: "Change",
+                visuallyHiddenText: "police and court details"
+              }
+            ]
+          }
+        },
+        rows: [
+        {
+          key: {
+            text: "Court"
+          },
+          value: {
+            text: data['court'] or "Southampton (West Hampshire) Magistrates’ Court"
+          }
+        },
+        {
+          key: {
+            text: "Police force"
+          },
+          value: {
+            text: data['police-force'] or "Hampshire Constabulary"
+          }
+        },
+        {
+          key: {
+            text: "Dog legislation officer"
+          },
+          value: {
+            text: data['dog-legislation-officer'] or "Nigel Hillier"
+          }
+        }
+      ]
+      }) }}
 
       {{ govukButton({
         text: "Confirm details"

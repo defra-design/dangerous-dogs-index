@@ -1,13 +1,15 @@
 {% extends "layouts/defra.html" %}
 
+{% set pageName="Police and court details" %}
+
 {% block pageTitle %}
-  Enter court and police details – {{ serviceName }}
+  {{ pageName }} – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: "dog-details"
   }) }}
 {% endblock %}
 
@@ -16,226 +18,226 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v2/cdo/create/confirm-details" method="post">
+      <form class="form" action="/v4/cdo/create/confirm-details" method="post">
 
         {% call govukFieldset({
           legend: {
-            text: "Enter court and police details",
+            text: "Enter police and court details",
             classes: "govuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-          {{ govukSelect({
-            id: "court",
-            name: "court",
-            label: {
-              text: "Court"
+        {{ govukSelect({
+          classes: "govuk-!-width-two-thirds",
+          id: "police-force",
+          name: "police-force",
+          label: {
+            text: "Police force"
+          },
+          hint: {
+           text: "Chosen using the dog owner’s postcode."
+          },
+          items: [
+            {
+              value: "Avon and Somerset Constabulary",
+              text: "Avon and Somerset Constabulary"
             },
-            items: [
-              {
-                value: "Choose court",
-                text: "Choose court",
-                selected: true
-              },
-              {
-                value: "Aberystwyth Justice Centre",
-                text: "Aberystwyth Justice Centre"
-              },
-              {
-                value: "Barrow-in-Furness Magistrates Court",
-                text: "Barrow-in-Furness Magistrates Court"
-              },
-              {
-                value: "Bradford and Keighley Magistrates’ Court",
-                text: "Bradford and Keighley Magistrates’ Court"
-              },
-              {
-                value: "Chester Magistrates’ Court",
-                text: "Chester Magistrates’ Court"
-              },
-              {
-                value: "Doncaster Justice Centre North (Doncaster Magistrates’ Court)",
-                text: "Doncaster Justice Centre North (Doncaster Magistrates’ Court)"
-              },
-              {
-                value: "East Berkshire (Slough) Magistrates’ Court",
-                text: "East Berkshire (Slough) Magistrates’ Court"
-              },
-              {
-                value: "Horsham Law Courts",
-                text: "Horsham Law Courts"
-              },
-              {
-                value: "Ipswich Magistrates’ Court",
-                text: "Ipswich Magistrates’ Court"
-              },
-              {
-                value: "Kirklees (Huddersfield) Magistrates’ Court",
-                text: "Kirklees (Huddersfield) Magistrates’ Court"
-              },
-              {
-                value: "Llandudno Magistrates’ Court",
-                text: "Llandudno Magistrates’ Court"
-              },
-              {
-                value: "Maidstone Magistrates’ Court",
-                text: "Maidstone Magistrates’ Court"
-              },
-              {
-                value: "Mid and South East Northumberland Law Courts (Bedlington)",
-                text: "Mid and South East Northumberland Law Courts (Bedlington)"
-              },
-              {
-                value: "North Somerset Courthouse",
-                text: "North Somerset Courthouse"
-              },
-              {
-                value: "Oxford and Southern Oxfordshire Magistrates’ Court",
-                text: "Oxford and Southern Oxfordshire Magistrates’ Court"
-              },
-              {
-                value: "Peterborough Magistrates’ Court",
-                text: "Peterborough Magistrates’ Court"
-              },
-              {
-                value: "Preston Magistrates’ Court",
-                text: "Preston Magistrates’ Court"
-              },
-              {
-                value: "Salisbury Law Courts",
-                text: "Salisbury Law Courts"
-              },
-              {
-                value: "Sheffield Magistrates’ Court",
-                text: "Sheffield Magistrates’ Court"
-              },
-              {
-                value: "Southampton (West Hampshire) Magistrates’ Court",
-                text: "Southampton (West Hampshire) Magistrates’ Court"
-              },
-              {
-                value: "St Albans Magistrates’ Court",
-                text: "St Albans Magistrates’ Court"
-              },
-              {
-                value: "Taunton Magistrates’ Court",
-                text: "Taunton Magistrates’ Court"
-              },
-              {
-                value: "Wellingborough Magistrates’ Court",
-                text: "Wellingborough Magistrates’ Court"
-              },
-              {
-                value: "Wirral Magistrates’ Court",
-                text: "Wirral Magistrates’ Court"
-              },
-              {
-                value: "Worcester Justice Centre",
-                text: "Worcester Justice Centre"
-              },
-              {
-                value: "Wrexham Law Courts",
-                text: "Wrexham Law Courts"
-              },
-              {
-                value: "York Magistrates’ Court",
-                text: "York Magistrates’ Court"
-              }
-            ]
-          }) }}
+            {
+              value: "Bedfordshire Police",
+              text: "Bedfordshire Police"
+            },
+            {
+              value: "Cumbria Constabulary",
+              text: "Cumbria Constabulary"
+            },
+            {
+              value: "Devon and Cornwall Police",
+              text: "Devon and Cornwall Police"
+            },
+            {
+              value: "Essex Police",
+              text: "Essex Police"
+            },
+            {
+              value: "Gloucestershire Constabulary",
+              text: "Gloucestershire Constabulary"
+            },
+            {
+              value: "Greater Manchester Police",
+              text: "Greater Manchester Police"
+            },
+            {
+              value: "Hampshire Constabulary",
+              text: "Hampshire Constabulary",
+              selected: true
+            },
+            {
+              value: "Hertfordshire Constabulary",
+              text: "Hertfordshire Constabulary"
+            },
+            {
+              value: "Humberside Police",
+              text: "Humberside Police"
+            },
+            {
+              value: "Kent Police",
+              text: "Kent Police"
+            },
+            {
+              value: "Metropolitan Police Service",
+              text: "Metropolitan Police Service"
+            },
+            {
+              value: "Staffordshire Police",
+              text: "Staffordshire Police"
+            },
+            {
+              value: "Surrey Police",
+              text: "Surrey Police"
+            },
+            {
+              value: "Sussex Police",
+              text: "Sussex Police"
+            },
+            {
+              value: "Thames Valley Police",
+              text: "Thames Valley Police"
+            },
+            {
+              value: "Wiltshire Police",
+              text: "Wiltshire Police"
+            }
+          ]
+        }) }}
 
-          {{ govukSelect({
-            classes: "govuk-!-width-two-thirds",
-            id: "police-force",
-            name: "police-force",
-            label: {
-              text: "Police force"
-            },
-            hint: {
-             text: "Chosen using the dog owner’s postcode"
-            },
-            items: [
-              {
-                value: "Avon and Somerset Constabulary",
-                text: "Avon and Somerset Constabulary"
-              },
-              {
-                value: "Bedfordshire Police",
-                text: "Bedfordshire Police"
-              },
-              {
-                value: "Cumbria Constabulary",
-                text: "Cumbria Constabulary"
-              },
-              {
-                value: "Devon and Cornwall Police",
-                text: "Devon and Cornwall Police"
-              },
-              {
-                value: "Essex Police",
-                text: "Essex Police"
-              },
-              {
-                value: "Gloucestershire Constabulary",
-                text: "Gloucestershire Constabulary"
-              },
-              {
-                value: "Greater Manchester Police",
-                text: "Greater Manchester Police"
-              },
-              {
-                value: "Hampshire Constabulary",
-                text: "Hampshire Constabulary",
-                selected: true
-              },
-              {
-                value: "Hertfordshire Constabulary",
-                text: "Hertfordshire Constabulary"
-              },
-              {
-                value: "Humberside Police",
-                text: "Humberside Police"
-              },
-              {
-                value: "Kent Police",
-                text: "Kent Police"
-              },
-              {
-                value: "Metropolitan Police Service",
-                text: "Metropolitan Police Service"
-              },
-              {
-                value: "Staffordshire Police",
-                text: "Staffordshire Police"
-              },
-              {
-                value: "Surrey Police",
-                text: "Surrey Police"
-              },
-              {
-                value: "Sussex Police",
-                text: "Sussex Police"
-              },
-              {
-                value: "Thames Valley Police",
-                text: "Thames Valley Police"
-              },
-              {
-                value: "Wiltshire Police",
-                text: "Wiltshire Police"
-              }
-            ]
-          }) }}
+        {{ govukInput({
+          label: {
+            text: "Dog legislation officer (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "dog-legislation-officer",
+          name: "dog-legislation-officer"
+        }) }}
 
-          {{ govukInput({
-            label: {
-              text: "Dog legislation officer (optional)"
+        {{ govukSelect({
+          id: "court",
+          name: "court",
+          label: {
+            text: "Court (optional)"
+          },
+          items: [
+            {
+              value: "Choose court",
+              text: "Choose court",
+              selected: true
             },
-            classes: "govuk-!-width-two-thirds",
-            id: "dog-legislation-officer",
-            name: "dog-legislation-officer"
-          }) }}
+            {
+              value: "Aberystwyth Justice Centre",
+              text: "Aberystwyth Justice Centre"
+            },
+            {
+              value: "Barrow-in-Furness Magistrates Court",
+              text: "Barrow-in-Furness Magistrates Court"
+            },
+            {
+              value: "Bradford and Keighley Magistrates’ Court",
+              text: "Bradford and Keighley Magistrates’ Court"
+            },
+            {
+              value: "Chester Magistrates’ Court",
+              text: "Chester Magistrates’ Court"
+            },
+            {
+              value: "Doncaster Justice Centre North (Doncaster Magistrates’ Court)",
+              text: "Doncaster Justice Centre North (Doncaster Magistrates’ Court)"
+            },
+            {
+              value: "East Berkshire (Slough) Magistrates’ Court",
+              text: "East Berkshire (Slough) Magistrates’ Court"
+            },
+            {
+              value: "Horsham Law Courts",
+              text: "Horsham Law Courts"
+            },
+            {
+              value: "Ipswich Magistrates’ Court",
+              text: "Ipswich Magistrates’ Court"
+            },
+            {
+              value: "Kirklees (Huddersfield) Magistrates’ Court",
+              text: "Kirklees (Huddersfield) Magistrates’ Court"
+            },
+            {
+              value: "Llandudno Magistrates’ Court",
+              text: "Llandudno Magistrates’ Court"
+            },
+            {
+              value: "Maidstone Magistrates’ Court",
+              text: "Maidstone Magistrates’ Court"
+            },
+            {
+              value: "Mid and South East Northumberland Law Courts (Bedlington)",
+              text: "Mid and South East Northumberland Law Courts (Bedlington)"
+            },
+            {
+              value: "North Somerset Courthouse",
+              text: "North Somerset Courthouse"
+            },
+            {
+              value: "Oxford and Southern Oxfordshire Magistrates’ Court",
+              text: "Oxford and Southern Oxfordshire Magistrates’ Court"
+            },
+            {
+              value: "Peterborough Magistrates’ Court",
+              text: "Peterborough Magistrates’ Court"
+            },
+            {
+              value: "Preston Magistrates’ Court",
+              text: "Preston Magistrates’ Court"
+            },
+            {
+              value: "Salisbury Law Courts",
+              text: "Salisbury Law Courts"
+            },
+            {
+              value: "Sheffield Magistrates’ Court",
+              text: "Sheffield Magistrates’ Court"
+            },
+            {
+              value: "Southampton (West Hampshire) Magistrates’ Court",
+              text: "Southampton (West Hampshire) Magistrates’ Court"
+            },
+            {
+              value: "St Albans Magistrates’ Court",
+              text: "St Albans Magistrates’ Court"
+            },
+            {
+              value: "Taunton Magistrates’ Court",
+              text: "Taunton Magistrates’ Court"
+            },
+            {
+              value: "Wellingborough Magistrates’ Court",
+              text: "Wellingborough Magistrates’ Court"
+            },
+            {
+              value: "Wirral Magistrates’ Court",
+              text: "Wirral Magistrates’ Court"
+            },
+            {
+              value: "Worcester Justice Centre",
+              text: "Worcester Justice Centre"
+            },
+            {
+              value: "Wrexham Law Courts",
+              text: "Wrexham Law Courts"
+            },
+            {
+              value: "York Magistrates’ Court",
+              text: "York Magistrates’ Court"
+            }
+          ]
+        }) }}
 
         {% endcall %}
 
@@ -243,9 +245,9 @@
           text: "Continue"
         }) }}
 
-      </form>
+    </form>
 
-    </div>
   </div>
+</div>
 
 {% endblock %}

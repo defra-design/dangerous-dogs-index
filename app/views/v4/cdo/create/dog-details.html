@@ -18,7 +18,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v2/cdo/create/confirm-dog-details" method="post">
+      <form class="form" action="/v4/cdo/create/enforcement-details" method="post">
 
         <h1 class="govuk-heading-l">
           Add dog details
@@ -64,15 +64,58 @@
             name: "dogName1"
           }) }}
 
+          {% set cdoHtml %}
           {{ govukDateInput({
             id: "cdo-issued",
             namePrefix: "cdo-issued",
             fieldset: {
               legend: {
-                classes: "govuk-!-font-weight-bold",
-                text: "CDO issue date"
+                text: "CDO issue date",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
             }
+          }) }}
+          {% endset -%}
+
+          {% set schemeHtml %}
+          {{ govukDateInput({
+            id: "scheme-issued",
+            namePrefix: "scheme-issued",
+            fieldset: {
+              legend: {
+                text: "Date joined scheme",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
             }
+          }) }}
+          {% endset -%}
+
+          {{ govukRadios({
+            name: "recordType",
+            fieldset: {
+              legend: {
+                text: "Record type",
+                isPageHeading: false
+              }
+            },
+            items: [
+              {
+                value: "CDO",
+                text: "CDO",
+                conditional: {
+                  html: cdoHtml
+                }
+              },
+              {
+                value: "Interim exemption scheme",
+                text: "Interim exemption scheme",
+                conditional: {
+                  html: schemeHtml
+                }
+              }
+            ]
           }) }}
 
       <button class="govuk-button" data-module="govuk-button">
