@@ -25,6 +25,12 @@
         text: "Dog ED30874"
       }) }}
 
+      {% if data['organisation_website_url'] %}
+        {{ data['organisation_website_url'] }}
+      {% elif data['organisation_website_url'] == "" %}
+        <p class="govuk-body">None</p>
+      {% endif %}
+
       <p class="govuk-body">
         <a class="govuk-link govuk-link--no-visited-state" href="/v4/dog-records/dog-record-ED30874">Add more CDO details</a> to the record or <a class="govuk-link govuk-link--no-visited-state" href="#">start CDO tasks</a>.
       </p>

@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Confirm details" %}
+{% set pageName="Confirm all details" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -22,58 +22,6 @@
       <h1 class="govuk-heading-l">
         {{ pageName }}
       </h1>
-
-      {{ govukSummaryList({
-        card: {
-          title: {
-            text: "Dog 1"
-          },
-          actions: {
-            items: [
-              {
-                href: "dog-details-edit",
-                text: "Change",
-                classes: "govuk-!-font-weight-regular govuk-link--no-visited-state",
-                visuallyHiddenText: data['breedType1'] or "XL Bully"
-              }
-            ]
-          }
-        },
-        rows: [
-          {
-            key: {
-              text: "Dog breed"
-            },
-            value: {
-              text: data['breedType1'] or "XL Bully"
-            }
-          },
-          {
-            key: {
-              text: "Dog name"
-            },
-            value: {
-              text: data['dogName1'] or "Bruce"
-            }
-          },
-          {
-            key: {
-              text: "CDO issue date"
-            },
-            value: {
-              text: data['cdo-issued'] or "20 January 2024"
-            }
-          },
-          {
-            key: {
-              text: "CDO expiry date"
-            },
-            value: {
-              text: data['cdo-expiry'] or "20 March 2024"
-            }
-          }
-        ]
-      }) }}
 
       {{ govukSummaryList({
         card: {
@@ -181,6 +129,66 @@
           }
         }
       ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Dog 1"
+          },
+          actions: {
+            items: [
+              {
+                href: "dog-details-edit",
+                text: "Change",
+                classes: "govuk-!-font-weight-regular govuk-link--no-visited-state",
+                visuallyHiddenText: data['breedType1'] or "XL Bully"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Dog breed"
+            },
+            value: {
+              text: data['breedType1'] or "XL Bully"
+            }
+          },
+          {
+            key: {
+              text: "Dog name"
+            },
+            value: {
+              text: data['dogName1'] or "Bruce"
+            }
+          },
+          {
+            key: {
+              text: "Microchip number"
+            },
+            value: {
+              text: data['microchipNumber'] or "123456789012345"
+            }
+          },
+          {
+            key: {
+              text: "CDO issue date"
+            },
+            value: {
+              text: data['cdo-issued'] or "20 January 2024"
+            }
+          },
+          {
+            key: {
+              text: "CDO expiry date"
+            },
+            value: {
+              text: data['cdo-expiry'] or "20 March 2024"
+            }
+          }
+        ]
       }) }}
 
       {{ govukButton({

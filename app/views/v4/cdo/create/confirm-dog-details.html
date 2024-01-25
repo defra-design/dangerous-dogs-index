@@ -17,7 +17,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v2/cdo/create/confirmation" method="post">
+      <form class="form" action="/v4/cdo/create/enforcement-details" method="post">
 
       <h1 class="govuk-heading-l">
         {{ pageName }}
@@ -31,7 +31,7 @@
           actions: {
             items: [
               {
-                href: "dog-details-edit",
+                href: "#",
                 text: "Change details",
                 classes: "govuk-!-font-weight-regular govuk-link--no-visited-state",
                 visuallyHiddenText: data['breedType1'] or "XL Bully"
@@ -58,10 +58,18 @@
           },
           {
             key: {
+              text: "Microchip number"
+            },
+            value: {
+              text: data['microchipNumber'] or "123456789012345"
+            }
+          },
+          {
+            key: {
               text: "CDO issue date"
             },
             value: {
-              text: data['cdo-issued'] or "29 November 2023"
+              text: data['cdo-issued'] or "20 January 2024"
             }
           },
           {
@@ -69,7 +77,7 @@
               text: "CDO expiry date"
             },
             value: {
-              text: data['cdo-expiry'] or "29 January 2024"
+              text: data['cdo-expiry'] or "20 March 2024"
             }
           }
         ]
@@ -83,7 +91,7 @@
         {{ govukButton({
           text: "Add another dog for this owner",
           classes: "govuk-button--secondary",
-          href: "dog-details-2"
+          href: "#"
         }) }}
       </div>
 
