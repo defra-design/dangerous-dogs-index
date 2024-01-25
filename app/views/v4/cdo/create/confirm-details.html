@@ -17,11 +17,63 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v2/cdo/create/dog-details" method="post">
+      <form class="form" action="/v4/cdo/create/confirmation" method="post">
 
       <h1 class="govuk-heading-l">
         {{ pageName }}
       </h1>
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Dog 1"
+          },
+          actions: {
+            items: [
+              {
+                href: "dog-details-edit",
+                text: "Change",
+                classes: "govuk-!-font-weight-regular govuk-link--no-visited-state",
+                visuallyHiddenText: data['breedType1'] or "XL Bully"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Dog breed"
+            },
+            value: {
+              text: data['breedType1'] or "XL Bully"
+            }
+          },
+          {
+            key: {
+              text: "Dog name"
+            },
+            value: {
+              text: data['dogName1'] or "Bruce"
+            }
+          },
+          {
+            key: {
+              text: "CDO issue date"
+            },
+            value: {
+              text: data['cdo-issued'] or "20 January 2024"
+            }
+          },
+          {
+            key: {
+              text: "CDO expiry date"
+            },
+            value: {
+              text: data['cdo-expiry'] or "20 March 2024"
+            }
+          }
+        ]
+      }) }}
 
       {{ govukSummaryList({
         card: {
@@ -90,58 +142,6 @@
       {{ govukSummaryList({
         card: {
           title: {
-            text: "Dog 1"
-          },
-          actions: {
-            items: [
-              {
-                href: "dog-details-edit",
-                text: "Change",
-                classes: "govuk-!-font-weight-regular govuk-link--no-visited-state",
-                visuallyHiddenText: data['breedType1'] or "XL Bully"
-              }
-            ]
-          }
-        },
-        rows: [
-          {
-            key: {
-              text: "Dog breed"
-            },
-            value: {
-              text: data['breedType1'] or "XL Bully"
-            }
-          },
-          {
-            key: {
-              text: "Dog name"
-            },
-            value: {
-              text: data['dogName1'] or "Bruce"
-            }
-          },
-          {
-            key: {
-              text: "CDO issue date"
-            },
-            value: {
-              text: data['cdo-issued'] or "29 November 2023"
-            }
-          },
-          {
-            key: {
-              text: "CDO expiry date"
-            },
-            value: {
-              text: data['cdo-expiry'] or "29 January 2024"
-            }
-          }
-        ]
-      }) }}
-
-      {{ govukSummaryList({
-        card: {
-          title: {
             text: "Police and court details"
           },
           actions: {
@@ -158,14 +158,6 @@
         rows: [
         {
           key: {
-            text: "Court"
-          },
-          value: {
-            text: data['court'] or "Southampton (West Hampshire) Magistrates’ Court"
-          }
-        },
-        {
-          key: {
             text: "Police force"
           },
           value: {
@@ -178,6 +170,14 @@
           },
           value: {
             text: data['dog-legislation-officer'] or "Nigel Hillier"
+          }
+        },
+        {
+          key: {
+            text: "Court"
+          },
+          value: {
+            text: data['court'] or "Southampton (West Hampshire) Magistrates’ Court"
           }
         }
       ]

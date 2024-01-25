@@ -21,11 +21,18 @@
 
       {{ govukPanel({
         classes: "govuk-!-margin-bottom-7",
-        titleText: "Record created"
+        titleText: "Record created",
+        text: "Dog ED30874"
       }) }}
 
+      <p class="govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="/v4/dog-records/dog-record-ED30874">Add more CDO details</a> to the record or <a class="govuk-link govuk-link--no-visited-state" href="#">start CDO tasks</a>.
+      </p>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
       <h2 class="govuk-heading-m">
-        Dog ED30874
+        Dog 1
       </h2>
 
       {{ govukSummaryList({
@@ -40,7 +47,7 @@
           },
           {
             key: {
-              text: "Dog name"
+              text: "Name"
             },
             value: {
               text: data['dogName1'] or "Bruce"
@@ -48,25 +55,25 @@
           },
           {
             key: {
-              text: "CDO issue date"
+              text: "CDO issued"
             },
             value: {
-              text: data['cdo-issued'] or "29 November 2023"
+              text: data['cdo-issued'] or "20 January 2024"
             }
           },
           {
             key: {
-              text: "CDO expiry date"
+              text: "CDO expiry"
             },
             value: {
-              text: data['cdo-expiry'] or "29 January 2024"
+              text: data['cdo-expiry'] or "20 March 2024"
             }
           }
         ]
       }) }}
 
       <h2 class="govuk-heading-m">
-        Owner and enforcement details
+        Owner details
       </h2>
 
       {{ govukSummaryList({
@@ -94,15 +101,16 @@
             value: {
               html: "12 Primrose Road<br>Southampton<br>SO16 3GP"
             }
-          },
-          {
-            key: {
-              text: "Court"
-            },
-            value: {
-              text: data['court'] or "Southampton (West Hampshire) Magistrates’ Court"
-            }
-          },
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Police and court details
+      </h2>
+
+      {{ govukSummaryList({
+        rows: [
           {
             key: {
               text: "Police force"
@@ -118,13 +126,17 @@
             value: {
               text: data['dog-legislation-officer'] or "Nigel Hillier"
             }
+          },
+          {
+            key: {
+              text: "Court"
+            },
+            value: {
+              text: data['court'] or "Southampton (West Hampshire) Magistrates’ Court"
+            }
           }
         ]
       }) }}
-
-      <p class="govuk-body">
-        <a class="govuk-link govuk-link--no-visited-state" href="../index">Dangerous Dogs Index home</a>
-      </p>
 
     </div>
   </div>
