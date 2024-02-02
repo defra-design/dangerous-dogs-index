@@ -1,0 +1,220 @@
+{% extends "layouts/defra-layout.html" %}
+
+{% set pageName="Dog ED17343" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../cdo/manage/cdo-tasks-not-started"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+      {{ pageName }}
+    </h1>
+
+    {{govukTag({
+      text: "Pre-exempt",
+      classes: "govuk-tag--red"
+    })}}
+
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-4 govuk-!-margin-bottom-1">
+      Activity
+      </h2>
+
+    <ul class="govuk-summary-list__actions-list govuk-!-margin-bottom-6">
+      <li class="govuk-summary-list__actions-list-item"><a class="govuk-link govuk-link--no-visited-state" href="../activity/add-activity">Add an activity</a></li>
+      <li class="govuk-summary-list__actions-list-item"><a class="govuk-link govuk-link--no-visited-state" href="../activity/activity-all">View all activity</a></li>
+    </ul>
+
+    </div>
+  </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+    {{ govukSummaryList({
+      classes: "govuk-!-font-size-16",
+      card: {
+      title: {
+      text: "Dog details",
+      classes: "defra-summary-header"
+      },
+      actions: {
+        items: [
+          {
+            href: "",
+            text: "Edit details",
+            classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
+            visuallyHiddenText: "for dog"
+            }
+          ]
+        }
+      },
+      rows: [
+        {
+          classes: "govuk-!-width-one-third",
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: data['dogName1'] or "Goliath"
+          }
+        },
+        {
+          key: {
+            text: "Breed type"
+          },
+          value: {
+            text: data['dog-breed'] or "XL Bully"
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukSummaryList({
+      classes: "govuk-!-font-size-16",
+      card: {
+      title: {
+      text: "Owner details",
+      classes: "defra-summary-header"
+      },
+      id: "owner-details",
+      actions: {
+        items: [
+          {
+            href: "owner-record-ED17343",
+            text: "Owner record",
+            classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
+            visuallyHiddenText: "for owner"
+            }
+          ]
+        }
+      },
+      rows: [
+        {
+          classes: "govuk-!-width-one-third",
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: "Dennis Campbell"
+          }
+        },
+        {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            text: "29 May 1967"
+          }
+        },
+        {
+          key: {
+            text: "Address"
+          },
+          value: {
+            html: "2 Hounds Gate<br>Nottingham<br>NG1 7AQ"
+          }
+        },
+        {
+          key: {
+            text: "Country"
+          },
+          value: {
+            text: data['country'] or "England"
+          }
+        }
+      ]
+    }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+
+      {{ govukSummaryList({
+        classes: "govuk-!-font-size-16",
+        card: {
+          title: {
+            text: "Exemption details",
+            classes: "defra-summary-header"
+          },
+          actions: {
+            items: [
+              {
+                href: "owner-record-ED17343",
+                text: "Edit details",
+                classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
+                visuallyHiddenText: "for exemption"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            classes: "govuk-!-width-one-third",
+            key: {
+              text: "Status"
+            },
+            value: {
+              text: "Pre-exempt"
+            }
+          },
+          {
+            key: {
+              text: "CDO issued"
+            },
+            value: {
+              text: "5 January 2024"
+            }
+          },
+          {
+            key: {
+              text: "CDO expiry"
+            },
+            value: {
+              text: "5 March 2024"
+            }
+          },
+          {
+            key: {
+              text: "Court"
+            },
+            value: {
+              text: "Nottingham Magistrates’ Court"
+            }
+          },
+          {
+            key: {
+              text: "Police force"
+            },
+            value: {
+              text: "Nottinghamshire Police"
+            }
+          },
+          {
+            key: {
+              text: "Dog legislation officer"
+            },
+            value: {
+              text: "Sam Cosmo"
+            }
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

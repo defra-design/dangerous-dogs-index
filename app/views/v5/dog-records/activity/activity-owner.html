@@ -1,0 +1,135 @@
+{% extends "layouts/defra-layout.html" %}
+
+{% set pageName="View activity" %}
+
+{% block pageTitle %}
+  {{ pageName }} – Dog ED30227 - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "/v4/dog-records/activity/dog-record-ED30227"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <form class="form" action="/v4/dog-records/activity/activity" method="post">
+
+        <span class="govuk-caption-l">Dog ED30227</span>
+        <h1 class="govuk-heading-l">View activity</h1>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-3">
+          <label class="govuk-label" for="activity">
+            Activity
+          </label>
+          <select class="govuk-select" id="activity" name="activity">
+              <option value="All">All</option>
+              <option value="Exemption details">Exemption details</option>
+              <option value="Dog details">Dog details</option>
+              <option value="Owner details" selected>Owner details</option>
+          </select>
+        </div>
+
+        {{ govukButton({
+          text: "Filter activity"
+        }) }}
+
+        {{ govukTable({
+          caption: "Owner details",
+          captionClasses: "govuk-table__caption--m",
+          firstCellIsHeader: false,
+          head: [
+            {
+              text: "Date",
+              classes: "govuk-!-width-one-quarter"
+            },
+            {
+              text: "Activty",
+              classes: "govuk-!-width-one-half"
+            },
+            {
+              text: "Team member",
+              classes: "govuk-!-width-one-quarter"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "28 September 2023"
+              },
+              {
+                text: "Address changed"
+              },
+              {
+                text: "Danielle Simmons"
+              }
+            ],
+            [
+              {
+                text: "30 August 2023"
+              },
+              {
+                text: "Change of address form sent"
+              },
+              {
+                text: "Danielle Simmons"
+              }
+            ],
+            [
+              {
+                text: "27 May 2019"
+              },
+              {
+                text: "Owner changed"
+              },
+              {
+                text: "Danielle Simmons"
+              }
+            ],
+            [
+              {
+                text: "9 May 2019"
+              },
+              {
+                text: "Change of owner form sent"
+              },
+              {
+                text: "Danielle Simmons"
+              }
+            ],
+            [
+              {
+                text: "7 May 2015"
+              },
+              {
+                text: "Email address changed"
+              },
+              {
+                text: "Evyonne Macallister"
+              }
+            ],
+            [
+              {
+                text: "3 March 2014"
+              },
+              {
+                text: "Owner details added"
+              },
+              {
+                text: "Karen Halliday"
+              }
+            ]
+          ]
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

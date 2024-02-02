@@ -97,3 +97,25 @@ router.post('/v4/cdo/create/microchip-question', function (req, res) {
   }
 
 })
+
+// v5 Select owner
+router.post('/v5/cdo/create/create-record-question', function (req, res) {
+  var lastName = req.session.data['lastName']
+  if (lastName == "Smith"){
+    res.redirect('/v5/cdo/create/select-owner')
+  } else {
+    res.redirect('/v5/cdo/create/postcode')
+  }
+
+})
+
+// v5 Select existing owner address
+router.post('/v5/cdo/create/select-owner-question', function (req, res) {
+  var existingOwner = req.session.data['existingOwner']
+  if (existingOwner == "address1"){
+    res.redirect('/v5/cdo/create/microchip-number')
+  } else {
+    res.redirect('/v5/cdo/create/postcode')
+  }
+
+})

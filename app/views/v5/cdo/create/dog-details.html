@@ -1,4 +1,4 @@
-{% extends "layouts/defra.html" %}
+{% extends "layouts/defra-applications.html" %}
 
 {% set pageName="Add dog details" %}
 
@@ -9,6 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
+  classes: "govuk-!-margin-top-7",
   href: "microchip-number"
 }) }}
 {% endblock %}
@@ -16,7 +17,7 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds govuk-!-padding-top-0">
 
       <form class="form" action="/v5/cdo/create/confirm-dog-details" method="post">
 

@@ -123,3 +123,35 @@
   .defra-secondary-text {
     color: $govuk-secondary-text-colour;
   }
+
+  //navigation
+  .defra-navigation__link {
+    color: $govuk-text-colour !important;
+    text-decoration: none;
+    font-weight: 400 !important;
+    margin-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .defra-navigation__link:visited {
+    color: $govuk-text-colour;
+    font-weight: 400 !important;
+  }
+
+  .defra-navigation__link:active {
+    color: $govuk-text-colour;
+    font-weight: 400 !important;
+  }
+
+  .defra-navigation__link:hover {
+    color: $govuk-text-colour;
+    font-weight: 400 !important;
+    background-color: #ddd !important;
+  }
+
+  .defra-navigation__link:before {
+    color: $govuk-text-colour;
+    font-weight: 400 !important;
+    background-color: $govuk-text-colour !important;
+  }
