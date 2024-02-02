@@ -1,0 +1,62 @@
+{% extends "layouts/defra-layout.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-visually-hidden">
+        {{ serviceName }}
+      </h1>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-cards govuk-cards--2">
+      <div class="govuk-cards--2__item govuk-card--dashboard">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Search</h2>
+        <ul class="govuk-list">
+          <li>
+              <a href="/cdo/search/basic" class="govuk-link">Search dog index</a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-cards--2__item govuk-card--dashboard">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">New Registration</h2>
+        <ul class="govuk-list">
+          <li>
+              <a href="/cdo/create/owner-details" class="govuk-link">Create CDO</a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-cards--2__item govuk-card--dashboard">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Export Data</h2>
+        <ul class="govuk-list">
+          <li>
+              <a href="/export" class="govuk-link">Export</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

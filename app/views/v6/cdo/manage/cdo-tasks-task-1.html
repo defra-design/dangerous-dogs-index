@@ -1,0 +1,133 @@
+{% extends "layouts/defra-active-dogs.html" %}
+
+{% set pageName="Dog ED17343" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+<div class="govuk-main-wrapper">
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "manage-cdos"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <form class="form" action="/v3/cdo/manage/cdo-tasks-error" method="post">
+
+      <span class="govuk-caption-l">Pre-exempt</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
+        {{ pageName }}
+      </h1>
+
+      <ul class="govuk-summary-list__actions-list govuk-!-margin-bottom-6">
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link govuk-link--no-visited-state" href="dog-record-ED17343">Dog record</a></li>
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link govuk-link--no-visited-state" href="owner-record-ED17343">Owner record</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-4">
+        CDO tasks
+      </h2>
+
+      {{ govukTaskList({
+        idPrefix: "company-details",
+        items: [
+          {
+            title: {
+              classes: "govuk-link--no-visited-state",
+              text: "Send application pack"
+            },
+            href: "application-pack",
+            status: {
+              text: "Completed"
+            }
+          },
+          {
+            title: {
+              classes: "govuk-link--no-visited-state",
+              text: "Record insurance details"
+            },
+            href: "insurance-details",
+            status: {
+              tag: {
+                text: "Not yet started",
+                classes: "govuk-tag--blue"
+              }
+            }
+          },
+          {
+            title: {
+              classes: "govuk-link--no-visited-state",
+              text: "Send Form 2"
+            },
+            href: "#",
+            status: {
+              tag: {
+                text: "Not yet started",
+                classes: "govuk-tag--blue"
+              }
+            }
+          },
+          {
+            title: {
+              classes: "govuk-link--no-visited-state",
+              text: "Verify microchip and confirm neutering"
+            },
+            hint: {
+              text: "We can group more than one task together."
+            },
+            href: "#",
+            status: {
+              tag: {
+                text: "Not yet started",
+                classes: "govuk-tag--blue"
+              }
+            }
+          },
+          {
+            title: {
+              classes: "govuk-link--no-visited-state",
+              text: "Record payment"
+            },
+            href: "#",
+            status: {
+              tag: {
+                text: "Not yet started",
+                classes: "govuk-tag--blue"
+              }
+            }
+          },
+          {
+            title: {
+              classes: "govuk-link--no-visited-state",
+              text: "Issue certificate"
+            },
+            href: "#",
+            status: {
+              tag: {
+                text: "Not yet started",
+                classes: "govuk-tag--blue"
+              }
+            }
+          }
+        ]
+      }) }}
+
+      <button class="govuk-button" data-module="govuk-button">
+        Mark as complete
+      </button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

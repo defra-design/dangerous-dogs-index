@@ -1,0 +1,378 @@
+{% extends "layouts/defra-layout.html" %}
+
+{% set pageName="View activity" %}
+
+{% block pageTitle %}
+  {{ pageName }} – Dog ED30227 - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "/v4/dog-records/activity/dog-record-ED30227"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <form class="form" action="/v4/dog-records/activity/activity" method="post">
+
+        <span class="govuk-caption-l">Dog ED30227</span>
+        <h1 class="govuk-heading-l">View activity</h1>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-3">
+          <label class="govuk-label" for="activity">
+            Activity
+          </label>
+          <select class="govuk-select" id="activity" name="activity">
+              <option value="All">All</option>
+              <option value="Exemption details" selected>Exemption details</option>
+              <option value="Dog details">Dog details</option>
+              <option value="Owner details">Owner details</option>
+          </select>
+        </div>
+
+        {{ govukButton({
+          text: "Filter activity"
+        }) }}
+
+
+        {{ govukTable({
+          caption: "Exemption details",
+          captionClasses: "govuk-table__caption--m",
+          firstCellIsHeader: false,
+          head: [
+            {
+              text: "Date",
+              classes: "govuk-!-width-one-quarter"
+            },
+            {
+              text: "Activty",
+              classes: "govuk-!-width-one-half"
+            },
+            {
+              text: "Team member",
+              classes: "govuk-!-width-one-quarter"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "17 January 2024"
+              },
+              {
+                text: "Insurance reminder sent"
+              },
+              {
+                text: "Evyonne Macallister"
+              }
+            ],
+            [
+              {
+                text: "8 January 2024"
+              },
+              {
+                text: "Dog status set to In Breach"
+              },
+              {
+                text: "Evyonne Macallister"
+              }
+            ],
+            [
+              {
+                text: "8 January 2024"
+              },
+              {
+                text: "Police correspondance received"
+              },
+              {
+                text: "Evyonne Macallister"
+              }
+            ],
+            [
+              {
+                text: "29 January 2023"
+              },
+              {
+                text: "Insurance certificate received"
+              },
+              {
+                text: "Danielle Simmons"
+              }
+            ],
+            [
+              {
+                text: "14 January 2023"
+              },
+              {
+                text: "Insurance reminder sent"
+              },
+              {
+                text: "Danielle Simmons"
+              }
+            ],
+            [
+              {
+                text: "6 February 2022"
+              },
+              {
+                text: "Insurance certificate received"
+              },
+              {
+                text: "Evyonne Macallister"
+              }
+            ],
+            [
+              {
+                text: "19 January 2022"
+              },
+              {
+                text: "Insurance reminder sent"
+              },
+              {
+                text: "Evyonne Macallister"
+              }
+            ],
+            [
+              {
+                text: "2 February 2021"
+              },
+              {
+                text: "Insurance certificate received"
+              },
+              {
+                text: "Evyonne Macallister"
+              }
+            ],
+            [
+              {
+                text: "18 January 2021"
+              },
+              {
+                text: "Insurance reminder sent"
+              },
+              {
+                text: "Evyonne Macallister"
+              }
+            ],
+            [
+              {
+                text: "27 January 2020"
+              },
+              {
+                text: "Insurance certificate received"
+              },
+              {
+                text: "Evyonne Macallister"
+              }
+            ],
+            [
+              {
+                text: "18 January 2020"
+              },
+              {
+                text: "Insurance reminder sent"
+              },
+              {
+                text: "Evyonne Macallister"
+              }
+            ],
+            [
+              {
+                text: "13 January 2019"
+              },
+              {
+                text: "Insurance certificate received"
+              },
+              {
+                text: "Evyonne Macallister"
+              }
+            ],
+            [
+              {
+                text: "14 January 2018"
+              },
+              {
+                text: "Insurance certificate received"
+              },
+              {
+                text: "Danielle Simmons"
+              }
+            ],
+            [
+              {
+                text: "11 January 2017"
+              },
+              {
+                text: "Insurance certificate received"
+              },
+              {
+                text: "Karen Halliday"
+              }
+            ],
+            [
+              {
+                text: "14 January 2016"
+              },
+              {
+                text: "Insurance certificate received"
+              },
+              {
+                text: "Evyonne Macallister"
+              }
+            ],
+            [
+              {
+                text: "24 January 2015"
+              },
+              {
+                text: "Insurance certificate received"
+              },
+              {
+                text: "Karen Halliday"
+              }
+            ],
+            [
+              {
+                text: "18 January 2015"
+              },
+              {
+                text: "Insurance reminder sent"
+              },
+              {
+                text: "Evyonne Macallister"
+              }
+            ],
+            [
+              {
+                text: "12 April 2014"
+              },
+              {
+                text: "Certificate issued"
+              },
+              {
+                text: "Filip Yomov"
+              }
+            ],
+            [
+              {
+                text: "12 April 2014"
+              },
+              {
+                text: "Status set to Exempt"
+              },
+              {
+                text: "Filip Yomov"
+              }
+            ],
+            [
+              {
+                text: "10 April 2014"
+              },
+              {
+                text: "Insurance certificate received"
+              },
+              {
+                text: "Filip Yomov"
+              }
+            ],
+            [
+              {
+                text: "10 April 2014"
+              },
+              {
+                text: "Neutering confirmed"
+              },
+              {
+                text: "Filip Yomov"
+              }
+            ],
+            [
+              {
+                text: "10 April 2014"
+              },
+              {
+                text: "Microchip number verified"
+              },
+              {
+                text: "Filip Yomov"
+              }
+            ],
+            [
+              {
+                text: "29 March 2014"
+              },
+              {
+                text: "Application fee paid"
+              },
+              {
+                text: "Karen Halliday"
+              }
+            ],
+            [
+              {
+                text: "14 December 2013"
+              },
+              {
+                text: "Judicial review received"
+              },
+              {
+                text: "Filip Yomov"
+              }
+            ],
+            [
+              {
+                text: "5 November 2013"
+              },
+              {
+                text: "Witness statement sent"
+              },
+              {
+                text: "Karen Halliday"
+              }
+            ],
+            [
+              {
+                text: "1 November 2013"
+              },
+              {
+                text: "Witness statement received"
+              },
+              {
+                text: "Karen Halliday"
+              }
+            ],
+            [
+              {
+                text: "13 September 2013"
+              },
+              {
+                text: "Status set to Pre-exempt"
+              },
+              {
+                text: "Filip Yomov"
+              }
+            ],
+            [
+              {
+                text: "13 September 2013"
+              },
+              {
+                text: "CDO issued"
+              },
+              {
+                text: "Filip Yomov"
+              }
+            ]
+          ]
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

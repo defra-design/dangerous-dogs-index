@@ -1,0 +1,59 @@
+{% extends "layouts/defra-layout.html" %}
+
+{% set pageName="Add an activty" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "../dog-records/dog-record-ED30874"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v4/dog-records/activity/add-activity-question" method="post">
+
+        {{ govukRadios({
+          name: "addActivity",
+          fieldset: {
+            legend: {
+              text: "What is the activity?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "sent",
+              text: "We’ve sent something",
+              hint: {
+                text: "Either a change of address form, a notification of the death of a dog form or a witness statement."
+              }
+            },
+            {
+              value: "received",
+              text: "We’ve received something",
+              hint: {
+                text: "Either police correspondance, a witness statement or a judicial review."
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
