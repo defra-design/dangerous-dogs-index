@@ -119,3 +119,25 @@ router.post('/v5/cdo/create/select-owner-question', function (req, res) {
   }
 
 })
+
+// v5 Owner's postcode
+router.post('/v5/cdo/create/postcode-question', function (req, res) {
+  var propertyNumber = req.session.data['propertyNumber']
+  if (propertyNumber == "12"){
+    res.redirect('/v5/cdo/create/confirm-address')
+  } else {
+    res.redirect('/v5/cdo/create/select-address')
+  }
+
+})
+
+// v5 Microchip number
+router.post('/v5/cdo/create/microchip-question', function (req, res) {
+  var microchipNumber = req.session.data['microchipNumber']
+  if (microchipNumber == "123456789012345"){
+    res.redirect('/v5/cdo/create/duplicate-dog')
+  } else {
+    res.redirect('/v5/cdo/create/dog-details')
+  }
+
+})
