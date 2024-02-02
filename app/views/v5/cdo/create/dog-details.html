@@ -1,4 +1,4 @@
-{% extends "layouts/defra-applications.html" %}
+{% extends "layouts/defra.html" %}
 
 {% set pageName="Add dog details" %}
 
@@ -9,7 +9,6 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  classes: "govuk-!-margin-top-7",
   href: "microchip-number"
 }) }}
 {% endblock %}
