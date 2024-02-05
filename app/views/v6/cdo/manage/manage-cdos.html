@@ -6,19 +6,8 @@
   {{ pageName }} – {{ serviceName }}
 {% endblock %}
 
-<div class="govuk-main-wrapper">
-
-  {% block beforeContent %}
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        classes: "govuk-!-margin-bottom-6",
-        href: "../index"
-      }
-    ]
-  }) }}
-  {% endblock %}
+{% block beforeContent %}
+{% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
@@ -338,6 +327,5 @@
 
     </div>
   </div>
-</div>
 
 {% endblock %}

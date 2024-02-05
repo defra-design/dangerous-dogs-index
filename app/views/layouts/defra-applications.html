@@ -70,7 +70,7 @@
 
   <div class="moj-primary-navigation">
 
-  <div class="moj-primary-navigation__container govuk-!-margin-bottom-6">
+  <div class="moj-primary-navigation__container">
 
     <div class="moj-primary-navigation__nav">
 
@@ -78,10 +78,13 @@
 
         <ul class="moj-primary-navigation__list">
           <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link defra-navigation__link" href="../cdo/manage/manage-cdos">Active dogs</a>
+            <a class="moj-primary-navigation__link defra-navigation__link" href="/v6/cdo/manage/manage-cdos">Active dogs</a>
           </li>
           <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link defra-navigation__link" aria-current="page" href="/cdo/create">New application</a>
+            <a class="moj-primary-navigation__link defra-navigation__link" aria-current="page" href="/v6/cdo/create">New application</a>
+          </li>
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link defra-navigation__link" href="">Export data</a>
           </li>
         </ul>
 
@@ -90,32 +93,40 @@
     </div>
 
     <div class="moj-primary-navigation__search">
+      <div class="moj-search-toggle" data-module="moj-search-toggle" data-moj-search-toggle-text="Search records">
+        <div class="moj-search-toggle__toggle"></div>
+        <div class="moj-search-toggle__search">
 
-      <div class="moj-search moj-search--ondark moj-search--inline">
-        <form action="" method="get">
+          <div class="moj-search moj-search--ondark moj-search--toggle moj-js-hidden">
 
-          <div class="govuk-form-group">
-            <label class="govuk-label moj-search__label govuk-visually-hidden" for="search-1">
-              Search
-            </label>
+            <form action="/v6/search/dog-results" method="get">
 
-            <input class="govuk-input moj-search__input " id="search-1" name="search-1" type="search">
+              <div class="govuk-form-group">
+                <label class="govuk-label moj-search__label govuk-visually-hidden" for="search2">
+                  Search
+                </label>
 
+                <div id="search2-hint" class="govuk-hint moj-search__hint govuk-body govuk-!-font-size-16">
+                  Enter one or more search terms separated by spaces.
+                </div>
+
+                <input class="govuk-input moj-search__input " id="search2" name="search2" type="search" aria-describedby="search2-hint">
+
+              </div>
+
+              <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+                Search
+              </button>
+
+            </form>
           </div>
 
-          <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
-            Search
-          </button>
-
-        </form>
+        </div>
       </div>
-
     </div>
   </div>
 
 </div>
-
-
 {% endblock %}
 
 {% block content %}
