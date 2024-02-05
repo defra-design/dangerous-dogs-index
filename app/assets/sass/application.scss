@@ -9,7 +9,7 @@
 
 //defra header
 .defra-internal-header {
-    padding: 20px 0;
+    padding: 20px 0 18px;
     border-bottom: 8px solid $defra-brand-colour;
 
   }
@@ -151,6 +151,60 @@
     color: $govuk-text-colour;
     background-color: $govuk-text-colour !important;
   }
+
+  .defra-ddi-header {
+    width: 100%;
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1;
+    border-bottom: 10px solid #ffffff;
+    color: #fff;
+    background: #fff;
+  }
+
+  .defra-ddi-header__container {
+    min-height: 115px;
+    position: relative;
+    margin-bottom: -7px;
+    padding-top: 10px;
+    border-bottom: 7px solid #00a33b;
+  }
+
+  .defra-ddi-header__service-name {
+    min-height: 115px;
+    margin-bottom: 10px;
+    font-size: 1.125rem;
+    line-height: 1.1111111111;
+  }
+
+  @media (min-width: 40.0625em) {
+  .defra-ddi-header__service-name {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    }
+  }
+
+  .defra-ddi-header__link {
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .defra-ddi-header__link:link {
+    color: #333;
+  }
+
+  .defra-ddi-header__link:visited {
+    color: #333;
+  }
+
+  .defra-header__right {
+    float: right !important;
+    margin-top: -18px;
+    margin-bottom: 0;
+    }
 
   .defra-navigation__right {
     color: $govuk-text-colour;

@@ -1,4 +1,4 @@
-{% extends "layouts/defra-applications.html" %}
+{% extends "layouts/defra.html" %}
 
 {% set pageName="Create new application" %}
 
@@ -7,20 +7,11 @@
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-half">
     {{ govukBackLink({
-      text: "Back",
-      classes: "govuk-!-margin-top-7",
-      href: "../../index"
-    }) }}
-    </div>
-
-  <div class="govuk-grid-column-one-half">
-  <p class="govuk-body govuk-!-margin-top-7">
-    <a class="govuk-link" href="">Sign out</a>
-    </p>
-</div>
+    text: "Back",
+    classes: "govuk-!-margin-top-7",
+    href: "../create"
+  }) }}
 {% endblock %}
 
 {% block content %}

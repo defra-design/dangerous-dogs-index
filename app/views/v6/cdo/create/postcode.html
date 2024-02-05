@@ -7,15 +7,23 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  classes: "govuk-!-margin-top-7",
-  href: "../create"
-}) }}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half govuk-!-margin-top-7">
+    {{ govukBackLink({
+      text: "Back",
+      href: "../create"
+    }) }}
+    </div>
+
+  <div class="govuk-grid-column-one-half">
+    <p class="govuk-body ">
+      <a class="govuk-link defra-navigation__right" href="">Sign out</a>
+    </p>
+  </div>
+</div>
 {% endblock %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
