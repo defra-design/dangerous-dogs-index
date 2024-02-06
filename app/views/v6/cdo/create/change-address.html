@@ -10,7 +10,7 @@
   {{ govukBackLink({
   text: "Back",
   classes: "govuk-!-margin-top-6",
-  href: "postcode"
+  href: "confirm-address"
 }) }}
 {% endblock %}
 
@@ -19,7 +19,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v6/cdo/create/enforcement-details" method="post">
+      <form class="form" action="/v6/cdo/create/microchip-number" method="post">
 
         {% call govukFieldset({
           legend: {
@@ -35,7 +35,7 @@
             },
             id: "address-line-1",
             name: "addressLine1",
-            autocomplete: "address-line1"
+            value: "12 Primrose Road"
           }) }}
 
           {{ govukInput({
@@ -43,8 +43,7 @@
               text: "Address line 2 (optional)"
             },
             id: "address-line-2",
-            name: "addressLine2",
-            autocomplete: "address-line2"
+            name: "addressLine2"
           }) }}
 
           {{ govukInput({
@@ -54,7 +53,7 @@
             classes: "govuk-!-width-two-thirds",
             id: "address-town",
             name: "addressTown",
-            autocomplete: "address-level2"
+            value: "Southampton"
           }) }}
 
           {{ govukInput({
@@ -64,7 +63,7 @@
             classes: "govuk-input--width-10",
             id: "address-postcode",
             name: "addressPostcode",
-            autocomplete: "postal-code"
+            value: "SO16 3GP"
           }) }}
 
         {% endcall %}
