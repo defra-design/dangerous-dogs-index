@@ -11,26 +11,46 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
+    classes: "govuk-!-margin-top-6 govuk-!-margin-bottom-0",
     href: "manage-cdos"
   }) }}
 {% endblock %}
 
 {% block content %}
-
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-three-quarters">
 
-      <span class="govuk-caption-l">Pre-exempt</span>
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
-        {{ pageName }}
-      </h1>
+    <div class="moj-page-header-actions govuk-!-margin-bottom-2">
 
-      <ul class="govuk-summary-list__actions-list govuk-!-margin-bottom-6">
-        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link govuk-link--no-visited-state" href="dog-record-ED17343">Dog record</a></li>
-        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link govuk-link--no-visited-state" href="owner-record-ED17343">Owner record</a></li>
-      </ul>
+      <div class="moj-page-header-actions__title">
+        <h1 class="govuk-heading-l">{{ pageName }}</h1>
+      </div>
 
-      <h2 class="govuk-heading-l govuk-!-margin-bottom-4">
+  <div class="moj-page-header-actions__actions">
+
+    <div class="moj-button-menu">
+      <div class="moj-button-menu__wrapper">
+
+        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button">
+          Dog record
+        </button>
+
+        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button">
+          Owner record
+        </button>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+{{govukTag({
+  text: "Pre-exempt",
+  classes: "govuk-!-font-size-16"
+})}}
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-2">
         CDO tasks
       </h2>
 
@@ -72,9 +92,6 @@
               classes: "govuk-link--no-visited-state",
               text: "Verify microchip and confirm neutering"
             },
-            hint: {
-              text: "We can group more than one task together."
-            },
             href: "#",
             status: {
               text: "Completed"
@@ -95,7 +112,7 @@
               classes: "govuk-link--no-visited-state",
               text: "Issue certificate"
             },
-            href: "#",
+            href: "issue-certificate",
             status: {
               tag: {
                 text: "Not yet started",
@@ -107,10 +124,8 @@
       }) }}
 
       <button class="govuk-button" data-module="govuk-button">
-        Mark as complete
+        Complete tasks
       </button>
-
-      </form>
 
     </div>
   </div>

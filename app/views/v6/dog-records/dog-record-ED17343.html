@@ -1,4 +1,4 @@
-{% extends "layouts/defra-layout.html" %}
+{% extends "layouts/defra-navigation.html" %}
 
 {% set pageName="Dog ED17343" %}
 
@@ -7,10 +7,6 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "../cdo/manage/cdo-tasks-not-started"
-  }) }}
 {% endblock %}
 
 {% block content %}

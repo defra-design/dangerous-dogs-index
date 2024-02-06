@@ -1,6 +1,6 @@
 {% extends "layouts/defra-active-dogs.html" %}
 
-{% set pageName="When was the payment made?" %}
+{% set pageName="When was the certificate issued?" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -9,6 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
+  classes: "govuk-!-margin-top-6 govuk-!-margin-bottom-0",
   href: "cdo-tasks-task-5"
 }) }}
 {% endblock %}
@@ -18,7 +19,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v3/cdo/manage/cdo-tasks-completed" method="post">
+      <form class="form" action="/v6/cdo/manage/cdo-tasks-completed" method="post">
 
         <span class="govuk-caption-m">Dog ED17343</span>
 
@@ -27,7 +28,7 @@
           namePrefix: "record-payment-date",
           fieldset: {
             legend: {
-              text: "When was the payment made?",
+              text: "When was the certificate issued?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
@@ -38,7 +39,7 @@
         }) }}
 
       <button class="govuk-button" data-module="govuk-button">
-        Mark as complete
+        Submit date
       </button>
 
       </form>

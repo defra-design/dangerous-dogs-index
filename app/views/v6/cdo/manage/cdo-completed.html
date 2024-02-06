@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/defra-active-dogs.html" %}
 
 {% block pageTitle %}
   Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
@@ -10,17 +10,13 @@
     <div class="govuk-grid-column-two-thirds">
 
       {{ govukPanel({
-        titleText: "Application complete",
-        html: "Your reference number<br><strong>HDJ2123F</strong>"
+        titleText: "Dog ED17343",
+        html: "Status is now<br><strong>Exempt</strong>"
       }) }}
 
-      <p>
-        We have sent you a confirmation email.
+      <p class="govuk-body govuk-!-margin-top-6">
+        <a class="govuk-link govuk-link--no-visited-state" href="../../dog-records/dog-record-ED17343">View dog ED17343 record</a>
       </p>
-
-      <h2 class="govuk-heading-m">
-        What happens next
-      </h2>
 
     </div>
   </div>

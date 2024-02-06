@@ -15,11 +15,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <div class="moj-page-header-actions govuk-!-margin-bottom-2">
+      <div class="moj-page-header-actions govuk-!-margin-top-4 govuk-!-margin-bottom-2">
 
-    <div class="moj-page-header-actions__title">
-      <h1 class="govuk-heading-l">{{ pageName }}</h1>
-    </div>
+        <div class="moj-page-header-actions__title">
+          <h1 class="govuk-heading-l">{{ pageName }}</h1>
+        </div>
 
     <div class="moj-page-header-actions__actions">
 
@@ -41,11 +41,11 @@
 
   </div>
   {{govukTag({
-    text: "In breach",
-    classes: "govuk-tag--red"
+    text: "Pre-exempt",
+    classes: "govuk-!-font-size-16"
   })}}
 
-    <form class="form" action="/v3/cdo/manage/cdo-tasks-error#task-error" method="post">
+    <form class="form" action="/v6/cdo/manage/cdo-completed" method="post">
 
       <h2 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-2">
         CDO tasks
@@ -98,9 +98,6 @@
               classes: "govuk-link--no-visited-state",
               text: "Verify microchip and confirm neutering"
             },
-            hint: {
-              text: "We can group more than one task together."
-            },
             href: "#",
             status: {
               tag: {
@@ -139,7 +136,7 @@
       }) }}
 
       <button class="govuk-button" data-module="govuk-button">
-        Mark as complete
+        Complete tasks
       </button>
 
       </form>

@@ -9,6 +9,11 @@
 <div class="govuk-main-wrapper">
 
 {% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    classes: "govuk-!-margin-top-6 govuk-!-margin-bottom-0",
+    href: "manage-cdos"
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -45,11 +50,12 @@
   classes: "govuk-!-font-size-16"
 })}}
 
-      <form class="form" action="/v6/cdo/manage/cdo-tasks-error" method="post">
+<form class="form" action="/v6/cdo/manage/cdo-completed" method="post">
 
-        <h2 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-2">
-          CDO tasks
-        </h2>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-2">
+        CDO tasks
+      </h2>
 
       {{ govukTaskList({
         idPrefix: "company-details",
@@ -59,7 +65,7 @@
               classes: "govuk-link--no-visited-state",
               text: "Send application pack"
             },
-            href: "application-pack",
+            href: "#",
             status: {
               text: "Completed"
             }
@@ -69,12 +75,9 @@
               classes: "govuk-link--no-visited-state",
               text: "Record insurance details"
             },
-            href: "insurance-details",
+            href: "#",
             status: {
-              tag: {
-                text: "Not yet started",
-                classes: "govuk-tag--blue"
-              }
+              text: "Completed"
             }
           },
           {
@@ -84,10 +87,7 @@
             },
             href: "#",
             status: {
-              tag: {
-                text: "Not yet started",
-                classes: "govuk-tag--blue"
-              }
+              text: "Completed"
             }
           },
           {
@@ -97,10 +97,7 @@
             },
             href: "#",
             status: {
-              tag: {
-                text: "Not yet started",
-                classes: "govuk-tag--blue"
-              }
+              text: "Completed"
             }
           },
           {
@@ -110,10 +107,7 @@
             },
             href: "#",
             status: {
-              tag: {
-                text: "Not yet started",
-                classes: "govuk-tag--blue"
-              }
+                text: "Completed"
             }
           },
           {
@@ -123,10 +117,7 @@
             },
             href: "#",
             status: {
-              tag: {
-                text: "Not yet started",
-                classes: "govuk-tag--blue"
-              }
+                text: "Completed"
             }
           }
         ]
