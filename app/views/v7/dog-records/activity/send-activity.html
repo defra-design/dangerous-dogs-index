@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Add an activty" %}
+{% set pageName="What have you sent?" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "../dog-record-ED30874"
+  href: "add-activity"
 }) }}
 {% endblock %}
 
@@ -18,25 +18,29 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v7/dog-records/activity/add-activity-question" method="post">
+      <form class="form" action="/v7/dog-records/activity/sent-confirmation" method="post">
 
         {{ govukRadios({
-          name: "addActivity",
+          name: "formSent",
           fieldset: {
             legend: {
-              text: "What is the activity?",
+              text: "What have you sent?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
             {
-              value: "sent",
-              text: "We’ve sent something"
+              value: "Change of address form sent",
+              text: "Change of address form"
             },
             {
-              value: "received",
-              text: "We’ve received something"
+              value: "Death of a dog form sent",
+              text: "Death of a dog form"
+            },
+            {
+              value: "Witness statement sent",
+              text: "Witness statement"
             }
           ]
         }) }}

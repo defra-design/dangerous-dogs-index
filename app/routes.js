@@ -198,3 +198,25 @@ router.post('/v6/search/search-results', function (req, res) {
   }
 
 })
+
+// v7 Search
+router.post('/v7/dog-records/activity/activity-type', function (req, res) {
+  var activityType = req.session.data['activityType']
+  if (activityType == "add-activity"){
+    res.redirect('/v7/dog-records/activity/add-activity')
+  } else {
+    res.redirect('/v7/dog-records/activity/activity-all')
+  }
+
+})
+
+// v7 Add an activity
+router.post('/v7/dog-records/activity/add-activity-question', function (req, res) {
+  var addActivity = req.session.data['addActivity']
+  if (addActivity == "sent"){
+    res.redirect('/v7/dog-records/activity/send-activity')
+  } else {
+    res.redirect('/v7/dog-records/activity/receive-activity')
+  }
+
+})

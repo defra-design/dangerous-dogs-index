@@ -1,0 +1,73 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="What have we received?" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "add-activity"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v7/dog-records/activity/received-confirmation" method="post">
+
+        {{ govukRadios({
+          name: "addReceived",
+          fieldset: {
+            legend: {
+              text: "What have we received?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Police correspondence received",
+              text: "Police correspondence"
+            },
+            {
+              value: "Witness statement received",
+              text: "Witness statement"
+            },
+            {
+              value: "Judicial review received",
+              text: "Judicial review"
+            }
+          ]
+        }) }}
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Received something not listed?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">You do not need to record that we’ve received:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>an insurance certificate</li>
+              <li>a change of address form</li>
+              <li>evidence of the death of a dog</li>
+            </ul>
+          </div>
+        </details>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

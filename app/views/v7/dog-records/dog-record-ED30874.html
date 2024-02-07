@@ -1,4 +1,4 @@
-{% extends "layouts/defra-header.html" %}
+{% extends "layouts/defra.html" %}
 
 {% set pageName="Dog ED30874" %}
 
@@ -17,7 +17,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <form class="form" action="./activity/add-activity" method="post">
+    <form class="form" action="/v7/dog-records/activity/activity-type" method="post">
 
     <div class="moj-page-header-actions govuk-!-margin-bottom-2">
 
@@ -30,11 +30,11 @@
     <div class="moj-button-menu">
       <div class="moj-button-menu__wrapper">
 
-        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button">
+        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="add-activity">
           Add an activity
         </button>
 
-        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button">
+        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="view-activity">
           View all activity
         </button>
 
@@ -46,7 +46,7 @@
 </div>
 {{govukTag({
   text: "Pre-exempt",
-  classes: "govuk-!-font-size-16 govuk-!-margin-bottom-6"
+  classes: "govuk-!-margin-bottom-6"
 })}}
 
   <div class="govuk-grid-row">

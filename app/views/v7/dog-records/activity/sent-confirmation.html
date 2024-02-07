@@ -1,0 +1,25 @@
+{% extends "layouts/defra.html" %}
+
+{% block pageTitle %}
+  Exemption order changed to 2015 – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        classes: "govuk-!-margin-bottom-7",
+        titleText: data['formSent'] or "Form sent",
+        html: "Dog ED30874"
+      }) }}
+
+      <p class="govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="activity-all-new-item">Go to the record activity for Dog ED30874</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
