@@ -24,9 +24,9 @@
           name: "formSent",
           fieldset: {
             legend: {
-              text: "What have you sent?",
+              text: "What have we sent?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-4"
             }
           },
           items: [
@@ -45,9 +45,46 @@
           ]
         }) }}
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+      <div class="govuk-form-group govuk-!-margin-top-7">
+        <fieldset class="govuk-fieldset" role="group">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            When did we send it?
+          </legend>
+
+          <div class="govuk-date-input" id="form-sent">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="form-sent-day">
+                  Day
+                </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="form-sent-day" name="form-sent-day" type="text" value="8" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="form-sent-month">
+                  Month
+                </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="form-sent-month" name="form-sent-month" type="text" value="2" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="form-sent-year">
+                  Year
+                </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="form-sent-year" name="form-sent-year" type="text" value="2024" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
 
       </form>
 

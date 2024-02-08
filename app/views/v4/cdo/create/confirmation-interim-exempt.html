@@ -24,12 +24,6 @@
         titleText: "Record created"
       }) }}
 
-      {% if data['organisation_website_url'] %}
-        {{ data['organisation_website_url'] }}
-      {% elif data['organisation_website_url'] == "" %}
-        <p class="govuk-body">None</p>
-      {% endif %}
-
       <p class="govuk-body">
         <a class="govuk-link govuk-link--no-visited-state" href="../manage/manage-cdos">Manage active dog records</a>
       </p>

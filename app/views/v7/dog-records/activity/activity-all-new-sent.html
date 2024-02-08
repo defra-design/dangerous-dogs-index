@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="View activity" %}
+{% set pageName="Check activity" %}
 
 {% block pageTitle %}
   {{ pageName }} – Dog ED30227 - {{ serviceName }}
@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "/v4/dog-records/activity/dog-record-ED30227"
+  href: "../dog-record-ED30874"
 }) }}
 {% endblock %}
 
@@ -21,7 +21,7 @@
       <form class="form" action="/v4/dog-records/activity/activity" method="post">
 
         <span class="govuk-caption-l">Dog ED30227</span>
-        <h1 class="govuk-heading-l">View activity</h1>
+        <h1 class="govuk-heading-l">Check activity</h1>
 
         <div class="govuk-form-group govuk-!-margin-bottom-3">
           <label class="govuk-label" for="activity">
@@ -50,7 +50,7 @@
               classes: "govuk-!-width-one-quarter"
             },
             {
-              text: "Activty",
+              text: "Activity",
               classes: "govuk-!-width-one-half"
             },
             {

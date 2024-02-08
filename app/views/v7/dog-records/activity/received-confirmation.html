@@ -11,15 +11,24 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {{ govukPanel({
-        classes: "govuk-!-margin-bottom-7",
-        titleText: data['addReceived'] or "Form received",
-        html: "Dog ED30874"
-      }) }}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+        <h1 class="govuk-panel__title">
+          {{ data['addReceived'] }}
+           on 8 February 2024
+        </h1>
+        <div class="govuk-panel__body">
+          Dog ED30874
+        </div>
+      </div>
 
-      <p class="govuk-body">
-        <a class="govuk-link govuk-link--no-visited-state" href="activity-all-new-received">Go to the record activity for Dog ED30874</a>
-      </p>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="activity-all-new-received">Check activity for Dog ED30874</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="../dog-record-ED30874">Go to the record for Dog ED30874</a>
+        </li>
+      </ul>
 
     </div>
   </div>
