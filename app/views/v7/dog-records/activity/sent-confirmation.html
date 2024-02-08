@@ -13,21 +13,10 @@
 
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
         <h1 class="govuk-panel__title">
-          {{ data['formSent'] }}
-           on 8 February 2024
-        </h1>
-        <div class="govuk-panel__body">
-          Dog ED30874
-        </div>
-      </div>
-
-        <!--
-      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
-        <h1 class="govuk-panel__title">
           {% if data['formSent'] %}
           {{ data['formSent'] }}
-          {% elif data['formSent'] === "" %}
-            None
+          {% elif data['formSent'] == None %}
+            Form sent
           {% endif %}
            on 8 February 2024
         </h1>
@@ -36,9 +25,6 @@
           Dog ED30874
         </div>
       </div>
-      -->
-
-
 
       <ul class="govuk-list">
         <li>
