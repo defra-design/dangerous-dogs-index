@@ -1,0 +1,62 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Confirm microchipping and neutering" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v7/cdo/manage/cdo-tasks-2" method="post">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      {{ govukInput({
+        label: {
+          text: "Microchip number",
+          classes: "govuk-!-font-weight-bold"
+        },
+        hint: {
+          text: "Add the microchip number."
+        },
+        classes: "govuk-input--width-10",
+        name: "eventName"
+      }) }}
+
+      {{ govukDateInput({
+        id: "neutered-date",
+        namePrefix: "neutered-date",
+        fieldset: {
+          legend: {
+            text: "When was the dog neutered?",
+            classes: "govuk-!-font-weight-bold"
+          }
+        },
+        hint: {
+          text: "For example, 27 3 2023"
+        }
+      }) }}
+
+      <button class="govuk-button" data-module="govuk-button" onclick="updateLocalStorage('task4Finished')">
+        Submit details
+      </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

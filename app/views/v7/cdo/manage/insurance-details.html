@@ -1,0 +1,45 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Add insurance number" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v7/cdo/manage/cdo-tasks-2" method="post">
+
+      {{ govukInput({
+        label: {
+          text: "Add insurance number",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        hint: {
+          text: "We might need a hint to add the policy number."
+        },
+        classes: "govuk-input--width-10",
+        name: "eventName"
+      }) }}
+
+      <button class="govuk-button" data-module="govuk-button" onclick="updateLocalStorage('task2Finished')">
+        Submit number
+      </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
