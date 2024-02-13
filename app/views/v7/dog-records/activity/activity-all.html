@@ -18,31 +18,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <form class="form" action="/v7/dog-records/activity/activity" method="post">
-
         <span class="govuk-caption-l">Dog ED30874</span>
         <h1 class="govuk-heading-l">Check activity</h1>
 
-        <div class="govuk-form-group govuk-!-margin-bottom-3">
-          <label class="govuk-label" for="activity">
-            Activity
-          </label>
-          <select class="govuk-select" id="activity" name="activity">
-              <option value="All" selected>All</option>
-              <option value="Exemption details">Exemption details</option>
-              <option value="Dog details">Dog details</option>
-              <option value="Owner details">Owner details</option>
-          </select>
-        </div>
-
-        {{ govukButton({
-          text: "Filter activity"
-        }) }}
-
-
         {{ govukTable({
           caption: "All activity",
-          captionClasses: "govuk-table__caption--m",
+          captionClasses: "govuk-visually-hidden",
           firstCellIsHeader: false,
           head: [
             {
@@ -446,8 +427,6 @@
             ]
           ]
         }) }}
-
-      </form>
 
     </div>
   </div>
