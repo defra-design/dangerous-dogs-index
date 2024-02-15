@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "add-activity"
+  href: "../owner-record-ED30874"
 }) }}
 {% endblock %}
 
@@ -18,38 +18,15 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v7/dog-records/activity/sent-confirmation" method="post">
+      <form class="form" action="/v7/owner-records/activity/sent-confirmation" method="post">
 
-        <span class="govuk-caption-l">Dog ED30874</span>
-        {{ govukRadios({
-          name: "formSent",
-          fieldset: {
-            legend: {
-              text: "What have we sent?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-4"
-            }
-          },
-          items: [
-            {
-              value: "Change of address form sent",
-              text: "Change of address form"
-            },
-            {
-              value: "Death of a dog form sent",
-              text: "Death of a dog form"
-            },
-            {
-              value: "Witness statement sent",
-              text: "Witness statement"
-            }
-          ]
-        }) }}
+        <span class="govuk-caption-l">Leah Johnstone</span>
 
-      <div class="govuk-form-group govuk-!-margin-top-7">
+
+      <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            When did we send it?
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            When did we send a change of address form?
           </legend>
 
           <div class="govuk-date-input" id="form-sent">
@@ -58,7 +35,7 @@
                 <label class="govuk-label govuk-date-input__label" for="form-sent-day">
                   Day
                 </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="form-sent-day" name="form-sent-day" type="text" value="8" inputmode="numeric">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="form-sent-day" name="form-sent-day" type="text" value="15" inputmode="numeric">
               </div>
             </div>
 

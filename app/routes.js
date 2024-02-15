@@ -220,3 +220,14 @@ router.post('/v7/dog-records/activity/add-activity-question', function (req, res
   }
 
 })
+
+// v7 Add or check owner record activity
+router.post('/v7/owner-records/activity/activity-type', function (req, res) {
+  var activityType = req.session.data['activityType']
+  if (activityType == "add-activity"){
+    res.redirect('/v7/owner-records/activity/send-activity')
+  } else {
+    res.redirect('/v7/owner-records/activity/activity')
+  }
+
+})
