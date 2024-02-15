@@ -1,0 +1,119 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Check activity" %}
+
+{% block pageTitle %}
+  {{ pageName }} - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "../owner-record-ED30874"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <form class="form" action="/v4/dog-records/activity/activity" method="post">
+
+        <span class="govuk-caption-l">Leah Johnstone</span>
+        <h1 class="govuk-heading-l">Check activity</h1>
+
+        {{ govukTable({
+          caption: "All activity",
+          captionClasses: "govuk-visually-hidden",
+          firstCellIsHeader: false,
+          head: [
+            {
+              text: "Date",
+              classes: "govuk-!-width-one-quarter"
+            },
+            {
+              text: "Activty",
+              classes: "govuk-!-width-one-half"
+            },
+            {
+              text: "Team member",
+              classes: "govuk-!-width-one-quarter"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "28 September 2023"
+              },
+              {
+                text: "Address changed"
+              },
+              {
+                text: "Danielle Simmons"
+              }
+            ],
+            [
+              {
+                text: "30 August 2023"
+              },
+              {
+                text: "Change of address form sent"
+              },
+              {
+                text: "Danielle Simmons"
+              }
+            ],
+            [
+              {
+                text: "27 May 2019"
+              },
+              {
+                text: "Owner changed"
+              },
+              {
+                text: "Danielle Simmons"
+              }
+            ],
+            [
+              {
+                text: "9 May 2019"
+              },
+              {
+                text: "Change of owner form sent"
+              },
+              {
+                text: "Danielle Simmons"
+              }
+            ],
+            [
+              {
+                text: "7 May 2015"
+              },
+              {
+                text: "Email address changed"
+              },
+              {
+                text: "Evyonne Macallister"
+              }
+            ],
+            [
+              {
+                text: "3 March 2014"
+              },
+              {
+                text: "Owner details added"
+              },
+              {
+                text: "Karen Halliday"
+              }
+            ]
+          ]
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
