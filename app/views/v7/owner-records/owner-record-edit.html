@@ -1,0 +1,212 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Edit owner details" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "owner-record-ED30874"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      <form class="form" action="/v7/owner-records/owner-record-ED30227" method="post">
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-visually-hidden">
+          Owner details
+        </legend>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-5">
+          <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="first-name">
+            First name
+          </label>
+          <input class="govuk-input govuk-!-width-one-half govuk-!-font-size-16" value="Leah" id="first-name" name="firstName" type="text">
+        </div>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-5">
+          <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="last-name">
+            Last name
+          </label>
+          <input class="govuk-input govuk-!-width-one-half govuk-!-font-size-16" value="Johnstone" id="last-name" name="lastName" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group">
+            <legend class="govuk-fieldset__legend govuk-!-font-weight-bold govuk-!-font-size-16">
+              Date of birth
+            </legend>
+
+            <div class="govuk-date-input" id="date-of-birth">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="date-of-birth-day">
+                    Day
+                  </label>
+                <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="2" id="date-of-birth-day" name="dateBirthday" type="text" inputmode="numeric">
+                </div>
+              </div>
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="date-of-birth-month">
+                    Month
+                  </label>
+                <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-2" value="12" id="date-of-birth-month" name="dateBirthmonth" type="text" inputmode="numeric">
+                </div>
+              </div>
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label govuk-!-font-size-16" for="date-of-birth-year">
+                    Year
+                  </label>
+                <input class="govuk-input govuk-date-input__input govuk-!-font-size-16 govuk-input--width-4" value="1986" id="date-of-birth-year" name="dateBirthyear" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <p class="govuk-body govuk-!-font-size-16 govuk-!-margin-bottom-4">
+          <a class="govuk-link govuk-link--no-visited-state" href="postcode">Enter a new address using a postcode</a>
+        </p>
+
+        {% call govukFieldset({
+          legend: {
+            text: "Address",
+            classes: "govuk-visually-hidden"
+          }
+        }) %}
+
+          {{ govukInput({
+            label: {
+              classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
+              text: "Address line 1"
+            },
+            classes: "govuk-!-font-size-16",
+            id: "address-line-1",
+            name: "addressLine1",
+            value: "12 Primrose Road"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
+              text: "Address line 2"
+            },
+            classes: "govuk-!-font-size-16",
+            id: "address-line-2",
+            name: "addressLine2"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
+              text: "Town or city"
+            },
+            classes: "govuk-!-width-two-thirds govuk-!-font-size-16",
+            id: "address-town",
+            name: "addressTown",
+            value: "Southampton"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
+              text: "Postcode"
+            },
+            classes: "govuk-input--width-10 govuk-!-font-size-16",
+            id: "address-postcode",
+            name: "addressPostcode",
+            value: "SO16 3GP"
+          }) }}
+
+        {% endcall %}
+
+        {{ govukInput({
+          label: {
+            classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
+            text: "Email address"
+          },
+          name: "email",
+          value: "leahoj86@gmail.com",
+          type: "email",
+          spellcheck: false,
+          classes: "govuk-!-font-size-16"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
+            text: "Telephone number 1"
+          },
+          id: "telephone-number-1",
+          name: "telephoneNumber1",
+          value: "07879 929344",
+          type: "tel",
+          classes: "govuk-input--width-10 govuk-!-font-size-16"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
+            text: "Telephone number 2"
+          },
+          name: "telephoneNumber2",
+          type: "tel",
+          classes: "govuk-input--width-10 govuk-!-font-size-16"
+        }) }}
+
+        {{ govukSelect({
+          classes: "govuk-!-font-size-16",
+          name: "country",
+          label: {
+            classes: "govuk-!-font-weight-bold govuk-!-font-size-16",
+            text: "Country"
+          },
+          items: [
+            {
+              value: "England",
+              text: "England",
+              selected: true
+            },
+            {
+              value: "Wales",
+              text: "Wales"
+            },
+            {
+              value: "Scotland",
+              text: "Scotland"
+            }
+          ]
+        }) }}
+
+      </fieldset>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Save details"
+        }) }}
+
+        <a class="govuk-link govuk-link--no-visited-state" href="owner-record-ED30874">Cancel</a>
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -231,3 +231,15 @@ router.post('/v7/owner-records/activity/activity-type', function (req, res) {
   }
 
 })
+
+
+// v7 Owner's postcode
+router.post('/v7/owner-records/postcode-question', function (req, res) {
+  var propertyNumber = req.session.data['propertyNumber']
+  if (propertyNumber == "66"){
+    res.redirect('/v7/owner-records/confirm-address')
+  } else {
+    res.redirect('/v7/owner-records/select-address')
+  }
+
+})
