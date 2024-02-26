@@ -83,6 +83,24 @@
                 }
               ]
             }
+          },
+          {
+            key: {
+              text: "Country"
+            },
+            value: {
+              text: data['sort'] or "England"
+            },
+            actions: {
+              items: [
+                {
+                  href: "select-country-selected",
+                  classes: "govuk-link--no-visited-state",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
           }
         ]
       }) }}

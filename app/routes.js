@@ -199,6 +199,18 @@ router.post('/v6/search/search-results', function (req, res) {
 
 })
 
+
+// v7 Owner's postcode
+router.post('/v7/cdo/create/postcode-question', function (req, res) {
+  var propertyNumber = req.session.data['propertyNumber']
+  if (propertyNumber == "12"){
+    res.redirect('/v7/cdo/create/confirm-address')
+  } else {
+    res.redirect('/v7/cdo/create/select-address')
+  }
+
+})
+
 // v7 Add or check dog record activity
 router.post('/v7/dog-records/activity/activity-type', function (req, res) {
   var activityType = req.session.data['activityType']
