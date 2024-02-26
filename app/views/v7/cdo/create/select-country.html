@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "postcode"
+  href: "enter-address"
 }) }}
 {% endblock %}
 
@@ -20,53 +20,18 @@
 
       <form class="form" action="/v7/owner-records/confirm-address" method="post">
 
-        {% call govukFieldset({
-          legend: {
-            text: "Enter address",
-            classes: "govuk-fieldset__legend--l",
-            isPageHeading: true
-          }
-        }) %}
-
-          {{ govukInput({
-            label: {
-              text: "Address line 1"
-            },
-            id: "address-line-1",
-            name: "addressLine1",
-            autocomplete: "address-line1"
-          }) }}
-
-          {{ govukInput({
-            label: {
-              text: "Address line 2 (optional)"
-            },
-            id: "address-line-2",
-            name: "addressLine2",
-            autocomplete: "address-line2"
-          }) }}
-
-          {{ govukInput({
-            label: {
-              text: "Town or city"
-            },
-            classes: "govuk-!-width-two-thirds",
-            id: "address-town",
-            name: "addressTown",
-            autocomplete: "address-level2"
-          }) }}
-
-          {{ govukInput({
-            label: {
-              text: "Postcode"
-            },
-            classes: "govuk-input--width-10",
-            id: "address-postcode",
-            name: "addressPostcode",
-            autocomplete: "postal-code"
-          }) }}
-
-        {% endcall %}
+        <div class="govuk-form-group">
+          <label for="sort">
+            <h1 class="govuk-heading-l">
+            Select country
+            </h1>
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="england" selected>England</option>
+            <option value="scotland">Scotland</option>
+            <option value="wales">Wales</option>
+          </select>
+        </div>
 
       <button class="govuk-button" data-module="govuk-button">
         Continue
