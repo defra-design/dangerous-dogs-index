@@ -255,3 +255,14 @@ router.post('/v7/owner-records/postcode-question', function (req, res) {
   }
 
 })
+
+// v8 Owner's postcode
+router.post('/v8/cdo/create/owner-question', function (req, res) {
+  var lastName = req.session.data['lastName']
+  if (lastName == "Smith"){
+    res.redirect('/v8/cdo/create/confirm-address')
+  } else {
+    res.redirect('/v8/cdo/create/select-owner')
+  }
+
+})
