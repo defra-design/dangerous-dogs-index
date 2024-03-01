@@ -24,12 +24,6 @@
         titleText: "Record created"
       }) }}
 
-      {% if data['organisation_website_url'] %}
-        {{ data['organisation_website_url'] }}
-      {% elif data['organisation_website_url'] == "" %}
-        <p class="govuk-body">None</p>
-      {% endif %}
-
       <p class="govuk-body">
         <a class="govuk-link govuk-link--no-visited-state" href="/v8/dog-records/dog-record-ED30874">Add more CDO details</a> to the record or <a class="govuk-link govuk-link--no-visited-state" href="#">start CDO tasks</a>.
       </p>
@@ -75,7 +69,7 @@
               text: "CDO issued"
             },
             value: {
-              text: data['cdo-issued'] or "20 January 2024"
+              text: data['cdo-issued'] or "26 February 2024"
             }
           },
           {
@@ -83,7 +77,7 @@
               text: "CDO expiry"
             },
             value: {
-              text: data['cdo-expiry'] or "20 March 2024"
+              text: data['cdo-expiry'] or "26 April 2024"
             }
           }
         ]
