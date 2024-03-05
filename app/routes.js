@@ -256,13 +256,37 @@ router.post('/v7/owner-records/postcode-question', function (req, res) {
 
 })
 
-// v8 Owner's postcode
+// v8 Owner's question
 router.post('/v8/cdo/create/owner-question', function (req, res) {
   var lastName = req.session.data['lastName']
   if (lastName == "Smith"){
     res.redirect('/v8/cdo/create/confirm-address')
+  } if (lastName == "Noakes"){
+    res.redirect('/v8/cdo/create/postcode')
   } else {
     res.redirect('/v8/cdo/create/select-owner')
+  }
+
+})
+
+// v8 Microchip number
+router.post('/v8/cdo/create/microchip-question', function (req, res) {
+  var microchipNumber = req.session.data['microchipNumber']
+  if (microchipNumber == "123456789012345"){
+    res.redirect('/v8/cdo/create/duplicate-dog')
+  } else {
+    res.redirect('/v8/cdo/create/dog-details')
+  }
+
+})
+
+// v8 Owner's postcode
+router.post('/v8/cdo/create/postcode-question', function (req, res) {
+  var propertyNumber = req.session.data['propertyNumber']
+  if (propertyNumber == "66"){
+    res.redirect('/v8/cdo/create/confirm-address')
+  } else {
+    res.redirect('/v8/cdo/create/select-address')
   }
 
 })

@@ -1,0 +1,86 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Select address" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "postcode"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v8/cdo/create/microchip-number" method="post">
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+          {{ pageName }}
+        </h1>
+
+        <p class="govuk-body govuk-!-margin-bottom-3">
+          <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create/postcode">
+            Change the postcode
+          </a>
+        </p>
+
+        {{ govukRadios({
+          classes: "govuk-radios--small",
+          name: "whereDoYouLive",
+          fieldset: {
+            legend: {
+              text: "Select address",
+              isPageHeading: false,
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            {
+              value: "1 Bullytree Lane, Leeds LS25 5AQ",
+              text: "1 Bullytree Lane, Leeds LS25 5AQ"
+            },
+            {
+              value: "2 Bullytree Lane, Leeds LS25 5AQ",
+              text: "2 Bullytree Lane, Leeds LS25 5AQ"
+            },
+            {
+              value: "3 Bullytree Lane, Leeds LS25 5AQ",
+              text: "3 Bullytree Lane, Leeds LS25 5AQ"
+            },
+            {
+              value: "4 Bullytree Lane, Leeds LS25 5AQ",
+              text: "4 Bullytree Lane, Leeds LS25 5AQ"
+            },
+            {
+              value: "5 Bullytree Lane, Leeds LS25 5AQ",
+              text: "5 Bullytree Lane, Leeds LS25 5AQ"
+            },
+            {
+              value: "6 Bullytree Lane, Leeds LS25 5AQ",
+              text: "6 Bullytree Lane, Leeds LS25 5AQ"
+            },
+            {
+              value: "Blackwater Farm, Bullytree Lane, Leeds LS25 5AQ",
+              text: "Blackwater Farm, Bullytree Lane, Leeds LS25 5AQ"
+            },
+            {
+              value: "Pooch Hall, Bullytree Lane, Leeds LS25 5AQ",
+              text: "Pooch Hall, Bullytree Lane, Leeds LS25 5AQ"
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Select address"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
