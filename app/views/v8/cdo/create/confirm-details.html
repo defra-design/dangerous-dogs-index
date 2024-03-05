@@ -23,6 +23,73 @@
         {{ pageName }}
       </h1>
 
+      <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Owner details</h2></div>
+
+    <div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Leah Johnstone
+          </dd>
+
+            <dd class="govuk-summary-list__actions">
+
+                <a class="govuk-link govuk-link--no-visited-state" href="../create">Change<span class="govuk-visually-hidden"> name (Owner details)</span></a>
+
+            </dd>
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            2 December 1986
+          </dd>
+
+            <dd class="govuk-summary-list__actions">
+
+                <a class="govuk-link govuk-link--no-visited-state" href="../create#date-of-birth">Change<span class="govuk-visually-hidden"> date of birth (Owner details)</span></a>
+
+            </dd>
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            12 Primrose Road<br>Southampton<br>SO16 3GP
+          </dd>
+
+            <dd class="govuk-summary-list__actions">
+
+                <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> address (Owner details)</span></a>
+            </dd>
+        </div>
+
+          <dt class="govuk-summary-list__key govuk-!-padding-top-0">
+            Country
+          </dt>
+          <dd class="govuk-summary-list__value govuk-!-padding-top-0">
+            England
+          </dd>
+
+  </dl></div>
+  </div>
+
       {{ govukSummaryList({
         card: {
           title: {
@@ -82,6 +149,14 @@
                   visuallyHiddenText: "address"
                 }
               ]
+            }
+          },
+          {
+            key: {
+              text: "Country"
+            },
+            value: {
+              text: "England"
             }
           }
         ]
