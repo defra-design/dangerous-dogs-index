@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "select-owner"
+  href: "../../create"
 }) }}
 {% endblock %}
 
@@ -18,42 +18,42 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="application-type" method="post">
+      <form class="form" action="select-dog" method="post">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            Select the dog for {{ data['firstName'] }} {{ data['lastName'] }}
+            Select the address for {{ data['firstName'] }} {{ data['lastName'] }}
           </legend>
 
             <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="existingOwner" name="existingOwner" type="radio" value="address1">
                   <label class="govuk-label govuk-radios__label" for="existingOwner">
-                    Rosie
+                    5 Station Road, Woofferton, Ludlow SY8 4NL
                   </label>
-                  <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
-                    Breed: XL Bully
-                    <br>
-                    Microchip number: 901229512395772
-                    <br>
-                    Index number: ED10433
-                  </div>
                 </div>
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="existingOwner-2" name="existingOwner" type="radio" value="address2">
                   <label class="govuk-label govuk-radios__label" for="existingOwner-2">
-                    Jim
+                    23 Billson Street, Isle of Dogs, London E14 3DA
                   </label>
-                  <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
-                    Breed: XL Bully
-                    <br>
-                    Microchip number: 221087472833641
-                    <br>
-                    Index number: ED30227
-                  </div>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="existingOwner-3" name="existingOwner" type="radio" value="address3">
+                  <label class="govuk-label govuk-radios__label" for="existingOwner-3">
+                    18 Hillview Road, Lickey End, Bromsgrove B60 1JZ
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="existingOwner-4" name="existingOwner" type="radio" value="address4">
+                  <label class="govuk-label govuk-radios__label" for="existingOwner-4">
+                    11 Hound Road, Netley, Southampton SO31 5JS
+                  </label>
                 </div>
 
                 <div class="govuk-radios__divider">or</div>
@@ -61,7 +61,7 @@
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="existingOwner-6" name="existingOwner" type="radio" value="no-address">
                   <label class="govuk-label govuk-radios__label" for="existingOwner-6">
-                The dog is not listed
+                The owner’s address is not listed
               </label>
             </div>
           </div>

@@ -1,0 +1,177 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Add dog details" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "microchip-number"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v8/cdo/create/single/confirm-dog-details" method="post">
+
+        <h1 class="govuk-heading-l">
+          Add dog details
+          </h1>
+
+          {{ govukRadios({
+            name: "breedType1",
+            fieldset: {
+              legend: {
+                text: "Breed type"
+              }
+            },
+            items: [
+              {
+                value: "XL Bully",
+                text: "XL Bully"
+              },
+              {
+                value: "Pit Bull Terrier",
+                text: "Pit Bull Terrier"
+              },
+              {
+                value: "Japanese Tosa",
+                text: "Japanese Tosa"
+              },
+              {
+                value: "Dogo Argentino",
+                text: "Dogo Argentino"
+              },
+              {
+                value: "Fila Brasileiro",
+                text: "Fila Brasileiro"
+              }
+            ]
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Dog name (optional)"
+            },
+            classes: "govuk-!-width-one-half",
+            id: "dog-name-1",
+            name: "dogName1"
+          }) }}
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend">
+            Application type
+          </legend>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="recordType" name="recordType" type="radio" value="CDO" data-aria-controls="conditional-recordType">
+              <label class="govuk-label govuk-radios__label" for="recordType">
+                New CDO
+              </label>
+            </div>
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-recordType">
+          <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              New CDO issue date
+            </legend>
+          <div class="govuk-date-input" id="cdo-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="cdo-issued-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="cdo-issued-day" name="cdo-issued-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="cdo-issued-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="cdo-issued-month" name="cdo-issued-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="cdo-issued-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="cdo-issued-year" name="cdo-issued-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        </div>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="recordType-2" name="recordType" type="radio" value="Interim exemption scheme" data-aria-controls="conditional-recordType-2">
+          <label class="govuk-label govuk-radios__label" for="recordType-2">
+            Interim exemption scheme
+          </label>
+        </div>
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-recordType-2">
+          <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Date joined scheme
+            </legend>
+
+          <div class="govuk-date-input" id="scheme-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="scheme-issued-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="26" id="scheme-issued-day" name="scheme-issued-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="scheme-issued-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="1" id="scheme-issued-month" name="scheme-issued-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="scheme-issued-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="2024" id="scheme-issued-year" name="scheme-issued-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Add dog details
+      </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

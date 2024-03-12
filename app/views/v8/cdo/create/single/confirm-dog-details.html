@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: "dog-details"
   }) }}
 {% endblock %}
 
@@ -17,14 +17,28 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="application-type" method="post">
+      <form class="form" action="/v8/cdo/create/single/enforcement-details" method="post">
 
       <h1 class="govuk-heading-l">
         {{ pageName }}
       </h1>
 
       {{ govukSummaryList({
-        classes: "govuk-!-margin-bottom-7",
+        card: {
+          title: {
+            text: "Dog 1"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change details",
+                classes: "govuk-!-font-weight-regular govuk-link--no-visited-state",
+                visuallyHiddenText: data['breedType1'] or "XL Bully"
+              }
+            ]
+          }
+        },
         rows: [
           {
             key: {
@@ -52,10 +66,18 @@
           },
           {
             key: {
-              text: "Index number"
+              text: "CDO issued"
             },
             value: {
-              text: "ED30198"
+              text: data['cdo-issued'] or "20 January 2024"
+            }
+          },
+          {
+            key: {
+              text: "CDO expiry"
+            },
+            value: {
+              text: data['cdo-expiry'] or "20 March 2024"
             }
           }
         ]
@@ -63,13 +85,13 @@
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Confirm dog details"
+          text: "Confirm details"
         }) }}
 
         {{ govukButton({
-          text: "Add a new dog for this owner",
+          text: "Add another dog for this owner",
           classes: "govuk-button--secondary",
-          href: "microchip-number"
+          href: "#"
         }) }}
       </div>
 

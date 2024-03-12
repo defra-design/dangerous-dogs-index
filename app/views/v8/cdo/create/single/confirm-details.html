@@ -17,7 +17,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v8/cdo/create/confirmation" method="post">
+      <form class="form" action="confirmation" method="post">
 
       <h1 class="govuk-heading-l">
         {{ pageName }}
@@ -27,57 +27,50 @@
     <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Owner details</h2></div>
 
     <div class="govuk-summary-card__content">
-  <dl class="govuk-summary-list">
-
+      <dl class="govuk-summary-list">
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Name
           </dt>
-          <dd class="govuk-summary-list__value">
-            Leah Johnstone
-          </dd>
 
-            <dd class="govuk-summary-list__actions">
-
-                <a class="govuk-link govuk-link--no-visited-state" href="../create">Change<span class="govuk-visually-hidden"> name (Owner details)</span></a>
-
+            {% if data['lastName'] %}
+            <dd class="govuk-summary-list__value">
+              {{ data['firstName'] }} {{ data['lastName'] }}
             </dd>
+            {% elif data['lastName'] == None %}
+            <dd class="govuk-summary-list__value">
+              Cruella de Vil
+            </dd>
+            {% endif %}
 
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" href="../create">Change<span class="govuk-visually-hidden"> name (Owner details)</span></a>
+          </dd>
         </div>
-
-
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Date of birth
           </dt>
           <dd class="govuk-summary-list__value">
-            2 December 1986
+            30 July 1961
           </dd>
-
-            <dd class="govuk-summary-list__actions">
-
-                <a class="govuk-link govuk-link--no-visited-state" href="../create#date-of-birth">Change<span class="govuk-visually-hidden"> date of birth (Owner details)</span></a>
-
-            </dd>
-
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" href="../create#date-of-birth">Change<span class="govuk-visually-hidden"> date of birth (Owner details)</span></a>
+          </dd>
         </div>
-
-
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Address
           </dt>
           <dd class="govuk-summary-list__value">
-            12 Primrose Road<br>Southampton<br>SO16 3GP
+            Bully Green Farm<br>Snow Hill<br>Sudbury<br>CO10 8QX
           </dd>
-
-            <dd class="govuk-summary-list__actions">
-
-                <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> address (Owner details)</span></a>
-            </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> address (Owner details)</span></a>
+          </dd>
         </div>
 
           <dt class="govuk-summary-list__key govuk-!-padding-top-0">
@@ -87,7 +80,8 @@
             England
           </dd>
 
-  </dl></div>
+        </dl>
+      </div>
   </div>
 
       {{ govukSummaryList({
@@ -112,7 +106,7 @@
             text: "Police force"
           },
           value: {
-            text: data['police-force'] or "Hampshire Constabulary"
+            text: data['police-force'] or "Metropolitan Police Service"
           }
         },
         {
@@ -120,7 +114,7 @@
             text: "Dog legislation officer"
           },
           value: {
-            text: data['dog-legislation-officer'] or "Nigel Hillier"
+            text: data['dog-legislation-officer'] or "Ben Baskerville"
           }
         },
         {
@@ -128,7 +122,7 @@
             text: "Court"
           },
           value: {
-            text: data['court'] or "Southampton (West Hampshire) Magistrates’ Court"
+            text: data['court'] or "Sudbury Magistrates Court"
           }
         }
       ]
@@ -164,7 +158,7 @@
               text: "Name"
             },
             value: {
-              text: data['dogName1'] or "Bruce"
+              text: data['dogName1'] or "Patch"
             }
           },
           {
@@ -172,7 +166,7 @@
               text: "Microchip number"
             },
             value: {
-              text: data['microchipNumber'] or "123456789012345"
+              text: data['microchipNumber'] or "583000983012296"
             }
           },
           {
@@ -180,7 +174,7 @@
               text: "CDO issued"
             },
             value: {
-              text: data['cdo-issued'] or "26 February 2024"
+              text: data['cdo-issued'] or "12 March 2024"
             }
           },
           {
@@ -188,7 +182,7 @@
               text: "CDO expiry"
             },
             value: {
-              text: data['cdo-expiry'] or "26 April 2024"
+              text: data['cdo-expiry'] or "12 May 2024"
             }
           }
         ]

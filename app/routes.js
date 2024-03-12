@@ -257,14 +257,14 @@ router.post('/v7/owner-records/postcode-question', function (req, res) {
 })
 
 // v8 Owner's question
-router.post('/v8/cdo/create/owner-question', function (req, res) {
+router.post('/v8/cdo/create/owner-surname-question', function (req, res) {
   var lastName = req.session.data['lastName']
-  if (lastName == "Smith"){
-    res.redirect('/v8/cdo/create/confirm-address')
-  } if (lastName == "Noakes"){
-    res.redirect('/v8/cdo/create/postcode')
+  if (lastName == "Noakes"){
+  res.redirect('/v8/cdo/create/postcode')
+} if (lastName == "de Vil"){
+    res.redirect('/v8/cdo/create/single/confirm-address')
   } else {
-    res.redirect('/v8/cdo/create/select-owner')
+    res.redirect('/v8/cdo/create/multiple/select-owner')
   }
 
 })
@@ -283,10 +283,32 @@ router.post('/v8/cdo/create/microchip-question', function (req, res) {
 // v8 Owner's postcode
 router.post('/v8/cdo/create/postcode-question', function (req, res) {
   var propertyNumber = req.session.data['propertyNumber']
-  if (propertyNumber == "66"){
+  if (propertyNumber == "126"){
     res.redirect('/v8/cdo/create/confirm-address')
   } else {
     res.redirect('/v8/cdo/create/select-address')
+  }
+
+})
+
+// v8 Add or check owner record activity
+router.post('/v8/owner-records/activity/activity-type', function (req, res) {
+  var activityType = req.session.data['activityType']
+  if (activityType == "add-activity"){
+    res.redirect('/v8/owner-records/activity/send-activity')
+  } else {
+    res.redirect('/v8/owner-records/activity/activity')
+  }
+
+})
+
+// v9 Search
+router.post('/v9/search-results', function (req, res) {
+  var recordType = req.session.data['recordType']
+  if (recordType == "Dog record"){
+    res.redirect('/v9/search/dog-results')
+  } else {
+    res.redirect('/v9/search/owner-results')
   }
 
 })

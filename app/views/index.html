@@ -20,7 +20,24 @@
       items: [
       {
       heading: {
-        text: "Version 8 – Current"
+        text: "Version 9 – Current"
+      },
+      content: {
+        html:
+        '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Search the Index
+        </h3>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/index">Search</a>
+          </li>
+          <br>'
+        }
+      },
+
+      {
+      heading: {
+        text: "Version 8"
       },
       content: {
         html:
@@ -28,91 +45,38 @@
         Create a new record
         </h3>
         <h4 class="govuk-body govuk-!-margin-bottom-1">
-        Owner details
+        The owner and dog already have records in the Index
         </h4>
         <ul class="govuk-list">
           <li>
             <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create">Create new record</a>
             <br>
-            <span class="govuk-body-s defra-secondary-text"> – use the surname ‘Smith’ to view a record with 1 addess and 1 dog</span>
+            <span class="govuk-body-s defra-secondary-text"> – use the surname ‘de Vil’</span>
+          </li>
+          <br>
+
+          <h4 class="govuk-body govuk-!-margin-bottom-1">
+          The owner has a record in the Index, has multiple dogs and the same first and last name as other owners
+          </h4>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create">Create new record</a>
+              <br>
+              <span class="govuk-body-s defra-secondary-text"> – use the surname ‘Jones’ with an address 5 Station Road, Woofferton</span>
+            </li>
             <br>
-            <span class="govuk-body-s defra-secondary-text"> – use the surname ‘Jones’ to view a record with multiple addesses and multiple dogs</span>
-            <br>
-            <span class="govuk-body-s defra-secondary-text"> – use the surname ‘Noakes’ to add a new owner</span>
-          </li>
-          <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create/confirm-address">Confirm address</a>
-          </li>
-          <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create/select-owner">Select owner</a>
-          </li>
-          <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create/postcode">Owner postcode</a>
-          </li>
-          <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create/select-address">Select address</a>
-          </li>
-          <br>
 
           <h4 class="govuk-body govuk-!-margin-bottom-1">
-          Dog details
+          No record of the owner or dog in the Index (aka a new owner with a new dog)
           </h4>
-          <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create/confirm-dog">Confirm dog</a>
-          </li>
-          <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create/select-dog">Select dog</a>
-          </li>
-          <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create/application-type">Application type</a>
-          </li>
-          <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create/microchip-number">Microchip number</a>
-            <span class="govuk-body-s defra-secondary-text"> – use ‘123456789012345’ to view a duplicate dog record</span>
-          </li>
-          <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create/duplicate-dog">Duplicate dog record</a>
-          </li>
-          <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create/dog-details">Add dog details</a>
-            <span class="govuk-body-s defra-secondary-text"> – CDO or interim exemption added</span>
-          </li>
-          <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create/confirm-dog-details">Confirm dog details</a>
-          </li>
-          <br>
-
-          <h4 class="govuk-body govuk-!-margin-bottom-1">
-          Enforcement
-          </h4>
-
-          <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create/enforcement-details">Enter police and court details</a>
-          </li>
-          <br>
-
-          <h4 class="govuk-body govuk-!-margin-bottom-1">
-          Confirmation
-          </h4>
-          <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create/confirm-details">Confirm all details</a>
-          </li>
-          <br>
-
-          <h4 class="govuk-body govuk-!-margin-bottom-1">
-          Record created
-          </h4>
-          <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create/confirmation">Record created</a>
-            <br><span class="govuk-body-s defra-secondary-text">Following receipt of a CDO</span>
-          </li>
-          <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create/confirmation-interim-exempt">Record created</a>
-            <br><span class="govuk-body-s defra-secondary-text">Following advice that a dog has been added to the interim exemption scheme</span>
-          </li>
-        </ul>'
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create">Create new record</a>
+              <span class="govuk-body-s defra-secondary-text"> – use the surname ‘Noakes’ with a postcode HX1 5LE and house number 126</span>
+            </li>'
         }
       },
+
       {
         heading: {
           text: "Version 7"
@@ -227,6 +191,7 @@
           </ul>'
           }
         },
+
       {
         heading: {
           text: "Version 6"
@@ -256,6 +221,7 @@
           </ul>'
           }
         },
+
       {
         heading: {
           text: "Version 5"

@@ -16,7 +16,7 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="confirm-details" method="post">
 
@@ -85,7 +85,8 @@
             },
             {
               value: "Metropolitan Police Service",
-              text: "Metropolitan Police Service"
+              text: "Metropolitan Police Service",
+              selected: true
             },
             {
               value: "Staffordshire Police",
@@ -105,8 +106,7 @@
             },
             {
               value: "West Yorkshire Police",
-              text: "West Yorkshire Police",
-              selected: true
+              text: "West Yorkshire Police"
             },
             {
               value: "Wiltshire Police",
@@ -150,10 +150,6 @@
             {
               value: "Bradford and Keighley Magistrates’ Court",
               text: "Bradford and Keighley Magistrates’ Court"
-            },
-            {
-              value: "Calderdale (Halifax) Magistrates’ Court And Family Court Hearing Centre",
-              text: "Calderdale (Halifax) Magistrates’ Court And Family Court Hearing Centre"
             },
             {
               value: "Chester Magistrates’ Court",

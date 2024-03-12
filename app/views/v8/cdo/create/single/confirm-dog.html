@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "dog-details"
+    href: "javascript:window.history.back()"
   }) }}
 {% endblock %}
 
@@ -17,28 +17,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v8/cdo/create/enforcement-details" method="post">
+      <form class="form" action="application-type" method="post">
 
       <h1 class="govuk-heading-l">
         {{ pageName }}
       </h1>
 
       {{ govukSummaryList({
-        card: {
-          title: {
-            text: "Dog 1"
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change details",
-                classes: "govuk-!-font-weight-regular govuk-link--no-visited-state",
-                visuallyHiddenText: data['breedType1'] or "XL Bully"
-              }
-            ]
-          }
-        },
+        classes: "govuk-!-margin-bottom-7",
         rows: [
           {
             key: {
@@ -53,7 +39,7 @@
               text: "Name"
             },
             value: {
-              text: data['dogName1'] or "Shep"
+              text: data['dogName1'] or "Patch"
             }
           },
           {
@@ -61,23 +47,15 @@
               text: "Microchip number"
             },
             value: {
-              text: data['microchipNumber'] or "901229512395772"
+              text: data['microchipNumber'] or "583000983012296"
             }
           },
           {
             key: {
-              text: "CDO issued"
+              text: "Index number"
             },
             value: {
-              text: data['cdo-issued'] or "7 March 2024"
-            }
-          },
-          {
-            key: {
-              text: "CDO expiry"
-            },
-            value: {
-              text: data['cdo-expiry'] or "7 May 2024"
+              text: "ED30198"
             }
           }
         ]
@@ -85,13 +63,13 @@
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Confirm details"
+          text: "Confirm dog details"
         }) }}
 
         {{ govukButton({
-          text: "Add another dog for this owner",
+          text: "Add a new dog for this owner",
           classes: "govuk-button--secondary",
-          href: "#"
+          href: "microchip-number"
         }) }}
       </div>
 

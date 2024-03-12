@@ -20,23 +20,13 @@
       <form class="form" action="/v8/cdo/create/enforcement-details" method="post">
 
       <h1 class="govuk-heading-l">
-        {{ pageName }}
+        Select the dog for {{ data['firstName'] }} {{ data['lastName'] }}
       </h1>
 
       {{ govukSummaryList({
         card: {
           title: {
             text: "Dog 1"
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change details",
-                classes: "govuk-!-font-weight-regular govuk-link--no-visited-state",
-                visuallyHiddenText: data['breedType1'] or "XL Bully"
-              }
-            ]
           }
         },
         rows: [
@@ -53,7 +43,7 @@
               text: "Name"
             },
             value: {
-              text: data['dogName1'] or "Shep"
+              text: data['dogName1'] or "Rosie"
             }
           },
           {
@@ -63,25 +53,54 @@
             value: {
               text: data['microchipNumber'] or "901229512395772"
             }
-          },
-          {
-            key: {
-              text: "CDO issued"
-            },
-            value: {
-              text: data['cdo-issued'] or "7 March 2024"
-            }
-          },
-          {
-            key: {
-              text: "CDO expiry"
-            },
-            value: {
-              text: data['cdo-expiry'] or "7 May 2024"
-            }
           }
         ]
       }) }}
+
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <div class="govuk-radios" data-module="govuk-radios">
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+    <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+      England
+    </label>
+  </div>
+  </div>
+    </div>
+
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Breed
+          </dt>
+          <dd class="govuk-summary-list__value">
+            XL Bully
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Rosie
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Microchip number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            901229512395772
+          </dd>
+        </div>
+
+      </dl>
+  </div>
+</div>
 
       <div class="govuk-button-group">
         {{ govukButton({
