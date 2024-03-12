@@ -312,3 +312,25 @@ router.post('/v9/search-results', function (req, res) {
   }
 
 })
+
+// v9 Sign in
+router.post('/v9/sign-in-field', function (req, res) {
+  var signIn = req.session.data['signIn']
+  if (signIn.includes('@')) {
+    res.redirect('/v9/password')
+  } else {
+    res.redirect('/v9/sign-in-error')
+  }
+
+})
+
+// v9 Password
+router.post('/v9/password-field', function (req, res) {
+  var password = req.session.data['password']
+  if (password === "password"){
+    res.redirect('/v9/index')
+  } else {
+    res.redirect('/v9/password-error')
+  }
+
+})

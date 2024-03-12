@@ -1,0 +1,289 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Dog ED30874" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form class="form" action="/v7/dog-records/activity/activity-type" method="post">
+
+    <div class="moj-page-header-actions govuk-!-margin-bottom-2">
+
+      <div class="moj-page-header-actions__title">
+        <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+      </div>
+
+  <div class="moj-page-header-actions__actions">
+
+    <div class="moj-button-menu">
+      <div class="moj-button-menu__wrapper">
+
+        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="add-activity">
+          Add a comment
+        </button>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+{{govukTag({
+  text: "Pre-exempt",
+  classes: "govuk-!-margin-bottom-6"
+})}}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+    {{ govukSummaryList({
+      classes: "govuk-!-font-size-16",
+      card: {
+      title: {
+      text: "Dog details",
+      classes: "defra-summary-header"
+        }
+      },
+      rows: [
+        {
+          classes: "govuk-!-width-one-third",
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: data['dogName1'] or "Bruce"
+          }
+        },
+        {
+          key: {
+            text: "Breed type"
+          },
+          value: {
+            text: data['dog-breed'] or "XL Bully"
+          }
+        },
+        {
+          key: {
+            text: "Colour"
+          },
+          value: {
+            classes: "defra-secondary-text",
+            text: "Not entered"
+          }
+        },
+        {
+          key: {
+            text: "Sex"
+          },
+          value: {
+            classes: "defra-secondary-text",
+            text: "Not entered"
+          }
+        },
+        {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            classes: "defra-secondary-text",
+            text: "Not entered"
+          }
+        },
+        {
+          key: {
+            text: "Microchip number"
+          },
+          value: {
+            text: data['microchipNumber'] or "123456789012345"
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukSummaryList({
+      classes: "govuk-!-font-size-16",
+      card: {
+      title: {
+      text: "Owner details",
+      classes: "defra-summary-header"
+        }
+      },
+      rows: [
+        {
+          classes: "govuk-!-width-one-third",
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: "Leah Johnstone"
+          }
+        },
+        {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            text: "2 December 1986"
+          }
+        },
+        {
+          key: {
+            text: "Address"
+          },
+          value: {
+            html: "12 Primrose Road<br>Southampton<br>SO16 3GP"
+          }
+        },
+        {
+          key: {
+            text: "Email"
+          },
+          value: {
+            text: "gazandshaz@hotmail.com"
+          }
+        },
+        {
+          key: {
+            text: "Telephone number 1"
+          },
+          value: {
+            text: data['telephoneNumber1'] or "07879 929344"
+          }
+        },
+        {
+          key: {
+            text: "Country"
+          },
+          value: {
+            text: data['country'] or "England"
+          }
+        }
+      ]
+    }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+
+      {{ govukSummaryList({
+        classes: "govuk-!-font-size-16",
+        card: {
+          title: {
+            text: "Exemption details",
+            classes: "defra-summary-header"
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Status"
+            },
+            value: {
+              text: data['dogStatus'] or "Exempt"
+           }
+          },
+          {
+            key: {
+              text: "CDO issued"
+            },
+            value: {
+              text: "20 January 2024"
+            }
+          },
+          {
+            key: {
+              text: "CDO expiry"
+            },
+            value: {
+              text: "20 March 2024"
+            }
+          },
+          {
+            key: {
+              text: "Court"
+            },
+            value: {
+              text: data['court'] or "Southampton (West Hampshire) Magistrates’ Court"
+            }
+          },
+          {
+            key: {
+              text: "Police force"
+            },
+            value: {
+              text: data['police-force'] or "Hampshire Constabulary"
+            }
+          },
+          {
+            key: {
+              text: "Dog legislation officer"
+            },
+            value: {
+              text: data['dog-legislation-officer'] or "Nigel Hillier"
+            }
+          },
+          {
+            key: {
+              text: "Application fee paid"
+            },
+            value: {
+              classes: "defra-secondary-text",
+              text: "Not entered"
+            }
+          },
+          {
+            key: {
+              text: "Insurance company"
+            },
+            value: {
+              classes: "defra-secondary-text",
+              text: "Not entered"
+            }
+          },
+          {
+            key: {
+              text: "Insurance renewal date"
+            },
+            value: {
+              classes: "defra-secondary-text",
+              text: "Not entered"
+            }
+          },
+          {
+            key: {
+              text: "Neutering confirmed"
+            },
+            value: {
+              classes: "defra-secondary-text",
+              text: "Not entered"
+            }
+          },
+          {
+            key: {
+              text: "Microchip number verified"
+            },
+            value: {
+              classes: "defra-secondary-text",
+              text: "Not entered"
+            }
+          }
+        ]
+      }) }}
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
