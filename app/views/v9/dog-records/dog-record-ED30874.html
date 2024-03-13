@@ -17,7 +17,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <form class="form" action="/v7/dog-records/activity/activity-type" method="post">
+    <form class="form" action="/v9/dog-records/comment/add-comment" method="post">
 
     <div class="moj-page-header-actions govuk-!-margin-bottom-2">
 
@@ -30,7 +30,7 @@
     <div class="moj-button-menu">
       <div class="moj-button-menu__wrapper">
 
-        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="add-activity">
+        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType">
           Add a comment
         </button>
 
@@ -63,7 +63,7 @@
             text: "Name"
           },
           value: {
-            text: data['dogName1'] or "Bruce"
+            text: data['dogName1'] or "Rocky"
           }
         },
         {
@@ -79,8 +79,7 @@
             text: "Colour"
           },
           value: {
-            classes: "defra-secondary-text",
-            text: "Not entered"
+            text: "Grey"
           }
         },
         {
@@ -88,8 +87,7 @@
             text: "Sex"
           },
           value: {
-            classes: "defra-secondary-text",
-            text: "Not entered"
+            text: "Male"
           }
         },
         {
@@ -97,8 +95,7 @@
             text: "Date of birth"
           },
           value: {
-            classes: "defra-secondary-text",
-            text: "Not entered"
+            text: "12 March 2018"
           }
         },
         {
@@ -106,7 +103,7 @@
             text: "Microchip number"
           },
           value: {
-            text: data['microchipNumber'] or "123456789012345"
+            text: data['microchipNumber'] or "901229512395772"
           }
         }
       ]
@@ -151,7 +148,7 @@
             text: "Email"
           },
           value: {
-            text: "gazandshaz@hotmail.com"
+            text: "leahj86@hotmail.com"
           }
         },
         {
@@ -199,7 +196,7 @@
               text: "CDO issued"
             },
             value: {
-              text: "20 January 2024"
+              text: "20 January 2022"
             }
           },
           {
@@ -207,7 +204,7 @@
               text: "CDO expiry"
             },
             value: {
-              text: "20 March 2024"
+              text: "20 March 2022"
             }
           },
           {
@@ -236,20 +233,10 @@
           },
           {
             key: {
-              text: "Application fee paid"
-            },
-            value: {
-              classes: "defra-secondary-text",
-              text: "Not entered"
-            }
-          },
-          {
-            key: {
               text: "Insurance company"
             },
             value: {
-              classes: "defra-secondary-text",
-              text: "Not entered"
+              text: "Dogs Trust"
             }
           },
           {
@@ -257,26 +244,7 @@
               text: "Insurance renewal date"
             },
             value: {
-              classes: "defra-secondary-text",
-              text: "Not entered"
-            }
-          },
-          {
-            key: {
-              text: "Neutering confirmed"
-            },
-            value: {
-              classes: "defra-secondary-text",
-              text: "Not entered"
-            }
-          },
-          {
-            key: {
-              text: "Microchip number verified"
-            },
-            value: {
-              classes: "defra-secondary-text",
-              text: "Not entered"
+              text: "18 September 2024"
             }
           }
         ]
