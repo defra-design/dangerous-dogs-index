@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "../dog-record-ED30874"
+  href: "comment-type"
 }) }}
 {% endblock %}
 
@@ -18,39 +18,20 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v7/dog-records/activity/add-activity-question" method="post">
+      <form class="form" action="/v9/dog-records/comment/confirmation" method="post">
 
         <span class="govuk-caption-l">Dog ED30874</span>
-        {{ govukRadios({
-          name: "addActivity",
-          fieldset: {
-            legend: {
-              text: "What do you need to tell Defra?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
+        {{ govukTextarea({
+          name: "addComment",
+          id: "addComment",
+          label: {
+            text: "Provide more detail",
+            classes: "govuk-label--l",
+            isPageHeading: true
           },
-          items: [
-            {
-              value: "sent",
-              text: "There has been a breach"
-            },
-            {
-              value: "sent",
-              text: "The owner has changed address"
-            },
-            {
-              value: "received",
-              text: "The dog has died"
-            },
-            {
-              divider: "or"
-            },
-            {
-              value: "something",
-              text: "Something else"
-            }
-          ]
+          hint: {
+            text: "Do we need to help them with their comment?"
+          }
         }) }}
 
         {{ govukButton({

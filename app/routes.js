@@ -334,3 +334,15 @@ router.post('/v9/password-field', function (req, res) {
   }
 
 })
+
+
+// v9 Comment type
+router.post('/v9/dog-records/comment/comment-type-question', function (req, res) {
+  var commentType = req.session.data['commentType']
+  if (commentType == "address-change"){
+    res.redirect('/v9/dog-records/comment/new-address')
+  } else {
+    res.redirect('/v9/dog-records/comment/add-comment')
+  }
+
+})
