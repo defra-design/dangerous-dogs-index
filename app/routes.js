@@ -303,12 +303,12 @@ router.post('/v8/owner-records/activity/activity-type', function (req, res) {
 })
 
 // v9 Search
-router.post('/v9/search-results', function (req, res) {
+router.post('/v9/microchip-search-results', function (req, res) {
   var recordType = req.session.data['recordType']
   if (recordType == "Dog record"){
-    res.redirect('/v9/search/dog-results')
+    res.redirect('/v9/microchip-number/search/dog-results')
   } else {
-    res.redirect('/v9/search/owner-results')
+    res.redirect('/v9/microchip-number/search/owner-results')
   }
 
 })
@@ -328,7 +328,7 @@ router.post('/v9/sign-in-field', function (req, res) {
 router.post('/v9/password-field', function (req, res) {
   var password = req.session.data['password']
   if (password === "password"){
-    res.redirect('/v9/index')
+    res.redirect('/v9/microchip-number/index')
   } else {
     res.redirect('/v9/password-error')
   }
