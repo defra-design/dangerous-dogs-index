@@ -302,13 +302,35 @@ router.post('/v8/owner-records/activity/activity-type', function (req, res) {
 
 })
 
-// v9 Search
+// v9 Search - Microchip number
 router.post('/v9/microchip-search-results', function (req, res) {
   var recordType = req.session.data['recordType']
   if (recordType == "Dog record"){
     res.redirect('/v9/microchip-number/search/dog-results')
   } else {
     res.redirect('/v9/microchip-number/search/owner-results')
+  }
+
+})
+
+// v9 Search - Owner name
+router.post('/v9/owner-search-results', function (req, res) {
+  var recordType = req.session.data['recordType']
+  if (recordType == "Dog record"){
+    res.redirect('/v9/owner-name/search/dog-results')
+  } else {
+    res.redirect('/v9/owner-name/search/owner-results')
+  }
+
+})
+
+// v9 Search - Address
+router.post('/v9/address-search-results', function (req, res) {
+  var recordType = req.session.data['recordType']
+  if (recordType == "Dog record"){
+    res.redirect('/v9/address/search/dog-results')
+  } else {
+    res.redirect('/v9/address/search/owner-results')
   }
 
 })

@@ -1,0 +1,44 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Form received" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+        <h1 class="govuk-panel__title">
+          {% if data['addReceived'] %}
+          {{ data['addReceived'] }}
+          {% elif data['addReceived'] == None %}
+            Form received
+          {% endif %}
+           on 8 February 2024
+        </h1>
+
+        <div class="govuk-panel__body">
+          Dog ED30874
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Shayne Johnson" %}
+{% set pageName="Jakub Lato" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -17,7 +17,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <form class="form" action="/v9/microchip-number/dog-records/comment/comment-type" method="post">
+      <form class="form" action="/v9/address/owner-records/comment/comment-type" method="post">
 
       <div class="moj-page-header-actions govuk-!-margin-bottom-6">
 
@@ -56,7 +56,7 @@
             text: "Name"
           },
           value: {
-            text: "Shayne Johnson"
+            text: "Jakub Lato"
           }
         },
         {
@@ -64,7 +64,7 @@
             text: "Date of birth"
           },
           value: {
-            text: "20 December 1996"
+            text: "13 May 1982"
           }
         },
         {
@@ -72,7 +72,7 @@
             text: "Address"
           },
           value: {
-            html: "86 Carteret Place<br>London<br>SE8 4QB"
+            html: "247 Norcroft Road<br>Barking<br>IG11 7JF"
          }
         },
         {
@@ -80,7 +80,7 @@
             text: "Email"
           },
           value: {
-            text: "shayne96@sky.com"
+            text: "jakubjlato@gmail.com"
           }
         },
         {
@@ -88,7 +88,7 @@
             text: "Telephone number 1"
           },
           value: {
-            text: data['telephoneNumber1'] or "07879 929344"
+            text: "07563 756455"
           }
         },
         {
@@ -108,13 +108,12 @@
 
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="../dog-records/dog-record-ED30996">
-            ED30996
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="../dog-records/dog-record-ED41249">
+            ED41249
           </a></h2>
           <ul class="govuk-summary-card__actions govuk-!-font-weight-regular">
             {{ govukTag({
-              text: "Exempt",
-              classes: "govuk-tag--turquoise"
+              text: "Pre-exempt"
             }) }}
           </ul>
         </div>
@@ -137,58 +136,16 @@
               <tbody class="govuk-table__body">
                   <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0">
                     <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
-                     	Dino
+                     	Tobi
                     </td>
                     <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0">
-                      901650009395772
+                      745000029857738
                     </td>
                   </tr>
               </tbody>
             </table>
           </div>
         </div>
-
-        <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="../dog-records/dog-record-ED30997">
-              ED30997
-            </a></h2>
-            <ul class="govuk-summary-card__actions govuk-!-font-weight-regular">
-              {{ govukTag({
-                text: "Exempt",
-                classes: "govuk-tag--turquoise"
-              }) }}
-            </ul>
-          </div>
-
-          <div class="govuk-summary-card__content govuk-!-padding-top-1 govuk-!-padding-bottom-0">
-            <table class="govuk-table govuk-!-margin-bottom-3">
-              <caption class="govuk-table__caption govuk-!-font-weight-regular govuk-!-font-size-16">
-                  </caption>
-                <thead class="govuk-table__head govuk-!-font-size-16">
-                  <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header govuk-!-width-one-third">
-                      Dog name
-                    </th>
-                    <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-!-width-one-quarter">
-                      Microchip number
-                    </th>
-                  </tr>
-                </thead>
-
-                <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0">
-                      <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
-                        Barney
-                      </td>
-                      <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0">
-                        905630008456638
-                      </td>
-                    </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
 
     </div>
   </div>

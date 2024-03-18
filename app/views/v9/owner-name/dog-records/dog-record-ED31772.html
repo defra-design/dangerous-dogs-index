@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Dog ED30996" %}
+{% set pageName="Dog ED31772" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -37,8 +37,8 @@
 
 </div>
 {{govukTag({
-  text: "Exempt",
-  classes: "govuk-tag--turquoise govuk-!-margin-bottom-6"
+  text: "Interim exempt",
+  classes: "govuk-tag--green govuk-!-margin-bottom-6"
 })}}
 
   <div class="govuk-grid-row">
@@ -59,7 +59,7 @@
             text: "Name"
           },
           value: {
-            text: "Dino"
+            text: "Conan"
           }
         },
         {
@@ -75,7 +75,7 @@
             text: "Colour"
           },
           value: {
-            text: "Grey"
+            text: "Dark brown"
           }
         },
         {
@@ -91,7 +91,7 @@
             text: "Date of birth"
           },
           value: {
-            text: "12 March 2018"
+            text: "29 August 2015"
           }
         },
         {
@@ -99,7 +99,7 @@
             text: "Microchip number"
           },
           value: {
-            text: "901650009395772"
+            text: "958000000338549"
           }
         }
       ]
@@ -116,7 +116,7 @@
       actions: {
         items: [
           {
-            href: "../owner-records/owner-record-sj",
+            href: "../owner-records/owner-record-md-2",
             text: "Owner record",
             classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
             visuallyHiddenText: "for owner"
@@ -131,7 +131,7 @@
             text: "Name"
           },
           value: {
-            text: "Shayne Johnson"
+            text: "Michael Denton"
           }
         },
         {
@@ -139,7 +139,7 @@
             text: "Date of birth"
           },
           value: {
-            text: "20 December 1996"
+            text: "18 May 1975"
           }
         },
         {
@@ -147,7 +147,7 @@
             text: "Address"
           },
           value: {
-            html: "86 Carteret Place<br>London<br>SE8 4QB"
+            html: "105 Broomfield Street<br>London<br>E14 6BB"
           }
         },
         {
@@ -155,7 +155,7 @@
             text: "Email"
           },
           value: {
-            text: "shayne96@sky.com"
+            text: "dentzz75@hotmail.com"
           }
         },
         {
@@ -163,7 +163,7 @@
             text: "Telephone number 1"
           },
           value: {
-            text: data['telephoneNumber1'] or "07879 929344"
+            text: "07335 645428"
           }
         },
         {
@@ -195,7 +195,7 @@
               text: "Status"
             },
             value: {
-              text: data['dogStatus'] or "Exempt"
+              text: "Interim exempt"
            }
           },
           {
@@ -203,7 +203,7 @@
               text: "CDO issued"
             },
             value: {
-              text: "20 January 2022"
+              text: "23 February 2024"
             }
           },
           {
@@ -211,7 +211,7 @@
               text: "CDO expiry"
             },
             value: {
-              text: "20 March 2022"
+              text: "23 April 2024"
             }
           },
           {
@@ -235,7 +235,7 @@
               text: "Dog legislation officer"
             },
             value: {
-              text: data['dog-legislation-officer'] or "Paul Muswell"
+              text: "Elaine Muscatt"
             }
           },
           {
@@ -251,7 +251,7 @@
               text: "Insurance renewal date"
             },
             value: {
-              text: "18 September 2024"
+              text: "2 March 2025"
             }
           }
         ]
