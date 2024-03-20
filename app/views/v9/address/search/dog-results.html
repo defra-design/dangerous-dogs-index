@@ -34,7 +34,7 @@
         <div id="event-name-hint" class="govuk-hint">
           Enter one or more search terms separated by spaces
         </div>
-        <input class="govuk-input" value="247 Norcroft Road" id="search" name="keyword" type="text">
+        <input class="govuk-input" value="{% if data['keyword'] %}{{ data['keyword'] }}{% else %}247 Norcroft Road{% endif %}" id="search" name="keyword" type="text">
       </div>
 
       <div class="govuk-form-group govuk-!-margin-bottom-2">

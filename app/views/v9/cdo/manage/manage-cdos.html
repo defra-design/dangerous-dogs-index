@@ -1,0 +1,339 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Manage active dog records" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "manage-cdos"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">
+      {{ pageName }}
+    </h1>
+
+    <table class="govuk-table govuk-!-font-size-16">
+
+  <caption class="govuk-table__caption govuk-visually-hidden">Currently active CDOs</caption>
+
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header">Dog number</th>
+
+      <th scope="col" class="govuk-table__header">Owner</th>
+
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Breed type</th>
+
+      <th scope="col" class="govuk-table__header">Next task</th>
+
+      <th scope="col" class="govuk-table__header">Status</th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="manage-cdo-1">
+            ED17343</a></td>
+
+          <td class="govuk-table__cell">
+            Dennis Campbell</td>
+
+          <td class="govuk-table__cell">
+            XL Bully</td>
+
+          <td class="govuk-table__cell">
+            Send application pack
+          </td>
+
+          <td class="govuk-table__cell">
+            {{govukTag({
+              text: "Pre-exempt",
+              classes: "govuk-tag--blue govuk-!-font-size-16"
+            })}}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+          ED17819</a></td>
+
+          <td class="govuk-table__cell">
+            Ioana Bortan</td>
+
+          <td class="govuk-table__cell">
+            XL Bully</td>
+
+          <td class="govuk-table__cell">
+            Confirm neutering
+          </td>
+
+          <td class="govuk-table__cell">
+            {{govukTag({
+              text: "Pre-exempt",
+              classes: "govuk-tag--blue govuk-!-font-size-16"
+            })}}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED30012</td>
+
+          <td class="govuk-table__cell">
+            Gary Jones</td>
+
+          <td class="govuk-table__cell">
+            XL Bully</td>
+
+          <td class="govuk-table__cell">
+            Send Form 2
+          </td>
+
+          <td class="govuk-table__cell">
+            {{govukTag({
+              text: "Pre-exempt",
+              classes: "govuk-tag--blue govuk-!-font-size-16"
+            })}}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED15391</td>
+
+          <td class="govuk-table__cell">
+            Wojciech Krychowiak</td>
+
+          <td class="govuk-table__cell">
+            XL Bully</td>
+
+          <td class="govuk-table__cell">
+            Verify microchip
+          </td>
+
+          <td class="govuk-table__cell">
+            {{govukTag({
+              text: "Interim exempt",
+              classes: "govuk-tag--green govuk-!-font-size-16"
+            })}}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED19858</td>
+
+          <td class="govuk-table__cell">
+            Heidi Sturgeon</td>
+
+          <td class="govuk-table__cell">
+            XL Bully</td>
+
+          <td class="govuk-table__cell">
+            Record insurance details
+          </td>
+
+          <td class="govuk-table__cell">
+            {{govukTag({
+              text: "Pre-exempt",
+              classes: "govuk-tag--blue govuk-!-font-size-16"
+            })}}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED30012</td>
+
+          <td class="govuk-table__cell">
+            Adhavan Razeek</td>
+
+          <td class="govuk-table__cell">
+            XL Bully</td>
+
+          <td class="govuk-table__cell">
+            Verify microchip
+          </td>
+
+          <td class="govuk-table__cell">
+            {{govukTag({
+              text: "Pre-exempt",
+              classes: "govuk-tag--blue govuk-!-font-size-16"
+            })}}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED12545</td>
+
+          <td class="govuk-table__cell">
+            Tyler McGrath</td>
+
+          <td class="govuk-table__cell">
+            XL Bully</td>
+
+          <td class="govuk-table__cell">
+            Verify microchip
+          </td>
+
+          <td class="govuk-table__cell">
+            {{govukTag({
+              text: "Pre-exempt",
+              classes: "govuk-tag--blue govuk-!-font-size-16"
+            })}}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED17202</td>
+
+          <td class="govuk-table__cell">
+            Helen Renard</td>
+
+          <td class="govuk-table__cell">
+            XL Bully</td>
+
+          <td class="govuk-table__cell">
+            Send application pack
+          </td>
+
+          <td class="govuk-table__cell">
+            {{govukTag({
+              text: "Pre-exempt",
+              classes: "govuk-tag--blue govuk-!-font-size-16"
+            })}}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED39346</td>
+          <td class="govuk-table__cell">
+           Raheem Powell</td>
+
+          <td class="govuk-table__cell">
+           XL Bully</td>
+
+          <td class="govuk-table__cell">
+           </td>
+
+          <td class="govuk-table__cell">
+            {{govukTag({
+              text: "Withdrawn",
+              classes: "govuk-tag--pink govuk-!-font-size-16"
+            })}}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED17882</td>
+
+          <td class="govuk-table__cell">
+           Luke Kettleborough</td>
+
+          <td class="govuk-table__cell">
+           XL Bully</td>
+
+         <td class="govuk-table__cell">
+           Send application pack
+         </td>
+
+         <td class="govuk-table__cell">
+           {{govukTag({
+             text: "Interim exempt",
+             classes: "govuk-tag--green govuk-!-font-size-16"
+           })}}
+         </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED20553</td>
+
+          <td class="govuk-table__cell"
+          >Donlan Moloney</td>
+
+          <td class="govuk-table__cell"
+          >Pit Bull Terrier</td>
+
+          <td class="govuk-table__cell">
+            Record insurance details
+          </td>
+
+          <td class="govuk-table__cell">
+            {{govukTag({
+              text: "Pre-exempt",
+              classes: "govuk-tag--blue govuk-!-font-size-16"
+            })}}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED17399</td>
+
+          <td class="govuk-table__cell">
+            Catherine Hyde</td>
+
+          <td class="govuk-table__cell">
+            XL Bully</td>
+
+          <td class="govuk-table__cell">
+            Record insurance details
+          </td>
+
+          <td class="govuk-table__cell">
+            {{govukTag({
+              text: "Pre-exempt",
+              classes: "govuk-tag--blue govuk-!-font-size-16"
+            })}}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED17435</td>
+
+          <td class="govuk-table__cell">
+           Brian Gaston</td>
+
+          <td class="govuk-table__cell">
+           XL Bully</td>
+
+           <td class="govuk-table__cell">
+             Verify microchip
+           </td>
+
+           <td class="govuk-table__cell">
+             {{govukTag({
+               text: "Pre-exempt",
+               classes: "govuk-tag--blue govuk-!-font-size-16"
+             })}}
+           </td>
+        </tr>
+      </tbody>
+    </table>
+
+    </div>
+  </div>
+
+{% endblock %}

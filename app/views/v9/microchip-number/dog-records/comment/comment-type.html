@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Add a comment" %}
+{% set pageName="Report something" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -18,36 +18,36 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v9/dog-records/comment/comment-type-question" method="post">
+      <form class="form" action="/v9/microchip-number/dog-records/comment/comment-type-question" method="post">
 
         <span class="govuk-caption-l">Dog ED30996</span>
         {{ govukRadios({
           name: "commentType",
           fieldset: {
             legend: {
-              text: "What do you need to tell Defra?",
+              text: "What do you need to report?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
             {
-              value: "sent",
-              text: "There has been a breach"
+              value: "The owner has breached an exemption",
+              text: "The owner has breached an exemption"
             },
             {
-              value: "address-change",
+              value: "The owner has changed address",
               text: "The owner has changed address"
             },
             {
-              value: "received",
+              value: "The dog has died",
               text: "The dog has died"
             },
             {
               divider: "or"
             },
             {
-              value: "something",
+              value: "Something else",
               text: "Something else"
             }
           ]
