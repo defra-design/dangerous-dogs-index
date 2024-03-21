@@ -368,7 +368,7 @@ router.post('/v9/microchip-number/dog-records/comment/comment-type-question', fu
   } if (commentType == "Something else"){
       res.redirect('/v9/microchip-number/dog-records/comment/report-details')
   } else {
-    res.redirect('/v9/microchip-number/dog-records/comment/new-address')
+    res.redirect('/v9/microchip-number/dog-records/comment/postcode')
   }
 
 })
