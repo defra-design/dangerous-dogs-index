@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Michael Denton" %}
+{% set pageName="Battersea Dogs Home" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -45,9 +45,29 @@
       title: {
       text: "Owner details",
       classes: "defra-summary-header"
+      },
+      id: "owner-details",
+      actions: {
+        items: [
+          {
+            href: "owner-record-edit",
+            text: "Edit details",
+            classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
+            visuallyHiddenText: "for owner"
+            }
+          ]
         }
       },
       rows: [
+        {
+          classes: "govuk-!-width-one-third",
+          key: {
+            text: "Organisation"
+          },
+          value: {
+            text: "Battersea Dogs Home"
+          }
+        },
         {
           classes: "govuk-!-width-one-third",
           key: {

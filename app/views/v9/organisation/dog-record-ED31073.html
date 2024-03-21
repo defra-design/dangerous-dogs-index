@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Dog ED31772" %}
+{% set pageName="Dog ED31073" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: "#"
   }) }}
 {% endblock %}
 
@@ -57,7 +57,7 @@
             text: "Name"
           },
           value: {
-            text: "Conan"
+            text: "Pablo"
           }
         },
         {
@@ -73,7 +73,7 @@
             text: "Colour"
           },
           value: {
-            text: "Dark brown"
+            text: "Dark grey"
           }
         },
         {
@@ -97,7 +97,7 @@
             text: "Microchip number"
           },
           value: {
-            text: "958000000338549"
+            text: "928022000338445"
           }
         }
       ]
@@ -114,10 +114,9 @@
       actions: {
         items: [
           {
-            href: "../owner-records/owner-record-md-2",
+            href: "owner-record-battersea",
             text: "Owner record",
-            classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
-            visuallyHiddenText: "for owner"
+            classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state"
             }
           ]
         }
@@ -126,10 +125,19 @@
         {
           classes: "govuk-!-width-one-third",
           key: {
+            text: "Organisation"
+          },
+          value: {
+            text: "Battersea Dogs Home"
+          }
+        },
+        {
+          classes: "govuk-!-width-one-third",
+          key: {
             text: "Name"
           },
           value: {
-            text: "Michael Denton"
+            text: "Marcia Paralluelo"
           }
         },
         {
@@ -137,7 +145,7 @@
             text: "Date of birth"
           },
           value: {
-            text: "18 May 1975"
+            text: "14 June 1970"
           }
         },
         {
@@ -145,7 +153,7 @@
             text: "Address"
           },
           value: {
-            html: "105 Broomfield Street<br>London<br>E14 6BB"
+            html: "4 Battersea Park Road<br>London<br>SW8 4AA"
           }
         },
         {
@@ -153,7 +161,7 @@
             text: "Email"
           },
           value: {
-            text: "dentzz75@hotmail.com"
+            text: "marcia@battersea.org.uk"
           }
         },
         {
@@ -161,7 +169,7 @@
             text: "Telephone number 1"
           },
           value: {
-            text: "07335 645428"
+            text: "0300 323 1216"
           }
         },
         {
@@ -217,7 +225,7 @@
               text: "Court"
             },
             value: {
-              text: "City of London Magistrates’ Court"
+              text: "Lavender Hill Magistrates’ Court"
             }
           },
           {
