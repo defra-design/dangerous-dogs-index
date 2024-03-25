@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Dog ED30874" %}
+{% set pageName="Dog ED200010" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -9,43 +9,47 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: "#"
   }) }}
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
 
-    <form class="form" action="/v7/dog-records/activity/activity-type" method="post">
+      <form class="form" action="/v9/dog-records/are-you-sure" method="post">
 
-    <div class="moj-page-header-actions govuk-!-margin-bottom-2">
+      <div class="moj-page-header-actions govuk-!-margin-bottom-2">
 
-      <div class="moj-page-header-actions__title">
-        <h1 class="govuk-heading-xl">{{ pageName }}</h1>
-      </div>
+        <div class="moj-page-header-actions__title">
+          <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+        </div>
 
-  <div class="moj-page-header-actions__actions">
-    <div class="moj-button-menu">
-      <div class="moj-button-menu__wrapper">
-        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="add-activity">
-          Add an activity
-        </button>
-        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="view-activity">
-          Check activity
-        </button>
+    <div class="moj-page-header-actions__actions">
+      <div class="moj-button-menu">
+        <div class="moj-button-menu__wrapper">
+          <a href="" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="add-activity">
+            Add an activity
+          </a>
+          <a href="" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="view-activity">
+            Check activity
+          </a>
+          <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="view-activity">
+            Delete dog record
+          </button>
+        </div>
       </div>
     </div>
+
   </div>
 
-</div>
-{{govukTag({
-  text: "Pre-exempt",
-  classes: "govuk-!-margin-bottom-6"
-})}}
+  {{govukTag({
+    text: "Exempt",
+    classes: "govuk-!-margin-bottom-6"
+  })}}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
 
     {{ govukSummaryList({
       classes: "govuk-!-font-size-16",
@@ -57,7 +61,7 @@
       actions: {
         items: [
           {
-            href: "dog-record-ED30227-dog-edit",
+            href: "#",
             text: "Edit details",
             classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
             visuallyHiddenText: "for dog"
@@ -72,7 +76,7 @@
             text: "Name"
           },
           value: {
-            text: data['dogName1'] or "Bruce"
+            text: "Eric"
           }
         },
         {
@@ -88,8 +92,7 @@
             text: "Colour"
           },
           value: {
-            classes: "defra-secondary-text",
-            text: "Not entered"
+            text: data['dogColour'] or "Dark grey"
           }
         },
         {
@@ -97,8 +100,7 @@
             text: "Sex"
           },
           value: {
-            classes: "defra-secondary-text",
-            text: "Not entered"
+            text: data['sex'] or "Male"
           }
         },
         {
@@ -106,8 +108,7 @@
             text: "Date of birth"
           },
           value: {
-            classes: "defra-secondary-text",
-            text: "Not entered"
+            html: "20 July 2017"
           }
         },
         {
@@ -115,7 +116,7 @@
             text: "Microchip number"
           },
           value: {
-            text: data['microchipNumber'] or "123456789012345"
+            text: "123456789054321"
           }
         }
       ]
@@ -132,7 +133,7 @@
       actions: {
         items: [
           {
-            href: "/v7/owner-records/owner-record-ED30874",
+            href: "../owner-records/owner-record-mt",
             text: "Owner record",
             classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
             visuallyHiddenText: "for owner"
@@ -147,7 +148,7 @@
             text: "Name"
           },
           value: {
-            text: "Leah Johnstone"
+            text: "Mark Turner"
           }
         },
         {
@@ -155,7 +156,7 @@
             text: "Date of birth"
           },
           value: {
-            text: "2 December 1986"
+            text: "19 January 1998"
           }
         },
         {
@@ -163,7 +164,7 @@
             text: "Address"
           },
           value: {
-            html: "12 Primrose Road<br>Southampton<br>SO16 3GP"
+            html: "44 Groveway<br>Barking<br>RM8 3XL"
           }
         },
         {
@@ -171,7 +172,7 @@
             text: "Email"
           },
           value: {
-            text: "gazandshaz@hotmail.com"
+            text: "markjturner98@hotmail.com"
           }
         },
         {
@@ -193,6 +194,11 @@
       ]
     }) }}
 
+    {{ govukButton({
+      text: "Delete dog record",
+      classes: "govuk-button--secondary"
+    }) }}
+
     </div>
 
     <div class="govuk-grid-column-one-half">
@@ -207,7 +213,7 @@
           actions: {
             items: [
               {
-                href: "dog-record-ED30227-exemption-edit",
+                href: "#",
                 text: "Edit details",
                 classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
                 visuallyHiddenText: "for exemption"
@@ -227,9 +233,27 @@
             classes: "defra-text-align-left",
              items: [
                {
-                 href: "change-status",
+                 href: "#",
                  classes: "govuk-link--no-visited-state",
                  text: "Change status"
+               }
+             ]
+           }
+          },
+          {
+            key: {
+              text: "Certificate issued"
+            },
+            value: {
+              text: "9 October 2020"
+            },
+            actions: {
+            classes: "defra-text-align-left",
+             items: [
+               {
+                 href: "#",
+                 classes: "govuk-link--no-visited-state",
+                 text: "Generate certificate"
                }
              ]
            }
@@ -239,7 +263,7 @@
               text: "CDO issued"
             },
             value: {
-              text: "20 January 2024"
+              text: "13 September 2020"
             }
           },
           {
@@ -247,7 +271,7 @@
               text: "CDO expiry"
             },
             value: {
-              text: "20 March 2024"
+              text: "13 November 2020"
             }
           },
           {
@@ -255,7 +279,7 @@
               text: "Court"
             },
             value: {
-              text: data['court'] or "Southampton (West Hampshire) Magistrates’ Court"
+              text: "Barking and Dagenham Magistrates Court"
             }
           },
           {
@@ -263,15 +287,7 @@
               text: "Police force"
             },
             value: {
-              text: data['police-force'] or "Hampshire Constabulary"
-            }
-          },
-          {
-            key: {
-              text: "Dog legislation officer"
-            },
-            value: {
-              text: data['dog-legislation-officer'] or "Nigel Hillier"
+              text: "Metropolitan Police Service"
             }
           },
           {
@@ -279,8 +295,7 @@
               text: "Application fee paid"
             },
             value: {
-              classes: "defra-secondary-text",
-              text: "Not entered"
+              text: "7 October 2020"
             }
           },
           {
@@ -288,8 +303,7 @@
               text: "Insurance company"
             },
             value: {
-              classes: "defra-secondary-text",
-              text: "Not entered"
+              text: "Dogs Trust"
             }
           },
           {
@@ -297,33 +311,12 @@
               text: "Insurance renewal date"
             },
             value: {
-              classes: "defra-secondary-text",
-              text: "Not entered"
-            }
-          },
-          {
-            key: {
-              text: "Neutering confirmed"
-            },
-            value: {
-              classes: "defra-secondary-text",
-              text: "Not entered"
-            }
-          },
-          {
-            key: {
-              text: "Microchip number verified"
-            },
-            value: {
-              classes: "defra-secondary-text",
-              text: "Not entered"
+              text: "2 October 2024"
             }
           }
         ]
       }) }}
 
-      </div>
     </div>
   </div>
-</div>
 {% endblock %}

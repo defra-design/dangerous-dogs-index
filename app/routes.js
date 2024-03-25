@@ -372,3 +372,14 @@ router.post('/v9/microchip-number/dog-records/comment/comment-type-question', fu
   }
 
 })
+
+// v9 Password
+router.post('/v9/dog-records/are-you-sure-question', function (req, res) {
+  var areYouSure = req.session.data['areYouSure']
+  if (areYouSure === "no"){
+    res.redirect('/v9/dog-records/dog-record-ED200010')
+  } else {
+    res.redirect('/v9/dog-records/confirmation')
+  }
+
+})

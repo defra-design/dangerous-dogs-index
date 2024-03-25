@@ -1,0 +1,57 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Are you sure you want to delete the dog record?" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "dog-record-ED200010"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v9/dog-records/are-you-sure-question" method="post">
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          name: "areYouSure",
+          fieldset: {
+            legend: {
+              text: "Are you sure you want to delete Dog Record ED300010?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Raise a support ticket if you need to recover a deleted dog record."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
