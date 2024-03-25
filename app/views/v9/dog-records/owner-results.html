@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Dog records - Search" %}
+{% set pageName="Owner records - Search" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -18,11 +18,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="dog-results" method="post">
+      <form class="form" action="/v9/microchip-search-results" method="post">
 
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-visually-hidden">
-          {{ pageName }}
+          Search
         </legend>
 
       <div class="govuk-form-group govuk-!-margin-bottom-2">
@@ -34,7 +34,7 @@
         <div id="event-name-hint" class="govuk-hint">
           Enter one or more search terms separated by spaces
         </div>
-        <input class="govuk-input" value="{% if data['keyword'] %}{{ data['keyword'] }}{% else %}ED200010{% endif %}" id="search" name="keyword" type="text">
+        <input class="govuk-input" value="{% if data['keyword'] %}{{ data['keyword'] }}{% else %}901650009395772{% endif %}" id="search" name="keyword" type="text">
       </div>
 
       <div class="govuk-form-group govuk-!-margin-bottom-2">
@@ -45,14 +45,14 @@
             data-module="govuk-radios">
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="recordType" name="recordType" type="radio" value="Dog record" checked>
+                <input class="govuk-radios__input" id="recordType" name="recordType" type="radio" value="Dog record">
                 <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="recordType">
                   Dog record
                 </label>
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="recordType-2" name="recordType" type="radio" value="Owner record">
+                <input class="govuk-radios__input" id="recordType-2" name="recordType" type="radio" value="Owner record" checked>
                 <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="recordType-2">
                   Owner record
                 </label>
@@ -67,21 +67,20 @@
       </form>
 
       <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-        1 dog record
+        1 owner record
         </p>
 
       <hr class="govuk-section-break govuk-section-break--s govuk-!-margin-bottom-6 govuk-section-break--visible">
 
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-2 govuk-!-padding-bottom-1">
-          <h2 class="govuk-summary-card__title defra-summary-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="dog-record-ED200010">
-            ED200010
+          <h2 class="govuk-summary-card__title defra-summary-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="../owner-records/owner-record-mt">
+            Mark Turner
           </a></h2>
-          <ul class="govuk-summary-card__actions govuk-!-padding-bottom-1 govuk-!-font-weight-regular">
-            {{ govukTag({
-              text: "Exempt",
-              classes: "govuk-tag--turquoise govuk-!-font-size-16"
-            }) }}
+          <ul class="govuk-summary-card__actions govuk-body govuk-!-font-weight-regular">
+            <li class="govuk-summary-card__action defra-summary-header govuk-!-font-size-16">
+              86 Carteret Place, London SE8 4QB
+            </li>
           </ul>
         </div>
 
@@ -91,30 +90,33 @@
                 </caption>
               <thead class="govuk-table__head govuk-!-font-size-16">
                 <tr class="govuk-table__row">
-                  <th scope="col" class="govuk-table__header govuk-!-width-one-third">
-                    Dog name
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">
+                    Dog record
                   </th>
                   <th scope="col" class="govuk-table__header">
-                    Owner name
+                    Dog name
                   </th>
-                  <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-!-width-one-quarter">
-                    Microchip number
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">
+                    Status
                   </th>
                 </tr>
               </thead>
 
               <tbody class="govuk-table__body">
                   <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0">
-                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
-                     	Eric
-                    </td>
-                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
-                      <a class="govuk-link govuk-link--no-visited-state" href="/v9/owner-records/owner-record-mt">
-                        Mark Turner
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                      <a class="govuk-link govuk-link--no-visited-state" href="../dog-records/dog-record-ED30996">
+                        ED30996
                       </a>
                     </td>
-                    <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
-                      123456789054321
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                      Dino
+                    </td>
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                      {{ govukTag({
+                        text: "Exempt",
+                        classes: "govuk-tag--turquoise govuk-!-font-size-16"
+                      }) }}
                     </td>
                   </tr>
               </tbody>
