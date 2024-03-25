@@ -1,9 +1,7 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Form received" %}
-
 {% block pageTitle %}
-  {{ pageName }} – {{ serviceName }}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,20 +20,25 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
-        <h1 class="govuk-panel__title govuk-!-margin-top-0">
-          Dog record
+      {{ govukPanel({
+        titleText: "Dog record deleted",
+        classes: "govuk-!-margin-bottom-7",
+        html: "Dog ED200010"
+      }) }}
 
-        <div class="govuk-panel__body govuk-!-font-weight-regular govuk-!-margin-top-4 govuk-!-margin-bottom-1">
-          Dog ED200010
-        </div>
-         <br>is deleted
-        </h1>
-      </div>
+    <p class=govuk-body">
+      Dog record 200010 will no longer appear in search results or on the owner record.
+      </p>
+
+    <p class=govuk-body">
+      Raise a support ticket if you need to recover a deleted dog record.
+      </p>
+
 
       <p class=govuk-body">
-        <a class="govuk-link govuk-link--no-visited-state" href="#">Search the index</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="dog-results-search">Search the index</a>
         </p>
+
 
     </div>
   </div>
