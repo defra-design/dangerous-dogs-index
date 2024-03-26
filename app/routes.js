@@ -357,33 +357,30 @@ router.post('/v9/password-field', function (req, res) {
 
 })
 
-
 // v9 Comment type
 router.post('/v9/microchip-number/dog-records/comment/comment-type-question', function (req, res) {
-  var commentType = req.session.data['commentType']
-  if (commentType == "The owner has breached an exemption"){
-    res.redirect('/v9/microchip-number/dog-records/comment/report-details')
-  } if (commentType == "The dog has died"){
-      res.redirect('/v9/microchip-number/dog-records/comment/report-death')
-  } if (commentType == "The owner has changed addres"){
-      res.redirect('/v9/microchip-number/dog-records/comment/postcode')
-  } else {
+  var comment = req.session.data['comment']
+  if (comment == "exemption"){
+  res.redirect('/v9/microchip-number/dog-records/comment/report-details')
+  } if (comment == "address"){
+    res.redirect('/v9/microchip-number/dog-records/comment/postcode')
+  } if (comment == "death"){
+    res.redirect('/v9/microchip-number/dog-records/comment/report-death')
+  } if (comment == "something"){
     res.redirect('/v9/microchip-number/dog-records/comment/report-details')
   }
 
 })
 
-// v9 Comment type
-router.post('/v9/microchip-number/dog-records/comment/comment-type-routing', function (req, res) {
-  var comment = req.session.data['comment']
-  if (comment == "exemption"){
-    res.redirect('/v9/microchip-number/dog-records/comment/report-details')
-  } if (comment == "death"){
-      res.redirect('/v9/microchip-number/dog-records/comment/report-death')
-  } if (comment == "address"){
-      res.redirect('/v9/microchip-number/dog-records/comment/postcode')
+// v8 Owner's question
+router.post('/v8/cdo/create/owner-surname-question', function (req, res) {
+  var lastName = req.session.data['lastName']
+  if (lastName == "Noakes"){
+  res.redirect('/v8/cdo/create/postcode')
+  } if (lastName == "de Vil"){
+    res.redirect('/v8/cdo/create/single/confirm-address')
   } else {
-    res.redirect('/v9/microchip-number/dog-records/comment/report-details')
+    res.redirect('/v8/cdo/create/multiple/select-owner')
   }
 
 })
