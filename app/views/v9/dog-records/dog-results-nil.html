@@ -18,7 +18,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v9/microchip-search-results" method="post">
+      <form class="form" action="/v9/dog-records/dog-results-record" method="post">
 
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-visually-hidden">
@@ -34,7 +34,7 @@
         <div id="event-name-hint" class="govuk-hint">
           Enter one or more search terms separated by spaces
         </div>
-        <input class="govuk-input" value="{% if data['keyword'] %}{{ data['keyword'] }}{% else %}901650009395772{% endif %}" id="search" name="keyword" type="text">
+        <input class="govuk-input" value="{% if data['keyword'] %}{{ data['keyword'] }}{% else %}ED200010{% endif %}" id="search" name="keyword" type="text">
       </div>
 
       <div class="govuk-form-group govuk-!-margin-bottom-2">

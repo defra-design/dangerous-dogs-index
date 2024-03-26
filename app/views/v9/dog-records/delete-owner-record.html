@@ -1,0 +1,71 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Delete the owner record" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="confirmation-2" method="post">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+        <p class="govuk-body">
+          Deleting dog record ED200011 means the owner record Mark Turner will not have a dog record linked to it.
+        </p>
+
+        <p class="govuk-body">
+          Does the user choose to delete the owner record, or do we just inform them it is being deleted?
+        </p>
+        <p class="govuk-body">
+          Is there ever a reason to retain an owner record without it being linked to a dog record?
+        </p>
+
+        <form action="/form-handler" method="post" novalidate>
+
+          {{ govukRadios({
+            classes: "govuk-radios--inline",
+            name: "ownerRecordDelete",
+            fieldset: {
+              legend: {
+                text: "Delete the owner record for Mark Turner?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

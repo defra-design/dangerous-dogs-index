@@ -379,7 +379,29 @@ router.post('/v9/dog-records/are-you-sure-question', function (req, res) {
   if (areYouSure === "no"){
     res.redirect('/v9/dog-records/dog-record-ED200010')
   } else {
-    res.redirect('/v9/dog-records/confirmation')
+    res.redirect('/v9/dog-records/confirmation-1')
+  }
+
+})
+
+// v9 Password
+router.post('/v9/dog-records/are-you-sure-question-2', function (req, res) {
+  var areYouSure = req.session.data['areYouSure']
+  if (areYouSure === "no"){
+    res.redirect('/v9/dog-records/dog-record-ED200011')
+  } else {
+    res.redirect('/v9/dog-records/delete-owner-record')
+  }
+
+})
+
+// v9 Password
+router.post('/v9/dog-records/dog-results-record', function (req, res) {
+  var recordType = req.session.data['recordType']
+  if (recordType === "Owner record"){
+    res.redirect('/v9/dog-records/owner-results')
+  } else {
+    res.redirect('/v9/dog-records/dog-results-nil')
   }
 
 })

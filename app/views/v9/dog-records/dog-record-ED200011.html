@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Dog ED200010" %}
+{% set pageName="Dog ED200011" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -17,7 +17,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <form class="form" action="/v9/dog-records/are-you-sure-1" method="post">
+      <form class="form" action="/v9/dog-records/are-you-sure-2" method="post">
 
       <div class="moj-page-header-actions govuk-!-margin-bottom-2">
 
@@ -73,7 +73,7 @@
             text: "Name"
           },
           value: {
-            text: "Eric"
+            text: "Ernie"
           }
         },
         {
@@ -89,7 +89,7 @@
             text: "Colour"
           },
           value: {
-            text: data['dogColour'] or "Dark grey"
+            text: data['dogColour'] or "Light grey"
           }
         },
         {
@@ -105,7 +105,7 @@
             text: "Date of birth"
           },
           value: {
-            html: "20 July 2017"
+            html: "18 August 2019"
           }
         },
         {
@@ -113,7 +113,7 @@
             text: "Microchip number"
           },
           value: {
-            text: "123456789054321"
+            text: "905630008456638"
           }
         }
       ]
@@ -130,7 +130,7 @@
       actions: {
         items: [
           {
-            href: "../owner-records/owner-record-mt-2",
+            href: "../owner-records/owner-record-mt-1",
             text: "Owner record",
             classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
             visuallyHiddenText: "for owner"
