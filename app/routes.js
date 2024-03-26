@@ -363,12 +363,12 @@ router.post('/v9/microchip-number/dog-records/comment/comment-type-question', fu
   var commentType = req.session.data['commentType']
   if (commentType == "The owner has breached an exemption"){
     res.redirect('/v9/microchip-number/dog-records/comment/report-details')
+  } if (commentType == "The owner has changed address"){
+      res.redirect('/v9/microchip-number/dog-records/comment/postcode')
   } if (commentType == "The dog has died"){
       res.redirect('/v9/microchip-number/dog-records/comment/report-death')
-  } if (commentType == "Something else"){
-      res.redirect('/v9/microchip-number/dog-records/comment/report-details')
   } else {
-    res.redirect('/v9/microchip-number/dog-records/comment/postcode')
+    res.redirect('/v9/microchip-number/dog-records/comment/report-details')
   }
 
 })
