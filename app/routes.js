@@ -373,6 +373,21 @@ router.post('/v9/microchip-number/dog-records/comment/comment-type-question', fu
 
 })
 
+// v9 Comment type
+router.post('/v9/microchip-number/dog-records/comment/comment-type-routing', function (req, res) {
+  var comment = req.session.data['comment']
+  if (comment == "exemption"){
+    res.redirect('/v9/microchip-number/dog-records/comment/report-details')
+  } if (comment == "death"){
+      res.redirect('/v9/microchip-number/dog-records/comment/report-death')
+  } if (comment == "address"){
+      res.redirect('/v9/microchip-number/dog-records/comment/postcode')
+  } else {
+    res.redirect('/v9/microchip-number/dog-records/comment/report-details')
+  }
+
+})
+
 // v9 Password
 router.post('/v9/dog-records/are-you-sure-question', function (req, res) {
   var areYouSure = req.session.data['areYouSure']
