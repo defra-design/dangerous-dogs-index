@@ -1,0 +1,605 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Manage CDOs" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "manage-cdos"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l">
+      {{ pageName }}
+    </h1>
+
+    <ul class="govuk-summary-list__actions-list govuk-!-margin-bottom-2">
+      <li class="govuk-summary-list__actions-list-item govuk-body">CDOs</li>
+      <li class="govuk-summary-list__actions-list-item govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="manage-interim-exemptions">Interim exemptions</a></li>
+    </ul>
+
+    <table class="govuk-table">
+
+  <caption class="govuk-table__caption govuk-visually-hidden">Currently active CDOs</caption>
+
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">CDO deadline</th>
+
+      <th scope="col" class="govuk-table__header">Dog number</th>
+
+      <th scope="col" class="govuk-table__header govuk-!-width-one-third">Owner</th>
+
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Tasks complete</th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">
+            5 April 2024</td>
+
+          <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="manage-cdo-1">
+            ED17343</a></td>
+
+          <td class="govuk-table__cell">
+            Dennis Campbell</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            0
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">
+            5 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+          ED17819</a></td>
+
+          <td class="govuk-table__cell">
+            Ioana Bortan</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            4
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            5 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED30012</td>
+
+          <td class="govuk-table__cell">
+            Gary Jones</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            6
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            6 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED15391</td>
+
+          <td class="govuk-table__cell">
+            Wojciech Krychowiak</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            4
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            6 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED19858</td>
+
+          <td class="govuk-table__cell">
+            Heidi Sturgeon</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            5
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            6 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED30012</td>
+
+          <td class="govuk-table__cell">
+            Adhavan Razeek</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            4
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            7 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED12545</td>
+
+          <td class="govuk-table__cell">
+            Tyler McGrath</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            5
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            9 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED17202</td>
+
+          <td class="govuk-table__cell">
+            Helen Renard</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            6
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            9 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED39346</td>
+          <td class="govuk-table__cell">
+           Raheem Powell</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            3
+           </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            10 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED17882</td>
+
+          <td class="govuk-table__cell">
+           Luke Kettleborough</td>
+
+         <td class="govuk-table__cell govuk-table__cell--numeric">
+           1
+         </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            10 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED20553</td>
+
+          <td class="govuk-table__cell">
+           Donlan Moloney</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            2
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            11 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED17399</td>
+
+          <td class="govuk-table__cell">
+            Catherine Hyde</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            4
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            13 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED17435</td>
+
+          <td class="govuk-table__cell">
+           Brian Gaston</td>
+
+           <td class="govuk-table__cell govuk-table__cell--numeric">
+            1
+           </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">
+            14 April 2024</td>
+
+          <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED19232</a></td>
+
+          <td class="govuk-table__cell">
+            Murray Thompson</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            4
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">
+            14 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+          ED28474</a></td>
+
+          <td class="govuk-table__cell">
+            Tracey Barnes</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            3
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            15 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED22756</td>
+
+          <td class="govuk-table__cell">
+            Sachin Jaiswal</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            3
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            16 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED39564</td>
+
+          <td class="govuk-table__cell">
+            Robert O'Shea</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            2
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            17 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED19993</td>
+
+          <td class="govuk-table__cell">
+            Helen Cotterill</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            1
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            17 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED59344</td>
+
+          <td class="govuk-table__cell">
+            Evripidis Ioannou</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            2
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            17 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED30343</td>
+
+          <td class="govuk-table__cell">
+            Kevin Wales</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            1
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            18 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED77291</td>
+
+          <td class="govuk-table__cell">
+            Vicki Sugden</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            3
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            20 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED39346</td>
+          <td class="govuk-table__cell">
+           Ed Kettlewell</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            2
+           </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            20 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED45828</td>
+
+          <td class="govuk-table__cell">
+           Jason Walsh</td>
+
+         <td class="govuk-table__cell govuk-table__cell--numeric">
+           1
+         </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            20 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED19774</td>
+
+          <td class="govuk-table__cell">
+           Shola Lua Lua</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            2
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            22 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED20448</td>
+
+          <td class="govuk-table__cell">
+            Nathan Stockton</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            2
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            23 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED33453</td>
+
+          <td class="govuk-table__cell">
+           William Francis</td>
+
+           <td class="govuk-table__cell govuk-table__cell--numeric">
+            1
+           </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            16 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED10448</td>
+
+          <td class="govuk-table__cell">
+           Hayden McShane</td>
+
+         <td class="govuk-table__cell govuk-table__cell--numeric">
+           1
+         </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            19 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED35843</td>
+
+          <td class="govuk-table__cell">
+           Tony Rawlins</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            2
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            20 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED22643</td>
+
+          <td class="govuk-table__cell">
+            Joel Rutherford</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            2
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            20 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED10922</td>
+
+          <td class="govuk-table__cell">
+           Slavomir Kuhl</td>
+
+           <td class="govuk-table__cell govuk-table__cell--numeric">
+            1
+           </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            16 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED10448</td>
+
+          <td class="govuk-table__cell">
+           Tyrese Pybus</td>
+
+         <td class="govuk-table__cell govuk-table__cell--numeric">
+           1
+         </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            19 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED35843</td>
+
+          <td class="govuk-table__cell">
+           Haydn Briggs</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            2
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            20 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED22643</td>
+
+          <td class="govuk-table__cell">
+            Joe Blair</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            2
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            20 April 2024</td>
+
+          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED10922</td>
+
+          <td class="govuk-table__cell">
+           Bobby-Joe Cook</td>
+
+           <td class="govuk-table__cell govuk-table__cell--numeric">
+            1
+           </td>
+
+        </tr>
+
+      </tbody>
+    </table>
+
+    </div>
+  </div>
+
+{% endblock %}
