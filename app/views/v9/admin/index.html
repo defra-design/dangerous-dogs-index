@@ -7,6 +7,14 @@
 {% endblock %}
 
 {% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    }
+  ]
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -19,12 +27,12 @@
       </h1>
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
-        Export
+        Export data
       </h2>
 
       <ul class="govuk-list">
         <li>
-          <a class="govuk-link" href="#">Export all the data in the Index</a>
+          <a class="govuk-link govuk-link--no-visited-state" href="export-data">Export the data in the Index</a>
         </li>
       </ul>
 
@@ -34,7 +42,7 @@
 
       <ul class="govuk-list">
         <li>
-          <a class="govuk-link" href="#">Add or change pseudonyms</a>
+          <a class="govuk-link govuk-link--no-visited-state" href="pseudonyms">Add or change pseudonyms</a>
         </li>
       </ul>
 
@@ -44,7 +52,7 @@
 
       <ul class="govuk-list">
         <li>
-          <a class="govuk-link" href="#">Add or change police forces</a>
+          <a class="govuk-link govuk-link--no-visited-state" href="police-forces">Add or change police forces</a>
         </li>
       </ul>
 
