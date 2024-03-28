@@ -1,0 +1,56 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle %}
+  Unbranded page template – {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+<header class="defra-internal-header" role="banner">
+  <div class="govuk-width-container">
+    <div class="defra-logo">
+        <a href="https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs" title="Go to the Defra Design Library homepage" class="defra-logo__link">
+          <span class="c-defra-logo__title govuk-visually-hidden">Department for Environment Food &amp; Rural Affairs</span>
+        </a>
+    </div>
+
+    <div class="defra-internal-service-name">
+        <a href="/" title="Go to the homepage" class="defra-internal-service-name__link">
+          {{ serviceName }}
+        </a>
+    </div>
+
+    <div class="defra-header__right">
+      <p class="govuk-body">
+        <a class="govuk-link defra-navigation__right" href="./index">Admin</a>
+      </p>
+    </div>
+
+  </div>
+</header>
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">
+    Unbranded page template
+  </h1>
+  <p class="govuk-body-l">
+    This page doesn't use New Transport or display the GOV.UK header and footer.
+  </p>
+
+{% endblock %}
+
+{% block footer %}
+
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "#",
+          text: "Accessibility statement"
+        }
+      ]
+    }
+  }) }}
+
+{% endblock %}
