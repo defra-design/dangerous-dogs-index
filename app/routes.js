@@ -417,3 +417,14 @@ router.post('/v9/dog-records/dog-results-record', function (req, res) {
   }
 
 })
+
+// v9 Admin pseudonym
+router.post('/v9/admin/pseudonym-question', function (req, res) {
+  var areYouSure = req.session.data['areYouSure']
+  if (areYouSure === "no"){
+    res.redirect('/v9/admin/pseudonym-added-links')
+  } else {
+    res.redirect('/v9/admin/pseudonyms-links')
+  }
+
+})

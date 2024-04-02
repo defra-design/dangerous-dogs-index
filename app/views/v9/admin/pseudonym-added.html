@@ -18,62 +18,194 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="pseudonym-added" method="post">
+      <form class="form" action="pseudonyms" method="post">
 
       <h1 class="govuk-heading-l">
         {{ pageName }}
       </h1>
 
+      <p class="govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="#add-a-pseudonym">Add a team member pseudonym</a>
+      </p>
+
+      <p class="govuk-body">To change a pseudonym, remove the pseudonym first. Then add the new pseudonym and the team member’s email address.
+        </p>
+
+      <p class="govuk-body govuk-!-margin-bottom-7">Actions made by team members whose pseudonyms have been removed will be recorded in the Index as being made by an ‘Index user’.
+        </p>
+
       <table class="govuk-table govuk-!-margin-bottom-7">
         <caption class="govuk-visually-hidden">Team pseudonyms</caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Email</th>
-            <th scope="col" class="govuk-table__header">Pseudonym</th>
+            <th scope="col" class="govuk-table__header defra-align-table">Email</th>
+            <th scope="col" class="govuk-table__header defra-align-table">Pseudonym</th>
             <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Remove team member</span></th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">{{ data['email'] }}</td>
-            <td class="govuk-table__cell">{{ data['pseudonym'] }}</td>
+            <td class="govuk-table__cell defra-align-table">{{ data['email'] }}</td>
+            <td class="govuk-table__cell defra-align-table">{{ data['pseudonym'] }}</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">
-                <a class="govuk-link govuk-link--no-visited-state" href="pseudonyms">Remove</a>
+              {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+              }) }}
             </td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">claire.miller@defra.gov.uk</td>
-            <td class="govuk-table__cell">Frank</td>
+            <td class="govuk-table__cell defra-align-table">claire.miller@defra.gov.uk</td>
+            <td class="govuk-table__cell defra-align-table">Frank</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">
-                <a class="govuk-link govuk-link--no-visited-state" href="#">Remove</a>
+              {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+              }) }}
             </td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">debbie.peters@defra.gov.uk</td>
-            <td class="govuk-table__cell">Stephanie</td>
+            <td class="govuk-table__cell defra-align-table">debbie.peters@defra.gov.uk</td>
+            <td class="govuk-table__cell defra-align-table">Stephanie</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">
-                <a class="govuk-link govuk-link--no-visited-state" href="#">Remove</a>
+              {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+              }) }}
             </td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">hugh.togher@defra.gov.uk</td>
-            <td class="govuk-table__cell">Terry</td>
+            <td class="govuk-table__cell defra-align-table">hugh.togher@defra.gov.uk</td>
+            <td class="govuk-table__cell defra-align-table">Terry</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">
-                <a class="govuk-link govuk-link--no-visited-state" href="#">Remove</a>
+              {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+              }) }}
             </td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">danny.phelps@defra.gov.uk</td>
-            <td class="govuk-table__cell">Mike</td>
+            <td class="govuk-table__cell defra-align-table">danny.phelps@defra.gov.uk</td>
+            <td class="govuk-table__cell defra-align-table">Mike</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">
-                <a class="govuk-link govuk-link--no-visited-state" href="#">Remove</a>
+              {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+              }) }}
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell defra-align-table">claire.miller@defra.gov.uk</td>
+            <td class="govuk-table__cell defra-align-table">Frank</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+              }) }}
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell defra-align-table">debbie.peters@defra.gov.uk</td>
+            <td class="govuk-table__cell defra-align-table">Stephanie</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+              }) }}
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell defra-align-table">hugh.togher@defra.gov.uk</td>
+            <td class="govuk-table__cell defra-align-table">Terry</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+              }) }}
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell defra-align-table">danny.phelps@defra.gov.uk</td>
+            <td class="govuk-table__cell defra-align-table">Mike</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+              }) }}
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell defra-align-table">claire.miller@defra.gov.uk</td>
+            <td class="govuk-table__cell defra-align-table">Frank</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+              }) }}
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell defra-align-table">debbie.peters@defra.gov.uk</td>
+            <td class="govuk-table__cell defra-align-table">Stephanie</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+              }) }}
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell defra-align-table">hugh.togher@defra.gov.uk</td>
+            <td class="govuk-table__cell defra-align-table">Terry</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+              }) }}
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell defra-align-table">danny.phelps@defra.gov.uk</td>
+            <td class="govuk-table__cell defra-align-table">Mike</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+              }) }}
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell defra-align-table">claire.miller@defra.gov.uk</td>
+            <td class="govuk-table__cell defra-align-table">Frank</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+              }) }}
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell defra-align-table">debbie.peters@defra.gov.uk</td>
+            <td class="govuk-table__cell defra-align-table">Stephanie</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+              }) }}
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell defra-align-table">hugh.togher@defra.gov.uk</td>
+            <td class="govuk-table__cell defra-align-table">Terry</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+              }) }}
             </td>
           </tr>
         </tbody>
       </table>
-
-      <p class="govuk-body govuk-!-margin-bottom-7">To change a pseudonym, remove the pseudonym first. Then add the new pseudonym and the team member’s email address.
-        </p>
 
       {% call govukFieldset({
         legend: {

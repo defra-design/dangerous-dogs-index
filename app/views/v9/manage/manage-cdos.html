@@ -19,7 +19,7 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
+  <div class="govuk-grid-column-full">
 
     <h1 class="govuk-heading-l">
       {{ pageName }}
@@ -29,6 +29,196 @@
       <li class="govuk-summary-list__actions-list-item govuk-body">CDOs</li>
       <li class="govuk-summary-list__actions-list-item govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="manage-interim-exemptions">Interim exemptions</a></li>
     </ul>
+
+    {{ govukTable({
+      caption: "Active CDOs ordered by deadline",
+      captionClasses: "govuk-visually-hidden",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "CDO deadline"
+        },
+        {
+          text: "Dog number"
+        },
+        {
+          text: "Owner",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Police force",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Tasks of 7",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "5 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="manage-cdo-1">ED17343</a>'
+          },
+          {
+            text: "Dennis Campbell"
+          },
+          {
+            text: "Sussex Police"
+          },
+          {
+            text: "0",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "5 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17819</a>'
+          },
+          {
+            text: "Ioana Bortan"
+          },
+          {
+            text: "Thames Valley Police"
+          },
+          {
+            text: "4",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "5 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED30012</a>'
+          },
+          {
+            text: "Gary Jones"
+          },
+          {
+            text: "Gloucestershire Constabulary"
+          },
+          {
+            text: "6",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "6 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED15391</a>'
+          },
+          {
+            text: "Wojciech Krychowiak"
+          },
+          {
+            text: "Cumbria Constabulary"
+          },
+          {
+            text: "4",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "6 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED19858</a>'
+          },
+          {
+            text: "Heidi Sturgeon"
+          },
+          {
+            text: "Metropolitan Police"
+          },
+          {
+            text: "5",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "6 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED30012</a>'
+          },
+          {
+            text: "Adhavan Razeek"
+          },
+          {
+            text: "Surrey Police"
+          },
+          {
+            text: "4",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "5 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17343</a>'
+          },
+          {
+            text: "Dennis Campbell"
+          },
+          {
+            text: "Sussex"
+          },
+          {
+            text: "0",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "5 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17343</a>'
+          },
+          {
+            text: "Dennis Campbell"
+          },
+          {
+            text: "Sussex"
+          },
+          {
+            text: "0",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "5 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17343</a>'
+          },
+          {
+            text: "Dennis Campbell"
+          },
+          {
+            text: "Sussex"
+          },
+          {
+            text: "0",
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}
 
     <table class="govuk-table">
 
@@ -50,88 +240,6 @@
   </thead>
 
   <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-
-          <td class="govuk-table__cell">
-            5 April 2024</td>
-
-          <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="manage-cdo-1">
-            ED17343</a></td>
-
-          <td class="govuk-table__cell">
-            Dennis Campbell</td>
-
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            0
-          </td>
-
-        </tr>
-
-        <tr class="govuk-table__row">
-
-          <td class="govuk-table__cell">
-            5 April 2024</td>
-
-          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
-          ED17819</a></td>
-
-          <td class="govuk-table__cell">
-            Ioana Bortan</td>
-
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            4
-          </td>
-
-        </tr>
-
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            5 April 2024</td>
-
-          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
-            ED30012</td>
-
-          <td class="govuk-table__cell">
-            Gary Jones</td>
-
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            6
-          </td>
-
-        </tr>
-
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            6 April 2024</td>
-
-          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
-            ED15391</td>
-
-          <td class="govuk-table__cell">
-            Wojciech Krychowiak</td>
-
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            4
-          </td>
-
-        </tr>
-
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            6 April 2024</td>
-
-          <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
-            ED19858</td>
-
-          <td class="govuk-table__cell">
-            Heidi Sturgeon</td>
-
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            5
-          </td>
-
-        </tr>
-
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
             6 April 2024</td>
