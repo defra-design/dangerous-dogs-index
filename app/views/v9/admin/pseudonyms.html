@@ -31,25 +31,29 @@
       <p class="govuk-body">To change a pseudonym, remove the pseudonym first. Then add the new pseudonym and the team member’s email address.
         </p>
 
-      <p class="govuk-body govuk-!-margin-bottom-7">Actions made by team members whose pseudonyms have been removed will be recorded in the Index as being made by an ‘Index user’.
+        {{ govukInsetText({
+          text: "Pseudonyms delete instantly if you select ‘Remove’ in the list below."
+        }) }}
+
+      <p class="govuk-body govuk-!-margin-bottom-7">Team members without a pseudonym will be displayed on the Index as ‘Index user’.
         </p>
 
       <table class="govuk-table govuk-!-margin-bottom-7">
         <caption class="govuk-visually-hidden">Team pseudonyms</caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header defra-align-table">Email</th>
-            <th scope="col" class="govuk-table__header defra-align-table">Pseudonym</th>
+            <th scope="col" class="govuk-table__header">Email</th>
+            <th scope="col" class="govuk-table__header">Pseudonym</th>
             <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Remove team member</span></th>
           </tr>
         </thead>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell defra-align-table">claire.miller@defra.gov.uk</td>
             <td class="govuk-table__cell defra-align-table">Frank</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">
+            <td class="govuk-table__cell defra-align-table govuk-table__cell--numeric">
               {{ govukButton({
                 text: "Remove",
-                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+                classes: "govuk-button--secondary govuk-!-margin-bottom-0"
               }) }}
             </td>
           </tr>
@@ -59,7 +63,7 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {{ govukButton({
                 text: "Remove",
-                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+                classes: "govuk-button--secondary govuk-!-margin-bottom-0"
               }) }}
             </td>
           </tr>
@@ -69,7 +73,7 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {{ govukButton({
                 text: "Remove",
-                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+                classes: "govuk-button--secondary govuk-!-margin-bottom-0"
               }) }}
             </td>
           </tr>
@@ -79,7 +83,7 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {{ govukButton({
                 text: "Remove",
-                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+                classes: "govuk-button--secondary govuk-!-margin-bottom-0"
               }) }}
             </td>
           </tr>
@@ -89,7 +93,7 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {{ govukButton({
                 text: "Remove",
-                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+                classes: "govuk-button--secondary govuk-!-margin-bottom-0"
               }) }}
             </td>
           </tr>
@@ -99,7 +103,7 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {{ govukButton({
                 text: "Remove",
-                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+                classes: "govuk-button--secondary govuk-!-margin-bottom-0"
               }) }}
             </td>
           </tr>
@@ -109,7 +113,7 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {{ govukButton({
                 text: "Remove",
-                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+                classes: "govuk-button--secondary govuk-!-margin-bottom-0"
               }) }}
             </td>
           </tr>
@@ -119,7 +123,7 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {{ govukButton({
                 text: "Remove",
-                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+                classes: "govuk-button--secondary govuk-!-margin-bottom-0"
               }) }}
             </td>
           </tr>
@@ -129,7 +133,7 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {{ govukButton({
                 text: "Remove",
-                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+                classes: "govuk-button--secondary govuk-!-margin-bottom-0"
               }) }}
             </td>
           </tr>
@@ -139,7 +143,7 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {{ govukButton({
                 text: "Remove",
-                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+                classes: "govuk-button--secondary govuk-!-margin-bottom-0"
               }) }}
             </td>
           </tr>
@@ -149,7 +153,7 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {{ govukButton({
                 text: "Remove",
-                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+                classes: "govuk-button--secondary govuk-!-margin-bottom-0"
               }) }}
             </td>
           </tr>
@@ -159,7 +163,7 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {{ govukButton({
                 text: "Remove",
-                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+                classes: "govuk-button--secondary govuk-!-margin-bottom-0"
               }) }}
             </td>
           </tr>
@@ -169,7 +173,7 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {{ govukButton({
                 text: "Remove",
-                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+                classes: "govuk-button--secondary govuk-!-margin-bottom-0"
               }) }}
             </td>
           </tr>
@@ -179,7 +183,7 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {{ govukButton({
                 text: "Remove",
-                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+                classes: "govuk-button--secondary govuk-!-margin-bottom-0"
               }) }}
             </td>
           </tr>
@@ -189,7 +193,7 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {{ govukButton({
                 text: "Remove",
-                classes: "govuk-button--secondary govuk-!-margin-bottom-1"
+                classes: "govuk-button--secondary govuk-!-margin-bottom-0"
               }) }}
             </td>
           </tr>
