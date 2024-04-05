@@ -422,7 +422,7 @@ router.post('/v9/dog-records/delete-owner-record-question', function (req, res) 
 router.post('/v9/owner-records/are-you-sure-question', function (req, res) {
   var areYouSure = req.session.data['areYouSure']
   if (areYouSure === "no"){
-    res.redirect('/v9/owner-records/owner-record-mt-1')
+    res.redirect('/v9/owner-records/owner-record-mt-3')
   } else {
     res.redirect('/v9/owner-records/confirmation')
   }
