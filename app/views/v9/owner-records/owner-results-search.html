@@ -18,6 +18,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <form class="form" action="owner-results-nil" method="post">
+
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-visually-hidden">
           {{ pageName }}
@@ -32,7 +34,7 @@
         <div id="event-name-hint" class="govuk-hint">
           Enter one or more search terms separated by spaces
         </div>
-        <input class="govuk-input" value="{% if data['keyword'] %}{{ data['keyword'] }}{% else %}ED200010{% endif %}" id="search" name="keyword" type="text">
+        <input class="govuk-input" id="search" name="keyword" type="text">
       </div>
 
       <div class="govuk-form-group govuk-!-margin-bottom-2">
@@ -62,10 +64,7 @@
         text: "Search"
       }) }}
 
-      <p class="govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-7">
-        No results found
-        </p>
-
+      </form>
 
     </div>
   </div>
