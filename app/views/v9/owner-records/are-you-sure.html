@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Are you sure you want to delete the dog record?" %}
+{% set pageName="Are you sure you want to delete the owner record?" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "dog-record-ED200010"
+  href: "owner-record-mt-1"
 }) }}
 {% endblock %}
 
@@ -18,14 +18,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v9/dog-records/are-you-sure-question-2" method="post">
+      <form class="form" action="/v9/owner-records/are-you-sure-question" method="post">
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
           name: "areYouSure",
           fieldset: {
             legend: {
-              text: "Are you sure you want to delete dog record ED200011?",
+              text: "Are you sure you want to delete the owner record for Mark Turner?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
