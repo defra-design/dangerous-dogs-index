@@ -22,6 +22,444 @@
         {{ pageName }}
       </h1>
 
+      <p class="govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="#add-a-police-force">Add a police force</a>
+      </p>
+
+      {{ govukCheckboxes({
+        name: "police-force",
+        fieldset: {
+          legend: {
+            text: "England and Wales police forces",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "Selected police forces display in the Index."
+        },
+        items: [
+          {
+            value: "Avon and Somerset Constabulary",
+            text: "Avon and Somerset Constabulary",
+            checked: true
+          },
+          {
+            value: "Bedfordshire Police",
+            text: "Bedfordshire Police",
+            checked: true
+          },
+          {
+            value: "Cambridgeshire Constabulary",
+            text: "Cambridgeshire Constabulary",
+            checked: true
+          },
+          {
+            value: "Cheshire Constabulary",
+            text: "Cheshire Constabulary",
+            checked: true
+          },
+          {
+            value: "City of London Police",
+            text: "City of London Police",
+            checked: true
+          },
+          {
+            value: "Cleveland Police",
+            text: "Cleveland Police",
+            checked: true
+          },
+          {
+            value: "Cumbria Constabulary",
+            text: "Cumbria Constabulary",
+            checked: true
+          },
+          {
+            value: "Cleveland Police",
+            text: "Cleveland Police",
+            checked: true
+          },
+          {
+            value: "Derbyshire Constabulary",
+            text: "Derbyshire Constabulary",
+            checked: true
+          },
+          {
+            value: "Devon & Cornwall Police",
+            text: "Devon & Cornwall Police",
+            checked: true
+          },
+          {
+            value: "Dorset Police",
+            text: "Dorset Police",
+            checked: true
+          },
+          {
+            value: "Durham Constabulary",
+            text: "Durham Constabulary",
+            checked: true
+          },
+          {
+            value: "Dyfed-Powys Police",
+            text: "Dyfed-Powys Police",
+            checked: true
+          },
+          {
+            value: "Essex Police",
+            text: "Essex Police",
+            checked: true
+          },
+          {
+            value: "Gloucestershire Constabulary",
+            text: "Gloucestershire Constabulary",
+            checked: true
+          },
+          {
+            value: "Greater Manchester Police",
+            text: "Greater Manchester Police",
+            checked: true
+          },
+          {
+            value: "Gwent Police",
+            text: "Gwent Police",
+            checked: true
+          },
+          {
+            value: "Hampshire Constabulary",
+            text: "Hampshire Constabulary",
+            checked: true
+          },
+          {
+            value: "Hertfordshire Constabulary",
+            text: "Hertfordshire Constabulary",
+            checked: true
+          },
+          {
+            value: "Humberside Police",
+            text: "Humberside Police",
+            checked: true
+          },
+          {
+            value: "Kent Police",
+            text: "Kent Police",
+            checked: true
+          },
+          {
+            value: "Lancashire Constabulary",
+            text: "Lancashire Constabulary",
+            checked: true
+          },
+          {
+            value: "Leicestershire Police",
+            text: "Leicestershire Police",
+            checked: true
+          },
+          {
+            value: "Lincolnshire Police",
+            text: "Lincolnshire Police",
+            checked: true
+          },
+          {
+            value: "Merseyside Police",
+            text: "Merseyside Police",
+            checked: true
+          },
+          {
+            value: "Metropolitan Police Service",
+            text: "Metropolitan Police Service",
+            checked: true
+          },
+          {
+            value: "Norfolk Constabulary",
+            text: "Norfolk Constabulary",
+            checked: true
+          },
+          {
+            value: "North Yorkshire Police",
+            text: "North Yorkshire Police",
+            checked: true
+          },
+          {
+            value: "Northamptonshire Police",
+            text: "Northamptonshire Police",
+            checked: true
+          },
+          {
+            value: "Northumbria Police",
+            text: "Northumbria Police",
+            checked: true
+          },
+          {
+            value: "Nottinghamshire Police",
+            text: "Nottinghamshire Police",
+            checked: true
+          },
+          {
+            value: "North Wales Police",
+            text: "North Wales Police",
+            checked: true
+          },
+          {
+            value: "South Yorkshire Police",
+            text: "South Yorkshire Police",
+            checked: true
+          },
+          {
+            value: "Staffordshire Police",
+            text: "Staffordshire Police",
+            checked: true
+          },
+          {
+            value: "South Wales Police",
+            text: "South Wales Police",
+            checked: true
+          },
+          {
+            value: "Suffolk Constabulary",
+            text: "Suffolk Constabulary",
+            checked: true
+          },
+          {
+            value: "Surrey Police",
+            text: "Surrey Police",
+            checked: true
+          },
+          {
+            value: "Sussex Police",
+            text: "Sussex Police",
+            checked: true
+          },
+          {
+            value: "Thames Valley Police",
+            text: "Thames Valley Police",
+            checked: true
+          },
+          {
+            value: "Warwickshire Police",
+            text: "Warwickshire Police",
+            checked: true
+          },
+          {
+            value: "West Mercia Police",
+            text: "West Mercia Police",
+            checked: true
+          },
+          {
+            value: "West Midlands Police",
+            text: "West Midlands Police",
+            checked: true
+          },
+          {
+            value: "West Yorkshire Police",
+            text: "West Yorkshire Police",
+            checked: true
+          },
+          {
+            value: "Wiltshire Police",
+            text: "Wiltshire Police",
+            checked: true
+          }
+        ]
+      }) }}
+
+      <div id="add-a-police-force">
+      {{ govukSelect({
+        classes: "govuk-!-width-two-thirds",
+        id: "police-force",
+        name: "police-force",
+        label: {
+          text: "Police force"
+        },
+        hint: {
+         text: "Add a police force to the Index."
+        },
+        items: [
+          {
+            value: "Choose police force",
+            text: "Choose police force"
+          },
+          {
+            value: "Avon and Somerset Constabulary",
+            text: "Avon and Somerset Constabulary"
+          },
+          {
+            value: "Bedfordshire Police",
+            text: "Bedfordshire Police"
+          },
+          {
+            value: "Cambridgeshire Constabulary",
+            text: "Cambridgeshire Constabulary"
+          },
+          {
+            value: "Cheshire Constabulary",
+            text: "Cheshire Constabulary"
+          },
+          {
+            value: "City of London Police",
+            text: "City of London Police"
+          },
+          {
+            value: "Cleveland Police",
+            text: "Cleveland Police"
+          },
+          {
+            value: "Cumbria Constabulary",
+            text: "Cumbria Constabulary"
+          },
+          {
+            value: "Cleveland Police",
+            text: "Cleveland Police"
+          },
+          {
+            value: "Derbyshire Constabulary",
+            text: "Derbyshire Constabulary"
+          },
+          {
+            value: "Devon & Cornwall Police",
+            text: "Devon & Cornwall Police"
+          },
+          {
+            value: "Dorset Police",
+            text: "Dorset Police"
+          },
+          {
+            value: "Durham Constabulary",
+            text: "Durham Constabulary"
+          },
+          {
+            value: "Dyfed-Powys Police",
+            text: "Dyfed-Powys Police"
+          },
+          {
+            value: "Essex Police",
+            text: "Essex Police"
+          },
+          {
+            value: "Gloucestershire Constabulary",
+            text: "Gloucestershire Constabulary"
+          },
+          {
+            value: "Greater Manchester Police",
+            text: "Greater Manchester Police"
+          },
+          {
+            value: "Gwent Police",
+            text: "Gwent Police"
+          },
+          {
+            value: "Hampshire Constabulary",
+            text: "Hampshire Constabulary"
+          },
+          {
+            value: "Hertfordshire Constabulary",
+            text: "Hertfordshire Constabulary"
+          },
+          {
+            value: "Humberside Police",
+            text: "Humberside Police"
+          },
+          {
+            value: "Kent Police",
+            text: "Kent Police"
+          },
+          {
+            value: "Lancashire Constabulary",
+            text: "Lancashire Constabulary"
+          },
+          {
+            value: "Leicestershire Police",
+            text: "Leicestershire Police"
+          },
+          {
+            value: "Lincolnshire Police",
+            text: "Lincolnshire Police"
+          },
+          {
+            value: "Merseyside Police",
+            text: "Merseyside Police"
+          },
+          {
+            value: "Metropolitan Police Service",
+            text: "Metropolitan Police Service"
+          },
+          {
+            value: "Norfolk Constabulary",
+            text: "Norfolk Constabulary"
+          },
+          {
+            value: "North Yorkshire Police",
+            text: "North Yorkshire Police"
+          },
+          {
+            value: "Northamptonshire Police",
+            text: "Northamptonshire Police"
+          },
+          {
+            value: "Northumbria Police",
+            text: "Northumbria Police"
+          },
+          {
+            value: "Nottinghamshire Police",
+            text: "Nottinghamshire Police"
+          },
+          {
+            value: "North Wales Police",
+            text: "North Wales Police"
+          },
+          {
+            value: "South Yorkshire Police",
+            text: "South Yorkshire Police"
+          },
+          {
+            value: "Staffordshire Police",
+            text: "Staffordshire Police"
+          },
+          {
+            value: "South Wales Police",
+            text: "South Wales Police"
+          },
+          {
+            value: "Suffolk Constabulary",
+            text: "Suffolk Constabulary"
+          },
+          {
+            value: "Surrey Police",
+            text: "Surrey Police"
+          },
+          {
+            value: "Sussex Police",
+            text: "Sussex Police"
+          },
+          {
+            value: "Thames Valley Police",
+            text: "Thames Valley Police"
+          },
+          {
+            value: "Warwickshire Police",
+            text: "Warwickshire Police"
+          },
+          {
+            value: "West Mercia Police",
+            text: "West Mercia Police"
+          },
+          {
+            value: "West Midlands Police",
+            text: "West Midlands Police"
+          },
+          {
+            value: "West Yorkshire Police",
+            text: "West Yorkshire Police"
+          },
+          {
+            value: "Wiltshire Police",
+            text: "Wiltshire Police"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Add police force"
+      }) }}
+
 
     </div>
   </div>

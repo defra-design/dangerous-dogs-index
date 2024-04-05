@@ -385,7 +385,7 @@ router.post('/v8/cdo/create/owner-surname-question', function (req, res) {
 
 })
 
-// v9 Password
+// v9 Delete dog record
 router.post('/v9/dog-records/are-you-sure-question', function (req, res) {
   var areYouSure = req.session.data['areYouSure']
   if (areYouSure === "no"){
@@ -396,7 +396,7 @@ router.post('/v9/dog-records/are-you-sure-question', function (req, res) {
 
 })
 
-// v9 Password
+// v9 Delete dog record 2
 router.post('/v9/dog-records/are-you-sure-question-2', function (req, res) {
   var areYouSure = req.session.data['areYouSure']
   if (areYouSure === "no"){
@@ -407,7 +407,18 @@ router.post('/v9/dog-records/are-you-sure-question-2', function (req, res) {
 
 })
 
-// v9 Password
+// v9 Delete owner record
+router.post('/v9/dog-records/delete-owner-record-question', function (req, res) {
+  var ownerRecordDelete = req.session.data['ownerRecordDelete']
+  if (ownerRecordDelete === "no"){
+    res.redirect('/v9/dog-records/confirmation-3')
+  } else {
+    res.redirect('/v9/dog-records/confirmation-2')
+  }
+
+})
+
+// v9 Dog results search
 router.post('/v9/dog-records/dog-results-record', function (req, res) {
   var recordType = req.session.data['recordType']
   if (recordType === "Owner record"){

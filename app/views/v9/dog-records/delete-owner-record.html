@@ -18,24 +18,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="confirmation-2" method="post">
+      <form class="form" action="/v9/dog-records/delete-owner-record-question" method="post">
 
       <h1 class="govuk-heading-l">
         {{ pageName }}
       </h1>
 
         <p class="govuk-body">
-          Deleting dog record ED200011 means the owner record Mark Turner will not have a dog record linked to it.
+          Deleting dog record ED200011 means the owner record Mark Turner will not have a dog linked to it.
         </p>
 
         <p class="govuk-body">
-          Does the user choose to delete the owner record, or do we just inform them it is being deleted?
+          Only keep the owner record if...
         </p>
-        <p class="govuk-body">
-          Is there ever a reason to retain an owner record without it being linked to a dog record?
-        </p>
-
-        <form action="/form-handler" method="post" novalidate>
 
           {{ govukRadios({
             classes: "govuk-radios--inline",

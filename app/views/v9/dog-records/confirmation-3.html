@@ -1,0 +1,48 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Records deleted" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Dog record deleted",
+        classes: "govuk-!-margin-bottom-7",
+        html: "Dog ED200011"
+      }) }}
+
+    <p class=govuk-body">
+      Dog record 200011 will no longer appear in search results or on the owner record.
+      </p>
+
+    <p class=govuk-body">
+      Raise a support ticket if you need to recover a deleted dog record.
+      </p>
+
+
+      <p class=govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="dog-results-search">Search the index</a>
+        </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}
