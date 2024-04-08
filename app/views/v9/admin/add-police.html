@@ -1,6 +1,6 @@
 {% extends "layouts/defra-admin.html" %}
 
-{% set pageName="Are you sure you want to add a police force?" %}
+{% set pageName="Add a police force to the Index" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -18,37 +18,210 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v9/admin/add-police-question" method="post">
+      <form class="form" action="/v9/admin/add-police-confirm" method="post">
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="addPolice-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-              Add {% if data['police-force'] %}{{ data['police-force'] }}{% else %}Central Police{% endif %} to the list of police forces in the Index?
-            </h1>
-          </legend>
-          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="addPolice" name="addPolice" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="addPolice">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="addPolice-2" name="addPolice" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="addPolice-2">
-                No
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
+      {{ govukSelect({
+        classes: "govuk-!-width-two-thirds",
+        id: "police-force",
+        name: "police-force",
+        label: {
+          text: "Add a police force to the Index",
+          classes: "govuk-fieldset__legend--l"
+        },
+        items: [
+          {
+            value: "Choose police force",
+            text: "Choose police force"
+          },
+          {
+            value: "Avon and Somerset Constabulary",
+            text: "Avon and Somerset Constabulary"
+          },
+          {
+            value: "Bedfordshire Police",
+            text: "Bedfordshire Police"
+          },
+          {
+            value: "Cambridgeshire Constabulary",
+            text: "Cambridgeshire Constabulary"
+          },
+          {
+            value: "Central Police",
+            text: "Central Police"
+          },
+          {
+            value: "Cheshire Constabulary",
+            text: "Cheshire Constabulary"
+          },
+          {
+            value: "City of London Police",
+            text: "City of London Police"
+          },
+          {
+            value: "Cleveland Police",
+            text: "Cleveland Police"
+          },
+          {
+            value: "Cumbria Constabulary",
+            text: "Cumbria Constabulary"
+          },
+          {
+            value: "Cleveland Police",
+            text: "Cleveland Police"
+          },
+          {
+            value: "Derbyshire Constabulary",
+            text: "Derbyshire Constabulary"
+          },
+          {
+            value: "Devon & Cornwall Police",
+            text: "Devon & Cornwall Police"
+          },
+          {
+            value: "Dorset Police",
+            text: "Dorset Police"
+          },
+          {
+            value: "Durham Constabulary",
+            text: "Durham Constabulary"
+          },
+          {
+            value: "Dyfed-Powys Police",
+            text: "Dyfed-Powys Police"
+          },
+          {
+            value: "Essex Police",
+            text: "Essex Police"
+          },
+          {
+            value: "Gloucestershire Constabulary",
+            text: "Gloucestershire Constabulary"
+          },
+          {
+            value: "Greater Manchester Police",
+            text: "Greater Manchester Police"
+          },
+          {
+            value: "Gwent Police",
+            text: "Gwent Police"
+          },
+          {
+            value: "Hampshire Constabulary",
+            text: "Hampshire Constabulary"
+          },
+          {
+            value: "Hertfordshire Constabulary",
+            text: "Hertfordshire Constabulary"
+          },
+          {
+            value: "Humberside Police",
+            text: "Humberside Police"
+          },
+          {
+            value: "Kent Police",
+            text: "Kent Police"
+          },
+          {
+            value: "Lancashire Constabulary",
+            text: "Lancashire Constabulary"
+          },
+          {
+            value: "Leicestershire Police",
+            text: "Leicestershire Police"
+          },
+          {
+            value: "Lincolnshire Police",
+            text: "Lincolnshire Police"
+          },
+          {
+            value: "Merseyside Police",
+            text: "Merseyside Police"
+          },
+          {
+            value: "Metropolitan Police Service",
+            text: "Metropolitan Police Service"
+          },
+          {
+            value: "Norfolk Constabulary",
+            text: "Norfolk Constabulary"
+          },
+          {
+            value: "North Yorkshire Police",
+            text: "North Yorkshire Police"
+          },
+          {
+            value: "Northamptonshire Police",
+            text: "Northamptonshire Police"
+          },
+          {
+            value: "Northumbria Police",
+            text: "Northumbria Police"
+          },
+          {
+            value: "Nottinghamshire Police",
+            text: "Nottinghamshire Police"
+          },
+          {
+            value: "North Wales Police",
+            text: "North Wales Police"
+          },
+          {
+            value: "South Yorkshire Police",
+            text: "South Yorkshire Police"
+          },
+          {
+            value: "Staffordshire Police",
+            text: "Staffordshire Police"
+          },
+          {
+            value: "South Wales Police",
+            text: "South Wales Police"
+          },
+          {
+            value: "Suffolk Constabulary",
+            text: "Suffolk Constabulary"
+          },
+          {
+            value: "Surrey Police",
+            text: "Surrey Police"
+          },
+          {
+            value: "Sussex Police",
+            text: "Sussex Police"
+          },
+          {
+            value: "Thames Valley Police",
+            text: "Thames Valley Police"
+          },
+          {
+            value: "Warwickshire Police",
+            text: "Warwickshire Police"
+          },
+          {
+            value: "West Mercia Police",
+            text: "West Mercia Police"
+          },
+          {
+            value: "West Midlands Police",
+            text: "West Midlands Police"
+          },
+          {
+            value: "West Yorkshire Police",
+            text: "West Yorkshire Police"
+          },
+          {
+            value: "Wiltshire Police",
+            text: "Wiltshire Police"
+          }
+        ]
+      }) }}
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+      {{ govukButton({
+        text: "Add police force"
+      }) }}
 
       </form>
+
 
     </div>
   </div>

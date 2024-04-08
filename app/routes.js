@@ -457,7 +457,18 @@ router.post('/v9/admin/add-police-question', function (req, res) {
   if (addPolice === "no"){
     res.redirect('/v9/admin/police-forces')
   } else {
-    res.redirect('/v9/admin/confirmation')
+    res.redirect('/v9/admin/confirmation-added')
+  }
+
+})
+
+// v9 Admin remove police
+router.post('/v9/admin/remove-police-question', function (req, res) {
+  var updatePolice = req.session.data['updatePolice']
+  if (updatePolice === "no"){
+    res.redirect('/v9/admin/police-forces')
+  } else {
+    res.redirect('/v9/admin/confirmation-updated')
   }
 
 })
