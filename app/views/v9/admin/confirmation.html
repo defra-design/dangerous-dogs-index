@@ -1,0 +1,45 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="Police force added" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+        <h1 class="govuk-panel__title">
+          You added
+          <br>
+          {% if data['police-force'] %}{{ data['police-force'] }}{% else %}Central Police{% endif %}
+        </h1>
+      </div>
+
+    <p class=govuk-body">
+      {% if data['police-force'] %}{{ data['police-force'] }}{% else %}Central Police{% endif %} is now available in the list of police forces in the Index.
+      </p>
+
+      <p class=govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="police-forces-added">Add or remove police forces</a>
+        </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -450,3 +450,14 @@ router.post('/v9/admin/pseudonym-question', function (req, res) {
   }
 
 })
+
+// v9 Admin add police
+router.post('/v9/admin/add-police-question', function (req, res) {
+  var addPolice = req.session.data['addPolice']
+  if (addPolice === "no"){
+    res.redirect('/v9/admin/police-forces')
+  } else {
+    res.redirect('/v9/admin/confirmation')
+  }
+
+})
