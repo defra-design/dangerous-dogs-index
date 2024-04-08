@@ -1,0 +1,60 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="Add a team member pseudonym" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "./index"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="pseudonym-added" method="post">
+
+      {% call govukFieldset({
+        legend: {
+          text: "Add a team member pseudonym",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+        {{ govukInput({
+          label: {
+            text: "Email"
+          },
+          classes: "govuk-!-width-one-half",
+          id: "email",
+          name: "email"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Pseudonym"
+          },
+          classes: "govuk-!-width-one-third",
+          id: "pseudonym",
+          name: "pseudonym"
+        }) }}
+
+      {% endcall %}
+
+      {{ govukButton({
+        text: "Add pseudonym"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
