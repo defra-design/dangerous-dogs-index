@@ -21,63 +21,36 @@
       <form class="form" action="/v9/admin/pseudonym-question" method="post">
 
         <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="areYouSure-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Are you sure you want to remove the pseudonym for {{ data['email'] }}?
+            </h1>
+            </legend>
 
-  <fieldset class="govuk-fieldset" aria-describedby="areYouSure-hint">
+            <div id="areYouSure-hint" class="govuk-hint">
+            Actions made by team members whose pseudonyms have been removed will be recorded in the Index as being made by an ‘Index user’.
+            </div>
 
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
 
-    <h1 class="govuk-fieldset__heading">
-      Are you sure you want to remove the pseudonym for {{ data['email'] }}?
-    </h1>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="areYouSure" name="areYouSure" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="areYouSure">
+                  Yes
+                </label>
+              </div>
 
-  </legend>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="areYouSure-2" name="areYouSure" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="areYouSure-2">
+                  No
+                </label>
+              </div>
 
-
-  <div id="areYouSure-hint" class="govuk-hint">
-    Actions made by team members whose pseudonyms have been removed will be recorded in the Index as being made by an ‘Index user’.
-  </div>
-
-
-  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-
-
-
-
-
-
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="areYouSure" name="areYouSure" type="radio" value="yes">
-          <label class="govuk-label govuk-radios__label" for="areYouSure">
-        Yes
-      </label>
-
+            </div>
+          </fieldset>
         </div>
-
-
-
-
-
-
-
-
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="areYouSure-2" name="areYouSure" type="radio" value="no">
-          <label class="govuk-label govuk-radios__label" for="areYouSure-2">
-        No
-      </label>
-
-        </div>
-
-
-
-
-  </div>
-
-
-</fieldset>
-
-
-</div>
 
         {{ govukButton({
           text: "Continue"
