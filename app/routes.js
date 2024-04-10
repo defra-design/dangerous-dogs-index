@@ -472,3 +472,36 @@ router.post('/v9/admin/remove-police-question', function (req, res) {
   }
 
 })
+
+// v10 Add or remove court
+router.post('/v10/admin/court-question', function (req, res) {
+  var addRemoveCourt = req.session.data['addRemoveCourt']
+  if (addRemoveCourt === "remove"){
+    res.redirect('/v10/admin/remove-court')
+  } else {
+    res.redirect('/v10/admin/add-court')
+  }
+
+})
+
+// v10 Add or remove court
+router.post('/v10/admin/court-added-question', function (req, res) {
+  var addCourt = req.session.data['addCourt']
+  if (addCourt === "no"){
+    res.redirect('/v10/admin/add-or-remove')
+  } else {
+    res.redirect('/v10/admin/confirmation-court-added')
+  }
+
+})
+
+// v10 Add or remove court
+router.post('/v10/admin/court-removed-question', function (req, res) {
+  var removeCourt = req.session.data['removeCourt']
+  if (removeCourt === "no"){
+    res.redirect('/v10/admin/add-or-remove')
+  } else {
+    res.redirect('/v10/admin/confirmation-court-removed')
+  }
+
+})
