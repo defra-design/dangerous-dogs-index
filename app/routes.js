@@ -488,7 +488,7 @@ router.post('/v10/admin/court-question', function (req, res) {
 router.post('/v10/admin/court-added-question', function (req, res) {
   var addCourt = req.session.data['addCourt']
   if (addCourt === "no"){
-    res.redirect('/v10/admin/add-or-remove')
+    res.redirect('/v10/admin/add-or-remove-courts')
   } else {
     res.redirect('/v10/admin/confirmation-court-added')
   }
@@ -499,7 +499,7 @@ router.post('/v10/admin/court-added-question', function (req, res) {
 router.post('/v10/admin/court-removed-question', function (req, res) {
   var removeCourt = req.session.data['removeCourt']
   if (removeCourt === "no"){
-    res.redirect('/v10/admin/add-or-remove')
+    res.redirect('/v10/admin/add-or-remove-courts')
   } else {
     res.redirect('/v10/admin/confirmation-court-removed')
   }
