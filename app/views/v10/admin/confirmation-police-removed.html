@@ -1,6 +1,6 @@
 {% extends "layouts/defra-admin.html" %}
 
-{% set pageName="You added a court" %}
+{% set pageName="You removed a police force" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -28,18 +28,18 @@
 
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
         <h1 class="govuk-panel__title">
-          You added
+          You removed
           <br>
-          {% if data['court'] %}{{ data['court'] }}{% else %}Central Magistrates’ Court{% endif %}
+          {% if data['police'] %}{{ data['police'] }}{% else %}Metropolitan Police Service{% endif %}
         </h1>
       </div>
 
     <p class=govuk-body">
-      {% if data['court'] %}{{ data['court'] }}{% else %}Central Magistrates’ Court{% endif %} is available in the Index.
+      {% if data['police'] %}{{ data['police'] }}{% else %}Metropolitan Police Service{% endif %} is removed from the Index.
       </p>
 
       <p class=govuk-body">
-        <a class="govuk-link govuk-link--no-visited-state" href="add-or-remove-courts">Add or remove a court</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="add-or-remove-police">Add or remove a police force</a>
         </p>
 
 

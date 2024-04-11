@@ -7,9 +7,17 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "./index"
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../index"
+    },
+    {
+      text: "Admin",
+      href: "index"
+    }
+  ]
 }) }}
 {% endblock %}
 
@@ -36,7 +44,7 @@
         }) }}
 
     </div>
-    
+
     <div class="govuk-grid-column-one-half">
       <table class="govuk-table govuk-!-margin-bottom-7">
         <caption class="govuk-visually-hidden">Team pseudonyms</caption>
@@ -49,8 +57,6 @@
           <tr class="govuk-table__row">
             <td class="govuk-table__cell defra-align-table">
               {% if data['insurer'] %}{{ data['insurer'] }}{% else %}Kennel Club{% endif %}
-
-              {{ data['insurer'] }}
             </td>
             <td class="govuk-table__cell govuk-table__cell--numeric">
               {{ govukButton({

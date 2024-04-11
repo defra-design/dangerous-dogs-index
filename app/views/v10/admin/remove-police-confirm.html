@@ -1,6 +1,6 @@
 {% extends "layouts/defra-admin.html" %}
 
-{% set pageName="Are you sure you want to add a court to the Index" %}
+{% set pageName="Are you sure you want to remove a police from the Index" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "add-court"
+  href: "remove-police"
 }) }}
 {% endblock %}
 
@@ -18,25 +18,25 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v10/admin/court-added-question" method="post">
+      <form class="form" action="/v10/admin/police-removed-question" method="post">
 
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="addCourt-hint">
+          <fieldset class="govuk-fieldset" aria-describedby="remove-police-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Are you sure you want to add {% if data['court'] %}{{ data['court'] }}{% else %}Central Magistrates’ Court{% endif %} to the Index?
+              Are you sure you want to remove {% if data['police'] %}{{ data['police'] }}{% else %}Metropolitan Police Service{% endif %} from the Index?
             </h1>
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="addCourt" name="addCourt" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="addCourt">
+              <input class="govuk-radios__input" id="removePolice" name="removePolice" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="remove-police">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="addCourt-2" name="addCourt" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="addCourt-2">
+              <input class="govuk-radios__input" id="removepolice-2" name="removePolice" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="remove-police-2">
                 No
               </label>
             </div>

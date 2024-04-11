@@ -488,7 +488,7 @@ router.post('/v10/admin/court-question', function (req, res) {
 router.post('/v10/admin/court-added-question', function (req, res) {
   var addCourt = req.session.data['addCourt']
   if (addCourt === "no"){
-    res.redirect('/v10/admin/add-or-remove-courts')
+    res.redirect('/v10/admin/index')
   } else {
     res.redirect('/v10/admin/confirmation-court-added')
   }
@@ -499,9 +499,43 @@ router.post('/v10/admin/court-added-question', function (req, res) {
 router.post('/v10/admin/court-removed-question', function (req, res) {
   var removeCourt = req.session.data['removeCourt']
   if (removeCourt === "no"){
-    res.redirect('/v10/admin/add-or-remove-courts')
+    res.redirect('/v10/admin/index')
   } else {
     res.redirect('/v10/admin/confirmation-court-removed')
+  }
+
+})
+
+// v10 Add or remove police
+router.post('/v10/admin/police-question', function (req, res) {
+  var addRemovePolice = req.session.data['addRemovePolice']
+  if (addRemovePolice === "remove"){
+    res.redirect('/v10/admin/remove-police')
+  } else {
+    res.redirect('/v10/admin/add-police')
+  }
+
+})
+
+
+// v10 Add or remove police
+router.post('/v10/admin/police-added-question', function (req, res) {
+  var addPolice = req.session.data['addPolice']
+  if (addPolice === "no"){
+    res.redirect('/v10/admin/index')
+  } else {
+    res.redirect('/v10/admin/confirmation-police-added')
+  }
+
+})
+
+// v10 Add or remove court
+router.post('/v10/admin/police-removed-question', function (req, res) {
+  var removePolice = req.session.data['removePolice']
+  if (removePolice === "no"){
+    res.redirect('/v10/admin/index')
+  } else {
+    res.redirect('/v10/admin/confirmation-police-removed')
   }
 
 })
