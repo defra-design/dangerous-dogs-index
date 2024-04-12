@@ -517,7 +517,6 @@ router.post('/v10/admin/police-question', function (req, res) {
 
 })
 
-
 // v10 Add or remove police
 router.post('/v10/admin/police-added-question', function (req, res) {
   var addPolice = req.session.data['addPolice']
@@ -536,6 +535,28 @@ router.post('/v10/admin/police-removed-question', function (req, res) {
     res.redirect('/v10/admin/index')
   } else {
     res.redirect('/v10/admin/confirmation-police-removed')
+  }
+
+})
+
+// v10 Add or remove activity
+router.post('/v10/admin/activity-question', function (req, res) {
+  var addRemoveActivity = req.session.data['addRemoveActivity']
+  if (addRemoveActivity === "remove"){
+    res.redirect('/v10/admin/what-is-the-activity-remove')
+  } else {
+    res.redirect('/v10/admin/what-is-the-activity-add')
+  }
+
+})
+
+// v10 Activity to remove
+router.post('/v10/admin/activity-remove-question', function (req, res) {
+  var whichActivityRemove = req.session.data['whichActivityRemove']
+  if (whichActivityRemove === "remove"){
+    res.redirect('/v10/admin/x')
+  } else {
+    res.redirect('/v10/admin/x')
   }
 
 })
