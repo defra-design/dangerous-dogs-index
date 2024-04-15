@@ -30,26 +30,24 @@
   <div class="govuk-grid-column-one-half defra-text-align-right">
 
     {{ govukButton({
-  text: "Interim exemptions",
-  classes: "govuk-button--secondary "
-}) }}
+      text: "Interim exemptions",
+      href: "manage-interim-exemptions",
+      classes: "govuk-button--secondary "
+    }) }}
+
 
   </div>
 
     <div class="govuk-grid-column-full">
 
-    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
-      Check CDOs
-    </h2
-
     {{ xGovukSecondaryNavigation({
-      visuallyHiddenTitle: "Secondary menu",
+      visuallyHiddenTitle: "Check CDOs menu",
       items: [{
         text: "Due in next 5 days",
         href: "manage-cdos-next-5"
       }, {
-        text: "Due in 5-10 days",
-        href: "manage-cdos-5-10"
+        text: "Expired",
+        href: "manage-cdos-expired"
       }, {
         text: "All live CDOs",
         href: "manage-cdos-all",
