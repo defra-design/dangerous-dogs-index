@@ -42,15 +42,15 @@
     {{ xGovukSecondaryNavigation({
       visuallyHiddenTitle: "Check CDOs menu",
       items: [{
-        text: "Due in next 5 days",
-        href: "manage-cdos-next-5"
+        text: "Live CDOs",
+        href: "manage-cdos-all",
+        current: true
       }, {
         text: "Expired",
         href: "manage-cdos-expired"
       }, {
-        text: "All live CDOs",
-        href: "manage-cdos-all",
-        current: true
+        text: "Due within a month",
+        href: "manage-cdos-month"
       }]
     }) }}
 

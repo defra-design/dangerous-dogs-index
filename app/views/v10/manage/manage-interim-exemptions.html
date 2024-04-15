@@ -29,9 +29,9 @@
       {{ pageName }}
     </h1>
 
-    </div>
-    <!--
-    <div class="govuk-grid-column-one-third defra-text-align-right">
+  </div>
+
+  <div class="govuk-grid-column-one-third defra-text-align-right">
 
       {{ govukButton({
         text: "Manage CDOs",
@@ -40,65 +40,193 @@
       }) }}
 
     </div>
-    -->
 
-    <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-column-full">
 
-      <!--
+
+    <!--
     {{ govukTable({
-      caption: "Interim exempt dogs ordered by exemption expiry",
-      captionClasses: "govuk-visually-hidden",
-      firstCellIsHeader: false,
+      attributes: {
+        'data-module': 'moj-sortable-table'
+      },
       head: [
         {
-          text: "Exemption expiry"
+          text: "Exemption length",
+          attributes: {
+            "aria-sort": "ascending"
+          }
         },
         {
-          text: "Dog number"
+          text: "Dog number",
+          attributes: {
+            "aria-sort": "none"
+          }
         },
         {
           text: "Owner",
-          classes: "govuk-!-width-one-quarter"
+          attributes: {
+            "aria-sort": "none"
+          }
         },
         {
-          text: "Amount"
+          text: "Police force",
+          attributes: {
+            "aria-sort": "none"
+          },
+          format: "numeric"
         }
       ],
       rows: [
         [
           {
-            text: "4 April 2024"
+            text: "Aconcagua"
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="manage-cdo-1">ED29458</a>'
+            text: "6,961 meters",
+            attributes: {
+              "data-sort-value": "6961"
+            }
           },
           {
-            text: "Levi Cordner"
+            text: "South America"
           },
           {
-            text: "4 April 2024"
+            text: "1897",
+            format: "numeric",
+            attributes: {
+              "data-sort-value": "1897"
+            }
           }
         ],
         [
           {
-            text: "Next 33 weeks"
+            text: "Denali"
           },
           {
-            text: "£109.80 per week"
+            text: "6,194 meters",
+            attributes: {
+              "data-sort-value": "6194"
+            }
+          },
+          {
+            text: "North America"
+          },
+          {
+            text: "1913",
+            format: "numeric",
+            attributes: {
+              "data-sort-value": "1913"
+            }
           }
         ],
         [
           {
-            text: "Total estimated pay"
+            text: "Elbrus"
           },
           {
-            text: "£4,282.20"
+            text: "5,642 meters",
+            attributes: {
+              "data-sort-value": "5642"
+            }
+          },
+          {
+            text: "Europe"
+          },
+          {
+            text: "1874",
+            format: "numeric",
+            attributes: {
+              "data-sort-value": "1874"
+            }
+          }
+        ],
+        [
+          {
+            text: "Everest"
+          },
+          {
+            text: "8,850 meters",
+            attributes: {
+              "data-sort-value": "8850"
+            }
+          },
+          {
+            text: "Asia"
+          },
+          {
+            text: "1953",
+            format: "numeric",
+            attributes: {
+              "data-sort-value": "1953"
+            }
+          }
+        ],
+        [
+          {
+            text: "Kilimanjaro"
+          },
+          {
+            text: "5,895 meters",
+            attributes: {
+              "data-sort-value": "5895"
+            }
+          },
+          {
+            text: "Africa"
+          },
+          {
+            text: "1889",
+            format: "numeric",
+            attributes: {
+              "data-sort-value": "1889"
+            }
+          }
+        ],
+        [
+          {
+            text: "Puncak Jaya"
+          },
+          {
+            text: "4,884 meters",
+            attributes: {
+              "data-sort-value": "4884"
+            }
+          },
+          {
+            text: "Australia"
+          },
+          {
+            text: "1962",
+            format: "numeric",
+            attributes: {
+              "data-sort-value": "1962"
+            }
+          }
+        ],
+        [
+          {
+            text: "Vinson"
+          },
+          {
+            text: "4,897 meters",
+            attributes: {
+              "data-sort-value": "4897"
+            }
+          },
+          {
+            text: "Antarctica"
+          },
+          {
+            text: "1966",
+            format: "numeric",
+            attributes: {
+              "data-sort-value": "1966"
+            }
           }
         ]
       ]
     }) }}
-    -->
-
+  -->
     <table class="govuk-table">
 
   <caption class="govuk-table__caption govuk-visually-hidden">Currently active CDOs</caption>
@@ -107,7 +235,7 @@
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
 
-      <th scope="col" class="govuk-table__header">Exemption expiry</th>
+      <th scope="col" class="govuk-table__header">Exemption length</th>
 
       <th scope="col" class="govuk-table__header">Dog number</th>
 
@@ -122,7 +250,7 @@
         <tr class="govuk-table__row">
 
           <td class="govuk-table__cell">
-            17 April 2024</td>
+            6 months</td>
 
           <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED29458</a></td>
@@ -139,7 +267,7 @@
         <tr class="govuk-table__row">
 
           <td class="govuk-table__cell">
-            18 April 2024</td>
+            6 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
           ED36294</a></td>
@@ -155,7 +283,7 @@
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            20 April 2024</td>
+            6 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED10059</td>
@@ -171,7 +299,7 @@
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            23 April 2024</td>
+            5 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED23846</td>
@@ -187,7 +315,7 @@
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            23 April 2024</td>
+            5 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED10873</td>
@@ -203,7 +331,7 @@
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            24 April 2024</td>
+            5 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED20562</td>
@@ -219,7 +347,7 @@
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            26 April 2024</td>
+            5 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED23865</td>
@@ -228,14 +356,14 @@
             Alex Woodyard</td>
 
           <td class="govuk-table__cell ">
-
+            Essex Police
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            26 April 2024</td>
+            5 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED19220</td>
@@ -244,14 +372,14 @@
             Rachel Watson</td>
 
           <td class="govuk-table__cell ">
-
+            Staffordshire Police
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            1 May 2024</td>
+            4 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED10349</td>
@@ -266,7 +394,7 @@
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            2 May 2024</td>
+            4 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED29465</td>
@@ -282,7 +410,7 @@
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            4 May 2024</td>
+            4 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED19744</td>
@@ -298,7 +426,7 @@
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            6 May 2024</td>
+            4 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED28475</td>
@@ -314,7 +442,7 @@
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            7 May 2024</td>
+            4 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED23944</td>
@@ -331,7 +459,7 @@
         <tr class="govuk-table__row">
 
           <td class="govuk-table__cell">
-            7 May 2024</td>
+            4 months</td>
 
           <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED32843</a></td>
@@ -348,7 +476,7 @@
         <tr class="govuk-table__row">
 
           <td class="govuk-table__cell">
-            8 May 2024</td>
+            3 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED19438</a></td>
@@ -364,7 +492,7 @@
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            9 May 2024</td>
+            3 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED17626</td>
@@ -380,7 +508,7 @@
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            11 May 2024</td>
+            3 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED10329</td>
@@ -396,7 +524,7 @@
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            13 May 2024</td>
+            3 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED14392</td>
@@ -412,7 +540,7 @@
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            13 May 2024</td>
+            2 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED45883</td>
@@ -421,14 +549,14 @@
             James Bloxham</td>
 
           <td class="govuk-table__cell ">
-
+            Surrey Police
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            14 May 2024</td>
+            2 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED26437</td>
@@ -437,14 +565,14 @@
             Derrick Ilesanmi</td>
 
           <td class="govuk-table__cell ">
-
+            Bedfordshire Police
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            15 May 2024</td>
+            2 months</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED28458</td>
@@ -453,14 +581,14 @@
             Anthony Sims</td>
 
           <td class="govuk-table__cell ">
-
+            West Yorkshire Police
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            16 May 2024</td>
+            Less than a month</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED19834</td>
@@ -468,14 +596,14 @@
            Gareth Oxley</td>
 
           <td class="govuk-table__cell ">
-
+            Northamptonshire Police
            </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            16 May 2024</td>
+            Less than a month</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED10448</td>
@@ -484,14 +612,14 @@
            Dale Hartigan</td>
 
          <td class="govuk-table__cell ">
-
+           West Mercia Police
          </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            19 May 2024</td>
+            Less than a month</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED35843</td>
@@ -500,14 +628,14 @@
            Zak Gorman</td>
 
           <td class="govuk-table__cell ">
-
+            Northamptonshire Police
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            20 May 2024</td>
+            Less than a month</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED22643</td>
@@ -516,14 +644,14 @@
             Reece Hooper</td>
 
           <td class="govuk-table__cell ">
-
+            Hertfordshire Constabulary
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            20 May 2024</td>
+            Less than a month</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED10922</td>
@@ -532,7 +660,7 @@
            Gatlin Cropper</td>
 
            <td class="govuk-table__cell ">
-
+             Leicestershire Police
            </td>
 
         </tr>
