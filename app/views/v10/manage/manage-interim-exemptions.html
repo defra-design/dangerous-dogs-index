@@ -15,7 +15,7 @@
     },
     {
       text: "Manage CDOs",
-      href: "manage-cdos-next-5"
+      href: "manage-cdos-all"
     }
   ]
 }) }}
@@ -35,7 +35,7 @@
 
       {{ govukButton({
         text: "Manage CDOs",
-        href: "manage-cdos-next-5",
+        href: "manage-cdos-all",
         classes: "govuk-button--secondary "
       }) }}
 
@@ -43,8 +43,104 @@
 
     <div class="govuk-grid-column-full">
 
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" aria-sort="descending">Exemption length</th>
+          <th scope="col" class="govuk-table__header">Dog number</th>
+          <th scope="col" class="govuk-table__header">Owner</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Police force</th>
+        </tr>
+      </thead>
 
-    <!--
+    <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              6 months</td>
+            <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="">
+              ED29458</a></td>
+            <td class="govuk-table__cell">
+              Levi Cordner
+            </td>
+            <td class="govuk-table__cell">Metropolitan Police Service</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              6 months
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+              ED36294</a>
+            </td>
+            <td class="govuk-table__cell">
+              Adam McLaughlin
+            </td>
+            <td class="govuk-table__cell">Kent Police</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+            6 months
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+              ED10059
+            </td>
+            <td class="govuk-table__cell">
+              Billy Howe
+            </td>
+            <td class="govuk-table__cell">Merseyside Police</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              5 months
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+              ED23846
+            </td>
+            <td class="govuk-table__cell">
+              Quevin Castro
+            </td>
+            <td class="govuk-table__cell">Cleveland Police</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              5 months</td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+              ED10873
+            </td>
+            <td class="govuk-table__cell">
+              Michelle Duckworth
+            </td>
+            <td class="govuk-table__cell">Lancashire Constabulary</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              5 months
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+              ED20562
+            </td>
+            <td class="govuk-table__cell">
+            Maziar Kouhyar
+            </td>
+            <td class="govuk-table__cell">Dyfed-Powys Police
+          </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              4 months
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
+              ED23865
+            </td>
+            <td class="govuk-table__cell">
+              Alex Woodyard
+            </td>
+            <td class="govuk-table__cell">Essex Police
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+<!-- Remove nunjucks table
     {{ govukTable({
       attributes: {
         'data-module': 'moj-sortable-table'
@@ -53,184 +149,129 @@
         {
           text: "Exemption length",
           attributes: {
-            "aria-sort": "ascending"
+            "aria-sort": "descending"
           }
         },
         {
-          text: "Dog number",
-          attributes: {
-            "aria-sort": "none"
-          }
+          text: "Dog number"
         },
         {
-          text: "Owner",
-          attributes: {
-            "aria-sort": "none"
-          }
+          text: "Owner"
         },
         {
           text: "Police force",
           attributes: {
             "aria-sort": "none"
-          },
-          format: "numeric"
+          }
         }
       ],
       rows: [
         [
           {
-            text: "Aconcagua"
+            text: "6 months"
           },
           {
-            text: "6,961 meters",
-            attributes: {
-              "data-sort-value": "6961"
-            }
+            html: "ED29458"
           },
           {
-            text: "South America"
+            text: "Levi Cordner"
           },
           {
-            text: "1897",
-            format: "numeric",
-            attributes: {
-              "data-sort-value": "1897"
-            }
+            text: "Metropolitan Police Service"
           }
         ],
         [
           {
-            text: "Denali"
+            text: "6 months"
           },
           {
-            text: "6,194 meters",
-            attributes: {
-              "data-sort-value": "6194"
-            }
+            html: "ED36294"
           },
           {
-            text: "North America"
+            text: "Adam McLaughlin"
           },
           {
-            text: "1913",
-            format: "numeric",
-            attributes: {
-              "data-sort-value": "1913"
-            }
+            text: "Kent Police"
           }
         ],
         [
           {
-            text: "Elbrus"
+            text: "6 months"
           },
           {
-            text: "5,642 meters",
-            attributes: {
-              "data-sort-value": "5642"
-            }
+            html: "ED10059"
           },
           {
-            text: "Europe"
+            text: "Billy Howe"
           },
           {
-            text: "1874",
-            format: "numeric",
-            attributes: {
-              "data-sort-value": "1874"
-            }
+            text: "Merseyside Police"
           }
         ],
         [
           {
-            text: "Everest"
+            text: "5 months"
           },
           {
-            text: "8,850 meters",
-            attributes: {
-              "data-sort-value": "8850"
-            }
+            html: "ED36294"
           },
           {
-            text: "Asia"
+            text: "Quevin Castro"
           },
           {
-            text: "1953",
-            format: "numeric",
-            attributes: {
-              "data-sort-value": "1953"
-            }
+            text: "Cleveland Police"
           }
         ],
         [
           {
-            text: "Kilimanjaro"
+            text: "5 months"
           },
           {
-            text: "5,895 meters",
-            attributes: {
-              "data-sort-value": "5895"
-            }
+            html: "ED36294"
           },
           {
-            text: "Africa"
+            text: "Michelle Duckworth"
           },
           {
-            text: "1889",
-            format: "numeric",
-            attributes: {
-              "data-sort-value": "1889"
-            }
+            text: "Lancashire Constabulary"
           }
         ],
         [
           {
-            text: "Puncak Jaya"
+            text: "5 months"
           },
           {
-            text: "4,884 meters",
-            attributes: {
-              "data-sort-value": "4884"
-            }
+            html: "ED36294"
           },
           {
-            text: "Australia"
+            text: "Maziar Kouhyar"
           },
           {
-            text: "1962",
-            format: "numeric",
-            attributes: {
-              "data-sort-value": "1962"
-            }
+            text: "Dyfed-Powys Police"
           }
         ],
         [
           {
-            text: "Vinson"
+            text: "4 months"
           },
           {
-            text: "4,897 meters",
-            attributes: {
-              "data-sort-value": "4897"
-            }
+            html: "ED36294"
           },
           {
-            text: "Antarctica"
+            text: "Alex Woodyard"
           },
           {
-            text: "1966",
-            format: "numeric",
-            attributes: {
-              "data-sort-value": "1966"
-            }
+            text: "Essex Police"
           }
         ]
       ]
     }) }}
-  -->
-    <table class="govuk-table">
+-->
+
+<!--
+  <table class="govuk-table">
 
   <caption class="govuk-table__caption govuk-visually-hidden">Currently active CDOs</caption>
-
 
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
@@ -667,6 +708,7 @@
 
       </tbody>
     </table>
+    -->
 
     </div>
   </div>
