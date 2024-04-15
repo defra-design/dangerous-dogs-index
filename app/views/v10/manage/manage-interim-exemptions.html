@@ -11,7 +11,11 @@
   items: [
     {
       text: "Home",
-      href: "manage-cdos"
+      href: "../../index"
+    },
+    {
+      text: "Manage CDOs",
+      href: "manage-cdos-next-5"
     }
   ]
 }) }}
@@ -19,17 +23,28 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
+  <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
       {{ pageName }}
     </h1>
 
-    <ul class="govuk-summary-list__actions-list govuk-!-margin-bottom-2">
-      <li class="govuk-summary-list__actions-list-item govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="manage-cdos">CDOs</a></li>
-      <li class="govuk-summary-list__actions-list-item govuk-body">Interim exemptions</li>
-    </ul>
+    </div>
+    <!--
+    <div class="govuk-grid-column-one-third defra-text-align-right">
 
+      {{ govukButton({
+        text: "Manage CDOs",
+        href: "manage-cdos-next-5",
+        classes: "govuk-button--secondary "
+      }) }}
+
+    </div>
+    -->
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <!--
     {{ govukTable({
       caption: "Interim exempt dogs ordered by exemption expiry",
       captionClasses: "govuk-visually-hidden",
@@ -82,6 +97,7 @@
         ]
       ]
     }) }}
+    -->
 
     <table class="govuk-table">
 
@@ -91,13 +107,13 @@
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
 
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Exemption expiry</th>
+      <th scope="col" class="govuk-table__header">Exemption expiry</th>
 
       <th scope="col" class="govuk-table__header">Dog number</th>
 
-      <th scope="col" class="govuk-table__header govuk-!-width-one-third">Owner</th>
+      <th scope="col" class="govuk-table__header">Owner</th>
 
-      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Tasks complete</th>
+      <th scope="col" class="govuk-table__header">Police force</th>
 
     </tr>
   </thead>
@@ -106,7 +122,7 @@
         <tr class="govuk-table__row">
 
           <td class="govuk-table__cell">
-            3 April 2024</td>
+            17 April 2024</td>
 
           <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED29458</a></td>
@@ -114,8 +130,8 @@
           <td class="govuk-table__cell">
             Levi Cordner</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            5
+          <td class="govuk-table__cell">
+            Metropolitan Police Service
           </td>
 
         </tr>
@@ -123,7 +139,7 @@
         <tr class="govuk-table__row">
 
           <td class="govuk-table__cell">
-            3 April 2024</td>
+            18 April 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
           ED36294</a></td>
@@ -131,15 +147,15 @@
           <td class="govuk-table__cell">
           Adam McLaughlin</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            3
+          <td class="govuk-table__cell">
+            Kent Police
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            4 April 2024</td>
+            20 April 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED10059</td>
@@ -147,15 +163,15 @@
           <td class="govuk-table__cell">
             Billy Howe</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            5
+          <td class="govuk-table__cell">
+            Merseyside Police
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            5 April 2024</td>
+            23 April 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED23846</td>
@@ -163,15 +179,15 @@
           <td class="govuk-table__cell">
             Quevin Castro</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            5
+          <td class="govuk-table__cell">
+            Cleveland Police
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            5 April 2024</td>
+            23 April 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED10873</td>
@@ -179,15 +195,15 @@
           <td class="govuk-table__cell">
             Michelle Duckworth</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            6
+          <td class="govuk-table__cell ">
+            Lancashire Constabulary
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            5 April 2024</td>
+            24 April 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED20562</td>
@@ -195,15 +211,15 @@
           <td class="govuk-table__cell">
             Maziar Kouhyar</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            5
+          <td class="govuk-table__cell">
+            Dyfed-Powys Police
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            6 April 2024</td>
+            26 April 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED23865</td>
@@ -211,15 +227,15 @@
           <td class="govuk-table__cell">
             Alex Woodyard</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            6
+          <td class="govuk-table__cell ">
+
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            6 April 2024</td>
+            26 April 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED19220</td>
@@ -227,30 +243,30 @@
           <td class="govuk-table__cell">
             Rachel Watson</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            4
+          <td class="govuk-table__cell ">
+
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            7 April 2024</td>
+            1 May 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED10349</td>
           <td class="govuk-table__cell">
            Kai Chadwick</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            4
+          <td class="govuk-table__cell ">
+            Metropolitan Police Service
            </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            8 April 2024</td>
+            2 May 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED29465</td>
@@ -258,15 +274,15 @@
           <td class="govuk-table__cell">
            Leona Batty</td>
 
-         <td class="govuk-table__cell govuk-table__cell--numeric">
-           5
+         <td class="govuk-table__cell ">
+           Lancashire Constabulary
          </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            8 April 2024</td>
+            4 May 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED19744</td>
@@ -274,15 +290,15 @@
           <td class="govuk-table__cell">
           Mary Harriott</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            4
+          <td class="govuk-table__cell ">
+            Greater Manchester Police
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            9 April 2024</td>
+            6 May 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED28475</td>
@@ -290,15 +306,15 @@
           <td class="govuk-table__cell">
             Lendell Sykes-Kenworthy</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            5
+          <td class="govuk-table__cell ">
+            Metropolitan Police Service
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            9 April 2024</td>
+            7 May 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED23944</td>
@@ -306,8 +322,8 @@
           <td class="govuk-table__cell">
            Samuel Campbell</td>
 
-           <td class="govuk-table__cell govuk-table__cell--numeric">
-            4
+           <td class="govuk-table__cell ">
+            Greater Manchester Police
            </td>
 
         </tr>
@@ -315,7 +331,7 @@
         <tr class="govuk-table__row">
 
           <td class="govuk-table__cell">
-            10 April 2024</td>
+            7 May 2024</td>
 
           <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED32843</a></td>
@@ -323,8 +339,8 @@
           <td class="govuk-table__cell">
             Sharon Dyson</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            3
+          <td class="govuk-table__cell ">
+            West Midlands Police
           </td>
 
         </tr>
@@ -332,7 +348,7 @@
         <tr class="govuk-table__row">
 
           <td class="govuk-table__cell">
-            10 April 2024</td>
+            8 May 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED19438</a></td>
@@ -340,15 +356,15 @@
           <td class="govuk-table__cell">
             Scott Fairweather</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            4
+          <td class="govuk-table__cell ">
+            West Midlands Police
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            10 April 2024</td>
+            9 May 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED17626</td>
@@ -356,15 +372,15 @@
           <td class="govuk-table__cell">
             Abraham Odoh</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            2
+          <td class="govuk-table__cell ">
+            Lancashire Constabulary
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            11 April 2024</td>
+            11 May 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED10329</td>
@@ -372,15 +388,15 @@
           <td class="govuk-table__cell">
             Lewis O'Boyle</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            3
+          <td class="govuk-table__cell ">
+            Lancashire Constabulary
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            13 April 2024</td>
+            13 May 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED14392</td>
@@ -388,15 +404,15 @@
           <td class="govuk-table__cell">
             Matilda Muldoon</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            2
+          <td class="govuk-table__cell ">
+            Metropolitan Police Service
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            13 April 2024</td>
+            13 May 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED45883</td>
@@ -404,15 +420,15 @@
           <td class="govuk-table__cell">
             James Bloxham</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            2
+          <td class="govuk-table__cell ">
+
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            14 April 2024</td>
+            14 May 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED26437</td>
@@ -420,15 +436,15 @@
           <td class="govuk-table__cell">
             Derrick Ilesanmi</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            2
+          <td class="govuk-table__cell ">
+
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            15 April 2024</td>
+            15 May 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED28458</td>
@@ -436,30 +452,30 @@
           <td class="govuk-table__cell">
             Anthony Sims</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            1
+          <td class="govuk-table__cell ">
+
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            16 April 2024</td>
+            16 May 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED19834</td>
           <td class="govuk-table__cell">
            Gareth Oxley</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            3
+          <td class="govuk-table__cell ">
+
            </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            16 April 2024</td>
+            16 May 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED10448</td>
@@ -467,15 +483,15 @@
           <td class="govuk-table__cell">
            Dale Hartigan</td>
 
-         <td class="govuk-table__cell govuk-table__cell--numeric">
-           1
+         <td class="govuk-table__cell ">
+
          </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            19 April 2024</td>
+            19 May 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED35843</td>
@@ -483,15 +499,15 @@
           <td class="govuk-table__cell">
            Zak Gorman</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            2
+          <td class="govuk-table__cell ">
+
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            20 April 2024</td>
+            20 May 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED22643</td>
@@ -499,15 +515,15 @@
           <td class="govuk-table__cell">
             Reece Hooper</td>
 
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            2
+          <td class="govuk-table__cell ">
+
           </td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            20 April 2024</td>
+            20 May 2024</td>
 
           <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">
             ED10922</td>
@@ -515,8 +531,8 @@
           <td class="govuk-table__cell">
            Gatlin Cropper</td>
 
-           <td class="govuk-table__cell govuk-table__cell--numeric">
-            1
+           <td class="govuk-table__cell ">
+
            </td>
 
         </tr>
