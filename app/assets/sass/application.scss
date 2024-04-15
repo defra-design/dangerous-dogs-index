@@ -107,6 +107,10 @@
     background: $govuk-secondary-text-colour;
   }
 
+  .defra-text-align-right {
+    text-align: right;
+  }
+
   .defra-align-right {
     position: absolute;
     float: right;
@@ -218,4 +222,16 @@
 
   .defra-align-table {
   vertical-align: middle;
+  }
+
+  .defra-input--width-8 {
+    max-width: 8.5em !important;
+  }
+
+  .defra-input--width-6 {
+  max-width: 8em !important;
+  }
+
+  .defra-input--width-2 {
+  max-width: 2.5em !important;
   }

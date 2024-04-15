@@ -1,0 +1,707 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Manage CDOs" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "manage-cdos"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+    <h1 class="govuk-heading-l">
+      {{ pageName }}
+    </h1>
+
+  </div>
+
+  <div class="govuk-grid-column-one-half defra-text-align-right">
+
+    {{ govukButton({
+  text: "Interim exemptions",
+  classes: "govuk-button--secondary "
+}) }}
+
+  </div>
+
+    <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+      Check CDOs
+    </h2
+
+    {{ xGovukSecondaryNavigation({
+      visuallyHiddenTitle: "Secondary menu",
+      items: [{
+        text: "Due in next 5 days",
+        href: "manage-cdos-next-5"
+      }, {
+        text: "Due in 5-10 days",
+        href: "manage-cdos-5-10"
+      }, {
+        text: "All live CDOs",
+        href: "manage-cdos-all",
+        current: true
+      }]
+    }) }}
+
+    {{ govukTable({
+      caption: "Active CDOs ordered by deadline",
+      classes: "govuk-!-margin-top-6",
+      captionClasses: "govuk-visually-hidden",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "CDO deadline",
+          classes: "defra-input--width-2"
+        },
+        {
+          text: "Dog number",
+          classes: "govuk-input--width-2"
+        },
+        {
+          text: "Owner",
+          classes: "govuk-input--width-20"
+        },
+        {
+          text: "Police force",
+          classes: "govuk-!-width-one-third"
+        },
+        {
+          text: "Tasks complete (of 7)",
+          classes: "defra-input--width-6",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "17 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="manage-cdo-1">ED17343</a>'
+          },
+          {
+            text: "Dennis Campbell"
+          },
+          {
+            text: "Sussex Police"
+          },
+          {
+            text: "1",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "17 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17819</a>'
+          },
+          {
+            text: "Ioana Bortan"
+          },
+          {
+            text: "Thames Valley Police"
+          },
+          {
+            text: "4",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "17 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED30012</a>'
+          },
+          {
+            text: "Gary Jones"
+          },
+          {
+            text: "Gloucestershire Constabulary"
+          },
+          {
+            text: "6",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "18 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED15391</a>'
+          },
+          {
+            text: "Wojciech Krychowiak"
+          },
+          {
+            text: "Cumbria Constabulary"
+          },
+          {
+            text: "4",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "18 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED19858</a>'
+          },
+          {
+            text: "Heidi Sturgeon"
+          },
+          {
+            text: "Metropolitan Police"
+          },
+          {
+            text: "5",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "19 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED30012</a>'
+          },
+          {
+            text: "Adhavan Razeek"
+          },
+          {
+            text: "Surrey Police"
+          },
+          {
+            text: "4",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "20 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17343</a>'
+          },
+          {
+            text: "Tyler McGrath"
+          },
+          {
+            text: "Leicestershire Police"
+          },
+          {
+            text: "5",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "20 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17202</a>'
+          },
+          {
+            text: "	Helen Renard"
+          },
+          {
+            text: "Dorset Police"
+          },
+          {
+            text: "6",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "21 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED39346</a>'
+          },
+          {
+            text: "Raheem Powell"
+          },
+          {
+            text: "Thames Valley Police"
+          },
+          {
+            text: "3",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "22 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17882</a>'
+          },
+          {
+            text: "Luke Kettleborough"
+          },
+          {
+            text: "West Yorkshire Police"
+          },
+          {
+            text: "1",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "24 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED20553</a>'
+          },
+          {
+            text: "Donlan Moloney"
+          },
+          {
+            text: "Merseyside Police"
+          },
+          {
+            text: "2",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "24 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17399</a>'
+          },
+          {
+            text: "Catherine Hyde"
+          },
+          {
+            text: "Lancashire Constabulary"
+          },
+          {
+            text: "4",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "24 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17435</a>'
+          },
+          {
+            text: "Brian Gaston"
+          },
+          {
+            text: "Hampshire and Isle of Wight Constabulary"
+          },
+          {
+            text: "1",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "25 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED19232</a>'
+          },
+          {
+            text: "Murray Thompson"
+          },
+          {
+            text: "Merseyside Police"
+          },
+          {
+            text: "4",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "25 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED28474</a>'
+          },
+          {
+            text: "Metropolitan Police Service"
+          },
+          {
+            text: "Sussex"
+          },
+          {
+            text: "3",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "26 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED22756</a>'
+          },
+          {
+            text: "Sachin Jaiswal"
+          },
+          {
+            text: "Greater Manchester Police"
+          },
+          {
+            text: "3",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "26 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED39564</a>'
+          },
+          {
+            text: "Robert O'Shea"
+          },
+          {
+            text: "Dyfed-Powys Police"
+          },
+          {
+            text: "2",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "28 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED19993</a>'
+          },
+          {
+            text: "Helen Cotterill"
+          },
+          {
+            text: "Cleveland Police"
+          },
+          {
+            text: "1",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "28 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED59344</a>'
+          },
+          {
+            text: "Evripidis Ioannou"
+          },
+          {
+            text: "West Midlands Police"
+          },
+          {
+            text: "2",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "29 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED30343</a>'
+          },
+          {
+            text: "Kevin Wales"
+          },
+          {
+            text: "Metropolitan Police Service"
+          },
+          {
+            text: "1",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "30 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED77291</a>'
+          },
+          {
+            text: "Vicki Sugden"
+          },
+          {
+            text: "Humberside Police"
+          },
+          {
+            text: "3",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "30 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED39346</a>'
+          },
+          {
+            text: "Ed Kettlewell"
+          },
+          {
+            text: "Cumbria Constabulary"
+          },
+          {
+            text: "2",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "30 April 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED30343</a>'
+          },
+          {
+            text: "Jason Walsh"
+          },
+          {
+            text: "Metropolitan Police Service"
+          },
+          {
+            text: "1",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "1 May 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED19774</a>'
+          },
+          {
+            text: "Shola Lua Lua"
+          },
+          {
+            text: "Northumbria Police"
+          },
+          {
+            text: "2",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "1 May 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED20448</a>'
+          },
+          {
+            text: "Nathan Stockton"
+          },
+          {
+            text: "Kent Police"
+          },
+          {
+            text: "2",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "2 May 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED33450</a>'
+          },
+          {
+            text: "William Francis"
+          },
+          {
+            text: "Nottinghamshire Police"
+          },
+          {
+            text: "1",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "2 May 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED10463</a>'
+          },
+          {
+            text: "Hayden McShane"
+          },
+          {
+            text: "Merseyside Police"
+          },
+          {
+            text: "2",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "4 May 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED35226</a>'
+          },
+          {
+            text: "Tony Rawlins"
+          },
+          {
+            text: "Kent Police"
+          },
+          {
+            text: "3",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "5 May 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED22641</a>'
+          },
+          {
+            text: "Joel Rutherford"
+          },
+          {
+            text: "Gwent Police"
+          },
+          {
+            text: "2",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "5 May 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED10922</a>'
+          },
+          {
+            text: "Slavomir Kuhl"
+          },
+          {
+            text: "Metropolitan Police Service"
+          },
+          {
+            text: "3",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "6 May 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED10448</a>'
+          },
+          {
+            text: "Tyrese Pybus"
+          },
+          {
+            text: "West Midlands Police"
+          },
+          {
+            text: "5",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "6 May 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED35843</a>'
+          },
+          {
+            text: "Haydn Briggs"
+          },
+          {
+            text: "West Midlands Police"
+          },
+          {
+            text: "0",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "7 May 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED22640</a>'
+          },
+          {
+            text: "Joe Blair"
+          },
+          {
+            text: "West Midlands Police"
+          },
+          {
+            text: "1",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "9 May 2024"
+          },
+          {
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED30438</a>'
+          },
+          {
+            text: "Bobby-Joe Cook"
+          },
+          {
+            text: "West Midlands Police"
+          },
+          {
+            text: "4",
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
