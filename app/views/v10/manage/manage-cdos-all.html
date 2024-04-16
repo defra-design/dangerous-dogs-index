@@ -55,6 +55,9 @@
     }) }}
 
     {{ govukTable({
+      attributes: {
+        'data-module': 'moj-sortable-table'
+      },
       caption: "Active CDOs ordered by deadline",
       classes: "govuk-!-margin-top-6",
       captionClasses: "govuk-visually-hidden",
@@ -62,7 +65,9 @@
       head: [
         {
           text: "CDO deadline",
-          classes: "defra-input--width-2"
+          attributes: {
+            "aria-sort": "ascending"
+            }
         },
         {
           text: "Dog number",
@@ -74,18 +79,27 @@
         },
         {
           text: "Police force",
-          classes: "govuk-!-width-one-third"
+          classes: "govuk-!-width-one-third",
+          attributes: {
+            "aria-sort": "none"
+            }
         },
         {
           text: "Tasks complete (of 7)",
           classes: "defra-input--width-6",
+          attributes: {
+            "aria-sort": "none"
+            },
           format: "numeric"
         }
       ],
       rows: [
         [
           {
-            text: "17 April 2024"
+            text: "19 April 2024",
+            attributes: {
+              "data-sort-value": "19"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="manage-cdo-1">ED17343</a>'
@@ -97,13 +111,16 @@
             text: "Sussex Police"
           },
           {
-            text: "1",
+            text: "5",
             format: "numeric"
           }
         ],
         [
           {
-            text: "17 April 2024"
+            text: "20 April 2024",
+            attributes: {
+              "data-sort-value": "20"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17819</a>'
@@ -121,7 +138,10 @@
         ],
         [
           {
-            text: "17 April 2024"
+            text: "20 April 2024",
+            attributes: {
+              "data-sort-value": "20"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED30012</a>'
@@ -139,7 +159,10 @@
         ],
         [
           {
-            text: "18 April 2024"
+            text: "21 April 2024",
+            attributes: {
+              "data-sort-value": "21"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED15391</a>'
@@ -157,7 +180,10 @@
         ],
         [
           {
-            text: "18 April 2024"
+            text: "23 April 2024",
+            attributes: {
+              "data-sort-value": "23"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED19858</a>'
@@ -175,7 +201,10 @@
         ],
         [
           {
-            text: "19 April 2024"
+            text: "24 April 2024",
+            attributes: {
+              "data-sort-value": "24"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED30012</a>'
@@ -193,7 +222,10 @@
         ],
         [
           {
-            text: "20 April 2024"
+            text: "24 April 2024",
+            attributes: {
+              "data-sort-value": "24"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17343</a>'
@@ -211,7 +243,10 @@
         ],
         [
           {
-            text: "20 April 2024"
+            text: "26 April 2024",
+            attributes: {
+              "data-sort-value": "26"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17202</a>'
@@ -229,7 +264,10 @@
         ],
         [
           {
-            text: "21 April 2024"
+            text: "27 April 2024",
+            attributes: {
+              "data-sort-value": "27"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED39346</a>'
@@ -247,7 +285,10 @@
         ],
         [
           {
-            text: "22 April 2024"
+            text: "29 April 2024",
+            attributes: {
+              "data-sort-value": "29"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17882</a>'
@@ -265,7 +306,10 @@
         ],
         [
           {
-            text: "24 April 2024"
+            text: "2 May 2024",
+            attributes: {
+              "data-sort-value": "42"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED20553</a>'
@@ -283,7 +327,10 @@
         ],
         [
           {
-            text: "24 April 2024"
+            text: "4 May 2024",
+            attributes: {
+              "data-sort-value": "44"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17399</a>'
@@ -301,7 +348,10 @@
         ],
         [
           {
-            text: "24 April 2024"
+            text: "5 May 2024",
+            attributes: {
+              "data-sort-value": "45"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17435</a>'
@@ -319,7 +369,10 @@
         ],
         [
           {
-            text: "25 April 2024"
+            text: "9 May 2024",
+            attributes: {
+              "data-sort-value": "49"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED19232</a>'
@@ -337,7 +390,10 @@
         ],
         [
           {
-            text: "25 April 2024"
+            text: "11 May 2024",
+            attributes: {
+              "data-sort-value": "51"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED28474</a>'
@@ -355,7 +411,10 @@
         ],
         [
           {
-            text: "26 April 2024"
+            text: "12 May 2024",
+            attributes: {
+              "data-sort-value": "52"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED22756</a>'
@@ -373,7 +432,10 @@
         ],
         [
           {
-            text: "26 April 2024"
+            text: "15 May 2024",
+            attributes: {
+              "data-sort-value": "55"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED39564</a>'
@@ -391,7 +453,10 @@
         ],
         [
           {
-            text: "28 April 2024"
+            text: "16 May 2024",
+            attributes: {
+              "data-sort-value": "56"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED19993</a>'
@@ -409,7 +474,10 @@
         ],
         [
           {
-            text: "28 April 2024"
+            text: "19 May 2024",
+            attributes: {
+              "data-sort-value": "59"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED59344</a>'
@@ -427,7 +495,10 @@
         ],
         [
           {
-            text: "29 April 2024"
+            text: "20 May 2024",
+            attributes: {
+              "data-sort-value": "60"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED30343</a>'
@@ -445,7 +516,10 @@
         ],
         [
           {
-            text: "30 April 2024"
+            text: "23 May 2024",
+            attributes: {
+              "data-sort-value": "63"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED77291</a>'
@@ -463,7 +537,10 @@
         ],
         [
           {
-            text: "30 April 2024"
+            text: "24 May 2024",
+            attributes: {
+              "data-sort-value": "64"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED39346</a>'
@@ -481,7 +558,10 @@
         ],
         [
           {
-            text: "30 April 2024"
+            text: "24 May 2024",
+            attributes: {
+              "data-sort-value": "64"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED30343</a>'
@@ -499,7 +579,10 @@
         ],
         [
           {
-            text: "1 May 2024"
+            text: "29 May 2024",
+            attributes: {
+              "data-sort-value": "69"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED19774</a>'
@@ -517,7 +600,10 @@
         ],
         [
           {
-            text: "1 May 2024"
+            text: "29 May 2024",
+            attributes: {
+              "data-sort-value": "69"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED20448</a>'
@@ -535,7 +621,10 @@
         ],
         [
           {
-            text: "2 May 2024"
+            text: "30 May 2024",
+            attributes: {
+              "data-sort-value": "70"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED33450</a>'
@@ -553,7 +642,10 @@
         ],
         [
           {
-            text: "2 May 2024"
+            text: "2 June 2024",
+            attributes: {
+              "data-sort-value": "72"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED10463</a>'
@@ -571,7 +663,10 @@
         ],
         [
           {
-            text: "4 May 2024"
+            text: "3 June 2024",
+            attributes: {
+              "data-sort-value": "73"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED35226</a>'
@@ -589,7 +684,10 @@
         ],
         [
           {
-            text: "5 May 2024"
+            text: "5 June 2024",
+            attributes: {
+              "data-sort-value": "75"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED22641</a>'
@@ -607,7 +705,10 @@
         ],
         [
           {
-            text: "5 May 2024"
+            text: "7 June 2024",
+            attributes: {
+              "data-sort-value": "77"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED10922</a>'
@@ -625,7 +726,10 @@
         ],
         [
           {
-            text: "6 May 2024"
+            text: "8 June 2024",
+            attributes: {
+              "data-sort-value": "78"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED10448</a>'
@@ -643,7 +747,10 @@
         ],
         [
           {
-            text: "6 May 2024"
+            text: "10 June 2024",
+            attributes: {
+              "data-sort-value": "90"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED35843</a>'
@@ -661,7 +768,10 @@
         ],
         [
           {
-            text: "7 May 2024"
+            text: "13 June 2024",
+            attributes: {
+              "data-sort-value": "93"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED22640</a>'
@@ -679,7 +789,10 @@
         ],
         [
           {
-            text: "9 May 2024"
+            text: "15 June 2024",
+            attributes: {
+              "data-sort-value": "95"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED30438</a>'

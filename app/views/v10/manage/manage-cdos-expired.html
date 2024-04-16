@@ -55,6 +55,9 @@
     }) }}
 
     {{ govukTable({
+      attributes: {
+        'data-module': 'moj-sortable-table'
+      },
       caption: "Active CDOs ordered by deadline",
       classes: "govuk-!-margin-top-6",
       captionClasses: "govuk-visually-hidden",
@@ -62,7 +65,9 @@
       head: [
         {
           text: "CDO deadline",
-          classes: "defra-input--width-2"
+          attributes: {
+            "aria-sort": "ascending"
+            }
         },
         {
           text: "Dog number",
@@ -74,18 +79,27 @@
         },
         {
           text: "Police force",
-          classes: "govuk-!-width-one-third"
+          classes: "govuk-!-width-one-third",
+          attributes: {
+            "aria-sort": "none"
+            }
         },
         {
           text: "Tasks complete (of 7)",
           classes: "defra-input--width-6",
+          attributes: {
+            "aria-sort": "none"
+            },
           format: "numeric"
         }
       ],
       rows: [
         [
           {
-            text: "9 April 2024"
+            text: "9 April 2024",
+            attributes: {
+              "data-sort-value": "9"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED34885</a>'
@@ -103,7 +117,10 @@
         ],
         [
           {
-            text: "11 April 2024"
+            text: "11 April 2024",
+            attributes: {
+              "data-sort-value": "11"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED27336</a>'
@@ -121,7 +138,10 @@
         ],
         [
           {
-            text: "11 April 2024"
+            text: "11 April 2024",
+            attributes: {
+              "data-sort-value": "11"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED32845</a>'
@@ -139,7 +159,10 @@
         ],
         [
           {
-            text: "12 April 2024"
+            text: "12 April 2024",
+            attributes: {
+              "data-sort-value": "12"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED33595</a>'
@@ -157,7 +180,10 @@
         ],
         [
           {
-            text: "14 April 2024"
+            text: "14 April 2024",
+            attributes: {
+              "data-sort-value": "14"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED10856</a>'
@@ -175,7 +201,10 @@
         ],
         [
           {
-            text: "14 April 2024"
+            text: "14 April 2024",
+            attributes: {
+              "data-sort-value": "14"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED10529</a>'
@@ -193,7 +222,10 @@
         ],
         [
           {
-            text: "15 April 2024"
+            text: "15 April 2024",
+            attributes: {
+              "data-sort-value": "15"
+            }
           },
           {
             html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED28576</a>'
