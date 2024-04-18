@@ -48,7 +48,7 @@
         text: "Expired",
         href: "manage-cdos-expired"
       }, {
-        text: "Due within 30 days",
+        text: "Due within a month",
         href: "manage-cdos-month",
         current: true
       }]
@@ -65,24 +65,17 @@
       head: [
         {
           text: "CDO expiry",
-          classes: "govuk-input--width-10",
           attributes: {
             "aria-sort": "ascending"
             }
         },
         {
           text: "Index number",
-          classes: "govuk-input--width-10",
-          attributes: {
-            "aria-sort": "none"
-            }
+          classes: "govuk-input--width-4 defra-table-line-height"
         },
         {
           text: "Owner",
-          classes: "govuk-!-width-one-quarter",
-          attributes: {
-            "aria-sort": "none"
-            }
+          classes: "govuk-!-width-one-quarter"
         },
         {
           text: "Police force",
@@ -90,6 +83,14 @@
           attributes: {
             "aria-sort": "none"
             }
+        },
+        {
+          text: "Tasks complete (of 7)",
+          classes: "defra-input--width-6",
+          attributes: {
+            "aria-sort": "none"
+            },
+          format: "numeric"
         }
       ],
       rows: [
@@ -101,19 +102,17 @@
             }
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="../dog-records/dog-record-ED17343">ED17343</a>',
-            attributes: {
-              "data-sort-value": "17343"
-            }
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="manage-cdo-1">ED17343</a>'
           },
           {
-            text: "Dennis Campbell",
-            attributes: {
-              "data-sort-value": "Campbell"
-            }
+            text: "Dennis Campbell"
           },
           {
             text: "Sussex Police"
+          },
+          {
+            text: "5",
+            format: "numeric"
           }
         ],
         [
@@ -124,19 +123,17 @@
             }
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17819</a>',
-            attributes: {
-              "data-sort-value": "17819"
-            }
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17819</a>'
           },
           {
-            text: "Ioana Bortan",
-            attributes: {
-              "data-sort-value": "Bortan"
-            }
+            text: "Ioana Bortan"
           },
           {
             text: "Thames Valley Police"
+          },
+          {
+            text: "4",
+            format: "numeric"
           }
         ],
         [
@@ -147,19 +144,17 @@
             }
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED30012</a>',
-            attributes: {
-              "data-sort-value": "30012"
-            }
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED30012</a>'
           },
           {
-            text: "Gary Jones",
-            attributes: {
-              "data-sort-value": "Jones"
-            }
+            text: "Gary Jones"
           },
           {
             text: "Gloucestershire Constabulary"
+          },
+          {
+            text: "6",
+            format: "numeric"
           }
         ],
         [
@@ -170,19 +165,17 @@
             }
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED15391</a>',
-            attributes: {
-              "data-sort-value": "15391"
-            }
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED15391</a>'
           },
           {
-            text: "Wojciech Krychowiak",
-            attributes: {
-              "data-sort-value": "Krychowiak"
-            }
+            text: "Wojciech Krychowiak"
           },
           {
             text: "Cumbria Constabulary"
+          },
+          {
+            text: "4",
+            format: "numeric"
           }
         ],
         [
@@ -193,19 +186,17 @@
             }
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED19858</a>',
-            attributes: {
-              "data-sort-value": "19858"
-            }
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED19858</a>'
           },
           {
-            text: "Heidi Sturgeon",
-            attributes: {
-              "data-sort-value": "Sturgeon"
-            }
+            text: "Heidi Sturgeon"
           },
           {
-            text: "Metropolitan Police Service"
+            text: "Metropolitan Police"
+          },
+          {
+            text: "5",
+            format: "numeric"
           }
         ],
         [
@@ -216,19 +207,17 @@
             }
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED30012</a>',
-            attributes: {
-              "data-sort-value": "30012"
-            }
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED30012</a>'
           },
           {
-            text: "Adhavan Razeek",
-            attributes: {
-              "data-sort-value": "Razeek"
-            }
+            text: "Adhavan Razeek"
           },
           {
             text: "Surrey Police"
+          },
+          {
+            text: "4",
+            format: "numeric"
           }
         ],
         [
@@ -239,19 +228,17 @@
             }
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED27342</a>',
-            attributes: {
-              "data-sort-value": "27342"
-            }
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17343</a>'
           },
           {
-            text: "Tyler McGrath",
-            attributes: {
-              "data-sort-value": "McGrath"
-            }
+            text: "Tyler McGrath"
           },
           {
             text: "Leicestershire Police"
+          },
+          {
+            text: "5",
+            format: "numeric"
           }
         ],
         [
@@ -262,19 +249,17 @@
             }
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17202</a>',
-            attributes: {
-              "data-sort-value": "17202"
-            }
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17202</a>'
           },
           {
-            text: "Helen Renard",
-            attributes: {
-              "data-sort-value": "Renard"
-            }
+            text: "	Helen Renard"
           },
           {
             text: "Dorset Police"
+          },
+          {
+            text: "6",
+            format: "numeric"
           }
         ],
         [
@@ -285,19 +270,17 @@
             }
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED39287</a>',
-            attributes: {
-              "data-sort-value": "39287"
-            }
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED39346</a>'
           },
           {
-            text: "Raheem Powell",
-            attributes: {
-              "data-sort-value": "Powell"
-            }
+            text: "Raheem Powell"
           },
           {
             text: "Thames Valley Police"
+          },
+          {
+            text: "3",
+            format: "numeric"
           }
         ],
         [
@@ -308,19 +291,17 @@
             }
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17882</a>',
-            attributes: {
-              "data-sort-value": "17882"
-            }
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17882</a>'
           },
           {
-            text: "Luke Kettleborough",
-            attributes: {
-              "data-sort-value": "Kettleborough"
-            }
+            text: "Luke Kettleborough"
           },
           {
             text: "West Yorkshire Police"
+          },
+          {
+            text: "1",
+            format: "numeric"
           }
         ],
         [
@@ -331,19 +312,17 @@
             }
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED20553</a>',
-            attributes: {
-              "data-sort-value": "20553"
-            }
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED20553</a>'
           },
           {
-            text: "Donlan Moloney",
-            attributes: {
-              "data-sort-value": "Moloney"
-            }
+            text: "Donlan Moloney"
           },
           {
             text: "Merseyside Police"
+          },
+          {
+            text: "2",
+            format: "numeric"
           }
         ],
         [
@@ -354,19 +333,17 @@
             }
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17399</a>',
-            attributes: {
-              "data-sort-value": "17399"
-            }
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17399</a>'
           },
           {
-            text: "Catherine Hyde",
-            attributes: {
-              "data-sort-value": "Hyde"
-            }
+            text: "Catherine Hyde"
           },
           {
             text: "Lancashire Constabulary"
+          },
+          {
+            text: "4",
+            format: "numeric"
           }
         ],
         [
@@ -377,19 +354,17 @@
             }
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17435</a>',
-            attributes: {
-              "data-sort-value": "17435"
-            }
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED17435</a>'
           },
           {
-            text: "Brian Gaston",
-            attributes: {
-              "data-sort-value": "Gaston"
-            }
+            text: "Brian Gaston"
           },
           {
             text: "Hampshire and Isle of Wight Constabulary"
+          },
+          {
+            text: "1",
+            format: "numeric"
           }
         ],
         [
@@ -400,19 +375,17 @@
             }
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED19232</a>',
-            attributes: {
-              "data-sort-value": "19232"
-            }
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED19232</a>'
           },
           {
-            text: "Murray Thompson",
-            attributes: {
-              "data-sort-value": "Thompson"
-            }
+            text: "Murray Thompson"
           },
           {
             text: "Merseyside Police"
+          },
+          {
+            text: "4",
+            format: "numeric"
           }
         ],
         [
@@ -423,19 +396,17 @@
             }
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED28474</a>',
-            attributes: {
-              "data-sort-value": "28474"
-            }
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED28474</a>'
           },
           {
-            text: "Jack Laingchild",
-            attributes: {
-              "data-sort-value": "Laingchild"
-            }
+            text: "Jack Laingchild"
           },
           {
             text: "Metropolitan Police Service"
+          },
+          {
+            text: "3",
+            format: "numeric"
           }
         ],
         [
@@ -446,19 +417,17 @@
             }
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED22756</a>',
-            attributes: {
-              "data-sort-value": "22756"
-            }
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED22756</a>'
           },
           {
-            text: "Sachin Jaiswal",
-            attributes: {
-              "data-sort-value": "Jaiswal"
-            }
+            text: "Sachin Jaiswal"
           },
           {
             text: "Greater Manchester Police"
+          },
+          {
+            text: "3",
+            format: "numeric"
           }
         ],
         [
@@ -469,19 +438,17 @@
             }
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED39564</a>',
-            attributes: {
-              "data-sort-value": "39564"
-            }
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED39564</a>'
           },
           {
-            text: "Robert O'Shea",
-            attributes: {
-              "data-sort-value": "O'Shea"
-            }
+            text: "Robert O'Shea"
           },
           {
             text: "Dyfed-Powys Police"
+          },
+          {
+            text: "2",
+            format: "numeric"
           }
         ],
         [
@@ -492,19 +459,17 @@
             }
           },
           {
-            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED19993</a>',
-            attributes: {
-              "data-sort-value": "19993"
-            }
+            html: '<a class="govuk-link govuk-link--no-visited-state" href="">ED19993</a>'
           },
           {
-            text: "Helen Cotterill",
-            attributes: {
-              "data-sort-value": "Cotterill"
-            }
+            text: "Helen Cotterill"
           },
           {
             text: "Cleveland Police"
+          },
+          {
+            text: "1",
+            format: "numeric"
           }
         ]
       ]

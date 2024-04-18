@@ -1,0 +1,60 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Check activity" %}
+
+{% block pageTitle %}
+  {{ pageName }} – Dog ED17343 - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "../dog-record-ED17343"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <span class="govuk-caption-l">Dog ED17343</span>
+        <h1 class="govuk-heading-l">Check activity</h1>
+
+        {{ govukTable({
+          caption: "All activity",
+          captionClasses: "govuk-visually-hidden",
+          firstCellIsHeader: false,
+          head: [
+            {
+              text: "Date",
+              classes: "govuk-!-width-one-quarter"
+            },
+            {
+              text: "Activity",
+              classes: "govuk-!-width-one-half"
+            },
+            {
+              text: "Team member",
+              classes: "govuk-!-width-one-quarter"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "23 February 2024"
+              },
+              {
+                text: "Dog record created (Pre-exempt)"
+              },
+              {
+                text: "Sophie Lemmon"
+              }
+            ]
+          ]
+        }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

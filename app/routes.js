@@ -560,3 +560,26 @@ router.post('/v10/admin/activity-remove-question', function (req, res) {
   }
 
 })
+
+
+// v10 Add or check dog record activity
+router.post('/v10/dog-records/activity/activity-type', function (req, res) {
+  var activityType = req.session.data['activityType']
+  if (activityType == "add-activity"){
+    res.redirect('/v10/dog-records/activity/add-activity')
+  } else {
+    res.redirect('/v10/dog-records/activity/activity-all')
+  }
+
+})
+
+// v7 Add an activity
+router.post('/v10/dog-records/activity/add-activity-question', function (req, res) {
+  var addActivity = req.session.data['addActivity']
+  if (addActivity == "sent"){
+    res.redirect('/v10/dog-records/activity/send-activity')
+  } else {
+    res.redirect('/v10/dog-records/activity/receive-activity')
+  }
+
+})

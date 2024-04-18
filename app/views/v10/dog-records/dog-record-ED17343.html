@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: "../manage/manage-cdos-all"
   }) }}
 {% endblock %}
 
@@ -17,7 +17,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <form class="form" action="/v7/dog-records/activity/activity-type" method="post">
+    <form class="form" action="/v10/dog-records/activity/activity-type" method="post">
 
     <div class="moj-page-header-actions govuk-!-margin-bottom-2">
 
@@ -57,7 +57,7 @@
       actions: {
         items: [
           {
-            href: "dog-record-ED30227-dog-edit",
+            href: "dog-record-ED17343-dog-edit",
             text: "Edit details",
             classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
             visuallyHiddenText: "for dog"
@@ -72,7 +72,7 @@
             text: "Name"
           },
           value: {
-            text: data['dogName1'] or "Bruce"
+            text: data['dogName1'] or "Pluto"
           }
         },
         {
@@ -86,15 +86,6 @@
         {
           key: {
             text: "Colour"
-          },
-          value: {
-            classes: "defra-secondary-text",
-            text: "Not entered"
-          }
-        },
-        {
-          key: {
-            text: "Sex"
           },
           value: {
             classes: "defra-secondary-text",
@@ -133,7 +124,7 @@
       actions: {
         items: [
           {
-            href: "/v7/owner-records/owner-record-ED30874",
+            href: "owner-record-ED17343",
             text: "Owner record",
             classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
             visuallyHiddenText: "for owner"
@@ -156,7 +147,8 @@
             text: "Date of birth"
           },
           value: {
-            text: "2 December 1986"
+            classes: "defra-secondary-text",
+            text: "Not entered"
           }
         },
         {
@@ -164,7 +156,7 @@
             text: "Address"
           },
           value: {
-            html: "12 Primrose Road<br>Southampton<br>SO16 3GP"
+            html: "122 Little Common Road<br>Bexhill-on-Sea<br>TN39 4JB"
           }
         },
         {
@@ -172,7 +164,8 @@
             text: "Email"
           },
           value: {
-            text: "gazandshaz@hotmail.com"
+            classes: "defra-secondary-text",
+            text: "Not entered"
           }
         },
         {
@@ -180,7 +173,8 @@
             text: "Telephone number 1"
           },
           value: {
-            text: data['telephoneNumber1'] or "07879 929344"
+            classes: "defra-secondary-text",
+            text: "Not entered"
           }
         },
         {
@@ -208,7 +202,7 @@
           actions: {
             items: [
               {
-                href: "dog-record-ED30227-exemption-edit",
+                href: "dog-record-ED17343-exemption-edit",
                 text: "Edit details",
                 classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
                 visuallyHiddenText: "for exemption"
@@ -222,7 +216,7 @@
               text: "Status"
             },
             value: {
-              text: data['dogStatus'] or "Exempt"
+              text: data['dogStatus'] or "Pre-exempt"
             },
             actions: {
             classes: "defra-text-align-left",
@@ -237,10 +231,29 @@
           },
           {
             key: {
+              text: "Certificate issued"
+            },
+            value: {
+              classes: "defra-secondary-text",
+              text: "Not entered"
+            },
+            actions: {
+            classes: "defra-text-align-left",
+             items: [
+               {
+                 href: "certificate",
+                 classes: "govuk-link--no-visited-state",
+                 text: "Generate certificate"
+               }
+             ]
+           }
+          },
+          {
+            key: {
               text: "CDO issued"
             },
             value: {
-              text: "20 January 2024"
+              text: "19 February 2024"
             }
           },
           {
@@ -248,7 +261,7 @@
               text: "CDO expiry"
             },
             value: {
-              text: "20 March 2024"
+              text: "19 April 2024"
             }
           },
           {
@@ -256,7 +269,7 @@
               text: "Court"
             },
             value: {
-              text: data['court'] or "Southampton (West Hampshire) Magistrates’ Court"
+              text: data['court'] or "Hastings Law Courts"
             }
           },
           {

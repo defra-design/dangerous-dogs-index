@@ -49,7 +49,7 @@
         href: "manage-cdos-expired",
         current: true
       }, {
-        text: "Due within 30 days",
+        text: "Due within a month",
         href: "manage-cdos-month"
       }]
     }) }}
@@ -65,24 +65,17 @@
       head: [
         {
           text: "CDO expiry",
-          classes: "govuk-input--width-10",
           attributes: {
             "aria-sort": "ascending"
             }
         },
         {
           text: "Index number",
-          classes: "govuk-input--width-10",
-          attributes: {
-            "aria-sort": "none"
-            }
+          classes: "govuk-input--width-4 defra-table-line-height"
         },
         {
           text: "Owner",
-          classes: "govuk-!-width-one-quarter",
-          attributes: {
-            "aria-sort": "none"
-            }
+          classes: "govuk-!-width-one-quarter"
         },
         {
           text: "Police force",
@@ -90,6 +83,14 @@
           attributes: {
             "aria-sort": "none"
             }
+        },
+        {
+          text: "Tasks complete (of 7)",
+          classes: "defra-input--width-6",
+          attributes: {
+            "aria-sort": "none"
+            },
+          format: "numeric"
         }
       ],
       rows: [
@@ -108,6 +109,10 @@
           },
           {
             text: "Cleveland Police"
+          },
+          {
+            text: "2",
+            format: "numeric"
           }
         ],
         [
@@ -125,6 +130,10 @@
           },
           {
             text: "Metropolitan Police Service"
+          },
+          {
+            text: "4",
+            format: "numeric"
           }
         ],
         [
@@ -142,6 +151,10 @@
           },
           {
             text: "Metropolitan Police Service"
+          },
+          {
+            text: "1",
+            format: "numeric"
           }
         ],
         [
@@ -159,6 +172,10 @@
           },
           {
             text: "Sussex Police"
+          },
+          {
+            text: "4",
+            format: "numeric"
           }
         ],
         [
@@ -176,6 +193,10 @@
           },
           {
             text: "Merseyside Police"
+          },
+          {
+            text: "3",
+            format: "numeric"
           }
         ],
         [
@@ -193,6 +214,10 @@
           },
           {
             text: "Greater Manchester Police"
+          },
+          {
+            text: "3",
+            format: "numeric"
           }
         ],
         [
@@ -210,6 +235,10 @@
           },
           {
             text: "Merseyside Police"
+          },
+          {
+            text: "1",
+            format: "numeric"
           }
         ]
       ]
