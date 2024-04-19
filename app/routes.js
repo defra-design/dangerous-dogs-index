@@ -573,7 +573,7 @@ router.post('/v10/dog-records/activity/activity-type', function (req, res) {
 
 })
 
-// v7 Add an activity
+// v10 Add an activity
 router.post('/v10/dog-records/activity/add-activity-question', function (req, res) {
   var addActivity = req.session.data['addActivity']
   if (addActivity == "sent"){
@@ -593,6 +593,17 @@ router.post('/v11/cdo/create/owner-surname-question', function (req, res) {
     res.redirect('/v11/cdo/create/single/confirm-address')
   } else {
     res.redirect('/v11/cdo/create/multiple/select-owner')
+  }
+
+})
+
+// v11 Add an activity
+router.post('/v11/cdo/create/multiple/multi-dog-question', function (req, res) {
+  var existingOwner = req.session.data['existingOwner']
+  if (existingOwner == "New dog"){
+    res.redirect('/v11/cdo/create/multiple/microchip-number')
+  } else {
+    res.redirect('/v11/cdo/create/multiple/application-type')
   }
 
 })
