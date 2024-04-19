@@ -221,7 +221,7 @@
   }
 
   .defra-align-table {
-  vertical-align: middle;
+    vertical-align: middle;
   }
 
   .defra-input--width-8 {
@@ -229,13 +229,17 @@
   }
 
   .defra-input--width-6 {
-  max-width: 8em !important;
+    max-width: 8em !important;
   }
 
   .defra-input--width-4 {
-  max-width: 4.5em !important;
+    max-width: 4.5em !important;
   }
 
   .defra-table-line-height {
-  line-height: 1.24 !important;
+    line-height: 1.24 !important;
+  }
+
+  .defra-background {
+    background-color: white !important;
   }

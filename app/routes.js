@@ -583,3 +583,16 @@ router.post('/v10/dog-records/activity/add-activity-question', function (req, re
   }
 
 })
+
+// v11 Owner's question
+router.post('/v11/cdo/create/owner-surname-question', function (req, res) {
+  var lastName = req.session.data['lastName']
+  if (lastName == "NoakesNoakes"){
+  res.redirect('/v11/cdo/create/postcode')
+  } if (lastName == "de Vilde Vil"){
+    res.redirect('/v11/cdo/create/single/confirm-address')
+  } else {
+    res.redirect('/v11/cdo/create/multiple/select-owner')
+  }
+
+})
