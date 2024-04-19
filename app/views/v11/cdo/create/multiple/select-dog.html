@@ -24,7 +24,7 @@
           <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            Select the dog for {{ data['firstName'] }} {{ data['lastName'] }}
+            Select the dog for {% if data['lastName'] %}{{ data['firstName'] }} {{ data['lastName'] }}{% else %}Kenny Walsh{% endif %}
           </legend>
 
             <div class="govuk-radios" data-module="govuk-radios">
