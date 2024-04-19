@@ -1,0 +1,102 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Dog records - Search" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "microchip-number"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v8/search/search-results" method="post">
+
+      <h1 class="govuk-heading-l">
+        There’s an existing dog record with microchip number 123456789012345
+        </h1>
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-2 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title defra-summary-header"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="">
+            ED30227
+          </a></h2>
+          <ul class="govuk-summary-card__actions govuk-!-padding-bottom-1 govuk-!-font-weight-regular">
+            {{ govukTag({
+              text: "Exempt",
+              classes: "govuk-tag--green govuk-!-font-size-16"
+            }) }}
+          </ul>
+        </div>
+
+        <div class="govuk-summary-card__content govuk-!-padding-top-1 govuk-!-padding-bottom-0">
+          <table class="govuk-table govuk-!-margin-bottom-3">
+            <caption class="govuk-table__caption govuk-!-font-weight-regular govuk-!-font-size-16">
+                </caption>
+              <thead class="govuk-table__head govuk-!-font-size-16">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                    Dog name
+                  </th>
+                  <th scope="col" class="govuk-table__header">
+                    Owner name
+                  </th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-!-width-one-quarter">
+                    Microchip number
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0 defra-results">
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                     Brutus
+                    </td>
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                      <a class="govuk-link govuk-link--no-visited-state" href="">
+                        Gareth Staines
+                      </a>
+                    </td>
+                    <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                      123456789012345
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p class="govuk-body">
+          Look at the original paperwork for:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the dog you are adding to check you’ve entered the microchip number correctly</li>
+          <li>the existing dog record that has the same microchip number to check if an error was made when it was first added to the index</li>
+        </ul>
+
+        <p class="govuk-body govuk-!-margin-bottom-0">
+          If you find an error with the data, you should use the original paperwork to correct the data for the record which has the error.
+        </p>
+ 
+        <p class="govuk-body">
+        If you do not find an error with the data, you should escalate to a line manager to agree the next step.
+        </p>
+
+        <p class="govuk-body">
+          If you entered the number incorrectly,
+          <a class="govuk-link govuk-link--no-visited-state" href="microchip-number">change the microchip number</a>.
+          </p>
+
+    </div>
+  </div>
+
+{% endblock %}
