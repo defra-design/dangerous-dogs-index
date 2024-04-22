@@ -1,6 +1,6 @@
 {% extends "layouts/defra-admin.html" %}
 
-{% set pageName="What is the activity?" %}
+{% set pageName="What type of activity is it?" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -20,11 +20,13 @@
 
       <form class="form" action="/v10/admin/activity-remove-question" method="post">
 
+        <span class="govuk-caption-l">Remove an activity</span>
+
         {{ govukRadios({
           name: "whichActivityRemove",
           fieldset: {
             legend: {
-              text: "What is the activity?",
+              text: "What type of activity is it?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
