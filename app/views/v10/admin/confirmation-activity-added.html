@@ -1,0 +1,52 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="You added to the list of send activities" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../index"
+    },
+    {
+      text: "Admin",
+      href: "index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+        <h1 class="govuk-panel__title govuk-!-margin-bottom-2">
+          {% if data['activityName'] %}{{ data['activityName'] }}{% else %}Change of address form{% endif %}
+        </h1>
+        <div class="govuk-panel__body govuk-!-padding-left-8 govuk-!-padding-right-8">
+          added to the list of
+          {% if data['addActivity'] == 'send' %}
+            send
+          {% elif data['addActivity'] == 'receive' %}
+            receive
+          {% endif %}
+          activities
+        </div>
+      </div>
+
+      <p class=govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="index">Admin area</a>
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

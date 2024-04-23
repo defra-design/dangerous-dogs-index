@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "remove-receive-activity"
+  href: "remove-send-activity"
 }) }}
 {% endblock %}
 
@@ -18,14 +18,23 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v10/admin/receive-removed-question" method="post">
+      <form class="form" action="/v10/admin/confirmation-activity-added" method="post">
 
-        <span class="govuk-caption-l">Something we receive</span>
+        {% if data['addActivity'] == 'send' %}
+          <span class="govuk-caption-l">Something we send</span>
+        {% elif data['addActivity'] == 'receive' %}
+          <span class="govuk-caption-l">Something we receive</span>
+        {% endif %}
+
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="remove-police-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Are you sure you want to remove ‘{% if data['removeReceiveActivity'] %}{{ data['removeReceiveActivity'] }}{% else %}Police correspondence{% endif %}’ from the list of things we receive?
+              Are you sure you want to add {% if data['activityName'] %}‘{{ data['activityName'] }}’{% else %}‘Central Police’{% endif %} to the list of things we {% if data['addActivity'] == 'send' %}
+                send
+              {% elif data['addActivity'] == 'receive' %}
+                receive
+              {% endif %}?
             </h1>
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">

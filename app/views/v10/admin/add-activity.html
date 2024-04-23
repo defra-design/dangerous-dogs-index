@@ -1,0 +1,49 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="Add an activity to the Index" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "what-is-the-activity-add"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v10/admin/add-activity-confirm" method="post">
+
+        {% if data['addActivity'] == 'send' %}
+          <span class="govuk-caption-l">Something we send</span>
+        {% elif data['addActivity'] == 'receive' %}
+          <span class="govuk-caption-l">Something we receive</span>
+        {% endif %}
+
+        {{ govukInput({
+          label: {
+            text: "What activity do you want to add?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          id: "activity-name",
+          name: "activityName"
+        }) }}
+
+      {{ govukButton({
+        text: "Add activity"
+      }) }}
+
+      </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}
