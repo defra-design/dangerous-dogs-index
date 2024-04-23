@@ -607,6 +607,17 @@ router.post('/v10/dog-records/activity/add-activity-question', function (req, re
 
 })
 
+// v10 Add an activity confirm
+router.post('/v10/dog-records/activity/add-activity-confirm-question', function (req, res) {
+  var addActivityConfirm = req.session.data['addActivityConfirm']
+  if (addActivityConfirm == "no"){
+    res.redirect('/v10/admin/index')
+  } else {
+    res.redirect('/v10/admin/confirmation-activity-added')
+  }
+
+})
+
 // v11 Owner's question
 router.post('/v11/cdo/create/owner-surname-question', function (req, res) {
   var lastName = req.session.data['lastName']

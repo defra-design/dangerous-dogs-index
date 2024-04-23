@@ -18,7 +18,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v10/admin/confirmation-activity-added" method="post">
+      <form class="form" action="/v10/dog-records/activity/add-activity-confirm-question" method="post">
 
         {% if data['addActivity'] == 'send' %}
           <span class="govuk-caption-l">Something we send</span>
@@ -31,22 +31,20 @@
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
               Are you sure you want to add {% if data['activityName'] %}‘{{ data['activityName'] }}’{% else %}‘Central Police’{% endif %} to the list of things we {% if data['addActivity'] == 'send' %}
-                send
-              {% elif data['addActivity'] == 'receive' %}
-                receive
-              {% endif %}?
+                send{% elif data['addActivity'] == 'receive' %}
+                receive{% endif %}?
             </h1>
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="removePolice" name="removePolice" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="remove-police">
+              <input class="govuk-radios__input" id="add-activity-confirm" name="addActivityConfirm" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="add-activity-confirm">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="removepolice-2" name="removePolice" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="remove-police-2">
+              <input class="govuk-radios__input" id="add-activity-confirm-2" name="addActivityConfirm" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="add-activity-confirm-2">
                 No
               </label>
             </div>
