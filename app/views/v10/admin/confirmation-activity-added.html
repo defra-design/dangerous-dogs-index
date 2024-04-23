@@ -28,10 +28,15 @@
 
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
         <h1 class="govuk-panel__title govuk-!-margin-bottom-2">
-          {% if data['activityName'] %}{{ data['activityName'] }}{% else %}Change of address form{% endif %}
+          {% if data['activityName'] %}{{ data['activityName'] }}{% else %}Police incident report{% endif %}
         </h1>
         <div class="govuk-panel__body govuk-!-padding-left-8 govuk-!-padding-right-8">
           added to the list of
+          {% if data['whichRecord'] == 'dog' %}
+            Dog record
+          {% elif data['whichRecord'] == 'owner' %}
+            Owner record
+          {% endif %}
           {% if data['addActivity'] == 'send' %}
             send
           {% elif data['addActivity'] == 'receive' %}

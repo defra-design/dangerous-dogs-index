@@ -20,10 +20,16 @@
 
       <form class="form" action="/v10/admin/add-activity-confirm" method="post">
 
+        {% if data['whichRecord'] == 'dog' %}
+          <span class="govuk-caption-l">Dog record:
+        {% elif data['whichRecord'] == 'owner' %}
+          <span class="govuk-caption-l">Owner record:
+        {% endif %}
+
         {% if data['addActivity'] == 'send' %}
-          <span class="govuk-caption-l">Something we send</span>
+          something we send</span>
         {% elif data['addActivity'] == 'receive' %}
-          <span class="govuk-caption-l">Something we receive</span>
+          something we receive</span>
         {% endif %}
 
         {{ govukInput({

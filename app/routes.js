@@ -546,7 +546,7 @@ router.post('/v10/admin/activity-question', function (req, res) {
   if (addRemoveActivity === "remove"){
     res.redirect('/v10/admin/what-is-the-activity-remove')
   } else {
-    res.redirect('/v10/admin/what-is-the-activity-add')
+    res.redirect('/v10/admin/which-record')
   }
 
 })

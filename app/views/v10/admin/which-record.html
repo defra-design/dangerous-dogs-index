@@ -1,6 +1,6 @@
 {% extends "layouts/defra-admin.html" %}
 
-{% set pageName="What type of activity do you want to add?" %}
+{% set pageName="Which record do you want to add an activity to?" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "which-record"
+  href: "add-or-remove-activities"
 }) }}
 {% endblock %}
 
@@ -18,31 +18,25 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v10/admin/add-activity" method="post">
-
-        {% if data['whichRecord'] == 'dog' %}
-          <span class="govuk-caption-l">Dog record</span>
-        {% elif data['whichRecord'] == 'owner' %}
-          <span class="govuk-caption-l">Owner record</span>
-        {% endif %}
+      <form class="form" action="/v10/admin/what-is-the-activity-add" method="post">
 
         {{ govukRadios({
-          name: "addActivity",
+          name: "whichRecord",
           fieldset: {
             legend: {
-              text: "What type of activity do you want to add?",
+              text: "Which record do you want to add an activity to?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
             {
-              value: "send",
-              text: "Something we send"
+              value: "dog",
+              text: "Dog record"
             },
             {
-              value: "receive",
-              text: "Something we receive"
+              value: "owner",
+              text: "Owner record"
             }
           ]
         }) }}
