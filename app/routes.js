@@ -302,6 +302,20 @@ router.post('/v8/owner-records/activity/activity-type', function (req, res) {
 
 })
 
+
+// v8 Owner's question
+router.post('/v8/cdo/create/owner-surname-question', function (req, res) {
+  var lastName = req.session.data['lastName']
+  if (lastName == "Noakes"){
+  res.redirect('/v8/cdo/create/postcode')
+  } if (lastName == "de Vil"){
+    res.redirect('/v8/cdo/create/single/confirm-address')
+  } else {
+    res.redirect('/v8/cdo/create/multiple/select-owner')
+  }
+
+})
+
 // v9 Search - Microchip number
 router.post('/v9/microchip-search-results', function (req, res) {
   var recordType = req.session.data['recordType']
@@ -368,19 +382,6 @@ router.post('/v9/microchip-number/dog-records/comment/comment-type-question', fu
     res.redirect('/v9/microchip-number/dog-records/comment/report-death')
   } if (comment == "something"){
     res.redirect('/v9/microchip-number/dog-records/comment/report-details')
-  }
-
-})
-
-// v8 Owner's question
-router.post('/v8/cdo/create/owner-surname-question', function (req, res) {
-  var lastName = req.session.data['lastName']
-  if (lastName == "Noakes"){
-  res.redirect('/v8/cdo/create/postcode')
-  } if (lastName == "de Vil"){
-    res.redirect('/v8/cdo/create/single/confirm-address')
-  } else {
-    res.redirect('/v8/cdo/create/multiple/select-owner')
   }
 
 })
@@ -528,7 +529,7 @@ router.post('/v10/admin/police-added-question', function (req, res) {
 
 })
 
-// v10 Add or remove court
+// v10 Confirm police remove
 router.post('/v10/admin/police-removed-question', function (req, res) {
   var removePolice = req.session.data['removePolice']
   if (removePolice === "no"){
@@ -553,10 +554,32 @@ router.post('/v10/admin/activity-question', function (req, res) {
 // v10 Activity to remove
 router.post('/v10/admin/activity-remove-question', function (req, res) {
   var whichActivityRemove = req.session.data['whichActivityRemove']
-  if (whichActivityRemove === "remove"){
-    res.redirect('/v10/admin/x')
+  if (whichActivityRemove === "receive"){
+    res.redirect('/v10/admin/remove-receive-activity')
   } else {
-    res.redirect('/v10/admin/x')
+    res.redirect('/v10/admin/remove-send-activity')
+  }
+
+})
+
+// v10 Confirm send remove
+router.post('/v10/admin/send-removed-question', function (req, res) {
+  var removeSendConfirm = req.session.data['removeSendConfirm']
+  if (removeSendConfirm === "no"){
+    res.redirect('/v10/admin/index')
+  } else {
+    res.redirect('/v10/admin/confirmation-send-activity-removed')
+  }
+
+})
+
+// v10 Confirm received remove
+router.post('/v10/admin/receive-removed-question', function (req, res) {
+  var removeReceiveActivity = req.session.data['removeReceiveActivity']
+  if (removeReceiveActivity === "no"){
+    res.redirect('/v10/admin/index')
+  } else {
+    res.redirect('/v10/admin/confirmation-receive-activity-removed')
   }
 
 })

@@ -1,0 +1,57 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="Are you sure you want to remove an item from the actvities we receive?" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "remove-send-activity"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v10/admin/receive-removed-question" method="post">
+
+        <span class="govuk-caption-l">Something we receive</span>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="remove-police-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Are you sure you want to remove ‘{% if data['removeReceiveActivity'] %}{{ data['removeReceiveActivity'] }}{% else %}Police correspondence{% endif %}’ from the list of things we receive?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="removePolice" name="removePolice" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="remove-police">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="removepolice-2" name="removePolice" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="remove-police-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
