@@ -1,0 +1,88 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="Remove a police force from the Index" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "add-or-remove-police"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v11/admin/remove-police-confirm" method="post">
+
+      {{ xGovukAutocomplete({
+        id: "police",
+        name: "police",
+        allowEmpty: false,
+        label: {
+          classes: "govuk-label--l",
+          isPageHeading: true,
+          text: "Which police force do you want to remove?"
+        },
+        items: [
+          { text: "Avon and Somerset Constabulary" },
+          { text: "Bedfordshire Police" },
+          { text: "Cambridgeshire Constabulary" },
+          { text: "Cheshire Constabulary" },
+          { text: "City of London Police" },
+          { text: "Cleveland Police" },
+          { text: "Cumbria Constabulary" },
+          { text: "Derbyshire Constabulary" },
+          { text: "Devon & Cornwall Police" },
+          { text: "Dorset Police" },
+          { text: "Durham Constabulary" },
+          { text: "Dyfed-Powys Police" },
+          { text: "Essex Police" },
+          { text: "Gloucestershire Constabulary" },
+          { text: "Greater Manchester Police" },
+          { text: "Gwent Police" },
+          { text: "Hampshire Constabulary" },
+          { text: "Hertfordshire Constabulary" },
+          { text: "Humberside Police" },
+          { text: "Kent Police" },
+          { text: "Lancashire Constabulary" },
+          { text: "Leicestershire Police" },
+          { text: "Lincolnshire Police" },
+          { text: "Merseyside Police" },
+          { text: "Metropolitan Police Service" },
+          { text: "Norfolk Constabulary" },
+          { text: "North Yorkshire Police" },
+          { text: "Northamptonshire Police" },
+          { text: "Northumbria Police" },
+          { text: "Nottinghamshire Police" },
+          { text: "North Wales Police" },
+          { text: "South Yorkshire Police" },
+          { text: "Staffordshire Police" },
+          { text: "South Wales Police" },
+          { text: "Suffolk Constabulary" },
+          { text: "Surrey Police" },
+          { text: "Thames Valley Police" },
+          { text: "Warwickshire Police" },
+          { text: "West Mercia Police" },
+          { text: "West Midlands Police" },
+          { text: "West Yorkshire Police" },
+          { text: "Wiltshire Police" }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Remove police force"
+      }) }}
+
+      </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}

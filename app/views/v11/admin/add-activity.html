@@ -18,21 +18,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v10/admin/add-activity-confirm" method="post">
+      <form class="form" action="/v11/admin/confirmation-activity-added" method="post">
 
-        {% if data['whichRecord'] == 'dog' %}
-          <span class="govuk-caption-l">Dog record:
-        {% elif data['whichRecord'] == 'owner' %}
-          <span class="govuk-caption-l">Owner record:
-        {% elif data['whichRecord'] == None %}
-          <span class="govuk-caption-l">Dog record:
-        {% endif %}
-
-        {% if data['addActivity'] == 'send' %}
-          something we send</span>
-        {% elif data['addActivity'] == 'receive' %}
-          something we receive</span>
-        {% endif %}
+        <span class="govuk-caption-l">Dog record: something we send</span>
 
         {{ govukInput({
           label: {

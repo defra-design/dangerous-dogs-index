@@ -1,0 +1,54 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="You removed a police force" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../index"
+    },
+    {
+      text: "Admin",
+      href: "index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+        <h1 class="govuk-panel__title">
+          You removed
+          <br>
+          {% if data['police'] %}{{ data['police'] }}{% else %}Metropolitan Police Service{% endif %}
+        </h1>
+      </div>
+
+      <p class=govuk-body">
+        {% if data['police'] %}{{ data['police'] }}{% else %}Metropolitan Police Service{% endif %} is removed from the Index and will not be available for new applications.
+      </p>
+
+      <p class=govuk-body">
+        Exisiting records are unchanged.
+      </p>
+
+
+      <p class=govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="add-or-remove-police">Add or remove a police force</a>
+        </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

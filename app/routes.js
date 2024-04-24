@@ -641,3 +641,70 @@ router.post('/v11/cdo/create/multiple/multi-dog-question', function (req, res) {
   }
 
 })
+
+
+// v11 Add or remove police
+router.post('/v11/admin/police-question', function (req, res) {
+  var addRemovePolice = req.session.data['addRemovePolice']
+  if (addRemovePolice === "remove"){
+    res.redirect('/v11/admin/remove-police')
+  } else {
+    res.redirect('/v11/admin/add-police')
+  }
+
+})
+
+// v11 Add or remove police
+router.post('/v11/admin/police-added-question', function (req, res) {
+  var addPolice = req.session.data['addPolice']
+  if (addPolice === "no"){
+    res.redirect('/v11/admin/index')
+  } else {
+    res.redirect('/v11/admin/confirmation-police-added')
+  }
+
+})
+
+// v11 Confirm police remove
+router.post('/v11/admin/police-removed-question', function (req, res) {
+  var removePolice = req.session.data['removePolice']
+  if (removePolice === "no"){
+    res.redirect('/v11/admin/index')
+  } else {
+    res.redirect('/v11/admin/confirmation-police-removed')
+  }
+
+})
+
+// v10 Add or remove court
+router.post('/v11/admin/court-question', function (req, res) {
+  var addRemoveCourt = req.session.data['addRemoveCourt']
+  if (addRemoveCourt === "remove"){
+    res.redirect('/v11/admin/remove-court')
+  } else {
+    res.redirect('/v11/admin/add-court')
+  }
+
+})
+
+// v10 Add or remove court
+router.post('/v11/admin/court-added-question', function (req, res) {
+  var addCourt = req.session.data['addCourt']
+  if (addCourt === "no"){
+    res.redirect('/v11/admin/index')
+  } else {
+    res.redirect('/v11/admin/confirmation-court-added')
+  }
+
+})
+
+// v10 Add or remove court
+router.post('/v11/admin/court-removed-question', function (req, res) {
+  var removeCourt = req.session.data['removeCourt']
+  if (removeCourt === "no"){
+    res.redirect('/v11/admin/index')
+  } else {
+    res.redirect('/v11/admin/confirmation-court-removed')
+  }
+
+})

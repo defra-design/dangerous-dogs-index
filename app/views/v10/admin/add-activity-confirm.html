@@ -24,6 +24,8 @@
           <span class="govuk-caption-l">Dog record:
         {% elif data['whichRecord'] == 'owner' %}
           <span class="govuk-caption-l">Owner record:
+        {% elif data['whichRecord'] == None %}
+          <span class="govuk-caption-l">Dog record:
         {% endif %}
 
         {% if data['addActivity'] == 'send' %}
