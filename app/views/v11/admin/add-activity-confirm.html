@@ -1,6 +1,6 @@
 {% extends "layouts/defra-admin.html" %}
 
-{% set pageName="Are you sure you want to remove a police force from the Index?" %}
+{% set pageName="Are you sure you want to add an activity to the list?" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "remove-police"
+  href: "add-activity"
 }) }}
 {% endblock %}
 
@@ -18,25 +18,27 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v11/admin/police-removed-question" method="post">
+      <form class="form" action="/v11/admin/activity-added-question" method="post">
+
+        <span class="govuk-caption-l">Dog record: something we send</span>
 
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="remove-police-hint">
+          <fieldset class="govuk-fieldset" aria-describedby="addActivity-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Are you sure you want to remove {% if data['police'] %}{{ data['police'] }}{% else %}Metropolitan Police Service{% endif %} from the Index?
+              Are you sure you want to add ‘{% if data['activityName'] %}{{ data['activityName'] }}{% else %}Police incident report{% endif %}’ to the activity list?
             </h1>
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="removePolice" name="removePolice" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="remove-police">
+              <input class="govuk-radios__input" id="addActivity" name="addActivity" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="addActivity">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="removepolice-2" name="removePolice" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="remove-police-2">
+              <input class="govuk-radios__input" id="addActivity-2" name="addActivity" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="addActivity-2">
                 No
               </label>
             </div>

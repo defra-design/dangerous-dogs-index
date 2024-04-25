@@ -1,6 +1,6 @@
 {% extends "layouts/defra-admin.html" %}
 
-{% set pageName="You added to the list of send activities" %}
+{% set pageName="You removed a police force" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -19,7 +19,7 @@
     },
     {
       text: "Activities",
-      href: "activities-added"
+      href: "Activities"
     }
   ]
 }) }}
@@ -31,16 +31,24 @@
     <div class="govuk-grid-column-two-thirds">
 
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
-        <h1 class="govuk-panel__title govuk-!-margin-bottom-2">
+        <h1 class="govuk-panel__title">
+          You removed
+          <br>
           {% if data['activityName'] %}{{ data['activityName'] }}{% else %}Police incident report{% endif %}
         </h1>
-        <div class="govuk-panel__body govuk-!-padding-left-8 govuk-!-padding-right-8">
-          added to the list of dog record send activities
-        </div>
       </div>
 
       <p class=govuk-body">
-        <a class="govuk-link govuk-link--no-visited-state" href="activities-added">Manage activity lists</a>
+        {% if data['activityName'] %}{{ data['activityName'] }}{% else %}Police incident report{% endif %} is removed from the activity list and will not be available for new applications.
+      </p>
+
+      <p class=govuk-body">
+        Exisiting records are unchanged.
+      </p>
+
+
+      <p class=govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="activities">Manage activity lists</a>
       </p>
 
 

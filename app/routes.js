@@ -708,3 +708,26 @@ router.post('/v11/admin/court-removed-question', function (req, res) {
   }
 
 })
+
+
+// v11 Add or remove activity
+router.post('/v11/admin/activity-added-question', function (req, res) {
+  var addPolice = req.session.data['addPolice']
+  if (addPolice === "no"){
+    res.redirect('/v11/admin/add-activity')
+  } else {
+    res.redirect('/v11/admin/confirmation-activity-added')
+  }
+
+})
+
+// v11 Confirm activity remove
+router.post('/v11/admin/activity-removed-question', function (req, res) {
+  var removeActivity = req.session.data['removeActivity']
+  if (removeActivity === "no"){
+    res.redirect('/v11/admin/activities-added')
+  } else {
+    res.redirect('/v11/admin/confirmation-activity-removed')
+  }
+
+})
