@@ -712,8 +712,8 @@ router.post('/v11/admin/court-removed-question', function (req, res) {
 
 // v11 Add or remove activity
 router.post('/v11/admin/activity-added-question', function (req, res) {
-  var addPolice = req.session.data['addPolice']
-  if (addPolice === "no"){
+  var addActivity = req.session.data['addActivity']
+  if (addActivity === "no"){
     res.redirect('/v11/admin/add-activity')
   } else {
     res.redirect('/v11/admin/confirmation-activity-added')
