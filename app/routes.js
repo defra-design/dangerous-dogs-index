@@ -732,6 +732,17 @@ router.post('/v11/admin/activity-removed-question', function (req, res) {
 
 })
 
+// v12 Create question
+router.post('/v12/cdo/create/create-question', function (req, res) {
+  var lastName = req.session.data['lastName']
+  if (lastName === "Walsh"){
+    res.redirect('/v12/cdo/create/multiple/select-owner')
+  } else {
+    res.redirect('/v12/cdo/create/postcode')
+  }
+
+})
+
 // v12 Change dog owner
 router.post('/v12/cdo/create/owner-question', function (req, res) {
   var transferOwnership = req.session.data['transferOwnership']
