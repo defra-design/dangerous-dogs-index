@@ -1,0 +1,78 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Create new record" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "../../index"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      <form class="form" action="/v12/cdo/create/postcode" method="post">
+
+      {% call govukFieldset({
+        legend: {
+          text: "Owner details",
+          classes: "govuk-fieldset__legend--m",
+          isPageHeading: true
+        }
+      }) %}
+
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        classes: "govuk-!-width-one-half govuk-!-margin-bottom-0",
+        id: "first-name",
+        name: "firstName"
+      }) }}
+
+      {{ govukInput({
+          label: {
+            text: "Last name"
+          },
+          classes: "govuk-!-width-one-half govuk-!-margin-bottom-0",
+          id: "last-name",
+          name: "lastName"
+        }) }}
+
+      {{ govukDateInput({
+        id: "date-of-birth",
+        name: "dateBirth",
+        namePrefix: "dateBirth",
+        fieldset: {
+          legend: {
+            text: "Date of birth (optional)"
+        }
+              },
+        hint: {
+        text: "For example, 27 3 1987"
+        }
+      }) }}
+
+      {% endcall %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

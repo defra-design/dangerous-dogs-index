@@ -731,3 +731,14 @@ router.post('/v11/admin/activity-removed-question', function (req, res) {
   }
 
 })
+
+// v12 Change dog owner
+router.post('/v12/cdo/create/owner-question', function (req, res) {
+  var transferOwnership = req.session.data['transferOwnership']
+  if (transferOwnership === "no"){
+    res.redirect('/v12/cdo/create/next-step')
+  } else {
+    res.redirect('/v12/cdo/create/application-type')
+  }
+
+})
