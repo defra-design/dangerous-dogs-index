@@ -753,3 +753,14 @@ router.post('/v12/cdo/create/owner-question', function (req, res) {
   }
 
 })
+
+// v12 Create question
+router.post('/v12/cdo/create/confirm-question', function (req, res) {
+  var lastName = req.session.data['lastName']
+  if (lastName === "Walsh"){
+    res.redirect('/v12/cdo/create/enforcement-details-2')
+  } else {
+    res.redirect('/v12/cdo/create/enforcement-details')
+  }
+
+})
