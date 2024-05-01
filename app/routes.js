@@ -764,3 +764,14 @@ router.post('/v12/cdo/create/confirm-question', function (req, res) {
   }
 
 })
+
+// v12 Confirm activity remove
+router.post('/v12/admin/activity-removed-question', function (req, res) {
+  var removeActivity = req.session.data['removeActivity']
+  if (removeActivity === "no"){
+    res.redirect('/v12/admin/activities-added')
+  } else {
+    res.redirect('/v12/admin/confirmation-activity-removed')
+  }
+
+})

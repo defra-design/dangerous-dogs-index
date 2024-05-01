@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "confirm-dog-details"
+    href: "application-type"
   }) }}
 {% endblock %}
 
@@ -122,7 +122,8 @@
           },
           classes: "govuk-!-width-two-thirds",
           id: "dog-legislation-officer",
-          name: "dog-legislation-officer"
+          name: "dog-legislation-officer",
+          value: data['dog-legislation-officer']
         }) }}
 
         {{ govukSelect({

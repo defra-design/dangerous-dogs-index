@@ -1,0 +1,252 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="Manage activity lists" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../index"
+    },
+    {
+      text: "Admin",
+      href: "index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      <p class="govuk-body">
+        Add or remove activities to the dog record and owner record activity lists.
+      </p>
+
+      <p class="govuk-body">
+        Removed activities will not be available for new applications. Exisiting records are unchanged.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        Dog records
+      </h2>
+
+      <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Send activies</h2><div class="govuk-summary-card__actions">
+  <a class="govuk-link govuk-link--no-visited-state" href="">Add an activity<span class="govuk-visually-hidden"> to the dog record list of send activities (Send activies)</span></a>
+</div></div>
+
+    <div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-three-quarters">
+            {% if data['activityName'] %}{{ data['activityName'] }}{% else %}Police incident report{% endif %}
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          </dd>
+
+            <dd class="govuk-summary-list__actions">
+
+                <a class="govuk-link govuk-link--no-visited-state" href="remove-activity-confirm">Remove<span class="govuk-visually-hidden"> change of address form (Send activies)</span></a>
+
+            </dd>
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-three-quarters">
+            Change of address form
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          </dd>
+
+            <dd class="govuk-summary-list__actions">
+
+                <a class="govuk-link govuk-link--no-visited-state" href="#">Remove<span class="govuk-visually-hidden"> change of address form (Send activies)</span></a>
+
+            </dd>
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-three-quarters">
+            Death of a dog form
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          </dd>
+
+            <dd class="govuk-summary-list__actions">
+
+                <a class="govuk-link govuk-link--no-visited-state" href="#">Remove<span class="govuk-visually-hidden"> death of a dog form (Send activies)</span></a>
+
+            </dd>
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-three-quarters">
+            Witness statement
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          </dd>
+
+            <dd class="govuk-summary-list__actions">
+
+                <a class="govuk-link govuk-link--no-visited-state" href="#">Remove<span class="govuk-visually-hidden"> witness statement (Send activies)</span></a>
+
+            </dd>
+
+        </div>
+
+
+  </dl></div>
+  </div>
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Receive activities"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Add an activity",
+                classes: "govuk-link--no-visited-state",
+                visuallyHiddenText: "to the dog record list of receive activities"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Police correspondence",
+              classes: "govuk-!-font-weight-regular govuk-!-width-three-quarters"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Remove",
+                  classes: "govuk-link--no-visited-state",
+                  visuallyHiddenText: "police correspondence"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Witness statement request",
+              classes: "govuk-!-font-weight-regular govuk-!-width-three-quarters"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Remove",
+                  classes: "govuk-link--no-visited-state",
+                  visuallyHiddenText: "witness statement request"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Judicial review notice",
+              classes: "govuk-!-font-weight-regular govuk-!-width-three-quarters"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Remove",
+                  classes: "govuk-link--no-visited-state",
+                  visuallyHiddenText: "judicial review notice"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Owner records
+      </h2>
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Send something"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Add an activity",
+                classes: "govuk-link--no-visited-state",
+                visuallyHiddenText: "to the owner record send activities"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Change of address form",
+              classes: "govuk-!-font-weight-regular govuk-!-width-three-quarters"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Remove",
+                  classes: "govuk-link--no-visited-state",
+                  visuallyHiddenText: "change of address form"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Receive activities
+          </h2>
+          <ul class="govuk-summary-card__actions">
+            <li class="govuk-summary-card__action">
+              <a class="govuk-link" href="#">Add an activity<span class="govuk-visually-hidden"> of University of Gloucestershire (University of Gloucestershire)</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
