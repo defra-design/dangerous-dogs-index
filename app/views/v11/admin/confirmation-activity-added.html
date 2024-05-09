@@ -32,12 +32,16 @@
 
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
         <h1 class="govuk-panel__title govuk-!-margin-bottom-2">
+          You added
+          <br>
           {% if data['activityName'] %}{{ data['activityName'] }}{% else %}Police incident report{% endif %}
         </h1>
-        <div class="govuk-panel__body govuk-!-padding-left-8 govuk-!-padding-right-8">
-          added to the list of dog record send activities
-        </div>
       </div>
+
+      <p class=govuk-body">
+        {% if data['activityName'] %}{{ data['activityName'] }}{% else %}Police incident report{% endif %}
+is available in the dog record send activities.
+      </p>
 
       <p class=govuk-body">
         <a class="govuk-link govuk-link--no-visited-state" href="activities-added">Manage activity lists</a>
