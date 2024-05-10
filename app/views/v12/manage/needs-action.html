@@ -1,0 +1,435 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Dog records that need action" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../index"
+    },
+    {
+      text: "Manage CDOs",
+      href: "manage-cdos-all"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+    <h1 class="govuk-heading-l">
+      Needs action
+    </h1>
+
+  </div>
+
+  <div class="govuk-grid-column-one-half defra-text-align-right">
+
+      {{ govukButton({
+        text: "Manage CDOs",
+        href: "manage-cdos-all",
+        classes: "govuk-button--secondary "
+      }) }}
+
+      {{ govukButton({
+        text: "Interim exemptions",
+        href: "manage-interim-exemptions",
+        classes: "govuk-button--secondary"
+      }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-full">
+
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-input--width-10" aria-sort="descending">Deadline</th>
+          <th scope="col" class="govuk-table__header govuk-input--width-10" aria-sort="none">Action</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Index number</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third" aria-sort="none">Owner</th>
+        </tr>
+      </thead>
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="4">
+          30 June 2024
+        </td>
+        <td class="govuk-table__cell">Neutering
+        </td>
+        <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED30975
+        </td>
+        <td class="govuk-table__cell" data-sort-value="Sykes-Kenworthy">
+          Lendell Sykes-Kenworthy
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="4">
+          30 June 2024
+        </td>
+        <td class="govuk-table__cell">Neutering
+        </td>
+        <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED23944</td>
+        <td class="govuk-table__cell" data-sort-value="Campbell">
+         Samuel Campbell
+         </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="4">
+          30 June 2024
+        </td>
+        <td class="govuk-table__cell">Neutering
+        </td>
+        <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED32843</td>
+        <td class="govuk-table__cell" data-sort-value="Dyson">
+         Sharon Dyson
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="4">
+          30 June 2024
+        </td>
+        <td class="govuk-table__cell">Neutering
+        </td>
+        <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED19438</a></td>
+        <td class="govuk-table__cell" data-sort-value="Fairweather">
+          Scott Fairweather
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="4">
+          30 June 2024
+        </td>
+        <td class="govuk-table__cell">Neutering
+        </td>
+        <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED17626</td>
+        <td class="govuk-table__cell" data-sort-value="Odoh">
+          Abraham Odoh
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="4">
+          30 June 2024
+        </td>
+        <td class="govuk-table__cell">Neutering
+        </td>
+        <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED10329</td>
+        <td class="govuk-table__cell" data-sort-value="O'Boyle">
+          Lewis O'Boyle
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="4">
+          30 June 2024
+        </td>
+        <td class="govuk-table__cell">Neutering
+        </td>
+        <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED14392</td>
+        <td class="govuk-table__cell" data-sort-value="Muldoon">
+          Matilda Muldoon
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="4">
+          30 June 2024
+        </td>
+        <td class="govuk-table__cell">Neutering
+        </td>
+        <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED45883</td>
+        <td class="govuk-table__cell" data-sort-value="Bloxham">
+          James Bloxham
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="4">
+          30 June 2024
+        </td>
+        <td class="govuk-table__cell">Neutering
+        </td>
+        <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED26437</td>
+        <td class="govuk-table__cell" data-sort-value="Ilesanmi">
+          Derrick Ilesanmi
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="4">
+          30 June 2024
+        </td>
+        <td class="govuk-table__cell">Neutering
+        </td>
+        <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED28458</td>
+        <td class="govuk-table__cell" data-sort-value="Sims">
+          Anthony Sims
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="4">
+          30 June 2024
+        </td>
+        <td class="govuk-table__cell">Neutering
+        </td>
+        <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED19834</td>
+        <td class="govuk-table__cell" data-sort-value="Oxley">
+         Gareth Oxley
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="4">
+          30 June 2024
+        </td>
+        <td class="govuk-table__cell">Neutering
+        </td>
+        <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED10448</td>
+        <td class="govuk-table__cell" data-sort-value="Hartigan">
+         Dale Hartigan
+       </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="4">
+          30 June 2024
+        </td>
+        <td class="govuk-table__cell">Neutering
+        </td>
+        <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED35843</td>
+        <td class="govuk-table__cell" data-sort-value="Gorman">
+         Zak Gorman
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="4">
+          30 June 2024
+        </td>
+        <td class="govuk-table__cell">Neutering
+        </td>
+        <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED22643</td>
+        <td class="govuk-table__cell" data-sort-value="Hooper">
+          Reece Hooper
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="4">
+          30 June 2024
+        </td>
+        <td class="govuk-table__cell">Neutering
+        </td>
+        <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED10922</td>
+        <td class="govuk-table__cell" data-sort-value="Cropper">
+         Gatlin Cropper
+        </td>
+      </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" data-sort-value="4">
+              30 June 2024
+            </td>
+            <td class="govuk-table__cell">Neutering
+            </td>
+            <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="">ED55480</a></td>
+            <td class="govuk-table__cell" data-sort-value="Cordner">
+              Levi Cordner
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" data-sort-value="4">
+              30 June 2024
+            </td>
+            <td class="govuk-table__cell">Neutering
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED10056</a>
+            </td>
+            <td class="govuk-table__cell" data-sort-value="McLaughlin">
+              Adam McLaughlin
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" data-sort-value="3">
+            31 December 2024
+            </td>
+            <td class="govuk-table__cell">Neutering
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED83385
+            </td>
+            <td class="govuk-table__cell" data-sort-value="Howe">
+              Billy Howe
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" data-sort-value="3">
+              31 December 2024
+            </td>
+            <td class="govuk-table__cell">Neutering
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED19034
+            </td>
+            <td class="govuk-table__cell" data-sort-value="Castro">
+              Quevin Castro
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" data-sort-value="3">
+              31 December 2024
+            </td>
+            <td class="govuk-table__cell">Neutering
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED23954
+            </td>
+            <td class="govuk-table__cell" data-sort-value="Duckworth">
+              Michelle Duckworth
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" data-sort-value="3">
+              31 December 2024
+            </td>
+            <td class="govuk-table__cell">Neutering
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED44810
+            </td>
+            <td class="govuk-table__cell" data-sort-value="Kouhyar">
+            Maziar Kouhyar
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" data-sort-value="3">
+              31 December 2024
+            </td>
+            <td class="govuk-table__cell">Neutering
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED63493
+            </td>
+            <td class="govuk-table__cell" data-sort-value="Woodyard">
+              Alex Woodyard
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" data-sort-value="3">
+              31 December 2024
+            </td>
+            <td class="govuk-table__cell">Neutering
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED69869</td>
+            <td class="govuk-table__cell" data-sort-value="Watson">
+              Rachel Watson
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" data-sort-value="3">
+              31 December 2024
+            </td>
+            <td class="govuk-table__cell">Neutering
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED27598</td>
+            <td class="govuk-table__cell" data-sort-value="Chadwick">
+             Kai Chadwick
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" data-sort-value="1">
+              None
+            </td>
+            <td class="govuk-table__cell">Update address
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED10465</td>
+            <td class="govuk-table__cell" data-sort-value="Batty">
+             Leona Batty
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" data-sort-value="1">
+              None
+            </td>
+            <td class="govuk-table__cell">Update address
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED23344</td>
+            <td class="govuk-table__cell" data-sort-value="Harriott">
+              Mary Harriott
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" data-sort-value="2">
+              None
+            </td>
+            <td class="govuk-table__cell">Dog death
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED59732</td>
+            <td class="govuk-table__cell" data-sort-value="McGregor">
+              Kenny McGregor
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" data-sort-value="2">
+              None
+            </td>
+            <td class="govuk-table__cell">Dog death
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED10492</td>
+            <td class="govuk-table__cell" data-sort-value="Thorley">
+              Sharon Thorley
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" data-sort-value="2">
+              None
+            </td>
+            <td class="govuk-table__cell">Dog death
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED60021</td>
+            <td class="govuk-table__cell" data-sort-value="Staunton">
+              Donal Staunton
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" data-sort-value="2">
+              None
+            </td>
+            <td class="govuk-table__cell">Dog death
+            </td>
+            <td class="govuk-table__cell govuk-link"><a class="govuk-link govuk-link--no-visited-state" href="">ED39920</td>
+            <td class="govuk-table__cell" data-sort-value="Chakrabarti">
+              Virat Chakrabarti
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+{% endblock %}
