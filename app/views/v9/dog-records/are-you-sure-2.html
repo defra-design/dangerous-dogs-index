@@ -1,4 +1,4 @@
-{% extends "layouts/defra.html" %}
+{% extends "layouts/defra-admin.html" %}
 
 {% set pageName="Are you sure you want to delete the dog record?" %}
 
@@ -21,7 +21,6 @@
       <form class="form" action="/v9/dog-records/are-you-sure-question-2" method="post">
 
         {{ govukRadios({
-          classes: "govuk-radios--inline",
           name: "areYouSure",
           fieldset: {
             legend: {

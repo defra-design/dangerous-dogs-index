@@ -1,4 +1,4 @@
-{% extends "layouts/defra.html" %}
+{% extends "layouts/defra-admin.html" %}
 
 {% set pageName="Delete the owner record" %}
 
@@ -28,12 +28,7 @@
           Deleting dog record ED200011 means the owner record Mark Turner will not have a dog linked to it.
         </p>
 
-        <p class="govuk-body">
-          Only keep the owner record if...
-        </p>
-
           {{ govukRadios({
-            classes: "govuk-radios--inline",
             name: "ownerRecordDelete",
             fieldset: {
               legend: {
