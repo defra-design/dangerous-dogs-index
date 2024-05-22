@@ -1,0 +1,58 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="You removed a police force" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../index"
+    },
+    {
+      text: "Admin",
+      href: "index"
+    },
+    {
+      text: "Activities",
+      href: "Activities"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+        <h1 class="govuk-panel__title">
+          You removed
+          <br>
+          {% if data['activityName'] %}{{ data['activityName'] }}{% else %}Police incident report{% endif %}
+        </h1>
+      </div>
+
+      <p class=govuk-body">
+        {% if data['activityName'] %}{{ data['activityName'] }}{% else %}Police incident report{% endif %} is removed from the activity list and will not be available for new applications.
+      </p>
+
+      <p class=govuk-body">
+        Exisiting records are unchanged.
+      </p>
+
+
+      <p class=govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="activities">Manage activity lists</a>
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}
