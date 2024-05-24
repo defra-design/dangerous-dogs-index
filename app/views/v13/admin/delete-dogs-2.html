@@ -19,17 +19,22 @@
 
     <span class="govuk-caption-l">Delete dogs older than 15</span>
     <h1 class="govuk-heading-l">
-      Delete dog records with the statuses In breach, Pre-exempt or Inactive
+      Check dog records before you delete them
     </h1>
 
-    <p class=govuk-body">We also shouldn't delete in breach, pre-exempt or interim without checking individual scenarios first.
+    <p class=govuk-body">Check dog records with these statuses before you delete them:
       </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>In breach</li>
+      <li>Pre-exempt</li>
+      <li>Interim exempt</li>
+    </ul>
 
     <p class=govuk-body">Select all dog records you want to delete.
       </p>
 
       {{ govukButton({
-        text: "Delete dog records"
+        text: "Continue"
       }) }}
   </div>
 

@@ -29,17 +29,23 @@
 
     <span class="govuk-caption-l">Delete dogs older than 15</span>
     <h1 class="govuk-heading-l">
-      Delete dog records with the statuses Exempt or Inactive
+      Select dog records to delete
     </h1>
 
-    <p class=govuk-body">We need to be mindful if deleting anything that isn't inactive, although this will happen in cases where they don't notify us of the death.
+    <p class=govuk-body">Dog records with these statuses have been selected to be deleted:
       </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Exempt</li>
+      <li>Inactive</li>
+      <li>Withdrawn</li>
+      <li>Failed</li>
+    </ul>
 
     <p class=govuk-body">Unselect any dog records you want to keep.
       </p>
 
       {{ govukButton({
-        text: "Delete dog records"
+        text: "Continue"
       }) }}
   </div>
 
@@ -1185,9 +1191,9 @@
 
 
 
-          <td class="govuk-table__cell" data-sort-value="2"
-          ><strong class="govuk-tag govuk-tag--yellow">
-                      Inactive
+          <td class="govuk-table__cell" data-sort-value="3"
+          ><strong class="govuk-tag govuk-tag--pink">
+                      Withdrawn
                     </strong></td>
 
 
@@ -1223,9 +1229,9 @@
 
 
 
-          <td class="govuk-table__cell" data-sort-value="2""
-          ><strong class="govuk-tag govuk-tag--yellow">
-                      Inactive
+          <td class="govuk-table__cell" data-sort-value="3""
+          ><strong class="govuk-tag govuk-tag--pink">
+                      Withdrawn
                     </strong></td>
 
 
@@ -1262,9 +1268,9 @@
 
 
 
-          <td class="govuk-table__cell" data-sort-value="2""
-          ><strong class="govuk-tag govuk-tag--yellow">
-                      Inactive
+          <td class="govuk-table__cell" data-sort-value="4""
+          ><strong class="govuk-tag govuk-tag--purple">
+                      Failed
                     </strong></td>
 
 
