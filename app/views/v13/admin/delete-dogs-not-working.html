@@ -1,0 +1,1405 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Delete dogs older than 15" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      {{ pageName }}
+    </h1>
+
+  </div>
+
+<table>
+  <tr>
+  <td class="govuk-table__cell">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        </label>
+      </div>
+  </td>
+  </tr>
+  </table>
+
+
+    <div class="govuk-grid-column-full">
+
+<table class="govuk-table govuk-!-margin-top-6" data-module="moj-sortable-table">
+
+  <caption class="govuk-table__caption govuk-visually-hidden">Dog records with dogs older than 15</caption>
+
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header govuk-input--width-10" aria-sort="ascending">Status</th>
+
+      <th scope="col" class="govuk-table__header govuk-input--width-10" aria-sort="none">Index number</th>
+
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Date of birth</th>
+
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">CDO issued</th>
+
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-input--width-10">Retain dog</th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="1"
+          ><strong class="govuk-tag govuk-tag--red">
+                      In breach
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="17343"><a class="govuk-link govuk-link--no-visited-state" href="../dog-records/dog-record-ED17343">ED17343</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >14 March 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >30 May 2012</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: right; vertical-align: middle;">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                <label class="govuk-label govuk-checkboxes__label" style="text-align: right; vertical-align: middle;" for="organisation">
+                </label>
+              </div>
+          </td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="1"
+          ><strong class="govuk-tag govuk-tag--red">
+                      In breach
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="17819"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED17819</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >2 April 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >18 January 2020</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="30012"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED30012</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >19 May 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >3 December 2013</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="15391"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED15391</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >7 May 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >6 April 2016</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="19858"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED19858</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >28 April 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >28 November 2010</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="30012"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED30012</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >6 April 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >14 April 2018</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="27342"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED27342</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >3 March 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >10 September 2013</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="17202"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED17202</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >29 March 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >10 August 2018</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="39287"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED39287</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >5 May 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >13 June 2019</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="17882"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED17882</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >17 April 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >12 July 2014</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="20553"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED20553</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >10 May 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >29 October 2015</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="17399"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED17399</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >2 May 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >10 January 2017</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="17435"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED17435</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >18 March 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >9 November 2013</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="19232"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED19232</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >1 April 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >12 March 2010</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="28474"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED28474</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >16 April 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >2 February 2014</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="22756"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED22756</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >18 March 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >23 August 2014</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="39564"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED39564</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >27 April 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >17 September 2015</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="19993"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED19993</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >22 May 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >30 August 2014</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="59344"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED59344</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >30 May 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >19 February 2019</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="30343"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED30343</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >8 March 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >20 March 2013</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="77291"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED77291</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >20 April 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >11 October 2011</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="39346"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED39346</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >9 March 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >14 September 2018</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="30343"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED30343</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >30 May 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >9 March 2011</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="19774"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED19774</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >17 April 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >4 October 2018</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="20448"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED20448</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >19 March 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >17 August 2016</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="33450"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED33450</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >6 April 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >9 July 2019</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="10463"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED10463</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >3 March 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >14 February 2011</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="35226"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED35226</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >22 March 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >30 November 2014</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="22641"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED22641</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >3 April 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >6 September 2013</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--turquoise">
+                      Exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="10922"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED10922</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >29 April 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >16 August 2011</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="3"
+          ><strong class="govuk-tag govuk-tag--yellow">
+                      Inactive
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="10448"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED10448</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >10 April 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >8 August 2017</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="3"
+          ><strong class="govuk-tag govuk-tag--yellow">
+                      Inactive
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="35843"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED35843</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >18 May 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >25 October 2011</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="3"
+          ><strong class="govuk-tag govuk-tag--yellow">
+                      Inactive
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="22640"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED22640</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >4 May 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >14 April 2015</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="3"
+          ><strong class="govuk-tag govuk-tag--yellow">
+                      Inactive
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="30438"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED30438</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >15 March 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >18 July 2014</td>
+
+
+
+
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          >30 May 2012</td>
+
+
+        </tr>
+
+
+  </tbody>
+</table>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date</th>
+          <th scope="col" class="govuk-table__header">Date</th>
+          <th scope="col" class="govuk-table__header">Amount</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste">
+                </label>
+              </div>
+          </td>
+          <td class="govuk-table__cell">£109.80 per week</td>
+          <td class="govuk-table__cell">£109.80 per week</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+          </td>
+          <td class="govuk-table__cell">£109.80 per week</td>
+          <td class="govuk-table__cell">£109.80 per week</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+          </td>
+          <td class="govuk-table__cell">£109.80 per week</td>
+          <td class="govuk-table__cell">£4,282.20</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+  </div>
+
+{% endblock %}

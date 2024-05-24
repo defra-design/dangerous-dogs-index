@@ -1,0 +1,190 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Delete dogs older than 15" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "delete-dogs"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-l">Delete dogs older than 15</span>
+    <h1 class="govuk-heading-l">
+      Delete dog records with the statuses In breach, Pre-exempt or Inactive
+    </h1>
+
+    <p class=govuk-body">We also shouldn't delete in breach, pre-exempt or interim without checking individual scenarios first.
+      </p>
+
+    <p class=govuk-body">Select all dog records you want to delete.
+      </p>
+
+      {{ govukButton({
+        text: "Delete dog records"
+      }) }}
+  </div>
+
+<div class="govuk-grid-column-full">
+
+<table class="govuk-table govuk-!-margin-top-6" data-module="moj-sortable-table">
+  <caption class="govuk-table__caption govuk-visually-hidden">Dog records with dogs older than 15</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Status</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Index number</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Date of birth</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">CDO issued</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Delete dog record</th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="1">
+          <strong class="govuk-tag govuk-tag--red">
+            In breach
+            </strong>
+          </td>
+          <td class="govuk-table__cell" data-sort-value="27342"><a class="govuk-link govuk-link--no-visited-state" href="">ED27342</a></td>
+          <td class="govuk-table__cell">3 March 2009</td>
+          <td class="govuk-table__cell"
+          >10 September 2013</td>
+          <td class="govuk-table__cell defra-table-cell">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="defra-checkbox">
+                <input class="govuk-checkboxes__input" name="retainDog" type="checkbox">
+                <label class="govuk-label govuk-checkboxes__label" for="retain-dog">
+                </label>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-sort-value="1">
+            <strong class="govuk-tag govuk-tag--red">
+              In breach
+              </strong>
+            </td>
+          <td class="govuk-table__cell" data-sort-value="17202"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED87205</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >29 March 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >10 August 2018</td>
+          <td class="govuk-table__cell defra-table-cell">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="defra-checkbox">
+                <input class="govuk-checkboxes__input" name="retainDog" type="checkbox">
+                <label class="govuk-label govuk-checkboxes__label" for="retain-dog">
+                </label>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <td class="govuk-table__cell" data-sort-value="2"
+          ><strong class="govuk-tag govuk-tag--blue">
+                      Pre-exempt
+                    </strong></td>
+
+
+
+
+          <td class="govuk-table__cell" data-sort-value="17882"
+          ><a class="govuk-link govuk-link--no-visited-state" href="">ED17882</a></td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >17 April 2009</td>
+
+
+
+
+          <td class="govuk-table__cell"
+          >12 July 2014</td>
+          <td class="govuk-table__cell defra-table-cell">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="defra-checkbox">
+                <input class="govuk-checkboxes__input" name="retainDog" type="checkbox">
+                <label class="govuk-label govuk-checkboxes__label" for="retain-dog">
+                </label>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-sort-value="2">
+            <strong class="govuk-tag govuk-tag--blue">
+              Pre-exempt
+            </strong></td>
+          <td class="govuk-table__cell" data-sort-value="20553"><a class="govuk-link govuk-link--no-visited-state" href="">ED20553</a></td>
+          <td class="govuk-table__cell">10 May 2009</td>
+          <td class="govuk-table__cell">29 October 2015</td>
+          <td class="govuk-table__cell defra-table-cell">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="defra-checkbox">
+                <input class="govuk-checkboxes__input" name="retainDog" type="checkbox">
+                <label class="govuk-label govuk-checkboxes__label" for="retain-dog">
+                </label>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-sort-value="2">
+            <strong class="govuk-tag govuk-tag--green">
+              Interim exempt
+            </strong></td>
+          <td class="govuk-table__cell" data-sort-value="20553"><a class="govuk-link govuk-link--no-visited-state" href="">ED35227</a></td>
+          <td class="govuk-table__cell">8 March 2009</td>
+          <td class="govuk-table__cell">12 June 2011</td>
+          <td class="govuk-table__cell defra-table-cell">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="defra-checkbox">
+                <input class="govuk-checkboxes__input" name="retainDog" type="checkbox">
+                <label class="govuk-label govuk-checkboxes__label" for="retain-dog">
+                </label>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+  </tbody>
+</table>
+
+    </div>
+  </div>
+
+{% endblock %}

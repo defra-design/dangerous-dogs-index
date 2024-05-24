@@ -124,7 +124,7 @@
   }
 
   .defra-text-align-right {
-    text-align: right;
+    text-align: right !important;
   }
 
   .defra-align-right {
@@ -258,4 +258,15 @@
 
   .defra-background {
     background-color: white !important;
+  }
+
+  .defra-checkbox {
+    position: relative !important;
+    margin: 3px 10px 0 0;
+    float: right;
+  }
+
+  .defra-table-cell {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
