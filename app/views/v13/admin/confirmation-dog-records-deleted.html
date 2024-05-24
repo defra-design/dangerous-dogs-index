@@ -1,0 +1,43 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="You added to the list of send activities" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../index"
+    },
+    {
+      text: "Admin",
+      href: "index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+        <h1 class="govuk-panel__title govuk-!-margin-bottom-2">
+          49 dog records deleted
+        </h1>
+        <div class="govuk-panel__body govuk-!-padding-left-8 govuk-!-padding-right-8">
+        </div>
+      </div>
+
+      <p class=govuk-body">Raise a support ticket if you need to recover a deleted dog record.
+        </p>
+
+    </div>
+  </div>
+
+{% endblock %}

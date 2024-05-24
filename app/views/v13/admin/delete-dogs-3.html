@@ -1,0 +1,41 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Delete dogs older than 15" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "delete-dogs-2"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/v13/admin/confirmation-dog-records-deleted" method="post">
+
+    <span class="govuk-caption-l">Delete dogs older than 15</span>
+    <h1 class="govuk-heading-l">
+      Delete dog records
+    </h1>
+
+    <p class=govuk-body">Delete 49 dog records.
+      </p>
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Delete dog records"
+      }) }}
+
+      <a class="govuk-link govuk-link--no-visited-state" href="index">Cancel</a>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
