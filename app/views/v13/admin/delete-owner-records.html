@@ -1,0 +1,141 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Delete dog owner records without a dog" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../index"
+    },
+    {
+      text: "Admin",
+      href: "index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/v13/admin/delete-dog-owners" method="post">
+
+    <span class="govuk-caption-l">Delete dog owner records without a dog</span>
+    <h1 class="govuk-heading-l">
+      Select dog owner records to delete
+    </h1>
+
+    <p class=govuk-body">Dog owner records with no dogs linked to them have been selected to be deleted.
+      </p>
+
+    <p class=govuk-body">Unselect any dog owner records you want to keep.
+      </p>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+  </div>
+
+<div class="govuk-grid-column-full">
+
+<table class="govuk-table" data-module="moj-sortable-table">
+  <caption class="govuk-table__caption govuk-visually-hidden">Dog records with dogs older than 15</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Date of birth</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Address</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric defra-input--width-6" aria-sort="none">Delete dog owner record</th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-sort-value="Sykes-Kenworthy">Lendell Sykes-Kenworthy</td>
+          <td class="govuk-table__cell">14 March 1995</td>
+          <td class="govuk-table__cell">33 Cowbridge Crescent, Malmesbury SN16 9LY</td>
+          <td class="govuk-table__cell defra-table-cell">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="defra-checkbox">
+                <input class="govuk-checkboxes__input" name="retainDog" type="checkbox" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="retain-dog">
+                </label>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-sort-value="Campbell">Samuel Campbell</td>
+          <td class="govuk-table__cell">2 April 1980</td>
+          <td class="govuk-table__cell">54 Fallowfield, Runcorn WA7 2NG</td>
+          <td class="govuk-table__cell defra-table-cell">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="defra-checkbox">
+                <input class="govuk-checkboxes__input" name="retainDog" type="checkbox" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="retain-dog">
+                </label>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-sort-value="Dyson">Sharon Dyson</td>
+          <td class="govuk-table__cell">4 July 1948</td>
+          <td class="govuk-table__cell">21 Skelwith Road, Middlesbrough TS3 7PT</td>
+          <td class="govuk-table__cell defra-table-cell">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="defra-checkbox">
+                <input class="govuk-checkboxes__input" name="retainDog" type="checkbox" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="retain-dog">
+                </label>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-sort-value="Dastardly">Dick Dastardly</td>
+          <td class="govuk-table__cell">19 May 1968</td>
+          <td class="govuk-table__cell">10 Wacky Close, Muttley HB2 FLY</td>
+          <td class="govuk-table__cell defra-table-cell">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="defra-checkbox">
+                <input class="govuk-checkboxes__input" name="retainDog" type="checkbox" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="retain-dog">
+                </label>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-sort-value="Fairweather">Scott Fairweather</td>
+          <td class="govuk-table__cell">7 August 2000</td>
+          <td class="govuk-table__cell">11 Barker Walk, London SW16 1AT</td>
+          <td class="govuk-table__cell defra-table-cell">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="defra-checkbox">
+                <input class="govuk-checkboxes__input" name="retainDog" type="checkbox" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="retain-dog">
+                </label>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+  </tbody>
+</table>
+
+    </div>
+  </div>
+
+{% endblock %}
