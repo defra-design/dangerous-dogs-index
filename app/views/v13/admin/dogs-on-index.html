@@ -1,0 +1,276 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Dogs on the Index" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../index"
+    },
+    {
+      text: "Admin",
+      href: "index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-5">
+      {{ pageName }}
+    </h1>
+
+    <p class=govuk-body">Figures accurate at 12am today, {{ "today" | govukDate }}.
+      </p>
+
+    <table class="govuk-table govuk-!-width-one-third govuk-!-margin-top-7">
+      <caption class="govuk-table__caption govuk-table__caption--m">Total number of dogs</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Number</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            {{ govukTag({
+              text: "Interim Exempt",
+              classes: "govuk-tag--green"
+            }) }}
+          </th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">55</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+          {{ govukTag({
+            text: "Pre-Exempt"
+          }) }}
+          </th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">234</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            {{ govukTag({
+              text: "Failed",
+              classes: "govuk-tag--purple"
+            }) }}</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">34</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            {{ govukTag({
+              text: "Exempt",
+              classes: "govuk-tag--turquoise"
+            }) }}</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">57,110</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            {{ govukTag({
+              text: "In-Breach",
+              classes: "govuk-tag--red"
+            }) }}</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">334</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            {{ govukTag({
+              text: "Withdrawn",
+              classes: "govuk-tag--pink"
+            }) }}</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">26</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            {{ govukTag({
+              text: "Inactive",
+              classes: "govuk-tag--yellow"
+            }) }}</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">567</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            Total
+            </th>
+          <td class="govuk-table__cell govuk-table__cell--numeric govuk-!-font-weight-bold">58,360</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <details class="govuk-details govuk-!-width-two-thirds">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          What the dog statuses mean
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">Describe the meaning of each of the statuses:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Interim Exempt</li>
+          <li>Pre-Exempt</li>
+          <li>Failed</li>
+          <li>Exempt</li>
+          <li>In-Breach</li>
+          <li>Withdrawn</li>
+          <li>Inactive</li>
+        </ul>
+      </div>
+    </details>
+
+    {{ govukTable({
+      caption: "Total number of dogs by country",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: true,
+      classes: "govuk-!-width-two-thirds govuk-!-margin-top-7",
+      head: [
+        {
+          text: "Breed"
+        },
+        {
+          text: "England",
+          format: "numeric"
+        },
+        {
+          text: "Wales",
+          format: "numeric"
+        },
+        {
+          text: "Scotland",
+          format: "numeric"
+        },
+        {
+          text: "Total",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "XL Bully"
+          },
+          {
+            text: "55,000",
+            format: "numeric"
+          },
+          {
+            text: "1,000",
+            format: "numeric"
+          },
+          {
+            text: "Unknown",
+            format: "numeric"
+          },
+          {
+            text: "56,000",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Pit Bull Terrier"
+          },
+          {
+            text: "2,500",
+            format: "numeric"
+          },
+          {
+            text: "100",
+            format: "numeric"
+          },
+          {
+            text: "50",
+            format: "numeric"
+          },
+          {
+            text: "2,650",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Japanese Tosa"
+          },
+          {
+            text: "2",
+            format: "numeric"
+          },
+          {
+            text: "0",
+            format: "numeric"
+          },
+          {
+            text: "0",
+            format: "numeric"
+          },
+          {
+            text: "2",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Dogo Argentino"
+          },
+          {
+            text: "1",
+            format: "numeric"
+          },
+          {
+            text: "0",
+            format: "numeric"
+          },
+          {
+            text: "0",
+            format: "numeric"
+          },
+          {
+            text: "1",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Fila Brasileiro"
+          },
+          {
+            text: "1",
+            format: "numeric"
+          },
+          {
+            text: "0",
+            format: "numeric"
+          },
+          {
+            text: "1",
+            format: "numeric"
+          },
+          {
+            text: "2",
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
