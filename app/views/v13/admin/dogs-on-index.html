@@ -32,8 +32,12 @@
     <p class=govuk-body">Figures accurate at 12am today, {{ "today" | govukDate }}.
       </p>
 
-    <table class="govuk-table govuk-!-width-one-third govuk-!-margin-top-7">
-      <caption class="govuk-table__caption govuk-table__caption--m">Total number of dogs by status</caption>
+    <h2 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-3" aria-hidden="true">
+      Total number of dogs by status
+    </h2>
+
+    <table class="govuk-table govuk-!-width-one-third">
+      <caption class="govuk-table__caption govuk-visually-hidden">Total number of dogs by status</caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header">Status</th>
@@ -44,7 +48,7 @@
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">
             {{ govukTag({
-              text: "Interim Exempt",
+              text: "Interim exempt",
               classes: "govuk-tag--green"
             }) }}
           </th>
@@ -54,7 +58,7 @@
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">
           {{ govukTag({
-            text: "Pre-Exempt"
+            text: "Pre-exempt"
           }) }}
           </th>
           <td class="govuk-table__cell govuk-table__cell--numeric">234</td>
@@ -81,7 +85,7 @@
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">
             {{ govukTag({
-              text: "In-Breach",
+              text: "In-breach",
               classes: "govuk-tag--red"
             }) }}</th>
           <td class="govuk-table__cell govuk-table__cell--numeric">334</td>
@@ -124,11 +128,11 @@
       <div class="govuk-details__text">
         <p class="govuk-body">Describe the meaning of each of the statuses:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>Interim Exempt</li>
-          <li>Pre-Exempt</li>
+          <li>Interim exempt</li>
+          <li>Pre-exempt</li>
           <li>Failed</li>
           <li>Exempt</li>
-          <li>In-Breach</li>
+          <li>In-breach</li>
           <li>Withdrawn</li>
           <li>Inactive</li>
         </ul>
