@@ -29,7 +29,7 @@
       {{ pageName }}
     </h1>
 
-    <p class=govuk-body">Figures accurate at 12am today, {{ "today" | govukDate }}.
+    <p class=govuk-body">Data accurate at 12am, {{ "today" | govukDate }} (today).
       </p>
 
     <h2 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-3" aria-hidden="true">
@@ -126,15 +126,14 @@
         </span>
       </summary>
       <div class="govuk-details__text">
-        <p class="govuk-body">Describe the meaning of each of the statuses:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>Interim exempt</li>
-          <li>Pre-exempt</li>
-          <li>Failed</li>
-          <li>Exempt</li>
-          <li>In-breach</li>
-          <li>Withdrawn</li>
-          <li>Inactive</li>
+          <li><span class="govuk-!-font-weight-bold">Interim exempt</span> means a dog has been accepted onto the interim exemption scheme by the DLO and released back to the owner while they await their court date.</li>
+          <li>Pre-exempt means dogs that have received a CDO but not yet granted an exemption and the deadline has not yet passed.</li>
+          <li>Failed means dogs that have been issued a CDO but the expiry date has passed without a certificate of exemption being issued.</li>
+          <li>Exempt means dogs have been issued a certificate of exemption and are compliant with the conditions of the exemption.</li>
+          <li>In-breach means dogs that are not compliant with the conditions of the exemption. The insurance renewal date may be in the past or the police may have notified the Index team of a breach.</li>
+          <li>Withdrawn means that we have withdrawn the dog's application from the index because the dog is no longer considered to be a XL Bully.</li>
+          <li>Inactive means dogs that are dead, exported or the police have notified the index team that the owner or dog is untraceable.</li>
         </ul>
       </div>
     </details>
