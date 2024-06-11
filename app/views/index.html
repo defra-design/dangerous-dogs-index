@@ -18,9 +18,33 @@
     {{ govukAccordion({
       id: "accordion-default",
       items: [
+
       {
       heading: {
-        text: "Version 13 – Current"
+        text: "Version 14 – Current"
+      },
+      content: {
+        html:
+        '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Records in need of action
+        </h3>
+
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/manage/needs-action-1">Needs action</a>
+            <span class="govuk-body-s defra-secondary-text"> – simple list</span>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/manage/needs-action-2">Needs action</a>
+            <span class="govuk-body-s defra-secondary-text"> – Mark items received</span>
+          </li>
+        </ul>'
+        }
+      },
+
+      {
+      heading: {
+        text: "Version 13"
       },
       content: {
         html:
