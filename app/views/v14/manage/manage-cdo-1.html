@@ -113,7 +113,7 @@
         </li>
         <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-          <div>Record microchipping and neutering</div>
+          <div>Record microchip and neutering</div>
         </div>
         <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="cdo-tasks-2-3-status">
           Cannot start yet
@@ -140,9 +140,11 @@
 
       </ul>
 
-      <button class="govuk-button" data-module="govuk-button">
-        CDO application complete
-      </button>
+      {{ govukButton({
+        name: "nextPage",
+        value: "error",
+        text: "CDO application complete"
+      }) }}
 
       </form>
 

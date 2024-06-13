@@ -780,9 +780,24 @@ router.post('/v12/admin/activity-removed-question', function (req, res) {
 router.post('/v14/manage/next-page', function (req, res) {
   var nextPage = req.session.data['nextPage']
   if (nextPage == "owner-record"){
-    res.redirect('/v14/owner-records/owner-record-ED30228')
+  res.redirect('/v14/owner-records/owner-record-ED30228')
+  } if (nextPage == "error"){
+    res.redirect('/v14/manage/manage-cdo-error')
   } else {
     res.redirect('/v14/dog-records/dog-record-ED30228')
+  }
+
+})
+
+// v11 Owner's question
+router.post('/v11/cdo/create/owner-surname-question', function (req, res) {
+  var lastName = req.session.data['lastName']
+  if (lastName == "NoakesNoakes"){
+  res.redirect('/v11/cdo/create/postcode')
+  } if (lastName == "de Vilde Vil"){
+    res.redirect('/v11/cdo/create/single/confirm-address')
+  } else {
+    res.redirect('/v11/cdo/create/multiple/select-owner')
   }
 
 })

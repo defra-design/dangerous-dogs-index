@@ -48,7 +48,7 @@
   <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
 
     <span class="govuk-body">
-      <a class="govuk-link govuk-link--no-visited-state" href="../manage/manage-cdo-1">
+      <a class="govuk-link govuk-link--no-visited-state" href="../manage/manage-cdo-2">
         Manage CDO application
       </a>
     </span>
@@ -91,7 +91,8 @@
             text: "Date of birth"
           },
           value: {
-            text: "13 October 1994"
+            classes: "defra-secondary-text",
+            text: "Not entered"
           }
         },
         {
@@ -99,7 +100,7 @@
             text: "Address"
           },
           value: {
-            html: "12 Primrose Road<br>Southampton<br>SO16 3GP"
+            html: "122 Common Road<br>Bexhill-on-Sea<br>TN39 4JB"
           },
           actions: {
           classes: "defra-text-align-left",
@@ -117,7 +118,8 @@
             text: "Email"
           },
           value: {
-            text: "lwoolley4@hotmail.com"
+            classes: "defra-secondary-text",
+            text: "Not entered"
           }
         },
         {
@@ -125,7 +127,8 @@
             text: "Telephone number 1"
           },
           value: {
-            text: data['telephoneNumber1'] or "07877 929525"
+            classes: "defra-secondary-text",
+            text: "Not entered"
           }
         },
         {
@@ -175,9 +178,15 @@
                     <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
                      	Odie
                     </td>
-                    <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0">
-                      {{ data['microchipNumber'] }}
-                    </td>
+                    {% if data['microchipNumber'] %}
+                      <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                        {{ data['microchipNumber'] }}
+                      </td>
+                    {% elif data['lastName'] == None %}
+                      <td class="govuk-table__header--numeric defra-secondary-text govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                        Not entered
+                      </td>
+                    {% endif %}
                   </tr>
               </tbody>
             </table>
