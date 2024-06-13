@@ -1,0 +1,39 @@
+{% extends "layouts/defra.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "manage-cdos"
+    },
+    {
+      text: "Manage CDOs",
+      href: "manage-cdos-all"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleHtml: "Dog ED30228<br>CDO completed",
+        html: "Status is now<br><strong>Exempt</strong>"
+      }) }}
+
+      <p class="govuk-body govuk-!-margin-top-6">
+        <a class="govuk-link govuk-link--no-visited-state" href="#">View dog ED30228 record</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

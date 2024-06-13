@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Send form 2" %}
+{% set pageName="Record application fee payment" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -18,31 +18,26 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v14/manage/manage-cdo-2" method="post">
+      <form class="form" action="/v14/manage/manage-cdo-3" method="post">
 
         <span class="govuk-caption-m">Dog ED30228</span>
 
-        {{ govukCheckboxes({
-          name: "waste",
+        {{ govukDateInput({
+          id: "record-payment-date",
+          namePrefix: "record-payment-date",
           fieldset: {
             legend: {
-              text: "Send Form 2",
+              text: "Record application fee payment",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-5"
+              classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
-            text: "Send the dog owner the Form 2 and record here you’ve sent it."
-          },
-          items: [
-            {
-              value: "Form 2 sent",
-              text: "Form 2 sent"
-            }
-          ]
+            text: "Record the date the application fee payment was taken."
+          }
         }) }}
 
-      <button class="govuk-button" data-module="govuk-button" onclick="updateLocalStorage('task3Finished')">
+      <button class="govuk-button" data-module="govuk-button" onclick="updateLocalStorage('task4Finished')">
         Continue
       </button>
 

@@ -1,0 +1,49 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Record insurance renewal date" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v14/manage/manage-cdo-2" method="post">
+
+      <span class="govuk-caption-m">Dog ED30228</span>
+
+      {{ govukDateInput({
+        id: "insurance-renewal-date",
+        namePrefix: "insurance-renewal-date",
+        fieldset: {
+          legend: {
+            text: "Record insurance renewal date",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "You’ll find this on the Dogs Trust Certificate of Membership."
+        }
+      }) }}
+
+      <button class="govuk-button" data-module="govuk-button" onclick="updateLocalStorage('task2Finished')">
+        Continue
+      </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

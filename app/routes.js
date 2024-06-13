@@ -775,3 +775,14 @@ router.post('/v12/admin/activity-removed-question', function (req, res) {
   }
 
 })
+
+// v14 View dog and owner record
+router.post('/v14/manage/next-page', function (req, res) {
+  var nextPage = req.session.data['nextPage']
+  if (nextPage == "owner-record"){
+    res.redirect('/v14/owner-records/owner-record-ED30228')
+  } else {
+    res.redirect('/v14/dog-records/dog-record-ED30228')
+  }
+
+})
