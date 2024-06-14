@@ -52,7 +52,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <form class="form" action="/v14/manage/next-page" method="post">
+      <form class="form" action="/v14/manage/next-page-2" method="post">
 
       <div class="moj-page-header-actions govuk-!-margin-bottom-2">
 
@@ -96,7 +96,7 @@
         </div>
         <div class="govuk-task-list__status" id="task-1-status">
           <strong class="govuk-tag govuk-tag--blue">
-            Incomplete
+            Not yet started
           </strong>
         </div>
         </li>
@@ -107,7 +107,7 @@
         </div>
         <div class="govuk-task-list__status" id="task-2-status">
           <strong class="govuk-tag govuk-tag--blue">
-            Incomplete
+            Not yet started
           </strong>
         </div>
         </li>
@@ -118,7 +118,7 @@
         </div>
         <div class="govuk-task-list__status" id="task-3-status">
           <strong class="govuk-tag govuk-tag--blue">
-            Incomplete
+            Not yet started
           </strong>
         </div>
         </li>
@@ -129,7 +129,7 @@
         </div>
         <div class="govuk-task-list__status" id="task-4-status">
           <strong class="govuk-tag govuk-tag--blue">
-            Incomplete
+            Not yet started
           </strong>
         </div>
         </li>
@@ -140,7 +140,7 @@
         </div>
         <div class="govuk-task-list__status" id="task-5-status">
           <strong class="govuk-tag govuk-tag--blue">
-            Incomplete
+            Not yet started
           </strong>
         </div>
         </li>
@@ -156,9 +156,11 @@
 
       </ul>
 
-      <button class="govuk-button" data-module="govuk-button">
-        CDO application complete
-      </button>
+      {{ govukButton({
+        name: "nextPage",
+        value: "error",
+        text: "CDO application complete"
+      }) }}
 
       </form>
 
