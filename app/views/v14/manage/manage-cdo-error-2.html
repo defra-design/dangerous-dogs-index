@@ -93,11 +93,16 @@
       text: "Pre-exempt"
     })}}
 
-    <form class="form" action="/v9/cdo/manage/cdo-completed" method="post">
-
-      <h2 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-2">
-        Manage a CDO application
-      </h2>
+    <div class="govuk-form-group govuk-form-group--error govuk-!-margin-top-7" id="error">
+      <div class="govuk-fieldset" aria-describedby="nationality-hint nationality-error">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+            Manage CDO application
+          </h2>
+        </legend>
+        <p id="nationality-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Complete all the steps of the CDO application before you continue
+        </p>
 
       <ul class="govuk-task-list">
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
@@ -165,6 +170,9 @@
         </li>
 
       </ul>
+
+      </div>
+    </div>
 
       <button class="govuk-button" data-module="govuk-button">
         CDO application complete

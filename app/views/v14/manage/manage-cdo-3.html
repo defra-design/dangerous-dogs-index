@@ -143,9 +143,11 @@
 
       </ul>
 
-      <button class="govuk-button" data-module="govuk-button">
-        CDO application complete
-      </button>
+      {{ govukButton({
+        name: "nextPage",
+        value: "complete",
+        text: "CDO application complete"
+      }) }}
 
       </form>
 
