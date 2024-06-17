@@ -37,8 +37,8 @@
         </div>
       </div>
     </div>
-
   </div>
+  
   {{govukTag({
     text: "Pre-exempt",
     classes: "govuk-!-margin-bottom-6 govuk-!-margin-right-3"
@@ -237,10 +237,20 @@
           },
           {
             key: {
-              text: "Certificate issued"
+              text: "First certificate issued"
             },
             value: {
               text: "14 June 2024"
+            },
+            actions: {
+            classes: "defra-text-align-left",
+             items: [
+               {
+                 href: "certificate",
+                 classes: "govuk-link--no-visited-state",
+                 text: "Reissue certificate"
+               }
+             ]
            }
           },
           {

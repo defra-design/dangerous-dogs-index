@@ -56,7 +56,7 @@
         titleText: "There is a problem",
         errorList: [
           {
-            text: "Complete all the steps of the CDO application before you continue",
+            text: "Complete all the CDO application steps before you issue the certificate",
             href: "#error"
           }
         ]
@@ -101,7 +101,7 @@
           </h2>
         </legend>
         <p id="nationality-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> Complete all the steps of the CDO application before you continue
+          <span class="govuk-visually-hidden">Error:</span> Complete all the CDO application steps before you issue the certificate
         </p>
 
       <ul class="govuk-task-list">
@@ -121,17 +121,6 @@
           <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="insurance-date" aria-describedby="cdo-tasks-2-status" onclick="updateLocalStorage('task2Started')">Record insurance renewal date</a>
         </div>
         <div class="govuk-task-list__status" id="task-2-status">
-          <strong class="govuk-tag govuk-tag--blue">
-            Not yet started
-          </strong>
-        </div>
-        </li>
-
-        <li class="govuk-task-list__item govuk-task-list__item--with-link">
-        <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="form-2" aria-describedby="cdo-tasks-3-status" onclick="updateLocalStorage('task3Started')">Send Form 2</a>
-        </div>
-        <div class="govuk-task-list__status" id="task-3-status">
           <strong class="govuk-tag govuk-tag--blue">
             Not yet started
           </strong>
@@ -160,12 +149,14 @@
         </div>
         </li>
 
-        <li class="govuk-task-list__item">
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
         <div class="govuk-task-list__name-and-hint">
-          <div>Issue certificate</div>
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="form-2" aria-describedby="cdo-tasks-3-status" onclick="updateLocalStorage('task3Started')">Send Form 2</a>
         </div>
-        <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="cdo-tasks-3-1-status">
-          Cannot start yet
+        <div class="govuk-task-list__status" id="task-3-status">
+          <strong class="govuk-tag govuk-tag--blue">
+            Not yet started
+          </strong>
         </div>
         </li>
 
@@ -175,7 +166,7 @@
     </div>
 
       <button class="govuk-button" data-module="govuk-button">
-        CDO application complete
+        Issue certificate
       </button>
 
       </form>

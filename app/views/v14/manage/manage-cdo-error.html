@@ -51,7 +51,7 @@
         titleText: "There is a problem",
         errorList: [
           {
-            text: "Complete all the steps of the CDO application before you continue",
+            text: "Complete all the CDO application steps before you issue the certificate",
             href: "#error"
           }
         ]
@@ -96,7 +96,7 @@
             </h2>
           </legend>
           <p id="nationality-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Complete all the steps of the CDO application before you continue
+            <span class="govuk-visually-hidden">Error:</span> Complete all the CDO application steps before you issue the certificate
           </p>
 
           <ul class="govuk-task-list">
@@ -122,14 +122,6 @@
 
             <li class="govuk-task-list__item">
             <div class="govuk-task-list__name-and-hint">
-              <div>Send Form 2</div>
-            </div>
-            <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="cdo-tasks-2-2-status">
-              Cannot start yet
-            </div>
-            </li>
-            <li class="govuk-task-list__item">
-            <div class="govuk-task-list__name-and-hint">
               <div>Record microchip and neutering</div>
             </div>
             <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="cdo-tasks-2-3-status">
@@ -148,9 +140,9 @@
 
             <li class="govuk-task-list__item">
             <div class="govuk-task-list__name-and-hint">
-              <div>Issue certificate</div>
+              <div>Send Form 2</div>
             </div>
-            <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="cdo-tasks-3-1-status">
+            <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="cdo-tasks-2-2-status">
               Cannot start yet
             </div>
             </li>
@@ -163,7 +155,7 @@
       {{ govukButton({
         name: "nextPage",
         value: "error",
-        text: "CDO application complete"
+        text: "Issue certificate"
       }) }}
 
       </form>

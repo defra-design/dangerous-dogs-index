@@ -70,13 +70,17 @@
 
           </div>
         </div>
-
       </div>
-
     </div>
+
     {{govukTag({
-      text: "Pre-exempt"
+      text: "Pre-exempt",
+      classes: "govuk-!-margin-right-3"
     })}}
+
+    <span class="govuk-body defra-secondary-text">
+      CDO expiry: 19 April 2024
+    </span>
 
       <h2 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-2">
         Manage CDO application
@@ -105,14 +109,6 @@
 
         <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-          <div>Send Form 2</div>
-        </div>
-        <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="cdo-tasks-2-2-status">
-          Cannot start yet
-        </div>
-        </li>
-        <li class="govuk-task-list__item">
-        <div class="govuk-task-list__name-and-hint">
           <div>Record microchip and neutering</div>
         </div>
         <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="cdo-tasks-2-3-status">
@@ -131,9 +127,9 @@
 
         <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-          <div>Issue certificate</div>
+          <div>Send Form 2</div>
         </div>
-        <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="cdo-tasks-3-1-status">
+        <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="cdo-tasks-2-2-status">
           Cannot start yet
         </div>
         </li>
@@ -143,7 +139,7 @@
       {{ govukButton({
         name: "nextPage",
         value: "error",
-        text: "CDO application complete"
+        text: "Issue certificate"
       }) }}
 
       </form>

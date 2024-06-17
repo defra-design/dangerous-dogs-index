@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Record insurance renewal date" %}
+{% set pageName="Record insurance details" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -27,13 +27,13 @@
         namePrefix: "insurance-renewal-date",
         fieldset: {
           legend: {
-            text: "Record insurance renewal date",
+            text: "Record insurance details",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
         },
         hint: {
-          text: "You’ll find this on the Dogs Trust Certificate of Membership."
+          text: "Something about name and date"
         }
       }) }}
 
