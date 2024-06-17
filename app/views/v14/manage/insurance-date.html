@@ -21,19 +21,33 @@
       <form class="form" action="/v14/manage/manage-cdo-2" method="post">
 
       <span class="govuk-caption-m">Dog ED30228</span>
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      <div class="govuk-!-width-one-third">
+      {{ xGovukAutocomplete({
+        id: "dog-insurer",
+        name: "dog-insurer",
+        allowEmpty: false,
+        label: {
+          classes: "govuk-label",
+          text: "Who is the dog insurer?"
+        },
+        items: [
+          { text: "Dogs Trust" }
+        ]
+      }) }}
+      </div>
 
       {{ govukDateInput({
         id: "insurance-renewal-date",
         namePrefix: "insurance-renewal-date",
         fieldset: {
           legend: {
-            text: "Record insurance details",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
+            text: "What is the insurance renewal date?",
+            classes: "govuk-fieldset__legend"
           }
-        },
-        hint: {
-          text: "Something about name and date"
         }
       }) }}
 
