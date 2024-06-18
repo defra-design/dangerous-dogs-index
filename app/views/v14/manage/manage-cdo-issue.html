@@ -33,11 +33,6 @@
     }
 
     // Function calls
-    updateStatus('task1Finished', 'task-1-status', 'task1Started')
-    updateStatus('task2Finished', 'task-2-status', 'task2Started')
-    updateStatus('task3Finished', 'task-3-status', 'task3Started')
-    updateStatus('task4Finished', 'task-4-status', 'task4Started')
-    updateStatus('task5Finished', 'task-5-status', 'task5Started')
     updateStatus('task6Finished', 'task-6-status', 'task6Started')
   }
   </script>
@@ -52,7 +47,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <form class="form" action="/v14/manage/next-page-2" method="post">
+      <form class="form" action="/v14/manage/next-page-3" method="post">
 
       <div class="moj-page-header-actions govuk-!-margin-bottom-2">
 
@@ -87,80 +82,80 @@
       CDO expires on 19 July 2024
     </span>
 
-    <p class="govuk-body govuk-!-margin-top-7">
-      Complete all application tasks then issue the certificate.
-      </p>
+    <form class="form" action="/v14/manage/cdo-completed" method="post">
 
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
-        Manage CDO application
-      </h2>
+      <p class="govuk-body govuk-!-margin-top-7">
+        Complete all application tasks then issue the certificate.
+        </p>
+
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+          Manage CDO application
+        </h2>
 
       <ul class="govuk-task-list">
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="application-pack-sent" aria-describedby="task-1-status" onclick="updateLocalStorage('task1Started')">Send application pack</a>
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="application-pack" aria-describedby="task-1-status">Send application pack</a>
         </div>
         <div class="govuk-task-list__status" id="task-1-status">
-          <strong class="govuk-tag govuk-tag--blue">
-            Not yet started
-          </strong>
+          Completed
         </div>
         </li>
 
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="insurance-date" aria-describedby="cdo-tasks-2-status" onclick="updateLocalStorage('task2Started')">Record insurance details</a>
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="insurance-date" aria-describedby="cdo-tasks-2-status">Record insurance renewal date</a>
         </div>
         <div class="govuk-task-list__status" id="task-2-status">
-          <strong class="govuk-tag govuk-tag--blue">
-            Not yet started
-          </strong>
+          Completed
         </div>
         </li>
 
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="microchip-number" aria-describedby="cdo-tasks-3-status" onclick="updateLocalStorage('task3Started')">Record microchip number</a>
-        </div>
-        <div class="govuk-task-list__status" id="task-3-status">
-          <strong class="govuk-tag govuk-tag--blue">
-            Not yet started
-          </strong>
-        </div>
-        </li>
-
-        <li class="govuk-task-list__item govuk-task-list__item--with-link">
-        <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="record-payment" aria-describedby="cdo-tasks-4-status" onclick="updateLocalStorage('task4Started')">Record application fee payment</a>
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="microchip-number" aria-describedby="cdo-tasks-4-status">Record microchip number</a>
         </div>
         <div class="govuk-task-list__status" id="task-4-status">
-          <strong class="govuk-tag govuk-tag--blue">
-            Not yet started
-          </strong>
+          Completed
         </div>
         </li>
 
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="form-2" aria-describedby="cdo-tasks-5-status" onclick="updateLocalStorage('task5Started')">Send Form 2</a>
+            <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="record-payment" aria-describedby="cdo-tasks-5-status">Record application fee payment</a>
         </div>
         <div class="govuk-task-list__status" id="task-5-status">
-          <strong class="govuk-tag govuk-tag--blue">
-            Not yet started
-          </strong>
+          Completed
         </div>
         </li>
 
-        <li class="govuk-task-list__item">
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
         <div class="govuk-task-list__name-and-hint">
-          <div>Record microchip and neutering verified</div>
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="form-2" aria-describedby="cdo-tasks-3-status">Send Form 2</a>
         </div>
-        <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="cdo-tasks-6-status">
-          Cannot start yet
+        <div class="govuk-task-list__status" id="task-3-status">
+          Completed
+        </div>
+        </li>
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="microchip-neutering" aria-describedby="cdo-tasks-6-status" onclick="updateLocalStorage('task6Started')">Record microchip and neutering verified</a>
+        </div>
+        <div class="govuk-task-list__status" id="task-6-status">
+          <strong class="govuk-tag govuk-tag--blue">
+            Not yet started
+          </strong>
         </div>
         </li>
 
       </ul>
+
+      {{ govukButton({
+        name: "nextPage",
+        value: "complete",
+        text: "Issue certificate"
+      }) }}
 
       </form>
 

@@ -113,7 +113,7 @@
 
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="microchip-neutering" aria-describedby="cdo-tasks-4-status">Record microchip and neutering</a>
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="microchip-number" aria-describedby="cdo-tasks-4-status">Record microchip number</a>
         </div>
         <div class="govuk-task-list__status" id="task-4-status">
           Completed
@@ -138,13 +138,18 @@
         </div>
         </li>
 
-      </ul>
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="microchip-neutering" aria-describedby="cdo-tasks-6-status" onclick="updateLocalStorage('task6Started')">Record microchip and neutering verified</a>
+        </div>
+        <div class="govuk-task-list__status" id="task-6-status">
+          <strong class="govuk-tag govuk-tag--blue">
+            Not yet started
+          </strong>
+        </div>
+        </li>
 
-      {{ govukButton({
-        name: "nextPage",
-        value: "complete",
-        text: "Issue certificate"
-      }) }}
+      </ul>
 
       </form>
 
