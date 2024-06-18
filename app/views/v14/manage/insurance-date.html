@@ -25,20 +25,20 @@
         {{ pageName }}
       </h1>
 
-      <div class="govuk-!-width-one-third">
-      {{ xGovukAutocomplete({
+      {{ govukSelect({
         id: "dog-insurer",
         name: "dog-insurer",
-        allowEmpty: false,
         label: {
-          classes: "govuk-label",
           text: "Who is the dog insurer?"
         },
         items: [
-          { text: "Dogs Trust" }
+          {
+            value: "dog-insurer",
+            text: "Dogs Trust",
+            selected: true
+          }
         ]
       }) }}
-      </div>
 
       {{ govukDateInput({
         id: "insurance-renewal-date",
@@ -52,7 +52,7 @@
       }) }}
 
       <button class="govuk-button" data-module="govuk-button" onclick="updateLocalStorage('task2Finished')">
-        Continue
+        Save and continue
       </button>
 
       </form>

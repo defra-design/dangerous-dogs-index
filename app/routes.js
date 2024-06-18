@@ -784,7 +784,7 @@ router.post('/v14/manage/next-page', function (req, res) {
   } if (nextPage == "error"){
     res.redirect('/v14/manage/manage-cdo-error')
   } else {
-    res.redirect('/v14/dog-records/dog-record-ED30228')
+    res.redirect('/v14/dog-records/dog-record-ED30228-1')
   }
 
 })
@@ -797,7 +797,7 @@ router.post('/v14/manage/next-page-2', function (req, res) {
   } if (nextPage == "error"){
     res.redirect('/v14/manage/manage-cdo-error-2')
   } else {
-    res.redirect('/v14/dog-records/dog-record-ED30228')
+    res.redirect('/v14/dog-records/dog-record-ED30228-2')
   }
 
 })
@@ -810,7 +810,7 @@ router.post('/v14/manage/next-page-3', function (req, res) {
 } if (nextPage == "complete"){
     res.redirect('/v14/manage/cdo-completed')
   } else {
-    res.redirect('/v14/dog-records/dog-record-ED30228')
+    res.redirect('/v14/dog-records/dog-record-ED30228-complete')
   }
 
 })
