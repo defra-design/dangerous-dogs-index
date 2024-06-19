@@ -43,116 +43,92 @@
           </a>
         </span>
 
-          <div class="govuk-form-group govuk-!-margin-bottom-8">
-            <fieldset class="govuk-fieldset" role="group">
-              <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">
-                Certificate issued
-              </legend>
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "certificate",
+            namePrefix: "certificate",
+            fieldset: {
+              legend: {
+                text: "Certificate issued",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "9"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "5"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2014"
+            }
+          ]
+          }) }}
 
-              <div class="govuk-date-input">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="certificate-day">
-                      Day
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="9" name="certificate-issued-day" type="text" inputmode="numeric">
-                  </div>
-                </div>
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "cdo-issued",
+            namePrefix: "cdo-issued",
+            fieldset: {
+              legend: {
+                text: "CDO issued",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "13"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "9"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2013"
+            }
+          ]
+          }) }}
 
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="certificate-month">
-                      Month
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="5"  name="certificate-issued-month" type="text" inputmode="numeric">
-                  </div>
-                </div>
-
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="certificate-year">
-                      Year
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="2014"  name="certificate-issued-year" type="text" inputmode="numeric">
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-
-          <div class="govuk-form-group govuk-!-margin-bottom-8">
-            <fieldset class="govuk-fieldset" role="group">
-              <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">
-                CDO issued
-              </legend>
-
-              <div class="govuk-date-input">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="cdo-issued-day">
-                      Day
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="13" name="cdo-issued-day" type="text" inputmode="numeric">
-                  </div>
-                </div>
-
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="cdo-issued-month">
-                      Month
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="9"  name="cdo-issued-month" type="text" inputmode="numeric">
-                  </div>
-                </div>
-
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="cdo-issued-year">
-                      Year
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="2013"  name="cdo-issued-year" type="text" inputmode="numeric">
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-
-          <div class="govuk-form-group govuk-!-margin-bottom-8">
-            <fieldset class="govuk-fieldset" role="group">
-              <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">
-                CDO expiry
-              </legend>
-
-              <div class="govuk-date-input">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="cdo-expiry-day">
-                      Day
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="13" name="cdo-expiry-day" type="text" inputmode="numeric">
-                  </div>
-                </div>
-
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="cdo-expiry-month">
-                      Month
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="11"  name="cdo-expiry-month" type="text" inputmode="numeric">
-                  </div>
-                </div>
-
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="cdo-expiry-year">
-                      Year
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="2013"  name="cdo-expiry-year" type="text" inputmode="numeric">
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-          </div>
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "cdo-expiry",
+            namePrefix: "cdo-expiry",
+            fieldset: {
+              legend: {
+                text: "CDO expiry",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "13"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "11"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2013"
+            }
+          ]
+          }) }}
 
           {{ govukSelect({
             classes: "govuk-!-margin-bottom-5",
@@ -369,45 +345,37 @@
             value: data['dog-legislation-officer'] or "Solomon Beatty"
           }) }}
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" role="group">
-              <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">
-                Application fee paid
-              </legend>
-
-              <div class="govuk-date-input">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="application-fee-day">
-                      Day
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="3" name="application-fee-day" type="text" inputmode="numeric">
-                  </div>
-                </div>
-
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="application-fee-month">
-                      Month
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="5"  name="application-fee-month" type="text" inputmode="numeric">
-                  </div>
-                </div>
-
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="application-fee-year">
-                      Year
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="2014"  name="application-fee-year" type="text" inputmode="numeric">
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-          </div>
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "application-fee",
+            namePrefix: "application-fee",
+            fieldset: {
+              legend: {
+                text: "Application fee paid",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "3"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "5"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2014"
+            }
+          ]
+          }) }}
 
           {{ govukSelect({
-            classes: "govuk-!-width-two-thirds",
+            classes: "govuk-!-width-two-thirds govuk-!-margin-bottom-5",
             name: "insurance-company",
             label: {
               classes: "govuk-!-font-weight-bold",
@@ -434,190 +402,150 @@
             ]
           }) }}
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" role="group">
-              <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">
-                Insurance renewal date
-              </legend>
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "insurance-renewal",
+            namePrefix: "insurance-renewal",
+            fieldset: {
+              legend: {
+                text: "Insurance renewal date",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "29"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "4"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2024"
+            }
+          ]
+          }) }}
 
-              <div class="govuk-date-input">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="insurance-renewal-day">
-                      Day
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="29" name="insurance-renewal-day" type="text" inputmode="numeric">
-                  </div>
-                </div>
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "neutering-confirmed",
+            namePrefix: "neutering-confirmed",
+            fieldset: {
+              legend: {
+                text: "Neutering confirmed",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "29"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "4"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2024"
+            }
+          ]
+          }) }}
 
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="insurance-renewal-month">
-                      Month
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="4"  name="insurance-renewal-month" type="text" inputmode="numeric">
-                  </div>
-                </div>
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "microchip-number-verified",
+            namePrefix: "microchip-number-verified",
+            fieldset: {
+              legend: {
+                text: "Microchip number verified",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "10"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "4"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2014"
+            }
+          ]
+          }) }}
 
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="insurance-renewal-year">
-                      Year
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="2024"  name="insurance-renewal-year" type="text" inputmode="numeric">
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-          </div>
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "exemption-scheme",
+            namePrefix: "exemption-scheme",
+            fieldset: {
+              legend: {
+                text: "Joined interim exemption scheme",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "8"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "11"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2013"
+            }
+          ]
+          }) }}
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" role="group">
-              <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">
-                Neutering confirmed
-              </legend>
-
-              <div class="govuk-date-input">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="neutering-confirmed-day">
-                      Day
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="10" name="neutering-confirmed-day" type="text" inputmode="numeric">
-                  </div>
-                </div>
-
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="neutering-confirmed-month">
-                      Month
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="4"  name="neutering-confirmed-month" type="text" inputmode="numeric">
-                  </div>
-                </div>
-
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="neutering-confirmed-year">
-                      Year
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="2014"  name="neutering-confirmed-year" type="text" inputmode="numeric">
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" role="group">
-              <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">
-                Microchip number verified
-              </legend>
-
-              <div class="govuk-date-input">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="microchip-number-verified-day">
-                      Day
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="10" name="microchip-number-verified-day" type="text" inputmode="numeric">
-                  </div>
-                </div>
-
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="microchip-number-verified-month">
-                      Month
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="4"  name="microchip-number-verified-month" type="text" inputmode="numeric">
-                  </div>
-                </div>
-
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="microchip-number-verified-year">
-                      Year
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="2014"  name="microchip-number-verified-year" type="text" inputmode="numeric">
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" role="group">
-              <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">
-                Joined interim exemption scheme
-              </legend>
-
-              <div class="govuk-date-input">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="exemption-scheme-day">
-                      Day
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="8" name="exemption-scheme-day" type="text" inputmode="numeric">
-                  </div>
-                </div>
-
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="exemption-scheme-month">
-                      Month
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="11"  name="exemption-scheme-month" type="text" inputmode="numeric">
-                  </div>
-                </div>
-
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="dog-untraceable-year">
-                      Year
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="2013"  name="exemption-scheme-year" type="text" inputmode="numeric">
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" role="group">
-              <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">
-                Removed from CDO process
-              </legend>
-
-              <div class="govuk-date-input">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="removed-cdo-day">
-                      Day
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="8" name="removed-cdo-day" type="text" inputmode="numeric">
-                  </div>
-                </div>
-
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="removed-cdo-month">
-                      Month
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="1"  name="removed-cdo-month" type="text" inputmode="numeric">
-                  </div>
-                </div>
-
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="removed-cdo-year">
-                      Year
-                    </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="2024"  name="removed-cdo-year" type="text" inputmode="numeric">
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-          </div>
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "removed-cdo",
+            namePrefix: "removed-cdo",
+            fieldset: {
+              legend: {
+                text: "Removed from CDO process",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "9"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "1"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2024"
+            }
+          ]
+          }) }}
 
         {% endcall %}
 
@@ -626,7 +554,7 @@
             text: "Save details"
           }) }}
 
-          <a class="govuk-link govuk-link--no-visited-state" href="/v4/dog-records/dog-record-ED30228">Cancel</a>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v14/dog-records/dog-record-ED30228-complete">Cancel</a>
         </div>
 
       </form>
