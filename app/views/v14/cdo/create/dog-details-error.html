@@ -23,7 +23,7 @@
           errorList: [
             {
               text: "The address for an XL Bully dog must be in England or Wales",
-              href: "#error"
+              href: "#breedType1"
             }
           ]
         }) }}
@@ -32,8 +32,8 @@
           Add dog details
           </h1>
 
-          <div id="error">
           {{ govukRadios({
+            id: "breed-type",
             name: "breedType1",
             fieldset: {
               legend: {
@@ -67,7 +67,6 @@
               text: "The address for an XL Bully dog must be in England or Wales"
             }
           }) }}
-          </div>
 
           {{ govukInput({
             label: {
