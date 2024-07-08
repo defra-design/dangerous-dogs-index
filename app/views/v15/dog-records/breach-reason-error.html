@@ -1,0 +1,81 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Error: Why is the dog in breach?" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "change-status"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Select all reasons the dog is in breach",
+            href: "#breachReason"
+          }
+        ]
+      }) }}
+
+      <form class="form" action="/v15/dog-records/breach-reason-error-question" method="post">
+
+          {{ govukCheckboxes({
+          name: "breachReason",
+          fieldset: {
+            legend: {
+              text: "Why is the dog in breach?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          errorMessage: {
+            text: "Select all reasons the dog is in breach"
+          },
+          items: [
+            {
+              value: "insurance",
+              text: "Insurance expired"
+            },
+            {
+              value: "lead-muzzle",
+              text: "Not on a lead or muzzled in public"
+            },
+            {
+              value: "insecure",
+              text: "Kept in an insecure place"
+            },
+            {
+              value: "30-days",
+              text: "30-day rule"
+            }
+          ]
+        }) }}
+
+        <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        <a class="govuk-link govuk-link--no-visited-state" href="dog-record">Cancel</a>
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
