@@ -829,21 +829,15 @@ router.post('/v15/dog-records/change-status-question', function (req, res) {
 // v15 Breach reason
 router.post('/v15/dog-records/breach-reason-question', function (req, res) {
   var breachReason = req.session.data['breachReason']
-  if (breachReason == "insurance"){
-  res.redirect('/v15/dog-records/status-changed')
-  } if (breachReason == "lead-muzzle"){
-      res.redirect('/v15/dog-records/status-changed')
-  } if (breachReason == "insecure"){
-      res.redirect('/v15/dog-records/status-changed')
-  } if (breachReason == "30-days"){
-      res.redirect('/v15/dog-records/status-changed')
+  if (breachReason == null){
+  res.redirect('/v15/dog-records/breach-reason-error')
     } else {
-      res.redirect('/v15/dog-records/breach-reason-error')
+      res.redirect('/v15/dog-records/status-changed')
     }
 
 })
 
-// v15 Breach reason
+// v15 Breach reason error
 router.post('/v15/dog-records/breach-reason-error-question', function (req, res) {
   var breachReason = req.session.data['breachReason']
   if (breachReason == null){

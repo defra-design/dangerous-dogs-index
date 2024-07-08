@@ -44,9 +44,24 @@
    <td class="govuk-table__cell">Dog status set to In breach:
      <br>
      <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-2 govuk-!-margin-bottom-0">
-       <li>not on a lead or muzzled in public</li>
-       <li>kept in an insecure place</li>
-      </ul>
+
+       {% if data['breachReason'] == 'insurance' %}
+        <li>Insurance expired</li>
+      {% endif %}
+
+       {% if data['breachReason'] == 'lead-muzzle' %}
+        <li>Not on a lead or muzzled in public</li>
+       {% endif %}
+
+       {% if data['breachReason'] == 'insecure' %}
+        <li>Kept in an insecure place</li>
+      {% endif %}
+      
+        {% if data['breachReason'] == '30-days' %}
+         <li>30 day rule</li>
+       {% endif %}
+
+    </ul>
    </td>
    <td class="govuk-table__cell">Evyonne</td>
  </tr>
