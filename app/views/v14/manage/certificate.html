@@ -6,10 +6,20 @@
   {{ pageName }} – {{ serviceName }}
 {% endblock %}
 
+<div class="govuk-main-wrapper">
+
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "manage-cdo-issue"
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "Manage CDOs",
+      href: "manage-cdos-all"
+    }
+  ]
 }) }}
 {% endblock %}
 
@@ -33,10 +43,11 @@
           text: "Generate certificate"
         }) }}
 
-        <a class="govuk-link govuk-link--no-visited-state" href="manage-cdo-issue">Cancel</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="manage-cdos-all">Cancel</a>
       </div>
 
     </div>
   </div>
+</div>
 
 {% endblock %}
