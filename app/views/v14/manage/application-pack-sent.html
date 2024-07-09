@@ -21,30 +21,16 @@
       <form class="form" action="/v14/manage/manage-cdo-2" method="post">
 
         <span class="govuk-caption-m">Dog ED30228</span>
+        <h1 class="govuk-heading-l">
+          Send application pack
+          </h1>
 
-        {{ govukCheckboxes({
-          name: "application-pack",
-          fieldset: {
-            legend: {
-              text: "Send application pack",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-5"
-            }
-          },
-          hint: {
-            text: "Confirm that you have sent the application pack to the dog owner."
-          },
-          items: [
-            {
-              value: "form",
-              text: "I have sent the application pack",
-              checked: "yes"
-            }
-          ]
-        }) }}
+        <p class="govuk-body">
+          The application pack has been sent.
+          </p>
 
       <button class="govuk-button" data-module="govuk-button" onclick="updateLocalStorage('task1Finished')">
-        Save and continue
+        Continue
       </button>
 
       </form>

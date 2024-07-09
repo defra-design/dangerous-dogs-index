@@ -808,7 +808,7 @@ router.post('/v14/manage/next-page-3', function (req, res) {
   if (nextPage == "owner-record"){
   res.redirect('/v14/owner-records/owner-record-ED30228')
 } if (nextPage == "complete"){
-    res.redirect('/v14/manage/cdo-completed')
+    res.redirect('/v14/manage/certificate')
   } else {
     res.redirect('/v14/dog-records/dog-record-ED30228-complete')
   }

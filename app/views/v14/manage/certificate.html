@@ -1,0 +1,42 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Generate a certificate of exemption for Dog ED30227" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "manage-cdo-issue"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      <ol class="govuk-list govuk-list--number">
+        <li>Select the generate certificate button.</li>
+        <li>Save the certificate to SharePoint.</li>
+        <li>Email the certificate to the dog owner.</li>
+      </ol>
+
+        <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Generate certificate"
+        }) }}
+
+        <a class="govuk-link govuk-link--no-visited-state" href="manage-cdo-issue">Cancel</a>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
