@@ -211,20 +211,44 @@
             <br>
             <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16 govuk-!-margin-top-2">
 
-              {% if data['breachReason'] == 'insurance' %}
-               <li>Insurance expired</li>
+              {% if data['breachReason'] == 'new-address' %}
+               <li>Changed address and not informed Defra</li>
              {% endif %}
 
+              {% if data['breachReason'] == 'dog-insured' %}
+               <li>Dog uninsured</li>
+              {% endif %}
+
               {% if data['breachReason'] == 'lead-muzzle' %}
-               <li>Not on a lead or muzzled in public</li>
+               <li>Not kept on a lead or muzzled</li>
+             {% endif %}
+
+               {% if data['breachReason'] == 'dog-died' %}
+                <li>Dog has died and not informed Defra</li>
               {% endif %}
 
               {% if data['breachReason'] == 'insecure' %}
                <li>Kept in an insecure place</li>
              {% endif %}
 
-               {% if data['breachReason'] == '30-days' %}
-                <li>30 day rule</li>
+              {% if data['breachReason'] == '30-days' %}
+               <li>Kept away from registered address for more than 30 days</li>
+              {% endif %}
+
+              {% if data['breachReason'] == 'certificate' %}
+               <li>Failed to produce certificate of exemption for police in 5 days</li>
+             {% endif %}
+
+               {% if data['breachReason'] == 'evidence-insurance' %}
+                <li>Failed to give police evidence of insurance in 5 days</li>
+              {% endif %}
+
+              {% if data['breachReason'] == 'microchip' %}
+               <li>Failed to allow police to read the dogs microchip</li>
+             {% endif %}
+
+               {% if data['breachReason'] == 'exported' %}
+                <li>Dog exported and not informed Defra</li>
               {% endif %}
 
             </ul>
