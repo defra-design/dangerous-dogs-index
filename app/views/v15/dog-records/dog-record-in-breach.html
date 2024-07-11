@@ -195,7 +195,7 @@
 
       <div class="govuk-summary-card">
     <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title defra-summary-header">Exemption details</h2><div class="govuk-summary-card__actions">
-  <a class="govuk-link defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state" href="#">Edit details<span class="govuk-visually-hidden"> for exemption (Exemption details)</span></a>
+  <a class="govuk-link defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state" href="dog-record-exemption-edit-in-breach">Edit details<span class="govuk-visually-hidden"> for exemption (Exemption details)</span></a>
 </div></div>
 
     <div class="govuk-summary-card__content">
@@ -210,9 +210,14 @@
             In breach:
             <br>
             <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16 govuk-!-margin-top-2">
+              <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16 govuk-!-margin-top-2">
+            {% for breach in data['breachReason'] %}
+              <li>{{ breach }}</li>
+            {% endfor %}
+            </ul>
 
               {% if data['breachReason'] == 'new-address' %}
-               <li>Changed address and not informed Defra</li>
+               <li>Changed address and Defra not informed</li>
              {% endif %}
 
               {% if data['breachReason'] == 'dog-insured' %}
@@ -224,7 +229,7 @@
              {% endif %}
 
                {% if data['breachReason'] == 'dog-died' %}
-                <li>Dog has died and not informed Defra</li>
+                <li>Dog has died and Defra not informed</li>
               {% endif %}
 
               {% if data['breachReason'] == 'insecure' %}
@@ -248,7 +253,7 @@
              {% endif %}
 
                {% if data['breachReason'] == 'exported' %}
-                <li>Dog exported and not informed Defra</li>
+                <li>Dog exported and Defra not informed</li>
               {% endif %}
 
             </ul>
