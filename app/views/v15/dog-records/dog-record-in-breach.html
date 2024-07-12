@@ -210,61 +210,14 @@
             In breach:
             <br>
             <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16 govuk-!-margin-top-2">
-              <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16 govuk-!-margin-top-2">
-            {% for breach in data['breachReason'] %}
-              <li>{{ breach }}</li>
-            {% endfor %}
-            </ul>
-
-              {% if data['breachReason'] == 'new-address' %}
-               <li>Changed address and Defra not informed</li>
-             {% endif %}
-
-              {% if data['breachReason'] == 'dog-insured' %}
-               <li>Dog uninsured</li>
-              {% endif %}
-
-              {% if data['breachReason'] == 'lead-muzzle' %}
-               <li>Not kept on a lead or muzzled</li>
-             {% endif %}
-
-               {% if data['breachReason'] == 'dog-died' %}
-                <li>Dog has died and Defra not informed</li>
-              {% endif %}
-
-              {% if data['breachReason'] == 'insecure' %}
-               <li>Kept in an insecure place</li>
-             {% endif %}
-
-              {% if data['breachReason'] == '30-days' %}
-               <li>Kept away from registered address for more than 30 days</li>
-              {% endif %}
-
-              {% if data['breachReason'] == 'certificate' %}
-               <li>Failed to produce certificate of exemption for police in 5 days</li>
-             {% endif %}
-
-               {% if data['breachReason'] == 'evidence-insurance' %}
-                <li>Failed to give police evidence of insurance in 5 days</li>
-              {% endif %}
-
-              {% if data['breachReason'] == 'microchip' %}
-               <li>Failed to allow police to read the dog’s microchip</li>
-             {% endif %}
-
-               {% if data['breachReason'] == 'exported' %}
-                <li>Dog exported and Defra not informed</li>
-              {% endif %}
-
+              {% for breach in data['breachReason'] %}
+                <li>{{ breach }}</li>
+              {% endfor %}
             </ul>
           </dd>
-
-            <dd class="govuk-summary-list__actions defra-text-align-left">
-
-                <a class="govuk-link govuk-link--no-visited-state" href="#">Change status<span class="govuk-visually-hidden"> (Exemption details)</span></a>
-
-            </dd>
-
+          <dd class="govuk-summary-list__actions defra-text-align-left">
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Change status<span class="govuk-visually-hidden"> (Exemption details)</span></a>
+          </dd>
         </div>
 
 
