@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Dog ED30227" %}
+{% set pageName="Dog ED208510" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "#"
+    href: "../search/results"
   }) }}
 {% endblock %}
 
@@ -23,6 +23,7 @@
           <h1 class="govuk-heading-xl">{{ pageName }}</h1>
         </div>
 
+        <!--
         <div class="moj-page-header-actions__actions">
           <div class="moj-button-menu">
             <div class="moj-button-menu__wrapper">
@@ -35,6 +36,7 @@
             </div>
           </div>
         </div>
+        -->
 
       </div>
 
@@ -60,7 +62,7 @@
             text: "Name"
           },
           value: {
-            text: data['dogName1'] or "Brutus"
+            text: data['dogName1'] or "Bronson"
           }
         },
         {
@@ -92,7 +94,7 @@
             text: "Date of birth"
           },
           value: {
-            html: "20 July 2007"
+            html: "20 July 2017"
           }
         },
         {
@@ -100,7 +102,7 @@
             text: "Microchip number"
           },
           value: {
-            text: "221087472833641"
+            text: "873580002236145"
           }
         }
       ]
@@ -131,7 +133,7 @@
             text: "Name"
           },
           value: {
-            text: "Gareth Staines"
+            text: "Nathan Stockton"
           }
         },
         {
@@ -155,7 +157,7 @@
             text: "Email"
           },
           value: {
-            text: "gazandshaz@hotmail.com"
+            text: "nath83@hotmail.com"
           }
         },
         {
