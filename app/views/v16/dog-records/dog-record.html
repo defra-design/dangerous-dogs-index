@@ -1,4 +1,4 @@
-{% extends "layouts/defra.html" %}
+{% extends "layouts/defra-police.html" %}
 
 {% set pageName="Dog ED208510" %}
 
@@ -7,10 +7,14 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "../search/results"
-  }) }}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../index"
+    }
+  ]
+}) }}
 {% endblock %}
 
 {% block content %}
