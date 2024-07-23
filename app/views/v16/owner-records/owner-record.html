@@ -1,6 +1,6 @@
-{% extends "layouts/defra.html" %}
+{% extends "layouts/defra-police.html" %}
 
-{% set pageName="Linton Woolley" %}
+{% set pageName="Nathan Stockton" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -17,12 +17,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <div class="moj-page-header-actions govuk-!-margin-bottom-2">
+      <div class="moj-page-header-actions govuk-!-margin-bottom-6">
 
         <div class="moj-page-header-actions__title">
           <h1 class="govuk-heading-xl">{{ pageName }}</h1>
         </div>
-
+      <!--
     <div class="moj-page-header-actions__actions">
 
       <div class="moj-button-menu">
@@ -40,20 +40,11 @@
         </div>
 
       </div>
-
+      -->
     </div>
 
   </div>
 
-  <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
-
-    <span class="govuk-body">
-      <a class="govuk-link govuk-link--no-visited-state" href="../manage/manage-cdo-2">
-        Manage CDO application
-      </a>
-    </span>
-
-    </div>
 
     <div class="govuk-grid-column-one-half">
 
@@ -64,17 +55,7 @@
       text: "Owner details",
       classes: "defra-summary-header"
       },
-      id: "owner-details",
-      actions: {
-        items: [
-          {
-            href: "owner-record-edit",
-            text: "Edit details",
-            classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
-            visuallyHiddenText: "for owner"
-            }
-          ]
-        }
+      id: "owner-details"
       },
       rows: [
         {
@@ -83,7 +64,7 @@
             text: "Name"
           },
           value: {
-            text: "Linton Woolley"
+            text: "Nathan Stockton"
           }
         },
         {
@@ -91,8 +72,7 @@
             text: "Date of birth"
           },
           value: {
-            classes: "defra-secondary-text",
-            text: "Not entered"
+            text: "16 February 1983"
           }
         },
         {
@@ -100,26 +80,15 @@
             text: "Address"
           },
           value: {
-            html: "122 Common Road<br>Bexhill-on-Sea<br>TN39 4JB"
-          },
-          actions: {
-          classes: "defra-text-align-left",
-           items: [
-             {
-               href: "postcode",
-               classes: "govuk-link--no-visited-state",
-               text: "Change address"
-             }
-           ]
-         }
+            html: "44 Groveway<br>Barking<br>RM8 3XL"
+          }
         },
         {
           key: {
             text: "Email"
           },
           value: {
-            classes: "defra-secondary-text",
-            text: "Not entered"
+            text: "nath83@hotmail.com"
           }
         },
         {
@@ -127,8 +96,7 @@
             text: "Telephone number 1"
           },
           value: {
-            classes: "defra-secondary-text",
-            text: "Not entered"
+            text: "07879 929344"
           }
         },
         {
@@ -148,12 +116,13 @@
 
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="/v7/dog-records/dog-record-ED30874">
-            ED30228
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="../dog-records/dog-record">
+            ED208510
           </a></h2>
           <ul class="govuk-summary-card__actions govuk-!-font-weight-regular">
             {{ govukTag({
-              text: "Pre-exempt"
+              text: "Exempt",
+              classes: "govuk-tag--turquoise"
             }) }}
           </ul>
         </div>
@@ -176,15 +145,15 @@
               <tbody class="govuk-table__body">
                   <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0">
                     <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
-                     	Odie
+                     		Bronson
                     </td>
                     {% if data['microchipNumber'] %}
                       <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0">
                         {{ data['microchipNumber'] }}
                       </td>
                     {% elif data['lastName'] == None %}
-                      <td class="govuk-table__header--numeric defra-secondary-text govuk-!-padding-top-2 govuk-!-padding-bottom-0">
-                        Not entered
+                      <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                        873580002236145
                       </td>
                     {% endif %}
                   </tr>
