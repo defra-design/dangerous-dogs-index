@@ -22,7 +22,7 @@
         <div id="search-hint" class="govuk-body govuk-!-margin-bottom-2">
           Use one or more search terms
         </div>
-        <input class="govuk-input" value="{% if data['keyword'] %}{{ data['keyword'] }}{% else %}ED208510{% endif %}" id="search" name="search" type="text" aria-describedby="search-hint">
+        <input class="govuk-input" value="{% if data['search'] %}{{ data['search'] }}{% else %}ED208510{% endif %}" id="search" name="search" type="text" aria-describedby="search-hint">
       </div>
 
       {{ govukButton({
