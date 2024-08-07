@@ -874,29 +874,27 @@ router.post('/v17/password-field', function (req, res) {
 router.post('/v17/search/search-input', function(request, response) {
   var search = request.session.data['search']
   if (search == "247 Norcroft Road"){
-      response.redirect("/v17/search/results-address")
+      response.redirect("/v17/search/record-1/results-address")
   } if (search == "Barking"){
-    response.redirect("/v17/search/results-address")
+    response.redirect("/v17/search/record-1/results-address")
   } if (search == "IG11 7JF"){
-    response.redirect("/v17/search/results-address")
+    response.redirect("/v17/search/record-1/results-address")
   } if (search == "bouncer"){
-    response.redirect("/v17/search/results-dog-name")
+    response.redirect("/v17/search/record-1/results-dog-name")
   } if (search == "Bouncer"){
-    response.redirect("/v17/search/results-dog-name")
+    response.redirect("/v17/search/record-1/results-dog-name")
   } if (search == "208510"){
-    response.redirect("/v17/search/results-index-number")
+    response.redirect("/v17/search/record-1/results-index-number")
   } if (search == "123456789012345"){
-    response.redirect("/v17/search/results-microchip")
+    response.redirect("/v17/search/record-1/results-microchip")
   } if (search == "Michael Denton"){
-    response.redirect("/v17/search/results-owner-name")
+    response.redirect("/v17/search/record-1/results-owner-name")
   } if (search == "Denton"){
-    response.redirect("/v17/search/results-owner-name")
+    response.redirect("/v17/search/record-1/results-owner-name")
   } if (search == "denton"){
-    response.redirect("/v17/search/results-owner-name")
+    response.redirect("/v17/search/record-1/results-owner-name")
   } if (search == "In breach"){
-    response.redirect("/v17/search/results-status")
-  } if (search == "none"){
-    response.redirect("/v17/search/results-none")
+    response.redirect("/v17/search/record-1/results-status")
   }
 })
 
