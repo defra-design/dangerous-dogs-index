@@ -847,3 +847,63 @@ router.post('/v15/dog-records/breach-reason-error-question', function (req, res)
     }
 
 })
+
+// v17 Sign in
+router.post('/v17/sign-in-field', function (req, res) {
+  var signIn = req.session.data['signIn']
+  if (signIn.includes('@')) {
+    res.redirect('/v17/password')
+  } else {
+    res.redirect('/v17/sign-in-error')
+  }
+
+})
+
+// v17 Password
+router.post('/v17/password-field', function (req, res) {
+  var password = req.session.data['password']
+  if (password === "password"){
+    res.redirect('/v17/index')
+  } else {
+    res.redirect('/v17/password-error')
+  }
+
+})
+
+// v17 Comment type
+router.post('/v9/search-input', function (req, res) {
+  var search = req.session.data['search']
+  if (search == "247 Norcroft Road"){
+  res.redirect('/v17/search/results-address')
+} if (search == "Barking"){
+    res.redirect('/v17/search/results-address')
+  } if (search == "IG11 7JF"){
+    res.redirect('/v17/search/results-address')
+  } if (search == "bouncer"){
+    res.redirect('/v17/search/results-dog-name')
+  } if (search == "Bouncer"){
+    res.redirect('/v17/search/results-dog-name')
+  } if (search == "208510"){
+    res.redirect('/v17/search/results-index-number')
+  } if (search == "123456789012345"){
+    res.redirect('/v17/search/results-microchip')
+  } if (search == "Jason Walsh"){
+    res.redirect('/v17/search/results-owner-name')
+  } if (search == "In breach"){
+    res.redirect('/v17/search/results-status')
+  } else {
+    res.redirect('/v17/search/results-none')
+  }
+
+})
+
+// v17 Report something or check dog record activity
+router.post('/v17/dog-records/activity/activity-type', function (req, res) {
+  var activityType = req.session.data['activityType']
+  if (activityType == "add-activity"){
+    res.redirect('/v17/dog-records/activity/add-activity')
+  } else {
+    res.redirect('/v17/dog-records/activity/activity-all')
+  }
+
+})

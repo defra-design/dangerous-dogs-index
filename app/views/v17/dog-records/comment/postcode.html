@@ -1,0 +1,64 @@
+{% extends "layouts/defra-police.html" %}
+
+{% set pageName="What is the owner’s new postcode?" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v9/microchip-number/dog-records/comment/confirm-address" method="post">
+
+      <span class="govuk-caption-l">Dog ED30996</span>
+      {% call govukFieldset({
+        legend: {
+          text: "What is the owner’s new postcode?",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      <div class="govuk-form-group govuk-!-margin-bottom-5">
+        <label class="govuk-label" for="addressPostcode">
+          Postcode
+        </label>
+        <input class="govuk-input govuk-input--width-10 govuk-!-padding-bottom-0" id="address-postcode" name="addressPostcode" value="{{ data['addressPostcode'] }}" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="property-number">
+          Property name or number (optional)
+        </label>
+        <div id="event-name-hint" class="govuk-hint">
+          For example, ‘The Mill’, ‘116’ or ‘Flat 36a’
+        </div>
+        <input class="govuk-input govuk-input--width-5" id="property-number" name="propertyNumber" value="{{ data['propertyNumber'] }}" type="text">
+      </div>
+
+      {% endcall %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+
+      <p class="govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="new-address">Enter address manually</a>
+        </p>
+
+    </div>
+  </div>
+
+{% endblock %}
