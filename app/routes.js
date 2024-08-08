@@ -895,8 +895,6 @@ router.post('/v17/search/search-input', function(request, response) {
     response.redirect("/v17/search/record-1/results-owner-name")
   } if (search == "In breach"){
     response.redirect("/v17/search/record-1/results-status")
-  } else {
-    response.redirect('/v17/search/results-none')
   }
 })
 
