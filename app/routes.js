@@ -905,10 +905,25 @@ router.post('/v17/search/search-input', function(request, response) {
 // v17 Report something or check dog record activity
 router.post('/v17/dog-records/activity/activity-type', function (req, res) {
   var activityType = req.session.data['activityType']
-  if (activityType == "add-activity"){
-    res.redirect('/v17/dog-records/activity/add-activity')
+  if (activityType == "report-something"){
+    res.redirect('/v17/dog-records/record-1/comment/comment-type')
   } else {
     res.redirect('/v17/dog-records/activity/activity-all')
+  }
+
+})
+
+// v17 Comment type
+router.post('/v17/dog-records/record-1/comment/comment-type-question', function (req, res) {
+  var comment = req.session.data['comment']
+  if (comment == "exemption"){
+  res.redirect('/v17/dog-records/record-1/comment/report-details')
+  } if (comment == "address"){
+    res.redirect('/v17/dog-records/record-1/comment/postcode')
+  } if (comment == "death"){
+    res.redirect('/v17/dog-records/record-1/comment/report-death')
+  } if (comment == "something"){
+    res.redirect('/v17/dog-records/record-1/comment/report-details')
   }
 
 })
