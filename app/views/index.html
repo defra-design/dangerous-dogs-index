@@ -26,7 +26,7 @@
         content: {
           html:
 
-      '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+      '<h3 class="govuk-heading-m govuk-!-margin-bottom-1">
         Police read only version
         </h3>
         <ul class="govuk-list">
@@ -42,24 +42,45 @@
 
           <li>
             <a class="govuk-link govuk-link--no-visited-state" href="/v17/index">Search</a>
-            <p class="govuk-body-s defra-secondary-text">Use these search terms to view different results.
+            <br><span class="govuk-body-s defra-secondary-text">Use the search terms below to view different results and records.</span>
           </li>
 
           <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v17/dog-records/record-1/dog-record">Record 1:</a>
-            <p class="govuk-body-s defra-secondary-text govuk-!-margin-bottom-1">
-              </p>
-            <ul class="govuk-list govuk-list--bullet govuk-body-s defra-secondary-text">
-              <li>Address – ‘247 Norcroft Road’ or ‘Barking’ or ‘IG11 7JF’</li>
-              <li>Dog – Mutley</li>
-              <li>Index number – 208510</li>
-              <li>Microchip number – 123456789012345</li>
-              <li>Owner – Michael Denton</li>
-              <li>Status – In breach</li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/search/results-none">No search results</a>
+          </li>
+
+          <h4 class="govuk-heading-s govuk-!-margin-top-5 govuk-!-margin-bottom-1">
+            Record 1
+            </h4>
+
+          <li class="govuk-body-s defra-secondary-text">
+            Search terms:
+            <ul class="govuk-list govuk-list--bullet govuk-body-s defra-secondary-text govuk-!-margin-bottom-2">
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-1/results-address">Address</a> – ‘247 Norcroft Road’ or ‘Barking’ or ‘IG11 7JF’</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-1/results-dog-name">Dog</a> – Mutley</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-1/results-index-number">Index number</a> – 208510</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-1/results-microchip">Microchip number</a> – 123456789012345</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-1/results-owner-name">Owner</a> – Michael Denton</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-1/results-status">Status</a> – In breach</li>
             </ul>
 
-            <p class="govuk-body-s defra-secondary-text govuk-!-margin-bottom-1">Record 2:
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v17/dog-records/record-1/dog-record">Dog record</a>
+            </li>
+
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v17/owner-records/record-1/owner-record">Owner record</a>
+            </li>
+
+            <br>
+
+            <p class="govuk-body defra-secondary-text govuk-!-margin-bottom-1">(WIP incomplete)
               </p>
+
+            <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
+              Record 2
+              </h4>
+
             <ul class="govuk-list govuk-list--bullet govuk-body-s defra-secondary-text">
               <li>Address – ‘5 Station Road’ or ‘Woofferton’ or ‘SY8 4NL’</li>
               <li>Dog – Bouncer</li>
@@ -69,8 +90,10 @@
               <li>Status – Exempt</li>
             </ul>
 
-            <p class="govuk-body-s defra-secondary-text govuk-!-margin-bottom-1">Record 3:
-              </p>
+            <h4 class="govuk-heading-s govuk-!-margin-top-5 govuk-!-margin-bottom-1">
+              Record 3
+              </h4>
+
             <ul class="govuk-list govuk-list--bullet govuk-body-s defra-secondary-text">
               <li>Address – ‘30 Hounds Gate’ or ‘Nottingham’ or ‘NG1 7BA’</li>
               <li>Dog – Bronson</li>
@@ -80,8 +103,10 @@
               <li>Status – Pre-exempt</li>
             </ul>
 
-            <p class="govuk-body-s defra-secondary-text govuk-!-margin-bottom-1">Record 4 :
-              </p>
+            <h4 class="govuk-heading-s govuk-!-margin-top-5 govuk-!-margin-bottom-1">
+              Record 4
+              </h4>
+
             <ul class="govuk-list govuk-list--bullet govuk-body-s defra-secondary-text">
               <li>Address – ‘5 Bullytree Lane’ or ‘Leeds’ or ‘LS25 5AQ’</li>
               <li>Dog – Ernie</li>
@@ -91,27 +116,7 @@
               <li>Status – Failed</li>
             </ul>
 
-          </li>
-          <!--
-
-          <br>
-
-          <li>Scenario: intelligence received</li>
-
-          <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v17/search/results-dog-name">Results when searching for a dog</a>
-          </li>
-          <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v17/dog-records/dog-record">Dog record</a>
-          </li>
-          <li>
-            <a class="govuk-link govuk-link--no-visited-state" href="/v17/owner-records/owner-record">Owner record</a>
-          </li>
-
-          <br>
-
-          <li>Scenario: at an address and discover a dog</li>
-        </ul> -->'
+          </ul>'
         }
       },
 
