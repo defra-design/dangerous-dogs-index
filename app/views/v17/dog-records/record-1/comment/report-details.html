@@ -1,6 +1,6 @@
 {% extends "layouts/defra-police-2.html" %}
 
-{% set pageName="Report the details" %}
+{% set pageName="Provide more detail" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -25,9 +25,12 @@
           name: "addComment",
           id: "addComment",
           label: {
-            text: "Report the details",
+            text: "Provide more detail",
             classes: "govuk-label--l",
             isPageHeading: true
+          },
+          hint: {
+            text: "Tell us what information you are reporting about this dog record."
           }
         }) }}
 

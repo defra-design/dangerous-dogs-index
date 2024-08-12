@@ -20,7 +20,7 @@
           </label>
         </h1>
         <div id="search-hint" class="govuk-body govuk-!-margin-bottom-2">
-          Use one or more search terms
+          Use one or more words, separated by a space, for example ‘owner’s name postcode’
         </div>
         <input class="govuk-input" value="{{ data['search'] }}" id="search" name="search" type="text" aria-describedby="search-hint">
       </div>
@@ -34,16 +34,15 @@
       <p class="govuk-body govuk-!-margin-top-2">
         Your search
         {% if data['search'] %} for <span class="govuk-!-font-weight-bold">{{ data['search'] }}</span>
-          {% else %}{% endif %} did not match any documents.
+          {% else %}{% endif %} did not match any records.
         </p>
       <p class="govuk-body">
         Suggestions:
         </p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>make sure that all words are spelled correctly</li>
-        <li>try different keywords</li>
-        <li>try more general keywords</li>
+        <li>ensure all words are spelled correctly</li>
+        <li>try different keywords to find the record</li>
       </ul>
 
     </div>

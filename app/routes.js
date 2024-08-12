@@ -917,7 +917,7 @@ router.post('/v17/dog-records/activity/activity-type', function (req, res) {
 router.post('/v17/dog-records/record-1/comment/comment-type-question', function (req, res) {
   var comment = req.session.data['comment']
   if (comment == "exemption"){
-  res.redirect('/v17/dog-records/record-1/comment/report-details')
+  res.redirect('/v17/dog-records/record-1/comment/breach-reason')
   } if (comment == "address"){
     res.redirect('/v17/dog-records/record-1/comment/postcode')
   } if (comment == "death"){
