@@ -67,7 +67,7 @@
               text: "Date of birth"
             },
             value: {
-              text: "28 December 1989"
+              text: "3 August 1996"
             }
           },
           {
@@ -75,7 +75,7 @@
               text: "Address"
             },
             value: {
-              html: "5 Station Road<br>Woofferton<br>SY8 4NL"
+              html: "30 Hounds Gate<br>Nottingham<br>NG1 7BA"
             }
           },
           {
@@ -83,7 +83,7 @@
               text: "Email"
             },
             value: {
-              text: "gamervic1989@yahoo.com"
+              text: "nath_stocks8@gmail.com"
             }
           },
           {
@@ -91,7 +91,7 @@
               text: "Telephone number 1"
             },
             value: {
-              text: data['telephoneNumber1'] or "07664 873432"
+              text: "07996 343590"
             }
           },
           {
@@ -111,13 +111,12 @@
 
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="../../dog-records/record-1/dog-record">
-            ED418696
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="../../dog-records/record-3/dog-record">
+            ED338596
           </a></h2>
           <ul class="govuk-summary-card__actions govuk-!-font-weight-regular">
             {{ govukTag({
-              text: "Exempt",
-              classes: "govuk-tag--turquoise"
+              text: "Pre-exempt"
             }) }}
           </ul>
         </div>
@@ -140,7 +139,7 @@
               <tbody class="govuk-table__body">
                   <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0">
                     <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
-                     	Bouncer
+                     	Bronson
                     </td>
                     {% if data['microchipNumber'] %}
                       <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0">
@@ -148,7 +147,7 @@
                       </td>
                     {% elif data['lastName'] == None %}
                       <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0">
-                        112233445566778
+                        098765432123456
                       </td>
                     {% endif %}
                   </tr>

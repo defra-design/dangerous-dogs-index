@@ -967,7 +967,7 @@ router.post('/v17/search/search-input', function(request, response) {
 })
 
 // v17 Report something or check dog record activity
-router.post('/v17/dog-records/activity/activity-type', function (req, res) {
+router.post('/v17/dog-records/activity/activity-type-1', function (req, res) {
   var activityType = req.session.data['activityType']
   if (activityType == "report-something"){
     res.redirect('/v17/dog-records/record-1/comment/comment-type')
@@ -977,8 +977,38 @@ router.post('/v17/dog-records/activity/activity-type', function (req, res) {
 
 })
 
+router.post('/v17/dog-records/activity/activity-type-2', function (req, res) {
+  var activityType = req.session.data['activityType']
+  if (activityType == "report-something"){
+    res.redirect('/v17/dog-records/record-2/comment/comment-type')
+  } else {
+    res.redirect('/v17/dog-records/activity/activity-all')
+  }
+
+})
+
+router.post('/v17/dog-records/activity/activity-type-3', function (req, res) {
+  var activityType = req.session.data['activityType']
+  if (activityType == "report-something"){
+    res.redirect('/v17/dog-records/record-3/comment/comment-type')
+  } else {
+    res.redirect('/v17/dog-records/activity/activity-all')
+  }
+
+})
+
+router.post('/v17/dog-records/activity/activity-type-4', function (req, res) {
+  var activityType = req.session.data['activityType']
+  if (activityType == "report-something"){
+    res.redirect('/v17/dog-records/record-4/comment/comment-type')
+  } else {
+    res.redirect('/v17/dog-records/activity/activity-all')
+  }
+
+})
+
 // v17 Comment type
-router.post('/v17/dog-records/record-1/comment/comment-type-question', function (req, res) {
+router.post('/v17/dog-records/record-1/comment/comment-type-question-1', function (req, res) {
   var comment = req.session.data['comment']
   if (comment == "exemption"){
   res.redirect('/v17/dog-records/record-1/comment/breach-reason')
@@ -988,6 +1018,48 @@ router.post('/v17/dog-records/record-1/comment/comment-type-question', function 
     res.redirect('/v17/dog-records/record-1/comment/report-death')
   } if (comment == "something"){
     res.redirect('/v17/dog-records/record-1/comment/report-details')
+  }
+
+})
+
+router.post('/v17/dog-records/record-2/comment/comment-type-question-2', function (req, res) {
+  var comment = req.session.data['comment']
+  if (comment == "exemption"){
+  res.redirect('/v17/dog-records/record-2/comment/breach-reason')
+  } if (comment == "address"){
+    res.redirect('/v17/dog-records/record-2/comment/postcode')
+  } if (comment == "death"){
+    res.redirect('/v17/dog-records/record-2/comment/report-death')
+  } if (comment == "something"){
+    res.redirect('/v17/dog-records/record-2/comment/report-details')
+  }
+
+})
+
+router.post('/v17/dog-records/record-3/comment/comment-type-question-3', function (req, res) {
+  var comment = req.session.data['comment']
+  if (comment == "exemption"){
+  res.redirect('/v17/dog-records/record-3/comment/breach-reason')
+  } if (comment == "address"){
+    res.redirect('/v17/dog-records/record-3/comment/postcode')
+  } if (comment == "death"){
+    res.redirect('/v17/dog-records/record-3/comment/report-death')
+  } if (comment == "something"){
+    res.redirect('/v17/dog-records/record-3/comment/report-details')
+  }
+
+})
+
+router.post('/v17/dog-records/record-4/comment/comment-type-question-4', function (req, res) {
+  var comment = req.session.data['comment']
+  if (comment == "exemption"){
+  res.redirect('/v17/dog-records/record-4/comment/breach-reason')
+  } if (comment == "address"){
+    res.redirect('/v17/dog-records/record-4/comment/postcode')
+  } if (comment == "death"){
+    res.redirect('/v17/dog-records/record-4/comment/report-death')
+  } if (comment == "something"){
+    res.redirect('/v17/dog-records/record-4/comment/report-details')
   }
 
 })
