@@ -877,24 +877,70 @@ router.post('/v17/search/search-input', function(request, response) {
     response.redirect("/v17/search/record-1/results-address")
   } else if (search == "247 Norcroft"){
     response.redirect("/v17/search/record-1/results-address")
+  } else if (search == "5 Station Road"){
+    response.redirect("/v17/search/record-2/results-address")
+  } else if (search == "30 Hounds Gate"){
+    response.redirect("/v17/search/record-3/results-address")
   } else if (search == "Barking"){
     response.redirect("/v17/search/record-1/results-address")
+  } else if (search == "Woofferton"){
+    response.redirect("/v17/search/record-2/results-address")
+  } else if (search == "Nottingham"){
+    response.redirect("/v17/search/record-3/results-address")
   } else if (search == "IG11 7JF"){
     response.redirect("/v17/search/record-1/results-address")
+  } else if (search == "SY8 4NL"){
+    response.redirect("/v17/search/record-2/results-address")
+  } else if (search == "NG1 7BA"){
+    response.redirect("/v17/search/record-2/results-address")
   } else if (search == "mutley"){
     response.redirect("/v17/search/record-1/results-dog-name")
+  } else if (search == "bouncer"){
+    response.redirect("/v17/search/record-2/results-dog-name")
+  } else if (search == "bronson"){
+    response.redirect("/v17/search/record-3/results-dog-name")
   } else if (search == "Mutley"){
     response.redirect("/v17/search/record-1/results-dog-name")
+  } else if (search == "Bouncer"){
+    response.redirect("/v17/search/record-2/results-dog-name")
+  } else if (search == "Bronson"){
+    response.redirect("/v17/search/record-3/results-dog-name")
   } else if (search == "208510"){
     response.redirect("/v17/search/record-1/results-index-number")
+  } else if (search == "418696"){
+    response.redirect("/v17/search/record-2/results-index-number")
+  } else if (search == "ED208510"){
+    response.redirect("/v17/search/record-1/results-index-number")
+  } else if (search == "ED418696"){
+    response.redirect("/v17/search/record-2/results-index-number")
+  } else if (search == "338596"){
+    response.redirect("/v17/search/record-3/results-index-number")
+  } else if (search == "ED338596"){
+    response.redirect("/v17/search/record-3/results-index-number")
   } else if (search == "123456789012345"){
     response.redirect("/v17/search/record-1/results-microchip")
+  } else if (search == "112233445566778"){
+    response.redirect("/v17/search/record-2/results-microchip")
+  } else if (search == "098765432123456"){
+    response.redirect("/v17/search/record-3/results-microchip")
   } else if (search == "Michael Denton"){
     response.redirect("/v17/search/record-1/results-owner-name")
+  } else if (search == "Vicki Sugden"){
+    response.redirect("/v17/search/record-2/results-owner-name")
+  } else if (search == "Nathan Stockton"){
+    response.redirect("/v17/search/record-3/results-owner-name")
   } else if (search == "Denton"){
     response.redirect("/v17/search/record-1/results-owner-name")
+  } else if (search == "Sugden"){
+    response.redirect("/v17/search/record-2/results-owner-name")
+  } else if (search == "Stockton"){
+    response.redirect("/v17/search/record-3/results-owner-name")
   } else if (search == "denton"){
     response.redirect("/v17/search/record-1/results-owner-name")
+  } else if (search == "sugden"){
+    response.redirect("/v17/search/record-2/results-owner-name")
+  } else if (search == "stockton"){
+    response.redirect("/v17/search/record-3/results-owner-name")
   } else if (search == "In breach"){
     response.redirect("/v17/search/record-1/results-status")
   } else {
