@@ -1,15 +1,15 @@
-{% extends "layouts/defra-police.html" %}
+{% extends "layouts/defra.html" %}
 
-{% set pageName="View activity" %}
+{% set pageName="Check activity" %}
 
 {% block pageTitle %}
-  {{ pageName }} – Dog ED30227 - {{ serviceName }}
+  {{ pageName }} – Dog ED208510 - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "/v17/dog-records/dog-record"
+  href: "../dog-record"
 }) }}
 {% endblock %}
 
@@ -18,436 +18,94 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <form class="form" action="/v4/dog-records/activity/activity" method="post">
+        <span class="govuk-caption-l">ED208510</span>
+        <h1 class="govuk-heading-l">Check activity</h1>
 
-        <span class="govuk-caption-l">Dog ED30227</span>
-        <h1 class="govuk-heading-l">View activity</h1>
+        <table class="govuk-table">
 
-        <div class="govuk-form-group govuk-!-margin-bottom-3">
-          <label class="govuk-label" for="activity">
-            Activity
-          </label>
-          <select class="govuk-select" id="activity" name="activity">
-              <option value="All" selected>All</option>
-              <option value="Exemption details">Exemption details</option>
-              <option value="Dog details">Dog details</option>
-              <option value="Owner details">Owner details</option>
-          </select>
-        </div>
-
-        {{ govukButton({
-          text: "Filter activity"
-        }) }}
+<caption class="govuk-table__caption govuk-visually-hidden">All activity</caption>
 
 
-        {{ govukTable({
-          caption: "All activity",
-          captionClasses: "govuk-table__caption--m",
-          firstCellIsHeader: false,
-          head: [
-            {
-              text: "Date",
-              classes: "govuk-!-width-one-quarter"
-            },
-            {
-              text: "Activty",
-              classes: "govuk-!-width-one-half"
-            },
-            {
-              text: "Team member",
-              classes: "govuk-!-width-one-quarter"
-            }
-          ],
-          rows: [
-            [
-              {
-                text: "17 January 2024"
-              },
-              {
-                text: "Insurance reminder sent"
-              },
-              {
-                text: "Evyonne Macallister"
-              }
-            ],
-            [
-              {
-                text: "8 January 2024"
-              },
-              {
-                text: "Dog status set to In Breach"
-              },
-              {
-                text: "Evyonne Macallister"
-              }
-            ],
-            [
-              {
-                text: "8 January 2024"
-              },
-              {
-                text: "Police correspondance received"
-              },
-              {
-                text: "Evyonne Macallister"
-              }
-            ],
-            [
-              {
-                text: "28 September 2023"
-              },
-              {
-                text: "Address changed"
-              },
-              {
-                text: "Danielle Simmons"
-              }
-            ],
-            [
-              {
-                text: "30 August 2023"
-              },
-              {
-                text: "Change of address form sent"
-              },
-              {
-                text: "Danielle Simmons"
-              }
-            ],
-            [
-              {
-                text: "29 January 2023"
-              },
-              {
-                text: "Insurance certificate received"
-              },
-              {
-                text: "Danielle Simmons"
-              }
-            ],
-            [
-              {
-                text: "14 January 2023"
-              },
-              {
-                text: "Insurance reminder sent"
-              },
-              {
-                text: "Danielle Simmons"
-              }
-            ],
-            [
-              {
-                text: "6 February 2022"
-              },
-              {
-                text: "Insurance certificate received"
-              },
-              {
-                text: "Evyonne Macallister"
-              }
-            ],
-            [
-              {
-                text: "19 January 2022"
-              },
-              {
-                text: "Insurance reminder sent"
-              },
-              {
-                text: "Evyonne Macallister"
-              }
-            ],
-            [
-              {
-                text: "2 February 2021"
-              },
-              {
-                text: "Insurance certificate received"
-              },
-              {
-                text: "Evyonne Macallister"
-              }
-            ],
-            [
-              {
-                text: "18 January 2021"
-              },
-              {
-                text: "Insurance reminder sent"
-              },
-              {
-                text: "Evyonne Macallister"
-              }
-            ],
-            [
-              {
-                text: "27 January 2020"
-              },
-              {
-                text: "Insurance certificate received"
-              },
-              {
-                text: "Evyonne Macallister"
-              }
-            ],
-            [
-              {
-                text: "18 January 2020"
-              },
-              {
-                text: "Insurance reminder sent"
-              },
-              {
-                text: "Evyonne Macallister"
-              }
-            ],
-            [
-              {
-                text: "27 May 2019"
-              },
-              {
-                text: "Owner changed"
-              },
-              {
-                text: "Danielle Simmons"
-              }
-            ],
-            [
-              {
-                text: "9 May 2019"
-              },
-              {
-                text: "Change of owner form sent"
-              },
-              {
-                text: "Danielle Simmons"
-              }
-            ],
-            [
-              {
-                text: "13 January 2019"
-              },
-              {
-                text: "Insurance certificate received"
-              },
-              {
-                text: "Evyonne Macallister"
-              }
-            ],
-            [
-              {
-                text: "14 January 2018"
-              },
-              {
-                text: "Insurance certificate received"
-              },
-              {
-                text: "Danielle Simmons"
-              }
-            ],
-            [
-              {
-                text: "11 January 2017"
-              },
-              {
-                text: "Insurance certificate received"
-              },
-              {
-                text: "Karen Halliday"
-              }
-            ],
-            [
-              {
-                text: "14 January 2016"
-              },
-              {
-                text: "Insurance certificate received"
-              },
-              {
-                text: "Evyonne Macallister"
-              }
-            ],
-            [
-              {
-                text: "7 May 2015"
-              },
-              {
-                text: "Email address changed"
-              },
-              {
-                text: "Evyonne Macallister"
-              }
-            ],
-            [
-              {
-                text: "24 January 2015"
-              },
-              {
-                text: "Insurance certificate received"
-              },
-              {
-                text: "Karen Halliday"
-              }
-            ],
-            [
-              {
-                text: "18 January 2015"
-              },
-              {
-                text: "Insurance reminder sent"
-              },
-              {
-                text: "Evyonne Macallister"
-              }
-            ],
-            [
-              {
-                text: "12 April 2014"
-              },
-              {
-                text: "Certificate issued"
-              },
-              {
-                text: "Filip Yomov"
-              }
-            ],
-            [
-              {
-                text: "12 April 2014"
-              },
-              {
-                text: "Status set to Exempt"
-              },
-              {
-                text: "Filip Yomov"
-              }
-            ],
-            [
-              {
-                text: "10 April 2014"
-              },
-              {
-                text: "Insurance certificate received"
-              },
-              {
-                text: "Filip Yomov"
-              }
-            ],
-            [
-              {
-                text: "10 April 2014"
-              },
-              {
-                text: "Neutering confirmed"
-              },
-              {
-                text: "Filip Yomov"
-              }
-            ],
-            [
-              {
-                text: "10 April 2014"
-              },
-              {
-                text: "Microchip number verified"
-              },
-              {
-                text: "Filip Yomov"
-              }
-            ],
-            [
-              {
-                text: "3 March 2014"
-              },
-              {
-                text: "Owner details added"
-              },
-              {
-                text: "Karen Halliday"
-              }
-            ],
-            [
-              {
-                text: "3 March 2014"
-              },
-              {
-                text: "Dog details added"
-              },
-              {
-                text: "Karen Halliday"
-              }
-            ],
-            [
-              {
-                text: "29 March 2014"
-              },
-              {
-                text: "Application fee paid"
-              },
-              {
-                text: "Karen Halliday"
-              }
-            ],
-            [
-              {
-                text: "14 December 2013"
-              },
-              {
-                text: "Judicial review received"
-              },
-              {
-                text: "Filip Yomov"
-              }
-            ],
-            [
-              {
-                text: "5 November 2013"
-              },
-              {
-                text: "Witness statement sent"
-              },
-              {
-                text: "Karen Halliday"
-              }
-            ],
-            [
-              {
-                text: "1 November 2013"
-              },
-              {
-                text: "Witness statement received"
-              },
-              {
-                text: "Karen Halliday"
-              }
-            ],
-            [
-              {
-                text: "13 September 2013"
-              },
-              {
-                text: "Status set to Pre-exempt"
-              },
-              {
-                text: "Filip Yomov"
-              }
-            ],
-            [
-              {
-                text: "13 September 2013"
-              },
-              {
-                text: "CDO issued"
-              },
-              {
-                text: "Filip Yomov"
-              }
-            ]
-          ]
-        }) }}
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
 
-      </form>
+<th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date</th>
+
+<th scope="col" class="govuk-table__header govuk-!-width-one-half">Activity</th>
+
+<th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Team member</th>
+
+</tr>
+</thead>
+
+<tbody class="govuk-table__body">
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">12 July 2024</td>
+   <td class="govuk-table__cell">Dog status set to In breach:
+     <br>
+     <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-2 govuk-!-margin-bottom-0">
+         <li>dog not kept on lead or muzzled</li>
+    </ul>
+   </td>
+   <td class="govuk-table__cell">Automated processor</td>
+ </tr>
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">12 July 2024</td>
+   <td class="govuk-table__cell">Police correspondance received</td>
+   <td class="govuk-table__cell">Evyonne</td>
+ </tr>
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">16 December 2023</td>
+   <td class="govuk-table__cell">Certificate issued</td>
+   <td class="govuk-table__cell">Automated processor</td>
+ </tr>
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">16 December 2023</td>
+   <td class="govuk-table__cell">Status set to Exempt</td>
+   <td class="govuk-table__cell">Automated processor</td>
+ </tr>
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">14 December 2023</td>
+   <td class="govuk-table__cell">Insurance certificate received</td>
+   <td class="govuk-table__cell">Index user</td>
+ </tr>
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">11 December 2023</td>
+   <td class="govuk-table__cell">Neutering confirmed</td>
+   <td class="govuk-table__cell">Filip</td>
+ </tr>
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">11 December 2023</td>
+   <td class="govuk-table__cell">Microchip number verified</td>
+   <td class="govuk-table__cell">Filip</td>
+ </tr>
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">5 December 2023</td>
+   <td class="govuk-table__cell">Owner details added</td>
+   <td class="govuk-table__cell">Karen</td>
+ </tr>
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">5 December 2023</td>
+   <td class="govuk-table__cell">Dog details added</td>
+   <td class="govuk-table__cell">Karen</td>
+ </tr>
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">30 November 2023</td>
+   <td class="govuk-table__cell">Application fee paid</td>
+   <td class="govuk-table__cell">Karen</td>
+ </tr>
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">27 October 2023</td>
+   <td class="govuk-table__cell">Status set to Pre-exempt</td>
+   <td class="govuk-table__cell">Automated processor</td>
+ </tr>
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">27 October 2023</td>
+   <td class="govuk-table__cell">CDO issued</td>
+   <td class="govuk-table__cell">Filip</td>
+ </tr>
+</tbody>
+</table>
 
     </div>
   </div>

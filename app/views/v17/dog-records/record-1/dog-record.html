@@ -189,82 +189,109 @@
 
     <div class="govuk-grid-column-one-half">
 
-      {{ govukSummaryList({
-        classes: "govuk-!-font-size-16",
-        card: {
-          title: {
-            text: "Exemption details",
-            classes: "defra-summary-header"
-          }
-        },
-        rows: [
-          {
-            key: {
-              text: "Status"
-            },
-            value: {
-              text: "In breach"
-           }
-          },
-          {
-            key: {
-              text: "Certificate issued"
-            },
-            value: {
-              text: "9 December 2023"
-           }
-          },
-          {
-            key: {
-              text: "Order"
-            },
-            value: {
-              text: "2023"
-            }
-          },
-          {
-            classes: "govuk-!-width-one-third",
-            key: {
-              text: "Microchip deadline"
-            },
-            value: {
-              text: "31 March 2024"
-            }
-          },
-          {
-            key: {
-              text: "Neutering deadline"
-            },
-            value: {
-              text: "30 June 2024"
-            }
-          },
-          {
-            key: {
-              text: "Application fee paid"
-            },
-            value: {
-              text: "30 November 2023"
-            }
-          },
-          {
-            key: {
-              text: "Insurance company"
-            },
-            value: {
-              text: "Dogs Trust"
-            }
-          },
-          {
-            key: {
-              text: "Insurance renewal date"
-            },
-            value: {
-              text: "29 November 2024"
-            }
-          }
-        ]
-      }) }}
+      <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title defra-summary-header">Exemption details</h2>
+</div>
+
+    <div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list govuk-!-font-size-16">
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            In breach:
+            <br>
+            <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16 govuk-!-margin-top-2">
+                <li>dog not kept on lead or muzzled</li>
+            </ul>
+          </dd>
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Certificate issued
+          </dt>
+          <dd class="govuk-summary-list__value">
+            9 December 2023
+          </dd>
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Order
+          </dt>
+          <dd class="govuk-summary-list__value">
+            2023
+          </dd>
+        </div>
+
+
+
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions govuk-!-width-one-third">
+          <dt class="govuk-summary-list__key">
+            Microchip deadline
+          </dt>
+          <dd class="govuk-summary-list__value">
+            31 March 2024
+          </dd>
+        </div>
+
+
+
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            Neutering deadline
+          </dt>
+          <dd class="govuk-summary-list__value">
+            30 June 2024
+          </dd>
+        </div>
+
+
+
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            Application fee paid
+          </dt>
+          <dd class="govuk-summary-list__value">
+            30 November 2023
+          </dd>
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            Insurance company
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Dogs Trust
+          </dd>
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            Insurance renewal date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            29 November 2024
+          </dd>
+
+        </div>
+
+  </dl></div>
+  </div>
 
     </div>
   </div>
