@@ -1063,3 +1063,14 @@ router.post('/v17/dog-records/record-4/comment/comment-type-question-4', functio
   }
 
 })
+
+// v17 Verify
+router.post('/v17/verify-question', function (req, res) {
+  var verify = req.session.data['verify']
+  if (verify == "email"){
+    res.redirect('/v17/security-word')
+  } else {
+    res.redirect('/v17/send-text')
+  }
+
+})

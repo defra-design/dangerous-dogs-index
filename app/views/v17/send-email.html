@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="How do you want to verify your identity?" %}
+{% set pageName="We will send the verification code to this email address" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -11,36 +11,24 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v17/verify-question" method="post">
+      <form class="form" action="/v17/enter-email-code" method="post">
 
-        {{ govukRadios({
-          name: "verify",
-          fieldset: {
-            legend: {
-              text: "How do you want to verify your identity?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
-            }
-          },
-          hint: {
-            text: "We will send you a 6-digit verification code.",
-            classes: "defra-text govuk-!-margin-top-7"
-          },
-          items: [
-            {
-              value: "text message",
-              text: "Text message"
-            },
-            {
-              value: "email",
-              text: "Email"
-            }
-          ]
+        <h1 class="govuk-heading-xl">
+          {{ pageName }}
+        </h1>
+
+        {{ govukInsetText({
+          text: "************police.uk",
+          classes: "govuk-!-font-weight-bold"
         }) }}
 
-      {{ govukButton({
-        text: "Continue"
-      }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Confirm and send code"
+          }) }}
+
+          <a class="govuk-link govuk-link--no-visited-state" href="">I do not have access to this email address</a>
+        </div>
 
       </form>
 
