@@ -1,0 +1,200 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Confirm all details" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "enforcement-details"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="confirmation" method="post">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Owner details"
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Leah Johnstone"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../create",
+                  classes: "govuk-link--no-visited-state",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: data['dateBirth'] or "2 December 1986"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../create#date-of-birth",
+                  classes: "govuk-link--no-visited-state",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: "12 Primrose Road<br>Southampton<br>SO16 3GP"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  classes: "govuk-link--no-visited-state",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Police and court details"
+          },
+          actions: {
+            items: [
+              {
+                href: "./enforcement-details",
+                classes: "govuk-!-font-weight-regular govuk-link--no-visited-state",
+                text: "Change",
+                visuallyHiddenText: "police and court details"
+              }
+            ]
+          }
+        },
+        rows: [
+        {
+          key: {
+            text: "Police force"
+          },
+          value: {
+            text: data['police-force'] or "Hampshire Constabulary"
+          }
+        },
+        {
+          key: {
+            text: "Dog legislation officer"
+          },
+          value: {
+            text: data['dog-legislation-officer'] or "Nigel Hillier"
+          }
+        },
+        {
+          key: {
+            text: "Court"
+          },
+          value: {
+            text: "Southampton (West Hampshire) Magistrates’ Court"
+          }
+        }
+      ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Dog 1"
+          },
+          actions: {
+            items: [
+              {
+                href: "dog-details-edit",
+                text: "Change",
+                classes: "govuk-!-font-weight-regular govuk-link--no-visited-state",
+                visuallyHiddenText: data['breedType1'] or "XL Bully"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Breed"
+            },
+            value: {
+              text: data['breedType1'] or "XL Bully"
+            }
+          },
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: data['dogName1'] or "Axel"
+            }
+          },
+          {
+            key: {
+              text: "Microchip number"
+            },
+            value: {
+              text: data['microchipNumber'] or "123456789012345"
+            }
+          },
+          {
+            key: {
+              text: "CDO issued"
+            },
+            value: {
+              text: data['cdo-issued'] or "20 August 2024"
+            }
+          },
+          {
+            key: {
+              text: "CDO expiry"
+            },
+            value: {
+              text: data['cdo-expiry'] or "20 October 2024"
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Confirm details"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

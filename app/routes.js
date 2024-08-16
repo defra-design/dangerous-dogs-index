@@ -1178,3 +1178,14 @@ router.post('/v17/verify-question', function (req, res) {
   }
 
 })
+
+// v18 No court for interim exempt
+router.post('/v18/cdo/create/application-type', function (req, res) {
+  var recordType = req.session.data['recordType']
+  if (recordType == "Interim exemption scheme"){
+    res.redirect('/v18/cdo/create/interim-exempt/confirm-dog-details')
+  } else {
+    res.redirect('/v18/cdo/create/cdo/confirm-dog-details')
+  }
+
+})
