@@ -1,0 +1,170 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Police and court details" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "confirm-dog-details"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="confirm-details" method="post">
+
+        {% call govukFieldset({
+          legend: {
+            text: "Enter police and court details",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+        {{ govukSelect({
+          classes: "govuk-!-width-two-thirds",
+          id: "police-force",
+          name: "police-force",
+          label: {
+            text: "Police force"
+          },
+          hint: {
+           text: "Chosen using the dog owner’s postcode."
+          },
+          items: [
+            {
+              value: "Avon and Somerset Constabulary",
+              text: "Avon and Somerset Constabulary"
+            },
+            {
+              value: "Bedfordshire Police",
+              text: "Bedfordshire Police"
+            },
+            {
+              value: "Cumbria Constabulary",
+              text: "Cumbria Constabulary"
+            },
+            {
+              value: "Devon and Cornwall Police",
+              text: "Devon and Cornwall Police"
+            },
+            {
+              value: "Essex Police",
+              text: "Essex Police"
+            },
+            {
+              value: "Gloucestershire Constabulary",
+              text: "Gloucestershire Constabulary"
+            },
+            {
+              value: "Greater Manchester Police",
+              text: "Greater Manchester Police"
+            },
+            {
+              value: "Hampshire Constabulary",
+              text: "Hampshire Constabulary",
+              selected: true
+            },
+            {
+              value: "Hertfordshire Constabulary",
+              text: "Hertfordshire Constabulary"
+            },
+            {
+              value: "Humberside Police",
+              text: "Humberside Police"
+            },
+            {
+              value: "Kent Police",
+              text: "Kent Police"
+            },
+            {
+              value: "Metropolitan Police Service",
+              text: "Metropolitan Police Service"
+            },
+            {
+              value: "Staffordshire Police",
+              text: "Staffordshire Police"
+            },
+            {
+              value: "Surrey Police",
+              text: "Surrey Police"
+            },
+            {
+              value: "Sussex Police",
+              text: "Sussex Police"
+            },
+            {
+              value: "Thames Valley Police",
+              text: "Thames Valley Police"
+            },
+            {
+              value: "Wiltshire Police",
+              text: "Wiltshire Police"
+            }
+          ]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Dog legislation officer (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "dog-legislation-officer",
+          name: "dog-legislation-officer"
+        }) }}
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="court">
+            Court (optional)
+          </label>
+          <select class="govuk-select" id="court" name="court"
+            data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values="" data-show-no-options-found="">
+            <option value="" selected disabled>Start typing to choose court</option>
+              <option value="Aberystwyth Justice Centre">Aberystwyth Justice Centre</option>
+              <option value="Barrow-in-Furness Magistrates Court">Barrow-in-Furness Magistrates Court</option>
+              <option value="Bradford and Keighley Magistrates’ Court">Bradford and Keighley Magistrates’ Court</option>
+              <option value="Chester Magistrates’ Court">Chester Magistrates’ Court</option>
+              <option value="Doncaster Justice Centre North (Doncaster Magistrates’ Court)">Doncaster Justice Centre North (Doncaster Magistrates’ Court)</option>
+              <option value="East Berkshire (Slough) Magistrates’ Court">East Berkshire (Slough) Magistrates’ Court</option>
+              <option value="Horsham Law Courts">Horsham Law Courts</option>
+              <option value="Ipswich Magistrates’ Court">Ipswich Magistrates’ Court</option>
+              <option value="Kirklees (Huddersfield) Magistrates’ Court">Kirklees (Huddersfield) Magistrates’ Court</option>
+              <option value="Llandudno Magistrates’ Court">Llandudno Magistrates’ Court</option>
+              <option value="Maidstone Magistrates’ Court">Maidstone Magistrates’ Court</option>
+              <option value="Mid and South East Northumberland Law Courts (Bedlington)">Mid and South East Northumberland Law Courts (Bedlington)</option>
+              <option value="North Somerset Courthouse">North Somerset Courthouse</option>
+              <option value="Oxford and Southern Oxfordshire Magistrates’ Court">Oxford and Southern Oxfordshire Magistrates’ Court</option>
+              <option value="Peterborough Magistrates’ Court">Peterborough Magistrates’ Court</option>
+              <option value="Preston Magistrates’ Court">Preston Magistrates’ Court</option>
+              <option value="Salisbury Law Courts">Salisbury Law Courts</option>
+              <option value="Sheffield Magistrates’ Court">Sheffield Magistrates’ Court</option>
+              <option value="Southampton (West Hampshire) Magistrates’ Court">Southampton (West Hampshire) Magistrates’ Court</option>
+              <option value="St Albans Magistrates’ Court">St Albans Magistrates’ Court</option>
+              <option value="Taunton Magistrates’ Court">Taunton Magistrates’ Court</option>
+              <option value="Wellingborough Magistrates’ Court">Wellingborough Magistrates’ Court</option>
+              <option value="Wirral Magistrates’ Court">Wirral Magistrates’ Court</option>
+              <option value="Worcester Justice Centre">Worcester Justice Centre</option>
+              <option value="Wrexham Law Courts">Wrexham Law Courts</option>
+              <option value="York Magistrates’ Court">York Magistrates’ Court</option>
+          </select>
+        </div>
+
+        {% endcall %}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

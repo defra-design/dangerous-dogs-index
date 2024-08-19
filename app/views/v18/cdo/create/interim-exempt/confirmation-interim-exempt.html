@@ -122,26 +122,36 @@
         Police and court details
       </h2>
 
-      {{ govukSummaryList({
-          rows: [
-          {
-            key: {
-              text: "Police force"
-            },
-            value: {
-              text: data['police-force'] or "Hampshire Constabulary"
-            }
-          },
-          {
-            key: {
-              text: "Dog legislation officer"
-            },
-            value: {
-              text: data['dog-legislation-officer'] or "Nigel Hillier"
-            }
-          }
-        ]
-      }) }}
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Police force
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Hampshire Constabulary
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Dog legislation officer
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Nigel Hillier
+          </dd>
+        </div>
+
+      {% if data['court'] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Court
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['court'] }}
+          </dd>
+        </div>
+      {% endif %}
+    </dl>
 
     </div>
   </div>

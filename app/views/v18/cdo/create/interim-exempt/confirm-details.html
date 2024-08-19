@@ -86,42 +86,43 @@
           }
         ]
       }) }}
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Police details</h2><div class="govuk-summary-card__actions">
+          <a class="govuk-link govuk-!-font-weight-regular govuk-link--no-visited-state" href="./enforcement-details">Change<span class="govuk-visually-hidden"> police and court details (Police details)</span></a>
+        </div>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Police force
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Hampshire Constabulary
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Dog legislation officer
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Nigel Hillier
+            </dd>
+          </div>
 
-      {{ govukSummaryList({
-        card: {
-          title: {
-            text: "Police details"
-          },
-          actions: {
-            items: [
-              {
-                href: "./enforcement-details",
-                classes: "govuk-!-font-weight-regular govuk-link--no-visited-state",
-                text: "Change",
-                visuallyHiddenText: "police and court details"
-              }
-            ]
-          }
-        },
-        rows: [
-        {
-          key: {
-            text: "Police force"
-          },
-          value: {
-            text: data['police-force'] or "Hampshire Constabulary"
-          }
-        },
-        {
-          key: {
-            text: "Dog legislation officer"
-          },
-          value: {
-            text: data['dog-legislation-officer'] or "Nigel Hillier"
-          }
-        }
-      ]
-      }) }}
+        {% if data['court'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Court
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['court'] }}
+            </dd>
+          </div>
+        {% endif %}
+        </dl>
+      </div>
+    </div>
 
       {{ govukSummaryList({
         card: {
