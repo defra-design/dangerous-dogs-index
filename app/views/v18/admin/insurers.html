@@ -1,0 +1,105 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="Add or remove dog insurers" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../index"
+    },
+    {
+      text: "Admin",
+      href: "index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      <p class="govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="#add-an-insurer">Add a dog insurer</a>
+      </p>
+
+      <p class="govuk-body">To change a dog insurer name, remove the dog insurer first. Then add the changed dog insurer name.
+        </p>
+
+        {{ govukInsetText({
+          text: "Dog insurers are removed instantly if you select ‘Remove’ in the list below."
+        }) }}
+
+      <p class="govuk-body">
+        Removed dog insurers will not be available for new applications. Exisiting records are unchanged.
+      </p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+      <table class="govuk-table govuk-!-margin-bottom-7">
+        <caption class="govuk-visually-hidden">Team pseudonyms</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Dog insurer</th>
+            <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Remove insurer</span></th>
+          </tr>
+        </thead>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell defra-align-table">Dogs Trust</td>
+            <td class="govuk-table__cell defra-align-table govuk-table__cell--numeric">
+              {{ govukButton({
+                text: "Remove",
+                classes: "govuk-button--secondary govuk-!-margin-bottom-0"
+              }) }}
+            </td>
+          </tr>
+      </table>
+
+      <form class="form" action="insurer-added" method="post">
+
+      <div id="add-an-insurer">
+      {% call govukFieldset({
+        legend: {
+          text: "Add a dog insurer",
+          classes: "govuk-fieldset__legend--m",
+          isPageHeading: false
+        }
+      }) %}
+
+        {{ govukInput({
+          label: {
+            text: "Name"
+          },
+          hint: {
+            text: "Enter an insurer name using capital letters, for example AXA Insurance, Dogs Trust."
+          },
+          classes: "govuk-!-width-one-half",
+          id: "insurer",
+          name: "insurer"
+        }) }}
+
+      {% endcall %}
+
+      {{ govukButton({
+        text: "Add dog insurer"
+      }) }}
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

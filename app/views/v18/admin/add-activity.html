@@ -1,0 +1,43 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="Add an activity to the Index" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "activities"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-l">Dog record: something we send</span>
+
+        {{ govukInput({
+          label: {
+            text: "What activity do you want to add?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Add an item to send or receive for a dog record - for example, Change of address form, death of a dog form."
+          },
+          id: "activity-name",
+          name: "activityName"
+        }) }}
+
+        {{ govukButton({
+          text: "Add activity"
+        }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
