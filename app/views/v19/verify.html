@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="How do you want to verify your identity?" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v17/verify-question" method="post">
+
+        {{ govukRadios({
+          name: "verify",
+          fieldset: {
+            legend: {
+              text: "How do you want to verify your identity?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "We will send you a 6-digit verification code.",
+            classes: "defra-text govuk-!-margin-top-7"
+          },
+          items: [
+            {
+              value: "text message",
+              text: "Text message"
+            },
+            {
+              value: "email",
+              text: "Email"
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+
+      <details class="govuk-details" data-module="govuk-details">
+           <summary class="govuk-details__summary">
+               <span class="govuk-details__summary-text">Need more help?</span>
+           </summary>
+           <div class="govuk-details__text">
+               <p class="govuk-body">Contact the Dogs Index by phone or email.</p>
+               <p class="govuk-body">Telephone:<br>
+               0300 322 9434</p>
+               <p class="govuk-body">Email:<br>
+               <a href="" class="govuk-link govuk-link--no-visited-state">dogsindex@defra.gov.uk</a></p>
+               <p class="govuk-body">Service opening times:<br>
+               9am to 5pm, Monday to Friday except public holidays</p>
+               <p class="govuk-body"><a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target=”_blank”>Find out about call charges (opens in new tab)</p>
+           </div>
+       </details>
+
+    </div>
+  </div>
+
+{% endblock %}

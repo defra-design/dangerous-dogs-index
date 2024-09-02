@@ -1,0 +1,46 @@
+{% extends "layouts/defra-police-2.html" %}
+
+{% set pageName="Report received" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../../index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+        <h1 class="govuk-panel__title">
+          Report received
+        </h1>
+
+        <div class="govuk-panel__body">
+          Dog ED208510
+        </div>
+      </div>
+
+      <p class=govuk-body">
+        We will check the details you have reported and update the Index if we need to. If we need more information we will contact you.
+        </p>
+
+      <p class=govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="../dog-record">Dog record ED208510</a>
+        </p>
+
+    </div>
+  </div>
+
+{% endblock %}

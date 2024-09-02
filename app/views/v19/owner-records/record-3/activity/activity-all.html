@@ -1,0 +1,93 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Check activity" %}
+
+{% block pageTitle %}
+  {{ pageName }} - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "/v17/owner-records/record-3/owner-record"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <span class="govuk-caption-l">Nathan Stockton</span>
+        <h1 class="govuk-heading-l">Check activity</h1>
+
+        {{ govukTable({
+          caption: "All activity",
+          captionClasses: "govuk-visually-hidden",
+          firstCellIsHeader: false,
+          head: [
+            {
+              text: "Date",
+              classes: "govuk-!-width-one-quarter"
+            },
+            {
+              text: "Activty",
+              classes: "govuk-!-width-one-half"
+            },
+            {
+              text: "Team member",
+              classes: "govuk-!-width-one-quarter"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "14 December 2024"
+              },
+              {
+                text: "Address line 1 updated from 42 Abingdon Square"
+              },
+              {
+                text: "Arthur"
+              }
+            ],
+            [
+              {
+                text: "14 December 2024"
+              },
+              {
+                text: "Postcode updated from NG8 7LX"
+              },
+              {
+                text: "Arthur"
+              }
+            ],
+            [
+              {
+                text: "3 December 2024"
+              },
+              {
+                text: "Change of address form sent"
+              },
+              {
+                text: "James"
+              }
+            ],
+            [
+              {
+                text: "30 November 2023"
+              },
+              {
+                text: "Owner details added"
+              },
+              {
+                text: "Karen"
+              }
+            ]
+          ]
+        }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

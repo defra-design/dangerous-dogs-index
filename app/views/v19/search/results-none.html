@@ -1,0 +1,51 @@
+{% extends "layouts/defra-police.html" %}
+
+{% set pageName="Search results" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v17/search/search-input" method="post">
+
+      <div class="govuk-form-group govuk-!-margin-bottom-3">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="search">
+            Search
+          </label>
+        </h1>
+        <div id="search-hint" class="govuk-body govuk-!-margin-bottom-2">
+          Use one or more words, separated by a space, for example ‘owner’s name postcode’
+        </div>
+        <input class="govuk-input" value="{{ data['search'] }}" id="search" name="search" type="text" aria-describedby="search-hint">
+      </div>
+
+      {{ govukButton({
+        text: "Search"
+      }) }}
+
+      </form>
+
+      <p class="govuk-body govuk-!-margin-top-2">
+        Your search
+        {% if data['search'] %} for <span class="govuk-!-font-weight-bold">{{ data['search'] }}</span>
+          {% else %}{% endif %} did not match any records.
+        </p>
+      <p class="govuk-body">
+        Suggestions:
+        </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>ensure all words are spelled correctly</li>
+        <li>try different keywords to find the record</li>
+      </ul>
+
+    </div>
+  </div>
+
+{% endblock %}

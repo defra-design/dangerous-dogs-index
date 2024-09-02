@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+{% endset%}
+
+{% block pageTitle %}
+  You have a GOV.UK One Login - GOV.UK One Login
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link govuk-link--no-visited-state" href="#">feedback (opens in a new tab)</a> will help us to improve it.'
+  }) }}
+  {{ govukBackLink({
+    href: "../create-account/enter-email",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/page-index/authentication/sign-in/check-phone" method="post">
+
+        <h2 class="govuk-heading-l">You have a GOV.UK One Login</h2>
+
+        <p class="govuk-body">There's already a GOV.UK One Login using <b>email@address.com</b></p>
+
+        <p class="govuk-body">Enter your password to sign in.</p>
+
+        {{ govukPasswordInput({
+          label: {
+            text: "Password"
+          },
+          id: "password-input",
+          name: "password"
+        }) }}
+
+            <button class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>
+
+      <p class="govuk-body">
+        <a href="/page-index/authentication/sign-in/check-email" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">I’ve forgotten my password</a>
+    </p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
