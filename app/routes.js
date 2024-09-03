@@ -1209,6 +1209,8 @@ router.post('/v19/search/search-input', function(request, response) {
     response.redirect("/v19/search/record-1/results-address")
   } else if (search == "norcroft"){
     response.redirect("/v19/search/record-1/results-address")
+  } else if (search == "Norcroft"){
+    response.redirect("/v19/search/record-1/results-address")
   } else if (search == "5 Station Road"){
     response.redirect("/v19/search/record-2/results-address")
   } else if (search == "station road"){
