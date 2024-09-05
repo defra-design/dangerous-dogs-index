@@ -25,12 +25,6 @@
         iconFallbackText: "Warning"
       }) }}
 
-      {{ govukButton({
-        text: "Start now",
-        href: "create-account",
-        isStartButton: true
-      }) }}
-
       <h2 class="govuk-heading-m">
         Before you start
       </h2>
@@ -41,6 +35,13 @@
         <li>you are a dog liaison officer working for a UK police force</li>
         <li>you have a police.uk email address</li>
       </ul>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "create-account",
+        isStartButton: true,
+        classes: "govuk-!-margin-top-4 govuk-!-margin-bottom-8"
+      }) }}
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
         Privacy notice
