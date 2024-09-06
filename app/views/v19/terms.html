@@ -13,6 +13,9 @@
         Defra {{ serviceName }}
       </h1>
 
+      <p class="govuk-body-l">Something that says they need to read and agree to this secure access licence.
+      </p>
+
       <h2 class="govuk-heading-l">
         Purpose
       </h2>
@@ -81,6 +84,50 @@
       <p class="govuk-body">
         <span class="govuk-!-font-weight-bold">Working Day</span> means any day other than a Saturday, Sunday or public holiday in England and Wales.
       </p>
+
+      <h2 class="govuk-heading-l">
+        Terms and conditions
+      </h2>
+
+      <ol class="govuk-list govuk-list--number">
+        <li>Access to the Personal Data and other sensitive information is being provided for the prevention and/or detection of crime and the apprehension and/or prosecution of offenders.</li>
+        <li>Personal Data and other sensitive information must not be used for any other purposes without the prior written consent of Defra.</li>
+        <li>The lawful basis for processing Personal Data is for the performance of a task carried out in the public interest which is laid down by law in the pieces of legislation listed below. These pieces of legislation set out Defra’s general purposes as the designated agency to discharge these functions. The task is the operation of the Index of Exempted Dogs for England, Wales and Scotland:</li>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>The Dangerous Dogs Act 1991; <a class="govuk-link govuk-link--no-visited-state" href="">Dangerous Dogs Act 1991 (legislation.gov.uk)</a>
+          </li>
+          <li>The Dangerous Dogs Exemption Schemes (England and Wales) Order 2015 SI No. 138 (for England and Wales); <a class="govuk-link govuk-link--no-visited-state" href="">The Dangerous Dogs Exemption Schemes (England and Wales) Order 2015 (legislation.gov.uk)</a>
+          </li>
+          <li>The Dangerous Dogs Compensation and Exemption Schemes Order 1991 SI No. 1744 (for Scotland only); The Dangerous Dogs Compensation and Exemption Schemes Order 1991 (legislation.gov.uk)
+          </li>
+          <li>The Dangerous Dogs (Compensation and Exemption Schemes) (England and Wales) Order 2023; The Dangerous Dogs (Compensation and Exemption Schemes) (England and Wales) Order 2023 (legislation.gov.uk)
+          </li>
+          <li>The Dangerous Dogs (Exemption Schemes and Miscellaneous Provisions) (England and Wales) Order 2023; The Dangerous Dogs (Exemption Schemes and Miscellaneous Provisions) (England and Wales) Order 2023 (legislation.gov.uk)
+          </li>
+        </ul>
+      </ol>
+
+      {{ govukCheckboxes({
+        name: "agree",
+        fieldset: {
+          legend: {
+            text: "Agree to the terms and conditions",
+            isPageHeading: false,
+            classes: "govuk-visually-hidden"
+          }
+        },
+        items: [
+          {
+            value: "agree",
+            text: "I agree to the secure access licence"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Agree and continue"
+      }) }}
 
     </div>
   </div>
