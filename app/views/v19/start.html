@@ -13,11 +13,13 @@
         Defra {{ serviceName }}
       </h1>
 
+      <p>This service is only for dog liaison officers working for a UK police force.</p>
+
       <p>Use this service to:</p>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>access the Dangerous Dogs Index</li>
-        <li>advise owner records in the index for example a breach of exemption or change of owner address</li>
+        <li>advise Defra of changes to owner records, for example a breach of exemption or change of owner address</li>
       </ul>
 
       {{ govukWarningText({
@@ -25,21 +27,11 @@
         iconFallbackText: "Warning"
       }) }}
 
-      <h2 class="govuk-heading-m">
-        Before you start
-      </h2>
-
-      <p>You are only authorised to use this service if:</p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>you are a dog liaison officer working for a UK police force</li>
-      </ul>
-
       {{ govukButton({
         text: "Start now",
         href: "create-account",
         isStartButton: true,
-        classes: "govuk-!-margin-top-4 govuk-!-margin-bottom-8"
+        classes: "govuk-!-margin-bottom-8"
       }) }}
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
