@@ -1,0 +1,38 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra Account
+{% endset%}
+
+{% block pageTitle %}
+  Register for a Defra account - {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="sign-in" method="post">
+
+        <h1 class="govuk-heading-xl">Register for a Defra account</h1>
+
+        <p class="govuk-body">To register for a Defra online service for the first time, you need to create a Defra account. Your Defra account lets you register with a range of online services from Defra and related organisations.</p>
+    		<p class="govuk-body">You may need to tell us:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
+    			<li>your email address, phone number and postal address</li>
+    			<li>your Government Gateway user ID and password. If you do not have a Government Gateway account, we’ll help you to create one</li>
+    			<li>the main contact details for your business or organisation (for example, head office contact details)</li>
+    			<li>the Companies House number if the business or organisation is a limited company</li>
+        </ul>
+
+      {{ govukButton({
+        text: "Start now",
+        isStartButton: true,
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

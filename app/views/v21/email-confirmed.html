@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Government Gateway
+{% endset%}
+
+{% set pageName="Email address confirmed" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "verify"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Email address confirmed</h1>
+
+      <p>This will enable us to help you get the most from this service.</p>
+
+      <form method="post" action="your-name">
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+      Continue
+      </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

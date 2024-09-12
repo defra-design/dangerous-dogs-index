@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Government Gateway
+{% endset%}
+
+{% set pageName="Enter your email address" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "sign-in"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="verify" method="post">
+
+      <h1 class="govuk-heading-xl">Enter your email address</h1>
+
+
+      <p class="govuk-body">This will only be used to send you security updates or if you need to recover your sign in details.</p>
+
+      <p class="govuk-body">To confirm it is your email address we will send you a code.</p>
+
+      <form method="post" action="/gov-gateway/check-email" class="form">
+
+        {{ govukInput({
+          label: {
+            text: "Email address",
+            classes: "govuk-label",
+            isPageHeading: true
+          },
+          classes: "govuk-!-width-three-quarters",
+          id: "email-address",
+          name: "emailAddress"
+        }) }}
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+              </form>
+              <p class="govuk-!-margin-top-7"><a href="#" class="govuk-link govuk-link--no-visited-state ">Get help with this page</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}
