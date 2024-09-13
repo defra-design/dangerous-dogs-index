@@ -17,6 +17,8 @@
 
       <p>This service is only for dog liaison officers working for a UK police force.</p>
 
+      <p>You must register for a Defra account to access this service.</p>
+
       <p>Use this service to:</p>
 
       <ul class="govuk-list govuk-list--bullet">
@@ -26,13 +28,12 @@
       </ul>
 
       {{ govukWarningText({
-        text: "You must use your police email address to access this service.",
+        text: "You must use your police email address to register for this service.",
         iconFallbackText: "Warning"
       }) }}
 
       {{ govukButton({
-        text: "Start now",
-        isStartButton: true,
+        text: "Continue",
         classes: "govuk-!-margin-bottom-8"
       }) }}
 

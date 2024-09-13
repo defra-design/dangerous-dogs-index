@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Government Gateway
+{% endset%}
+
+{% set pageName="Create a password" %}
+
+{% block pageTitle %}
+  Your Government Gateway user ID is 492178792496 – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="register" method="post">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">Your Government Gateway user ID is</h1>
+          <div class="govuk-panel__body">
+              49 21 78 79 24 96
+          </div>
+      </div>
+
+      <p class="govuk-body govuk-!-margin-top-6">We have sent it to <span class="govuk-!-font-weight-bold">{% if data['emailAddress'] %}{{ data['emailAddress'] }}{% else %}firstname.lastname@police.uk{% endif %}</span>.</p>
+
+      <p class="govuk-body">We have sent a code to <strong>{{ data['emailAddress'] }}</strong></p>
+
+      <p class="govuk-body">You will need your user ID and your password each time you sign in to Government Gateway.</p>
+
+      <p class="govuk-!-font-weight-bold">Never share your Government Gateway user ID or password with anyone else.</p>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+      Continue
+      </button>
+
+
+      </form>
+
+        <p class="govuk-!-margin-top-7">
+          <a href="#" class="govuk-link govuk-link--no-visited-state ">Get help with this page</a>
+        </p>
+
+    </div>
+  </div>
+
+{% endblock %}
