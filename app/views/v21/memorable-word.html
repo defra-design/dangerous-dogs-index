@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Create a memorable word - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "details-3"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">
+          <span class="govuk-visually-hidden">This section is: </span>Register Defra account
+      </span>
+      <h1 class="govuk-heading-xl">Create a memorable word</h1>
+
+	<form class="form" method="post" action="details-4">
+
+  		<p>For security purposes, you are required to create a memorable word. This helps us verify your identity if you need to contact us.</p>
+  		<div class="govuk-inset-text">
+  			<p>This word must:</p>
+  			<ul class="govuk-list govuk-list--bullet">
+  				<li>be between 8 and 32 characters long and is not case-sensitive</li>
+  				<li>only contain a combination of letters (A-Z a-z) and numbers (0-9)</li>
+  			</ul>
+
+  			<p>This word must not contain:</p>
+  			<ul class="govuk-list govuk-list--bullet">
+  				<li>spaces</li>
+  				<li>special characters ( ‘at’ symbol (@), hyphen (-) ) </li>
+  				<li>more than 2 repeating characters such as 111 or AAA</li>
+  			</ul>
+  		</div>
+
+      {{ govukInput({
+        label: {
+          text: "Memorable word",
+          classes: "govuk-label--l govuk-visually-hidden"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "memorable-word",
+        name: "memorable-word"
+      }) }}
+
+  <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="100">
+    <label class="govuk-label" for="registrationMemorableHint">
+      Hint question
+    </label>
+
+    <div id="registrationMemorableHint-hint" class="govuk-hint">
+      Tell us a hint question that does not contain your memorable word, but will help you remember what it is.
+    </div>
+
+    <textarea class="govuk-textarea govuk-js-character-count govuk-!-width-two-thirds" id="registrationMemorableHint" name="registrationMemorableHint" rows="5" aria-describedby="registrationMemorableHint-info registrationMemorableHint-hint"></textarea>
+
+    <div id="registrationMemorableHint-info" class="govuk-hint govuk-character-count__message">
+      You can enter up to 100 characters
+    </div>
+
+  </div>
+
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

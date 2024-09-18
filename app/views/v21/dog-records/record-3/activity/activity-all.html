@@ -1,0 +1,74 @@
+{% extends "layouts/defra-sign-out-2.html" %}
+
+{% set pageName="Check activity" %}
+
+{% block pageTitle %}
+  {{ pageName }} – Dog ED338596 - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "../dog-record"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <span class="govuk-caption-l">ED338596</span>
+        <h1 class="govuk-heading-l">Check activity</h1>
+
+        <table class="govuk-table">
+
+<caption class="govuk-table__caption govuk-visually-hidden">All activity</caption>
+
+
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+
+<th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date</th>
+
+<th scope="col" class="govuk-table__header govuk-!-width-one-half">Activity</th>
+
+</tr>
+</thead>
+
+<tbody class="govuk-table__body">
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">9 December 2023</td>
+   <td class="govuk-table__cell">Status set to Pre-exempt</td>
+ </tr>
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">11 December 2023</td>
+   <td class="govuk-table__cell">Neutering confirmed</td>
+ </tr>
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">11 December 2023</td>
+   <td class="govuk-table__cell">Microchip number verified</td>
+ </tr>
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">5 December 2023</td>
+   <td class="govuk-table__cell">Owner details added</td>
+ </tr>
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">5 December 2023</td>
+   <td class="govuk-table__cell">Dog details added</td>
+ </tr>
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">30 November 2023</td>
+   <td class="govuk-table__cell">Application fee paid</td>
+ </tr>
+ <tr class="govuk-table__row">
+   <td class="govuk-table__cell">27 October 2023</td>
+   <td class="govuk-table__cell">CDO issued</td>
+ </tr>
+</tbody>
+</table>
+
+    </div>
+  </div>
+
+{% endblock %}

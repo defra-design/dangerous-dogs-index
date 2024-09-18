@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  IDM-IDENTITY
+{% endset%}
+
+{% block pageTitle %}
+  Check your information – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "details-4"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check your information
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        About you
+      </h2>
+
+      <dl class="govuk-summary-list">
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Your name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Christopher Lambert
+      {{ data['eventName'] }}
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Question 1</span></a>
+
+    </dd>
+
+  </div>
+
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Your contact details
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['phoneNumber'] }}{{ data['eventName'] }}
+      <br>
+      christopher.lambert@cleveland.police.uk
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Question 2</span></a>
+
+    </dd>
+
+  </div>
+
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Your security word
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['memorable-word'] }}
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Question 3</span></a>
+
+    </dd>
+
+  </div>
+
+
+</dl>
+
+      <form action="confirmation-defra-account" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

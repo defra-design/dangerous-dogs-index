@@ -1,0 +1,271 @@
+{% extends "layouts/defra-sign-out.html" %}
+
+{% set pageName="Dog ED198587" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <form class="form" action="/v19/dog-records/activity/activity-type-4" method="post">
+
+      <div class="moj-page-header-actions govuk-!-margin-bottom-2">
+
+        <div class="moj-page-header-actions__title">
+          <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+        </div>
+
+
+        <div class="moj-page-header-actions__actions">
+          <div class="moj-button-menu">
+            <div class="moj-button-menu__wrapper">
+              <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="report-something">
+                Report something
+              </button>
+              <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="check-activity">
+                Check activity
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      {{govukTag({
+        text: "Failed",
+        classes: "govuk-tag--purple govuk-!-margin-bottom-6"
+      })}}
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+
+    {{ govukSummaryList({
+      classes: "govuk-!-font-size-16",
+      card: {
+      title: {
+      text: "Dog details",
+      classes: "defra-summary-header"
+       }
+      },
+      rows: [
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: "Ernie"
+          }
+        },
+        {
+          key: {
+            text: "Breed type"
+          },
+          value: {
+            text: "XL Bully"
+          }
+        },
+        {
+          key: {
+            text: "Colour"
+          },
+          value: {
+            text: "Grey and black and brown"
+          }
+        },
+        {
+          key: {
+            text: "Sex"
+          },
+          value: {
+            text: "Male"
+          }
+        },
+        {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            html: "20 April 2022"
+          }
+        },
+        {
+          key: {
+            text: "Microchip number"
+          },
+          value: {
+            text: "123451234512345"
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukSummaryList({
+      classes: "govuk-!-font-size-16",
+      card: {
+      title: {
+      text: "Owner details",
+      classes: "defra-summary-header"
+      },
+      id: "owner-details",
+      actions: {
+        items: [
+          {
+            href: "../../owner-records/record-4/owner-record",
+            text: "Owner record",
+            classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
+            visuallyHiddenText: "for owner"
+            }
+          ]
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: "Heidi Sturgeon"
+          }
+        },
+        {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            text: "15 January 1992"
+          }
+        },
+        {
+          key: {
+            text: "Address"
+          },
+          value: {
+            html: "5 Bullytree Lane<br>Leeds<br>LS25 5AQ"
+          }
+        },
+        {
+          key: {
+            text: "Email"
+          },
+          value: {
+            text: "heidz_15@hotmail.com"
+          }
+        },
+        {
+          key: {
+            text: "Telephone number 1"
+          },
+          value: {
+            text: "07884 653380"
+          }
+        },
+        {
+          key: {
+            text: "Country"
+          },
+          value: {
+            text: "England"
+          }
+        }
+      ]
+    }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+
+      {{ govukSummaryList({
+        classes: "govuk-!-font-size-16",
+        card: {
+          title: {
+            text: "Exemption details",
+            classes: "defra-summary-header"
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Status"
+            },
+            value: {
+              text: "Failed"
+           }
+          },
+          {
+            key: {
+              text: "Certificate issued"
+            },
+            value: {
+              text: "27 November 2023"
+           }
+          },
+          {
+            key: {
+              text: "Order"
+            },
+            value: {
+              text: "2023"
+            }
+          },
+          {
+            classes: "govuk-!-width-one-third",
+            key: {
+              text: "Microchip deadline"
+            },
+            value: {
+              text: "31 March 2024"
+            }
+          },
+          {
+            key: {
+              text: "Neutering deadline"
+            },
+            value: {
+              text: "30 June 2024"
+            }
+          },
+          {
+            key: {
+              text: "Application fee paid"
+            },
+            value: {
+              text: "19 November 2023"
+            }
+          },
+          {
+            key: {
+              text: "Insurance company"
+            },
+            value: {
+              text: "Dogs Trust"
+            }
+          },
+          {
+            key: {
+              text: "Insurance renewal date"
+            },
+            value: {
+              text: "21 November 2024"
+            }
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

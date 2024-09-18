@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  IDM-IDENTITY
+{% endset%}
+
+{% block pageTitle %}
+  Tell us your details - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "what-we-need"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Tell us your details</h1>
+
+  <form method="post" action="check-your-answers">
+
+  		<p>If you sign out before you complete everything, we will save your answers for <span class="govuk-!-font-weight-bold">3 days</span> so that you can return and continue.</p>
+
+      <h2 class="govuk-heading-m">1. About you</h2>
+
+      {{ govukTaskList({
+        idPrefix: "company-details",
+        items: [
+          {
+            title: {
+              text: "Your name",
+              classes: "govuk-link--no-visited-state"
+            },
+            href: "full-name"
+          },
+          {
+            title: {
+              text: "Your contact details",
+              classes: "govuk-link--no-visited-state"
+            },
+            href: "phone-number"
+          },
+          {
+            title: {
+              text: "Your security word",
+              classes: "govuk-link--no-visited-state"
+            },
+            href: "memorable-word"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Check your answers"
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}

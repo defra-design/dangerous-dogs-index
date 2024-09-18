@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Government Gateway
+{% endset%}
+
+{% set pageName="Enter code to confirm your email address" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "email-address"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="email-confirmed" method="post">
+
+      <h1 class="govuk-heading-xl">Enter code to confirm your email address</h1>
+
+      <p class="govuk-body">We have sent a code to: <strong>{% if data['emailAddress'] %}{{ data['emailAddress'] }}{% else %}firstname.lastname@police.uk{% endif %}</strong></p>
+
+      <p class="govuk-body">The code will expire in 30 minutes.
+        </p>
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          If you use a browser to access your email, you may need to open a new window or tab to see the code.
+        </strong>
+      </div>
+
+      {{ govukInput({
+        label: {
+          text: "Confirmation code",
+          classes: "govuk-label"
+        },
+        hint: {
+          text: "For example, DNCLRK"
+        },
+        classes: "govuk-!-width-one-half",
+        id: "event-name",
+        name: "eventName"
+      }) }}
+
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I have not received the email
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>The email may take a few minutes to arrive. Its subject line is: ‘Confirm your email address - Government Gateway’.</p>
+          <p>Check your spam or junk folder – if it still has not arrived, you can <a class="govuk-link govuk-link--no-visited-state" href="#">request a new code</a> or <a class="govuk-link govuk-link--no-visited-state" href="#">provide another email address</a>.</p>
+        </div>
+      </details>
+
+      {{ govukButton({
+        text: "Confirm"
+      }) }}
+
+      </form>
+
+      <p class="govuk-!-margin-top-7">
+        <a href="#" class="govuk-link govuk-link--no-visited-state ">Get help with this page</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

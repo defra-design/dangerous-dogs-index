@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  IDM-IDENTITY
+{% endset%}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Your registration is complete"
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+
+      <p>
+        dogsindex@defra.gov.uk will choose which information you can see and which tasks you can do on behalf of Cleveland Police.
+      </p>
+
+      <p>
+        We’ll email you when everything’s ready.
+      </p>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
