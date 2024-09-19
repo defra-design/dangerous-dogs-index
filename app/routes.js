@@ -1551,11 +1551,27 @@ router.post('/v21/search/search-input', function(request, response) {
     response.redirect("/v21/search/record-4/results-address")
   } else if (search == "IG11 7JF"){
     response.redirect("/v21/search/record-1/results-address")
+  } else if (search == "ig117jf"){
+    response.redirect("/v21/search/record-1/results-address")
+  } else if (search == "ig11 7jf"){
+    response.redirect("/v21/search/record-1/results-address")
   } else if (search == "SY8 4NL"){
+    response.redirect("/v21/search/record-2/results-address")
+  } else if (search == "sy8 4nl"){
+    response.redirect("/v21/search/record-2/results-address")
+  } else if (search == "sy84nl"){
     response.redirect("/v21/search/record-2/results-address")
   } else if (search == "NG1 7BA"){
     response.redirect("/v21/search/record-3/results-address")
+  } else if (search == "ng1 7ba"){
+    response.redirect("/v21/search/record-3/results-address")
+  } else if (search == "ng17ba"){
+    response.redirect("/v21/search/record-3/results-address")
   } else if (search == "LS25 5AQ"){
+    response.redirect("/v21/search/record-4/results-address")
+  } else if (search == "ls255aq"){
+    response.redirect("/v21/search/record-4/results-address")
+  } else if (search == "ls25 5aq"){
     response.redirect("/v21/search/record-4/results-address")
   } else if (search == "mutley"){
     response.redirect("/v21/search/record-1/results-dog-name")
@@ -1601,6 +1617,8 @@ router.post('/v21/search/search-input', function(request, response) {
     response.redirect("/v21/search/record-2/results-owner-name")
   } else if (search == "vicki sugden"){
     response.redirect("/v21/search/record-2/results-owner-name")
+  } else if (search == "exempt"){
+    response.redirect("/v21/search/record-2/results-status")
   } else if (search == "Nathan Stockton"){
     response.redirect("/v21/search/record-3/results-owner-name")
   } else if (search == "nathan stockton"){
@@ -1615,6 +1633,8 @@ router.post('/v21/search/search-input', function(request, response) {
     response.redirect("/v21/search/record-2/results-owner-name")
   } else if (search == "Stockton"){
     response.redirect("/v21/search/record-3/results-owner-name")
+  } else if (search == "pre-exempt"){
+    response.redirect("/v21/search/record-3/results-status")
   } else if (search == "Sturgeon"){
     response.redirect("/v21/search/record-4/results-owner-name")
   } else if (search == "denton"){
@@ -1625,7 +1645,9 @@ router.post('/v21/search/search-input', function(request, response) {
     response.redirect("/v21/search/record-3/results-owner-name")
   } else if (search == "sturgeon"){
     response.redirect("/v21/search/record-4/results-owner-name")
-  } else if (search == "In breach"){
+  } else if (search == "failed"){
+    response.redirect("/v21/search/record-4/results-status")
+  } else if (search == "in breach"){
     response.redirect("/v21/search/record-1/results-status")
   } else {
     response.redirect('/v21/search/results-none')

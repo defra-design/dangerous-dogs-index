@@ -1,0 +1,93 @@
+{% extends "layouts/defra-sign-out.html" %}
+
+{% set pageName="Search results" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v21/search/search-input" method="post">
+
+      <div class="govuk-form-group govuk-!-margin-bottom-3">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="search">
+            Search
+          </label>
+        </h1>
+        <!-- <div id="search-hint" class="govuk-body govuk-!-margin-bottom-2">
+          Use one or more words, separated by a space, for example ‘owner’s name postcode’
+        </div> -->
+        <input class="govuk-input" value="{% if data['search'] %}{{ data['search'] }}{% else %}Nathan Stockton{% endif %}" id="search" name="search" type="text" aria-describedby="search-hint">
+      </div>
+
+      {{ govukButton({
+        text: "Search"
+      }) }}
+
+      </form>
+
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+        1 dog record
+        </p>
+
+      <hr class="govuk-section-break govuk-section-break--s govuk-!-margin-bottom-6 govuk-section-break--visible">
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-2 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title defra-summary-header"><a class="govuk-link govuk-link--no-visited-state" href="../../dog-records/record-3/dog-record">
+            ED338596
+          </a></h2>
+          <ul class="govuk-summary-card__actions govuk-!-padding-bottom-1 govuk-!-font-weight-regular">
+            {{ govukTag({
+              text: "Pre-exempt",
+              classes: "govuk-!-font-size-16"
+            }) }}
+          </ul>
+        </div>
+
+        <div class="govuk-summary-card__content govuk-!-padding-top-1 govuk-!-padding-bottom-0">
+          <table class="govuk-table govuk-!-margin-bottom-3">
+            <caption class="govuk-table__caption govuk-!-font-weight-regular govuk-!-font-size-16">
+                </caption>
+              <thead class="govuk-table__head govuk-!-font-size-16">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                    Dog name
+                  </th>
+                  <th scope="col" class="govuk-table__header">
+                    Owner name
+                  </th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-!-width-one-quarter">
+                    Microchip number
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                     	Bronson
+                    </td>
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                      <a class="govuk-link govuk-link--no-visited-state" href="../../owner-records/record-3/owner-record">
+                      Nathan Stockton
+                      </a>
+                    </td>
+                    <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                      098765432123456
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+{% endblock %}
