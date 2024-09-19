@@ -1,0 +1,52 @@
+{% extends "layouts/defra.html" %}
+
+{% block pageTitle %}
+  Check your email - GOV.UK One Login
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "terms",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="create-password" method="post">
+
+      <h1 class="govuk-heading-l">Check your email</h1>
+
+      <div class="govuk-inset-text">We have sent an email to: <span class="govuk-body govuk-!-font-weight-bold">christopher.lambert@cleveland.police.uk</span></div>
+
+      <p class="govuk-body">The email contains a link to verify your email address.</p>
+
+      <p class="govuk-body">Your email might take a few minutes to arrive. If you do not get an email, check your spam folder.</p>
+
+      <p class="govuk-body">The link will expire after one hour.</p>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Problems receiving the email
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+
+        <p class="govuk-body">
+          We can
+          <a href="" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">send the email again</a>
+        </p>
+
+      </div>
+    </details>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
