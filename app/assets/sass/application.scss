@@ -128,6 +128,11 @@
     background: $govuk-secondary-text-colour;
   }
 
+  .defra-tag-nowrap {
+    white-space: nowrap;
+    display: block;
+  }
+
   .defra-text-align-right {
     text-align: right !important;
   }
