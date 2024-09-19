@@ -122,6 +122,12 @@
   vertical-align: top;
   }
 
+  .defra-email {
+    box-sizing: border-box;
+    border: 1px solid $govuk-border-colour;
+    padding: 20px;
+  }
+
   //tags
   .defra-tag--grey {
     color: govuk-colour("white");
