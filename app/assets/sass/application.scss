@@ -135,8 +135,8 @@
   }
 
   .defra-tag-nowrap {
-    white-space: nowrap;
-    display: block;
+    white-space: nowrap !important;
+    max-width: 400px !important;
   }
 
   .defra-text-align-right {
