@@ -1,0 +1,63 @@
+{% extends "layouts/defra.html" %}
+
+{% block pageTitle %}
+  Defra {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="create-account" method="post">
+
+      <h1 class="govuk-heading-xl">
+        Defra {{ serviceName }}
+      </h1>
+
+      <p>This service is only for dog liaison officers working for a UK police force.</p>
+
+      <p>Use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>check the exemption status of dangerous dogs</li>
+        <li>check dog owner records</li>
+        <li>advise Defra of changes, for example a breach of exemption or change of owner address</li>
+      </ul>
+
+      {{ govukWarningText({
+        text: "You must use your police email address to access this service.",
+        iconFallbackText: "Warning"
+      }) }}
+
+      {{ govukButton({
+        text: "Start now",
+        href: "create-account",
+        isStartButton: true,
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Privacy notice
+      </h2>
+
+      <p>
+        <a class="govuk-link govuk-link--no-visited-state" href="">
+        Read our Privacy notice
+        </a>
+      </p>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Terms and conditions
+      </h2>
+
+      <p>
+        <a class="govuk-link govuk-link--no-visited-state" href="">
+        Read our Terms and conditions
+        </a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

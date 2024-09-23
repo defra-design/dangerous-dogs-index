@@ -1,0 +1,58 @@
+{% extends "layouts/defra-sign-out-2.html" %}
+
+{% set pageName="Report something" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/demo/owner-records/record-2/comment/comment-type-question-2" method="post">
+
+        <span class="govuk-caption-l">Dog ED418696</span>
+        {{ govukRadios({
+          name: "comment",
+          fieldset: {
+            legend: {
+              text: "What are you reporting?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "exemption",
+              text: "The owner is in breach of their exemption"
+            },
+            {
+              value: "address",
+              text: "The owner has changed address"
+            },
+            {
+              value: "death",
+              text: "The dog has died"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

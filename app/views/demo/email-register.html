@@ -1,0 +1,35 @@
+{% extends "layouts/email.html" %}
+
+{% block pageTitle %}
+ Confirm registration for the Dangerous Dogs Index
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="defra-email">
+
+      <h1 class="govuk-heading-m">Confirm registration for the Dangerous Dogs Index</h1>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body govuk-!-margin-bottom-1">To: craig.leach@warwickshire.police.uk</p>
+      <p class="govuk-body">From: Defra Dangerous Dogs Index</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body">Your request to register for the Defra Dangerous Dogs Index has been approved.</p>
+
+      <p class="govuk-body">Click on the link below to confirm your registration and access the Index.</p>
+
+      <p class="govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="registration-confirmed">Confirm registration for the Dangerous Dogs Index</a>
+      </p>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
