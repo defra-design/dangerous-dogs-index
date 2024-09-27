@@ -1,0 +1,76 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="You have added 1 police officer" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "add-police"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <h1 class="govuk-heading-l">You have added 1 police officer</h1>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+             {{ data['policeEmail'] }}
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">{{ data['policeEmail'] }}</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden">{{ data['policeEmail'] }} from the list</span></a>
+                </li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+
+      <form class="form" action="/v23/admin/add-police-list" method="post">
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        name: "changedName",
+        fieldset: {
+          classes: "govuk-!-margin-top-8",
+          legend: {
+            text: "Do you need to add another police officer?",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
