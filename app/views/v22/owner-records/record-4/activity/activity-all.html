@@ -1,0 +1,83 @@
+{% extends "layouts/defra-sign-out-2.html" %}
+
+{% set pageName="Check activity" %}
+
+{% block pageTitle %}
+  {{ pageName }} - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "/demo/owner-records/record-4/owner-record"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <span class="govuk-caption-l">Heidi Sturgeon</span>
+        <h1 class="govuk-heading-l">Check activity</h1>
+
+        {{ govukTable({
+          caption: "All activity",
+          captionClasses: "govuk-visually-hidden",
+          firstCellIsHeader: false,
+          head: [
+            {
+              text: "Date"
+            },
+            {
+              text: "Activty"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "11 March 2024"
+              },
+              {
+                text: "Address line 1 updated from 9 Florence Avenue"
+              }
+            ],
+            [
+              {
+                text: "11 March 2024"
+              },
+              {
+                text: "Address line 2 updated from Harehills"
+              }
+            ],
+            [
+              {
+                text: "11 March 2024"
+              },
+              {
+                text: "Postcode updated from LS9 7AG"
+              }
+            ],
+            [
+              {
+                text: "15 February 2024"
+              },
+              {
+                text: "Change of address form sent"
+              }
+            ],
+            [
+              {
+                text: "12 November 2023"
+              },
+              {
+                text: "Owner details added"
+              }
+            ]
+          ]
+        }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

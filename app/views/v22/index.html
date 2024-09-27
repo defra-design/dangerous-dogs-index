@@ -1,0 +1,40 @@
+{% extends "layouts/defra-sign-out.html" %}
+
+{% set pageName="Home" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/demo/search/search-input" method="post">
+
+      <div class="govuk-form-group govuk-!-margin-bottom-3">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="search">
+            Search
+          </label>
+        </h1>
+        <!-- <div id="search-hint" class="govuk-body govuk-!-margin-bottom-2">
+          Use one or more words, separated by a space, for example ‘owner’s name postcode’
+        </div> -->
+        <input class="govuk-input" id="search" name="search" type="text" aria-describedby="search-hint">
+      </div>
+
+      {{ govukButton({
+        text: "Search"
+      }) }}
+
+      <p class="govuk-body">Access the most up to date Defra information from the Dangerous Dogs Index.
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

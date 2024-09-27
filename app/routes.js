@@ -2187,3 +2187,36 @@ router.post('/demo/owner-records/record-4/comment/comment-type-question-4', func
   }
 
 })
+
+// v23 Add or remove police
+router.post('/v23/admin/police-question', function (req, res) {
+  var addRemoveCourt = req.session.data['addRemovePolice']
+  if (addRemoveCourt === "remove"){
+    res.redirect('/v23/admin/remove-police')
+  } else {
+    res.redirect('/v23/admin/add-police')
+  }
+
+})
+
+// v23 Add or remove police
+router.post('/v23/admin/police-added-question', function (req, res) {
+  var addCourt = req.session.data['addPolice']
+  if (addCourt === "no"){
+    res.redirect('/v23/admin/index')
+  } else {
+    res.redirect('/v23/admin/confirmation-police-added')
+  }
+
+})
+
+// v23 Add or remove police
+router.post('/v23/admin/police-removed-question', function (req, res) {
+  var removeCourt = req.session.data['removePolice']
+  if (removeCourt === "no"){
+    res.redirect('/v23/admin/index')
+  } else {
+    res.redirect('/v23/admin/confirmation-police-removed')
+  }
+
+})

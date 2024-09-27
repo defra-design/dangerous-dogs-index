@@ -1,0 +1,42 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="What is the user's email address?" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "add-or-remove-courts"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v23/admin/add-police-confirm" method="post">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="court">
+            What is the user's email address?
+          </label>
+        </h1>
+        <input class="govuk-input" id="court" value="{% if data['court'] %}{{ data['court'] }}{% else %}{% endif %}" name="court" type="text">
+      </div>
+
+      {{ govukButton({
+        text: "Add user"
+      }) }}
+
+      </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}

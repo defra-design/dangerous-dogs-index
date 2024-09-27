@@ -1,0 +1,81 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="Admin area" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Export data
+      </h2>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">Export the data in the Index</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Manage team members
+      </h2>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">Add or remove pseudonyms</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Manage external Index users
+      </h2>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="add-or-remove-police">Add or remove police officers</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Manage Index lists
+      </h2>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">Activities</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="add-or-remove-courts">Courts</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">Police forces</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">Dog insurers</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+{% endblock %}

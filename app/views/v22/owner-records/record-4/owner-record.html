@@ -1,0 +1,213 @@
+{% extends "layouts/defra-sign-out.html" %}
+
+{% set pageName="Heidi Sturgeon" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <form class="form" action="/demo/owner-records/activity/activity-type-4" method="post">
+
+      <div class="moj-page-header-actions govuk-!-margin-bottom-6">
+
+        <div class="moj-page-header-actions__title">
+          <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+        </div>
+    <div class="moj-page-header-actions__actions">
+
+      <div class="moj-button-menu">
+        <div class="moj-button-menu__wrapper">
+          <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="report-something">
+            Report something
+          </button>
+          <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="check-owner-activity">
+            Check owner activity
+          </button>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+    <div class="govuk-grid-column-one-half">
+
+      {{ govukSummaryList({
+        classes: "govuk-!-font-size-16",
+        card: {
+        title: {
+        text: "Owner details",
+        classes: "defra-summary-header"
+        },
+        id: "owner-details"
+        },
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Heidi Sturgeon"
+            }
+          },
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: "15 January 1992"
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: "5 Bullytree Lane<br>Leeds<br>LS25 5AQ"
+            }
+          },
+          {
+            key: {
+              text: "Email"
+            },
+            value: {
+              text: "heidz_15@hotmail.com"
+            }
+          },
+          {
+            key: {
+              text: "Telephone number 1"
+            },
+            value: {
+              text: "07884 653380"
+            }
+          },
+          {
+            key: {
+              text: "Country"
+            },
+            value: {
+              text: "England"
+            }
+          }
+        ]
+      }) }}
+
+
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="../../dog-records/record-4/dog-record">
+            ED198587
+          </a></h2>
+          <ul class="govuk-summary-card__actions govuk-!-font-weight-regular">
+            {{ govukTag({
+              text: "Failed to exempt dog",
+              classes: "govuk-tag--purple defra-tag-nowrap"
+            }) }}
+          </ul>
+        </div>
+
+        <div class="govuk-summary-card__content govuk-!-padding-top-1 govuk-!-padding-bottom-0">
+          <table class="govuk-table govuk-!-margin-bottom-3">
+            <caption class="govuk-table__caption govuk-!-font-weight-regular govuk-!-font-size-16">
+                </caption>
+              <thead class="govuk-table__head govuk-!-font-size-16">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                    Dog name
+                  </th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-!-width-one-quarter">
+                    Microchip number
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                     	Ernie
+                    </td>
+                    {% if data['microchipNumber'] %}
+                      <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                        {{ data['microchipNumber'] }}
+                      </td>
+                    {% elif data['lastName'] == None %}
+                      <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                        123451234512345
+                      </td>
+                    {% endif %}
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED199480
+          </a></h2>
+          <ul class="govuk-summary-card__actions govuk-!-font-weight-regular">
+            {{ govukTag({
+              text: "Exempt",
+              classes: "govuk-tag--turquoise"
+            }) }}
+          </ul>
+        </div>
+
+        <div class="govuk-summary-card__content govuk-!-padding-top-1 govuk-!-padding-bottom-0">
+          <table class="govuk-table govuk-!-margin-bottom-3">
+            <caption class="govuk-table__caption govuk-!-font-weight-regular govuk-!-font-size-16">
+                </caption>
+              <thead class="govuk-table__head govuk-!-font-size-16">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                    Dog name
+                  </th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-!-width-one-quarter">
+                    Microchip number
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                      Eric
+                    </td>
+                    {% if data['microchipNumber'] %}
+                      <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                        {{ data['microchipNumber'] }}
+                      </td>
+                    {% elif data['lastName'] == None %}
+                      <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                        128735400734004
+                      </td>
+                    {% endif %}
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+    </div>
+  </div>
+{% endblock %}

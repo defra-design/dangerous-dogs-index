@@ -1,0 +1,56 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="Are you sure you want to add a court to the Index" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "add-court"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v23/admin/court-added-question" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="addCourt-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Are you sure you want to add {% if data['court'] %}{{ data['court'] }}{% else %}Central Magistrates’ Court{% endif %} to the Index?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="addCourt" name="addCourt" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="addCourt">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="addCourt-2" name="addCourt" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="addCourt-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="Remove a court from the Index" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "add-or-remove"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v23/admin/remove-police-confirm" method="post">
+
+      {{ xGovukAutocomplete({
+        id: "court",
+        name: "court",
+        allowEmpty: false,
+        label: {
+          classes: "govuk-label--l",
+          isPageHeading: true,
+          text: "Which court do you want to remove?"
+        },
+        items: [
+          { text: "Aberystwyth Justice Centre" },
+          { text: "Barrow-in-Furness Magistrates Court" },
+          { text: "Bradford and Keighley Magistrates’ Court" },
+          { text: "Chester Magistrates’ Court" },
+          { text: "Doncaster Justice Centre North (Doncaster Magistrates’ Court" },
+          { text: "East Berkshire (Slough) Magistrates’ Court" },
+          { text: "Horsham Law Courts" },
+          { text: "Ipswich Magistrates’ Court" },
+          { text: "Kirklees (Huddersfield) Magistrates’ Court" },
+          { text: "Llandudno Magistrates’ Court" },
+          { text: "Maidstone Magistrates’ Court" },
+          { text: "Mid and South East Northumberland Law Courts (Bedlington)" },
+          { text: "North Somerset Courthouse" },
+          { text: "Oxford and Southern Oxfordshire Magistrates’ Court" },
+          { text: "Peterborough Magistrates’ Court" },
+          { text: "Preston Magistrates’ Court" },
+          { text: "Salisbury Law Courts" },
+          { text: "Sheffield Magistrates’ Court" },
+          { text: "Southampton (West Hampshire) Magistrates’ Court" },
+          { text: "St Albans Magistrates’ Court" },
+          { text: "Taunton Magistrates’ Court" },
+          { text: "Wellingborough Magistrates’ Court" },
+          { text: "Wirral Magistrates’ Court" },
+          { text: "Worcester Justice Centre" },
+          { text: "Wrexham Law Courts" },
+          { text: "York Magistrates’ Court" }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Remove court"
+      }) }}
+
+      </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}
