@@ -1,0 +1,42 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="What is the police officer’s email address?" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "add-or-remove-police"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v23/admin/add-2nd-police" method="post">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="policeEmail2">
+            {{ pageName }}
+          </label>
+        </h1>
+        <input class="govuk-input" id="police-email" value="{% if data['policeEmail2'] %}{{ data['policeEmail2'] }}{% else %}{% endif %}" name="policeEmail2" type="text">
+      </div>
+
+      {{ govukButton({
+        text: "Add police officer"
+      }) }}
+
+      </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}

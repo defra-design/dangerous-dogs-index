@@ -2199,6 +2199,17 @@ router.post('/v23/admin/police-question', function (req, res) {
 
 })
 
+// v23 Add 2nd police
+router.post('/v23/admin/add-2nd-police', function (req, res) {
+  var add2ndPolice = req.session.data['add2ndPolice']
+  if (add2ndPolice === "no"){
+    res.redirect('/v23/admin/remove-police')
+  } else {
+    res.redirect('/v23/admin/add-police-list-2')
+  }
+
+})
+
 // v23 Add or remove police
 router.post('/v23/admin/police-added-question', function (req, res) {
   var addCourt = req.session.data['addPolice']
