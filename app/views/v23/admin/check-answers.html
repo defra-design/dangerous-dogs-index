@@ -25,13 +25,15 @@
         rows: [
           {
             key: {
-              html: data['policeEmail']
+              html: data['policeEmail'],
+              classes: "govuk-!-width-three-quarters govuk-!-font-weight-regular"
             },
             actions: {
               items: [
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "['policeEmail1']"
                 }
               ]
@@ -40,13 +42,15 @@
           ,
           {
             key: {
-              html: data['policeEmail2']
+              html: data['policeEmail2'],
+              classes: "govuk-!-width-three-quarters govuk-!-font-weight-regular"
             },
             actions: {
               items: [
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "['policeEmail2']"
                 }
               ]
@@ -55,13 +59,15 @@
           ,
           {
             key: {
-              html: data['policeEmail3']
+              html: data['policeEmail3'],
+              classes: "govuk-!-width-three-quarters govuk-!-font-weight-regular"
             },
             actions: {
               items: [
                 {
                   href: "#",
                   text: "Change",
+                  classes: "govuk-link--no-visited-state",
                   visuallyHiddenText: "['policeEmail3']"
                 }
               ]
@@ -75,7 +81,7 @@
       </h2>
 
       <p>
-        These police officers will be able to register to access the Dangerous Dogs Index.
+        These police officers will receive an email inviting them to register to access the Dangerous Dogs Index.
       </p>
 
       <form action="./confirmation" method="post" novalidate>

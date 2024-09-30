@@ -10,21 +10,22 @@
     <div class="govuk-grid-column-two-thirds">
 
       {{ govukPanel({
-        titleText: "Application complete",
-        html: "Your reference number<br><strong>HDJ2123F</strong>"
+        titleText: "You gave police officers access to the Index"
       }) }}
 
-      <p>
-        We have sent you a confirmation email.
-      </p>
-
-      <h2 class="govuk-heading-m">
+      <h2 class="govuk-heading-m govuk-!-margin-top-6">
         What happens next
       </h2>
 
-      <p>
-        These police officers will recceive an email invitation to access the Dangerous Dogs Index:
+      <p class="govuk-body">
+        These police officers will receive an email invitation to access the Dangerous Dogs Index:
       </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>{% if data['policeEmail'] %}{{ data['policeEmail'] }}{% else %}steve.arnott@durham.police.uk{% endif %}</li>
+        {% if data['policeEmail2'] %}<li>{{ data['policeEmail2'] }}</li>{% else %}{% endif %}
+        {% if data['policeEmail3'] %}<li>{{ data['policeEmail3'] }}</li>{% else %}{% endif %}
+      </ul>
 
     </div>
   </div>
