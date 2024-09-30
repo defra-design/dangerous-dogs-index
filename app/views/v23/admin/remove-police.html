@@ -1,6 +1,6 @@
 {% extends "layouts/defra-admin.html" %}
 
-{% set pageName="Remove a court from the Index" %}
+{% set pageName="Remove a police officer from the Index" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "add-or-remove"
+  href: "add-or-remove-police"
 }) }}
 {% endblock %}
 
@@ -21,46 +21,46 @@
       <form class="form" action="/v23/admin/remove-police-confirm" method="post">
 
       {{ xGovukAutocomplete({
-        id: "court",
-        name: "court",
+        id: "police-office",
+        name: "police-officer",
         allowEmpty: false,
         label: {
           classes: "govuk-label--l",
           isPageHeading: true,
-          text: "Which court do you want to remove?"
+          text: "Which police officer do you want to remove?"
         },
         items: [
-          { text: "Aberystwyth Justice Centre" },
-          { text: "Barrow-in-Furness Magistrates Court" },
-          { text: "Bradford and Keighley Magistrates’ Court" },
-          { text: "Chester Magistrates’ Court" },
-          { text: "Doncaster Justice Centre North (Doncaster Magistrates’ Court" },
-          { text: "East Berkshire (Slough) Magistrates’ Court" },
-          { text: "Horsham Law Courts" },
-          { text: "Ipswich Magistrates’ Court" },
-          { text: "Kirklees (Huddersfield) Magistrates’ Court" },
-          { text: "Llandudno Magistrates’ Court" },
-          { text: "Maidstone Magistrates’ Court" },
-          { text: "Mid and South East Northumberland Law Courts (Bedlington)" },
-          { text: "North Somerset Courthouse" },
-          { text: "Oxford and Southern Oxfordshire Magistrates’ Court" },
-          { text: "Peterborough Magistrates’ Court" },
-          { text: "Preston Magistrates’ Court" },
-          { text: "Salisbury Law Courts" },
-          { text: "Sheffield Magistrates’ Court" },
-          { text: "Southampton (West Hampshire) Magistrates’ Court" },
-          { text: "St Albans Magistrates’ Court" },
-          { text: "Taunton Magistrates’ Court" },
-          { text: "Wellingborough Magistrates’ Court" },
-          { text: "Wirral Magistrates’ Court" },
-          { text: "Worcester Justice Centre" },
-          { text: "Wrexham Law Courts" },
-          { text: "York Magistrates’ Court" }
+          { text: "andy.sipowicz@norfolk.police.uk" },
+          { text: "andy.stewart@lincolnshire.police.uk" },
+          { text: "elliot.stabler@westmidlands.police.uk" },
+          { text: "gene.hunt@kent.police.uk" },
+          { text: "jessica.fletcher@warwickshire.police.uk" },
+          { text: "jim.rockford@sussex.police.uk" },
+          { text: "john.corbett@southyorkshire.police.uk" },
+          { text: "kate.beckett@cheshire.police.uk" },
+          { text: "kate.fleming@norfolk.police.uk" },
+          { text: "lindsay.denton@merseyside.police.uk" },
+          { text: "lennie.briscoe@leicestershire.police.uk" },
+          { text: "martin.beck@dorset.police.uk" },
+          { text: "matthew.cottan@cumbria.police.uk" },
+          { text: "olivia.benson@humberside.police.uk" },
+          { text: "patricia.carmichael@norfolk.police.uk" },
+          { text: "ralph.stewart@northumbria.police.uk" },
+          { text: "ricardo.tubbs@derbyshire.police.uk" },
+          { text: "sherlock.hounds@wiltshire.police.uk" },
+          { text: "sonny.valentine@hertfordshire.police.uk" },
+          { text: "stella.gibson@greatermanchester.police.uk" },
+          { text: "steve.arnott@durham.police.uk" },
+          { text: "ted.hastings@suffolk.police.uk" },
+          { text: "tony.hill@westyorkshire.police.uk" },
+          { text: "trevor.barraclough@surrey.police.uk" },
+          { text: "vic.mackey@bedfordshire.police.uk" },
+          { text: "wendy.hardaker@hampshire.police.uk" }
         ]
       }) }}
 
       {{ govukButton({
-        text: "Remove court"
+        text: "Remove police officer"
       }) }}
 
       </form>

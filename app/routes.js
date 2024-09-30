@@ -2205,7 +2205,18 @@ router.post('/v23/admin/add-2nd-police', function (req, res) {
   if (add2ndPolice === "no"){
     res.redirect('/v23/admin/remove-police')
   } else {
-    res.redirect('/v23/admin/add-police-list-2')
+    res.redirect('/v23/admin/add-police-2')
+  }
+
+})
+
+// v23 Add 2nd police
+router.post('/v23/admin/add-3rd-police', function (req, res) {
+  var add2ndPolice = req.session.data['add3rdPolice']
+  if (add2ndPolice === "no"){
+    res.redirect('/v23/admin/remove-police')
+  } else {
+    res.redirect('/v23/admin/add-police-3')
   }
 
 })
@@ -2223,9 +2234,9 @@ router.post('/v23/admin/police-added-question', function (req, res) {
 
 // v23 Add or remove police
 router.post('/v23/admin/police-removed-question', function (req, res) {
-  var removeCourt = req.session.data['removePolice']
-  if (removeCourt === "no"){
-    res.redirect('/v23/admin/index')
+  var removePolice = req.session.data['removePolice']
+  if (removePolice === "no"){
+    res.redirect('/v23/admin/add-or-remove-police')
   } else {
     res.redirect('/v23/admin/confirmation-police-removed')
   }

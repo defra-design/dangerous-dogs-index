@@ -28,22 +28,19 @@
 
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
         <h1 class="govuk-panel__title">
-          You removed
-          <br>
-          {% if data['court'] %}{{ data['court'] }}{% else %}Chester Magistrates’ Court{% endif %}
-        </h1>
+          You removed a police officer from the Index
+          </h1>
       </div>
 
       <p class=govuk-body">
-        {% if data['court'] %}{{ data['court'] }}{% else %}Chester Magistrates’ Court{% endif %} is removed from the Index and will not be available for new applications.
+        <span class="govuk-!-font-weight-bold">
+        {% if data['police-officer'] %}{{ data['police-officer'] }}{% else %}steve.arnott@durham.police.uk{% endif %}
+      </span>
+       is removed from the Dangerous Dogs Index and no longer has access.
         </p>
 
       <p class=govuk-body">
-        Exisiting records are unchanged.
-      </p>
-
-      <p class=govuk-body">
-        <a class="govuk-link govuk-link--no-visited-state" href="add-or-remove-courts">Add or remove a court</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="remove-police">Remove another police officer</a>
         </p>
 
 

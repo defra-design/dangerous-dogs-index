@@ -21,22 +21,22 @@
       <form class="form" action="/v23/admin/police-removed-question" method="post">
 
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="removeCourt-hint">
+          <fieldset class="govuk-fieldset" aria-describedby="removePolice-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Are you sure you want to remove {% if data['court'] %}{{ data['court'] }}{% else %}Wellingborough Magistrates’ Court{% endif %} from the Index?
+              Are you sure you want to remove {% if data['police-officer'] %}{{ data['police-officer'] }}{% else %}steve.arnott@durham.police.uk{% endif %} from the Index?
             </h1>
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="removeCourt" name="removeCourt" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="removeCourt">
+              <input class="govuk-radios__input" id="removePolice" name="removePolice" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="removePolice">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="removeCourt-2" name="removeCourt" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="removeCourt-2">
+              <input class="govuk-radios__input" id="removePolice-2" name="removePolice" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="removePolice-2">
                 No
               </label>
             </div>
