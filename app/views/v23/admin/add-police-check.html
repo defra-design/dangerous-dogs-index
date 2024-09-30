@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "add-or-remove-police"
+  href: "check-answers"
 }) }}
 {% endblock %}
 
@@ -18,7 +18,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v23/admin/add-police-list" method="post">
+      <form class="form" action="check-answers" method="post">
 
       <div class="govuk-form-group">
         <h1 class="govuk-label-wrapper">
@@ -26,7 +26,7 @@
             {{ pageName }}
           </label>
         </h1>
-        <input class="govuk-input" id="police-email" value="{% if data['policeEmail'] %}{{ data['policeEmail'] }}{% else %}{% endif %}" name="policeEmail" type="text">
+        <input class="govuk-input" id="police-email" value="{{ data['policeEmail'] }}" name="policeEmail" type="text">
       </div>
 
       {{ govukButton({
@@ -34,6 +34,7 @@
       }) }}
 
       </form>
+
 
     </div>
   </div>

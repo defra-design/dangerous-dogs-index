@@ -23,7 +23,7 @@
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
-             {{ data['policeEmail'] }}
+             {% if data['policeEmail'] %}{{ data['policeEmail'] }}{% else %}steve.arnott@durham.police.uk{% endif %}
             </dt>
             <dd class="govuk-summary-list__value">
             </dd>

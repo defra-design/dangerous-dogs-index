@@ -2203,7 +2203,7 @@ router.post('/v23/admin/police-question', function (req, res) {
 router.post('/v23/admin/add-2nd-police', function (req, res) {
   var add2ndPolice = req.session.data['add2ndPolice']
   if (add2ndPolice === "no"){
-    res.redirect('/v23/admin/remove-police')
+    res.redirect('/v23/admin/check-answers')
   } else {
     res.redirect('/v23/admin/add-police-2')
   }
@@ -2214,7 +2214,7 @@ router.post('/v23/admin/add-2nd-police', function (req, res) {
 router.post('/v23/admin/add-3rd-police', function (req, res) {
   var add2ndPolice = req.session.data['add3rdPolice']
   if (add2ndPolice === "no"){
-    res.redirect('/v23/admin/remove-police')
+    res.redirect('/v23/admin/check-answers')
   } else {
     res.redirect('/v23/admin/add-police-3')
   }

@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "add-poice-3"
+    href: "add-police-list"
   }) }}
 {% endblock %}
 
@@ -21,69 +21,57 @@
         {{ pageName }}
       </h1>
 
-      {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              html: data['policeEmail'],
-              classes: "govuk-!-width-three-quarters govuk-!-font-weight-regular"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  classes: "govuk-link--no-visited-state",
-                  visuallyHiddenText: "['policeEmail1']"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              html: data['policeEmail2'],
-              classes: "govuk-!-width-three-quarters govuk-!-font-weight-regular"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  classes: "govuk-link--no-visited-state",
-                  visuallyHiddenText: "['policeEmail2']"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              html: data['policeEmail3'],
-              classes: "govuk-!-width-three-quarters govuk-!-font-weight-regular"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  classes: "govuk-link--no-visited-state",
-                  visuallyHiddenText: "['policeEmail3']"
-                }
-              ]
-            }
-          }
-        ]
-      }) }}
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-three-quarters govuk-!-font-weight-regular">
+            {% if data['policeEmail'] %}{{ data['policeEmail'] }}{% else %}steve.arnott@durham.police.uk{% endif %}
+          </dt>
+          <dd class="govuk-summary-list__value">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+           <a class="govuk-link govuk-link--no-visited-state" href="add-police-check">Change<span class="govuk-visually-hidden"> {{ data['policeEmail'] }}</span></a>
+          </dd>
+        </div>
 
+        {% if data['policeEmail2'] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-three-quarters govuk-!-font-weight-regular">
+           {{ data['policeEmail2'] }}
+          </dt>
+          <dd class="govuk-summary-list__value">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+           <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> {{ data['policeEmail2'] }}</span></a>
+          </dd>
+        </div>
+        {% else %}
+        {% endif %}
+
+        {% if data['policeEmail3'] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-three-quarters govuk-!-font-weight-regular">
+            {{ data['policeEmail3'] }}
+          </dt>
+          <dd class="govuk-summary-list__value">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+           <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> {{ data['policeEmail3'] }}</span></a>
+          </dd>
+        </div>
+        {% else %}
+        {% endif %}
+
+      </dl>
+
+      <!--
       <h2 class="govuk-heading-m">
         Now give access
       </h2>
 
       <p>
-        These police officers will receive an email inviting them to register to access the Dangerous Dogs Index.
+        Police officers you added will receive an email inviting them to register to access the Dangerous Dogs Index.
       </p>
-
+      -->
       <form action="./confirmation" method="post" novalidate>
 
         {{ govukButton({
