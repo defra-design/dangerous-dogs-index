@@ -42,15 +42,23 @@
 
 {% block footer %}
 
-  {{ govukFooter({
-    meta: {
-      items: [
-        {
-          href: "#",
-          text: "Accessibility statement"
-        }
-      ]
-    }
-  }) }}
+{{ govukFooter({
+  meta: {
+    items: [
+      {
+        href: "privacy",
+        text: "Privacy"
+      },
+      {
+        href: "#",
+        text: "Accessibility"
+      },
+      {
+        href: "licence",
+        text: "Secure Access Licence"
+      }
+    ]
+  }
+}) }}
 
 {% endblock %}
