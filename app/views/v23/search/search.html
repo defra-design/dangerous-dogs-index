@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "index"
+  href: ""
 }) }}
 {% endblock %}
 
@@ -31,10 +31,7 @@
           Search
           </label>
         </h1>
-        <div id="event-name-hint" class="govuk-hint">
-          Enter one or more search terms separated by spaces
-        </div>
-        <input class="govuk-input" id="search" name="keyword" type="text">
+        <input class="govuk-input" value="{{ data['keyword'] }}" id="search" name="keyword" type="text">
       </div>
 
       <div class="govuk-form-group govuk-!-margin-bottom-2">
