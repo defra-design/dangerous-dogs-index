@@ -1,0 +1,52 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Dog records - Search" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "duplicate-dog"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v8/search/search-results" method="post">
+
+      <h1 class="govuk-heading-l">
+        You cannot proceed with this application
+        </h1>
+
+        <p class="govuk-body">
+          <span class="govuk-!-font-weight-bold">
+          Microchip number
+          </span>
+        <br>
+        {% if data['microchipNumber'] %}{{ data['microchipNumber'] }}{% else %}580004892832839{% endif %}
+        </p>
+
+        <p class="govuk-body">
+        The same microchip number cannot be used on more than one dog record. You should escalate to a line manager to confirm the next step.
+        </p>
+
+        <p class="govuk-body">
+          <a class="govuk-link govuk-link--no-visited-state" href="microchip-number">Change the microchip number</a>
+          if you entered the number incorrectly.
+          </p>
+
+        <p class="govuk-body">
+          <a class="govuk-link govuk-link--no-visited-state" href="duplicate-dog">Change the dog owner</a>
+          if you want to transfer ownership and proceed the application.
+          </p>
+
+    </div>
+  </div>
+
+{% endblock %}

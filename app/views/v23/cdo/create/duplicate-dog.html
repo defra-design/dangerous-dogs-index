@@ -1,0 +1,115 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Dog records - Search" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "microchip-number"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v23/cdo/create/owner-question" method="post">
+
+      <h1 class="govuk-heading-l">
+        Microchip number {% if data['microchipNumber'] %}{{ data['microchipNumber'] }}{% else %}580004892832839{% endif %} is in use on a current dog record with a different owner
+        </h1>
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-2 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title defra-summary-header"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED30468
+          </a></h2>
+          <ul class="govuk-summary-card__actions govuk-!-padding-bottom-1 govuk-!-font-weight-regular">
+            {{ govukTag({
+              text: "Exempt",
+              classes: "govuk-tag--green govuk-!-font-size-16"
+            }) }}
+          </ul>
+        </div>
+
+        <div class="govuk-summary-card__content govuk-!-padding-top-1 govuk-!-padding-bottom-0">
+          <table class="govuk-table govuk-!-margin-bottom-3">
+            <caption class="govuk-table__caption govuk-!-font-weight-regular govuk-!-font-size-16">
+                </caption>
+              <thead class="govuk-table__head govuk-!-font-size-16">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                    Dog name
+                  </th>
+                  <th scope="col" class="govuk-table__header">
+                    Owner name
+                  </th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric govuk-!-width-one-quarter">
+                    Microchip number
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row govuk-!-font-size-16 govuk-!-margin-bottom-0 defra-results">
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0">
+                     Zuul
+                    </td>
+                    <td class="govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                      <a class="govuk-link govuk-link--no-visited-state" href="">
+                      Vinz Clortho
+                      </a>
+                    </td>
+                    <td class="govuk-table__header--numeric govuk-!-padding-top-2 govuk-!-padding-bottom-0 defra-results">
+                      {% if data['microchipNumber'] %}{{ data['microchipNumber'] }}{% else %}580004892832839{% endif %}
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p class="govuk-body">
+          You can transfer ownership of the dog if the microchip number is correct.
+        </p>
+
+        <p class="govuk-body">
+          If you entered the number incorrectly,
+          <a class="govuk-link govuk-link--no-visited-state" href="microchip-number">change the microchip number</a>.
+        </p>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Do you want to make {% if data['firstName'] %}{{ data['firstName'] }} {{ data['lastName'] }}{% else %}Terry Rowbottom{% endif %} the dog owner of Zuul?
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="transferOwnership" name="transferOwnership" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="transferOwnership">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="transferOwnership-2" name="transferOwnership" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="transferOwnership-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

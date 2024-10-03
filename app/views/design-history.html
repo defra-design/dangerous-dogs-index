@@ -1,0 +1,2080 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Dangerous Dogs Index prototype
+{% endset%}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      {{ serviceName }} design history
+    </h1>
+
+    <p class="govuk-body">
+      Previous prototype designs for the Dangerous Dogs Index
+    </p>
+
+    <p class="govuk-body govuk-!-margin-bottom-8">
+      <a class="govuk-link govuk-link--no-visited-state" href="index">
+      View the latest designs
+      </a>
+    </p>
+
+    {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+
+      {
+        heading: {
+          text: "Version 21 – Defra Identity"
+        },
+        content: {
+          html:
+
+      '<h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+        Police read only version
+        </h3>
+
+        <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+          Register and sign in journey
+          </h4>
+
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/email-invite">Invite email</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-up/start">Start page</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-up/defra-id-start">Register for a Defra account</a>
+          </li>
+
+          <h5 class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+            Sign up
+            </h5>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-up/sign-in">Sign up using Government Gateway</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-up/email-address">Enter your email address</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-up/verify">Confirm your email address</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-up/email-confirmed">Email address confirmed</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-up/name">Enter full name</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-up/create-password">Create a password</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-up/confirmation">Confirmation</a>
+          </li>
+
+          <h5 class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+            Defra Account
+            </h5>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-up/register">Register for a Defra account</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-up/terms">Agree terms and conditions</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-up/what-we-need">What we need from you</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-up/details">Tell us your details</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-up/full-name">Enter full name</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-up/phone-number">Phone number</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-up/memorable-word">Memorable word</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-up/check-your-answers">Check your answers</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-up/confirmation-defra-account">Confirmation</a>
+          </li>
+
+          <h5 class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+            Sign in and agree licence
+            </h5>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/email-register">Register email</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/registration-confirmed">Registration confirmed</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/sign-in/sign-in">Sign in using Government Gateway</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/terms">Agree to the Secure Access Licence</a>
+          </li>
+
+          <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+            DDI access for police
+          </h4>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/index">Search</a>
+          </li>
+
+          <h5 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+            Record 1&nbsp;
+            <strong class="govuk-tag govuk-tag--red govuk-!-font-size-16">
+              In breach
+            </strong>
+          </h5>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/dog-records/record-1/dog-record">Dog record</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/owner-records/record-1/owner-record">Owner record</a>
+          </li>
+
+          <h5 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+            Record 2&nbsp;
+            <strong class="govuk-tag govuk-tag--turquoise govuk-!-font-size-16">
+              Exempt
+            </strong>
+            </h5>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/dog-records/record-2/dog-record">Dog record</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/owner-records/record-2/owner-record">Owner record</a>
+          </li>
+
+          <h5 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+            Record 3&nbsp;
+            <strong class="govuk-tag govuk-!-font-size-16">
+              Applying for exemption
+            </strong>
+            </h5>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/dog-records/record-3/dog-record">Dog record</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/owner-records/record-3/owner-record">Owner record</a>
+          </li>
+
+          <h5 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+            Record 4&nbsp;
+            <strong class="govuk-tag govuk-tag--purple govuk-!-font-size-16">
+              Failed to exempt dog
+            </strong>
+            </h5>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/dog-records/record-4/dog-record">Dog record</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/owner-records/record-4/owner-record">Owner record</a>
+          </li>
+
+          <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+            Statuses
+          </h4>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v21/statuses">Dog statuses</a>
+          </li>
+        </ul>'
+          }
+        },
+
+    {
+      heading: {
+        text: "Version 20 – Search with close matches"
+      },
+      content: {
+        html:
+      '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+          Search with close matches
+        </h3>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v20/dog-results">Search results</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v20/dog-results-close">Search results with close matches</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v20/dog-results-no-close">Search results with no close matches</a>
+          </li>
+        </ul>'
+        }
+      },
+
+    {
+      heading: {
+        text: "Version 19 – GOV.UK One Login"
+      },
+      content: {
+        html:
+
+    '<h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+      Police read only version
+      </h3>
+
+      <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+        Register and sign in journey
+        </h4>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/start">Start page</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/create-account">Create your GOV.UK One Login or sign in</a>
+          <br><span class="govuk-body-s defra-secondary-text">Use SMS for MFA</span>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/email/create-account">Create your GOV.UK One Login or sign in</a>
+          <br><span class="govuk-body-s defra-secondary-text">User already has an account</span>
+        </li>
+
+        <h5 class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+          Create a GOV.UK Login
+          </h5>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/create-account/enter-email">Enter email address</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/create-account/check-email">Check email</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/create-account/create-password">Create password</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/create-account/security-codes">Choose how to get security codes</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/create-account/enter-phone">Enter phone number</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/create-account/account-created">One Login created</a>
+        </li>
+
+        <h5 class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+          Agree licence
+          </h5>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/terms">Agree to the Secure Access Licence</a>
+        </li>
+
+        <h5 class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+          Sign in
+          </h5>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/sign-in/enter-email">Enter email address to sign in</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/sign-in/enter-password">Enter password</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/sign-in/check-phone">Check phone</a>
+        </li>
+
+        <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+          DDI homepage for police
+          </h4>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/index">Search</a>
+          <br><span class="govuk-body-s defra-secondary-text">Use the search terms below to view different results and records.</span>
+        </li>
+
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/search/results-none">No search results</a>
+        </li>
+
+        <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+          Report something to Defra
+          </h4>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/dog-records/record-1/comment/comment-type">Report something</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/dog-records/record-1/comment/breach-reason">Reason for the breach</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/dog-records/record-1/comment/postcode">New address</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/dog-records/record-1/comment/confirm-address">Confirm address</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/dog-records/record-1/comment/report-death">Report death details</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/dog-records/record-1/comment/report-details">Provide more details</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/dog-records/record-1/comment/confirmation">Report received</a>
+        </li>
+
+        <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+          Check activity
+          </h4>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/dog-records/record-1/activity/activity-all">Check dog activity</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v19/owner-records/record-1/activity/activity-all">Check owner activity</a>
+        </li>
+
+        <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+          Record 1
+          </h4>
+
+          <p class="govuk-body-s defra-secondary-text govuk-!-margin-bottom-1">
+            Search terms:
+            </p>
+          <ul class="govuk-list govuk-list--bullet govuk-body-s defra-secondary-text govuk-!-margin-bottom-3">
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-1/results-address">Address</a> – ‘247 Norcroft Road’ or ‘Barking’ or ‘IG11 7JF’</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-1/results-dog-name">Dog</a> – Mutley</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-1/results-index-number">Index number</a> – 208510</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-1/results-microchip">Microchip number</a> – 123456789012345</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-1/results-owner-name">Owner</a> – Michael Denton</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-1/results-status">Status</a> – In breach</li>
+          </ul>
+
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v19/dog-records/record-1/dog-record">Dog record</a>
+          </li>
+
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v19/owner-records/record-1/owner-record">Owner record</a>
+          </li>
+
+          <br>
+
+          <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Record 2
+            </h4>
+
+          <p class="govuk-body-s defra-secondary-text govuk-!-margin-bottom-1">
+            Search terms:
+            </p>
+          <ul class="govuk-list govuk-list--bullet govuk-body-s defra-secondary-text govuk-!-margin-bottom-3">
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-2/results-address">Address</a> – ‘5 Station Road’ or ‘Woofferton’ or ‘SY8 4NL’</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-2/results-dog-name">Dog</a> – Bouncer</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-2/results-index-number">Index number</a> – 418696</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-2/results-microchip">Microchip number</a> – 112233445566778</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-2/results-owner-name">Owner</a> – Vicki Sugden</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-2/results-status">Status</a> – Exempt</li>
+          </ul>
+
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v19/dog-records/record-2/dog-record">Dog record</a>
+          </li>
+
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v19/owner-records/record-2/owner-record">Owner record</a>
+          </li>
+
+          <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+            Record 3
+            </h4>
+
+          <p class="govuk-body-s defra-secondary-text govuk-!-margin-bottom-1">
+            Search terms:
+            </p>
+          <ul class="govuk-list govuk-list--bullet govuk-body-s defra-secondary-text">
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-3/results-address">Address</a> – ‘30 Hounds Gate’ or ‘Nottingham’ or ‘NG1 7BA’</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-3/results-dog-name">Dog</a> – Bronson</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-3/results-index-number">Index number</a> – 338596</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-3/results-microchip">Microchip number</a> – 098765432123456</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-3/results-owner-name">Owner</a> – Nathan Stockton</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-3/results-status">Status</a> – Pre-exempt</li>
+          </ul>
+
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v19/dog-records/record-3/dog-record">Dog record</a>
+          </li>
+
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v19/owner-records/record-3/owner-record">Owner record</a>
+          </li>
+
+          <h4 class="govuk-heading-s govuk-!-margin-top-5 govuk-!-margin-bottom-1">
+            Record 4
+            </h4>
+
+          <p class="govuk-body-s defra-secondary-text govuk-!-margin-bottom-1">
+            Search terms:
+            </p>
+          <ul class="govuk-list govuk-list--bullet govuk-body-s defra-secondary-text">
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-4/results-address">Address</a> – ‘5 Bullytree Lane’ or ‘Leeds’ or ‘LS25 5AQ’</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-4/results-dog-name">Dog</a> – Ernie</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-4/results-index-number">Index number</a> – 198587</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-4/results-microchip">Microchip number</a> – 123451234512345</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-4/results-owner-name">Owner</a> – Heidi Sturgeon</li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/v19/search/record-4/results-status">Status</a> – Failed</li>
+          </ul>
+
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v19/dog-records/record-4/dog-record">Dog record</a>
+          </li>
+
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v19/owner-records/record-4/owner-record">Owner record</a>
+          </li>
+
+        </ul>'
+      }
+    },
+
+    {
+      heading: {
+        text: "Version 18"
+      },
+      content: {
+        html:
+      '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        List management in Admin area – adding hint text
+        </h3>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v18/admin/index">Admin index</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v18/admin/add-activity">Add an activity: something we send</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v18/admin/add-activity-receive">Add an activity: something we receive</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v18/admin/add-court">Add a court</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v18/admin/add-police">Add police force</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v18/admin/insurers">Add a dog insurer</a>
+          </li>
+        </ul>
+
+        <h3 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+        Make court mandatory only for CDOs
+        </h3>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v18/cdo/create">Create a CDO</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v18/cdo/create/dog-details">Add dog details</a>
+          </li>
+
+        <h5 class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+          CDO
+          </h5>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v18/cdo/create/cdo/confirm-dog-details">Confirm dog details</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v18/cdo/create/cdo/enforcement-details">Enter enforcement details</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v18/cdo/create/cdo/confirm-details">Confirm all details</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v18/cdo/create/cdo/confirmation">Record created</a>
+        </li>
+
+        <h5 class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+          Interim exemption
+          </h5>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v18/cdo/create/interim-exempt/confirm-dog-details">Confirm dog details</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v18/cdo/create/interim-exempt/enforcement-details">Enter enforcement details</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v18/cdo/create/interim-exempt/confirm-details">Confirm all details</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v18/cdo/create/interim-exempt/confirmation-interim-exempt">Record created</a>
+        </li>
+
+      </ul>'
+        }
+      },
+
+      {
+        heading: {
+          text: "Version 17 – Full police journey with search terms"
+        },
+        content: {
+          html:
+
+      '<h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+        Police read only version
+        </h3>
+
+        <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+          Sign in journey
+          </h4>
+
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/sign-in">Government Gateway sign in</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/verify">Verify</a>
+          </li>
+
+          <h5 class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+            Text message
+            </h5>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/send-text">Send text message</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/enter-text-code">Enter code</a>
+          </li>
+
+          <h5 class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+          Email
+            </h5>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/security-word">Security word</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/send-email">Send email</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/enter-email-code">Enter code</a>
+          </li>
+
+          <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+            DDI homepage for police
+            </h4>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/index">Search</a>
+            <br><span class="govuk-body-s defra-secondary-text">Use the search terms below to view different results and records.</span>
+          </li>
+
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/search/results-none">No search results</a>
+          </li>
+
+          <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+            Report something to Defra
+            </h4>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/dog-records/record-1/comment/comment-type">Report something</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/dog-records/record-1/comment/breach-reason">Reason for the breach</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/dog-records/record-1/comment/postcode">New address</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/dog-records/record-1/comment/confirm-address">Confirm address</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/dog-records/record-1/comment/report-death">Report death details</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/dog-records/record-1/comment/report-details">Provide more details</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/dog-records/record-1/comment/confirmation">Report received</a>
+          </li>
+
+          <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+            Check activity
+            </h4>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/dog-records/record-1/activity/activity-all">Check dog activity</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v17/owner-records/record-1/activity/activity-all">Check owner activity</a>
+          </li>
+
+          <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+            Record 1
+            </h4>
+
+            <p class="govuk-body-s defra-secondary-text govuk-!-margin-bottom-1">
+              Search terms:
+              </p>
+            <ul class="govuk-list govuk-list--bullet govuk-body-s defra-secondary-text govuk-!-margin-bottom-3">
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-1/results-address">Address</a> – ‘247 Norcroft Road’ or ‘Barking’ or ‘IG11 7JF’</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-1/results-dog-name">Dog</a> – Mutley</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-1/results-index-number">Index number</a> – 208510</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-1/results-microchip">Microchip number</a> – 123456789012345</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-1/results-owner-name">Owner</a> – Michael Denton</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-1/results-status">Status</a> – In breach</li>
+            </ul>
+
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v17/dog-records/record-1/dog-record">Dog record</a>
+            </li>
+
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v17/owner-records/record-1/owner-record">Owner record</a>
+            </li>
+
+            <br>
+
+            <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
+              Record 2
+              </h4>
+
+            <p class="govuk-body-s defra-secondary-text govuk-!-margin-bottom-1">
+              Search terms:
+              </p>
+            <ul class="govuk-list govuk-list--bullet govuk-body-s defra-secondary-text govuk-!-margin-bottom-3">
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-2/results-address">Address</a> – ‘5 Station Road’ or ‘Woofferton’ or ‘SY8 4NL’</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-2/results-dog-name">Dog</a> – Bouncer</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-2/results-index-number">Index number</a> – 418696</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-2/results-microchip">Microchip number</a> – 112233445566778</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-2/results-owner-name">Owner</a> – Vicki Sugden</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-2/results-status">Status</a> – Exempt</li>
+            </ul>
+
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v17/dog-records/record-2/dog-record">Dog record</a>
+            </li>
+
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v17/owner-records/record-2/owner-record">Owner record</a>
+            </li>
+
+            <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">
+              Record 3
+              </h4>
+
+            <p class="govuk-body-s defra-secondary-text govuk-!-margin-bottom-1">
+              Search terms:
+              </p>
+            <ul class="govuk-list govuk-list--bullet govuk-body-s defra-secondary-text">
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-3/results-address">Address</a> – ‘30 Hounds Gate’ or ‘Nottingham’ or ‘NG1 7BA’</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-3/results-dog-name">Dog</a> – Bronson</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-3/results-index-number">Index number</a> – 338596</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-3/results-microchip">Microchip number</a> – 098765432123456</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-3/results-owner-name">Owner</a> – Nathan Stockton</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-3/results-status">Status</a> – Pre-exempt</li>
+            </ul>
+
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v17/dog-records/record-3/dog-record">Dog record</a>
+            </li>
+
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v17/owner-records/record-3/owner-record">Owner record</a>
+            </li>
+
+            <h4 class="govuk-heading-s govuk-!-margin-top-5 govuk-!-margin-bottom-1">
+              Record 4
+              </h4>
+
+            <p class="govuk-body-s defra-secondary-text govuk-!-margin-bottom-1">
+              Search terms:
+              </p>
+            <ul class="govuk-list govuk-list--bullet govuk-body-s defra-secondary-text">
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-4/results-address">Address</a> – ‘5 Bullytree Lane’ or ‘Leeds’ or ‘LS25 5AQ’</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-4/results-dog-name">Dog</a> – Ernie</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-4/results-index-number">Index number</a> – 198587</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-4/results-microchip">Microchip number</a> – 123451234512345</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-4/results-owner-name">Owner</a> – Heidi Sturgeon</li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/v17/search/record-4/results-status">Status</a> – Failed</li>
+            </ul>
+
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v17/dog-records/record-4/dog-record">Dog record</a>
+            </li>
+
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v17/owner-records/record-4/owner-record">Owner record</a>
+            </li>
+
+          </ul>'
+        }
+      },
+
+      {
+        heading: {
+          text: "Version 16 – Police read only version"
+        },
+        content: {
+          html:
+        '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Police read only version
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v16/index">Search</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v16/search/results">Search results</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v16/dog-records/dog-record">Dog record</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v16/owner-records/owner-record">Owner record</a>
+            </li>
+          </ul>
+
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              CDO confirmation
+            </h3>
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v16/cdo/confirmation">Confirmation page</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v16/cdo/confirmation-multiple">Confirmation page</a>
+                <span class="govuk-body-s defra-secondary-text"> – Multiple dogs</span>
+              </li>
+            </ul>'
+          }
+        },
+
+      {
+        heading: {
+          text: "Version 15"
+        },
+        content: {
+          html:
+        '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+          Show key metrics
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v15/admin/dogs-on-index">Number of dogs on the Index</a>
+            </li>
+          </ul>
+
+
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Adding a reason for a breach
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v15/dog-records/dog-record">Dog record</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v15/dog-records/change-status">Changing the status</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v15/dog-records/breach-reason">Add reason for breach</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v15/dog-records/breach-reason-error">Add reason for breach</a>
+              <span class="govuk-body-s defra-secondary-text"> – Error</span>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v15/dog-records/status-changed">Status changed</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v15/dog-records/dog-record-in-breach">Dog record</a>
+              <span class="govuk-body-s defra-secondary-text"> – Reason for breach displayed in exemption details</span>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v15/dog-records/dog-record-exemption-edit-in-breach">Dog record edit exemption details</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v15/dog-records/dog-activity">Check activity</a>
+              <span class="govuk-body-s defra-secondary-text"> – Reason for breach displayed in check activity table</span>
+            </li>
+          </ul>'
+          }
+        },
+
+      {
+      heading: {
+        text: "Version 14"
+      },
+      content: {
+        html:
+        '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Managing a CDO
+        </h3>
+
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/manage/manage-cdos-all">Manage CDOs</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/manage/manage-cdo-1">CDO task list</a>
+            <span class="govuk-body-s defra-secondary-text"> – All tasks to complete</span>
+          </li>
+          <br>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/manage/application-pack">Send application pack</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/manage/manage-cdo-2">CDO task list</a>
+            <span class="govuk-body-s defra-secondary-text"> – Application pack sent</span>
+          </li>
+          <br>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/manage/application-pack-sent">Application pack sent</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/manage/insurance-date">Record insurance details</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/manage/microchip-number">Record microchip number</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/manage/record-payment">Record payment</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/manage/form-2">Send Form 2</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/manage/manage-cdo-3">CDO task list</a>
+            <span class="govuk-body-s defra-secondary-text"> – Only record microchip and neutering verified remaining</span>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/manage/microchip-neutering">Record microchip and neutering</a>
+          </li>
+          <br>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/manage/certificate">Generate certificate</a>
+          </li>
+          <br>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/dog-records/dog-record-ED30228-complete">Dog record</a>
+            <span class="govuk-body-s defra-secondary-text"> – Dates when completing the CDO entered</span>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/owner-records/owner-record-ED30228">Owner record</a>
+          </li>
+        </ul>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Edit records
+        </h3>
+
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/dog-records/dog-record-ED30228-exemption-edit">Edit exemption details</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/owner-records/enter-address">Enter address</a>
+          </li>
+        </ul>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Records in need of action
+        </h3>
+
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/manage/needs-action-1">Needs action</a>
+            <span class="govuk-body-s defra-secondary-text"> – simple list</span>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/manage/needs-action-2">Needs action</a>
+            <span class="govuk-body-s defra-secondary-text"> – mark items received</span>
+          </li>
+        </ul>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Show key metrics
+        </h3>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/admin/dogs-on-index">Number of dogs on the Index</a>
+          </li>
+        </ul>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Don’t allow XL Bullys in Scotland
+        </h3>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/cdo/create/dog-details">Add dog details</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v14/dog-records/dog-record-edit">Edit dog details</a>
+          </li>
+        </ul>'
+        }
+      },
+
+      {
+      heading: {
+        text: "Version 13"
+      },
+      content: {
+        html:
+        '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Show key metrics
+        </h3>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v13/admin/index">Number of dogs on the Index</a>
+          </li>
+        </ul>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Delete dogs older than 15 years
+        </h3>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v13/admin/index">Admin index</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v13/admin/delete-dogs">Delete dogs older than 15 years</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v13/admin/delete-dogs-2">Select dogs to delete</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v13/admin/delete-dogs-3">Delete selected dogs</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v13/admin/confirmation-dog-records-deleted">Confirmation</a>
+          </li>
+        </ul>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Delete dog owner records without a dog
+        </h3>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v13/admin/index">Admin index</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v13/admin/delete-owner-records">Select dog owner records to delete</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v13/admin/delete-dog-owners">Delete dog owner records</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v13/admin/confirmation-owner-records-deleted">Confirmation</a>
+          </li>
+        </ul>'
+        }
+      },
+      {
+      heading: {
+        text: "Version 12"
+      },
+      content: {
+        html:
+        '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Records in need of action
+        </h3>
+
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/manage/needs-action">Needs action</a>
+          </li>
+        </ul>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Dog record activity
+        </h3>
+
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/dog-records/activity/activity">View dog record activity</a>
+          </li>
+        </ul>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Duplicate microchip number
+        </h3>
+
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/dog-records/dog-record-ED30227-dog-edit">Edit a dog record</a>
+          </li>
+        </ul>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Change owner
+        </h3>
+
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/cdo/create">Create new record</a>
+            <br><span class="govuk-body-s defra-secondary-text">Use ‘Kenny Walsh’ to view the existing owner journey</span>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/cdo/create/multiple/select-owner">Select address</a>
+            <br><span class="govuk-body-s defra-secondary-text">(for existing owners)</span>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/cdo/create/postcode">Postcode</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/cdo/create/confirm-address">Confirm address</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/cdo/create/microchip-number">Microchip number</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/cdo/create/duplicate-dog">Duplicate dog / change owner</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/cdo/create/next-step">Cannot proceed</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/cdo/create/application-type">Application type</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/cdo/create/confirm-dog-details">Confirm dog details</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/cdo/create/enforcement-details">Police and court details</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/cdo/create/confirm-details">Confirm details</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/cdo/create/confirmation">Confirmation</a>
+          </li>
+        </ul>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Manage send and receive lists
+        </h3>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/admin/index">Admin index</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/admin/activities">Manage record activities</a>
+          </li>
+          <br>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/admin/add-activity">Add an activity</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/admin/add-activity-confirm">Confirm addition</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/admin/confirmation-activity-added">Addition confirmed</a>
+          </li>
+          <br>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/admin/activities-added">Remove an activity</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/admin/remove-activity-confirm">Confirm removal</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v12/admin/confirmation-activity-removed">Removal confirmed</a>
+          </li>
+        </ul>'
+          }
+        },
+        {
+        heading: {
+          text: "Version 11"
+        },
+        content: {
+          html:
+          '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+          Search results
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v11/search/dog-results">Dog results</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v11/search/owner-results">Owner results</a>
+            </li>
+          </ul>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Manage send and receive lists
+        </h3>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v11/admin/index">Admin index</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v11/admin/activities">Manage record activities</a>
+          </li>
+          <br>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v11/admin/add-activity">Add an activity</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v11/admin/add-activity-confirm">Confirm addition</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v11/admin/confirmation-activity-added">Addition confirmed</a>
+          </li>
+          <br>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v11/admin/activities-added">Remove an activity</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v11/admin/remove-activity-confirm">Confirm removal</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v11/admin/confirmation-activity-removed">Removal confirmed</a>
+          </li>
+        </ul>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Owners with multiple dogs
+        </h3>
+        <h4 class="govuk-body govuk-!-margin-bottom-1">
+        The owner has a record in the Index and multiple dogs
+        </h4>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v11/cdo/create">Create new record</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v11/cdo/create/multiple/select-owner">Select address</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v11/cdo/create/multiple/select-dog">Select dog or add a new dog</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v11/cdo/create/multiple/application-type">Application type</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v11/cdo/create/multiple/microchip-number">Microchip number</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v11/cdo/create/multiple/duplicate-dog">Duplicate dog</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v11/cdo/create/multiple/enforcement-details">Police and court details</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v11/cdo/create/multiple/confirm-details">Confirm details</a>
+          </li>'
+        }
+      },
+      {
+      heading: {
+        text: "Version 10"
+      },
+      content: {
+        html:
+        '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Manage CDOs and interim exempt
+        </h3>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/manage/manage-cdos-all">Manage CDOs</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/manage/manage-cdos-expired">Expired CDOs</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/manage/manage-cdos-month">CDOs due with a month</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/manage/manage-interim-exemptions">Interim exemptions</a>
+          </li>
+        </ul>
+        <br>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Admin
+        </h3>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/index">Admin index</a>
+          </li>
+          <br>
+
+          <h4 class="govuk-body govuk-!-margin-bottom-1">
+          Manage send and receive lists
+          </h4>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/add-or-remove-activities">Add or remove activities</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/what-is-the-activity-add">Type of activity to add</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/what-is-the-activity-add">Add an activity</a>
+          </li>
+          <br>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/add-send-activity">Add something we send</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/add-receive-activity">Add something we receive</a>
+          </li>
+
+          <br>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/what-is-the-activity-remove">Remove an activity</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/remove-send-activity">Remove something we send</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/remove-receive-activity">Remove something we receive</a>
+          </li>
+          <br>
+
+          <h4 class="govuk-body govuk-!-margin-bottom-1">
+          Manage courts
+          </h4>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/add-or-remove-courts">Add or remove a court</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/add-court">Add a court</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/add-court-confirm">Add a court – are you sure</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/confirmation-court-added">Court added</a>
+          </li>
+          <br>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/remove-court">Remove a court</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/remove-court-confirm">Remove a court – are you sure</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/confirmation-court-removed">Court removed</a>
+          </li>
+          <br>
+
+          <h4 class="govuk-body govuk-!-margin-bottom-1">
+          Manage police forces
+          </h4>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/add-or-remove-police">Add or remove police forces</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/add-police">Add a police force</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/add-police-confirm">Add a police force – are you sure</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/confirmation-police-added">Police force added</a>
+          </li>
+          <br>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/remove-police">Remove a police force</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/remove-police-confirm">Remove a police force – are you sure</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/confirmation-police-removed">Police force removed</a>
+          </li>
+          <br>
+
+          <h4 class="govuk-body govuk-!-margin-bottom-1">
+          Manage insurers
+          </h4>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/insurers">Add a dog insurer</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v10/admin/insurer-added">Dog insurer added</a>
+          </li>
+        </ul>'
+        }
+      },
+
+      {
+      heading: {
+        text: "Version 9"
+        },
+        content: {
+        html:
+        '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Admin
+        </h3>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/admin/index">Admin index</a>
+          </li>
+          <br>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/admin/pseudonyms">Add or remove pseudonyms</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/admin/pseudonyms-none">No pseudonyms added</a>
+          </li>
+          <br>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/admin/police-forces">Add or remove police forces</a>
+            <br><span class="govuk-body-s defra-secondary-text">Remove ‘Wiltshire Police’</span>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/admin/are-you-sure-police">Are you sure</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/admin/add-police">Add selected police force</a>
+            <br><span class="govuk-body-s defra-secondary-text">Add ‘Central Police’</span>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/admin/confirmation-added">Confirm police force added</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/admin/police-forces-added">New police force added to list</a>
+          </li>
+        </ul>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Search the Index
+        </h3>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/sign-in">Username</a>
+            <br><span class="govuk-body-s defra-secondary-text">Include an ‘@’ symbol to proceed</span>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/password">Password</a>
+            <br><span class="govuk-body-s defra-secondary-text">Use password:
+            <br>password</span>
+          </li>
+        </ul>
+
+        <h4 class="govuk-body govuk-!-margin-bottom-1">
+        1. Search by microchip number
+        </h4>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/microchip-number/index">Index homepage</a>
+            <br><span class="govuk-body-s defra-secondary-text">Use microchip number:
+            <br>901650009395772</span>
+          </li>
+        </ul>
+
+        <h4 class="govuk-body govuk-!-margin-bottom-1">
+        Comment on a dog record
+        </h4>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/microchip-number/dog-records/comment/comment-type">What do you need to report?</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/microchip-number/dog-records/comment/report-details">Add a comment to a dog record</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/microchip-number/dog-records/comment/postcode">Give us a new address</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/microchip-number/dog-records/comment/confirmation">Report received</a>
+          </li>
+          <br>
+
+        <h4 class="govuk-body govuk-!-margin-bottom-1">
+        2. Search by owner name
+        </h4>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/owner-name/index">Index homepage</a>
+            <br><span class="govuk-body-s defra-secondary-text">Use owner name:
+            <br>Michael Denton</span>
+          </li>
+        </ul>
+
+        <h4 class="govuk-body govuk-!-margin-bottom-1">
+        3. Search by address
+        </h4>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/address/index">Index homepage</a>
+            <br>
+            <span class="govuk-body-s defra-secondary-text">Use address:
+            <br>247 Norcroft Road
+            <br>Barking
+            <br>IG11 7JF</span>
+          </li>
+        </ul>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+          Manage records
+        </h3>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/manage/manage-cdos">Manage dog records</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/manage/manage-cdo-1">Manage a new CDO</a>
+          </li>
+        </ul>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+          Delete records
+        </h3>
+        <h4 class="govuk-body govuk-!-margin-bottom-1">
+          Delete a dog record
+        </h4>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/dog-records/dog-results">Search results</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/dog-records/dog-record-ED200010">Dog record</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/dog-records/are-you-sure-1">Are you sure?</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/dog-records/confirmation-1">Confirmation</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/dog-records/dog-results-nil">Search results</a>
+          </li>
+        </ul>
+        <h4 class="govuk-body govuk-!-margin-bottom-1">
+        Delete an owner record when deleting a dog record
+        </h4>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/dog-records/dog-results-1">Search results</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/dog-records/dog-record-ED200011">Dog record</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/dog-records/are-you-sure-2">Are you sure?</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/dog-records/delete-owner-record">Delete owner record</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/dog-records/confirmation-2">Confirmation</a>
+            <span class="govuk-body-s defra-secondary-text"> – dog and owner records deleted</span>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/dog-records/confirmation-3">Confirmation</a>
+            <span class="govuk-body-s defra-secondary-text"> – only dog record deleted</span>
+          </li>
+        </ul>
+        <h4 class="govuk-body govuk-!-margin-bottom-1">
+        Delete an owner record
+        </h4>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/owner-records/owner-record-mt-3">Owner record</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/owner-records/are-you-sure">Are you sure?</a>
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v9/owner-records/confirmation">Confirmation</a>
+          </li>
+        </ul>'
+        }
+      },
+
+      {
+      heading: {
+        text: "Version 8"
+      },
+      content: {
+        html:
+        '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Create a new record
+        </h3>
+        <h4 class="govuk-body govuk-!-margin-bottom-1">
+        The owner and dog already have records in the Index
+        </h4>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create">Create new record</a>
+            <br>
+            <span class="govuk-body-s defra-secondary-text"> – use the surname ‘de Vil’</span>
+          </li>
+          <br>
+
+          <h4 class="govuk-body govuk-!-margin-bottom-1">
+          The owner has a record in the Index, has multiple dogs and the same first and last name as other owners
+          </h4>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create">Create new record</a>
+              <br>
+              <span class="govuk-body-s defra-secondary-text"> – use the surname ‘Jones’ with an address 5 Station Road, Woofferton</span>
+            </li>
+            <br>
+
+          <h4 class="govuk-body govuk-!-margin-bottom-1">
+          No record of the owner or dog in the Index (aka a new owner with a new dog)
+          </h4>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v8/cdo/create">Create new record</a>
+              <span class="govuk-body-s defra-secondary-text"> – use the surname ‘Noakes’ with a postcode HX1 5LE and house number 126</span>
+            </li>
+            <br>
+
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Viewing dog owner activity
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v8/owner-records/activity/activity">Check activity</a>
+            </li>
+          </ul>'
+        }
+      },
+
+      {
+        heading: {
+          text: "Version 7"
+        },
+        content: {
+          html:
+          '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Add to and check dog record activity
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/dog-records/dog-record-ED30874">Dog record</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/dog-records/activity/add-activity">What is the activity?</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/dog-records/activity/send-activity">What have we sent?</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/dog-records/activity/receive-activity">What have we received?</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/dog-records/activity/sent-confirmation">Item sent confirmation</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/dog-records/activity/received-confirmation">Item received confirmation</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/dog-records/activity/activity-all">Check activity</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/dog-records/activity/activity-none">Check activity</a>
+              <span class="govuk-body-s defra-secondary-text"> – no activity to display</span>
+            </li>
+          </ul>
+
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Check owner record activity
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/owner-records/owner-record-ED30874">Owner record</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/owner-records/activity/activity">Check activity</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/owner-records/activity/activity-none">Check activity</a>
+              <span class="govuk-body-s defra-secondary-text"> – no activity to display</span>
+            </li>
+          </ul>
+
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Update a dog record using a postcode
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/owner-records/owner-record-ED30874">Owner record</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/owner-records/owner-record-edit">Edit owner record</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/owner-records/postcode">Provide postcode</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/owner-records/enter-address">Enter address</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/owner-records/select-address">Select address</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/owner-records/confirm-address">Confirm address</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/owner-records/change-address">Change address</a>
+            </li>
+          </ul>
+
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Adding ‘Country’ when manually entering an address
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/cdo/create">Create new record</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/cdo/create/postcode">Provide postcode</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/cdo/create/enter-address">Enter address</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/cdo/create/select-country">Select country</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/cdo/create/confirm-details">Confirm all details</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/cdo/create/confirmation">Record created</a>
+            </li>
+          </ul>
+
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Managing new applications
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v7/cdo/manage/manage-cdo-1">Manage a new CDO</a>
+            </li>
+          </ul>'
+          }
+        },
+
+      {
+        heading: {
+          text: "Version 6"
+        },
+        content: {
+          html:
+          '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Adding a primary nav
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v6/cdo/create">Create new application</a>
+              <span class="govuk-body-s defra-secondary-text"> – CDO or interim exemption added</span>
+            </li>
+          </ul>
+
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Managing active records
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v6/cdo/manage/manage-cdos">Manage active dog records</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v6/cdo/manage/cdo-tasks-not-started">Manage a new CDO</a>
+            </li>
+          </ul>'
+          }
+        },
+
+      {
+        heading: {
+          text: "Version 5"
+        },
+        content: {
+          html:
+          '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Creating a new record
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v5/cdo/create/dog-details">Add dog details</a>
+              <span class="govuk-body-s defra-secondary-text"> – CDO or interim exemption added</span>
+            </li>
+          </ul>'
+          }
+        },
+      {
+        heading: {
+          text: "Version 4"
+        },
+        content: {
+          html:
+          '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+          Create a new record
+          </h3>
+
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/cdo/create">Create new record</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/cdo/create/select-owner">Select owner</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/cdo/create/postcode">Provide postcode</a>
+              <br><span class="govuk-body-s defra-secondary-text">Use postcode ‘SO16’ and property number ‘12’ to view an exact match</span>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/cdo/create/confirm-address">Confirm address</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/cdo/create/select-address">Select address</a>
+            </li>
+            <br>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/cdo/create/microchip-number">Microchip number</a>
+              <span class="govuk-body-s defra-secondary-text"> – use ‘123456789012345’ to view a duplicate dog record</span>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/cdo/create/duplicate-dog">Duplicate dog record</a>
+            </li>
+            <br>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/cdo/create/dog-details">Add dog details</a>
+              <span class="govuk-body-s defra-secondary-text"> – CDO or interim exemption added</span>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/cdo/create/confirm-dog-details">Confirm dog details</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/cdo/create/enforcement-details">Enter police and court details</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/cdo/create/confirm-details">Confirm all details</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/cdo/create/confirmation">Record created</a>
+              <br><span class="govuk-body-s defra-secondary-text">Following receipt of a CDO</span>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/cdo/create/confirmation-interim-exempt">Record created</a>
+              <br><span class="govuk-body-s defra-secondary-text">Following advice that a dog has been added to the interim exemption scheme</span>
+            </li>
+          </ul>
+
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Service footer
+          </h3>
+
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/dog-records/certificate">Footer</a><span class="govuk-body-s defra-secondary-text"> (added to every page in the prototype)</span>
+            </li>
+          </ul>
+
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Dog record additions
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/dog-records/dog-record-ED30227">Dog record</a><span class="govuk-body-s defra-secondary-text"> – ‘Date untraceable’ and ‘Removed from CDO process’ added</span>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/dog-records/dog-record-ED30227-dog-edit">Edit dog details of a dog record</a><span class="govuk-body-s defra-secondary-text"> – ‘Date untraceable’ added</span>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/dog-records/dog-record-ED30227-exemption-edit">Edit exemption details of a dog record</a><span class="govuk-body-s defra-secondary-text"> – ‘Removed from CDO process’ added</span>
+            </li>
+          </ul>
+
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Dog record activity
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/dog-records/activity/dog-record-ED30227">Add or view dog record activity</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/dog-records/activity/activity-all">View all activity on a dog record</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/dog-records/activity/add-activity">Sent or received question</a>
+            </li>
+            <br>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/dog-records/activity/send-activity">What have you sent question</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/dog-records/activity/sent-confirmation">Sent confirmation</a>
+              <br><span class="govuk-body-s defra-secondary-text">(Complete the question to view the type of activity on the confirmation page)</span>
+            </li>
+            <br>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/dog-records/activity/receive-activity">What have you received question</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/dog-records/activity/received-confirmation">Received confirmation</a>
+              <br><span class="govuk-body-s defra-secondary-text">(Complete the question to view the type of activity on the confirmation page)</span>
+            </li>
+            <br>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v4/owner-records/owner-record-ED30227">Add or view owner record activity</a>
+            </li>
+          </ul>'
+          }
+        },
+      {
+        heading: {
+          text: "Version 3"
+        },
+        content: {
+          html: '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Status colours
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v3/dog-records/statuses">Status colours</a><span class="govuk-body-s defra-secondary-text"> – shown as they’d appear in search results</span>
+            </li>
+          </ul>
+
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            New certificate of exemption
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v3/dog-records/dog-record-ED30227">Generate a new certificate of exemption</a>
+            </li>
+          </ul>
+
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            2023 order and change status
+          </h3>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v3/dog-records/dog-record-ED30227-2023">Check 2023 dog record</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v3/dog-records/dog-record-ED30227-2023-edit">Edit exemption details of a 2023 order dog</a><span class="govuk-body-s defra-secondary-text"> – Update: Court removed</span>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v3/dog-records/change-order">Change a 2023 order to 2015 order</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v3/dog-records/order-changed">Confirmation of the order change</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v3/dog-records/dog-record-ED30227-2015">&lsquo;New&rsquo; 2015 order dog record</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v3/dog-records/dog-record-ED30227-2015-edit">Edit exemption details of a 2015 order dog</a>
+            </li>
+          </ul>
+
+
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Search dog and owner records
+          </h3>
+
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v3/search/dog-results">Dog record results</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="/v3/search/owner-results">Owner record results</a>
+            </li>
+          </ul>'
+          }
+        },
+        {
+          heading: {
+            text: "Version 2"
+          },
+          content: {
+            html:
+            '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              2023 order
+            </h3>
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v2/dog-records/dog-record-2023">Check dog record</a>
+              </li>
+            </ul>
+
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              Create a new record from a CDO
+            </h3>
+
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v3/cdo/create/confirmation">Record created</a>
+              </li>
+            </ul>
+
+
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              Search dog and owner records
+            </h3>
+
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v2/search/search">Search</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v2/search/dog-results-4">Dog record results</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v2/search/owner-results-3">Owner record results</a>
+              </li>
+            </ul>
+
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              Change an existing record
+            </h3>
+
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/dog-records/dog-record-ED30227">Existing dog record</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/owner-records/owner-record-ED30227">Existing owner record</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/dog-records/dog-record-ED30227-exemption-edit">Edit exemption details of a dog record</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/dog-records/dog-record-ED30227-dog-edit">Edit dog details of a dog record</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/owner-records/owner-record-ED30227-edit">Edit owner details of an owner record</a>
+              </li>
+            </ul>
+
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              Create a new record from a CDO
+            </h3>
+
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/cdo/create">Create new record</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/cdo/create/confirm-address">Confirm address</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/cdo/create/select-address">Select address</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/cdo/create/enter-address">Enter address</a>
+              </li>
+
+              <br>
+
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/cdo/create/enforcement-details">Add court and police details</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/cdo/create/confirm-details">Confirm details</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/cdo/create/owner-details-edit">Change owner details</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/cdo/create/enforcement-details-edit">Change court and police details</a>
+              </li>
+
+              <br>
+
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/cdo/create/dog-details">Add dog details</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/cdo/create/confirm-dog-details">Confirm dog details</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/cdo/create/dog-details-edit">Change dog details</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/cdo/create/confirm-dog-details-2">Confirm dog details</a> <span class="govuk-body-s defra-secondary-text">(2 dogs)</span>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/cdo/create/delete-dog-details">Delete dog details</a>
+              </li>
+
+              <br>
+
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/cdo/create/confirmation">Record created</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v2/cdo/create/confirmation-2">Record created</a> <span class="govuk-body-s defra-secondary-text">(2 dogs)</span>
+              </li>
+            </ul>'
+          }
+        },
+        {
+          heading: {
+            text: "Version 1"
+          },
+          content: {
+            html: '<h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              Create a new record from a CDO
+            </h3>
+
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v1/cdo/create">Create new record</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v1/cdo/create/confirm-address">Confirm address</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v1/cdo/create/select-address">Select address</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v1/cdo/create/enter-address">Enter address</a>
+              </li>
+
+              <br>
+
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v1/cdo/create/enforcement-details">Add court and police details</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v1/cdo/create/confirm-details">Confirm details</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v1/cdo/create/owner-details-edit">Change owner details</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v1/cdo/create/enforcement-details-edit">Change court and police details</a>
+              </li>
+
+              <br>
+
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v1/cdo/create/dog-details">Add dog details</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v1/cdo/create/confirm-dog-details">Confirm dog details</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v1/cdo/create/dog-details-edit">Change dog details</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v1/cdo/create/confirm-dog-details-2">Confirm dog details</a> <span class="govuk-body-s defra-secondary-text">(2 dogs)</span>
+              </li>
+
+              <br>
+
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v1/cdo/create/confirmation">Record created</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="v1/cdo/create/confirmation-2">Record created</a> <span class="govuk-body-s defra-secondary-text">(2 dogs)</span>
+              </li>
+            </ul>'
+          }
+        }
+      ]
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

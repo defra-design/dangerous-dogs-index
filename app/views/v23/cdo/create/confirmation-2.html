@@ -1,0 +1,156 @@
+{% extends "layouts/defra.html" %}
+
+{% block pageTitle %}
+  Record created – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../../index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        classes: "govuk-!-margin-bottom-7",
+        titleText: "Record created"
+      }) }}
+
+      <!--
+      <p class="govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="/v4/dog-records/dog-record-ED30874">Add more CDO details</a> to the record or <a class="govuk-link govuk-link--no-visited-state" href="#">start CDO tasks</a>.
+      </p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-7">
+      -->
+
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-2">
+        ED30874
+      </h2>
+      {{govukTag({
+        text: "Pre-exempt",
+        classes: "govuk-!-font-size-16 govuk-!-margin-bottom-4"
+      })}}
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Breed"
+            },
+            value: {
+              text: data['breedType1'] or "XL Bully"
+            }
+          },
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: data['dogName1'] or "Zuul"
+            }
+          },
+          {
+            key: {
+              text: "Microchip number"
+            },
+            value: {
+              text: data['microchipNumber'] or "580004892832839"
+            }
+          },
+          {
+            key: {
+              text: "CDO issued"
+            },
+            value: {
+              text: data['cdo-issued'] or "30 April 2024"
+            }
+          },
+          {
+            key: {
+              text: "CDO expiry"
+            },
+            value: {
+              text: data['cdo-expiry'] or "30 June 2024"
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Owner details
+      </h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Kenny Walsh"
+            }
+          },
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: "22 October 1979"
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: "5 Station Road<br>Woofferton<br>Ludlow<br>SY8 4NL"
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Police and court details
+      </h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Police force"
+            },
+            value: {
+              text: data['police-force'] or "West Mercia Constabulary"
+            }
+          },
+          {
+            key: {
+              text: "Dog legislation officer"
+            },
+            value: {
+              text: data['dog-legislation-officer'] or "Harry Bassett"
+            }
+          },
+          {
+            key: {
+              text: "Court"
+            },
+            value: {
+              text: data['court'] or "Ludlow Magistrates Court"
+            }
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

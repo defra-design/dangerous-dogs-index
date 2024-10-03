@@ -676,7 +676,7 @@ router.post('/v11/admin/police-removed-question', function (req, res) {
 
 })
 
-// v10 Add or remove court
+// v11 Add or remove court
 router.post('/v11/admin/court-question', function (req, res) {
   var addRemoveCourt = req.session.data['addRemoveCourt']
   if (addRemoveCourt === "remove"){
@@ -687,7 +687,7 @@ router.post('/v11/admin/court-question', function (req, res) {
 
 })
 
-// v10 Add or remove court
+// v11 Add or remove court
 router.post('/v11/admin/court-added-question', function (req, res) {
   var addCourt = req.session.data['addCourt']
   if (addCourt === "no"){
@@ -698,7 +698,7 @@ router.post('/v11/admin/court-added-question', function (req, res) {
 
 })
 
-// v10 Add or remove court
+// v11 Add or remove court
 router.post('/v11/admin/court-removed-question', function (req, res) {
   var removeCourt = req.session.data['removeCourt']
   if (removeCourt === "no"){
@@ -2569,6 +2569,40 @@ router.post('/v23/admin/police-removed-question', function (req, res) {
     res.redirect('/v23/admin/add-or-remove-police')
   } else {
     res.redirect('/v23/admin/confirmation-police-removed')
+  }
+
+})
+
+
+// v23 Create question
+router.post('/v23/cdo/create/create-question', function (req, res) {
+  var lastName = req.session.data['lastName']
+  if (lastName === "Walsh"){
+    res.redirect('/v23/cdo/create/multiple/select-owner')
+  } else {
+    res.redirect('/v23/cdo/create/postcode')
+  }
+
+})
+
+// v23 Change dog owner
+router.post('/v23/cdo/create/owner-question', function (req, res) {
+  var transferOwnership = req.session.data['transferOwnership']
+  if (transferOwnership === "no"){
+    res.redirect('/v23/cdo/create/next-step')
+  } else {
+    res.redirect('/v23/cdo/create/application-type')
+  }
+
+})
+
+// v23 Create question
+router.post('/v23/cdo/create/confirm-question', function (req, res) {
+  var lastName = req.session.data['lastName']
+  if (lastName === "Walsh"){
+    res.redirect('/v23/cdo/create/enforcement-details-2')
+  } else {
+    res.redirect('/v23/cdo/create/enforcement-details')
   }
 
 })
