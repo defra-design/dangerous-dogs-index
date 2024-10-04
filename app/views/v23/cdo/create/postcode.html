@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "../create"
+  href: "./multiple/select-owner"
 }) }}
 {% endblock %}
 
@@ -17,8 +17,6 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <form class="form" action="/v23/cdo/create/confirm-address" method="post">
 
       {% call govukFieldset({
         legend: {
@@ -50,8 +48,6 @@
       {{ govukButton({
         text: "Continue"
       }) }}
-
-      </form>
 
       <p class="govuk-body">
         <a class="govuk-link govuk-link--no-visited-state" href="">Enter address manually</a>

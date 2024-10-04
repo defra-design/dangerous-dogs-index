@@ -2573,13 +2573,14 @@ router.post('/v23/admin/police-removed-question', function (req, res) {
 
 })
 
-
-// v23 Create question
-router.post('/v23/cdo/create/create-question', function (req, res) {
-  var lastName = req.session.data['lastName']
-  if (lastName === "Walsh"){
-    res.redirect('/v23/cdo/create/multiple/select-owner')
-  } else {
+// v23 Address question
+router.post('/v23/cdo/create/address-question', function (req, res) {
+  var existingOwner = req.session.data['existingOwner']
+  if (existingOwner == "address1"){
+  res.redirect('/v23/cdo/create/multiple/select-dog')
+} if (existingOwner == "address2"){
+    res.redirect('/v23/cdo/create/multiple/select-dog')
+  } if (existingOwner == "newAddress"){
     res.redirect('/v23/cdo/create/postcode')
   }
 
