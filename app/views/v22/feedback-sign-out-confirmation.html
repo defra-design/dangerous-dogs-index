@@ -1,0 +1,32 @@
+{% extends "layouts/defra-signed-out.html" %}
+
+{% set pageName %}
+ Feedback received
+{% endset%}
+
+{% block pageTitle %}
+ {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "You are signed out",
+        html: "We have received your feedback"
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-7">
+        What happens next
+      </h2>
+
+      <p>
+        What should we say here
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
