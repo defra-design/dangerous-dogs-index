@@ -1,3 +1,39 @@
+
+{{ govukRadios({
+  name: "changedName",
+  fieldset: {
+    legend: {
+      text: "Did you complete your task today?",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+{{ govukTextarea({
+  name: "moreDetail",
+  classes: "govuk-!-margin-bottom-7",
+  id: "more-detail",
+  rows: "8",
+  label: {
+    text: "Can you provide more detail?",
+    classes: "govuk-label--m govuk-!-margin-top-7",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Do not include personal information like your name, phone number or email address."
+  }
+}) }}
+
 {{ govukRadios({
   name: "changedName",
   fieldset: {
@@ -30,39 +66,5 @@
   ]
 }) }}
 
-{{ govukRadios({
-  name: "changedName",
-  fieldset: {
-    legend: {
-      text: "Did you complete your task today?",
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes"
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-  ]
-}) }}
-
-{{ govukTextarea({
-  name: "moreDetail",
-  id: "more-detail",
-  rows: "8",
-  label: {
-    text: "Can you provide more detail?",
-    classes: "govuk-label--m",
-    isPageHeading: true
-  },
-  hint: {
-    text: "Do not include personal information like your name, phone number or email address."
-  }
-}) }}
-
-<p class="govuk-body">Do not use this form for support requests. If you need support email <a class="govuk-link govuk-link--no-visited-state" href="mailto:dogsindex@defra.gov.uk">dogsindex@defra.gov.uk</a>.
+<p class="govuk-body">Do not use this form for support requests. If you need support, email <a class="govuk-link govuk-link--no-visited-state" href="mailto:dogsindex@defra.gov.uk">dogsindex@defra.gov.uk</a>.
   </p>
