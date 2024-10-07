@@ -13,17 +13,35 @@
 
       <form class="form" action="/v22/search/search-input" method="post">
 
-      <div class="govuk-form-group govuk-!-margin-bottom-3">
+    <fieldset class="govuk-fieldset govuk-!-margin-bottom-2">
+      <legend class="govuk-fieldset__legend govuk-visually-hidden">
+        {{ pageName }}
+      </legend>
+
+      <div class="govuk-form-group govuk-!-margin-bottom-2">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="search">
             Search
           </label>
         </h1>
-        <!-- <!-- <div id="search-hint" class="govuk-body govuk-!-margin-bottom-2">
-          Use one or more words, separated by a space, for example ‘owner’s name postcode’
-        </div> -->
-        <input class="govuk-input" value="{{ data['search'] }}" id="search" name="search" type="text" aria-describedby="search-hint">
+
+        <input class="govuk-input" value="{% if data['keyword'] %}{{ data['keyword'] }}{% else %}petra{% endif %}" id="search" name="search" type="text" aria-describedby="search-hint">
       </div>
+
+      <legend class="govuk-visually-hidden">
+       Include close matches in the search results
+      </legend>
+
+      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="close-matches" name="close-matches" type="checkbox" value="close-matches">
+          <label class="govuk-label govuk-checkboxes__label govuk-!-font-size-16" for="close-matches">
+            Include close matches
+          </label>
+        </div>
+
+      </fieldset>
+
 
       {{ govukButton({
         text: "Search"
@@ -41,6 +59,7 @@
         </p>
 
       <ul class="govuk-list govuk-list--bullet">
+        <li>include close matches in the search</li>
         <li>ensure all words are spelled correctly</li>
         <li>try different keywords to find the record</li>
       </ul>
