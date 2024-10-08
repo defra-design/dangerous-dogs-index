@@ -1,7 +1,7 @@
-{% extends "layouts/defra-sign-out.html" %}
+{% extends "layouts/defra-signed-out.html" %}
 
 {% block pageTitle %}
-  Secure Access Licence - {{ serviceName }}
+  Privacy notice - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -9,7 +9,7 @@
   items: [
     {
       text: "Home",
-      href: "./index"
+      href: "./start"
     }
   ]
 }) }}
@@ -20,7 +20,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% include "./includes/licence.html" %}
+      {% include "./includes/privacy.html" %}
 
     </div>
   </div>
