@@ -1,0 +1,125 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Police force" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "application-type"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="confirm-details" method="post">
+
+        {{ govukSelect({
+          classes: "govuk-!-width-two-thirds",
+          id: "police-force",
+          name: "police-force",
+          label: {
+            text: "Select police force",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+           text: "Chosen using the dog owner’s new postcode."
+          },
+          items: [
+            {
+              value: "Avon and Somerset Constabulary",
+              text: "Avon and Somerset Constabulary"
+            },
+            {
+              value: "Bedfordshire Police",
+              text: "Bedfordshire Police"
+            },
+            {
+              value: "Cumbria Constabulary",
+              text: "Cumbria Constabulary"
+            },
+            {
+              value: "Devon and Cornwall Police",
+              text: "Devon and Cornwall Police"
+            },
+            {
+              value: "Essex Police",
+              text: "Essex Police"
+            },
+            {
+              value: "Gloucestershire Constabulary",
+              text: "Gloucestershire Constabulary"
+            },
+            {
+              value: "Greater Manchester Police",
+              text: "Greater Manchester Police"
+            },
+            {
+              value: "Hampshire Constabulary",
+              text: "Hampshire Constabulary",
+              selected: true
+            },
+            {
+              value: "Hertfordshire Constabulary",
+              text: "Hertfordshire Constabulary"
+            },
+            {
+              value: "Humberside Police",
+              text: "Humberside Police"
+            },
+            {
+              value: "Kent Police",
+              text: "Kent Police"
+            },
+            {
+              value: "Metropolitan Police Service",
+              text: "Metropolitan Police Service"
+            },
+            {
+              value: "Staffordshire Police",
+              text: "Staffordshire Police"
+            },
+            {
+              value: "Surrey Police",
+              text: "Surrey Police"
+            },
+            {
+              value: "Sussex Police",
+              text: "Sussex Police"
+            },
+            {
+              value: "Thames Valley Police",
+              text: "Thames Valley Police"
+            },
+            {
+              value: "West Mercia Police",
+              text: "West Mercia Police"
+            },
+            {
+              value: "West Yorkshire Police",
+              text: "West Yorkshire Police"
+            },
+            {
+              value: "Wiltshire Police",
+              text: "Wiltshire Police"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
