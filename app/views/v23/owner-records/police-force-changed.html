@@ -1,0 +1,37 @@
+{% extends "layouts/defra-ddi.html" %}
+
+{% set pageName="Changing the address has changed the police force" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "postcode"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="./owner-record-ED30874-updated" method="post">
+
+      <h1 class="govuk-heading-l">Changing the address has changed the police force</h1>
+
+      <p>The police force is now <span class="govuk-!-font-weight-bold">Hampshire Constabulary</span>.
+      </p>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -2607,3 +2607,14 @@ router.post('/v23/cdo/create/confirm-question', function (req, res) {
   }
 
 })
+
+// v23 Owner's postcode
+router.post('/v23/owner-records/postcode-question', function (req, res) {
+  var propertyNumber = req.session.data['propertyNumber']
+  if (propertyNumber == "66"){
+    res.redirect('./confirm-address')
+  } else {
+    res.redirect('./select-address')
+  }
+
+})
