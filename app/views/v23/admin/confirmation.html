@@ -1,7 +1,18 @@
-{% extends "layouts/defra-admin.html" %}
+{% extends "layouts/defra-ddi.html" %}
 
 {% block pageTitle %}
-  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+  You gave police officers access – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    }
+  ]
+}) }}
 {% endblock %}
 
 {% block content %}

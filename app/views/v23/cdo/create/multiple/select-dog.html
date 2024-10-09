@@ -1,4 +1,4 @@
-{% extends "layouts/defra.html" %}
+{% extends "layouts/defra-ddi-2.html" %}
 
 {% set pageName="Select the dog" %}
 
@@ -22,7 +22,7 @@
           <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            Select the dog for {% if data['lastName'] %}{{ data['firstName'] }} {{ data['lastName'] }}{% else %}Kenny Walsh{% endif %}
+            Select the dog for {% if data['lastName'] %}{{ data['firstName'] }} {{ data['lastName'] }}{% else %}Sam Smith{% endif %}
           </legend>
 
             <div class="govuk-radios" data-module="govuk-radios">

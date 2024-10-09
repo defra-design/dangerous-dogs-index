@@ -1,4 +1,4 @@
-{% extends "layouts/defra-ddi-1.html" %}
+{% extends "layouts/defra-ddi.html" %}
 
 {% set pageName="Confirm address" %}
 
@@ -17,20 +17,20 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v23/cdo/create/microchip-number" method="post">
+      <form class="form" action="./owner-record-ED30874-updated" method="post">
 
       <h1 class="govuk-heading-l">
         {{ pageName }}
       </h1>
 
       <p class="govuk-body">
-        4 Pooch Avenue<br>
-        Blackpool<br>
-        FY5 3JE
+        66 Woofenden Street<br>
+        Southampton<br>
+        SO15 8LL
       </p>
 
       <p class="govuk-body">
-        <a class="govuk-link govuk-link--no-visited-state" href="">Change address</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="change-address">Change address</a>
       </p>
 
       {{ govukButton({

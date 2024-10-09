@@ -1,4 +1,4 @@
-{% extends "layouts/defra-ddi-1.html" %}
+{% extends "layouts/defra-ddi.html" %}
 
 {% set pageName="What is the owner’s postcode?" %}
 
@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "./multiple/select-owner"
+  href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
 
@@ -17,6 +17,8 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="./postcode-question" method="post">
 
       {% call govukFieldset({
         legend: {
@@ -27,10 +29,10 @@
       }) %}
 
       <div class="govuk-form-group govuk-!-margin-bottom-5">
-        <label class="govuk-label" for="address-postcode">
+        <label class="govuk-label" for="addressPostcode">
           Postcode
         </label>
-        <input class="govuk-input govuk-input--width-10 govuk-!-padding-bottom-0" id="address-postcode" name="addressPostcode" type="text">
+        <input class="govuk-input govuk-input--width-10 govuk-!-padding-bottom-0" id="address-postcode" name="addressPostcode" value="{{ data['addressPostcode'] }}" type="text">
       </div>
 
       <div class="govuk-form-group">
@@ -40,7 +42,7 @@
         <div id="event-name-hint" class="govuk-hint">
           For example, ‘The Mill’, ‘116’ or ‘Flat 36a’
         </div>
-        <input class="govuk-input govuk-input--width-5" id="property-number" name="propertyNumber" type="text">
+        <input class="govuk-input govuk-input--width-5" id="property-number" name="propertyNumber" value="{{ data['propertyNumber'] }}" type="text">
       </div>
 
       {% endcall %}
@@ -49,8 +51,10 @@
         text: "Continue"
       }) }}
 
+      </form>
+
       <p class="govuk-body">
-        <a class="govuk-link govuk-link--no-visited-state" href="">Enter address manually</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="enter-address">Enter address manually</a>
         </p>
 
     </div>
