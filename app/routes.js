@@ -2613,6 +2613,8 @@ router.post('/v23/owner-records/postcode-question', function (req, res) {
   var propertyNumber = req.session.data['propertyNumber']
   if (propertyNumber == "66"){
     res.redirect('./confirm-address')
+  } if (propertyNumber == "88"){
+    res.redirect('./confirm-address-scotland')
   } else {
     res.redirect('./select-address')
   }
