@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "postcode"
+  href: "enter-address-scotland"
 }) }}
 {% endblock %}
 
@@ -21,6 +21,9 @@
       <form class="form" action="../dog-records/dog-record-ED30874-scotland" method="post">
 
       <h1 class="govuk-heading-l">{{ pageName }}</h1>
+
+      <p class="govuk-body">The police force is currently <span class="govuk-!-font-weight-bold">West Yorkshire Police</span>.
+      </p>
 
       <p class="govuk-body">The owner address changed to:
       </p>
@@ -35,12 +38,17 @@
         G51 3NL
       </p>
 
-      <p class="govuk-body">The police force is <span class="govuk-!-font-weight-bold">West Yorkshire Police</span>.
-      </p>
-
       <button class="govuk-button" data-module="govuk-button">
         Continue
       </button>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <div class="govuk-inset-text">
+        <span class="govuk-hint">
+        This is the same content as changing address without moving across borders. So there's no prompt to change country or status.
+        </span>
+      </div>
 
       </form>
 

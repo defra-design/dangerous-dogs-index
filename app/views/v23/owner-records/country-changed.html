@@ -29,18 +29,17 @@
       <p class="govuk-body">The country for the owner has changed to <span class="govuk-!-font-weight-bold">Scotland</span>.
        </p>
 
-     <p class="govuk-body">This means:
+     <p class="govuk-body">Existing exemptions are no longer valid.
       </p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>current exemptions are no longer valid</li>
-        <li>the police force for all dog records has changed to <span class="govuk-!-font-weight-bold">Police Scotland</span></li>
-      </ul>
 
       {{ govukWarningText({
         text: "Tell the owner to apply for new exemptions with their new address.",
-        iconFallbackText: "Warning"
+        iconFallbackText: "Warning",
+        classes: "govuk-!-margin-bottom-3"
       }) }}
+
+      <p class="govuk-!-margin-bottom-6">The police force for the dogs has changed to <span class="govuk-!-font-weight-bold">Police Scotland</span>.
+       </p>
 
       <button class="govuk-button" data-module="govuk-button">
         Continue
