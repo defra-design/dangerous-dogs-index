@@ -28,13 +28,16 @@
           }
         }) %}
 
+        <div id="address-hint" class="govuk-hint govuk-!-margin-bottom-3" >
+          Enter addresses in the correct format. For example, 8 Raspberry Terrace, Leeds, LS56 7MT
+        </div>
+
           {{ govukInput({
             label: {
               text: "Address line 1"
             },
             id: "address-line-1",
-            name: "addressLine1",
-            autocomplete: "address-line1"
+            name: "addressLine1"
           }) }}
 
           {{ govukInput({
@@ -42,8 +45,7 @@
               text: "Address line 2 (optional)"
             },
             id: "address-line-2",
-            name: "addressLine2",
-            autocomplete: "address-line2"
+            name: "addressLine2"
           }) }}
 
           {{ govukInput({
@@ -52,8 +54,7 @@
             },
             classes: "govuk-!-width-two-thirds",
             id: "address-town",
-            name: "addressTown",
-            autocomplete: "address-level2"
+            name: "addressTown"
           }) }}
 
           {{ govukInput({
@@ -62,14 +63,40 @@
             },
             classes: "govuk-input--width-10",
             id: "address-postcode",
-            name: "addressPostcode",
-            autocomplete: "postal-code"
+            name: "addressPostcode"
+          }) }}
+
+          {{ govukSelect({
+            id: "sort",
+            name: "sort",
+            label: {
+              text: "Sort by"
+            },
+            items: [
+              {
+                value: "country",
+                text: "Choose country",
+                selected: true
+              },
+              {
+                value: "england",
+                text: "England"
+              },
+              {
+                value: "scotland",
+                text: "Scotland"
+              },
+              {
+                value: "wales",
+                text: "Wales"
+              }
+            ]
           }) }}
 
         {% endcall %}
 
       <button class="govuk-button" data-module="govuk-button">
-        Continue
+        Save address
       </button>
 
       </form>
