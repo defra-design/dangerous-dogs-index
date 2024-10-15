@@ -58,7 +58,7 @@
       actions: {
         items: [
           {
-            href: "",
+            href: "owner-record-edit",
             text: "Edit details",
             classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
             visuallyHiddenText: "for owner"
@@ -81,7 +81,7 @@
             text: "Date of birth"
           },
           value: {
-            text: "15 December 1986"
+            text: "15 December 1996"
           }
         },
         {
@@ -95,7 +95,7 @@
           classes: "defra-text-align-left",
            items: [
              {
-               href: "",
+               href: "postcode",
                classes: "govuk-link--no-visited-state",
                text: "Change address"
              }
@@ -123,7 +123,7 @@
             text: "Country"
           },
           value: {
-            text: data['country'] or "Scotland"
+            text: data['country'] or "England"
           }
         }
       ]
@@ -135,13 +135,12 @@
 
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="../dog-records/dog-record-ED30874-scotland">
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="../dog-records/dog-record-ED30874">
             ED30874
           </a></h2>
           <ul class="govuk-summary-card__actions govuk-!-font-weight-regular">
             {{ govukTag({
-              text: "In breach",
-              classes: "govuk-tag--red defra-tag-nowrap"
+              text: "Exempt"
             }) }}
           </ul>
         </div>
