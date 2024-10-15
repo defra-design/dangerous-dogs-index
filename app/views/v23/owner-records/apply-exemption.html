@@ -1,0 +1,37 @@
+{% extends "layouts/defra-ddi.html" %}
+
+{% set pageName="Tell the owner to apply for new exemptions" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "./record-changes-scotland"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="./owner-record-ED30874-scotland-breach" method="post">
+
+      <h1 class="govuk-heading-l">{{ pageName }}</h1>
+
+     <p class="govuk-body">Moving the dogs from England or Wales to Scotland means existing exemptions are no longer valid so the dogs are in breach.
+      </p>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
