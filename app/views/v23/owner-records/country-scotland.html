@@ -1,0 +1,44 @@
+{% extends "layouts/defra-ddi.html" %}
+
+{% set pageName="The owner’s country is now Scotland" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "./confirm-address-scotland"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="./in-breach" method="post">
+
+      <h1 class="govuk-heading-l">{{ pageName }}</h1>
+
+      <p class="govuk-body">Moving dogs from England or Wales to Scotland means:
+        </p>
+
+       <ul class="govuk-list govuk-list--bullet">
+         <li>existing exemptions are no longer valid
+          </li>
+         <li>the police force for the dogs is now <span class="govuk-!-font-weight-bold">Police Scotland</span>
+         </li>
+       </ul>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
