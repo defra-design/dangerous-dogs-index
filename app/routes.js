@@ -2615,8 +2615,36 @@ router.post('/v23/owner-records/postcode-question', function (req, res) {
     res.redirect('./confirm-address')
   } else if (propertyNumber == "88"){
     res.redirect('./confirm-address-scotland')
+  } else if (propertyNumber == "44"){
+    res.redirect('./confirm-address-wales')
   } else {
     res.redirect('./select-address')
+  }
+
+})
+
+// v23 Owner's postcode
+router.post('/v23/owner-records/choose-country-question', function (req, res) {
+  var chooseCountry = req.session.data['chooseCountry']
+  if (chooseCountry == "england"){
+    res.redirect('./country-england-police')
+  } else if (chooseCountry == "scotland"){
+    res.redirect('./country-scotland')
+  } else {
+    res.redirect('./country-wales-police')
+  }
+
+})
+
+// v23 Confirm address
+router.post('/v23/owner-records/confirm-address-question', function (req, res) {
+  var propertyNumber = req.session.data['propertyNumber']
+  if (propertyNumber == "66"){
+    res.redirect('./country-england')
+  } else if (propertyNumber == "88"){
+    res.redirect('./country-scotland')
+  } else {
+    res.redirect('./country-wales')
   }
 
 })

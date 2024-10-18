@@ -1,6 +1,6 @@
 {% extends "layouts/defra-ddi.html" %}
 
-{% set pageName="Changing the address has changed the police force" %}
+{% set pageName="The police force for the dog record has changed" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -20,7 +20,7 @@
 
       <form class="form" action="./owner-record-ED30874-updated" method="post">
 
-      <h1 class="govuk-heading-l">The police force for the dog record has changed</h1>
+      <h1 class="govuk-heading-l">{{ pageName }}</h1>
 
       <p class="govuk-body">The police force is now <span class="govuk-!-font-weight-bold">Hampshire Constabulary</span>.
       </p>
