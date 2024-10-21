@@ -2655,9 +2655,9 @@ router.post('/v23/owner-records/in-breach-routing-2', function (req, res) {
   if (propertyNumber == "66"){
     res.redirect('./country-england')
   } else if (propertyNumber == "88"){
-    res.redirect('./country-scotland')
-  } else if (propertyNumber == "44"){
     res.redirect('./owner-record-ED30874-scotland-breach')
+  } else if (propertyNumber == "44"){
+    res.redirect('./owner-record-ED30874-wales-breach')
   }
 
 })

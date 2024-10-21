@@ -1,0 +1,319 @@
+{% extends "layouts/defra-ddi.html" %}
+
+{% set pageName="Dog ED30874" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="moj-page-header-actions govuk-!-margin-bottom-2">
+
+      <div class="moj-page-header-actions__title">
+        <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+      </div>
+
+  <div class="moj-page-header-actions__actions">
+    <div class="moj-button-menu">
+      <div class="moj-button-menu__wrapper">
+        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="add-activity">
+          Add an activity
+        </button>
+        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="view-activity">
+          Check history
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+{{govukTag({
+  text: "In breach",
+  classes: "govuk-tag--red defra-tag-nowrap govuk-!-margin-bottom-6"
+})}}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+    {{ govukSummaryList({
+      classes: "govuk-!-font-size-16",
+      card: {
+      title: {
+      text: "Dog details",
+      classes: "defra-summary-header"
+      },
+      actions: {
+        items: [
+          {
+            href: "",
+            text: "Edit details",
+            classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
+            visuallyHiddenText: "for dog"
+            }
+          ]
+        }
+      },
+      rows: [
+        {
+          classes: "govuk-!-width-one-third",
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: data['dogName1'] or "Norm"
+          }
+        },
+        {
+          key: {
+            text: "Breed type"
+          },
+          value: {
+            text: data['dog-breed'] or "XL Bully"
+          }
+        },
+        {
+          key: {
+            text: "Colour"
+          },
+          value: {
+            text: "Brown and grey"
+          }
+        },
+        {
+          key: {
+            text: "Sex"
+          },
+          value: {
+            text: "Male"
+          }
+        },
+        {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            text: "1 March 2018"
+          }
+        },
+        {
+          key: {
+            text: "Microchip number"
+          },
+          value: {
+            text: data['microchipNumber'] or "123456789012345"
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukSummaryList({
+      classes: "govuk-!-font-size-16",
+      card: {
+      title: {
+      text: "Owner details",
+      classes: "defra-summary-header"
+      },
+      id: "owner-details",
+      actions: {
+        items: [
+          {
+            href: "/v23/owner-records/owner-record-ED30874-wales-breach",
+            text: "Owner record",
+            classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
+            visuallyHiddenText: "for owner"
+            }
+          ]
+        }
+      },
+      rows: [
+        {
+          classes: "govuk-!-width-one-third",
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: "Callum Spooner"
+          }
+        },
+        {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            text: "15 December 1996"
+          }
+        },
+        {
+          key: {
+            text: "Address"
+          },
+          value: {
+            html: "44 Conway Street<br>Brecon<br>LD3 7EU"
+          }
+        },
+        {
+          key: {
+            text: "Email"
+          },
+          value: {
+            text: "spoonz66@hotmail.com"
+          }
+        },
+        {
+          key: {
+            text: "Telephone number 1"
+          },
+          value: {
+            text: data['telephoneNumber1'] or "07879 929344"
+          }
+        },
+        {
+          key: {
+            text: "Country"
+          },
+          value: {
+            text: "Wales"
+          }
+        }
+      ]
+    }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+
+      {{ govukSummaryList({
+        classes: "govuk-!-font-size-16",
+        card: {
+          title: {
+            text: "Exemption details",
+            classes: "defra-summary-header"
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "Edit details",
+                classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
+                visuallyHiddenText: "for exemption"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Status"
+            },
+            value: {
+              text: data['dogStatus'] or "Exempt"
+            },
+            actions: {
+            classes: "defra-text-align-left",
+             items: [
+               {
+                 href: "",
+                 classes: "govuk-link--no-visited-state",
+                 text: "Change status"
+               }
+             ]
+           }
+          },
+          {
+            key: {
+              text: "CDO issued"
+            },
+            value: {
+              text: "20 January 2024"
+            }
+          },
+          {
+            key: {
+              text: "CDO expiry"
+            },
+            value: {
+              text: "20 March 2024"
+            }
+          },
+          {
+            key: {
+              text: "Court"
+            },
+            value: {
+              text: data['court'] or "Leeds District Magistrates Court"
+            }
+          },
+          {
+            key: {
+              text: "Police force"
+            },
+            value: {
+              text: data['police-force'] or "Police Scotland"
+            }
+          },
+          {
+            key: {
+              text: "Dog legislation officer"
+            },
+            value: {
+              text: data['dog-legislation-officer'] or "Nigel Hillier"
+            }
+          },
+          {
+            key: {
+              text: "Application fee paid"
+            },
+            value: {
+              text: "3 March 2024"
+            }
+          },
+          {
+            key: {
+              text: "Insurance company"
+            },
+            value: {
+              text: "Dogs Trust"
+            }
+          },
+          {
+            key: {
+              text: "Insurance renewal date"
+            },
+            value: {
+              text: "16 March 2024"
+            }
+          },
+          {
+            key: {
+              text: "Neutering confirmed"
+            },
+            value: {
+              text: "10 March 2024"
+            }
+          },
+          {
+            key: {
+              text: "Microchip number verified"
+            },
+            value: {
+              text: "10 March 2024"
+            }
+          }
+        ]
+      }) }}
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
