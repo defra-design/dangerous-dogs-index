@@ -2623,7 +2623,7 @@ router.post('/v23/owner-records/postcode-question', function (req, res) {
 
 })
 
-// v23 Owner's postcode
+// v23 Enter address
 router.post('/v23/owner-records/choose-country-question', function (req, res) {
   var chooseCountry = req.session.data['chooseCountry']
   if (chooseCountry == "england"){
@@ -2632,6 +2632,32 @@ router.post('/v23/owner-records/choose-country-question', function (req, res) {
     res.redirect('./country-scotland')
   } else {
     res.redirect('./country-wales-police')
+  }
+
+})
+
+// v23 In breach question 1
+router.post('/v23/owner-records/in-breach-routing-1', function (req, res) {
+  var chooseCountry = req.session.data['chooseCountry']
+  if (chooseCountry == "england"){
+    res.redirect('./change-police')
+  } else if (chooseCountry == "scotland"){
+    res.redirect('./owner-record-ED30874-scotland-breach')
+  } else {
+    res.redirect('./change-police')
+  }
+
+})
+
+// v23 In breach question 2
+router.post('/v23/owner-records/in-breach-routing-2', function (req, res) {
+  var propertyNumber = req.session.data['propertyNumber']
+  if (propertyNumber == "66"){
+    res.redirect('./country-england')
+  } else if (propertyNumber == "88"){
+    res.redirect('./country-scotland')
+  } else if (propertyNumber == "44"){
+    res.redirect('./owner-record-ED30874-scotland-breach')
   }
 
 })

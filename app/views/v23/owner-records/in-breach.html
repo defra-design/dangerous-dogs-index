@@ -18,7 +18,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="./owner-record-ED30874-scotland-breach" method="post">
+      {% if data['chooseCountry'] == "wales" %}
+      <form class="form" action="./in-breach-routing-1" method="post">
+      {% elif data['chooseCountry'] == "scotland" %}
+      <form class="form" action="./in-breach-routing-1" method="post">
+      {% elif data['chooseCountry'] == "england" %}
+      <form class="form" action="./in-breach-routing-1" method="post">
+      {% elif data['propertyNumber'] == "66" %}
+      <form class="form" action="./in-breach-routing-2" method="post">
+      {% elif data['propertyNumber'] == "88" %}
+      <form class="form" action="./in-breach-routing-2" method="post">
+      {% elif data['propertyNumber'] == "44" %}
+      <form class="form" action="./in-breach-routing-2" method="post">
+      {% endif %}
 
       <h1 class="govuk-heading-l">{{ pageName }}</h1>
 

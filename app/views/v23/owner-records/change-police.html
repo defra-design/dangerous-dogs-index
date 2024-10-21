@@ -22,12 +22,33 @@
 
       <h1 class="govuk-heading-l">{{ pageName }}</h1>
 
-      <p class="govuk-body">The police force is currently <span class="govuk-!-font-weight-bold">Police Scotland</span>.
+      <p class="govuk-body">The police force is currently <span class="govuk-!-font-weight-bold">
+
+        {% if data['chooseCountry'] == "wales" %}Dyfed-Powys Police{% elif data['chooseCountry'] == "scotland" %}Police Scotland{% elif data['chooseCountry'] == "england" %}Hampshire Constabulary{% endif %}</span>.
       </p>
 
       <p class="govuk-body">The owner address changed to:
       </p>
 
+      {% if data['chooseCountry'] == "wales" %}
+      <p class="govuk-body">
+        44 Conway Street
+        <br>
+        Brecon
+        <br>
+        LD3 7EU
+      </p>
+      {% elif data['chooseCountry'] == "scotland" %}
+      <p class="govuk-body">
+        88 Harehill Street
+        <br>
+        Govan
+        <br>
+        Glasgow
+        <br>
+        G51 3NL
+      </p>
+      {% elif data['chooseCountry'] == "england" %}
       <p class="govuk-body">
         66 Woofenden Street
         <br>
@@ -35,6 +56,7 @@
         <br>
         SO15 8LL
       </p>
+        {% endif %}
 
       <button class="govuk-button" data-module="govuk-button">
         Continue
