@@ -1,6 +1,6 @@
 {% extends "layouts/defra-ddi.html" %}
 
-{% set pageName="The owner’s dogs are now in breach" %}
+{% set pageName="Update the dog status" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -34,8 +34,20 @@
 
       <h1 class="govuk-heading-l">{{ pageName }}</h1>
 
-     <p class="govuk-body">Tell the owner to apply for new exemptions.
-      </p>
+      <p class="govuk-body">Because the owner has moved country the existing exemptions are no longer valid.
+       </p>
+
+       <ol class="govuk-list govuk-list--number">
+         <li>Tell the owner the exemption is no longer valid.</li>
+         <li>Update the dog status.</li>
+       </ol>
+
+       <p class="govuk-body">The new dog status depends on the existing dog status:</p>
+       <ul class="govuk-list govuk-list--bullet">
+         <li>Exempt dogs are now In breach</li>
+         <li>Pre-exempt dogs have now Failed</li>
+         <li>Interim exempt dogs have now Failed</li>
+       </ul>
 
       <button class="govuk-button" data-module="govuk-button">
         Continue

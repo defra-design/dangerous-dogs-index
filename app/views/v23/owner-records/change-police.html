@@ -1,6 +1,6 @@
 {% extends "layouts/defra-ddi.html" %}
 
-{% set pageName="The police force needs to change" %}
+{% set pageName="Update the police force" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -24,7 +24,7 @@
 
       <p class="govuk-body">The police force is currently <span class="govuk-!-font-weight-bold">
 
-        {% if data['chooseCountry'] == "wales" %}Dyfed-Powys Police{% elif data['chooseCountry'] == "scotland" %}Police Scotland{% elif data['chooseCountry'] == "england" %}Hampshire Constabulary{% endif %}</span>.
+        {% if data['chooseCountry'] == "wales" %}Police Scotland{% elif data['chooseCountry'] == "scotland" %}Hampshire Constabulary{% elif data['chooseCountry'] == "england" %}Police Scotland{% endif %}</span>.
       </p>
 
       <p class="govuk-body">The owner address changed to:

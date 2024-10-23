@@ -2657,7 +2657,7 @@ router.post('/v23/owner-records/in-breach-routing-2', function (req, res) {
   } else if (propertyNumber == "88"){
     res.redirect('./owner-record-ED30874-scotland-breach')
   } else if (propertyNumber == "44"){
-    res.redirect('./owner-record-ED30874-wales-breach')
+    res.redirect('./owner-record-ED30874-wales')
   }
 
 })
