@@ -18,6 +18,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      {% if data['chooseCountry'] == "wales" %}
+      <form class="form" action="./owner-record-ED30874-wales" method="post">
+      {% elif data['chooseCountry'] == "scotland" %}
+      <form class="form" action="./owner-record-ED30874-scotland" method="post">
+      {% elif data['chooseCountry'] == "england" %}
+      <form class="form" action="./owner-record-ED30874-updated" method="post">
+      {% endif %}
+
       <form class="form" action="../dog-records/dog-record-ED30874-address-updated" method="post">
 
       <h1 class="govuk-heading-l">{{ pageName }}</h1>
