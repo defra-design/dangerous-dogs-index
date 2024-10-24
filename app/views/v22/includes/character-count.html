@@ -1,0 +1,17 @@
+{{ govukCharacterCount({
+  name: "reportSomething",
+  id: "report-something",
+  maxlength: 1200,
+  label: {
+    text: "What are you reporting to Defra?",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Detailed hints on what to include in the text box."
+  }
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
