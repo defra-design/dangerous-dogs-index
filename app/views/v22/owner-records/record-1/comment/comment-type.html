@@ -1,6 +1,6 @@
 {% extends "layouts/defra-sign-out-2.html" %}
 
-{% set pageName="Report something" %}
+{% set pageName="What are you reporting?" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -20,7 +20,7 @@
 
       <form class="form" action="/v22/owner-records/record-1/comment/comment-type-question-1" method="post">
 
-        <span class="govuk-caption-l">Dog ED208510</span>
+        <span class="govuk-caption-l">Michael Denton</span>
         {{ govukRadios({
           name: "comment",
           fieldset: {
@@ -42,6 +42,13 @@
             {
               value: "death",
               text: "The dog has died"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "something",
+              text: "Something else"
             }
           ]
         }) }}

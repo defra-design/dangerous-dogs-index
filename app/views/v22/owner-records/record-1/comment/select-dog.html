@@ -1,0 +1,72 @@
+{% extends "layouts/defra-sign-out-2.html" %}
+
+{% set pageName="Which of the owners’ dogs is in breach?" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "select-owner"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="./which-dog" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Which of the owner’s dogs is in breach?
+            </h1>
+          </legend>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="dogBreach" name="dogBreach" type="radio" value="dog1">
+                  <label class="govuk-label govuk-radios__label" for="dogBreach">
+                    Mutley
+                  </label>
+                  <div id="dogName-item-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                    Breed: XL Bully
+                    <br>
+                    Microchip number: 123456789012345
+                    <br>
+                    Index number: ED208510
+                  </div>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="dogBreach-2" name="dogBreach" type="radio" value="dog2">
+                  <label class="govuk-label govuk-radios__label" for="dogBreach-2">
+                    Droopy
+                  </label>
+                  <div id="dogName-item-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                    Breed: XL Bully
+                    <br>
+                    Microchip number: 834923277003419
+                    <br>
+                    Index number: ED208511
+                  </div>
+                </div>
+            </div>
+
+        </fieldset>
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+      </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,6 +1,6 @@
 {% extends "layouts/defra-sign-out-2.html" %}
 
-{% set pageName="Provide more detail" %}
+{% set pageName="What are you reporting to Defra?" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -21,16 +21,17 @@
       <form class="form" action="/v22/dog-records/record-1/comment/confirmation" method="post">
 
         <span class="govuk-caption-l">Dog ED208510</span>
-        {{ govukTextarea({
-          name: "addComment",
-          id: "addComment",
+        {{ govukCharacterCount({
+          name: "reportSomething",
+          id: "report-something",
+          maxlength: 1200,
           label: {
-            text: "Provide more detail",
+            text: "What are you reporting to Defra?",
             classes: "govuk-label--l",
             isPageHeading: true
           },
           hint: {
-            text: "Tell us what information you are reporting about this dog record."
+            text: "Detailed hints on what to include in the text box."
           }
         }) }}
 

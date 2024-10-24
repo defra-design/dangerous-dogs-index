@@ -2423,7 +2423,7 @@ router.post('/v22/dog-records/record-1/comment/comment-type-question-1', functio
 router.post('/v22/owner-records/record-1/comment/comment-type-question-1', function (req, res) {
   var comment = req.session.data['comment']
   if (comment == "exemption"){
-  res.redirect('/v22/owner-records/record-1/comment/breach-reason')
+  res.redirect('/v22/owner-records/record-1/comment/select-dog')
   } if (comment == "address"){
     res.redirect('/v22/owner-records/record-1/comment/postcode')
   } if (comment == "death"){
@@ -2514,6 +2514,17 @@ router.post('/v22/owner-records/record-4/comment/comment-type-question-4', funct
     res.redirect('/v22/owner-records/record-4/comment/report-death')
   } if (comment == "something"){
     res.redirect('/v22/owner-records/record-4/comment/report-details')
+  }
+
+})
+
+// v22 Which dog
+router.post('/v22/owner-records/record-1/comment/which-dog', function (req, res) {
+  var dogBreach = req.session.data['dogBreach']
+  if (dogBreach == "dog1"){
+    res.redirect('/v22/owner-records/record-1/comment/breach-reason')
+  } else {
+    res.redirect('/v11/cdo/create/multiple/application-type')
   }
 
 })
