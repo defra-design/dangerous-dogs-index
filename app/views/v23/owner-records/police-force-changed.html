@@ -7,9 +7,17 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "postcode"
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "Owner record",
+      href: "./owner-record-ED30874-updated"
+    }
+  ]
 }) }}
 {% endblock %}
 
