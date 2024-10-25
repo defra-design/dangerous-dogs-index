@@ -1,6 +1,6 @@
 {% extends "layouts/defra-sign-out-2.html" %}
 
-{% set pageName="Which of the owners’ dogs is in breach?" %}
+{% set pageName="Which of the owners’ dogs has died?" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "select-owner"
+  href: "./comment-type"
 }) }}
 {% endblock %}
 
@@ -18,7 +18,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="./which-dog" method="post">
+      <form class="form" action="./report-death" method="post">
 
         <span class="govuk-caption-l">Michael Denton</span>
 
@@ -27,7 +27,7 @@
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Which of the owner’s dogs is in breach?
+              {{ pageName }}
             </h1>
           </legend>
 

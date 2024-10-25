@@ -22,7 +22,7 @@
         <!-- <div id="search-hint" class="govuk-body govuk-!-margin-bottom-2">
           Use one or more words, separated by a space, for example ‘owner’s name postcode’
         </div>  -->
-        <input class="govuk-input" value="{% if data['search'] %}{{ data['search'] }}{% else %}In breach{% endif %}" id="search" name="search" type="text" aria-describedby="search-hint">
+        <input class="govuk-input" value="{% if data['search'] %}{{ data['search'] }}{% else %}In breach{% endif %}" id="search" name="search" type="text">
       </div>
 
       {{ govukButton({
@@ -31,9 +31,9 @@
 
       </form>
 
-      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+      <h2 class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2 govuk-!-margin-bottom-2">
         21 dog records
-        </p>
+        </h2>
 
       <hr class="govuk-section-break govuk-section-break--s govuk-!-margin-bottom-6 govuk-section-break--visible">
 

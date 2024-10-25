@@ -2427,7 +2427,7 @@ router.post('/v22/owner-records/record-1/comment/comment-type-question-1', funct
   } if (comment == "address"){
     res.redirect('/v22/owner-records/record-1/comment/postcode')
   } if (comment == "death"){
-    res.redirect('/v22/owner-records/record-1/comment/report-death')
+    res.redirect('/v22/owner-records/record-1/comment/select-dog-death')
   } if (comment == "something"){
     res.redirect('/v22/owner-records/record-1/comment/report-details')
   }
