@@ -2524,7 +2524,7 @@ router.post('/v22/owner-records/record-1/comment/which-dog', function (req, res)
   if (dogBreach == "dog1"){
     res.redirect('/v22/owner-records/record-1/comment/breach-reason')
   } else {
-    res.redirect('/v11/cdo/create/multiple/application-type')
+    res.redirect('/v22/owner-records/record-1/comment/breach-reason')
   }
 
 })
