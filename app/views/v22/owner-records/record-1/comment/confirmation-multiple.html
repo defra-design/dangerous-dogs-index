@@ -1,0 +1,54 @@
+{% extends "layouts/defra-sign-out-2.html" %}
+
+{% set pageName="Report received" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../../index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+      <h1 class="govuk-panel__title">
+        Report received
+      </h1>
+
+      <div class="govuk-panel__body">
+        Michael Denton
+      </div>
+    </div>
+
+    <p class="govuk-body">
+    We have sent you a confirmation email.
+     </p>
+
+    <h2 class="govuk-heading-m">
+      What happens next
+    </h2>
+
+    <p class="govuk-body">
+      The address for all the owner’s dogs will change. If we need more information we will contact you.
+      </p>
+
+      <p class=govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="../owner-record">Owner record for Michael Denton</a>
+        </p>
+
+    </div>
+  </div>
+
+{% endblock %}
