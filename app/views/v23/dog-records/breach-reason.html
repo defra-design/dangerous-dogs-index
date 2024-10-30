@@ -1,0 +1,112 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="What is the reason for the breach?" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "change-status"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v15/dog-records/breach-reason-question" method="post">
+
+        {{ govukCheckboxes({
+          name: "breachReason",
+          fieldset: {
+            legend: {
+              text: "What is the reason for the breach?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "Annual evidence of insurance not provided to Defra",
+              text: "Annual evidence of insurance not provided to Defra"
+            },
+            {
+              value: "Dog not kept on lead or muzzled in public place",
+              text: "Dog not kept on lead or muzzled in public place"
+            },
+            {
+              value: "dog kept in insecure place",
+              text: "Dog kept in insecure place"
+            },
+            {
+              value: "Dog away from registered address for over 30 days in a 12-month period",
+              text: "Dog away from registered address for over 30 days in a 12-month period"
+            },
+            {
+              value: "Exemption certificate not provided to police within five days of request",
+              text: "Exemption certificate not provided to police within five days of request"
+            },
+            {
+              value: "Evidence of insurance not provided to police within five days of request",
+              text: "Evidence of insurance not provided to police within five days of request"
+            },
+            {
+              value: "Owner did not allow police to read microchip on request",
+              text: "Owner did not allow police to read microchip on request"
+            },
+            {
+              value: "change of registered address not provided to Defra",
+              text: "Change of registered address not provided to Defra"
+            },
+            {
+              value: "death of dog not reported to Defra",
+              text: "Death of dog not reported to Defra"
+            },
+            {
+              value: "dog’s export not reported to Defra",
+              text: "Dog’s export not reported to Defra"
+            },
+            {
+              value: "Owner sold, exchanged or gifted the dog, or advertised it as such",
+              text: "Owner sold, exchanged or gifted the dog, or advertised it as such"
+            },
+            {
+              value: "Dog left in control of person under 16 years old",
+              text: "Dog left in control of person under 16 years old"
+            },
+            {
+              value: "Owner abandoned dog or allowed it to stray",
+              text: "Owner abandoned dog or allowed it to stray"
+            },
+            {
+              value: "Dog not neutered by neutering deadline",
+              text: "Dog not neutered by neutering deadline"
+            },
+            {
+              value: "Owner moved to new country within GB which doesn’t recognise existing exemption",
+              text: "Owner moved to new country within GB which doesn’t recognise existing exemption"
+            }
+          ]
+        }) }}
+
+        <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        <a class="govuk-link govuk-link--no-visited-state" href="dog-record">Cancel</a>
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
