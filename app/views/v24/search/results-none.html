@@ -1,0 +1,97 @@
+{% extends "layouts/defra-ddi.html" %}
+
+{% set pageName="Dog records - Search" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "search"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="dog-results-close" method="post">
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+          {{ pageName }}
+        </legend>
+
+      <div class="govuk-form-group govuk-!-margin-bottom-2">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="search">
+          Search
+          </label>
+        </h1>
+        <input class="govuk-input" value="{% if data['keyword'] %}{{ data['keyword'] }}{% else %}petra{% endif %}" id="search" name="keyword" type="text">
+      </div>
+
+      <div class="govuk-form-group govuk-!-margin-bottom-2">
+        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+          Record type
+          </legend>
+          <div class="govuk-radios govuk-radios--inline govuk-radios--small"
+            data-module="govuk-radios">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="recordType" name="recordType" type="radio" value="Dog record">
+                <label class="govuk-label govuk-radios__label govuk-!-font-size-16 defra-max-width-full" for="recordType">
+                  Dog record
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="recordType-2" name="recordType" type="radio" value="Owner record">
+                <label class="govuk-label govuk-radios__label govuk-!-font-size-16 defra-max-width-full" for="recordType-2">
+                  Owner record
+                </label>
+              </div>
+            </div>
+
+            <legend class="govuk-visually-hidden">
+             Include close matches in the search results
+            </legend>
+
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="close-matches" name="close-matches" type="checkbox" value="close-matches">
+                <label class="govuk-label govuk-checkboxes__label govuk-!-font-size-16" for="close-matches">
+                  Include close matches
+                </label>
+              </div>
+
+        </fieldset>
+
+      {{ govukButton({
+        text: "Search"
+      }) }}
+
+      </form>
+
+      <p class="govuk-body govuk-!-margin-top-2">
+        Your search
+        {% if data['search'] %} for <span class="govuk-!-font-weight-bold">{{ data['search'] }}</span>
+          {% else %}for <span class="govuk-!-font-weight-bold">petra</span> {% endif %} did not match any records.
+        </p>
+      <p class="govuk-body">
+        Suggestions:
+        </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>include close matches in the search</li>
+        <li>ensure all words are spelled correctly</li>
+        <li>try different keywords to search</li>
+      </ul>
+
+    </div>
+  </div>
+
+{% endblock %}
