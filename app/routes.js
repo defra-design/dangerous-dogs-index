@@ -2691,20 +2691,20 @@ router.post('/v23/owner-records/confirm-address-question', function (req, res) {
 router.post('/v23/admin/police-force', function(request, response) {
   var force = request.session.data['force']
   if (force == "Bedfordshire Police"){
-    response.redirect("/v23/admin/bedfordshire-police")
+    response.redirect("/v23/admin/police-bedfordshire")
   } else if (force == "Dorset Police"){
-    response.redirect("/v23/admin/dorset-police")
+    response.redirect("/v23/admin/police-dorset")
   } else if (force == "Dyfed-Powys Police"){
-    response.redirect("/v23/admin/dyfed-powys-police")
+    response.redirect("/v23/admin/police-dyfed-powys")
   } else if (force == "Lincolnshire Police"){
-    response.redirect("/v23/admin/lincolnshire-police")
+    response.redirect("/v23/admin/police-lincolnshire")
   } else if (force == "Norfolk Constabulary"){
-    response.redirect("/v23/admin/norfolk-constabulary")
+    response.redirect("/v23/admin/police-norfolk")
   } else if (force == "Surrey Police"){
-    response.redirect("/v23/admin/surrey-police")
+    response.redirect("/v23/admin/police-surrey")
   } else if (force == "West Midlands Police"){
-    response.redirect("/v23/admin/west-midlands-police")
+    response.redirect("/v23/admin/police-west-midlands")
   } else {
-    response.redirect('/v23/admin/surrey-police')
+    response.redirect('/v23/admin/police-surrey')
   }
 })
