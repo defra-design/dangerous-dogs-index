@@ -1,6 +1,6 @@
 {% extends "layouts/defra-ddi.html" %}
 
-{% set pageName="Police officers with access" %}
+{% set pageName="Police officers with access to the Index" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -27,7 +27,7 @@
       <div class="govuk-!-width-one-half">
         <div class="govuk-form-group govuk-!-margin-bottom-3">
         <label class="govuk-label govuk-body" for="force">
-          View police officers by police force
+          Officers by police force
         </label>
 
         <select class="govuk-select" id="force" name="force"
@@ -83,7 +83,7 @@
     </div>
 
     {{ govukButton({
-      text: "Select police force",
+      text: "List police officers",
       classes: "govuk-!-margin-bottom-8"
     }) }}
 
