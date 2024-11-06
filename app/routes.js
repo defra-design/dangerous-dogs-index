@@ -2687,7 +2687,7 @@ router.post('/v23/owner-records/confirm-address-question', function (req, res) {
 })
 
 
-// v22 Comment type
+// v23 Comment type
 router.post('/v23/admin/police-force', function(request, response) {
   var force = request.session.data['force']
   if (force == "Bedfordshire Police"){
@@ -2706,5 +2706,26 @@ router.post('/v23/admin/police-force', function(request, response) {
     response.redirect("/v23/admin/police-west-midlands")
   } else {
     response.redirect('/v23/admin/police-surrey')
+  }
+})
+
+
+// v22 Comment type
+router.post('/v24/search-question', function(request, response) {
+  var search = request.session.data['search']
+  if (search == "rocky"){
+    response.redirect("/v24/search/dog-results-dog-name")
+  } else if (search == "Rocky"){
+    response.redirect("/v24/search/dog-results-dog-name")
+  } else if (search == "247 norcroft"){
+    response.redirect("/v22/search/record-1/results-address")
+  } else if (search == "norcroft"){
+    response.redirect("/v22/search/record-1/results-address")
+  } else if (search == "Norcroft"){
+    response.redirect("/v22/search/record-1/results-address")
+  } else if (search == "5 Station Road"){
+    response.redirect("/v22/search/record-2/results-address")
+  } else {
+    response.redirect('/v24/search/results-none')
   }
 })
