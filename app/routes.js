@@ -2725,6 +2725,10 @@ router.post('/v24/search-question', function(request, response) {
     response.redirect("/v24/search/dog-results-owner-name")
   } else if (search == "ryan heseltine"){
     response.redirect("/v24/search/dog-results-owner-name")
+  } else if (search == "albert road"){
+    response.redirect("/v24/search/dog-results-address")
+  } else if (search == "albert rd"){
+    response.redirect("/v24/search/dog-results-address")
   } else {
     response.redirect('/v24/search/results-none')
   }
