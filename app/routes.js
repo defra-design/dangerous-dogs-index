@@ -2717,14 +2717,14 @@ router.post('/v24/search-question', function(request, response) {
     response.redirect("/v24/search/dog-results-dog-name")
   } else if (search == "Rocky"){
     response.redirect("/v24/search/dog-results-dog-name")
-  } else if (search == "247 norcroft"){
-    response.redirect("/v22/search/record-1/results-address")
-  } else if (search == "norcroft"){
-    response.redirect("/v22/search/record-1/results-address")
-  } else if (search == "Norcroft"){
-    response.redirect("/v22/search/record-1/results-address")
-  } else if (search == "5 Station Road"){
-    response.redirect("/v22/search/record-2/results-address")
+  } else if (search == "123456789012345"){
+    response.redirect("/v24/search/dog-results-microchip")
+  } else if (search == "ryan"){
+    response.redirect("/v24/search/dog-results-owner-name")
+  } else if (search == "heseltine"){
+    response.redirect("/v24/search/dog-results-owner-name")
+  } else if (search == "ryan heseltine"){
+    response.redirect("/v24/search/dog-results-owner-name")
   } else {
     response.redirect('/v24/search/results-none')
   }
