@@ -2721,13 +2721,25 @@ router.post('/v24/search-question', function(request, response) {
     response.redirect("/v24/search/dog-results-microchip")
   } else if (search == "ryan"){
     response.redirect("/v24/search/dog-results-owner-name")
+  } else if (search == "Ryan"){
+    response.redirect("/v24/search/dog-results-owner-name")
   } else if (search == "heseltine"){
+    response.redirect("/v24/search/dog-results-owner-name")
+  } else if (search == "Heseltine"){
     response.redirect("/v24/search/dog-results-owner-name")
   } else if (search == "ryan heseltine"){
     response.redirect("/v24/search/dog-results-owner-name")
+  } else if (search == "Ryan Heseltine"){
+    response.redirect("/v24/search/dog-results-owner-name")
   } else if (search == "albert road"){
     response.redirect("/v24/search/dog-results-address")
+  } else if (search == "Albert Road"){
+    response.redirect("/v24/search/dog-results-address")
   } else if (search == "albert rd"){
+    response.redirect("/v24/search/dog-results-address")
+  } else if (search == "Albert rd"){
+    response.redirect("/v24/search/dog-results-address")
+  } else if (search == "Albert Rd"){
     response.redirect("/v24/search/dog-results-address")
   } else {
     response.redirect('/v24/search/results-none')
