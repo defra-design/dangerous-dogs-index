@@ -2690,7 +2690,9 @@ router.post('/v23/owner-records/confirm-address-question', function (req, res) {
 // v23 Comment type
 router.post('/v23/admin/police-force', function(request, response) {
   var force = request.session.data['force']
-  if (force == "Bedfordshire Police"){
+  if (force == "All police forces"){
+    response.redirect("/v23/admin/police-access")
+  } else if (force == "Bedfordshire Police"){
     response.redirect("/v23/admin/police-bedfordshire")
   } else if (force == "Dorset Police"){
     response.redirect("/v23/admin/police-dorset")
