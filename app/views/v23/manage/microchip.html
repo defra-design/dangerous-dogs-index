@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Error: Record the verification date for microchip and neutering" %}
+{% set pageName="Record the verification date for microchip and neutering" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -18,21 +18,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/v23/manage/manage-cdo-issue" method="post">
-
-        {{ govukErrorSummary({
-          titleText: "There is a problem",
-          errorList: [
-            {
-              text: "Enter the date the dog’s microchip number was verified",
-              href: "#microchip-verified-error"
-            },
-            {
-              text: "Enter the date the dog’s neutering was verified",
-              href: "#neutering-verified-error"
-            }
-          ]
-        }) }}
+      <form class="form" action="./microchip-neutering-error" method="post">
 
       <span class="govuk-caption-m">Dog ED30228</span>
         <fieldset class="govuk-fieldset">
@@ -45,16 +31,12 @@
 
           </legend>
 
-          <div class="govuk-form-group govuk-form-group--error">
+          <div class="govuk-form-group">
 
           <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" role="group">
             <legend class="govuk-fieldset__legend">
             When was the dog’s microchip number verified?
             </legend>
-
-            <p id="microchip-verified-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter the date the dog’s microchip number was verified
-            </p>
 
           <div class="govuk-date-input" id="microchip-verified">
 
@@ -63,7 +45,7 @@
               <label class="govuk-label govuk-date-input__label" for="microchip-verified-day">
                 Day
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="microchip-verified-day" name="microchip-verified-day" type="text" inputmode="numeric">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="microchip-verified-day" name="microchip-verified-day" type="text" inputmode="numeric">
             </div>
           </div>
 
@@ -72,7 +54,7 @@
               <label class="govuk-label govuk-date-input__label" for="microchip-verified-month">
                 Month
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="microchip-verified-month" name="microchip-verified-month" type="text" inputmode="numeric">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="microchip-verified-month" name="microchip-verified-month" type="text" inputmode="numeric">
             </div>
           </div>
             <div class="govuk-date-input__item">
@@ -80,7 +62,7 @@
                 <label class="govuk-label govuk-date-input__label" for="microchip-verified-year">
                   Year
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="microchip-verified-year" name="microchip-verified-year" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="microchip-verified-year" name="microchip-verified-year" type="text" inputmode="numeric">
               </div>
             </div>
           </div>
@@ -103,18 +85,10 @@
             </div>
           </fieldset>
 
-          </div>
-
-          <div class="govuk-form-group govuk-form-group--error">
-
           <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" role="group">
             <legend class="govuk-fieldset__legend">
             When was the dog’s neutering verified?
             </legend>
-
-            <p id="neutering-verified-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter the date the dog’s neutering was verified
-            </p>
 
           <div class="govuk-date-input" id="neutered-date">
 
@@ -123,7 +97,7 @@
               <label class="govuk-label govuk-date-input__label" for="neutered-date-day">
                 Day
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="neutered-date-day" name="neutered-date-day" type="text" inputmode="numeric">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="neutered-date-day" name="neutered-date-day" type="text" inputmode="numeric">
             </div>
           </div>
 
@@ -132,7 +106,7 @@
               <label class="govuk-label govuk-date-input__label" for="neutered-date-month">
                 Month
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="neutered-date-month" name="neutered-date-month" type="text" inputmode="numeric">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="neutered-date-month" name="neutered-date-month" type="text" inputmode="numeric">
             </div>
           </div>
             <div class="govuk-date-input__item">
@@ -140,7 +114,7 @@
                 <label class="govuk-label govuk-date-input__label" for="neutered-date-year">
                   Year
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="neutered-date-year" name="neutered-date-year" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="neutered-date-year" name="neutered-date-year" type="text" inputmode="numeric">
               </div>
             </div>
           </div>
@@ -163,7 +137,6 @@
             </div>
           </fieldset>
 
-        </div>
 
       <button class="govuk-button" data-module="govuk-button" onclick="updateLocalStorage('task6Finished')">
         Save and continue
