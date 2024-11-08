@@ -1,0 +1,54 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Send form 2" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v23/manage/manage-cdo-3" method="post">
+
+        <span class="govuk-caption-m">Dog ED30228</span>
+
+        {{ govukCheckboxes({
+          name: "waste",
+          fieldset: {
+            legend: {
+              text: "Send Form 2",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-5"
+            }
+          },
+          hint: {
+            text: "Confirm that you have sent the Form 2 to the dog owner."
+          },
+          items: [
+            {
+              value: "Form 2 sent",
+              text: "I have sent the Form 2"
+            }
+          ]
+        }) }}
+
+      <button class="govuk-button" data-module="govuk-button" onclick="updateLocalStorage('task3Finished')">
+        Save and continue
+      </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
