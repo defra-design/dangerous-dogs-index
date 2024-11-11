@@ -47,8 +47,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <form class="form" action="/v23/manage/next-page-3" method="post">
-
       <div class="moj-page-header-actions govuk-!-margin-bottom-2">
 
         <div class="moj-page-header-actions__title">
@@ -82,7 +80,7 @@
       CDO expires on 19 December 2024
     </span>
 
-    <form class="form" action="/v23/manage/cdo-completed" method="post">
+    <form class="form" action="./cdo-completed" method="post">
 
       <details class="govuk-details govuk-!-margin-top-7">
         <summary class="govuk-details__summary">
@@ -169,8 +167,6 @@
       </ul>
 
       {{ govukButton({
-        name: "nextPage",
-        value: "complete",
         text: "Continue"
       }) }}
 

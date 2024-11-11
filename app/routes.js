@@ -2711,8 +2711,22 @@ router.post('/v23/admin/police-force', function(request, response) {
   }
 })
 
+// v23 Microchip and neutering
+router.post('/v23/manage/verification-question', function(request, response) {
+  var verify = request.session.data['verify']
+  if (verify == "2024"){
+    response.redirect("/v23/manage/manage-cdo-issue")
+  } else if (verify == "unfit"){
+    response.redirect("/v23/manage/manage-cdo-issue")
+  } else if (verify == "under16"){
+    response.redirect("/v23/manage/manage-cdo-issue")
+  } else {
+    response.redirect('/v23/manage/microchip-neutering-error')
+  }
+})
 
-// v22 Comment type
+
+// v24 Search queries
 router.post('/v24/search-question', function(request, response) {
   var search = request.session.data['search']
   if (search == "rocky"){
