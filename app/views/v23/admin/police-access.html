@@ -1,6 +1,6 @@
 {% extends "layouts/defra-ddi.html" %}
 
-{% set pageName="Police officers with access to the Index" %}
+{% set pageName="Police officer access to the Index" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -16,7 +16,7 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-column-full-width">
 
       <form class="form" action="police-force" method="post">
 
@@ -24,7 +24,7 @@
         {{ pageName }}
       </h1>
 
-      <div class="govuk-!-width-one-half">
+      <div class="govuk-!-width-one-third">
         <div class="govuk-form-group govuk-!-margin-bottom-3">
         <label class="govuk-label govuk-body" for="force">
           Officers by police force
@@ -107,7 +107,7 @@
           },
           {
             text: "Police force",
-            classes: "govuk-!-width-one-third",
+            classes: "govuk-!-width-one-half",
             attributes: {
               "aria-sort": "none"
             }
