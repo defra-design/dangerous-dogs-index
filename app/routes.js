@@ -2686,7 +2686,6 @@ router.post('/v23/owner-records/confirm-address-question', function (req, res) {
 
 })
 
-
 // v23 Comment type
 router.post('/v23/admin/police-force', function(request, response) {
   var force = request.session.data['force']
@@ -2717,14 +2716,13 @@ router.post('/v23/manage/verification-question', function(request, response) {
   if (verify == "2024"){
     response.redirect("/v23/manage/manage-cdo-issue")
   } else if (verify == "unfit"){
-    response.redirect("/v23/manage/manage-cdo-issue")
+    response.redirect("/v23/manage/microchip")
   } else if (verify == "under16"){
     response.redirect("/v23/manage/manage-cdo-issue")
   } else {
     response.redirect('/v23/manage/microchip-neutering-error')
   }
 })
-
 
 // v24 Search queries
 router.post('/v24/search-question', function(request, response) {
@@ -2759,5 +2757,51 @@ router.post('/v24/search-question', function(request, response) {
     response.redirect("/v24/search/dog-results-address")
   } else {
     response.redirect('/v24/search/results-none')
+  }
+})
+
+// v24 National search queries
+router.post('/v24/search-question-2', function(request, response) {
+  var search = request.session.data['search']
+  if (search == "rocky"){
+    response.redirect("/v24/search-2/dog-results-dog-name")
+  } else if (search == "Rocky"){
+    response.redirect("/v24/search-2/dog-results-dog-name")
+  } else if (search == "123456789012345"){
+    response.redirect("/v24/search-2/dog-results-microchip")
+  } else if (search == "ryan"){
+    response.redirect("/v24/search-2/dog-results-owner-name")
+  } else if (search == "Ryan"){
+    response.redirect("/v24/search-2/dog-results-owner-name")
+  } else if (search == "heseltine"){
+    response.redirect("/v24/search-2/dog-results-owner-name")
+  } else if (search == "Heseltine"){
+    response.redirect("/v24/search-2/dog-results-owner-name")
+  } else if (search == "ryan heseltine"){
+    response.redirect("/v24/search-2/dog-results-owner-name")
+  } else if (search == "Ryan Heseltine"){
+    response.redirect("/v24/search-2/dog-results-owner-name")
+  } else if (search == "albert road"){
+    response.redirect("/v24/search-2/dog-results-address")
+  } else if (search == "Albert Road"){
+    response.redirect("/v24/search-2/dog-results-address")
+  } else if (search == "albert rd"){
+    response.redirect("/v24/search-2/dog-results-address")
+  } else if (search == "Albert rd"){
+    response.redirect("/v24/search-2/dog-results-address")
+  } else if (search == "Albert Rd"){
+    response.redirect("/v24/search-2/dog-results-address")
+  } else {
+    response.redirect('/v24/search-2/results-none')
+  }
+})
+
+// v24 National search queries
+router.post('/v24/include-national', function(request, response) {
+  var broadenSearch = request.session.data['broadenSearch']
+  if (broadenSearch == "national"){
+    response.redirect("/v24/search-2/dog-results-dog-name-national")
+  } else {
+    response.redirect('/v24/search-2/results-none')
   }
 })

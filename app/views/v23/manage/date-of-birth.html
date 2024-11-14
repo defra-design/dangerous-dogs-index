@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: "./microchip-neutering"
   }) }}
 {% endblock %}
 
@@ -21,26 +21,15 @@
       <form class="form" action="/v23/manage/manage-cdo-issue" method="post">
 
       <span class="govuk-caption-m">Dog ED30228</span>
-      <h1 class="govuk-heading-l">
-        {{ pageName }}
-      </h1>
 
       {{ govukDateInput({
-        id: "microchip-verified",
-        namePrefix: "microchip-verified",
+        id: "date-of-birth",
+        namePrefix: "date-of-birth",
         fieldset: {
           legend: {
-            text: "When was the dog’s microchip number verified?"
-          }
-        }
-      }) }}
-
-      {{ govukDateInput({
-        id: "neutered-date",
-        namePrefix: "neutered-date",
-        fieldset: {
-          legend: {
-            text: "When was the dog’s neutering verified?"
+            text: "What is the dog’s date of birth?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
           }
         }
       }) }}
