@@ -1,0 +1,645 @@
+{% extends "layouts/defra.html" %}
+
+{% block pageTitle %}
+  Dog ED30228 – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "dog-record-ED30228-complete"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v14/dog-records/dog-record-ED30228" method="post">
+
+        <span class="govuk-caption-l">Dog ED30228</span>
+
+        {% call govukFieldset({
+          legend: {
+            text: "Edit exemption details",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-4 govuk-!-margin-bottom-3">
+          Status
+          </p>
+
+        {{govukTag({
+          text: "Pre-exempt",
+          classes: "govuk-!-margin-bottom-8 govuk-!-margin-right-3"
+        })}}
+
+        <span class="govuk-body">
+          <a class="govuk-link govuk-link--no-visited-state" href="">
+            Change status
+          </a>
+        </span>
+
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "certificate",
+            namePrefix: "certificate",
+            fieldset: {
+              legend: {
+                text: "First certificate issued",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "18"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "6"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2024"
+            }
+          ]
+          }) }}
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Order
+              </legend>
+
+              <div class="govuk-radios govuk-!-margin-bottom-5" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="order" name="order" type="radio" value="2023" checked>
+                  <label class="govuk-label govuk-radios__label" for="order">
+                    2023
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="order-2" name="order" type="radio" value="2015">
+                  <label class="govuk-label govuk-radios__label" for="order-2">
+                    2015
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "cdo-issued",
+            namePrefix: "cdo-issued",
+            fieldset: {
+              legend: {
+                text: "CDO issued",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "19"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "5"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2024"
+            }
+          ]
+          }) }}
+
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "cdo-expiry",
+            namePrefix: "cdo-expiry",
+            fieldset: {
+              legend: {
+                text: "CDO expiry",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "19"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "7"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2024"
+            }
+          ]
+          }) }}
+
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "neutering-deadline",
+            namePrefix: "neutering-deadline",
+            fieldset: {
+              legend: {
+                text: "Neutering deadline",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "20"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "11"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2024"
+            }
+          ]
+          }) }}
+
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "microchip-deadline",
+            namePrefix: "microchip-deadline",
+            fieldset: {
+              legend: {
+                text: "Microchip deadline",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "20"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "11"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2024"
+            }
+          ]
+          }) }}
+
+          {{ govukSelect({
+            classes: "govuk-!-margin-bottom-5",
+            name: "court",
+            label: {
+              classes: "govuk-!-font-weight-bold",
+              text: "Court"
+            },
+            items: [
+              {
+                value: "Choose court",
+                text: "Choose court"
+              },
+              {
+                value: "Aberystwyth Justice Centre",
+                text: "Aberystwyth Justice Centre"
+              },
+              {
+                value: "Barking and Dagenham Magistrates Court",
+                text: "Barking and Dagenham Magistrates Court"
+              },
+              {
+                value: "Barrow-in-Furness Magistrates Court",
+                text: "Barrow-in-Furness Magistrates Court"
+              },
+              {
+                value: "Bradford and Keighley Magistrates’ Court",
+                text: "Bradford and Keighley Magistrates’ Court"
+              },
+              {
+                value: "Chester Magistrates’ Court",
+                text: "Chester Magistrates’ Court"
+              },
+              {
+                value: "Doncaster Justice Centre North (Doncaster Magistrates’ Court)",
+                text: "Doncaster Justice Centre North (Doncaster Magistrates’ Court)"
+              },
+              {
+                value: "East Berkshire (Slough) Magistrates’ Court",
+                text: "East Berkshire (Slough) Magistrates’ Court"
+              },
+              {
+                value: "Hastings Law Courts",
+                text: "Hastings Law Courts",
+                selected: "true"
+              },
+              {
+                value: "Horsham Law Courts",
+                text: "Horsham Law Courts"
+              },
+              {
+                value: "Ipswich Magistrates’ Court",
+                text: "Ipswich Magistrates’ Court"
+              },
+              {
+                value: "Kirklees (Huddersfield) Magistrates’ Court",
+                text: "Kirklees (Huddersfield) Magistrates’ Court"
+              },
+              {
+                value: "Llandudno Magistrates’ Court",
+                text: "Llandudno Magistrates’ Court"
+              },
+              {
+                value: "Maidstone Magistrates’ Court",
+                text: "Maidstone Magistrates’ Court"
+              },
+              {
+                value: "Mid and South East Northumberland Law Courts (Bedlington)",
+                text: "Mid and South East Northumberland Law Courts (Bedlington)"
+              },
+              {
+                value: "North Somerset Courthouse",
+                text: "North Somerset Courthouse"
+              },
+              {
+                value: "Oxford and Southern Oxfordshire Magistrates’ Court",
+                text: "Oxford and Southern Oxfordshire Magistrates’ Court"
+              },
+              {
+                value: "Peterborough Magistrates’ Court",
+                text: "Peterborough Magistrates’ Court"
+              },
+              {
+                value: "Preston Magistrates’ Court",
+                text: "Preston Magistrates’ Court"
+              },
+              {
+                value: "Salisbury Law Courts",
+                text: "Salisbury Law Courts"
+              },
+              {
+                value: "Sheffield Magistrates’ Court",
+                text: "Sheffield Magistrates’ Court"
+              },
+              {
+                value: "Southampton (West Hampshire) Magistrates’ Court",
+                text: "Southampton (West Hampshire) Magistrates’ Court"
+              },
+              {
+                value: "St Albans Magistrates’ Court",
+                text: "St Albans Magistrates’ Court"
+              },
+              {
+                value: "Taunton Magistrates’ Court",
+                text: "Taunton Magistrates’ Court"
+              },
+              {
+                value: "Wellingborough Magistrates’ Court",
+                text: "Wellingborough Magistrates’ Court"
+              },
+              {
+                value: "Wirral Magistrates’ Court",
+                text: "Wirral Magistrates’ Court"
+              },
+              {
+                value: "Worcester Justice Centre",
+                text: "Worcester Justice Centre"
+              },
+              {
+                value: "Wrexham Law Courts",
+                text: "Wrexham Law Courts"
+              },
+              {
+                value: "York Magistrates’ Court",
+                text: "York Magistrates’ Court"
+              }
+            ]
+          }) }}
+
+          {{ govukSelect({
+            classes: "govuk-!-width-two-thirds govuk-!-margin-bottom-5",
+            name: "police-force",
+            label: {
+              classes: "govuk-!-font-weight-bold",
+              text: "Police force"
+            },
+            items: [
+              {
+                value: "Avon and Somerset Constabulary",
+                text: "Avon and Somerset Constabulary"
+              },
+              {
+                value: "Bedfordshire Police",
+                text: "Bedfordshire Police"
+              },
+              {
+                value: "Cumbria Constabulary",
+                text: "Cumbria Constabulary"
+              },
+              {
+                value: "Devon and Cornwall Police",
+                text: "Devon and Cornwall Police"
+              },
+              {
+                value: "Essex Police",
+                text: "Essex Police"
+              },
+              {
+                value: "Gloucestershire Constabulary",
+                text: "Gloucestershire Constabulary"
+              },
+              {
+                value: "Greater Manchester Police",
+                text: "Greater Manchester Police"
+              },
+              {
+                value: "Hampshire Constabulary",
+                text: "Hampshire Constabulary"
+              },
+              {
+                value: "Hertfordshire Constabulary",
+                text: "Hertfordshire Constabulary"
+              },
+              {
+                value: "Humberside Police",
+                text: "Humberside Police"
+              },
+              {
+                value: "Kent Police",
+                text: "Kent Police"
+              },
+              {
+                value: "Metropolitan Police Service",
+                text: "Metropolitan Police Service"
+              },
+              {
+                value: "Staffordshire Police",
+                text: "Staffordshire Police"
+              },
+              {
+                value: "Surrey Police",
+                text: "Surrey Police"
+              },
+              {
+                value: "Sussex Police",
+                text: "Sussex Police",
+                selected: "true"
+              },
+              {
+                value: "Thames Valley Police",
+                text: "Thames Valley Police"
+              },
+              {
+                value: "Wiltshire Police",
+                text: "Wiltshire Police"
+              }
+            ]
+          }) }}
+
+          {{ govukInput({
+            label: {
+              classes: "govuk-!-font-weight-bold",
+              text: "Dog legislation officer"
+            },
+            classes: "govuk-!-width-two-thirds govuk-!-margin-bottom-5",
+            id: "dog-legislation-officer",
+            name: "dog-legislation-officer",
+            value: data['dog-legislation-officer'] or "Solomon Beatty"
+          }) }}
+
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "application-fee",
+            namePrefix: "application-fee",
+            fieldset: {
+              legend: {
+                text: "Application fee paid",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "3"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "5"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2014"
+            }
+          ]
+          }) }}
+
+          {{ govukSelect({
+            classes: "govuk-!-width-two-thirds govuk-!-margin-bottom-5",
+            name: "insurance-company",
+            label: {
+              classes: "govuk-!-font-weight-bold",
+              text: "Insurance company"
+            },
+            items: [
+              {
+                value: "Another insurer",
+                text: "Another insurer"
+              },
+              {
+                value: "Dogs Trust",
+                text: "Dogs Trust",
+                selected: true
+              },
+              {
+                value: "Another insurer",
+                text: "Another insurer"
+              },
+              {
+                value: "Another insurer",
+                text: "Another insurer"
+              }
+            ]
+          }) }}
+
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "insurance-renewal",
+            namePrefix: "insurance-renewal",
+            fieldset: {
+              legend: {
+                text: "Insurance renewal date",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "29"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "4"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2024"
+            }
+          ]
+          }) }}
+
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "neutering-confirmed",
+            namePrefix: "neutering-confirmed",
+            fieldset: {
+              legend: {
+                text: "Neutering confirmed",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "29"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "4"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2024"
+            }
+          ]
+          }) }}
+
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "microchip-number-verified",
+            namePrefix: "microchip-number-verified",
+            fieldset: {
+              legend: {
+                text: "Microchip number verified",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "10"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "4"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2014"
+            }
+          ]
+          }) }}
+
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "exemption-scheme",
+            namePrefix: "exemption-scheme",
+            fieldset: {
+              legend: {
+                text: "Joined interim exemption scheme",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year"
+            }
+          ]
+          }) }}
+
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "removed-cdo",
+            namePrefix: "removed-cdo",
+            fieldset: {
+              legend: {
+                text: "Removed from CDO process",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year"
+            }
+          ]
+          }) }}
+
+        {% endcall %}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Save details"
+          }) }}
+
+          <a class="govuk-link govuk-link--no-visited-state" href="/v14/dog-records/dog-record-ED30228-complete">Cancel</a>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
