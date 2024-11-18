@@ -85,7 +85,7 @@
             </div>
           </fieldset>
 
-          <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" role="group">
+          <fieldset class="govuk-fieldset govuk-!-margin-bottom-5" role="group">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             When was the dog’s neutering verified?
             </legend>
@@ -120,31 +120,19 @@
               </div>
             </div>
           </div>
-
-        <div class="govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-0">or</div>
-
-        <div class="govuk-form-group">
-            <legend class="govuk-fieldset__legend govuk-visually-hidden">
-              Is the dog aged under 16 months?
-            </legend>
-
-            <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-margin-top-0" data-module="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="age" name="age" type="checkbox" value="age">
-                <label class="govuk-label govuk-checkboxes__label" for="age">
-                  Dog aged under 16 months and not neutered
-                </label>
-              </div>
-            </div>
-          </div>
-
         </fieldset>
 
-      </div>
+        <p class="govuk-body govuk-!-margin-bottom-1">
+          Is the dog too young to be neutered?
+        </p>
 
-      {{ govukButton({
-        text: "Save and continue"
-      }) }}
+        <p class="govuk-body govuk-!-margin-bottom-7">
+          <a class="govuk-link govuk-link--no-visited-state" href="../dog-records/dog-record-ED30228">Add the dog’s date of birth to its dog record
+        </p>
+
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
 
       </form>
 
