@@ -1,0 +1,136 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Dog ED30228" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+<div class="govuk-main-wrapper">
+
+  {% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <div class="moj-page-header-actions govuk-!-margin-bottom-2">
+
+        <div class="moj-page-header-actions__title">
+          <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+        </div>
+
+      <div class="moj-page-header-actions__actions">
+
+        <div class="moj-button-menu">
+          <div class="moj-button-menu__wrapper">
+
+            <a href="" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button">
+              Dog record
+            </a>
+
+            <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" name="nextPage" value="owner-record" data-module="govuk-button">
+              Owner record
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{govukTag({
+      text: "Applying for exemption",
+      classes: "defra-tag-nowrap govuk-!-margin-right-3 govuk-!-margin-bottom-5"
+    })}}
+
+    <span class="govuk-body defra-secondary-text">
+      CDO expires on 19 December 2024
+    </span>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+      CDO progress
+    </h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Application pack
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
+          {{ govukTag({
+            text: "Not sent",
+            classes: "govuk-tag--grey"
+          }) }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Evidence of insurance
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
+          {{ govukTag({
+            text: "Not received",
+            classes: "govuk-tag--grey"
+          }) }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Microchip number
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
+          {{ govukTag({
+            text: "Not received",
+            classes: "govuk-tag--grey"
+          }) }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Application fee
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
+          {{ govukTag({
+            text: "Not received",
+            classes: "govuk-tag--grey"
+          }) }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Form 2
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
+          {{ govukTag({
+            text: "Not sent",
+            classes: "govuk-tag--grey"
+          }) }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-padding-right-9">
+          Confirmation dog microchipped and neutered
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ govukTag({
+            text: "Cannot confirm yet",
+            classes: "govuk-tag--grey defra-tag-nowrap"
+          }) }}
+        </dd>
+      </div>
+    </dl>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
