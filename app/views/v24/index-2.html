@@ -13,15 +13,44 @@
 
       <form class="form" action="./search-question-2" method="post">
 
-      <div class="govuk-form-group govuk-!-margin-bottom-3">
-        <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--l" for="search">
-            Search
-          </label>
-        </h1>
+        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+          {{ pageName }}
+        </legend>
 
-        <input class="govuk-input" id="search" name="search" type="text">
-      </div>
+        <div class="govuk-form-group govuk-!-margin-bottom-2">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="search">
+              Search
+            </label>
+          </h1>
+
+          <input class="govuk-input" id="search" name="search" type="text">
+        </div>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-2">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-visually-hidden">
+              Show more search results
+            </legend>
+
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="broaden-search" name="broadenSearch" type="checkbox" value="close">
+                <label class="govuk-label govuk-checkboxes__label" for="broaden-search">
+                  Include close matches
+                </label>
+              </div>
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="broaden-search-2" name="broadenSearch" type="checkbox" value="national">
+                <label class="govuk-label govuk-checkboxes__label" for="broaden-search-2">
+                  Include national records
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
 
       {{ govukButton({
         text: "Search"

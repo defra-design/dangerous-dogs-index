@@ -11,37 +11,46 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="../search-question" method="post">
+      <form class="form" action="../search-question-2" method="post">
 
-    <fieldset class="govuk-fieldset govuk-!-margin-bottom-2">
-      <legend class="govuk-fieldset__legend govuk-visually-hidden">
-        {{ pageName }}
-      </legend>
+        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+          {{ pageName }}
+        </legend>
 
-      <div class="govuk-form-group govuk-!-margin-bottom-2">
-        <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--l" for="search">
-            Search
-          </label>
-        </h1>
+        <div class="govuk-form-group govuk-!-margin-bottom-2">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="search">
+              Search
+            </label>
+          </h1>
 
-        <input class="govuk-input" value="{% if data['search'] %}{{ data['search'] }}{% else %}petra{% endif %}" id="search" name="search" type="text">
-      </div>
-
-      <legend class="govuk-visually-hidden">
-       Include close matches in the search results
-      </legend>
-
-      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="close-matches" name="close-matches" type="checkbox" value="close-matches">
-          <label class="govuk-label govuk-checkboxes__label govuk-!-font-size-16" for="close-matches">
-            Include close matches
-          </label>
+          <input class="govuk-input" value="{% if data['search'] %}{{ data['search'] }}{% else %}petra{% endif %}" id="search" name="search" type="text">
         </div>
 
-      </fieldset>
+        <div class="govuk-form-group govuk-!-margin-bottom-2">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-visually-hidden">
+              Show more search results
+            </legend>
 
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="broaden-search" name="broadenSearch" type="checkbox" value="close">
+                <label class="govuk-label govuk-checkboxes__label" for="broaden-search">
+                  Include close matches
+                </label>
+              </div>
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="broaden-search-2" name="broadenSearch" type="checkbox" value="national">
+                <label class="govuk-label govuk-checkboxes__label" for="broaden-search-2">
+                  Include national records
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
 
       {{ govukButton({
         text: "Search"
@@ -63,6 +72,17 @@
         <li>ensure all words are spelled correctly</li>
         <li>try different keywords to search</li>
       </ul>
+
+      <p class="govuk-body govuk-!-margin-top-7">Find registered dangerous dogs, or dog owners, by searching with one or more of these terms:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>owner’s name</li>
+          <li>owner’s address, or part of it</li>
+          <li>owner’s email address</li>
+          <li>dog’s microchip number</li>
+          <li>dog’s index number</li>
+          <li>dog’s name</li>
+        </ul>
 
     </div>
   </div>
