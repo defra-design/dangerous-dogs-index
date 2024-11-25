@@ -1,9 +1,7 @@
 {% extends "layouts/defra-sign-out-2.html" %}
 
-{% set pageName="Search results" %}
-
 {% block pageTitle %}
-  {{ pageName }} – {{ serviceName }}
+Search results - Showing 1 to 20 – {{ serviceName }}
 {% endblock %}
 
 {% block content %}
@@ -11,57 +9,58 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="../search-question" method="post">
-
-        <legend class="govuk-fieldset__legend govuk-visually-hidden">
-          {{ pageName }}
-        </legend>
+      <form class="form" action="./dog-results-close" method="post">
 
         <div class="govuk-form-group govuk-!-margin-bottom-2">
-          <h1 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--l" for="search">
-              Search
-            </label>
-          </h1>
+          <fieldset class="govuk-fieldset govuk-!-margin-bottom-2" aria-describedby="checkbox-hint">
 
-          <input class="govuk-input" value="{% if data['search'] %}{{ data['search'] }}{% else %}rocky{% endif %}" id="search" name="search" type="text">
-        </div>
-
-        <div class="govuk-form-group govuk-!-margin-bottom-2">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-visually-hidden">
-              Show more search results
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Search
+              </h1>
             </legend>
 
-            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <input class="govuk-input govuk-!-margin-bottom-2" value="rocky" id="search" name="search" type="text">
 
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="broaden-search" name="broaden-search" type="checkbox" value="close">
-                <label class="govuk-label govuk-checkboxes__label" for="broaden-search">
-                  Include close matches
+            <div class="govuk-radios govuk-radios--small govuk-!-margin-bottom-2" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="force">
+                <label class="govuk-label govuk-radios__label" for="changedName">
+                  Bedfordshire, Cambridgeshire and Hertfordshire police forces
                 </label>
               </div>
-
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="broaden-search-2" name="broaden-search" type="checkbox" value="national" checked>
-                <label class="govuk-label govuk-checkboxes__label" for="broaden-search-2">
-                  Include national records
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="national" checked>
+                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                  National records
                 </label>
               </div>
             </div>
+
+            <hr class="govuk-section-break govuk-section-break--s govuk-!-margin-bottom-2 govuk-section-break--visible">
+
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  Include close matches
+                </label>
+              </div>
+            </div>
+
           </fieldset>
         </div>
 
+
       {{ govukButton({
-        text: "Search"
+        text: "Search",
+        classes: "govuk-!-margin-bottom-8"
       }) }}
 
       </form>
 
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-2">
-
-      <h2 class="govuk-body">
-        Showing 25 of 226 matching records for <span class="govuk-!-font-weight-bold">‘rocky’</span> in <span class="govuk-!-font-weight-bold">England, Scotland and Wales</span>
+      <h2 class="govuk-heading-s">
+        226 records found. Showing 1 to 20.
       </h2>
 
       <!-- New result 1 -->
