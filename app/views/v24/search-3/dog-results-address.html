@@ -1,0 +1,349 @@
+{% extends "layouts/defra-sign-out-2.html" %}
+
+{% set pageName="Search results" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="../search-question" method="post">
+
+      <fieldset class="govuk-fieldset govuk-!-margin-bottom-2">
+        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+          {{ pageName }}
+        </legend>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-2">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="search">
+              Search
+            </label>
+          </h1>
+
+          <input class="govuk-input" value="{% if data['search'] %}{{ data['search'] }}{% else %}albert road{% endif %}" id="search" name="search" type="text">
+        </div>
+
+        <legend class="govuk-visually-hidden">
+         Include close matches in the search results
+        </legend>
+
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="close-matches" name="close-matches" type="checkbox" value="close-matches">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-font-size-16" for="close-matches">
+              Include close matches
+            </label>
+          </div>
+        </fieldset>
+
+      {{ govukButton({
+        text: "Search"
+      }) }}
+
+      </form>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-2">
+
+      <h2 class="govuk-heading-s">
+        Showing 5 of 5 matching records for ‘{% if data['search'] %}{{ data['search'] }}{% else %}albert road{% endif %}’
+      </h2>
+
+      <!-- New result 1 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED753843
+          </a></h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list govuk-!-font-size-16">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ govukTag({
+                  text: "Exempt",
+                  classes: "govuk-tag--turquoise govuk-!-font-size-16"
+                }) }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Dog
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Archie
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Owner
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link govuk-link--no-visited-state" href="">
+                  Moira Smales
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                81 Albert Road, Blackpool FY1 4PW
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Microchip number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                834837560092571
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- New result 11 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED934845
+          </a></h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list govuk-!-font-size-16">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ govukTag({
+                  text: "Exempt",
+                  classes: "govuk-tag--turquoise govuk-!-font-size-16"
+                }) }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Dog
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Steph
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Owner
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link govuk-link--no-visited-state" href="">
+                  Graham Cowie
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                34 Albert Road, Middlesbrough TS1 2LF
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Microchip number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                638452865898300
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- New result 12 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED225814
+          </a></h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list govuk-!-font-size-16">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ govukTag({
+                  text: "Applying for exemption",
+                  classes: "defra-tag-nowrap govuk-!-font-size-16"
+                }) }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Dog
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Nero
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Owner
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link govuk-link--no-visited-state" href="">
+                  Leo Cooke
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                50 Albert Road, Manchester M19 2AB
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Microchip number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                743754700939047
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- New result 13 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED600327
+          </a></h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list govuk-!-font-size-16">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ govukTag({
+                  text: "Exempt",
+                  classes: "govuk-tag--turquoise govuk-!-font-size-16"
+                }) }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Dog
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Kong
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Owner
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link govuk-link--no-visited-state" href="">
+                  James Jones
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                137 Albert Road, Portsmouth, PO5 2SQ
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Microchip number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                479348289000375
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- New result 14 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED834940
+          </a></h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list govuk-!-font-size-16">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ govukTag({
+                  text: "In breach",
+                  classes: "govuk-tag--red defra-tag-nowrap govuk-!-font-size-16"
+                }) }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Dog
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Nails
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Owner
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link govuk-link--no-visited-state" href="">
+                  Oliver Khan
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                141 Albert Road, London N22 7AG
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Microchip number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                845729873329750
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

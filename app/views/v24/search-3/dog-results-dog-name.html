@@ -1,0 +1,592 @@
+{% extends "layouts/defra-sign-out-2.html" %}
+
+{% set pageName="Search results" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="../include-national" method="post">
+
+        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+          {{ pageName }}
+        </legend>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-2">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="search">
+              Search
+            </label>
+          </h1>
+
+          <input class="govuk-input" value="{% if data['search'] %}{{ data['search'] }}{% else %}rocky{% endif %}" id="search" name="search" type="text">
+        </div>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-2">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-visually-hidden">
+              Show more search results
+            </legend>
+
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="broaden-search" name="broadenSearch" type="checkbox" value="close">
+                <label class="govuk-label govuk-checkboxes__label" for="broaden-search">
+                  Include close matches
+                </label>
+              </div>
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="broaden-search-2" name="broadenSearch" type="checkbox" value="national">
+                <label class="govuk-label govuk-checkboxes__label" for="broaden-search-2">
+                  Include national records
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+      {{ govukButton({
+        text: "Search"
+      }) }}
+
+      </form>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-2">
+
+      <h2 class="govuk-body">
+        Showing 9 of 9 matching records for <span class="govuk-!-font-weight-bold">‘rocky’</span> in <span class="govuk-!-font-weight-bold">Norfolk Constabulary</span>
+      </h2>
+
+      <!-- New result 1 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED753843
+          </a></h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list govuk-!-font-size-16">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ govukTag({
+                  text: "Applying for exemption",
+                  classes: "defra-tag-nowrap govuk-!-font-size-16"
+                }) }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Dog
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Rocky
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Owner
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link govuk-link--no-visited-state" href="">
+                  Paul McGuigan
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                8 Ardney Rise, Norwich NR3 3QH
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Microchip number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                834837560092571
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- New result 2 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED934845
+          </a></h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list govuk-!-font-size-16">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ govukTag({
+                  text: "Exempt",
+                  classes: "govuk-tag--turquoise govuk-!-font-size-16"
+                }) }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Dog
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Rocky
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Owner
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link govuk-link--no-visited-state" href="">
+                  Nathaniel Burgess
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                28 Burkitt St, King's Lynn PE30 2AX
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Microchip number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                638452865898300
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- New result 3 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED225814
+          </a></h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list govuk-!-font-size-16">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ govukTag({
+                  text: "Reported stolen",
+                  classes: "govuk-tag--orange defra-tag-nowrap govuk-!-font-size-16"
+                }) }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Dog
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Rocky
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Owner
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link govuk-link--no-visited-state" href="">
+                  Cole Francis
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                102 Haward Street, Lowestoft NR32 2DR
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Microchip number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                743754700939047
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- New result 4 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED600327
+          </a></h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list govuk-!-font-size-16">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ govukTag({
+                  text: "Exempt",
+                  classes: "govuk-tag--turquoise govuk-!-font-size-16"
+                }) }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Dog
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Rocky
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Owner
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link govuk-link--no-visited-state" href="">
+                  Sharon McGinn
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                89 Suffling Road, Great Yarmouth NR30 3QP
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Microchip number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                479348289000375
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- New result 5 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED834940
+          </a></h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list govuk-!-font-size-16">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ govukTag({
+                  text: "Exempt",
+                  classes: "govuk-tag--turquoise govuk-!-font-size-16"
+                }) }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Dog
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Rocky
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Owner
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link govuk-link--no-visited-state" href="">
+                  Barry Shaw
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                47 Robson Road, Norwich NR5 8NX
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Microchip number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                845729873329750
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- New result 6 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED673290
+          </a></h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list govuk-!-font-size-16">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ govukTag({
+                  text: "Exempt",
+                  classes: "govuk-tag--turquoise govuk-!-font-size-16"
+                }) }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Dog
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Rocky
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Owner
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link govuk-link--no-visited-state" href="">
+                  Craig Smith
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                42 Clapham Street, Manchester M40 0AY
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Microchip number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                976932286773100
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- New result 7 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED932848
+          </a></h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list govuk-!-font-size-16">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ govukTag({
+                  text: "Exempt",
+                  classes: "govuk-tag--turquoise govuk-!-font-size-16"
+                }) }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Dog
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Rocky
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Owner
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link govuk-link--no-visited-state" href="">
+                  Vicki Thompson
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                5 Billings Drive, Newquay TR7 2SQ
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Microchip number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                672389437559002
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- New result 8 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED749455
+          </a></h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list govuk-!-font-size-16">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ govukTag({
+                  text: "Exempt",
+                  classes: "govuk-tag--turquoise govuk-!-font-size-16"
+                }) }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Dog
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Rocky
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Owner
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link govuk-link--no-visited-state" href="">
+                  Stephen Ball
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                71 Francis Bernard Close, Boston PE21 8BL
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Microchip number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                284328576000268
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- New result 9 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+          <h2 class="govuk-summary-card__title"><a class="govuk-link govuk-link--no-visited-state" href="">
+            ED934845
+          </a></h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list govuk-!-font-size-16">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ govukTag({
+                  text: "Exempt",
+                  classes: "govuk-tag--turquoise govuk-!-font-size-16"
+                }) }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Dog
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Rocky
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Owner
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link govuk-link--no-visited-state" href="">
+                  Anthony Whitehead
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                17 Dagmar Court, London E14 3HD
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Microchip number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                638452865898300
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

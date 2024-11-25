@@ -290,3 +290,15 @@
   .defra-nowrap {
     white-space: nowrap !important;
   }
+
+  .defra-summary {
+    font-size: 0.875rem;
+    line-height: 1.1428571429;
+  }
+
+  @media (max-width: 40.0525em) {
+  .defra-summary__standard {
+    font-size: 1rem;
+    line-height: 1.25;
+    }
+  }
