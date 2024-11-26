@@ -52,11 +52,34 @@
       classes: "defra-tag-nowrap govuk-!-margin-right-3 govuk-!-margin-bottom-5"
     })}}
 
-    <span class="govuk-body defra-secondary-text">
-      CDO expires on 19 December 2024
-    </span>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Dog name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Mutley
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Owner name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Michael Denton
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          CDO expiry
+        </dt>
+        <dd class="govuk-summary-list__value">
+          19 December 2024
+        </dd>
+      </div>
+    </dl>
 
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+    <h2 class="govuk-heading-m">
       CDO progress
     </h2>
 
@@ -66,7 +89,15 @@
           Application pack
         </dt>
         <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
-          Sent on 7 November 2024
+          Sent on 27 October 2024
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Application pack received and processed
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
+          Processed on 12 November 2024
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -105,11 +136,35 @@
         <dt class="govuk-summary-list__key govuk-!-padding-right-9">
           Confirmation dog microchipped and neutered
         </dt>
-        <dd class="govuk-summary-list__value">
-          <a class="govuk-link govuk-link--no-visited-state" href="">Confirm</a>
+        <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
+          Received on 28 November 2024
         </dd>
       </div>
     </dl>
+
+    <br>
+    <br>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible govuk-!-margin-bottom-6">
+
+    <p class="govuk-body govuk-!-margin-bottom-2">
+      This link is for the prototype only
+    </p>
+
+    <nav class="govuk-pagination govuk-pagination--block" aria-label="Pagination">
+      <div class="govuk-pagination__prev">
+        <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="cdo-progress-active" rel="prev">
+          <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+            <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Previous<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label">View a CDO in progress</span>
+        </a>
+      </div>
+    </nav>
 
       </div>
     </div>
