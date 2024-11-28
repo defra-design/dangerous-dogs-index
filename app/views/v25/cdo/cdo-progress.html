@@ -20,64 +20,84 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
 
-      <div class="moj-page-header-actions govuk-!-margin-bottom-2">
+    <div class="moj-page-header-actions govuk-!-margin-bottom-2">
 
-        <div class="moj-page-header-actions__title">
-          <h1 class="govuk-heading-xl">{{ pageName }}</h1>
-        </div>
+      <div class="moj-page-header-actions__title">
+        <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+      </div>
 
-      <div class="moj-page-header-actions__actions">
+    <div class="moj-page-header-actions__actions">
 
-        <div class="moj-button-menu">
-          <div class="moj-button-menu__wrapper">
+      <div class="moj-button-menu">
+        <div class="moj-button-menu__wrapper">
 
-            <a href="" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button">
-              Dog record
-            </a>
+          <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" name="nextPage" value="dog-record" data-module="govuk-button">
+            Dog record
+          </button>
 
-            <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" name="nextPage" value="owner-record" data-module="govuk-button">
-              Owner record
-            </button>
+          <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" name="nextPage" value="owner-record" data-module="govuk-button">
+            Owner record
+          </button>
 
-          </div>
         </div>
       </div>
     </div>
+  </div>
 
-    {{govukTag({
-      text: "Applying for exemption",
-      classes: "defra-tag-nowrap govuk-!-margin-right-3 govuk-!-margin-bottom-5"
-    })}}
+  {{govukTag({
+    text: "Applying for exemption",
+    classes: "defra-tag-nowrap govuk-!-margin-bottom-3"
+  })}}
 
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half">
-          Dog name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Mutley
-        </dd>
-      </div>
+  </div>
+
+  <div class="govuk-grid-column-one-third defra-summary-width govuk-!-margin-top-4">
+    <dl class="govuk-summary-list govuk-!-font-size-16">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-width-one-half">
           Owner name
         </dt>
         <dd class="govuk-summary-list__value">
-          Michael Denton
+          Garry McFadyen
         </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half">
-          CDO expiry
+        <dt class="govuk-summary-list__key">
+          Dog name
         </dt>
         <dd class="govuk-summary-list__value">
-          19 December 2024
+          Kilo
         </dd>
       </div>
     </dl>
+  </div>
+
+
+  <div class="govuk-grid-column-one-third defra-summary-width govuk-!-margin-top-4">
+    <dl class="govuk-summary-list govuk-!-font-size-16">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Microchip number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          673827549000083
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          CDO expiry
+        </dt>
+        <dd class="govuk-summary-list__value">
+          20 January 2024
+        </dd>
+      </div>
+    </dl>
+  </div>
+
+    <div class="govuk-grid-column-three-quarters">
 
     <h2 class="govuk-heading-m">
       CDO progress
@@ -97,7 +117,7 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-width-one-half">
-          Application pack received and processed
+          Application
         </dt>
         <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
           {{ govukTag({

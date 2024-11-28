@@ -1,0 +1,183 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Dog ED30228" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+<div class="govuk-main-wrapper">
+
+  {% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Manage CDOs",
+        href: "manage-cdos-all"
+      }
+    ]
+  }) }}
+
+  <script>
+
+    window.onload = function() {
+    function updateStatus(x, y, z){
+      if(localStorage.getItem(z) !== null) {
+        document.getElementById(y).innerHTML = "Completed";
+        document.getElementById(y).className = "govuk-task-list__status";
+      }
+    }
+
+    // Function calls
+    updateStatus('task6Finished', 'task-6-status', 'task6Started')
+  }
+  </script>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/status-update.js"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <form class="form" action="/v14/manage/next-page-3" method="post">
+
+      <div class="moj-page-header-actions govuk-!-margin-bottom-2">
+
+        <div class="moj-page-header-actions__title">
+          <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+        </div>
+
+      <div class="moj-page-header-actions__actions">
+
+        <div class="moj-button-menu">
+          <div class="moj-button-menu__wrapper">
+
+            <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" name="nextPage" value="dog-record" data-module="govuk-button">
+              Dog record
+            </button>
+
+            <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" name="nextPage" value="owner-record" data-module="govuk-button">
+              Owner record
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{govukTag({
+      text: "Pre-exempt",
+      classes: "govuk-!-margin-right-3"
+    })}}
+
+    <span class="govuk-body defra-secondary-text">
+      CDO expires on 19 July 2024
+    </span>
+
+    <form class="form" action="/v14/manage/cdo-completed" method="post">
+
+      <details class="govuk-details govuk-!-margin-top-7">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            How to use the application task list
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">
+            You need to complete all tasks before you can issue a certificate of exemption to the dog owner.
+            </p>
+
+          <p class="govuk-body">
+            Start by sending the application pack. You can record the insurance renewal date, microchip number and application fee payment in any order. After that, you can send a Form 2.
+            </p>
+
+          <p class="govuk-body">
+            Remember to update the <a href="../dog-records/dog-record-ED30228-1" class="govuk-link govuk-link--no-visited-state">dog record</a> with other information you receive, like colour and sex of the dog.
+            </p>
+        </div>
+      </details>
+
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+          Manage CDO application
+        </h2>
+
+      <ul class="govuk-task-list">
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="application-pack" aria-describedby="task-1-status">Send application pack</a>
+        </div>
+        <div class="govuk-task-list__status" id="task-1-status">
+          Completed
+        </div>
+        </li>
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="insurance-date" aria-describedby="cdo-tasks-2-status">Record insurance details</a>
+        </div>
+        <div class="govuk-task-list__status" id="task-2-status">
+          Completed
+        </div>
+        </li>
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="microchip-number" aria-describedby="cdo-tasks-4-status">Record microchip number</a>
+        </div>
+        <div class="govuk-task-list__status" id="task-4-status">
+          Completed
+        </div>
+        </li>
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="record-payment" aria-describedby="cdo-tasks-5-status">Record application fee payment</a>
+        </div>
+        <div class="govuk-task-list__status" id="task-5-status">
+          Completed
+        </div>
+        </li>
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="form-2" aria-describedby="cdo-tasks-3-status">Send Form 2</a>
+        </div>
+        <div class="govuk-task-list__status" id="task-3-status">
+          Completed
+        </div>
+        </li>
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="microchip-neutering" aria-describedby="cdo-tasks-6-status" onclick="updateLocalStorage('task6Started')">Record microchip and neutering verified</a>
+        </div>
+        <div class="govuk-task-list__status" id="task-6-status">
+          <strong class="govuk-tag govuk-tag--blue">
+            Not yet started
+          </strong>
+        </div>
+        </li>
+
+      </ul>
+
+      {{ govukButton({
+        name: "nextPage",
+        value: "complete",
+        text: "Continue"
+      }) }}
+
+      </form>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
