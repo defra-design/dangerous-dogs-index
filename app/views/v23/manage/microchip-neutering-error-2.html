@@ -1,0 +1,169 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Error: Record the verification date for microchip and neutering" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v23/manage/manage-cdo-issue" method="post">
+
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Enter the date the dog’s microchip number was verified, or select ‘Dog unfit for a microchip’",
+              href: "#microchip-verified-error"
+            }
+          ]
+        }) }}
+
+      <span class="govuk-caption-m">Dog ED30228</span>
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+          <h1 class="govuk-fieldset__heading">
+          Record the verification date for microchip and neutering
+          </h1>
+
+          </legend>
+
+          <div class="govuk-form-group govuk-form-group--error">
+
+          <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" role="group">
+            <legend class="govuk-fieldset__legend">
+            When was the dog’s microchip number verified?
+            </legend>
+
+            <p id="microchip-verified-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Enter the date the dog’s microchip number was verified, or select ‘Dog unfit for a microchip’
+            </p>
+
+          <div class="govuk-date-input" id="microchip-verified">
+
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="microchip-verified-day">
+                Day
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="microchip-verified-day" name="microchip-verified-day" type="text" inputmode="numeric" value="1">
+            </div>
+          </div>
+
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="microchip-verified-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="microchip-verified-month" name="microchip-verified-month" type="text" inputmode="numeric" value="12">
+            </div>
+          </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="microchip-verified-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="microchip-verified-year" name="microchip-verified-year" type="text" inputmode="numeric" value="2024">
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-0">or</div>
+
+          <div class="govuk-form-group">
+              <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                Is the dog fit to be microchipped?
+              </legend>
+
+              <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-margin-top-0" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="microchip" name="microchip" type="checkbox" value="microchip" checked>
+                  <label class="govuk-label govuk-checkboxes__label" for="microchip">
+                    Dog unfit for a microchip
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          </div>
+
+          <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" role="group">
+            <legend class="govuk-fieldset__legend">
+            When was the dog’s neutering verified?
+            </legend>
+
+          <div class="govuk-date-input" id="neutered-date">
+
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="neutered-date-day">
+                Day
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="neutered-date-day" name="neutered-date-day" type="text" inputmode="numeric">
+            </div>
+          </div>
+
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="neutered-date-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="neutered-date-month" name="neutered-date-month" type="text" inputmode="numeric">
+            </div>
+          </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="neutered-date-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="neutered-date-year" name="neutered-date-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-0">or</div>
+
+          <div class="govuk-form-group">
+              <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                Is the dog aged under 16 months?
+              </legend>
+
+              <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-margin-top-0" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="age" name="age" type="checkbox" value="age">
+                  <label class="govuk-label govuk-checkboxes__label" for="age">
+                    Dog aged under 16 months and not neutered
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+        </div>
+
+      <button class="govuk-button" data-module="govuk-button" onclick="updateLocalStorage('task6Finished')">
+        Save and continue
+      </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
