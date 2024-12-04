@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Send application pack" %}
+{% set pageName="Process application" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "manage-cdo-2"
+    href: "manage-cdo-2-application"
   }) }}
 {% endblock %}
 
@@ -22,14 +22,14 @@
 
         <span class="govuk-caption-m">Dog ED30228</span>
         <h1 class="govuk-heading-l">
-          Send application pack
+          Process application
           </h1>
 
         <p class="govuk-body">
-          The application pack has been sent.
+          The application has been processed.
           </p>
 
-      <button class="govuk-button" data-module="govuk-button" onclick="updateLocalStorage('task1Finished')">
+      <button class="govuk-button" data-module="govuk-button">
         Continue
       </button>
 
