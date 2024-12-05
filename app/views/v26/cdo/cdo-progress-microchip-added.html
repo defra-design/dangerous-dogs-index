@@ -75,16 +75,21 @@
     </dl>
   </div>
 
-
   <div class="govuk-grid-column-one-third defra-summary-width govuk-!-margin-top-4">
     <dl class="govuk-summary-list govuk-!-font-size-16">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-width-one-half">
           Microchip number
         </dt>
+         {% if data['microchipNumber'] %}
         <dd class="govuk-summary-list__value">
-         {% if data['microchipNumber'] %}{{ data['microchipNumber'] }}{% elif data['microchipNumber'] == None %}738454590032549{% endif %}
+         {{ data['microchipNumber'] }}
         </dd>
+         {% elif data['microchipNumber'] == None %}
+        <dd class="govuk-summary-list__value">
+         738454590032549
+        </dd>
+         {% endif %}
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
