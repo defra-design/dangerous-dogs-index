@@ -1,0 +1,84 @@
+{% extends "layouts/defra-index.html" %}
+
+{% set pageName="Home" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="./search/dog-results-dog-name" method="post">
+
+        <div class="govuk-form-group govuk-!-margin-bottom-2">
+          <fieldset class="govuk-fieldset govuk-!-margin-bottom-2" aria-describedby="checkbox-hint">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Search
+              </h1>
+            </legend>
+
+            <input class="govuk-input govuk-!-margin-bottom-2" id="search" name="search" type="text">
+
+            <div class="govuk-radios govuk-radios--small govuk-!-margin-bottom-2" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="force" checked>
+                <label class="govuk-label govuk-radios__label" for="changedName">
+                  Thames Valley Police
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="national">
+                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                  National records
+                </label>
+              </div>
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--s govuk-!-margin-bottom-2 govuk-section-break--visible">
+
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  Include close matches
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+
+      {{ govukButton({
+        text: "Search",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+      </form>
+
+      <p class="govuk-body">Find registered dangerous dogs, or dog owners, by searching with one or more of these terms:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>owner’s name</li>
+          <li>owner’s address, or part of it</li>
+          <li>owner’s email address</li>
+          <li>dog’s microchip number</li>
+          <li>dog’s index number</li>
+          <li>dog’s name</li>
+        </ul>
+
+      <h2 class="govuk-heading-m">Report something to Defra
+        </h2>
+
+      <p class="govuk-body">Use the search to find the dog or owner you need to report something about.
+        </p>
+
+    </div>
+  </div>
+
+{% endblock %}

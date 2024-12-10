@@ -1,0 +1,188 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Dog ED30228" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+<div class="govuk-main-wrapper">
+
+  {% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters-from-desktop govuk-!-padding-0">
+
+    <div class="govuk-grid-column-one-half">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{ pageName }}</h1>
+
+      {{govukTag({
+        text: "Applying for exemption",
+        classes: "defra-tag-nowrap govuk-!-margin-bottom-3"
+      })}}
+
+    </div>
+
+    <div class="govuk-grid-column-one-half govuk-!-margin-top-1 defra-text-align-right">
+
+      {{ govukButton({
+        text: "Dog record",
+        classes: "govuk-button--secondary govuk-!-margin-right-1",
+        href: "../dog-records/dog-record-ED30228"
+      }) }}
+
+      {{ govukButton({
+        text: "Owner record",
+        classes: "govuk-button--secondary",
+        href: "../owner-records/owner-record-ED30228"
+      }) }}
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-three-quarters-from-desktop govuk-!-margin-top-5 defra-margin-bottom-9 govuk-!-padding-0">
+
+    <div class="govuk-grid-column-one-half">
+      <dl class="govuk-summary-list govuk-!-font-size-16 govuk-!-margin-bottom-0">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Dog name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Rocky
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            Owner name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Sharon McGinn
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+      <dl class="govuk-summary-list govuk-!-font-size-16">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            Microchip number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            673827549000083
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            CDO expiry
+          </dt>
+          <dd class="govuk-summary-list__value">
+            20 January 2024
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-column-three-quarters-from-desktop govuk-!-margin-top-4">
+
+    <h2 class="govuk-heading-m">
+      CDO progress
+    </h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Application pack
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
+          Received on 27 October 2024
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Evidence of insurance
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
+          Received on 30 November 2024
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Microchip number
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
+          Received on 29 November 2024
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Application fee
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
+          Received on 1 December 2024
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-padding-right-9">
+          Form 2 confirming dog microchipped and neutered
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
+          Received on 5 December 2024
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Certificate of exemption
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
+          {{ govukTag({
+            text: "Not sent",
+            classes: "govuk-tag--grey"
+          }) }}
+        </dd>
+      </div>
+    </dl>
+
+    <br>
+    <br>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible govuk-!-margin-bottom-6">
+
+    <p class="govuk-body govuk-!-margin-bottom-2">
+      This link is for the prototype only
+    </p>
+
+    <nav class="govuk-pagination govuk-pagination--block" aria-label="Pagination">
+      <div class="govuk-pagination__prev">
+        <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="cdo-progress-active" rel="prev">
+          <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+            <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Previous<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label">View a CDO in progress</span>
+        </a>
+      </div>
+    </nav>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "layouts/defra-sign-out-2.html" %}
+
+{% set pageName="Search results" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="../search-question-2" method="post">
+
+        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+          {{ pageName }}
+        </legend>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-2">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="search">
+              Search
+            </label>
+          </h1>
+
+          <input class="govuk-input" value="{% if data['search'] %}{{ data['search'] }}{% else %}petra{% endif %}" id="search" name="search" type="text">
+        </div>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-2">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-visually-hidden">
+              Show more search results
+            </legend>
+
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="broaden-search" name="broadenSearch" type="checkbox" value="close">
+                <label class="govuk-label govuk-checkboxes__label" for="broaden-search">
+                  Include close matches
+                </label>
+              </div>
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="broaden-search-2" name="broadenSearch" type="checkbox" value="national">
+                <label class="govuk-label govuk-checkboxes__label" for="broaden-search-2">
+                  Include national records
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+      {{ govukButton({
+        text: "Search"
+      }) }}
+
+      </form>
+
+      <p class="govuk-body govuk-!-margin-top-2">
+        Your search
+        {% if data['search'] %} for <span class="govuk-!-font-weight-bold">{{ data['search'] }}</span>
+          {% else %}for <span class="govuk-!-font-weight-bold">petra</span> {% endif %} did not match any records.
+        </p>
+      <p class="govuk-body">
+        Suggestions:
+        </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>include close matches in the search</li>
+        <li>ensure all words are spelled correctly</li>
+        <li>try different keywords to search</li>
+      </ul>
+
+      <p class="govuk-body govuk-!-margin-top-7">Find registered dangerous dogs, or dog owners, by searching with one or more of these terms:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>owner’s name</li>
+          <li>owner’s address, or part of it</li>
+          <li>owner’s email address</li>
+          <li>dog’s microchip number</li>
+          <li>dog’s index number</li>
+          <li>dog’s name</li>
+        </ul>
+
+    </div>
+  </div>
+
+{% endblock %}
