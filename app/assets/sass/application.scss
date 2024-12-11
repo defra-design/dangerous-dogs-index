@@ -316,3 +316,9 @@
   @include govuk-responsive-margin(9, "bottom");
     }
   }
+
+  @media (min-width: 40.0625rem) {
+  .defra-one-third-desktop {
+    width: 33% !important;
+    }
+  }
