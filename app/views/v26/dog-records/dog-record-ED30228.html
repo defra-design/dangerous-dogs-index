@@ -7,17 +7,19 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    }
+  ]
+}) }}
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
-    <form class="form" action="/v10/dog-records/activity/activity-type" method="post">
 
     <div class="moj-page-header-actions govuk-!-margin-bottom-2">
 
@@ -29,10 +31,10 @@
       <div class="moj-button-menu">
         <div class="moj-button-menu__wrapper">
           <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="add-activity">
-            Add an activity
+            Report something
           </button>
           <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="view-activity">
-            Check activity
+            Check history
           </button>
         </div>
       </div>
@@ -40,17 +42,23 @@
   </div>
 
   {{govukTag({
-    text: "Pre-exempt",
-    classes: "govuk-!-margin-bottom-6 govuk-!-margin-right-3"
+    text: "Applying for exemption",
+    classes: "defra-tag-nowrap govuk-!-margin-bottom-6 govuk-!-margin-right-3"
   })}}
+
+  <span class="govuk-body">
+    <a class="govuk-link govuk-link--no-visited-state" href="javascript:window.history.back()">
+      Check CDO progress
+    </a>
+  </span>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
 
       <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title defra-summary-header">Dog details</h2><div class="govuk-summary-card__actions">
-    <a class="govuk-link defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state" href="">Edit details<span class="govuk-visually-hidden"> for dog (Dog details)</span></a>
-  </div></div>
+        <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title defra-summary-header">Dog details</h2><div class="govuk-summary-card__actions">
+        </div>
+      </div>
 
       <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list govuk-!-font-size-16">
@@ -60,7 +68,7 @@
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              Odie
+              Rocky
             </dd>
           </div>
 
@@ -77,8 +85,8 @@
             <dt class="govuk-summary-list__key">
               Colour
             </dt>
-            <dd class="govuk-summary-list__value defra-secondary-text">
-              Not entered
+            <dd class="govuk-summary-list__value">
+              Dark grey
             </dd>
           </div>
 
@@ -86,8 +94,8 @@
             <dt class="govuk-summary-list__key">
               Sex
             </dt>
-            <dd class="govuk-summary-list__value defra-secondary-text">
-              Not entered
+            <dd class="govuk-summary-list__value">
+              Male
             </dd>
           </div>
 
@@ -95,8 +103,8 @@
             <dt class="govuk-summary-list__key">
               Date of birth
             </dt>
-            <dd class="govuk-summary-list__value defra-secondary-text">
-              Not entered
+            <dd class="govuk-summary-list__value">
+              2 April 2022
             </dd>
           </div>
 
@@ -104,16 +112,9 @@
             <dt class="govuk-summary-list__key">
               Microchip number
             </dt>
-            {% if data['microchipNumber'] %}
-              <dd class="govuk-summary-list__value">
-                {{ data['microchipNumber'] }}
-              </dd>
-            {% elif data['lastName'] == None %}
-              <dd class="govuk-summary-list__value defra-secondary-text">
-                Not entered
-              </dd>
-            {% endif %}
-
+            <dd class="govuk-summary-list__value">
+             673827549000083
+            </dd>
           </div>
         </dl>
       </div>
@@ -145,7 +146,7 @@
             text: "Name"
           },
           value: {
-            text: "	Linton Woolley"
+            text: "Sharon McGinn"
           }
         },
         {
@@ -162,7 +163,7 @@
             text: "Address"
           },
           value: {
-            html: "122 Common Road<br>Bexhill-on-Sea<br>TN39 4JB"
+            html: "41 West Street<br>Newbury<br>RG14 1BF"
           }
         },
         {
@@ -170,8 +171,7 @@
             text: "Email"
           },
           value: {
-            classes: "defra-secondary-text",
-            text: "Not entered"
+            text: "sharonmcginn886@hotmail.com"
           }
         },
         {
@@ -179,8 +179,7 @@
             text: "Telephone number 1"
           },
           value: {
-            classes: "defra-secondary-text",
-            text: "Not entered"
+            text: "07879 929344"
           }
         },
         {
@@ -208,10 +207,7 @@
           actions: {
             items: [
               {
-                href: "dog-record-ED30228-exemption-edit",
-                text: "Edit details",
-                classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
-                visuallyHiddenText: "for exemption"
+                classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state"
               }
             ]
           }
@@ -222,33 +218,13 @@
               text: "Status"
             },
             value: {
-              text: data['dogStatus'] or "Pre-exempt"
+              text: data['dogStatus'] or "Applying for exemption"
             },
             actions: {
             classes: "defra-text-align-left",
              items: [
                {
-                 href: "change-status",
-                 classes: "govuk-link--no-visited-state",
-                 text: "Change status"
-               }
-             ]
-           }
-          },
-          {
-            key: {
-              text: "First certificate issued"
-            },
-            value: {
-              text: "18 June 2024"
-            },
-            actions: {
-            classes: "defra-text-align-left",
-             items: [
-               {
-                 href: "certificate",
-                 classes: "govuk-link--no-visited-state",
-                 text: "Reissue certificate"
+                 classes: "govuk-link--no-visited-state"
                }
              ]
            }
@@ -266,7 +242,7 @@
               text: "CDO issued"
             },
             value: {
-              text: "19 May 2024"
+              text: "20 November 2024"
             }
           },
           {
@@ -274,23 +250,7 @@
               text: "CDO expiry"
             },
             value: {
-              text: "19 July 2024"
-            }
-          },
-          {
-            key: {
-              text: "Neutering deadline"
-            },
-            value: {
-              text: "20 November 2024"
-            }
-          },
-          {
-            key: {
-              text: "Microchip deadline"
-            },
-            value: {
-              text: "20 November 2024"
+              text: "20 January 2025"
             }
           },
           {
@@ -298,7 +258,7 @@
               text: "Court"
             },
             value: {
-              text: data['court'] or "Hastings Law Courts"
+              text: data['court'] or "Newbury West Berkshire Magistrates Court"
             }
           },
           {
@@ -306,7 +266,7 @@
               text: "Police force"
             },
             value: {
-              text: data['police-force'] or "Sussex Police"
+              text: data['police-force'] or "Thames Valley Police"
             }
           },
           {
@@ -322,7 +282,7 @@
               text: "Application fee paid"
             },
             value: {
-              text: "10 June 2024"
+              text: "19 December 2024"
             }
           },
           {
@@ -338,7 +298,7 @@
               text: "Insurance renewal date"
             },
             value: {
-              text: "2 June 2024"
+              text: "10 December 2024"
             }
           },
           {
@@ -346,7 +306,7 @@
               text: "Neutering confirmed"
             },
             value: {
-              text: "16 November 2024"
+              text: "12 December 2024"
             }
           },
           {
@@ -354,7 +314,7 @@
               text: "Microchip number verified"
             },
             value: {
-              text: "16 November 2024"
+              text: "12 December  2024"
             }
           }
         ]
