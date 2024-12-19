@@ -1,0 +1,246 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Dog ED17343" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+<div class="govuk-main-wrapper">
+
+  {% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Manage CDOs",
+        href: "manage-cdos-all"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <div class="moj-page-header-actions govuk-!-margin-bottom-2">
+
+      <div class="moj-page-header-actions__title">
+        <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+      </div>
+
+    <div class="moj-page-header-actions__actions">
+
+      <div class="moj-button-menu">
+        <div class="moj-button-menu__wrapper">
+
+          <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" name="nextPage" value="dog-record" data-module="govuk-button">
+            Dog record
+          </button>
+
+          <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" name="nextPage" value="owner-record" data-module="govuk-button">
+            Owner record
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{govukTag({
+    text: "Applying for exemption",
+    classes: "defra-tag-nowrap govuk-!-margin-bottom-3"
+  })}}
+
+  </div>
+
+  <div class="govuk-grid-column-one-third defra-summary-width govuk-!-margin-top-4">
+    <dl class="govuk-summary-list govuk-!-font-size-16">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Dog name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Kilo
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Owner name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Garry McFadyen
+        </dd>
+      </div>
+    </dl>
+  </div>
+
+
+  <div class="govuk-grid-column-one-third defra-summary-width govuk-!-margin-top-4">
+    <dl class="govuk-summary-list govuk-!-font-size-16">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Microchip number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          673827549000083
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          CDO expiry
+        </dt>
+        <dd class="govuk-summary-list__value">
+          20 Jan 2025
+        </dd>
+      </div>
+    </dl>
+  </div>
+
+<div class="govuk-grid-column-three-quarters govuk-!-margin-top-4">
+
+  <details class="govuk-details govuk-!-margin-bottom-6">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        How to use the application task list
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <p class="govuk-body">
+        You need to complete all tasks before you can issue a certificate of exemption to the dog owner.
+        </p>
+
+      <p class="govuk-body">
+        Start by sending the application pack. You can record the insurance renewal date, microchip number and application fee payment in any order. After that, you can send a Form 2.
+        </p>
+
+      <p class="govuk-body">
+        Remember to update the <a href="../dog-records/dog-record-ED30228-1" class="govuk-link govuk-link--no-visited-state">dog record</a> with other information you receive, like colour and sex of the dog.
+        </p>
+    </div>
+  </details>
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+        Manage CDO application
+      </h2>
+
+      <ul class="govuk-task-list">
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="application-pack-sent" aria-describedby="task-1-status" onclick="updateLocalStorage('task1Started')">Send application pack</a>
+        </div>
+        <div class="govuk-task-list__status" id="task-1-status">
+          Sent on 27 Nov 2024
+        </div>
+        </li>
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="application-processed" aria-describedby="task-1-status" onclick="updateLocalStorage('task1Started')">Process application</a>
+        </div>
+        <div class="govuk-task-list__status" id="task-1-status">
+          Completed on 4 Dec 2024
+        </div>
+        </li>
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="" aria-describedby="cdo-tasks-2-status" onclick="updateLocalStorage('task2Started')">Record insurance details</a>
+        </div>
+        <div class="govuk-task-list__status" id="task-2-status">
+          <strong class="govuk-tag govuk-tag--blue">
+            Not yet started
+          </strong>
+        </div>
+        </li>
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="" aria-describedby="cdo-tasks-3-status" onclick="updateLocalStorage('task3Started')">Record microchip number</a>
+        </div>
+        <div class="govuk-task-list__status" id="task-3-status">
+          <strong class="govuk-tag govuk-tag--blue">
+            Not yet started
+          </strong>
+        </div>
+        </li>
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="" aria-describedby="cdo-tasks-4-status" onclick="updateLocalStorage('task4Started')">Record application fee payment</a>
+        </div>
+        <div class="govuk-task-list__status" id="task-4-status">
+          <strong class="govuk-tag govuk-tag--blue">
+            Not yet started
+          </strong>
+        </div>
+        </li>
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="" aria-describedby="cdo-tasks-5-status" onclick="updateLocalStorage('task5Started')">Send Form 2</a>
+        </div>
+        <div class="govuk-task-list__status" id="task-5-status">
+          <strong class="govuk-tag govuk-tag--blue">
+            Not yet started
+          </strong>
+        </div>
+        </li>
+
+        <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <div>Record the verification date for microchip and neutering</div>
+        </div>
+        <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="cdo-tasks-6-status">
+          Cannot start yet
+        </div>
+        </li>
+
+      </ul>
+
+      <br>
+      <br>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      <p class="govuk-body govuk-!-margin-bottom-2">
+        These links are for the prototype only
+      </p>
+
+      <nav class="govuk-pagination govuk-pagination--block" aria-label="Pagination">
+        <div class="govuk-pagination__prev">
+          <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="manage-cdo-1" rel="prev">
+            <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+            </svg>
+            <span class="govuk-pagination__link-title">
+              Previous<span class="govuk-visually-hidden"> page</span>
+            </span>
+            <span class="govuk-visually-hidden">:</span>
+            <span class="govuk-pagination__link-label">View a new CDO</span>
+          </a>
+        </div>
+        <div class="govuk-pagination__next">
+          <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="manage-cdo-3" rel="next">
+            <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+            </svg>
+            <span class="govuk-pagination__link-title">
+              Next<span class="govuk-visually-hidden"> page</span>
+            </span>
+            <span class="govuk-visually-hidden">:</span>
+            <span class="govuk-pagination__link-label">View a finalised CDO</span>
+          </a>
+        </div>
+      </nav>
+
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
