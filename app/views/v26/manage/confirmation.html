@@ -51,13 +51,13 @@
   {% if data['newEmail'] %}
 
     <p class="govuk-body">
-      <span class="govuk-!-font-weight-bold">{{ data['newEmail'] }}</span> has been emailed the application pack.
+      The application pack has been emailed to <span class="govuk-!-font-weight-bold">{{ data['newEmail'] }}</span>.
       </p>
 
   {% elif data['contact'] == 'email' %}
 
     <p class="govuk-body">
-      <span class="govuk-!-font-weight-bold">garrymcfadyen@hotmail.com</span> has been emailed the application pack.
+      The application pack has been emailed to <span class="govuk-!-font-weight-bold">garrymcfadyen@hotmail.com</span>.
       </p>
 
   {% elif data['contact'] == 'post' %}
