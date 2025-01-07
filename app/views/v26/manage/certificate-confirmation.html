@@ -1,0 +1,94 @@
+{% extends "layouts/defra-sign-out-2.html" %}
+
+{% set pageName="Email with the certificate sent" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "./manage-cdo-1"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+  {% if data['contact'] == 'email' %}
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+      <h1 class="govuk-panel__title">
+        {{ pageName }}
+      </h1>
+    </div>
+
+  {% elif data['contact'] == 'post' %}
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+      <h1 class="govuk-panel__title">
+        Certificate posting scheduled
+      </h1>
+    </div>
+
+  {% elif data['contact'] == None %}
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+      <h1 class="govuk-panel__title">
+        Email with the certificate pack sent
+      </h1>
+    </div>
+
+  {% endif %}
+
+  {% if data['newEmail'] %}
+
+    <p class="govuk-body">
+      The certificate of exemption has been emailed to <span class="govuk-!-font-weight-bold">{{ data['newEmail'] }}</span>.
+      </p>
+
+  {% elif data['contact'] == 'email' %}
+
+    <p class="govuk-body">
+      The certificate of exemption has been emailed to <span class="govuk-!-font-weight-bold">garrymcfadyen@hotmail.com</span>.
+      </p>
+
+  {% elif data['contact'] == 'post' %}
+
+    <p class="govuk-body">
+      The certificate of exemption will be posted to:
+      </p>
+
+    <p class="govuk-body">
+      Garry McFadyen
+      <br>
+      122 Common Road
+      <br>
+      Bexhill-on-Sea
+      <br>
+      TN39 4JB
+    </p>
+
+  {% elif data['contact'] == None %}
+
+    <p class="govuk-body">
+      <span class="govuk-!-font-weight-bold">garrymcfadyen@hotmail.com</span> has been emailed the certificate of exemption.
+      </p>
+
+  {% endif %}
+
+    <p class=govuk-body">
+      <a class="govuk-link govuk-link--no-visited-state" href="./manage-cdo-2">Manage CDO application for Dog ED17343</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

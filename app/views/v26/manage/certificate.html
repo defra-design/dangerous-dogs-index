@@ -1,0 +1,82 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Send certificate of exemption" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "manage-cdo-1"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="./certificate-confirmation" method="post">
+
+        <span class="govuk-caption-m">Dog ED17343</span>
+
+        <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+            <h1 class="govuk-fieldset__heading">
+              How do you want to send the certificate?
+            </h1>
+
+          </legend>
+
+          <div id="contact-hint" class="govuk-hint">
+            Select one option.
+          </div>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Email it to:
+                <p class="govuk-!-margin-top-1 govuk-!-margin-bottom-0">
+                garrymcfadyen@hotmail.com
+                </p>
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="post">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                Post it to:
+                <p class="govuk-!-margin-top-1 govuk-!-margin-bottom-0">
+                  Garry McFadyen
+                  <br>
+                  122 Common Road
+                  <br>
+                  Bexhill-on-Sea
+                  <br>
+                  TN39 4JB
+                </p>
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button" onclick="updateLocalStorage('task1Finished')">
+        Send certificate
+      </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

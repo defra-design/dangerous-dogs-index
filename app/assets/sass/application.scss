@@ -296,6 +296,18 @@
     line-height: 1.1428571429;
   }
 
+  .defra-summary-width-40 {
+    width: 40% !important;
+  }
+
+  .defra-summary-width-60 {
+    width: 60% !important;
+  }
+
+  .defra-summary-align {
+    float: right !important;
+  }
+
   @media (max-width: 20rem) {
   .defra-summary__standard {
     font-size: 1rem;
