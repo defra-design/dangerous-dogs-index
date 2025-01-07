@@ -1,4 +1,4 @@
-{% extends "layouts/defra.html" %}
+{% extends "layouts/defra-sign-out-2.html" %}
 
 {% set pageName="Dog ED17343" %}
 
@@ -17,8 +17,6 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <form class="form" action="/v10/dog-records/activity/activity-type" method="post">
-
     <div class="moj-page-header-actions govuk-!-margin-bottom-2">
 
       <div class="moj-page-header-actions__title">
@@ -28,12 +26,12 @@
     <div class="moj-page-header-actions__actions">
       <div class="moj-button-menu">
         <div class="moj-button-menu__wrapper">
-          <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="add-activity">
-            Add an activity
+          <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType">
+            Report something
           </button>
-          <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" value="view-activity">
-            Check history
-          </button>
+          <a role="button" type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" href="activity-all">
+            Check and download history
+          </a>
         </div>
       </div>
     </div>
@@ -44,9 +42,92 @@
     classes: "defra-tag-nowrap govuk-!-margin-bottom-6 govuk-!-margin-right-3"
   })}}
 
-  <span class="govuk-body govuk-!-margin-left-3">
-    <a class="govuk-link govuk-link--no-visited-state" href="../manage/manage-cdo-1">Manage CDO application</a>
+  <span class="govuk-body">
+    <a class="govuk-link govuk-link--no-visited-state" href="../cdo-2/cdo-progress-confirm">
+      Check CDO progress
+    </a>
   </span>
+
+    <!--
+         <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+
+         {{govukTag({
+           text: "Applying for exemption",
+           classes: "defra-tag-nowrap govuk-!-margin-bottom-2 govuk-!-margin-right-3"
+         })}}
+
+         <span class="govuk-body">
+           <a class="govuk-link govuk-link--no-visited-state" href="../cdo-2/cdo-progress-confirm">
+             Check CDO progress
+           </a>
+         </span>
+
+         <div class="govuk-service-navigation govuk-!-margin-bottom-6"
+          data-module="govuk-service-navigation">
+          <div class="govuk-width-container">
+            <div class="govuk-service-navigation__container">
+              <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+                <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
+                  Menu
+                </button>
+                <ul class="govuk-service-navigation__list" id="navigation">
+                  <li class="govuk-service-navigation__item">
+                    <a class="govuk-service-navigation__link" href="#">
+                      Report something
+                    </a>
+                  </li>
+                  <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                    <a class="govuk-service-navigation__link" href="#" aria-current="true">
+                      <strong class="govuk-service-navigation__active-fallback">Check history</strong>
+                    </a>
+                  </li>
+                  <li class="govuk-service-navigation__item">
+                    <a class="govuk-service-navigation__link" href="#">
+                      Download history
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        -->
+
+<!--
+        <div class="defra-summary-align">
+          {{ govukButton({
+            text: "Report something",
+            classes: "govuk-button--secondary"
+          }) }}
+
+          {{ govukButton({
+            text: "Check history",
+            classes: "govuk-button--secondary"
+          }) }}
+
+          {{ govukButton({
+            text: "Download history",
+            classes: "govuk-button--secondary"
+          }) }}
+
+        </div>
+
+      </div>
+
+      <div class="govuk-grid-column-one-half">
+        {{govukTag({
+          text: "Applying for exemption",
+          classes: "defra-tag-nowrap govuk-!-margin-bottom-3"
+        })}}
+
+        <div class="govuk-body govuk-!-margin-bottom-6 defra-summary-head">
+          <a class="govuk-link govuk-link--no-visited-state defra-nowrap" href="../manage/manage-cdo-1">Manage CDO application</a>
+        </div>
+
+    </div>
+  </div>
+  -->
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
