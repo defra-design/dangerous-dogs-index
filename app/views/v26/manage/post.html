@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Send certificate of exemption" %}
+{% set pageName="Post the application pack" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -18,11 +18,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="./certificate-confirmation" method="post">
-
       <span class="govuk-caption-m">Dog ED17343</span>
       <h1 class="govuk-heading-l">
-        Post the application pack
+        {{ pageName }}
       </h1>
 
       {{ govukInsetText({
@@ -30,15 +28,7 @@
         classes: "govuk-!-margin-bottom-3"
       }) }}
 
-      <!--
-      {{ govukWarningText({
-        text: "Post the application pack to this address using the existing process:",
-        classes: "govuk-!-margin-bottom-3",
-        iconFallbackText: "Warning"
-      }) }}
-      -->
-
-      <p class="govuk-body govuk-!-margin-bottom-5">
+      <p class="govuk-body govuk-!-margin-bottom-6">
         Garry McFadyen
         <br>
         122 Common Road
@@ -48,11 +38,11 @@
         TN39 4JB
       </p>
 
-      <p class=govuk-body">
-        <a class="govuk-link govuk-link--no-visited-state" href="./manage-cdo-2">Manage CDO application for Dog ED17343</a>
-        </p>
+      {{ govukButton({
+        text: "Save and continue",
+        href: "./manage-cdo-2"
+      }) }}
 
-      </form>
 
     </div>
   </div>
