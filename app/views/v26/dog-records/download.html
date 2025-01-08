@@ -1,6 +1,6 @@
 {% extends "layouts/defra-sign-out-2.html" %}
 
-{% set pageName="Download the activity history for Dog ED17343" %}
+{% set pageName="Download the history of activity for Dog ED17343" %}
 
 {% block pageTitle %}
   {{ pageName }} – Dog ED17343 - {{ serviceName }}
@@ -20,18 +20,12 @@
 
         <h1 class="govuk-heading-l govuk-!-padding-right-9">{{ pageName }}</h1>
 
-         <p class="govuk-body">Select ‘Download the activity history’.
-           </p>
-
-         <ol class="govuk-list govuk-list--number govuk-list--spaced">
-           <li>If the file opens in the browser, right-click on the file or select the download icon (top-right). Select Save as or Download, then choose where to save the file and click Save.
-            </li>
-           <li>If the file opens in a viewer, find the Download icon (usually a downward arrow). Click it to download.
-            </li>
-        </ol>
+         {{ govukInsetText({
+           text: "The file will either open in your browser or download directly, depending on your browser settings."
+         }) }}
 
          <a href="/public/downloads/DogED17343.pdf" role="button" type="submit" class="govuk-button" data-module="govuk-button">
-           Download the activity history
+           Download the history
          </a>
 
 
