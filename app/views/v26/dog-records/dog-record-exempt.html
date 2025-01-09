@@ -1,0 +1,328 @@
+{% extends "layouts/defra.html" %}
+
+{% set pageName="Dog ED17343" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../manage/certificate-confirmation"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="moj-page-header-actions govuk-!-margin-bottom-2">
+
+      <div class="moj-page-header-actions__title">
+        <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+      </div>
+
+    <div class="moj-page-header-actions__actions">
+      <div class="moj-button-menu">
+        <div class="moj-button-menu__wrapper">
+          <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType">
+            Add an activity
+          </button>
+          <a role="button" type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" name="activityType" href="activity-all">
+            Check history
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{govukTag({
+    text: "Exempt",
+    classes: "govuk-tag defra-tag-nowrap govuk-tag--turquoise govuk-!-margin-bottom-6 govuk-!-margin-right-3"
+  })}}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+      <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title defra-summary-header">Dog details</h2><div class="govuk-summary-card__actions">
+    <a class="govuk-link defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state" href="">Edit details<span class="govuk-visually-hidden"> for dog (Dog details)</span></a>
+  </div></div>
+
+      <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list govuk-!-font-size-16">
+
+          <div class="govuk-summary-list__row govuk-!-width-one-third">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Kilo
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Breed type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              XL Bully
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Colour
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Black
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Sex
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Male
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value defra-secondary-text">
+              12 June 2021
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Microchip number
+            </dt>
+
+              <dd class="govuk-summary-list__value">
+                673827549000083
+              </dd>
+
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    {{ govukSummaryList({
+      classes: "govuk-!-font-size-16",
+      card: {
+      title: {
+      text: "Owner details",
+      classes: "defra-summary-header"
+      },
+      id: "owner-details",
+      actions: {
+        items: [
+          {
+            href: "../owner-records/owner-record-ED17343",
+            text: "Owner record",
+            classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
+            visuallyHiddenText: "for owner"
+            }
+          ]
+        }
+      },
+      rows: [
+        {
+          classes: "govuk-!-width-one-third",
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: "Garry McFadyen"
+          }
+        },
+        {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            classes: "defra-secondary-text",
+            text: "Not entered"
+          }
+        },
+        {
+          key: {
+            text: "Address"
+          },
+          value: {
+            html: "122 Common Road<br>Bexhill-on-Sea<br>TN39 4JB"
+          }
+        },
+        {
+          key: {
+            text: "Email"
+          },
+          value: {
+            classes: "defra-secondary-text",
+            text: "Not entered"
+          }
+        },
+        {
+          key: {
+            text: "Telephone number 1"
+          },
+          value: {
+            classes: "defra-secondary-text",
+            text: "Not entered"
+          }
+        },
+        {
+          key: {
+            text: "Country"
+          },
+          value: {
+            text: data['country'] or "England"
+          }
+        }
+      ]
+    }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+
+      {{ govukSummaryList({
+        classes: "govuk-!-font-size-16",
+        card: {
+          title: {
+            text: "Exemption details",
+            classes: "defra-summary-header"
+          },
+          actions: {
+            items: [
+              {
+                href: "dog-record-ED30228-exemption-edit",
+                text: "Edit details",
+                classes: "defra-summary-header govuk-!-font-size-16 govuk-link--no-visited-state",
+                visuallyHiddenText: "for exemption"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Status"
+            },
+            value: {
+              text: data['dogStatus'] or "Exempt"
+            },
+            actions: {
+            classes: "defra-text-align-left",
+             items: [
+               {
+                 href: "change-status",
+                 classes: "govuk-link--no-visited-state",
+                 text: "Change status"
+               }
+             ]
+           }
+          },
+          {
+            key: {
+              text: "First certificate issued"
+            },
+            value: {
+              text: "9 January 2025"
+            },
+            actions: {
+            classes: "defra-text-align-left",
+             items: [
+               {
+                 href: "",
+                 classes: "govuk-link--no-visited-state",
+                 text: "Generate certificate"
+               }
+             ]
+           }
+          },
+          {
+            key: {
+              text: "Order"
+            },
+            value: {
+              text: "2023"
+            }
+          },
+          {
+            key: {
+              text: "CDO issued"
+            },
+            value: {
+              text: "20 November 2024"
+            }
+          },
+          {
+            key: {
+              text: "CDO expiry"
+            },
+            value: {
+              text: "20 January 2025"
+            }
+          },
+          {
+            key: {
+              text: "Court"
+            },
+            value: {
+              text: data['court'] or "Hastings Law Courts"
+            }
+          },
+          {
+            key: {
+              text: "Police force"
+            },
+            value: {
+              text: data['police-force'] or "Sussex Police"
+            }
+          },
+          {
+            key: {
+              text: "Dog legislation officer"
+            },
+            value: {
+              text: data['dog-legislation-officer'] or "Solomon Beatty"
+            }
+          },
+          {
+            key: {
+              text: "Application fee paid"
+            },
+            value: {
+              text: "3 January 2025"
+            }
+          },
+          {
+            key: {
+              text: "Insurance company"
+            },
+            value: {
+              text: "3 January 2025"
+            }
+          },
+          {
+            key: {
+              text: "Insurance renewal date"
+            },
+            value: {
+              text: "5 January 2026"
+            }
+          }
+        ]
+      }) }}
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

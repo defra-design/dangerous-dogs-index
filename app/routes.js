@@ -2805,3 +2805,13 @@ router.post('/v24/include-national', function(request, response) {
     response.redirect('/v24/search-2/results-none')
   }
 })
+
+// v24 Email or post certificate
+router.post('/v26/manage/certificate-question', function(request, response) {
+  var contact = request.session.data['contact']
+  if (contact == "email"){
+    response.redirect("/v26/manage/certificate-confirmation")
+  } else {
+    response.redirect('/v26/manage/post-certificate')
+  }
+})
