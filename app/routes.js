@@ -2812,6 +2812,6 @@ router.post('/v26/manage/certificate-question', function(request, response) {
   if (contact == "email"){
     response.redirect("/v26/manage/certificate-confirmation")
   } else {
-    response.redirect('/v26/manage/post-certificate')
+    response.redirect('/v26/manage/generate-certificate')
   }
 })
