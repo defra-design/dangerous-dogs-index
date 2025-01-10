@@ -45,7 +45,7 @@
 
     <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
       <h1 class="govuk-panel__title">
-        Email with the certificate pack sent
+        Email with the certificate sent
       </h1>
       <div class="govuk-panel__body">
         Dog ED17343 is now exempt
@@ -55,10 +55,6 @@
   {% endif %}
 
   {% if data['newEmail'] %}
-
-    <p class="govuk-body">
-      The certificate of exemption has been emailed to <span class="govuk-!-font-weight-bold">{{ data['newEmail'] }}</span>.
-      </p>
 
     <p class="govuk-body">
       The certificate of exemption has been emailed to <span class="govuk-!-font-weight-bold">{{ data['newEmail'] }}</span>.
@@ -79,7 +75,7 @@
   {% elif data['contact'] == None %}
 
     <p class="govuk-body">
-      <span class="govuk-!-font-weight-bold">garrymcfadyen@hotmail.com</span> has been emailed the certificate of exemption.
+      The certificate of exemption has been emailed to <span class="govuk-!-font-weight-bold">garrymcfadyen@hotmail.com</span>.
       </p>
 
   {% endif %}
