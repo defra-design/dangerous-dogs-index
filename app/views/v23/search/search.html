@@ -1,4 +1,4 @@
-{% extends "layouts/defra-ddi.html" %}
+{% extends "layouts/defra-sign-out-2.html" %}
 
 {% set pageName="Search" %}
 
@@ -7,9 +7,13 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: ""
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "./manage-cdo-1"
+    }
+  ]
 }) }}
 {% endblock %}
 
@@ -25,7 +29,7 @@
           Search
         </legend>
 
-      <div class="govuk-form-group govuk-!-margin-bottom-2">
+      <div class="govuk-form-group govuk-!-margin-bottom-3">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--m" for="search">
           Search
@@ -33,6 +37,8 @@
         </h1>
         <input class="govuk-input" value="{{ data['keyword'] }}" id="search" name="keyword" type="text">
       </div>
+
+      <!--
 
       <div class="govuk-form-group govuk-!-margin-bottom-2">
         <legend class="govuk-fieldset__legend govuk-visually-hidden">
@@ -56,6 +62,8 @@
               </div>
             </div>
         </fieldset>
+
+        -->
 
       {{ govukButton({
         text: "Search"

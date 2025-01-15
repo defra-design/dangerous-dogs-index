@@ -1,6 +1,6 @@
 {% extends "layouts/defra.html" %}
 
-{% set pageName="Generate a certificate of exemption to post" %}
+{% set pageName="Generate a confirmation of withdrawal letter to post" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -35,13 +35,13 @@
       </h1>
 
       <ol class="govuk-list govuk-list--number">
-        <li>Select the generate certificate button.</li>
-        <li>Save the certificate to SharePoint.</li>
-        <li>Print the certificate.</li>
+        <li>Select the generate letter button.</li>
+        <li>Save the letter to SharePoint.</li>
+        <li>Print the letter.</li>
       </ol>
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-3">
-       Post the certificate to this address:
+       Post the letter to this address:
       </h2>
 
       <p class="govuk-body govuk-!-margin-bottom-6">
@@ -56,7 +56,7 @@
 
         <div class="govuk-button-group">
         {{ govukButton({
-          text: "Generate certificate"
+          text: "Generate letter"
         }) }}
 
         <a class="govuk-link govuk-link--no-visited-state" href="manage-cdos-all">Cancel</a>

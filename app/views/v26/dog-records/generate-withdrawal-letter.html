@@ -1,0 +1,64 @@
+{% extends "layouts/defra-sign-out-2.html" %}
+
+{% set pageName="Dog ED20031 withdrawn" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+<div class="govuk-main-wrapper">
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-m">
+        {{ pageName }}
+      </h1>
+
+      <h2 class="govuk-heading-l">
+        Send the owner a letter confirming the withdrawal
+      </h2>
+
+      <ol class="govuk-list govuk-list--number">
+        <li>Find the withdrawal letter template on SharePoint.</li>
+        <li>Fill in the owner and dog details.</li>
+        <li>Print and post the letter to this address:</li>
+      </ol>
+
+      <p class="govuk-body govuk-!-margin-bottom-6">
+        Garry McFadyen
+        <br>
+        122 Common Road
+        <br>
+        Bexhill-on-Sea
+        <br>
+        TN39 4JB
+      </p>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="../dog-records/dog-record-ED20031-withdrawn">Check the record for Dog ED20031</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">Search for another dog</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -2815,3 +2815,24 @@ router.post('/v26/manage/certificate-question', function(request, response) {
     response.redirect('/v26/manage/generate-certificate')
   }
 })
+
+// v26 Change status
+router.post('/v26/dog-records/change-status-question', function (req, res) {
+  var dogStatus = req.session.data['dogStatus']
+  if (dogStatus === "In breach"){
+    res.redirect('/v26/dog-records/breach-reason')
+  } else {
+    res.redirect('/v26/dog-records/status-changed')
+  }
+
+})
+
+// v26 Email or post certificate
+router.post('/v26/dog-records/certificate-question', function(request, response) {
+  var contact = request.session.data['contact']
+  if (contact == "email"){
+    response.redirect("/v26/dog-records/withdrawal-confirmation")
+  } else {
+    response.redirect('/v26/dog-records/generate-withdrawal-letter')
+  }
+})

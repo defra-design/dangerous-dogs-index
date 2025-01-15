@@ -1,0 +1,524 @@
+{% extends "layouts/defra-sign-out-2.html" %}
+
+{% block pageTitle %}
+  Dog ED20031 – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "dog-record-in-breach"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="./dog-record-ED30228" method="post">
+
+        <span class="govuk-caption-l">Dog ED30228</span>
+
+        {% call govukFieldset({
+          legend: {
+            text: "Edit exemption details",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-4 govuk-!-margin-bottom-3">
+          Status
+          </p>
+
+        {{govukTag({
+          text: "Exempt",
+          classes: "govuk-tag--turquoise govuk-!-margin-bottom-2 govuk-!-margin-right-3"
+        })}}
+
+        <span class="govuk-body">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">
+            Change status
+          </a>
+        </span>
+
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-2 govuk-!-margin-bottom-8">
+        {% for breach in data['breachReason'] %}
+          <li>{{ breach }}</li>
+        {% endfor %}
+        </ul>
+
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "certificate",
+            namePrefix: "certificate",
+            fieldset: {
+              legend: {
+                text: "First certificate issued",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "9"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "12"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2024"
+            }
+          ]
+          }) }}
+
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "neutering-deadline",
+            namePrefix: "neutering-deadline",
+            fieldset: {
+              legend: {
+                text: "Neutering deadline",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "The dog must be neutered by this date. The owner must provide evidence of neutering within 28 days.",
+              classes: "govuk-!-width-three-quarters"
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "10"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "4"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2025"
+            }
+          ]
+          }) }}
+
+          {{ govukSelect({
+            classes: "govuk-!-width-two-thirds govuk-!-margin-bottom-5",
+            name: "police-force",
+            label: {
+              classes: "govuk-!-font-weight-bold",
+              text: "Police force"
+            },
+            items: [
+              {
+                value: "Avon and Somerset Constabulary",
+                text: "Avon and Somerset Constabulary"
+              },
+              {
+                value: "Bedfordshire Police",
+                text: "Bedfordshire Police"
+              },
+              {
+                value: "Cumbria Constabulary",
+                text: "Cumbria Constabulary"
+              },
+              {
+                value: "Devon and Cornwall Police",
+                text: "Devon and Cornwall Police"
+              },
+              {
+                value: "Essex Police",
+                text: "Essex Police"
+              },
+              {
+                value: "Gloucestershire Constabulary",
+                text: "Gloucestershire Constabulary"
+              },
+              {
+                value: "Greater Manchester Police",
+                text: "Greater Manchester Police"
+              },
+              {
+                value: "Hampshire Constabulary",
+                text: "Hampshire Constabulary"
+              },
+              {
+                value: "Hertfordshire Constabulary",
+                text: "Hertfordshire Constabulary"
+              },
+              {
+                value: "Humberside Police",
+                text: "Humberside Police"
+              },
+              {
+                value: "Kent Police",
+                text: "Kent Police"
+              },
+              {
+                value: "Metropolitan Police Service",
+                text: "Metropolitan Police Service",
+                selected: true
+              },
+              {
+                value: "Staffordshire Police",
+                text: "Staffordshire Police"
+              },
+              {
+                value: "Surrey Police",
+                text: "Surrey Police"
+              },
+              {
+                value: "Sussex Police",
+                text: "Sussex Police"
+              },
+              {
+                value: "Thames Valley Police",
+                text: "Thames Valley Police"
+              },
+              {
+                value: "Wiltshire Police",
+                text: "Wiltshire Police"
+              }
+            ]
+          }) }}
+
+          {{ govukInput({
+            label: {
+              classes: "govuk-!-font-weight-bold",
+              text: "Dog legislation officer"
+            },
+            classes: "govuk-!-width-two-thirds govuk-!-margin-bottom-5",
+            id: "dog-legislation-officer",
+            name: "dog-legislation-officer",
+            value: data['dog-legislation-officer'] or "Solomon Beatty"
+          }) }}
+
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "application-fee",
+            namePrefix: "application-fee",
+            fieldset: {
+              legend: {
+                text: "Application fee paid",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "29"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "11"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2024"
+            }
+          ]
+          }) }}
+
+          {{ govukSelect({
+            classes: "govuk-!-width-two-thirds govuk-!-margin-bottom-5",
+            name: "insurance-company",
+            label: {
+              classes: "govuk-!-font-weight-bold",
+              text: "Insurance company"
+            },
+            items: [
+              {
+                value: "Another insurer",
+                text: "Another insurer"
+              },
+              {
+                value: "Dogs Trust",
+                text: "Dogs Trust",
+                selected: true
+              },
+              {
+                value: "Another insurer",
+                text: "Another insurer"
+              },
+              {
+                value: "Another insurer",
+                text: "Another insurer"
+              }
+            ]
+          }) }}
+
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "insurance-renewal",
+            namePrefix: "insurance-renewal",
+            fieldset: {
+              legend: {
+                text: "Insurance renewal date",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "29"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "4"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2024"
+            }
+          ]
+          }) }}
+
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "neutering-confirmed",
+            namePrefix: "neutering-confirmed",
+            fieldset: {
+              legend: {
+                text: "Neutering confirmed",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "29"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "4"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2024"
+            }
+          ]
+          }) }}
+
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-5",
+            id: "microchip-number-verified",
+            namePrefix: "microchip-number-verified",
+            fieldset: {
+              legend: {
+                text: "Microchip number verified",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "10"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "4"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2014"
+            }
+          ]
+          }) }}
+
+          {{ govukDateInput({
+            classes: "govuk-!-margin-bottom-0",
+            id: "exemption-scheme",
+            namePrefix: "exemption-scheme",
+            fieldset: {
+              legend: {
+                text: "Joined interim exemption scheme",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "8"
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: "11"
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: "2013"
+            }
+          ]
+          }) }}
+
+
+
+        {% endcall %}
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible govuk-!-margin-top-5 govuk-!-margin-bottom-7">
+
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Dangerous dogs exemption 2023 order
+          </h2>
+
+        <p class="govuk-hint">The information in this section is specific to dogs registered under the 2023 order.
+          </p>
+
+        <p class="govuk-body govuk-!-margin-bottom-5">
+          <a class="govuk-link govuk-link--no-visited-state" href="change-order">Change exemption order to 2015</a>
+          </p>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group">
+            <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">
+              Microchip deadline
+            </legend>
+            <div id="microchip-deadline-hint" class="govuk-hint">
+              The dog must be microchipped by this date.
+            </div>
+
+            <div class="govuk-date-input">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="microchip-deadline-day">
+                    Day
+                  </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="31" name="exemption-scheme-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="microchip-deadline-month">
+                    Month
+                  </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="3"  name="microchip-deadline-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="microchip-deadline-year">
+                    Year
+                  </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="2024"  name="microchip-deadline-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group">
+            <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">
+              Examined by DLO
+            </legend>
+
+            <div class="govuk-date-input">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="typed-by-dlo-day">
+                    Day
+                  </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="12" name="typed-by-dlo-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="typed-by-dlo-month">
+                    Month
+                  </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="3"  name="typed-by-dlo-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="typed-by-dlo-year">
+                    Year
+                  </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" value="2024"  name="typed-by-dlo-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group">
+            <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">
+              Withdrawn from index
+            </legend>
+            <div id="withdraw-index-hint" class="govuk-hint govuk-!-padding-right-8">
+              An owner can ask for their dog be withdrawn from the index. DLOs can ask for a dog to be withdrawn if they do not consider it to be an XL Bully.
+            </div>
+
+            <div class="govuk-date-input">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="withdrawn-from-index-day">
+                    Day
+                  </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" name="exemption-scheme-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="withdrawn-from-index-month">
+                    Month
+                  </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" name="exemption-scheme-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="withdrawn-from-index-year">
+                    Year
+                  </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" name="withdrawn-from-index-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Save details"
+          }) }}
+
+          <a class="govuk-link govuk-link--no-visited-state" href="/v14/dog-records/dog-record-ED30228-complete">Cancel</a>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

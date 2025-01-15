@@ -1,0 +1,96 @@
+{% extends "layouts/defra-sign-out-2.html" %}
+
+{% set pageName="Dog ED20031 withdrawn" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "./manage-cdo-1"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+  {% if data['contact'] == 'email' %}
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+      <h1 class="govuk-panel__title">
+        {{ pageName }}
+      </h1>
+      <div class="govuk-panel__body">
+        Confirmation email sent
+      </div>
+    </div>
+
+  {% elif data['contact'] == 'post' %}
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+      <h1 class="govuk-panel__title">
+        Dog ED20031 is now exempt
+      </h1>
+    </div>
+
+  {% elif data['contact'] == None %}
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+      <h1 class="govuk-panel__title">
+        Dog ED20031 withdrawn
+      </h1>
+      <div class="govuk-panel__body">
+        Confirmation email sent
+      </div>
+    </div>
+
+  {% endif %}
+
+  {% if data['newEmail'] %}
+
+    <p class="govuk-body">
+      An email confirming the withdrawal has been sent to <span class="govuk-!-font-weight-bold">{{ data['newEmail'] }}</span>.
+      </p>
+
+  {% elif data['contact'] == 'email' %}
+
+    <p class="govuk-body">
+      An email confirming the withdrawal has been sent to <span class="govuk-!-font-weight-bold">garrymcfadyen@hotmail.com</span>.
+      </p>
+
+  {% elif data['contact'] == 'post' %}
+
+    <p class="govuk-body">
+      The issue date of the first certificate will be set to today, <span class="govuk-!-font-weight-bold">9 January 2025</span>.
+      </p>
+
+  {% elif data['contact'] == None %}
+
+    <p class="govuk-body">
+      An email confirming the withdrawal has been sent to <span class="govuk-!-font-weight-bold">garrymcfadyen@hotmail.com</span>.
+      </p>
+
+  {% endif %}
+
+  <ul class="govuk-list">
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="../dog-records/dog-record-ED20031-withdrawn">Check the record for Dog ED20031</a>
+    </li>
+    <li>
+      <a class="govuk-link govuk-link--no-visited-state" href="">Search for another dog</a>
+    </li>
+  </ul>
+
+
+    </div>
+  </div>
+
+{% endblock %}

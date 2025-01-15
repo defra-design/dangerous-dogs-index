@@ -1,0 +1,92 @@
+{% extends "layouts/defra-sign-out-2.html" %}
+
+{% set pageName="Change the status for Dog ED17343" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "./dog-record-ED20031"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="dogStatus-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Change the status for Dog ED20031
+              </h1>
+            </legend>
+            <div id="dogStatus-hint" class="govuk-hint defra-text defra-text govuk-!-margin-top-1 govuk-!-margin-bottom-5">
+              Dog ED20031 is currently
+
+              {{govukTag({
+                text: "Exempt",
+                classes: "govuk-tag--turquoise defra-tag-nowrap"
+              })}}
+
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="dogStatus" name="dogStatus" type="radio" value="Interim exempt" aria-describedby="dogStatus-item-hint">
+                <label class="govuk-label govuk-radios__label" for="dogStatus">
+                  Interim exempt
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="dogStatus-2" name="dogStatus" type="radio" value="Pre-exempt" aria-describedby="dogStatus-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="dogStatus-2">
+                  Pre-exempt
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="dogStatus-3" name="dogStatus" type="radio" value="Failed" aria-describedby="dogStatus-3-item-hint">
+                <label class="govuk-label govuk-radios__label" for="dogStatus-3">
+                  Failed
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="dogStatus-4" name="dogStatus" type="radio" value="In breach" aria-describedby="dogStatus-4-item-hint">
+                <label class="govuk-label govuk-radios__label" for="dogStatus-4">
+                  In breach
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="dogStatus-6" name="dogStatus" type="radio" value="Inactive" aria-describedby="dogStatus-6-item-hint">
+                <label class="govuk-label govuk-radios__label" for="dogStatus-6">
+                  Inactive
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Change status"
+        }) }}
+
+        <a class="govuk-link govuk-link--no-visited-state" href="./dog-record-ED20031">Cancel</a>
+      </div>
+
+      </form>
+
+      <p class="govuk-body govuk-!-margin-top-6">
+       <a class="govuk-link govuk-link--no-visited-state" href="confirm">Withdrawing a dog from the Index</a>
+       requires you to confirm with the owner.
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

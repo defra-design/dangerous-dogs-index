@@ -1,0 +1,73 @@
+{% extends "layouts/defra-sign-out-2.html" %}
+
+{% set pageName="Withdraw a dog from the index" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "dog-record-ED20031"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="./confirm" method="post">
+
+      <span class="govuk-caption-m">Dog ED20031</span>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="date-withdrawn-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              When was the dog withdrawn from the Index?
+            </h1>
+          </legend>
+          <div id="date-withdrawn-hint" class="govuk-hint">
+            For example, 27 3 2025
+          </div>
+          <div class="govuk-date-input" id="date-withdrawn">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="date-withdrawn-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-withdrawn-day" name="date-withdrawn-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="date-withdrawn-month">
+                  Month
+                </label>
+                <input value="1" class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-withdrawn-month" name="date-withdrawn-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="date-withdrawn-year">
+                  Year
+                </label>
+                <input value="2025" class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-withdrawn-year" name="date-withdrawn-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
