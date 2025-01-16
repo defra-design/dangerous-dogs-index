@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "dog-record-in-breach"
+    href: "./dog-record-ED20031"
   }) }}
 {% endblock %}
 
@@ -16,7 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="./dog-record-ED30228" method="post">
+      <form class="form" action="./dog-record-ED20031-withdrawn" method="post">
 
         <span class="govuk-caption-l">Dog ED30228</span>
 
@@ -38,7 +38,7 @@
         })}}
 
         <span class="govuk-body">
-          <a class="govuk-link govuk-link--no-visited-state" href="#">
+          <a class="govuk-link govuk-link--no-visited-state" href="change-status">
             Change status
           </a>
         </span>
@@ -512,7 +512,7 @@
             text: "Save details"
           }) }}
 
-          <a class="govuk-link govuk-link--no-visited-state" href="/v14/dog-records/dog-record-ED30228-complete">Cancel</a>
+          <a class="govuk-link govuk-link--no-visited-state" href="./dog-record-ED20031">Cancel</a>
         </div>
 
       </form>
