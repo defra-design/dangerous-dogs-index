@@ -2843,6 +2843,6 @@ router.post('/v26/manage/replacement-certificate-question', function(request, re
   if (contact == "email"){
     response.redirect("/v26/manage/replacement-certificate-confirmation")
   } else {
-    response.redirect('/v26/manage/generate-certificate')
+    response.redirect('/v26/manage/generate-replacement-certificate')
   }
 })

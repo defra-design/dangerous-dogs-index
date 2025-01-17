@@ -1,6 +1,6 @@
-{% extends "layouts/defra.html" %}
+{% extends "layouts/defra-sign-out-2.html" %}
 
-{% set pageName="Email with the certificate sent" %}
+{% set pageName="Replacement certificate has been sent by email" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -29,7 +29,7 @@
         {{ pageName }}
       </h1>
       <div class="govuk-panel__body">
-        Dog ED17343 is now exempt
+        Dog ED20031
       </div>
     </div>
 
@@ -37,18 +37,21 @@
 
     <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
       <h1 class="govuk-panel__title">
-        Dog ED17343 is now exempt
+        {{ pageName }}
       </h1>
+      <div class="govuk-panel__body">
+        Dog ED20031
+      </div>
     </div>
 
   {% elif data['contact'] == None %}
 
     <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
       <h1 class="govuk-panel__title">
-        Email with the certificate sent
+        {{ pageName }}
       </h1>
       <div class="govuk-panel__body">
-        Dog ED17343 is now exempt
+        Dog ED20031
       </div>
     </div>
 
@@ -57,13 +60,13 @@
   {% if data['newEmail'] %}
 
     <p class="govuk-body">
-      The certificate of exemption has been emailed to <span class="govuk-!-font-weight-bold">{{ data['newEmail'] }}</span>.
+      The replacement certificate of exemption has been emailed to <span class="govuk-!-font-weight-bold">{{ data['newEmail'] }}</span>.
       </p>
 
   {% elif data['contact'] == 'email' %}
 
     <p class="govuk-body">
-      The certificate of exemption has been emailed to <span class="govuk-!-font-weight-bold">garrymcfadyen@hotmail.com</span>.
+      The replacement certificate of exemption has been emailed to <span class="govuk-!-font-weight-bold">garrymcfadyen@hotmail.com</span>.
       </p>
 
   {% elif data['contact'] == 'post' %}
@@ -75,14 +78,10 @@
   {% elif data['contact'] == None %}
 
     <p class="govuk-body">
-      The certificate of exemption has been emailed to <span class="govuk-!-font-weight-bold">garrymcfadyen@hotmail.com</span>.
+      The replacement certificate of exemption has been emailed to <span class="govuk-!-font-weight-bold">garrymcfadyen@hotmail.com</span>.
       </p>
 
   {% endif %}
-
-    <p class=govuk-body">
-      <a class="govuk-link govuk-link--no-visited-state" href="../dog-records/dog-record-exempt">Check the record for Dog ED17343</a>
-      </p>
 
     </div>
   </div>

@@ -1,0 +1,64 @@
+{% extends "layouts/defra-sign-out-2.html" %}
+
+{% set pageName="Generate a replacement certificate of exemption to post" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+<div class="govuk-main-wrapper">
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-m">Dog ED20031</span>
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      <ol class="govuk-list govuk-list--number">
+        <li>Select the generate certificate button.</li>
+        <li>Print the certificate.</li>
+      </ol>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-3">
+       Post the certificate to this address:
+      </h2>
+
+      <p class="govuk-body govuk-!-margin-bottom-6">
+        Garry McFadyen
+        <br>
+        122 Common Road
+        <br>
+        Bexhill-on-Sea
+        <br>
+        TN39 4JB
+      </p>
+
+        <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Generate certificate"
+        }) }}
+
+        <a class="govuk-link govuk-link--no-visited-state" href="../dog-records/dog-record-ED20031">Cancel</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

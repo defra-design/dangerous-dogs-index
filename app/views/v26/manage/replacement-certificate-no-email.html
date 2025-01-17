@@ -1,0 +1,76 @@
+{% extends "layouts/defra-sign-out-2.html" %}
+
+{% set pageName="Send replacement certificate of exemption" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "./dog-record-ED20031"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="./replacement-certificate-question" method="post">
+
+        <span class="govuk-caption-m">Dog ED20031</span>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        How do you want to send the replacement certificate of exemption?
+      </h1>
+    </legend>
+
+    <div id="contact-hint" class="govuk-hint">
+      Select one option.
+    </div>
+
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="contact">
+          Email
+        </label>
+      </div>
+
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+        <div class="govuk-form-group">
+    <label class="govuk-label" for="new-email">
+      Email address
+    </label>
+    <div id="event-name-hint" class="govuk-hint">
+      Enter the dog owner’s email address.
+    </div>
+    <input class="govuk-input govuk-!-width-two-thirds" id="new-email" name="newEmail" type="email" spellcheck="false">
+  </div>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="post">
+        <label class="govuk-label govuk-radios__label" for="contact-2">
+          Post it
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+      <button class="govuk-button" data-module="govuk-button" onclick="updateLocalStorage('task1Finished')">
+        Send certificate
+      </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
