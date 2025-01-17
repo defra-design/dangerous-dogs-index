@@ -2806,7 +2806,7 @@ router.post('/v24/include-national', function(request, response) {
   }
 })
 
-// v24 Email or post certificate
+// v26 Email or post certificate
 router.post('/v26/manage/certificate-question', function(request, response) {
   var contact = request.session.data['contact']
   if (contact == "email"){
@@ -2827,12 +2827,22 @@ router.post('/v26/dog-records/change-status-question', function (req, res) {
 
 })
 
-// v26 Email or post certificate
-router.post('/v26/dog-records/certificate-question', function(request, response) {
+// v26 Withdraw dog
+router.post('/v26/dog-records/withdraw-question', function(request, response) {
   var contact = request.session.data['contact']
   if (contact == "email"){
     response.redirect("/v26/dog-records/withdrawal-confirmation")
   } else {
     response.redirect('/v26/dog-records/generate-withdrawal-letter')
+  }
+})
+
+// v26 Replacement certificate
+router.post('/v26/manage/replacement-certificate-question', function(request, response) {
+  var contact = request.session.data['contact']
+  if (contact == "email"){
+    response.redirect("/v26/manage/replacement-certificate-confirmation")
+  } else {
+    response.redirect('/v26/manage/generate-certificate')
   }
 })
