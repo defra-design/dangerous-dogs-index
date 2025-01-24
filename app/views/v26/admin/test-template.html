@@ -1,0 +1,118 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="Test the email template" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../index"
+    },
+    {
+      text: "Admin",
+      href: "index"
+    },
+    {
+      text: "Manage email and letter templates",
+      href: "javascript:window.history.back()"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+          Test the email template
+        </h1>
+        <div id="event-name-hint" class="govuk-hint govuk-!-margin-bottom-0">
+          Test the email template by editing the test data.
+        </div>
+      </legend>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="index-number">
+          Index number
+        </label>
+        <input class="govuk-input govuk-!-width-one-third" id="index-number" name="indexNumber" type="text" value="ED123456">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="dog-name">
+          Dog name
+        </label>
+      <input class="govuk-input govuk-!-width-one-third" id="dog-name" name="dogName" type="text" value="Rex">
+    </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="owner-name">
+          Owner name
+        </label>
+        <input class="govuk-input govuk-!-width-one-third" id="owner-name" name="ownerName" type="text" value="Sarah Philips">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-line-1">
+          Address line 1
+        </label>
+     <input class="govuk-input govuk-!-width-one-third" id="address-line-1" name="addressLine1" type="text" value="12 Smith Street">
+    </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-line-2">
+          Address line 2
+        </label>
+      <input class="govuk-input govuk-!-width-one-third" id="address-line-2" name="addressLine2" type="text" value="Rawford">
+    </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-town">
+          Town
+        </label>
+      <input class="govuk-input govuk-!-width-one-third" id="address-town" name="addressTown" type="text" value="York">
+    </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-postcode">
+          Postcode
+        </label>
+      <input class="govuk-input govuk-!-width-one-third" id="address-postcode" name="addressPostcode" type="text" value="YO1 2AB">
+    </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="todays-date">
+          Today’s date
+        </label>
+      <input class="govuk-input govuk-!-width-one-third" id="todays-date" name="todaysDate" type="text" value="23 January 2025">
+     </div>
+    </fieldset>
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Test the template",
+        href: "/public/downloads/Application-pack-test.pdf"
+      }) }}
+
+      <a class="govuk-link govuk-link--no-visited-state" href="manage-templates">Cancel</a>
+    </div>
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Reset the form",
+        classes: "govuk-button--secondary"
+      }) }}
+
+      <p class="govuk-hint">Do we need this?</p>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends "layouts/defra-ddi.html" %}
+
+{% set pageName="Admin area" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ pageName }}
+      </h1>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Export data
+      </h2>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">Export the data in the Index</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">Number of dogs on the Index</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Keep data GDPR compliant
+      </h2>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">Delete dogs older than 15 years</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">Delete dog owner records without a dog</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">Query the audit events of external users</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Manage team members
+      </h2>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">Add or remove pseudonyms</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Manage external Index users
+      </h2>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">Add or remove police officers</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">List police officer access</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Manage Index lists
+      </h2>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">Activities</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">Courts</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">Police forces</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">Dog insurers</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Manage Notify templates
+      </h2>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="manage-templates-2025">Manage application pack templates</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Import data
+      </h2>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">Import XL Bully data</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+{% endblock %}

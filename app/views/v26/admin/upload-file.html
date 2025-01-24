@@ -1,0 +1,82 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="Which template are you uploading?" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../index"
+    },
+    {
+      text: "Admin",
+      href: "index"
+    },
+    {
+      text: "Manage email and letter templates",
+      href: "manage-templates"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukRadios({
+      name: "whichTemplate",
+      fieldset: {
+        legend: {
+          text: "Which template are you uploading?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "email",
+          text: "Email"
+        },
+        {
+          value: "letter",
+          text: "Letter"
+        }
+      ]
+    }) }}
+
+
+      <p class="govuk-body">Ensure:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the filename has a ‘.pdf’ extension</li>
+          <li>the file is no larger than 10MB</li>
+        </ul>
+
+      {{ govukFileUpload({
+        id: "file-upload-1",
+        name: "fileUpload1",
+        label: {
+          text: "Upload a file",
+          classes: "govuk-visually-hidden"
+        }
+      }) }}
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Upload file",
+        href: "manage-templates"
+      }) }}
+
+      <a class="govuk-link govuk-link--no-visited-state" href="manage-templates">Cancel</a>
+    </div>
+
+    </div>
+  </div>
+
+{% endblock %}
