@@ -1,0 +1,46 @@
+{% extends "layouts/defra-admin.html" %}
+
+{% set pageName="Test the file" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../index"
+    },
+    {
+      text: "Admin",
+      href: "index"
+    },
+    {
+      text: "Manage files for application pack emails and letters",
+      href: "javascript:window.history.back()"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+          {{ pageName }}
+        </h1>
+        <div id="event-name-hint" class="govuk-hint govuk-!-margin-bottom-0">
+          Edit the test data and test the application pack posted to the dog owner.
+        </div>
+      </legend>
+
+      {% include "../includes/test-file.html" %}
+
+  </div>
+
+{% endblock %}

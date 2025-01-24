@@ -1,6 +1,6 @@
 {% extends "layouts/defra-admin.html" %}
 
-{% set pageName="Manage application pack templates" %}
+{% set pageName="Manage files for application pack emails and letters" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -25,40 +25,14 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-5">
-      {{ pageName }}
-    </h1>
-
-    <h2 class="govuk-heading-m">
-      Test and upload Notify templates
-    </h2>
-
-    <p class="govuk-body">
-      To test a template, select ‘Test the template’.
-     </p>
-
-     <p class="govuk-body">
-       To use a new template:
-      </p>
-
-     <ol class="govuk-list govuk-list--number">
-       <li>Name the new template differently from the current live template.</li>
-       <li>Upload the new template.</li>
-       <li>Test the new template.</li>
-       <li>Make the new template live.</li>
-       <li>Delete the old template.</li>
-      </ol>
-
-    <p class="govuk-body">
-      Only 1 email template and 1 post template can be live at a time.
-      </p>
+    {% include "../includes/new-file.html" %}
 
   </div>
 
 <div class="govuk-grid-column-full govuk-!-margin-top-3">
 
     <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m">Email template</caption>
+      <caption class="govuk-table__caption govuk-table__caption--m">Emailed application pack</caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header defra-width-12">Status</th>
@@ -74,12 +48,12 @@
               classes: "govuk-tag--green"
             })}}
           </th>
-          <td class="govuk-table__cell defra-align-table">Email application pack 2025.pdf</td>
+          <td class="govuk-table__cell defra-align-table">Email application pack 2026.pdf</td>
           <td class="govuk-table__cell">
             {{ govukButton({
-              text: "Test the template",
-              href: "test-template",
-              classes: "govuk-button--secondary govuk-!-margin-bottom-0"
+              text: "Test the file",
+              href: "test-file-email",
+              classes: "govuk-button--secondary govuk-!-margin-right-1 govuk-!-margin-bottom-0"
             }) }}
           </td>
         </tr>
@@ -87,7 +61,7 @@
     </table>
 
     <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m">Post template</caption>
+      <caption class="govuk-table__caption govuk-table__caption--m">Postal application pack</caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header defra-width-12">Status</th>
@@ -106,8 +80,8 @@
           <td class="govuk-table__cell defra-align-table">Post application pack 2025.pdf</td>
           <td class="govuk-table__cell">
             {{ govukButton({
-              text: "Test the template",
-              href: "",
+              text: "Test the file",
+              href: "test-file-post",
               classes: "govuk-button--secondary govuk-!-margin-bottom-0"
             }) }}
           </td>
@@ -116,7 +90,7 @@
     </table>
 
     {{ govukButton({
-      text: "Upload a new template",
+      text: "Upload a new file",
       href: "upload-file"
     }) }}
 

@@ -1,6 +1,6 @@
 {% extends "layouts/defra-admin.html" %}
 
-{% set pageName="Which template are you uploading?" %}
+{% set pageName="Upload a new file" %}
 
 {% block pageTitle %}
   {{ pageName }} – {{ serviceName }}
@@ -18,8 +18,8 @@
       href: "index"
     },
     {
-      text: "Manage email and letter templates",
-      href: "manage-templates"
+      text: "Manage files for application pack emails and letters",
+      href: "application-pack-files"
     }
   ]
 }) }}
@@ -29,13 +29,15 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    <h1 class="govuk-heading-l">{{ pageName }}
+      </h1>
+
     {{ govukRadios({
       name: "whichTemplate",
       fieldset: {
         legend: {
-          text: "Which template are you uploading?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
+          text: "How are you sending the application pack?",
+          classes: "govuk-fieldset__legend--m"
         }
       },
       items: [
@@ -44,18 +46,18 @@
           text: "Email"
         },
         {
-          value: "letter",
-          text: "Letter"
+          value: "post",
+          text: "Post"
         }
       ]
     }) }}
 
 
-      <p class="govuk-body">Ensure:</p>
+      <p class="govuk-body govuk-!-margin-bottom-2">Ensure that:</p>
 
-        <ul class="govuk-list govuk-list--bullet">
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
           <li>the filename has a ‘.pdf’ extension</li>
-          <li>the file is no larger than 10MB</li>
+          <li>the file size does not exceed 10MB</li>
         </ul>
 
       {{ govukFileUpload({
@@ -70,10 +72,10 @@
     <div class="govuk-button-group">
       {{ govukButton({
         text: "Upload file",
-        href: "manage-templates"
+        href: "application-pack-files"
       }) }}
 
-      <a class="govuk-link govuk-link--no-visited-state" href="manage-templates">Cancel</a>
+      <a class="govuk-link govuk-link--no-visited-state" href="javascript:window.history.back()">Cancel</a>
     </div>
 
     </div>
