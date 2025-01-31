@@ -1,0 +1,291 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Dangerous Dogs Index prototypes
+{% endset%}
+
+{% set pageName="Home" %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "./index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
+      DDI prototypes
+    </h1>
+
+    <p class="govuk-body govuk-!-margin-bottom-7">Last updated:
+      <span class="govuk-body govuk-!-font-weight-bold">31 January 2025</<span>
+      </p>
+
+    <p class="govuk-body">
+      Prototype version 26 was the final DDI prototype developed.
+      <br>
+      <a class="govuk-link govuk-link--no-visited-state govuk-!-margin-bottom-7" href="previous-prototypes">
+        Check previous prototype versions</a>
+    </p>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-2">
+        Version 26
+      </h2>
+
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                Defra Index<br>
+                <span class="govuk-!-font-weight-regular govuk-!-font-size-19">Sending application packs and certificates, withdrawing ‘2023’ dogs</span>
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+                    Manage CDOs
+                  </h3>
+
+                  <ul class="govuk-list">
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/manage/manage-cdos-all">Manage CDOs</a> <span class="govuk-body-s defra-secondary-text">– showing CDO numbers and info not received</span>
+                    </li>
+
+                    <br>
+
+                  <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+                      Send things to dog owners
+                    </h3>
+
+                    <h4 class="govuk-body govuk-!-margin-bottom-1">
+                    Send application pack
+                    </h4>
+
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/manage/manage-cdo-1">CDO in progress</a> <span class="govuk-body-s defra-secondary-text">– all tasks to complete</span>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/manage/application-pack">Send application pack</a> <span class="govuk-body-s defra-secondary-text">– we have an email address</span>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/manage/application-pack-no-email">Send application pack</a> <span class="govuk-body-s defra-secondary-text">– we don’t have an email address</span>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/manage/confirmation">Confirmation application pack sent</a>
+                    </li>
+
+                    <br>
+
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/manage/application-pack-post">Send application pack</a> <span class="govuk-body-s defra-secondary-text">– using Notify for email only</span>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/manage/post">Post application pack</a> <span class="govuk-body-s defra-secondary-text">– posting without Notify</span>
+                    </li>
+
+                    <br>
+
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/dog-records/dog-record-edit">Dog record edit screen</a>
+                    </li>
+
+                    <br>
+
+                    <h4 class="govuk-body govuk-!-margin-bottom-1">
+                    Send first certificate
+                    </h4>
+
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/manage/manage-cdo-complete">CDO completed</a>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/manage/certificate">Send first certificate</a> <span class="govuk-body-s defra-secondary-text">– we have an email address</span>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/manage/generate-certificate">Generate certificate</a> <span class="govuk-body-s defra-secondary-text">– posting without Notify</span>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/manage/certificate-confirmation">Confirming the withdrawal and email sent</a>
+                    </li>
+
+                    <br>
+
+                    <h4 id="send-replacement-certificate" class="govuk-body govuk-!-margin-bottom-1">
+                    Send replacement certificate
+                    </h4>
+
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/dog-records/dog-record-ED20031">Dog record</a>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/manage/replacement-certificate">Send replacement certificate</a> <span class="govuk-body-s defra-secondary-text">– we have an email address</span>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/manage/replacement-certificate-no-email">Send replacement certificate</a> <span class="govuk-body-s defra-secondary-text">– we don’t have an email address</span>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/manage/generate-replacement-certificate">Generate replacement certificate</a>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/manage/replacement-certificate-confirmation">Confirmation the replacement certificate has been emailed</a>
+                    </li>
+
+                    <br>
+
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+                        Withdraw 2023 dog
+                      </h3>
+
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/dog-records/dog-record-ED20031">Dog record</a>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/dog-records/confirm">Withdraw the dog and confirm by email</a> <span class="govuk-body-s defra-secondary-text">– we have an email address</span>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/dog-records/confirm-no-email">Withdraw the dog and confirm by email</a> <span class="govuk-body-s defra-secondary-text">– we don’t have an email address</span>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/dog-records/generate-withdrawal-letter">Confirm by letter</a>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/dog-records/withdrawal-confirmation">Confirming the withdrawal and email sent</a>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/dog-records/dog-record-ED20031-withdrawn">Dog record</a> <span class="govuk-body-s defra-secondary-text">– Dog withdrawn by owner</span>
+                    </li>
+
+                    <br>
+
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/dog-records/change-status">Change status</a>
+                    </li>
+
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/dog-records/dog-record-ED20031-edit">Edit exemption details</a>
+                    </li>
+
+                    <br>
+
+                    <h3 id="manage-files" class="govuk-heading-s govuk-!-margin-bottom-1">
+                    Manage emailed and posted application files
+                    </h3>
+
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/admin/index">Admin index</a>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/admin/application-pack-files-2025">Manage application pack files</a>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/admin/test-file-email">Test a file</a>
+                    </li>
+                    <li>
+                      <a class="govuk-link govuk-link--no-visited-state" href="/v26/admin/upload-file">Upload a new file</a>
+                    </li>
+
+                  </ul>
+
+          </div>
+        </div>
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                Police Index
+                <br><span class="govuk-!-font-weight-regular govuk-!-font-size-19">Download a record activity and check the progress of a CDO</span>
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-2" class="govuk-accordion__section-content">
+
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              Download history
+            </h3>
+
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v26/dog-records/dog-record-ED17343">Dog record</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v26/dog-records/activity-all">Check history</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v26/dog-records/download">Download the activity history</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v26/owner-records/activity-all">Owner history</a>
+              </li>
+            </ul>
+
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              Search
+            </h3>
+
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v26/index">Homepage</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v26/search/dog-results-dog-name">Local search results</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v26/search/dog-results-dog-name-national">National search results</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v26/cdo-2/cdo-progress">CDO progress</a>
+              </li>
+            </ul>
+
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              Check CDO progress – Part 2
+            </h3>
+
+            <h4 class="govuk-body govuk-!-margin-bottom-1">
+            We’ve entered the microchip
+            </h4>
+
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v26/cdo/cdo-progress">New CDO</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v26/cdo/cdo-progress-active">CDO in progress</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v26/cdo/cdo-progress-confirm">CDO complete</a>
+              </li>
+            </ul>
+
+            <h4 class="govuk-body govuk-!-margin-bottom-1">
+            Microchip not provided
+            </h4>
+
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v26/cdo/cdo-progress-no-microchip">New CDO</a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/v26/cdo/cdo-progress-microchip-added">CDO in progress</a> <span class="govuk-body-s defra-secondary-text">– microchip confirmed when submitting Form 2</span>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}
