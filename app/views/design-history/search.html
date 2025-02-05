@@ -1,0 +1,169 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Dangerous Dogs Index design history
+{% endset%}
+
+{% set pageName="Search" %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../index"
+    },
+    {
+      text: "Design history",
+      href: "./index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
+      {{ pageName }}
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Search for the Index team
+    </h2>
+
+    <p class="govuk-body">The initial iteration of the search function was developed without prior research into the needs of the DDI team.
+     </p>
+    <p class="govuk-body">We had an assumption that colleagues would need to search for <span class="govuk-!-font-weight-bold">either</span> dogs or owners.
+      To enable them to do this, we included radio buttons beneath the search field, allowing users to select whether they wanted to search dog or owner records.
+    </p>
+    <p class="govuk-body">We had a second assumption was that the team would need a prompt indicating that multiple search terms could be used.
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <img class="defra-img" src="/public/images/search-v1.png">
+    </img>
+  </div>
+
+
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h3 class="govuk-heading-s">
+      Research findings
+    </h3>
+
+    <p class="govuk-body">During our usability testing of the Index with internal users, we observed 2 behaviours:
+     </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>users were not reading the hint text or searching with multiple terms</li>
+      <li>users were not selecting the owner record radio button</li>
+    </ul>
+
+    <p class="govuk-body">As a result, we removed both.
+     </p>
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <img class="defra-img" src="/public/images/search-internal.jpg">
+    </img>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m">
+      Search for the police
+    </h2>
+
+    <p class="govuk-body">The first 2 versions of the search, usability tested with the police, also included a prompt encouraging users to search with multiple terms.
+    </p>
+      <p class="govuk-body">The results mirrored those of internal testing, users were not reading the hint text or using multiple search terms.
+     </p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+
+    <img class="defra-img" src="/public/images/search-police-v1.png">
+    </img>
+
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+
+    <img class="defra-img" src="/public/images/search-police-v2.png">
+    </img>
+
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m">
+      Alpha assessment feedback
+    </h2>
+
+    <p class="govuk-body">
+    Two of the recommendations from the alpha assessment design assessor related to the search and homepage:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>consider whether there’s a need to tell users on the search page which facets
+      of each dog or owner record can be searched</li>
+      <li>if a user intends to report something, will they know that they have to first search for the dog or owner?</li>
+    </ul>
+
+    <p class="govuk-body">
+     In private beta, we implemented the recommendations, adding content beneath the search field.
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <img class="defra-img" src="/public/images/search-police-v3.png">
+    </img>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h3 class="govuk-heading-s">
+      Defaulting to local results
+    </h3>
+
+    <p class="govuk-body">
+      During private beta, our analytics showed that police searches were returning an unnecessarily high volume of results. Research sessions showed that many officers preferred scrolling through long lists rather than refining their search criteria.
+      The process of finding the correct result took too long.
+     </p>
+
+    <p class="govuk-body">
+      To address this, we introduced a search filter using radio buttons.
+    </p>
+
+    <p class="govuk-body">
+      The filter:
+     </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>defaulted to the officer’s local area</li>
+      <li>provided a simple option to expand the search nationally when needed</li>
+    </ul>
+
+    <p class="govuk-body">
+      We also introduced an option to include close matches, allowing for slight variations in search terms. For example, returning results with owners named ‘Jon’ when searching for ‘John’.
+     </p>
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <img class="defra-img" src="/public/images/search-police-local.png">
+    </img>
+  </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Dangerous Dogs Index design history
+{% endset%}
+
+{% set pageName="Dangerous Dogs Index design history" %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
+      DDI design history
+    </h1>
+
+    <p class="govuk-body govuk-!-margin-bottom-7">Last updated:
+      <span class="govuk-body govuk-!-font-weight-bold">6 February 2025</<span>
+      </p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+        Search
+      </h2>
+
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+        <a class="govuk-link govuk-link--no-visited-state" href="./search">The DDI search</a>
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-right-6">
+        <li>the reasons for the iterative changes</li>
+        <li>why the search is different for the police</li>
+        <li>why the police search defaults to the officer’s local area</li>
+      </ul>
+
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+        Search results
+      </h2>
+
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+        <a class="govuk-link govuk-link--no-visited-state" href="./search-results">The search results</a>
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-right-6">
+        <li>our starting assumptions</li>
+        <li>Alpha assessment feedback</li>
+      </ul>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+        Records and record activity
+      </h2>
+
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+        <a class="govuk-link govuk-link--no-visited-state" href="./records">Dog and owner records</a>
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-right-6">
+        <li>our starting assumptions</li>
+        <li>extra functionality for the police</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+{% endblock %}

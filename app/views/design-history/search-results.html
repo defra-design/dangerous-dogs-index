@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Dangerous Dogs Index design history
+{% endset%}
+
+{% set pageName="Search results" %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "./index"
+    },
+    {
+      text: "Design history",
+      href: "./index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
+      {{ pageName }}
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      First iteration of the search results
+    </h2>
+
+    <p class="govuk-body">
+      For the initial iteration of the search results, we decided which data to display through consultation with a key stakeholder. However, as we didn’t have access to the DDI team at that time, we were unable to conduct research into their specific needs.
+     </p>
+    <p class="govuk-body">
+      One starting assumption was that, when searching, the team would be presented with a large number of search results and would need to scan them quickly to identify the correct record.
+     </p>
+    <p class="govuk-body">
+      For this reason we developed a horizontal layout for the search results, aligning with common patterns used in other online search engines.
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+   <img class="defra-img" src="/public/images/search-results.png">
+   </img>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m">
+      First usability tests
+    </h2>
+
+    <p class="govuk-body">
+      The search results performed well in testing. We identified one simple improvement to assist some users – underlining the dog ED number to clearly indicate it as a link.
+     </p>
+
+    <h2 class="govuk-heading-m">
+      Alpha assessment feedback
+    </h2>
+
+    <p class="govuk-body">
+    The alpha assessment design assessor provided recommendations for improving the search results:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>review the use of the summary card component on the search results page</li>
+      <li>check for sufficient colour contrast between the text and the background of the status labels</li>
+    </ul>
+
+    <p class="govuk-body">
+      While refining the search results design, we also considered whether displaying the dog owner’s address would help users identify the correct result.
+    </p>
+
+    <p class="govuk-body">
+     We tested the updated design with users during private beta.
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+   <img class="defra-img" src="/public/images/search-results-summary.png">
+   </img>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m">
+      Outcome of usability testing 
+    </h2>
+
+    <p class="govuk-body">
+      The new design was well received by users, as it eliminated the need to click into a dog or owner record to view the address. This allowed them to find the correct record more quickly.
+     </p>
+
+  </div>
+
+</div>
+
+{% endblock %}

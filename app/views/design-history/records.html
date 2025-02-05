@@ -1,0 +1,130 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Dangerous Dogs Index design history
+{% endset%}
+
+{% set pageName="Records and record activity" %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "./index"
+    },
+    {
+      text: "Design history",
+      href: "./index"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
+      {{ pageName }}
+    </h1>
+
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m">
+      DDI team needs
+    </h2>
+    <p class="govuk-body">The DDI team needed to be able to check the history of a record.
+     </p>
+    <p class="govuk-body">x
+    </p>
+
+  </div>
+
+    <div class="govuk-grid-column-full">
+      <img class="defra-img" src="/public/images/dog-record.jpg" alt="Screenshot of a ‘Dog record’ page on the Dangerous Dogs Index showing dog details, owner details and exemption details">
+      </img>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <img class="defra-img" src="/public/images/check-history.jpg" alt="Screenshot of a ‘Check history’ page on the Dangerous Dogs Index showing activities, dates of activities and the team member">
+      </img>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-m">
+       Meeting police needs
+      </h2>
+
+      <p class="govuk-body">The team’s starting assumption was that a read-only version of the Index would meet the police user needs. For the first iteration of the dog and owner records for the police, we simply removed all the editing functionality.
+        </p>
+
+      <h3 class="govuk-heading-s">
+       Download the record history
+      </h3>
+
+      <p class="govuk-body">Like the DDI team, the police needed to check the history of a record.
+       </p>
+      <p class="govuk-body">Research during Alpha uncovered an additional need, the ability to download a copy of the records along with their history. To meet this need, we added the functionality to the ‘Check history’ page.
+      </p>
+
+    </div>
+
+    <div class="govuk-grid-column-full">
+     <img class="defra-img" src="/public/images/download-history.png">
+     </img>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-body">We surfaced the new functionality on the dog and owner record pages, relabelling the ‘Check history’ button to ‘Check and download history’.
+      </p>
+
+      <h3 class="govuk-heading-s" id="track-cdo-progress">
+       Tracking CDO progress
+      </h3>
+
+      <p class="govuk-body">The police need a clear view of a CDO’s progress to help them effectively manage their kennel space. While processes vary by force, some DLOs assist dog owners in submitting the necessary information to Defra.
+        </p>
+      <p class="govuk-body">
+        Speeding up the CDO processing time helps reduce kennel time for dogs and frees up valuable space.
+      </p>
+
+      <p class="govuk-body">We added a link on the dog record for the police to ‘Check CDO progress’.
+      </p>
+
+    </div>
+
+    <div class="govuk-grid-column-full">
+     <img class="defra-img" src="/public/images/dog-record-police.png" alt="Screenshot of a dog record on the Dangerous Dogs Index with a button labelled ‘Check and download history’">
+     </img>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-body">The ‘CDO progress’ pages shows the police which documents Defra have received from the dog owner, along with their submission dates.
+      </p>
+
+    </div>
+
+    <div class="govuk-grid-column-full">
+     <img class="defra-img" src="/public/images/cdo-progress.png" alt="Screenshot of a page on the Dangerous Dogs Index showing the progress of a CDO">
+     </img>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-body">Submit
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+{% endblock %}
