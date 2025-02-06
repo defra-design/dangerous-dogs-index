@@ -37,9 +37,26 @@
     <h2 class="govuk-heading-m">
       DDI team needs
     </h2>
-    <p class="govuk-body">The DDI team needed to be able to check the history of a record.
-     </p>
-    <p class="govuk-body">x
+    <p class="govuk-body">The initial versions of the dog and owner record pages were developed without prior research into the needs of the DDI team.
+      </p>
+    <p class="govuk-body">
+      Our starting assumptions were:
+    </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the standard ‘one thing per page’ approach wouldn’t suit a case management system where the same users edit records daily</li>
+        <li>users would need to see all information related to a record on a single screen without excessive scrolling</li>
+      </ul>
+
+    <p class="govuk-body">
+      These assumptions led us to adopt a two-column design using the <a class="govuk-link govuk-link--no-visited-state" href="https://design-system.service.gov.uk/components/summary-list/">summary list component</a>.
+    </p>
+
+    <p class="govuk-body">
+      To quickly deliver a usable first version of the Index, we designed the initial layout to include edit functionality for all three details sections on single screens, again not using a ‘one thing per page’ approach. We also chose not to include a ‘success’ screen.
+    </p>
+
+    <p class="govuk-body">
+      When we later tested this approach for usability, we found no issues with editing the information.
     </p>
 
   </div>
@@ -47,6 +64,21 @@
     <div class="govuk-grid-column-full">
       <img class="defra-img" src="/public/images/dog-record.jpg" alt="Screenshot of a ‘Dog record’ page on the Dangerous Dogs Index showing dog details, owner details and exemption details">
       </img>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-m">
+        Check history
+      </h2>
+      <p class="govuk-body">
+        The DDI team needed a way to check the activity on a record. To address this, we added a button to the dog and owner records linking to a page that displayed a chronological history of record activity.
+       </p>
+      <p class="govuk-body">The first iteration of this page was named ‘Check activity’. Following our Alpha assessment, the design assessor recommended renaming it to ‘Review history’.
+      </p>
+      <p class="govuk-body">We adopted the recommendation but opted for ‘Check history’ as it better reflected the task the team would perform.
+      </p>
+
     </div>
 
     <div class="govuk-grid-column-full">
@@ -88,7 +120,7 @@
        Tracking CDO progress
       </h3>
 
-      <p class="govuk-body">The police need a clear view of a CDO’s progress to help them effectively manage their kennel space. While processes vary by force, some DLOs assist dog owners in submitting the necessary information to Defra.
+      <p class="govuk-body">The police needed a clear view of a CDO’s progress to help them effectively manage their kennel space. While processes vary by force, some DLOs assist dog owners in submitting the necessary information to Defra.
         </p>
       <p class="govuk-body">
         Speeding up the CDO processing time helps reduce kennel time for dogs and frees up valuable space.
@@ -106,7 +138,7 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-      <p class="govuk-body">The ‘CDO progress’ pages shows the police which documents Defra have received from the dog owner, along with their submission dates.
+      <p class="govuk-body">The ‘CDO progress’ page shows the police which documents Defra has received from the dog owner and the date of receipt.
       </p>
 
     </div>
@@ -116,13 +148,14 @@
      </img>
     </div>
 
+<!--
     <div class="govuk-grid-column-two-thirds">
 
       <p class="govuk-body">Submit
       </p>
 
     </div>
-
+-->
 
   </div>
 
